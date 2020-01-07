@@ -1,11 +1,3 @@
-import { ReactNode } from "react";
-
-export interface InlineEditPortal {
-  id: string;
-  elementKey: Element;
-  node: ReactNode;
-}
-
 // state that identifies which element is being edited, undefined if none
 export interface InlineEditState {
   /**
@@ -26,11 +18,6 @@ export interface InlineEditState {
    * is relative to the nth anchor link in the children of the selected cell.
    */
   selectedLink?: string | number;
-
-  /**
-   * Inject some UI
-   */
-  portals?: InlineEditPortal[];
 
   /**
    * A string representing the group name corresponding to the element that the user clicked

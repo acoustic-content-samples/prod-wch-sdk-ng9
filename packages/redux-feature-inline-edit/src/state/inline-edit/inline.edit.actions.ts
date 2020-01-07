@@ -1,17 +1,9 @@
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { PayloadAction } from '@acoustic-content-sdk/redux-store';
-import {
-  BiFunction,
-  Generator,
-  hashRandomIdentifier,
-  isNotNil
-} from '@acoustic-content-sdk/utils';
-import { ReactNode } from 'react';
+import { Generator, isNotNil } from '@acoustic-content-sdk/utils';
 import { Action } from 'redux';
 import { createAction } from 'redux-actions';
 import { UnaryFunction } from 'rxjs';
-
-import { InlineEditPortal } from './inline.edit.state';
 
 export const ACTION_ADD_INLINE_EDITING = 'ACTION_ADD_INLINE_EDITING';
 export type AddInlineEditingAction = PayloadAction<string>;
@@ -100,26 +92,6 @@ export type ClearInlineEditSelectedLinkAction = Action;
 export const clearInlineEditSelectedLinkAction: Generator<ClearInlineEditSelectedLinkAction> = createAction(
   ACTION_CLEAR_INLINE_EDIT_SELECTED_LINK
 );
-
-export const ACTION_ADD_INLINE_EDIT_PORTAL = 'ACTION_ADD_INLINE_EDIT_PORTAL';
-export type AddInlineEditPortalAction = PayloadAction<InlineEditPortal>;
-
-const _addInlineEditPortalAction = createAction(ACTION_ADD_INLINE_EDIT_PORTAL);
-export const addInlineEditPortalAction: BiFunction<
-  Element,
-  ReactNode,
-  AddInlineEditPortalAction
-> = (elementKey, node) =>
-  _addInlineEditPortalAction({ elementKey, node, id: hashRandomIdentifier() });
-
-export const ACTION_REMOVE_INLINE_EDIT_PORTAL =
-  'ACTION_REMOVE_INLINE_EDIT_PORTAL';
-export type RemoveInlineEditPortalAction = PayloadAction<Element>;
-
-export const removeInlineEditPortalAction: UnaryFunction<
-  Element,
-  RemoveInlineEditPortalAction
-> = createAction(ACTION_REMOVE_INLINE_EDIT_PORTAL);
 
 export const ACTION_SET_INLINE_EDIT_CLICKED_ELEMENT =
   'ACTION_SET_INLINE_EDIT_CLICKED_ELEMENT';

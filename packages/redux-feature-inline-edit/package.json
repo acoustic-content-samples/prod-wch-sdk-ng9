@@ -35,7 +35,6 @@
   },
   "devDependencies": {},
   "peerDependencies": {
-    "react": "^16",
     "redux": "^4",
     "redux-actions": "^2",
     "redux-observable": "^1",
@@ -58,7 +57,6 @@
         "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/redux-utils": "acoustic-content-sdk.redux-utils",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "react": "React",
         "redux": "Redux",
         "redux-actions": "ReduxActions",
         "redux-observable": "ReduxObservable"

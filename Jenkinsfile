@@ -15,5 +15,5 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
-  triggerDownstream = "squad-infra-boe/prod-publishing-sites-v2-ui/develop, squad-infra-boe/prod-publishing-content-editor, squad-infra-boe/proto-sites-next-app"
+  triggerDownstream = "squad-infra-boe/prod-publishing-sites-v2-ui/develop, squad-infra-boe/proto-sites-next-app"
 }
