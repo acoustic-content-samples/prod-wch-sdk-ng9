@@ -21,7 +21,7 @@
   "module": "dist/fesm5/ibm-wch-sdk-redux-store.js",
   "typings": "dist/ibm-wch-sdk-redux-store.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {

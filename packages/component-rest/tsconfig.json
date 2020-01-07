@@ -1,12 +1,1 @@
-{
-  "extends": "../tsconfig.settings.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/app",
-    "types": []
-  },
-  "include": [
-    "src/**/*.ts",
-    "../component-utils/src/decorators/layout/layout.decorator.ts"
-  ],
-  "exclude": ["src/**/*.spec.ts", "dist"]
-}
+{"extends":"../tsconfig.settings.json"}

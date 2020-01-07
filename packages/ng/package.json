@@ -23,7 +23,7 @@
   "scripts": {
     "build": "ng build --prod",
     "build:api": "api-extractor run --local",
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",

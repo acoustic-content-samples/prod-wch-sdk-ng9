@@ -1,4 +1,4 @@
-import { readFile, readJson, writeFile } from 'fs-extra';
+import { readFile, readJson, writeFile, writeJson } from 'fs-extra';
 import { join } from 'path';
 import { env } from 'process';
 
@@ -11,6 +11,8 @@ import {
 } from './common';
 
 const { BRANCH_NAME, VERSION_STRING } = env;
+
+const TSCONFIG_JSON = 'tsconfig.json';
 
 const sortPackageJson = require('sort-package-json');
 
@@ -202,15 +204,29 @@ function handleDependencies(aName: string) {
   );
 }
 
+const DEFAULT_CONFIG = {
+  extends: '../tsconfig.settings.json'
+};
+
+function handleConfig(aFile: string): Promise<string> {
+  return writeJson(aFile, DEFAULT_CONFIG).then(() => aFile);
+}
+
 function rewrite() {
+  // config
+  const cfg$ = dirs$.then((dirs) =>
+    Promise.all(dirs.map((dir) => handleConfig(join(dir, TSCONFIG_JSON))))
+  );
   // packages
-  return dirs$
+  const pkg$ = dirs$
     .then((dirs) =>
       Promise.all(
         dirs.map((dir) => handleDependencies(join(dir, PACKAGE_JSON)))
       )
     )
     .then((res) => res.filter(Boolean));
+
+  return Promise.all([cfg$, pkg$]);
 }
 
 function prebuild() {

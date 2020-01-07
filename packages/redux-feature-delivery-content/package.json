@@ -22,7 +22,7 @@
   "module": "dist/fesm5/acoustic-content-sdk-redux-feature-delivery-content.js",
   "typings": "dist/acoustic-content-sdk-redux-feature-delivery-content.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
   "dependencies": {

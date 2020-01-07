@@ -21,7 +21,7 @@
   "module": "dist/fesm5/acoustic-content-sdk-rendition-utils.js",
   "typings": "dist/acoustic-content-sdk-rendition-utils.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json"
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json"
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",

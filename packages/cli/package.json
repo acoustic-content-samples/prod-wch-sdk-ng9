@@ -22,7 +22,7 @@
     "acoustic-content-sdk-cli": "./bin/index.js"
   },
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "sync-files --no-delete ./assets ./dist",
     "cli": "node bin/index.js",
     "start": "ts-node ./src/driver/index.ts --project ./tsconfig.json",

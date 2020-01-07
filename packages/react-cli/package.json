@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build:api": "api-extractor run --local",
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "cpx \"assets/**\" dist --verbose",
     "test": "jest"
   },

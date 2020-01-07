@@ -1,23 +1,6 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "sourceMap": true,
-    "declaration": false,
-    "module": "esnext",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": ["../node_modules/@types"],
-    "lib": ["es2018", "dom"]
-  },
+  "extends": "../node_modules/ng-packagr/lib/ts/conf/tsconfig.ngc.json",
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true,
-    "fullTemplateTypeCheck": true,
-    "annotateForClosureCompiler": true
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist", "doc", "node_modules", "etc"]
+    "disableTypeScriptVersionCheck": true
+  }
 }

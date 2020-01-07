@@ -18,7 +18,7 @@
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
     "test": "jest"
   },

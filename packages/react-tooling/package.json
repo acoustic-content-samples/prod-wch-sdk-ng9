@@ -22,7 +22,7 @@
   "module": "dist/fesm5/acoustic-content-sdk-react-tooling.js",
   "typings": "dist/acoustic-content-sdk-react-tooling.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "cpx \"assets/**\" dist/assets --verbose",
     "test": "jest"
   },

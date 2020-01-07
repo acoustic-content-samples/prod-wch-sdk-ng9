@@ -22,7 +22,7 @@
   "module": "dist/fesm5/acoustic-content-sdk-react-logger.js",
   "typings": "dist/acoustic-content-sdk-react-logger.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
   "dependencies": {

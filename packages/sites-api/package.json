@@ -21,7 +21,7 @@
   "module": "dist/fesm5/acoustic-content-sdk-sites-api.js",
   "typings": "dist/acoustic-content-sdk-sites-api.d.ts",
   "scripts": {
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {

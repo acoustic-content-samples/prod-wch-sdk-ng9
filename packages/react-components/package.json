@@ -23,7 +23,7 @@
   "typings": "dist/acoustic-content-sdk-react-components.d.ts",
   "scripts": {
     "build:api": "api-extractor run --local",
-    "build:packagr": "ng-packagr -p package.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
   "dependencies": {
