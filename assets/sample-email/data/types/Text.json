@@ -1,0 +1,103 @@
+{
+  "id": "09ed64f3-23d9-48bb-871d-e00430751ea6",
+  "rev": "8-21e513ac16fee6c7c5be925368c51eb9",
+  "name": "Text",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "IBM Email sample"
+  ],
+  "elements": [
+    {
+      "elementType": "formattedtext",
+      "label": "text",
+      "key": "text",
+      "placeholder": {
+        "show": true,
+        "text": "Text"
+      }
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb",
+        "name": "Styling"
+      },
+      "label": "Text Style",
+      "key": "textStyle"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a",
+        "name": "Colors"
+      },
+      "label": "Link color",
+      "key": "linkColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5",
+        "name": "Background Extension"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097",
+        "name": "Text Alignment options"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2",
+        "name": "Line height options"
+      },
+      "label": "Line height",
+      "key": "lineHeight"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022",
+        "name": "Boundary options"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022",
+        "name": "Boundary options"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80",
+        "name": "Common settings"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

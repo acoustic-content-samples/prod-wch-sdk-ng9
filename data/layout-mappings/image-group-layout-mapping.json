@@ -1,0 +1,21 @@
+{
+  "id": "image-group-component-layout-mapping",
+  "rev": "4-619d113cd3fe0471af84524ca7bfba22",
+  "name": "imageGroupComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "7952a5b2-57d0-4a1b-a008-d37c7d7f5261"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "image-group-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "image-group-component-layout"
+        }
+      ]
+    }
+  ]
+}

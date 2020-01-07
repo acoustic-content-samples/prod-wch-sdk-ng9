@@ -1,0 +1,21 @@
+{
+  "id": "social-component-layout-mapping",
+  "rev": "1-eb1e22b850423b4e056da5d3ecd7b092",
+  "name": "socialComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "71689897-4505-4c1e-85c9-a57810158a4e"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "social-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "social-component-layout"
+        }
+      ]
+    }
+  ]
+}

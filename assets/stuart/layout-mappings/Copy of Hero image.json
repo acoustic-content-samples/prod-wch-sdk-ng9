@@ -1,0 +1,21 @@
+{
+  "id": "37e55061-804c-4120-9c3c-240dfca6ca79",
+  "rev": "1-e7e838941ea9e275de63a745b5415bf4",
+  "name": "Copy of Hero image",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "8e555ce3-d7fb-462b-8cdc-4e638e9ab4d4"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "hero-image-layout"
+      },
+      "layouts": [
+        {
+          "id": "hero-image-layout"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "lastName": "Mustermann",
+  "displayName": "Adam.iem",
+  "roles": ["admin"],
+  "firstName": "Adam",
+  "id": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "ibmUniqueID": "51DMHNV5MV",
+  "email": "adam.iem@mailinator.com",
+  "creator": { "id": "00000000-0000-0000-0000-000000000004" },
+  "created": "2019-01-07T09:28:13.826Z",
+  "lastModifier": { "id": "00000000-0000-0000-0000-000000000001" },
+  "lastModified": "2019-01-17T11:50:07.157Z",
+  "lastLogin": "2019-01-17T11:50:04.396Z",
+  "externalId": "adam.iem@mailinator.com",
+  "links": {
+    "self": {
+      "href": "/user-profile/v1/users/0a3f13bf-d343-4648-8a2a-8646a8a20657",
+      "methods": ["GET", "PUT"]
+    }
+  }
+}

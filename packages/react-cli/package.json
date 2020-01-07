@@ -1,0 +1,93 @@
+{
+  "name": "@acoustic-content-sdk/react-cli",
+  "version": "9.0.0",
+  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "react",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-react-cli.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-react-cli.js",
+  "typings": "dist/acoustic-content-sdk-react-cli.d.ts",
+  "bin": {
+    "acoustic-content-sdk-react-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:packagr": "ng-packagr -p package.json",
+    "postbuild:packagr": "cpx \"assets/**\" dist --verbose",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/react-tooling": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0",
+    "chalk": "^3.0.0",
+    "commander": "^4.1.0",
+    "handlebars": "^4.5.3",
+    "handlebars-helpers": "^0.10.0",
+    "jsdom": "^15.2.1",
+    "lodash": "^4.17.15",
+    "rxjs": "6.5.3",
+    "semver": "^7.1.1",
+    "uuid": "^3.3.3"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-react-cli.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-react-cli.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-react-cli.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-react-cli.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-react-cli.js",
+  "metadata": "dist/acoustic-content-sdk-react-cli.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/react-tooling": "acoustic-content-sdk.react-tooling",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "chalk": "Chalk",
+        "commander": "Commander",
+        "handlebars": "Handlebars",
+        "handlebars-helpers": "HandlebarsHelpers",
+        "jsdom": "Jsdom",
+        "lodash": "Lodash",
+        "semver": "Semver",
+        "uuid": "Uuid"
+      },
+      "jsx": "react"
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*",
+      "commander",
+      "chalk",
+      "jsdom",
+      "lodash",
+      "rxjs",
+      "semver",
+      "uuid",
+      "handlebars",
+      "handlebars-helpers"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

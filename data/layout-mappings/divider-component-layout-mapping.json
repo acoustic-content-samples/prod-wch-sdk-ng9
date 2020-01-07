@@ -1,0 +1,21 @@
+{
+  "id": "divider-component-layout-mapping",
+  "rev": "4-f9a595aacc2a95f31c0d4b627bfe9e18",
+  "name": "dividerComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "divider-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "divider-component-layout"
+        }
+      ]
+    }
+  ]
+}

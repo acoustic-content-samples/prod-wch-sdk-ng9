@@ -1,0 +1,104 @@
+{
+  "rev": "7-c429c08a332f3ba412e8b09a9ac9dfe3",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:49.174Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Spacer",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "spacer-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "key": {
+      "elementType": "text",
+      "value": "fc95fff1-3545-4944-8f0e-ddec76dee2d2"
+    },
+    "height": {
+      "elementType": "number",
+      "value": 50
+    },
+    "background": {
+      "elementType": "group",
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": {
+              "elementType": "text",
+              "value": "transparent"
+            }
+          },
+          "typeRef": {
+            "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+          }
+        },
+        "includeBackgroundImage": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "fillOptions": {
+          "elementType": "optionselection"
+        }
+      },
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    }
+  },
+  "name": "Spacer",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "209c5579-4e6d-4e88-9c47-76de4c25c6f8",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/7a1b5a9e-b259-48dc-bd1e-43975c20bba9/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/7a1b5a9e-b259-48dc-bd1e-43975c20bba9/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/7a1b5a9e-b259-48dc-bd1e-43975c20bba9"
+    },
+    "type": {
+      "href": "/authoring/v1/types/209c5579-4e6d-4e88-9c47-76de4c25c6f8"
+    }
+  },
+  "id": "7a1b5a9e-b259-48dc-bd1e-43975c20bba9",
+  "lastModified": "2019-08-30T12:17:16.011Z",
+  "systemModified": "2019-08-30T12:17:16.011Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

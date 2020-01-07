@@ -1,0 +1,3 @@
+{
+  "PHOTOS": "{name} a pris {numPhotos, plural,=0 {pas de foto.} =1 {un foto.} other {# fotos.} } le {takenDate, date, short}"
+}

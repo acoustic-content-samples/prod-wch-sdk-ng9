@@ -1,0 +1,12 @@
+/**
+ * Do not modify this file, it will be auto-generated.
+ */
+{{#each .}}
+import { {{{this.class}}} } from '{{{this.path}}}';
+{{/each}}
+
+export const LAYOUTS = [
+{{#each .}}
+  {{{this.class}}}{{#if @last}}{{else}},{{/if}}
+{{/each}}
+];

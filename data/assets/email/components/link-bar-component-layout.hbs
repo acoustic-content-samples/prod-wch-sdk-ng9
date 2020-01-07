@@ -1,0 +1,39 @@
+<table {{#eq commonSettings.hideOnMobile true}} class="hide-on-mobile" {{/eq}} {{~#if backgroundColor.colorCode}} bgcolor="{{backgroundColor.colorCode}}" {{~/if~}}
+		style="width:100%; height:100%; margin-bottom: 0rem !important; {{~#if padding.left}} padding-left:{{padding.left}}px; {{~/if~}}
+		{{~#if padding.right}} padding-right:{{padding.right}}px; {{~/if~}}
+		{{~#if padding.top}} padding-top:{{padding.top}}px; {{~/if~}}
+		{{~#if padding.bottom}} padding-bottom:{{padding.bottom}}px; {{~/if~}}">
+	<tbody>
+		<tr>
+			<td {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{~/if~}}>
+				<table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 0rem !important;">
+					<tbody>
+						<tr {{#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="left" {{/if}}>
+							{{#each links}}
+							<td style="">
+									<a data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="elements.links.values[{{@index}}].linkURL" href="{{linkURL}}" target="_blank" data-mktcloud-xt="SPCLICK" {{#if @root.textStyle.color}} style="color: {{@root.textStyle.color}}" {{/if}}>
+										<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.text.value"  data-wch-placeholder="Link" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{#if @root.textStyle.font}} font-family: {{@root.textStyle.font}} !important; {{/if}}
+					                   {{#if @root.textStyle.size}} font-size: {{@root.textStyle.size}}px; {{/if}}
+					                   {{#if @root.textStyle.color}} color: {{@root.textStyle.color}}; {{else}} color: #000000; {{/if}}
+					                   {{#if @root.alignment.alignmentOptions}} text-align: {{@root.alignment.alignmentOptions}}; {{/if}}">{{{linkText}}}</div>
+									</a>
+									</td>
+									{{#if (and @root.spacingBetweenLinks (not @last))}}
+										<td width="{{divide @root.spacingBetweenLinks 2}}">&nbsp;</td>
+									{{/if}}
+									{{#eq @root.includeVerticalRule.includeVerticalRuleBetweenLinks true}}
+										{{#if (not @last)}}
+											<td style="border-left:1px solid {{#if @root.includeVerticalRule.lineColor.colorCode}} {{@root.includeVerticalRule.lineColor.colorCode}} {{/if}}; {{#if @root.includeVerticalRule.opacity}}opacity:{{divide @root.includeVerticalRule.opacity 100}}; {{/if}}; height:100%;">&nbsp;</td>
+										{{/if}}
+									{{/eq}}
+									{{#if (and @root.spacingBetweenLinks (not @last))}}
+										<td width="{{divide @root.spacingBetweenLinks 2}}">&nbsp;</td>
+									{{/if}}
+							{{/each}}
+					</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,5 @@
+<ng-container
+  *ngIf="state$ | async as state"
+  [wchContentRef]="state"
+  (component$)="component$.next($event)"
+></ng-container>

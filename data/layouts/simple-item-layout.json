@@ -1,0 +1,9 @@
+{
+  "id": "simple-item-layout",
+  "rev": "1-cc4ec4c6f64fdf98200e347305a272d1",
+  "name": "Simple Item",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/layouts/simple-item-layout.hbs",
+  "templateType": "handlebars"
+}

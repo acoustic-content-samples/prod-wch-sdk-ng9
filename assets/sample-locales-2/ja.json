@@ -1,0 +1,20 @@
+{
+  "ADD": "セクションの追加",
+  "CLOSE_PALETTE": "閉じる",
+  "COPY": "コピー",
+  "DROP_HERE": "ここにドロップ",
+  "DROP_TO_UPLOAD": "ドロップしてアップロード",
+  "EMPTY_HTML_DESCRIPTION": "HTML の追加",
+  "EDIT_IMAGE": "イメージの編集",
+  "EMPTY_STATE_DESCRIPTION": "イメージをドラッグ・アンド・ドロップするか、[ライブラリーを参照します]。",
+  "INITIAL_SECTION": "レイアウトを選択するか、ここにコンテンツをドラッグしてください",
+  "LOCK": "ロックして編集を防止",
+  "MOVE": "クリックしたままドラッグ",
+  "OPEN_PALETTE": "イメージの変更",
+  "PZN_PICKER_CLOSE": "閉じる",
+  "PZN_PICKER_HEADING": "パーソナライゼーション・フィールドの選択",
+  "REMOVE": "削除",
+  "REMOVE_IMAGE": "イメージの削除",
+  "SELECT": "イメージの選択",
+  "SHUTTERSTOCK_SAVE": "保存 ..."
+}

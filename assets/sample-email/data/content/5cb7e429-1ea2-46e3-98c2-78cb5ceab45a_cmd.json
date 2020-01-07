@@ -1,0 +1,121 @@
+{
+  "rev": "7-560874a104dc270eeae259bb2d254408",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:44.100Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "HTML",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "html-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "key": {
+      "elementType": "text",
+      "value": "a216ad56-30f1-4d0d-ad01-0c4a0d47214b"
+    },
+    "code": {
+      "elementType": "text"
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    }
+  },
+  "name": "HTML",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "aa358e28-2e60-416a-97d7-d1a6dd5e165b",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/5cb7e429-1ea2-46e3-98c2-78cb5ceab45a/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/5cb7e429-1ea2-46e3-98c2-78cb5ceab45a/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/5cb7e429-1ea2-46e3-98c2-78cb5ceab45a"
+    },
+    "type": {
+      "href": "/authoring/v1/types/aa358e28-2e60-416a-97d7-d1a6dd5e165b"
+    }
+  },
+  "id": "5cb7e429-1ea2-46e3-98c2-78cb5ceab45a",
+  "lastModified": "2019-08-30T12:17:13.220Z",
+  "systemModified": "2019-08-30T12:17:13.220Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

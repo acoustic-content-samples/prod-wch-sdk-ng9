@@ -1,0 +1,383 @@
+{
+  "rev": "7-1883d1a25876ed41f4e99b4d1f6c574b",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:44.218Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Promotion",
+  "locale": "en",
+  "tags": [],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "promotion-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "imageGroup": {
+      "elementType": "group",
+      "value": {
+        "image": {
+          "elementType": "image"
+        },
+        "align": {
+          "elementType": "group",
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection"
+            }
+          },
+          "typeRef": {
+            "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+          }
+        },
+        "padding": {
+          "elementType": "group",
+          "value": {
+            "top": {
+              "elementType": "number"
+            },
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            }
+          },
+          "typeRef": {
+            "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d"
+      }
+    },
+    "background": {
+      "elementType": "group",
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            }
+          },
+          "typeRef": {
+            "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+          }
+        },
+        "includeBackgroundImage": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "fillOptions": {
+          "elementType": "optionselection"
+        }
+      },
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+      }
+    },
+    "margins": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number",
+          "value": 30
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "textGroup": {
+      "elementType": "group",
+      "value": {
+        "background": {
+          "elementType": "group",
+          "value": {
+            "backgroundColor": {
+              "elementType": "group",
+              "value": {
+                "colorCode": {
+                  "elementType": "text"
+                }
+              },
+              "typeRef": {
+                "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+              }
+            },
+            "includeBackgroundImage": {
+              "elementType": "toggle",
+              "value": false
+            },
+            "image": {
+              "elementType": "image"
+            },
+            "fillOptions": {
+              "elementType": "optionselection"
+            }
+          },
+          "typeRef": {
+            "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+          }
+        },
+        "textStyle": {
+          "elementType": "group",
+          "value": {
+            "font": {
+              "elementType": "text",
+              "value": "Arial"
+            },
+            "size": {
+              "elementType": "number",
+              "value": 14
+            },
+            "color": {
+              "elementType": "text",
+              "value": "#1E1E1E"
+            }
+          },
+          "typeRef": {
+            "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+          }
+        },
+        "text": {
+          "elementType": "formattedtext",
+          "value": "<p><span style=\"font-size:22px\">HEADLINE</span></p>\n<p><span style=\"font-size:14px\">____________________</span></p>\n<p style=\"font-size:14px\">Lorem ipsum lorem ipsum</p>\n\n<p style=\"font-size:14px\">dolor sit lorem ipsum dolor</p>\n\n<p style=\"font-size:14px\">lorem ipsum dolor sit amet</p>\n"
+        },
+        "lineHeight": {
+          "elementType": "group",
+          "value": {
+            "lineHeightOptions": {
+              "elementType": "optionselection"
+            }
+          },
+          "typeRef": {
+            "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+          }
+        },
+        "alignment": {
+          "elementType": "group",
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection",
+              "value": {
+                "selection": "center"
+              }
+            }
+          },
+          "typeRef": {
+            "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+          }
+        },
+        "padding": {
+          "elementType": "group",
+          "value": {
+            "top": {
+              "elementType": "number",
+              "value": 20
+            },
+            "bottom": {
+              "elementType": "number",
+              "value": 20
+            },
+            "left": {
+              "elementType": "number",
+              "value": 20
+            },
+            "right": {
+              "elementType": "number",
+              "value": 20
+            }
+          },
+          "typeRef": {
+            "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+          }
+        },
+        "linkColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            }
+          },
+          "typeRef": {
+            "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55"
+      }
+    },
+    "layout": {
+      "elementType": "optionselection",
+      "value": {
+        "selection": "image-top"
+      }
+    },
+    "buttonGroup": {
+      "elementType": "group",
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": {
+              "elementType": "text",
+              "value": "#123448"
+            }
+          },
+          "typeRef": {
+            "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+          }
+        },
+        "style": {
+          "elementType": "group",
+          "value": {
+            "font": {
+              "elementType": "text",
+              "value": "Arial"
+            },
+            "size": {
+              "elementType": "number",
+              "value": 14
+            },
+            "color": {
+              "elementType": "text",
+              "value": "#FFFFFF"
+            }
+          },
+          "typeRef": {
+            "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+          }
+        },
+        "align": {
+          "elementType": "group",
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection",
+              "value": {
+                "selection": "center"
+              }
+            }
+          },
+          "typeRef": {
+            "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+          }
+        },
+        "label": {
+          "elementType": "text",
+          "value": "READ MORE"
+        },
+        "cornerRadius": {
+          "elementType": "number"
+        },
+        "lineHeight": {
+          "elementType": "group",
+          "value": {
+            "lineHeightOptions": {
+              "elementType": "optionselection"
+            }
+          },
+          "typeRef": {
+            "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+          }
+        },
+        "link": {
+          "elementType": "link",
+          "linkURL": "http://www.ibm.com"
+        },
+        "padding": {
+          "elementType": "group",
+          "value": {
+            "top": {
+              "elementType": "number",
+              "value": 15
+            },
+            "bottom": {
+              "elementType": "number",
+              "value": 15
+            },
+            "left": {
+              "elementType": "number",
+              "value": 40
+            },
+            "right": {
+              "elementType": "number",
+              "value": 40
+            }
+          },
+          "typeRef": {
+            "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "2d9f0c5e-8a89-4b8c-abfc-7d2de4f623dd"
+      }
+    }
+  },
+  "name": "Promotion",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "e98ba889-d5e4-4b9b-8c42-e3a5c35a10d3",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/5be2b537-e5a7-4b95-aa21-5555c77d822c/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/5be2b537-e5a7-4b95-aa21-5555c77d822c/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/5be2b537-e5a7-4b95-aa21-5555c77d822c"
+    },
+    "type": {
+      "href": "/authoring/v1/types/e98ba889-d5e4-4b9b-8c42-e3a5c35a10d3"
+    }
+  },
+  "id": "5be2b537-e5a7-4b95-aa21-5555c77d822c",
+  "lastModified": "2019-08-30T12:17:13.607Z",
+  "systemModified": "2019-08-30T12:17:13.607Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

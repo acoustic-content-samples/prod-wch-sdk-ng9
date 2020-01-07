@@ -1,0 +1,1 @@
+Implementation of a logger factory using the [ng2-logger](https://www.npmjs.com/package/ng2-logger).

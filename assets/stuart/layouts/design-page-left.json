@@ -1,0 +1,12 @@
+{
+  "id": "design-page-left",
+  "rev": "1-2eb927aba7fa7e6e76199f07b75c4d87",
+  "name": "Two column, left",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/two-column-left_220.svg"
+  },
+  "template": "design-page-left",
+  "templateType": "angular"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "b3dc7b98-bd3a-4f8b-acda-dbbd909590da",
+  "rev": "3-1cb3d5cf433a3b8f5862d37b127b9e1a",
+  "kind": [],
+  "classification": "content",
+  "typeId": "909b5e52-c886-445b-8ee3-5dd6ad2aeb32",
+  "name": "Daniel's Text",
+  "description": "",
+  "tags": [],
+  "status": "ready",
+  "created": "2019-01-07T12:13:30.956Z",
+  "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "lastModified": "2019-01-07T12:26:25.025Z",
+  "lastModifierId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "systemModified": "2019-01-07T12:26:25.025Z",
+  "elements": {
+    "backgroundColor": { "elementType": "text" },
+    "size": { "elementType": "text" },
+    "textColor": { "elementType": "text" },
+    "text": { "elementType": "formattedtext", "value": "<p>Hello World</p>\n" },
+    "font": { "elementType": "text" }
+  },
+  "keywords": [],
+  "selectedLayouts": [{ "layout": { "id": "Text-layout" } }]
+}

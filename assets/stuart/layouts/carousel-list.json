@@ -1,0 +1,12 @@
+{
+  "id": "carousel-list",
+  "rev": "1-8c257698ee2a9d38cd106617eb8a3b25",
+  "name": "Carousel",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/list-carousel_220.svg"
+  },
+  "template": "carousel-list",
+  "templateType": "angular"
+}

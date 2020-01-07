@@ -1,0 +1,32 @@
+{
+  "id": "carousel-list-mapping",
+  "rev": "2-a2b9f0106b595be886ea891876ee00ab",
+  "name": "carouselListMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb",
+    "name": "List"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "carousel-list",
+        "name": "Carousel"
+      },
+      "layouts": [
+        {
+          "id": "carousel-list",
+          "name": "Carousel"
+        },
+        {
+          "id": "gallery-list",
+          "name": "Gallery"
+        },
+        {
+          "id": "vertical-list",
+          "name": "List"
+        }
+      ]
+    }
+  ]
+}

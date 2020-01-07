@@ -1,0 +1,27 @@
+<table {{#eq commonSettings.hideOnMobile true}} class="hide-on-mobile" {{/eq}} {{~#if backgroundColor.colorCode}} bgcolor="{{backgroundColor.colorCode}}" {{~/if~}}
+		style="width:100%; {{~#if padding.left}} padding-left:{{padding.left}}px; {{~/if~}} 
+		{{~#if padding.right}} padding-right:{{padding.right}}px; {{~/if~}}
+		{{~#if padding.top}} padding-top:{{padding.top}}px; {{~/if~}}
+		{{~#if padding.bottom}} padding-bottom:{{padding.bottom}}px; {{~/if~}}">
+	<tbody>
+		<tr>
+			<td {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{~/if~}}>
+				<table border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 0rem !important;">
+					<tbody>
+						<tr {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{~/if~}}>
+							{{#each socialLinks}}
+								<td>
+									<a data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="socialLinks[{{@index}}].url" href="{{url.linkURL}}" target="_blank" data-mktcloud-xt="SPCLICK">
+										<img data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="socialLinks[{{@index}}].icon"
+											alt="{{alttext}}" border="0" spname="{{alttext}}" src="{{@root.$context.hub.resourceUrl.href}}dxauth/email/social/{{@root.iconSet}}/{{@root.size}}/{{icon}}.png" data-mktcloud-xt="SPIMAGE"
+											style="{{~#if (and @root.spacing (not (eq @index 0))) }}margin-left:{{@root.spacing}}px; {{~/if~}}">
+									</a>	
+								</td>				
+							{{/each}}
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>

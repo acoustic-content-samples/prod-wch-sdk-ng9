@@ -1,0 +1,123 @@
+{
+  "rev": "1-50e4ad0f061aab1ebd9bb19345e8de9e",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-05-21T14:00:54.466Z",
+  "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "description": "",
+  "classification": "content",
+  "type": "AllTypes",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "multireference": {
+      "elementType": "reference"
+    },
+    "singlecat": {
+      "elementType": "category"
+    },
+    "multicat": {
+      "elementType": "category"
+    },
+    "singletext": {
+      "elementType": "text",
+      "value": "some content"
+    },
+    "singletoggle": {
+      "elementType": "toggle",
+      "value": false
+    },
+    "multitext": {
+      "elementType": "text",
+      "values": ["text1", "text2"]
+    },
+    "singlefile": {
+      "elementType": "file"
+    },
+    "multivideo": {
+      "elementType": "video"
+    },
+    "singlevideo": {
+      "elementType": "video"
+    },
+    "singleformattedtext": {
+      "elementType": "formattedtext"
+    },
+    "multinumber": {
+      "elementType": "number"
+    },
+    "multiimage": {
+      "elementType": "image"
+    },
+    "singleimage": {
+      "elementType": "image"
+    },
+    "multilink": {
+      "elementType": "link"
+    },
+    "singlenumber": {
+      "elementType": "number"
+    },
+    "singlegroup": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+      }
+    },
+    "multiformattedtext": {
+      "elementType": "formattedtext"
+    },
+    "multigroup": {
+      "values": [],
+      "elementType": "group",
+      "typeRef": {
+        "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+      }
+    },
+    "multidate": {
+      "elementType": "datetime"
+    },
+    "singleoption": {
+      "elementType": "optionselection"
+    },
+    "multioptions": {
+      "elementType": "optionselection"
+    },
+    "singledate": {
+      "elementType": "datetime"
+    },
+    "singlelocation": {
+      "elementType": "location"
+    },
+    "multifile": {
+      "elementType": "file"
+    },
+    "singlereference": {
+      "elementType": "reference"
+    },
+    "singlelink": {
+      "elementType": "link"
+    }
+  },
+  "name": "SimpleText",
+  "lastModifierId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "typeId": "b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/53c4419c-e491-4563-8258-b7e4b81b5b81/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/53c4419c-e491-4563-8258-b7e4b81b5b81/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/53c4419c-e491-4563-8258-b7e4b81b5b81"
+    },
+    "type": {
+      "href": "/authoring/v1/types/b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb"
+    }
+  },
+  "id": "53c4419c-e491-4563-8258-b7e4b81b5b81",
+  "lastModified": "2019-05-21T14:00:55.506Z",
+  "systemModified": "2019-05-21T14:00:55.662Z",
+  "status": "ready"
+}

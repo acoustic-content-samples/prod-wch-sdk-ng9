@@ -1,0 +1,21 @@
+{
+  "id": "button-component-layout-mapping",
+  "rev": "4-32207f57b1d5c8143d7f78a73776660b",
+  "name": "buttonComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "b201f69e-29ff-4f3e-9a72-6c6be6c7d754"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "button-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "button-component-layout"
+        }
+      ]
+    }
+  ]
+}

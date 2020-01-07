@@ -1,0 +1,19 @@
+{
+  "id": "page-layout",
+  "rev": "4-9a008d86409dd4b867f95f557b1cc5d4",
+  "name": "pageLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_f25eab173d6348d1814af85c4ccf3034"
+  },
+  "template": "/sites/templates/page-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page/{id}.html"
+}

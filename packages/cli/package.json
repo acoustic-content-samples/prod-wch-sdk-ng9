@@ -1,0 +1,88 @@
+{
+  "name": "@acoustic-content-sdk/cli",
+  "version": "9.0.0",
+  "description": "A schematics",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "cli",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "bin": {
+    "acoustic-content-sdk-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "postbuild:packagr": "sync-files --no-delete ./assets ./dist",
+    "cli": "node bin/index.js",
+    "start": "ts-node ./src/driver/index.ts --project ./tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/rx-utils": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0",
+    "chalk": "^3.0.0",
+    "commander": "^4.1.0",
+    "cross-spawn": "^7.0.1",
+    "handlebars": "^4.5.3",
+    "handlebars-helpers": "^0.10.0",
+    "jsdom": "^15.2.1",
+    "lodash": "^4.17.15",
+    "rxjs": "6.5.3",
+    "semver": "^7.1.1",
+    "uuid": "^3.3.3"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "chalk": "Chalk",
+        "commander": "Commander",
+        "cross-spawn": "CrossSpawn",
+        "handlebars": "Handlebars",
+        "handlebars-helpers": "HandlebarsHelpers",
+        "jsdom": "Jsdom",
+        "lodash": "Lodash",
+        "semver": "Semver",
+        "uuid": "Uuid"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/*",
+      "handlebars",
+      "handlebars-helpers",
+      "semver",
+      "uuid",
+      "jsdom",
+      "lodash",
+      "rxjs",
+      "chalk",
+      "commander",
+      "inquirer",
+      "colors",
+      "cross-spawn"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

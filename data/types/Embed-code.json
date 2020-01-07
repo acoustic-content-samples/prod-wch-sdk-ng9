@@ -1,0 +1,68 @@
+{
+  "id": "fdee49eb-1367-4005-8bfe-7e634a4d7e0f",
+  "rev": "2-3fbafd69b1c97ebb86cc551d0ad9d12c",
+  "name": "Embed code",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "a4fbe87a-f8dd-4673-b344-08c3f9eb0fcd",
+    "path": "/dxdam/a4/a4fbe87a-f8dd-4673-b344-08c3f9eb0fcd/embedded.svg",
+    "url": "/authoring/v1/resources/f1b446a7-7245-4a84-a3d2-ea87d6266fdb"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "HTML",
+      "key": "html",
+      "displayType": "multiLine"
+    },
+    {
+      "elementType": "text",
+      "label": "CSS",
+      "key": "css",
+      "displayType": "multiLine"
+    },
+    {
+      "elementType": "text",
+      "label": "JS",
+      "key": "js",
+      "displayType": "multiLine"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Allow full screen",
+      "key": "allowFullScreen",
+      "helpText": "Allows content (e.g. a video player) to be resized to fit the entire screen."
+    },
+    {
+      "elementType": "toggle",
+      "label": "Show scroll bars",
+      "key": "showScrollBars",
+      "helpText": "If selected, the Embed code compoenent will show scrollbars if the content surpasses the set width and height dimensions."
+    },
+    {
+      "elementType": "text",
+      "label": "Height",
+      "key": "height",
+      "helpText": "Height of Embed code compoenent (e.g. 300px, 100%). If not set, the height defaults to the height of the content."
+    },
+    {
+      "elementType": "text",
+      "label": "Width",
+      "key": "width",
+      "helpText": "Width of Embed code compoenent (e.g. 300px, 100%). If not set, the width defaults to fill available space."
+    }
+  ]
+}

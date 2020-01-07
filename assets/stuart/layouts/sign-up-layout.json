@@ -1,0 +1,12 @@
+{
+  "id": "sign-up-layout",
+  "rev": "1-ce490cc3024fe52034da3565a7723d04",
+  "name": "Sign up",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/signup_220.svg"
+  },
+  "template": "sign-up-layout",
+  "templateType": "angular"
+}

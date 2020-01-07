@@ -1,0 +1,85 @@
+{
+  "id": "68dea62b-0f3a-479f-a1be-cb3ce9820527",
+  "rev": "1-a43a8bd12bb3cdc336cad6608a9a6425",
+  "name": "Feature",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "be64dc93-12f1-428d-ac54-a87d409a1ad3"
+  },
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Feature headline",
+      "key": "featureHeadline",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your feature"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Description of feature",
+      "key": "descriptionOfFeature",
+      "placeholder": {
+        "show": true,
+        "text": "Describe what is great about your feature in one or two paragraphs."
+      }
+    },
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ],
+      "fieldLabel": "Image",
+      "label": "Image",
+      "key": "image",
+      "imageProfileId": "a3b413ea-d7d6-44b4-9a05-ad885dbeb710"
+    },
+    {
+      "elementType": "category",
+      "label": "Image size",
+      "key": "imageSize",
+      "restrictedParents": [
+        "0e1cd869-ee48-4ef6-ae6d-7be957c84d10"
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "category",
+      "label": "Image placement",
+      "key": "imagePlacement",
+      "restrictedParents": [
+        "6f037a1b-8f2e-4458-839e-a49fa0227dba"
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "Read more",
+      "key": "readMoreLink"
+    }
+  ]
+}

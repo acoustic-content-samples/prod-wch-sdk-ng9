@@ -1,0 +1,27 @@
+{
+  "id": "16f3938f-90a7-44e9-baf0-751d861a6164",
+  "rev": "2-28ddcedcee48066c0ad8ae3616afcab4",
+  "name": "Error page",
+  "classification": "content-type",
+  "kind": [],
+  "description": "Error page displays when there is a problem with the Oslo site, such as a page not found or when the page requires authentication.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Error message",
+      "key": "errorMessage"
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "Go home button",
+      "key": "goHomeButton"
+    }
+  ]
+}

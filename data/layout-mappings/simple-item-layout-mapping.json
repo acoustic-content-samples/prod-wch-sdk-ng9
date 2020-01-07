@@ -1,0 +1,24 @@
+{
+  "id": "simple-item-layout-mapping",
+  "rev": "1-6562ad1430cb8488d7f66d1084d19aa7",
+  "name": "SimpleItemLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "103ae8d2-2407-4ce4-bffc-a77fa0c73f33",
+    "name": "SimpleItem"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "simple-item-layout",
+        "name": "Simple Item"
+      },
+      "layouts": [
+        {
+          "id": "simple-item-layout",
+          "name": "Simple Item"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ADD": "Abschnitt hinzufügen",
+  "CLOSE_PALETTE": "Schließen",
+  "COPY": "Kopieren",
+  "DROP_HERE": "Hier ablegen",
+  "DROP_TO_UPLOAD": "Für Upload ablegen",
+  "EMPTY_HTML_DESCRIPTION": "Ihre HTML hinzufügen",
+  "EDIT_IMAGE": "Bild bearbeiten",
+  "EMPTY_STATE_DESCRIPTION": "Bild per Drag-and-Drop verschieben oder [Bibliothek durchsuchen].",
+  "INITIAL_SECTION": "Layout auswählen oder Inhalt hierhinziehen",
+  "LOCK": "Sperren, um Bearbeitung zu verhindern",
+  "MOVE": "Klicken Sie und halten Sie die Maustaste gedrückt, um den Inhalt zu ziehen",
+  "OPEN_PALETTE": "Bild ändern",
+  "PZN_PICKER_CLOSE": "Schließen",
+  "PZN_PICKER_HEADING": "Personalisierungsfeld wählen",
+  "REMOVE": "Entfernen",
+  "REMOVE_IMAGE": "Bild entfernen",
+  "SELECT": "Bild auswählen",
+  "SHUTTERSTOCK_SAVE": "Speichern..."
+}

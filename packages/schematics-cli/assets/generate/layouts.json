@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsIbmWchSdkGenerateLayouts",
+  "title": "IbmWchSdk Generate Layouts Schema",
+  "type": "object",
+  "description": "Generates layouts and layout mappings based on type information in a batch in the wchtools folder. The names of the artifacts are derived from the type names.",
+  "properties": {
+    "data": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to the directory of the WCH data artifacts."
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the layouts."
+    },
+    "include": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Type names or IDs to include, a regular expression."
+    },
+    "exclude": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Type names or IDs to exclude, a regular expression."
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

@@ -1,0 +1,101 @@
+{
+  "id": "dee92057-69e3-489b-b13b-15f9b28770a1",
+  "rev": "32-1457bed1869409e42775eca814fbd712",
+  "name": "Sites Button",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "thumbnail": {
+    "id": "6b8d5ed6-97b6-4187-804e-03e8e3d9395e",
+    "path": "/dxdam/6b/6b8d5ed6-97b6-4187-804e-03e8e3d9395e/lampe.jpg",
+    "url": "/authoring/v1/resources/0227d2bf-9e69-4338-afb5-09fafaa47264?fit=inside%7C220:145"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Button label",
+      "key": "label",
+      "placeholder": {
+        "show": true,
+        "text": "Button text"
+      }
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac",
+        "name": "Sites Color"
+      },
+      "label": "Background color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "cfa7081a-921d-4f50-a543-027b983b01b5",
+        "name": "Sites Styling"
+      },
+      "label": "Style",
+      "key": "style"
+    },
+    {
+      "elementType": "link",
+      "label": "Link",
+      "key": "link"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5",
+        "name": "Sites Alignment"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0",
+        "name": "Sites Line Height"
+      },
+      "label": "Line height",
+      "key": "lineHeight"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Corner radius",
+      "key": "cornerRadius",
+      "minimum": 0
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224",
+        "name": "Sites Boundary"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343",
+        "name": "Sites Common Settings"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

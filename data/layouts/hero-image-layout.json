@@ -1,0 +1,13 @@
+{
+  "id": "hero-image-layout",
+  "rev": "2-46f9733c6e79b7bd18578a159169d5ce",
+  "name": "Hero image",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/hero-image_220.svg",
+    "url": "/authoring/v1/resources/d11edf162e6ef6f18e1d37f75d7178bf_5aa144e6c58e145862139f728e97899d"
+  },
+  "template": "hero-image-layout",
+  "templateType": "angular"
+}

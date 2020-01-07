@@ -1,0 +1,43 @@
+<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} width="100%" border="0" cellspacing="0" cellpadding="0" {{#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{/if}}>
+	<tbody>
+		  <tr>
+			<td {{#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{/if}}>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<!--[if mso]>
+							<td {{#if backgroundColor.colorCode}} bgcolor="{{backgroundColor.colorCode}}" {{/if}}
+								style="{{#if padding.left}} padding-left:{{padding.left}}px; {{/if}}
+											{{#if padding.right}} padding-right:{{padding.right}}px; {{/if}}
+											{{#if padding.top}} padding-top:{{padding.top}}px; {{/if}}
+											{{#if padding.bottom}} padding-bottom:{{padding.bottom}}px; {{/if}}
+											{{#if cornerRadius}} border-radius: {{cornerRadius}}px; {{/if}}">
+										<a href="{{link.linkURL}}" target="_blank" data-mktcloud-xt="SPCLICK"  
+										style="display:block; cursor: pointer; text-decoration: none;text-align:center;
+										{{#if style.size}} font-size: {{style.size}}px; {{/if}} 
+										{{#if style.font}} font-family: {{style.font}}; {{/if}}
+										{{#if lineHeight.lineHeightOptions}} line-height:{{lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{/if}}
+										{{#if style.color}} color: {{style.color}}; {{/if}}"><span data-content-item-id="{{$metadata.id}}" data-wch-editable="label" data-wch-placeholder="Button text">&nbsp;{{label}}&nbsp;</span></a>
+							</td>
+							<![endif]-->
+							<!--[if !mso]><!-- -->
+							<td {{#if backgroundColor.colorCode}} bgcolor="{{backgroundColor.colorCode}}" {{/if}}
+								style="{{#if cornerRadius}} border-radius: {{cornerRadius}}px; {{/if}}">
+										<a key="button-{{$metadata.id}}" href="{{#if link.linkURL}}{{link.linkURL}}{{else}}#{{/if}}" target="_blank" style="cursor: pointer; display:block;text-decoration: none;text-align:center;
+										{{#if style.size}} font-size: {{style.size}}px !important; {{/if}} 
+										{{#if style.font}} font-family: {{style.font}} !important; {{/if}} 
+										{{#if style.color}} color: {{style.color}} !important; {{/if}}
+										{{#if padding.left}} padding-left:{{padding.left}}px; {{/if}}
+										{{#if padding.right}} padding-right:{{padding.right}}px; {{/if}}
+										{{#if padding.top}} padding-top:{{padding.top}}px; {{/if}}
+										{{#if lineHeight.lineHeightOptions}} line-height:{{lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{/if}}
+										{{#if padding.bottom}} padding-bottom:{{padding.bottom}}px; {{/if}}" data-mktcloud-xt="SPCLICK"><span data-content-item-id="{{$metadata.id}}" data-wch-editable="label" data-wch-placeholder="Button text">{{label}}</span></a>
+							</td>
+							<!--<![endif]-->
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>

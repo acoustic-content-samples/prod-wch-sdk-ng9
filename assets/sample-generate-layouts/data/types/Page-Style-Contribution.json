@@ -1,0 +1,25 @@
+{
+  "id": "3a3726b8-e0b2-4f10-98ed-b1c82e851b99",
+  "rev": "4-693b84f455f02e6a8d78e756fc5092b1",
+  "name": "Page Style Contribution",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "href",
+      "key": "href",
+      "role": [
+        "configuration"
+      ],
+      "required": true
+    }
+  ]
+}

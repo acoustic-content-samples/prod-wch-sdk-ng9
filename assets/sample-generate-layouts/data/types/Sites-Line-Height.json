@@ -1,0 +1,39 @@
+{
+  "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0",
+  "rev": "6-7cfe8bcb84e79ff5ddc7848d64b1ce7c",
+  "name": "Sites Line Height",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": ".8",
+          "selection": "0.8"
+        },
+        {
+          "label": "1",
+          "selection": "1"
+        },
+        {
+          "label": "1.5",
+          "selection": "1.5"
+        },
+        {
+          "label": "2",
+          "selection": "2"
+        }
+      ],
+      "label": "Line height options",
+      "key": "lineHeightOptions"
+    }
+  ]
+}

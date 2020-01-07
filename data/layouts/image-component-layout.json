@@ -1,0 +1,10 @@
+{
+  "id": "image-component-layout",
+  "rev": "4-d34c3d40b1855044002d7f2d32cbbc0e",
+  "name": "imageComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/image-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

@@ -1,0 +1,18 @@
+{
+  "singletext": "some content",
+  "singletoggle": false,
+  "multitext": ["text1", "text2"],
+  "$metadata": {
+    "accessor": "elements",
+    "rev": "1-50e4ad0f061aab1ebd9bb19345e8de9e",
+    "created": "2019-05-21T14:00:54.466Z",
+    "classification": "content",
+    "type": "AllTypes",
+    "locale": "en",
+    "name": "SimpleText",
+    "typeId": "b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb",
+    "id": "53c4419c-e491-4563-8258-b7e4b81b5b81",
+    "lastModified": "2019-05-21T14:00:55.506Z",
+    "systemModified": "2019-05-21T14:00:55.662Z"
+  }
+}

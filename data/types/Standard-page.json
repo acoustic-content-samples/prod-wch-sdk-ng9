@@ -1,0 +1,131 @@
+{
+  "id": "2af1d22a-fecf-41e1-a808-7301cb37b79f",
+  "rev": "2-4b0ae83b8b20d94f13b4d9d6072fcca8",
+  "name": "Standard page",
+  "classification": "content-type",
+  "kind": [
+    "page"
+  ],
+  "thumbnail": {
+    "id": "b730b5d2-d824-4b95-aba2-8bbac25a10d2",
+    "path": "/dxdam/b7/b730b5d2-d824-4b95-aba2-8bbac25a10d2/standard-page.svg",
+    "url": "/authoring/v1/resources/fe292532-12ea-4ddb-97ce-81269f7dda74"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "This page includes multiple layout options.  In the Oslo site, it's used for Home, parent Events and Design articles pages, and About us.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "fieldLabel": "Banner section",
+      "label": "Top section",
+      "key": "banner",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add content, such as a hero banner, that you want to display at the top of your page.",
+      "restrictTypes": [
+        {
+          "id": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c",
+          "name": "Dynamic list"
+        },
+        {
+          "id": "68dea62b-0f3a-479f-a1be-cb3ce9820527",
+          "name": "Feature"
+        },
+        {
+          "id": "aca5ee5c-a89b-4cf8-aa62-e43a77674663",
+          "name": "Hero image"
+        },
+        {
+          "id": "a47af09a-9315-4a01-ad30-cd998d341b0b",
+          "name": "Hero video"
+        },
+        {
+          "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb",
+          "name": "List"
+        },
+        {
+          "id": "58fd2ad1-df13-4a75-9918-6b34852539ab",
+          "name": "Sign up"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Section content",
+      "label": "Middle section",
+      "key": "sectionOne",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add body content here.",
+      "restrictTypes": [
+        {
+          "id": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c",
+          "name": "Dynamic list"
+        },
+        {
+          "id": "68dea62b-0f3a-479f-a1be-cb3ce9820527",
+          "name": "Feature"
+        },
+        {
+          "id": "aca5ee5c-a89b-4cf8-aa62-e43a77674663",
+          "name": "Hero image"
+        },
+        {
+          "id": "a47af09a-9315-4a01-ad30-cd998d341b0b",
+          "name": "Hero video"
+        },
+        {
+          "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb",
+          "name": "List"
+        },
+        {
+          "id": "58fd2ad1-df13-4a75-9918-6b34852539ab",
+          "name": "Sign up"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Section content",
+      "label": "Bottom section",
+      "key": "sectionTwo",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add more related body content, lists, or images.",
+      "restrictTypes": [
+        {
+          "id": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c",
+          "name": "Dynamic list"
+        },
+        {
+          "id": "68dea62b-0f3a-479f-a1be-cb3ce9820527",
+          "name": "Feature"
+        },
+        {
+          "id": "aca5ee5c-a89b-4cf8-aa62-e43a77674663",
+          "name": "Hero image"
+        },
+        {
+          "id": "a47af09a-9315-4a01-ad30-cd998d341b0b",
+          "name": "Hero video"
+        },
+        {
+          "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb",
+          "name": "List"
+        },
+        {
+          "id": "58fd2ad1-df13-4a75-9918-6b34852539ab",
+          "name": "Sign up"
+        }
+      ]
+    }
+  ]
+}

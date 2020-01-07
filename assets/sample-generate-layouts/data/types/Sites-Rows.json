@@ -1,0 +1,82 @@
+{
+  "id": "9ca02297-a564-40c9-aedc-add9c30f3d7b",
+  "rev": "22-59187008ce86eef2790bf9b1fe6dc599",
+  "name": "Sites Rows",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "email"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "a4516d24-744d-4650-8477-24aa36145e66"
+      },
+      "label": "Rows",
+      "key": "rows",
+      "allowMultipleValues": true,
+      "fieldLabel": "Rows",
+      "required": false
+    },
+    {
+      "elementType": "text",
+      "label": "Editor",
+      "key": "editor",
+      "role": [
+        "configuration"
+      ],
+      "hidden": true,
+      "searchKey": "string1"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Width",
+      "key": "width",
+      "minimum": 480,
+      "maximum": 900,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Padding",
+      "key": "padding",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Background Color",
+      "key": "backgroundColor",
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

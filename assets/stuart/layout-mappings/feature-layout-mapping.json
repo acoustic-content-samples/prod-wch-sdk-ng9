@@ -1,0 +1,21 @@
+{
+  "id": "feature-layout-mapping",
+  "rev": "1-de9cfe44188daa188e432887f7a4d7d9",
+  "name": "featureLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "68dea62b-0f3a-479f-a1be-cb3ce9820527"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "feature-layout"
+      },
+      "layouts": [
+        {
+          "id": "feature-layout"
+        }
+      ]
+    }
+  ]
+}

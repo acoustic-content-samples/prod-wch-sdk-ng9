@@ -1,0 +1,36 @@
+{
+  "id": "103ae8d2-2407-4ce4-bffc-a77fa0c73f33",
+  "rev": "5-c3d302dcf267c7f6dec1010b70812710",
+  "name": "SimpleItem",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "test"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "ref",
+      "key": "ref",
+      "restrictTypes": [
+        {
+          "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+          "name": "SimpleText"
+        }
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+        "name": "SimpleText"
+      },
+      "label": "embedded",
+      "key": "embedded"
+    }
+  ]
+}

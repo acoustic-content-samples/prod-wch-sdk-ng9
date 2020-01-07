@@ -1,0 +1,58 @@
+{
+  "id": "aca5ee5c-a89b-4cf8-aa62-e43a77674663",
+  "rev": "3-86be8578be99e50d4c4a83d3fd2f1475",
+  "name": "Hero image",
+  "classification": "content-type",
+  "path": "/Hero-image.json",
+  "kind": ["standalone"],
+  "thumbnail": {
+    "id": "d1ee9c12-12bb-499b-9e2e-377e065b6691"
+  },
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2018-07-24T07:19:47.046Z",
+  "lastModifierId": "3c5f867a-3486-441f-a86d-b2c8ab683117",
+  "lastModified": "2018-07-24T07:34:32.577Z",
+  "status": "ready",
+  "tags": ["oslo", "IBM sample"],
+  "elements": [
+    {
+      "elementType": "image",
+      "acceptType": ["jpg", "jpeg", "png", "gif"],
+      "fieldLabel": "Image",
+      "label": "Background image",
+      "key": "image",
+      "imageProfileId": "763cc433-46d8-4a1e-9155-878ae8cf4dbc"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Headline text",
+      "key": "text",
+      "placeholder": {
+        "show": true,
+        "text": "This is some placeholder text"
+      }
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "NoPlaceholder",
+      "label": "Headline text",
+      "key": "noplaceholder"
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "Call to action link",
+      "key": "link",
+      "placeholder": {
+        "show": true,
+        "text": "Placeholder text"
+      }
+    }
+  ]
+}

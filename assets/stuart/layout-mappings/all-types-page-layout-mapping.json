@@ -1,0 +1,27 @@
+{
+  "id": "b76c47e5-b0c0-419e-bd18-bb8b3b02ff50",
+  "rev": "1-102be0698471b6c46b45ad16a5c72c7e",
+  "name": "All types page",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "9f8e8bb3-ae85-4827-9850-2397141a0f21"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "all-types-page-layout"
+      },
+      "layouts": [
+        {
+          "id": "all-types-page-layout"
+        },
+        {
+          "id": "all-types-page-hero-2-blocks"
+        },
+        {
+          "id": "all-types-page-hero-4-blocks"
+        }
+      ]
+    }
+  ]
+}

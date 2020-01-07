@@ -1,0 +1,56 @@
+{
+  "name": "Design articles gallery",
+  "description": "",
+  "id": "14c1d315-457b-431f-a661-466219e125b7",
+  "classification": "content",
+  "created": "2017-08-22T20:06:12.028Z",
+  "creatorId": "0e44f38c-1168-49ca-8e5a-2d0b7230a514",
+  "elements": {
+    "contentType": {
+      "categoryIds": [
+        "46d22f42-3fde-4708-9c34-cd6624dda9e4"
+      ],
+      "elementType": "category"
+    },
+    "datesToInclude": {
+      "elementType": "category"
+    },
+    "listTitle": {
+      "elementType": "text",
+      "value": "DESIGN TOPICS"
+    },
+    "maxItem": {
+      "elementType": "number"
+    },
+    "sortOrder": {
+      "categoryIds": [
+        "7af6cd7a-80de-420e-aa7f-c4bd98f926f9"
+      ],
+      "elementType": "category"
+    },
+    "viewAllLink": {
+      "elementType": "link"
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "lastModified": "2017-08-23T04:06:37.273Z",
+  "lastModifierId": "0e44f38c-1168-49ca-8e5a-2d0b7230a514",
+  "rev": "3-246c898980bef1869ec4d5ca78347545",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "gallery-dynamic-list"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "thumbnail": {
+    "id": "da3d0b43-51ce-4118-aeed-05764bd0fbaf"
+  },
+  "typeId": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c"
+}

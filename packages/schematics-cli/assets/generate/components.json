@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsIbmWchSdkGenerateComponents",
+  "title": "IbmWchSdk Generate Components Schema",
+  "description": "Generates angular layouts and components based on a wchtools folder. Uses information from the content types, layout and layout mappings.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to the wchtools folder. Defaults to 'config.data' from 'package.json' or to '/data' if missing.",
+      "$comment": "What is the location of your wchtools folder?"
+    },
+    "flat": {
+      "type": "boolean",
+      "default": true,
+      "description": "If set to false, takes the tags on a type to create a folder hierarcy.",
+      "$comment": "Would you like a flat folder hierarchy?"
+    },
+    "force": {
+      "type": "boolean",
+      "description": "When true, forces overwriting of existing files."
+    },
+    "style": {
+      "description": "The file extension or preprocessor to use for style files.",
+      "type": "string",
+      "default": "css",
+      "enum": ["css", "scss", "sass", "less", "styl"],
+      "x-user-analytics": 5
+    },
+    "include": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Type names or IDs to include, a regular expression.",
+      "$comment": "What content types would you like to include (regexp)?"
+    },
+    "exclude": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Type names or IDs to exclude, a regular expression.",
+      "$comment": "What content types would you like to exclude (regexp)?"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

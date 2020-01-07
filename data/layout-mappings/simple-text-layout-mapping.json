@@ -1,0 +1,24 @@
+{
+  "id": "simple-text-layout-mapping",
+  "rev": "1-dca76ce21e1fcd8e2bfa9a736326576e",
+  "name": "SimpleTextLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+    "name": "SimpleText"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "simple-text-layout",
+        "name": "Simple Text"
+      },
+      "layouts": [
+        {
+          "id": "simple-text-layout",
+          "name": "Simple Text"
+        }
+      ]
+    }
+  ]
+}

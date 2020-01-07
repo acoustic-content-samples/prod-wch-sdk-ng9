@@ -1,0 +1,57 @@
+{
+  "id": "b0b91aad-8a9a-4d46-9aff-e35d004f0a1f",
+  "rev": "1-4b887fce95304a93db3238be5a9d1a9b",
+  "name": "Author profile",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "89b59adf-2c26-4b9e-aebf-3cbd13ae9fa7"
+  },
+  "contentThumbnail": {
+    "imageElement": "profilePicture",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Name",
+      "key": "name",
+      "placeholder": {
+        "show": true,
+        "text": "Author name"
+      }
+    },
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ],
+      "fieldLabel": "Image",
+      "label": "Profile picture",
+      "key": "profilePicture",
+      "imageProfileId": "046c7734-3fca-4e0b-9233-d5208e767654"
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Short bio",
+      "key": "shortBio",
+      "placeholder": {
+        "show": true,
+        "text": "Introduce yourself! Tell us about your career, accomplishments, and interests."
+      }
+    }
+  ]
+}

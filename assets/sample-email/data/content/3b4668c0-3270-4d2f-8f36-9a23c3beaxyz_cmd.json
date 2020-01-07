@@ -1,0 +1,94 @@
+{
+  "rev": "7-3f7374de49515776bfeef85d596b8084",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:42.164Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "HTML",
+  "locale": "en",
+  "tags": [
+    "hidden"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "html-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "code": {
+      "elementType": "text",
+      "value": " "
+    }
+  },
+  "name": "HTML Editor Element",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "aa358e28-2e60-416a-97d7-d1a6dd5e165b",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/3b4668c0-3270-4d2f-8f36-9a23c3beaxyz/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/3b4668c0-3270-4d2f-8f36-9a23c3beaxyz/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/3b4668c0-3270-4d2f-8f36-9a23c3beaxyz"
+    },
+    "type": {
+      "href": "/authoring/v1/types/aa358e28-2e60-416a-97d7-d1a6dd5e165b"
+    }
+  },
+  "id": "3b4668c0-3270-4d2f-8f36-9a23c3beaxyz",
+  "lastModified": "2019-08-30T12:17:10.986Z",
+  "systemModified": "2019-08-30T12:17:10.986Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "http://www.ibm.com/schemas/variable-type-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Variable Type Element Schema",
+  "description": "Schema for variable type element",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+            "maxLength": 50
+          },
+          "label": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "elementType": {"enum": ["variabletype"]},
+          "allowMultipleValues": {"enum": [true, false]},
+          "minimumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "maximumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "fieldLabel": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "elements": {
+            "type" : "array",
+            "items": { "type" : "object" }
+          },
+          "required": {"enum": [true, false]},
+          "helpText": {"type": "string", "maxLength": 500},
+          "uiExtensions": {
+            "type": "object",
+            "properties": {
+              "element": { "type": "string" },
+              "elementBuiltin": { "type": "string" },
+              "elementConfig": { "type": "object" }
+            },
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "array",
+            "maxItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["content", "configuration"]}
+          },
+          "locked": {"enum": [true, false]},
+          "hidden": {"enum": [true, false]}
+        },
+        "required": ["key", "label", "elementType", "elements"],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": ["elements"],
+  "additionalProperties": false
+}

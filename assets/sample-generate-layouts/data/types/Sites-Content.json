@@ -1,0 +1,169 @@
+{
+  "id": "21a8b4fd-0236-4187-bfea-7a94283e7b80",
+  "rev": "53-7c2323506c1b2aed326e4383be228278",
+  "name": "Sites Content",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dee92057-69e3-489b-b13b-15f9b28770a1"
+      },
+      "label": "Button",
+      "key": "button"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d550249a-83b2-4e46-96d1-519732fa5787"
+      },
+      "label": "Divider",
+      "key": "divider"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "85bdc88c-5b4c-4002-a665-37ba5bf95cb6"
+      },
+      "label": "HTML",
+      "key": "html"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      },
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "bee26b87-bbcf-454b-9dc6-7a909ab13fd1"
+      },
+      "label": "Image And Text",
+      "key": "imageAndText"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0b1c47a9-eb31-49ec-8fd7-89ca21a36b36"
+      },
+      "label": "Promotion",
+      "key": "promotion"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "669768ce-44c7-4de3-83c1-a72d871e8df2"
+      },
+      "label": "Social Follow",
+      "key": "socialFollow"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "b2a9542d-b432-48b3-8322-2464765f323b"
+      },
+      "label": "Spacer",
+      "key": "spacer"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "373c81a5-d86b-4740-8f11-62fcbccfca08"
+      },
+      "label": "Text",
+      "key": "text"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0f831c3-1b0a-41ba-8a6b-10f2eca3789a"
+      },
+      "label": "Link Bar",
+      "key": "linkBar"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "a84f2c97-33bb-45fa-8156-25141df73055"
+      },
+      "label": "Video",
+      "key": "video"
+    },
+    {
+      "elementType": "reference",
+      "label": "reference",
+      "key": "reference"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Button",
+          "selection": "button"
+        },
+        {
+          "label": "Divider",
+          "selection": "divider"
+        },
+        {
+          "label": "HTML",
+          "selection": "html"
+        },
+        {
+          "label": "Image",
+          "selection": "image"
+        },
+        {
+          "label": "Image and Text",
+          "selection": "imageAndText"
+        },
+        {
+          "label": "Image Group",
+          "selection": "imageGroup"
+        },
+        {
+          "label": "Promotion",
+          "selection": "promotion"
+        },
+        {
+          "label": "Social Follow",
+          "selection": "socialFollow"
+        },
+        {
+          "label": "Spacer",
+          "selection": "spacer"
+        },
+        {
+          "label": "Text",
+          "selection": "text"
+        },
+        {
+          "label": "Link bar",
+          "selection": "linkBar"
+        },
+        {
+          "label": "Video",
+          "selection": "video"
+        },
+        {
+          "label": "Reference",
+          "selection": "reference"
+        }
+      ],
+      "required": true,
+      "label": "selected",
+      "key": "selected"
+    }
+  ]
+}

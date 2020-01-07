@@ -1,0 +1,8 @@
+{
+  "id": "image-text-component-layout",
+  "name": "One Column",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/layouts/image-text-component-layout.hbs",
+  "templateType": "handlebars"
+}

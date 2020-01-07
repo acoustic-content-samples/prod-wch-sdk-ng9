@@ -1,0 +1,24 @@
+{
+  "id": "form-component-layout-mapping",
+  "rev": "2-1f1ba4e69db3d2e6639e4276cc65a7c0",
+  "name": "formComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "7df801d8-1d55-4652-ac59-93589b032375",
+    "name": "Form component"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "form-component-layout",
+        "name": "One Column"
+      },
+      "layouts": [
+        {
+          "id": "form-component-layout",
+          "name": "One Column"
+        }
+      ]
+    }
+  ]
+}

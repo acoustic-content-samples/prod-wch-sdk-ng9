@@ -1,0 +1,93 @@
+{
+  "id": "e98ba889-d5e4-4b9b-8c42-e3a5c35a10d3",
+  "rev": "8-30d30c845aa30be322092aca53ccdc68",
+  "name": "Promotion",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5",
+        "name": "Background Extension"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022",
+        "name": "Boundary options"
+      },
+      "label": "Margin",
+      "key": "margins"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55",
+        "name": "Text Group"
+      },
+      "label": "Text",
+      "key": "textGroup"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d",
+        "name": "Custom ImageGroup"
+      },
+      "label": "Image",
+      "key": "imageGroup"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "2d9f0c5e-8a89-4b8c-abfc-7d2de4f623dd",
+        "name": "Button Group"
+      },
+      "label": "Button",
+      "key": "buttonGroup"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80",
+        "name": "Common settings"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

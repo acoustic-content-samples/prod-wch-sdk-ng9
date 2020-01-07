@@ -1,0 +1,162 @@
+{
+  "rev": "2-dda0db3b61856831ccf6c16ea383e063",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-06-11T20:43:50.698Z",
+  "creatorId": "b3adb21c-b86c-4ab4-ad98-f640c98c124a",
+  "description": "",
+  "classification": "content",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "link-bar-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "key": {
+      "elementType": "text",
+      "value": "208ce861-56f6-430c-bb6f-41c9e392cacf"
+    },
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "transparent"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "textStyle": {
+      "elementType": "group",
+      "value": {
+        "font": {
+          "elementType": "text",
+          "value": "Arial"
+        },
+        "size": {
+          "elementType": "number",
+          "value": 16
+        },
+        "color": {
+          "elementType": "text",
+          "value": "#0068FF"
+        }
+      },
+      "typeRef": {
+        "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+      }
+    },
+    "align": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "center"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "links": {
+      "elementType": "link",
+      "values": [
+        {
+          "linkText": "Link1",
+          "linkURL": "#"
+        },
+        {
+          "linkURL": "#",
+          "linkText": "Link2"
+        }
+      ]
+    },
+    "spacingBetweenLinks": {
+      "elementType": "number",
+      "value": 10
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "includeVerticalRule": {
+      "elementType": "group",
+      "value": {
+        "includeVerticalRuleBetweenLinks": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "lineColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            }
+          },
+          "typeRef": {
+            "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+          }
+        },
+        "opacity": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "ef5a6efe-c403-4acc-a4ad-bc9f8718b509"
+      }
+    }
+  },
+  "name": "Link bar",
+  "lastModifierId": "b3adb21c-b86c-4ab4-ad98-f640c98c124a",
+  "typeId": "98bec4ac-6170-402c-9405-6e8cfd99508a",
+  "id": "04db9ca2-72a8-496a-a135-b4c78d75003c",
+  "lastModified": "2019-06-12T17:15:32.260Z",
+  "systemModified": "2019-06-12T17:15:32.260Z",
+  "status": "ready"
+}

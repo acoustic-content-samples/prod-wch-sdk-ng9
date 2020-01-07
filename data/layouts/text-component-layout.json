@@ -1,0 +1,10 @@
+{
+  "id": "text-component-layout",
+  "rev": "2-ba059def4b9b8233faafe962b221318b",
+  "name": "textComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/text-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

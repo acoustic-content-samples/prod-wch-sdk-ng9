@@ -1,0 +1,246 @@
+{
+  "rev": "18-25777947cea996d303a5e0b9c1d3271d",
+  "creator": "Adam.iem",
+  "kind": ["email"],
+  "draftStatus": "in-progress",
+  "created": "2019-03-27T14:00:15.293Z",
+  "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "description": "",
+  "lastModifier": "pub squad",
+  "classification": "content",
+  "type": "Email",
+  "tags": [],
+  "valid": true,
+  "selectedLayouts": [
+    { "layout": { "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af" } }
+  ],
+  "linkedDocId": "1ebcb056-ee4d-4b09-959b-b399bd62acb9",
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": { "colorCode": { "elementType": "text" } },
+      "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number" },
+        "bottom": { "elementType": "number" },
+        "left": { "elementType": "number" },
+        "right": { "elementType": "number" }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "editor": { "elementType": "text" },
+    "contentAreaBackgroundColor": {
+      "elementType": "group",
+      "value": { "colorCode": { "elementType": "text" } },
+      "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number" },
+        "bottom": { "elementType": "number" },
+        "left": { "elementType": "number" },
+        "right": { "elementType": "number" }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "rows": {
+      "values": [
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "name": "Image",
+                      "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+                      "typeId": "b7b05524-87ed-4509-b6fb-972f2cbf26d5",
+                      "id": "aefe7d25-ff24-4226-be6c-43fa3b10278d",
+                      "status": "draft"
+                    }
+                  ],
+                  "elementType": "reference"
+                },
+                "margin": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                },
+                "padding": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                },
+                "span": { "elementType": "number", "value": 6 }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": { "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "ad5deddd-272a-4783-a5ad-2150f7b81cbc"
+          },
+          "margin": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          },
+          "padding": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "name": "Image",
+                      "creatorId": "360ed8d2-3954-4fb5-ba99-dd27fc512c24",
+                      "typeId": "b7b05524-87ed-4509-b6fb-972f2cbf26d5",
+                      "id": "7ce74c4e-3a0a-4ce0-9fc7-88c7ee452e2d",
+                      "status": "draft"
+                    }
+                  ],
+                  "elementType": "reference"
+                },
+                "margin": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                },
+                "padding": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                },
+                "span": { "elementType": "number", "value": 6 }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": { "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "6b8cc470-89b2-4edd-94c2-fd9e5f751ca7"
+          },
+          "margin": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          },
+          "padding": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": { "id": "b908096b-9cd2-4085-bf0c-a510576e633b" }
+    },
+    "width": { "elementType": "number" },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": { "elementType": "text" },
+        "fromName": { "elementType": "text" },
+        "subjectLine": { "elementType": "text" },
+        "databaseId": { "elementType": "text" },
+        "replyToAddress": { "elementType": "text" },
+        "fromAddress": { "elementType": "text" }
+      },
+      "typeRef": { "id": "16e486dd-3c33-485c-a9e5-7617fbc67424" }
+    }
+  },
+  "name": "Untitled email",
+  "lastModifierId": "360ed8d2-3954-4fb5-ba99-dd27fc512c24",
+  "typeId": "51071056-1f70-499e-9ee3-b2066f56b119",
+  "links": {
+    "linkedDoc": {
+      "href": "/authoring/v1/content/1ebcb056-ee4d-4b09-959b-b399bd62acb9"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/1ebcb056-ee4d-4b09-959b-b399bd62acb9:draft/status/retire"
+    },
+    "ready": {
+      "href": "/authoring/v1/changes/content/1ebcb056-ee4d-4b09-959b-b399bd62acb9:draft/status/ready"
+    },
+    "self": {
+      "href": "/authoring/v1/content/1ebcb056-ee4d-4b09-959b-b399bd62acb9:draft"
+    },
+    "type": {
+      "href": "/authoring/v1/types/51071056-1f70-499e-9ee3-b2066f56b119"
+    }
+  },
+  "id": "1ebcb056-ee4d-4b09-959b-b399bd62acb9",
+  "lastModified": "2019-03-28T10:31:27.111Z",
+  "systemModified": "2019-03-28T10:31:27.111Z",
+  "status": "draft",
+  "layouts": {
+    "default": {
+      "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af",
+      "rev": "45-a8ff27b13d03f661282eabda266fe2b4",
+      "name": "Email Layout",
+      "classification": "layout",
+      "path": "/Email-layout.json",
+      "creatorId": "360ed8d2-3954-4fb5-ba99-dd27fc512c24",
+      "created": "2019-03-26T09:28:05.690Z",
+      "lastModifierId": "360ed8d2-3954-4fb5-ba99-dd27fc512c24",
+      "lastModified": "2019-03-26T09:28:05.690Z",
+      "prerender": true,
+      "template": "/email/Email-layout.hbs",
+      "templateType": "handlebars",
+      "urlTemplate": "{templateLocation}/Email-layout/{id}.html",
+      "V4$XFYIFt": "BdzkSIdO"
+    }
+  }
+}

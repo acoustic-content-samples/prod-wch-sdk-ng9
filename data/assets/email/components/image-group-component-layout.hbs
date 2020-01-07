@@ -1,0 +1,1337 @@
+<div {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} style="{{~#if margin.left}}margin-left:{{margin.left}}px;{{~/if~}}
+{{~#if margin.right}}margin-right:{{margin.right}}px;{{~/if~}}
+{{~#if margin.top}}margin-top:{{margin.top}}px;{{~/if~}}
+{{~#if margin.bottom}}margin-bottom:{{margin.bottom}}px;{{~/if~}}">
+	<table align="center" border="0" cellpadding="0" cellspacing="0"
+		style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+		<tbody>
+			{{~#if layout}}
+				{{!-- 1 Row w/ 2 Equal Columns layout --}}
+				{{#eq layout "2-col"}}
+					<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 1 Column Top, 1 Column Bottom layout --}}
+				{{#eq layout "1-col-t-1-col-b"}}
+				<tr>
+					<td>
+						<table>
+							<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+												<tbody>
+													<tr>
+														<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+											              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+															{{~#if images.0.renditions.default.url}}
+																<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+																border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+																style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+																{{~#if images.0.link.url}} </a> {{~/if~}}
+															{{else}}
+																<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+																</div>
+															{{~/if~}}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									{{~#if @root.spacing}}
+									<tr
+										style="{{~#if @root.backgroundColor.colorCode}} background-color: {{@root.backgroundColor.colorCode}}; {{~/if~}}">
+										<td height="{{@root.spacing}}">&nbsp;</td>
+									</tr>
+									{{~/if~}}
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+												<tbody>
+													<tr>
+														<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+											              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+															{{~#if images.1.renditions.default.url}}
+																<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+																border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+																style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+																{{~#if images.1.link.url}} </a> {{~/if~}}
+															{{else}}
+																<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+																</div>
+															{{~/if~}}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				{{/eq}}
+				{{!-- 1 Row w/ 3 Equal Columns layout --}}
+				{{#eq layout "3-col"}}
+					<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 2 Columns Top, 1 Column Bottom layout --}}
+				{{#eq layout "2-col-t-1-col-b"}}
+					<tr>
+									<td>
+										<table align="center" border="0" cellpadding="0" cellspacing="0"
+											style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+											<tbody>
+												<tr class="displayBlock">
+													<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+														<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+																<tbody>
+																	<tr>
+																		<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+																		{{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+																			{{~#if images.0.renditions.default.url}}
+																				<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+																				border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+																				style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+																				{{~#if images.0.link.url}} </a> {{~/if~}}
+																			{{else}}
+																				<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+																				</div>
+																			{{~/if~}}
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+													</td>
+													{{~#if spacing}}
+													<td width="{{spacing}}"
+														style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+														&nbsp;</td>
+													{{~/if~}}
+													<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+														<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+													</td>
+												</tr>
+											</tbody>
+						</table>
+						</td>
+						</tr>
+						{{~#if spacing}}
+						<tr>
+							<td height="{{spacing}}"
+								style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								&nbsp;</td>
+						</tr>
+						{{~/if~}}
+						<tr>
+							<td>
+								<table align="center" border="0" cellpadding="0" cellspacing="0"
+									style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+									<tbody>
+										<tr>
+											<td data-content-item-id="{{$metadata.id}}">
+												<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 1 Column Top, 2 Columns Bottom layout --}}
+				{{#eq layout "1-col-t-2-col-b"}}
+						<tr>
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+													<tbody>
+														<tr>
+															<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+															{{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+																{{~#if images.0.renditions.default.url}}
+																	<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+																	border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+																	style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+																	{{~#if images.0.link.url}} </a> {{~/if~}}
+																{{else}}
+																	<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+																	</div>
+																{{~/if~}}
+															</td>
+														</tr>
+													</tbody>
+												</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+										{{~#if spacing}}
+										<td width="{{spacing}}"
+											style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+											&nbsp;</td>
+										{{~/if~}}
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 1 Row w/ 4 Equal Columns layout --}}
+				{{#eq layout "4-col"}}
+					<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 25%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 25%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 25%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 25%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 2 Columns layout --}}
+				{{#eq layout "2-col-t-2-col-b"}}
+					<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 3 Columns Top, 1 Column Bottom layout --}}
+				{{#eq layout "3-col-t-1-col-b"}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+											<tbody>
+												<tr>
+													<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+													{{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+														{{~#if images.0.renditions.default.url}}
+															<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+															border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+															style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+															{{~#if images.0.link.url}} </a> {{~/if~}}
+														{{else}}
+															<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+															</div>
+														{{~/if~}}
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr>
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 1 Column Top, 3 Columns Bottom layout --}}
+				{{#eq layout "1-col-t-3-col-b"}}
+					<tr>
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+												<tbody>
+													<tr>
+														<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+														{{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+															{{~#if images.0.renditions.default.url}}
+																<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+																border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+																style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+																{{~#if images.0.link.url}} </a> {{~/if~}}
+															{{else}}
+																<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+																</div>
+															{{~/if~}}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 3 Columns Top, 2 Columns Bottom layout --}}
+				{{#eq layout "3-col-t-2-col-b"}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</td>
+	</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td>
+						<table align="center" border="0" cellpadding="0" cellspacing="0"
+							style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							<tbody>
+								<tr class="displayBlock">
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.4.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.4.link.url}} <a href="{{images.4.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.4.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4" src="{{$context.hub.resourceUrl.origin}}{{images.4.renditions.default.url}}"
+												border="0" {{~#if images.4.altText}} alt="{{images.4.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.4.renditions.default.width}} max-width:{{images.4.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.4.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					</tr>
+				{{/eq}}
+				{{!-- 2 Rows w/ 2 Columns Top, 3 Columns Bottom layout --}}
+				{{#eq layout "2-col-t-3-col-b"}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+										{{~#if spacing}}
+										<td width="{{spacing}}"
+											style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+											&nbsp;</td>
+										{{~/if~}}
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+									{{~#if spacing}}
+									<td width="{{spacing}}"
+										style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+										&nbsp;</td>
+									{{~/if~}}
+									<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 33.33%;">
+										<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.4.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.4.link.url}} <a href="{{images.4.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.4.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4" src="{{$context.hub.resourceUrl.origin}}{{images.4.renditions.default.url}}"
+												border="0" {{~#if images.4.altText}} alt="{{images.4.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.4.renditions.default.width}} max-width:{{images.4.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.4.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+									</td>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+				{{!-- 3 Rows w/ 2 Columns Top, 1 Column Middle, 2 Columns Bottom layout --}}
+				{{#eq layout "2-col-t-1-col-m-2-col-b"}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+												<tbody>
+													<tr>
+														<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+														{{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+															{{~#if images.0.renditions.default.url}}
+																<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+																border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+																style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+																{{~#if images.0.link.url}} </a> {{~/if~}}
+															{{else}}
+																<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+																</div>
+															{{~/if~}}
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+										{{~#if spacing}}
+										<td width="{{spacing}}"
+											style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+											&nbsp;</td>
+										{{~/if~}}
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr>
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.2.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.2.link.url}} <a href="{{images.2.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.2.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2" src="{{$context.hub.resourceUrl.origin}}{{images.2.renditions.default.url}}"
+												border="0" {{~#if images.2.altText}} alt="{{images.2.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.2.renditions.default.width}} max-width:{{images.2.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.2.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.2">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					{{~#if spacing}}
+					<tr>
+						<td height="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+					</tr>
+					{{~/if~}}
+					<tr class="displayBlock">
+						<td>
+							<table align="center" border="0" cellpadding="0" cellspacing="0"
+								style="width: 100%; border-spacing: 0px !important; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+								<tbody>
+									<tr>
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.3.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.3.link.url}} <a href="{{images.3.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.3.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3" src="{{$context.hub.resourceUrl.origin}}{{images.3.renditions.default.url}}"
+												border="0" {{~#if images.3.altText}} alt="{{images.3.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.3.renditions.default.width}} max-width:{{images.3.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.3.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.3">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+										{{~#if spacing}}
+										<td width="{{spacing}}"
+											style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+											&nbsp;</td>
+										{{~/if~}}
+										<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+											<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.4.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.4.link.url}} <a href="{{images.4.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.4.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4" src="{{$context.hub.resourceUrl.origin}}{{images.4.renditions.default.url}}"
+												border="0" {{~#if images.4.altText}} alt="{{images.4.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.4.renditions.default.width}} max-width:{{images.4.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.4.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.4">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				{{/eq}}
+			{{else}}
+				{{!-- Temporary fallback to default 2 image horizontal layout --}}
+				<tr class="displayBlock">
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.0.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.0.link.url}} <a href="{{images.0.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.0.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0" src="{{$context.hub.resourceUrl.origin}}{{images.0.renditions.default.url}}"
+												border="0" {{~#if images.0.altText}} alt="{{images.0.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.0.renditions.default.width}} max-width:{{images.0.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.0.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.0">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						{{~#if spacing}}
+						<td width="{{spacing}}"
+							style="display: block; {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{~/if~}}">
+							&nbsp;</td>
+						{{~/if~}}
+						<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" valign="top" style="width: 50%;">
+							<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+								<tbody>
+									<tr>
+										<td {{#unless images.1.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}}>
+							              {{~#if images.1.link.url}} <a href="{{images.1.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+											{{~#if images.1.renditions.default.url}}
+												<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1" src="{{$context.hub.resourceUrl.origin}}{{images.1.renditions.default.url}}"
+												border="0" {{~#if images.1.altText}} alt="{{images.1.altText}}" {{~/if~}}
+												style="display:block; {{~#if images.1.renditions.default.width}} max-width:{{images.1.renditions.default.width}}px; {{~/if~}} width:100%;">
+												{{~#if images.1.link.url}} </a> {{~/if~}}
+											{{else}}
+												<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.images.values.1">
+												</div>
+											{{~/if~}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+			{{~/if~}}
+		</tbody>
+	</table>
+</div>

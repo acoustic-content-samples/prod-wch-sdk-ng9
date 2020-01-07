@@ -1,0 +1,24 @@
+{
+  "id": "hero-image-layout-mapping",
+  "rev": "2-33c9c5352c593bc01c596fb1f1d69617",
+  "name": "heroImageLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "aca5ee5c-a89b-4cf8-aa62-e43a77674663",
+    "name": "Hero image"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "hero-image-layout",
+        "name": "Hero image"
+      },
+      "layouts": [
+        {
+          "id": "hero-image-layout",
+          "name": "Hero image"
+        }
+      ]
+    }
+  ]
+}

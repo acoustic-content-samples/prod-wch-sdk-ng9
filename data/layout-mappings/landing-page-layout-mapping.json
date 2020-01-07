@@ -1,0 +1,24 @@
+{
+  "id": "landing-page-layout-mapping",
+  "rev": "2-42ffce9f1f6ee23007283481971afbc5",
+  "name": "landingPageLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "5cd736ef-d01c-4dd9-9794-14b2473e9239",
+    "name": "Landing page"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "landing-page-layout",
+        "name": "One Column"
+      },
+      "layouts": [
+        {
+          "id": "landing-page-layout",
+          "name": "One Column"
+        }
+      ]
+    }
+  ]
+}

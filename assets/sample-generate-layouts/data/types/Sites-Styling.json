@@ -1,0 +1,32 @@
+{
+  "id": "cfa7081a-921d-4f50-a543-027b983b01b5",
+  "rev": "3-f34838ed3051c782ae01916454b12829",
+  "name": "Sites Styling",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Font",
+      "key": "font"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Size",
+      "key": "size"
+    },
+    {
+      "elementType": "text",
+      "label": "Color",
+      "key": "color"
+    }
+  ]
+}

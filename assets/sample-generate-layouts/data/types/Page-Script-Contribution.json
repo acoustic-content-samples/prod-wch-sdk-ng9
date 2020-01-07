@@ -1,0 +1,48 @@
+{
+  "id": "5c473463-db07-4132-b8a1-bd40cbdf4b18",
+  "rev": "4-5e84d46416d08b4b06d5faed288a4e7c",
+  "name": "Page Script Contribution",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "application/javascript",
+          "selection": "application/javascript"
+        },
+        {
+          "label": "module",
+          "selection": "module"
+        },
+        {
+          "label": "nomodule",
+          "selection": "nomodule"
+        }
+      ],
+      "label": "type",
+      "key": "type",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "label": "src",
+      "key": "src",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

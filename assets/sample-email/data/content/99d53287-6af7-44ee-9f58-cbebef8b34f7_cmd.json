@@ -1,0 +1,135 @@
+{
+  "rev": "7-84175f3c36e7b59c8601b1757cabbabb",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:50.953Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Image",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "image-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 0
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 0
+        },
+        "left": {
+          "elementType": "number",
+          "value": 0
+        },
+        "right": {
+          "elementType": "number",
+          "value": 0
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "image": {
+      "mode": "snapshot",
+      "elementType": "image"
+    },
+    "align": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "center"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "key": {
+      "elementType": "text",
+      "value": "96c4415d-8809-43cb-a04e-af830b0d9fff"
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 0
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 0
+        },
+        "left": {
+          "elementType": "number",
+          "value": 0
+        },
+        "right": {
+          "elementType": "number",
+          "value": 0
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    }
+  },
+  "name": "Image",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "b7b05524-87ed-4509-b6fb-972f2cbf26d5",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/99d53287-6af7-44ee-9f58-cbebef8b34f7/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/99d53287-6af7-44ee-9f58-cbebef8b34f7/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/99d53287-6af7-44ee-9f58-cbebef8b34f7"
+    },
+    "type": {
+      "href": "/authoring/v1/types/b7b05524-87ed-4509-b6fb-972f2cbf26d5"
+    }
+  },
+  "id": "99d53287-6af7-44ee-9f58-cbebef8b34f7",
+  "lastModified": "2019-08-30T12:17:17.653Z",
+  "systemModified": "2019-08-30T12:17:17.653Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

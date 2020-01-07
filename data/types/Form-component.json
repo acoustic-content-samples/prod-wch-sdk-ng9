@@ -1,0 +1,53 @@
+{
+  "id": "7df801d8-1d55-4652-ac59-93589b032375",
+  "rev": "2-894a36c408c3311a2c54910a4728982f",
+  "name": "Form component",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Headline",
+      "key": "headline",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your entry form"
+      }
+    },
+    {
+      "elementType": "text",
+      "label": "Name",
+      "key": "name",
+      "placeholder": {
+        "show": true,
+        "text": "Text for your name label"
+      }
+    },
+    {
+      "elementType": "text",
+      "label": "Email address",
+      "key": "email",
+      "placeholder": {
+        "show": true,
+        "text": "Text for your email address label"
+      }
+    },
+    {
+      "elementType": "link",
+      "label": "Enter",
+      "key": "enter",
+      "placeholder": {
+        "show": true,
+        "text": "www.yourlink.com"
+      }
+    }
+  ]
+}

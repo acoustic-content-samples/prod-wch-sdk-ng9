@@ -1,0 +1,39 @@
+{
+  "id": "ef5a6efe-c403-4acc-a4ad-bc9f8718b509",
+  "rev": "2-1763df633ea2f3995b5f60fb0300c337",
+  "name": "Vertical rule",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "toggle",
+      "label": "Include vertical rule between links",
+      "key": "includeVerticalRuleBetweenLinks"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a",
+        "name": "Colors"
+      },
+      "label": "Line color",
+      "key": "lineColor"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Opacity",
+      "key": "opacity"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

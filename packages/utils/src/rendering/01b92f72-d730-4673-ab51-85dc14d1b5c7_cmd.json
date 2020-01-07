@@ -1,0 +1,58 @@
+{
+  "name": "Lead image for sanctuary seating",
+  "description": "",
+  "id": "01b92f72-d730-4673-ab51-85dc14d1b5c7",
+  "classification": "content",
+  "created": "2017-08-22T20:06:12.247Z",
+  "creatorId": "4b0de343-99e8-44f0-9392-b4f79ecc0bf8",
+  "elements": {
+    "leadImage": {
+      "altText": "Armchairs, rug and bed in modern bedroom",
+      "asset": {
+        "id": "518a0d80-2d02-4460-b2ee-daf0932d50c9",
+        "fileName": "GettyImages-521813559.jpg",
+        "fileSize": 605942,
+        "mediaType": "image/jpeg",
+        "resourceUri": "/authoring/v1/resources/37a627f3a87728858b4092038ca4a5b9"
+      },
+      "elementType": "image",
+      "renditions": {
+        "card": {
+          "renditionId": "e7186790-570d-45ec-98ba-1f4a7757ee17",
+          "source": "/authoring/v1/resources/37a627f3a87728858b4092038ca4a5b9?resize=640px:435px&crop=640:360;0,37"
+        },
+        "default": {
+          "renditionId": "r=37a627f3a87728858b4092038ca4a5b9&a=518a0d80-2d02-4460-b2ee-daf0932d50c9:draft",
+          "source": "/authoring/v1/resources/37a627f3a87728858b4092038ca4a5b9"
+        },
+        "lead": {
+          "renditionId": "c07a2413-cab0-4d11-852b-5fe223bcfd82",
+          "source": "/authoring/v1/resources/37a627f3a87728858b4092038ca4a5b9?resize=1200px:815px&crop=1200:624;0,95"
+        }
+      }
+    },
+    "leadImageCaption": {
+      "elementType": "text",
+      "value": "Comfy chairs create quiet spot to unwind at the end of the day."
+    },
+    "leadImageCredit": {
+      "elementType": "text",
+      "value": "Janet Guzman"
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "lastModified": "2017-08-22T20:06:12.247Z",
+  "lastModifierId": "4b0de343-99e8-44f0-9392-b4f79ecc0bf8",
+  "locale": "en",
+  "rev": "1-ebfd6062ef1d05453d4b9ae35f333e82",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "thumbnail": {
+    "id": "518a0d80-2d02-4460-b2ee-daf0932d50c9"
+  },
+  "typeId": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "feature-layout",
+  "rev": "1-0d9b40304ba824241013f6cbc165b458",
+  "name": "Feature",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/feature_220.svg"
+  },
+  "template": "feature-layout",
+  "templateType": "angular"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "sign-up-layout-mapping",
+  "rev": "2-c717f8f1d30c4d0e3b6d1dc0182524b0",
+  "name": "signUpLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "58fd2ad1-df13-4a75-9918-6b34852539ab",
+    "name": "Sign up"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "sign-up-layout",
+        "name": "Sign up"
+      },
+      "layouts": [
+        {
+          "id": "sign-up-layout",
+          "name": "Sign up"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "b201f69e-29ff-4f3e-9a72-6c6be6c7d754",
+  "rev": "8-0812107001458591607139c6eb44b5ad",
+  "name": "Button",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Button label",
+      "key": "label",
+      "placeholder": {
+        "show": true,
+        "text": "Button text"
+      }
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a",
+        "name": "Colors"
+      },
+      "label": "Background color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb",
+        "name": "Styling"
+      },
+      "label": "Style",
+      "key": "style"
+    },
+    {
+      "elementType": "link",
+      "label": "Link",
+      "key": "link"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6",
+        "name": "Alignment options"
+      },
+      "label": "Alignment",
+      "key": "align"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2",
+        "name": "Line height options"
+      },
+      "label": "Line height",
+      "key": "lineHeight"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Corner radius",
+      "key": "cornerRadius",
+      "minimum": 0
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022",
+        "name": "Boundary options"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80",
+        "name": "Common settings"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

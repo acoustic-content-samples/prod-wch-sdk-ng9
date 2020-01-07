@@ -1,0 +1,20 @@
+{
+  "ADD": "新增區段",
+  "CLOSE_PALETTE": "關閉",
+  "COPY": "複製",
+  "DROP_HERE": "放置在這裡",
+  "DROP_TO_UPLOAD": "放置以上傳",
+  "EMPTY_HTML_DESCRIPTION": "新增您的 HTML",
+  "EDIT_IMAGE": "編輯影像",
+  "EMPTY_STATE_DESCRIPTION": "拖放影像、或是[瀏覽檔案庫]。",
+  "INITIAL_SECTION": "在此選取佈置或拖曳內容",
+  "LOCK": "鎖定以防止編輯",
+  "MOVE": "按住並拖曳",
+  "OPEN_PALETTE": "變更影像",
+  "PZN_PICKER_CLOSE": "關閉",
+  "PZN_PICKER_HEADING": "選擇個人化欄位",
+  "REMOVE": "移除",
+  "REMOVE_IMAGE": "移除影像",
+  "SELECT": "選取影像",
+  "SHUTTERSTOCK_SAVE": "儲存 ..."
+}

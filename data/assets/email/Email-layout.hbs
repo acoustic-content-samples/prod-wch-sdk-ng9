@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+{{#*inline "styles" ~}}{{#if margin.top}}margin-top:{{margin.top}}px;{{/if}}{{#if margin.bottom}}margin-bottom:{{margin.bottom}}px;{{/if}}{{#if margin.left}}margin-left:{{margin.left}}px;{{/if}}{{#if margin.right}}margin-right:{{margin.right}}px;{{/if}}{{#if padding.top}}padding-top:{{padding.top}}px;{{/if}}{{#if padding.bottom}}padding-bottom:{{padding.bottom}}px;{{/if}}{{#if padding.left}}padding-left:{{padding.left}}px;{{/if}}{{#if padding.right}}padding-right:{{padding.right}}px;{{/if}}{{/inline~}}
+{{#*inline "trBackgroundStyle" ~}}
+    {{#if background.backgroundColor.colorCode ~}}background-color:{{background.backgroundColor.colorCode}}; {{/if~}}
+    {{#if background.includeBackgroundImage ~}}background-image:url('{{@root.$context.hub.resourceUrl.origin}}{{background.image.renditions.default.url}}'); {{#eq background.fillOptions.selection 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}}{{#eq background.fillOptions.selection 'tile'}}background-repeat:repeat;{{/eq}}{{#eq background.fillOptions.selection 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}{{/if~}}
+{{/inline~}}
+{{#*inline "contentAreaPadding" ~}}
+    {{#if (eq row 1)}}{{#if @root.padding.top includeZero=true}}padding-top:{{@root.padding.top}}px;{{/if}}{{/if~}}
+    {{#if (eq cell 1)}}{{#if @root.padding.left includeZero=true}}padding-left:{{@root.padding.left}}px;{{/if}}{{/if~}}
+    {{#if (eq cell num-cells)}}{{#if @root.padding.right includeZero=true}}padding-right:{{@root.padding.right}}px;{{/if}}{{/if~}}
+    {{#if (eq row num-rows)}}{{#if @root.padding.bottom includeZero=true}}padding-bottom:{{@root.padding.bottom}}px;{{/if}}{{/if~}}
+{{/inline~}}
+<html>
+  <head>
+    <title key="1">{{settings.subjectLine}}</title>
+    <style key="2" type="text/css">
+
+      .layout-table a:link{color:blue;text-decoration:underline;}.layout-table a:visited{color:purple;text-decoration:underline;}.layout-table a:link:active{color:red}.layout-table a:visited:active{color:purple}.layout-table address{display:block;font-style:italic}.layout-table area{display:none}.layout-table article{display:block}.layout-table aside{display:block}.layout-table b{font-weight:700}.layout-table bdo{unicode-bidi:bidi-override}.layout-table blockquote{display:block;margin:1em 40px}.layout-table body{display:block;margin:8px}.layout-table body:focus{outline:none}.layout-table caption{display:table-caption;text-align:center}.layout-table cite{font-style:italic}.layout-table code{font-family:monospace}.layout-table col{display:table-column}.layout-table colgroup{display:table-column-group}.layout-table datalist{display:none}.layout-table dd{display:block;margin-left:40px}.layout-table del{text-decoration:line-through}.layout-table details{display:block}.layout-table dfn{font-style:italic}.layout-table div{display:block}.layout-table dl{display:block;margin:1em 0}.layout-table dt{display:block}.layout-table em{font-style:italic}.layout-table embed:focus{outline:none}.layout-table fieldset{display:block;margin-left:2px;margin-right:2px;border:2px groove;padding:.35em .75em .625em}.layout-table figcaption{display:block}.layout-table figure{display:block;margin:1em 40px}.layout-table footer{display:block}.layout-table form{display:block;margin-top:0}.layout-table h1{display:block;font-size:2em;font-weight:700;margin:.67em 0}.layout-table h2{display:block;font-size:1.5em;font-weight:700;margin:.83em 0}.layout-table h3{display:block;font-size:1.17em;font-weight:700;margin:1em 0}.layout-table h4{display:block;font-weight:700;margin:1.33em 0}.layout-table h5{display:block;font-size:.83em;font-weight:700;margin:1.67em 0}.layout-table h6{display:block;font-size:.67em;font-weight:700;margin:2.33em 0}.layout-table head{display:none}.layout-table header{display:block}.layout-table hr{display:block;border-style:inset;border-width:1px;margin:.5em auto}.layout-table html{display:block}.layout-table html:focus{outline:none}.layout-table i{font-style:italic}.layout-table iframe:focus{outline:none}.layout-table iframe[seamless]{display:block}.layout-table img{display:inline-block}.layout-table ins{text-decoration:underline}.layout-table kbd{font-family:monospace}.layout-table label{cursor:default}.layout-table legend{display:block;padding-left:2px;padding-right:2px;border:none}.layout-table li{display:list-item}.layout-table link{display:none}.layout-table map{display:inline}.layout-table menu{display:block;list-style-type:disc;padding-left:40px;margin:1em 0}.layout-table nav{display:block}.layout-table object:focus{outline:none}.layout-table ol{display:block;list-style-type:decimal;padding-left:40px;margin:1em 0}.layout-table output{display:inline}.layout-table p{display:block;margin:1em 0}.layout-table param{display:none}.layout-table pre{display:block;font-family:monospace;white-space:pre;margin:1em 0}.layout-table q{display:inline}.layout-table q::before{content:open-quote}.layout-table q::after{content:close-quote}.layout-table rt{line-height:normal}.layout-table s{text-decoration:line-through}.layout-table samp{font-family:monospace}.layout-table script{display:none}.layout-table section{display:block}.layout-table small{font-size:smaller}.layout-table strike{text-decoration:line-through}.layout-table strong{font-weight:700}.layout-table style{display:none}.layout-table sub{vertical-align:sub;font-size:smaller}.layout-table summary{display:block}.layout-table sup{vertical-align:super;font-size:smaller}.layout-table table{display:table;border-collapse:separate;border-spacing:2px;border-color:gray}.layout-table tbody{display:table-row-group;vertical-align:middle;border-color:inherit}.layout-table td{display:table-cell;vertical-align:inherit}.layout-table tfoot{display:table-footer-group;vertical-align:middle;border-color:inherit}.layout-table th{display:table-cell;vertical-align:inherit;font-weight:700;text-align:center}.layout-table thead{display:table-header-group;vertical-align:middle;border-color:inherit}.layout-table title{display:none}.layout-table tr{display:table-row;vertical-align:inherit;border-color:inherit}.layout-table u{text-decoration:underline}.layout-table ul{display:block;list-style-type:disc;padding-left:40px;margin:1em 0 1px em 0}.layout-table var{font-style:italic}
+
+      div, p, a, li, td {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+      #outlook a {padding:0;}
+      .ReadMsgBody {width:100%;}
+      .ExternalClass {width:100%;}
+      .ExternalClass * {line-height:110%;}
+
+      {{!-- Responsive layout - makes the two columns stack on top of each other instead of next to each other --}}
+      @media screen and (max-width: 480px) {
+        table.layout-table {height:unset !important; }
+        tr.displayBlock, td.displayBlock {display: block; height:unset !important; }
+        colgroup.displayNone, tr.displayNone, td.displayNone, div.displayNone {display:none !important;}
+        tr.w100per, td.w100per, div.w100per {width: 100% !important;}
+      }
+
+      {{!-- Responsive layout - Used for specific components. e.g.Promotion banner --}}
+      @media screen and (max-width: 480px) {
+        .show-on-mobile{display:block !important;}
+        .hide-on-mobile{display:none !important;}
+      }
+
+      @media screen and (min-width: 480px) {
+        .show-on-mobile{display:none !important;}
+        .hide-on-mobile{display:block !important;}
+      }
+    </style>
+  </head>
+  <body{{#if backgroundColor.colorCode}} style="background-color:{{backgroundColor.colorCode}};"{{/if}}>
+    {{#if settings.preHeader}}<div id="mktcloud-preheader" key="preheader" style="display:none!important;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"><p>{{settings.preHeader}}</p><div>&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div></div>{{/if}}
+    <table class="layout-table" key="3" align="center" style="table-layout:fixed;height:100%;width:100%;" cellspacing="0" cellpadding="0">
+        <colgroup class="displayNone" key="1">
+            <col width="50%" key="0">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="1">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="2">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="3">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="4">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="5">
+            <col width="{{#if width}}{{round (divide width 6)}}{{else}}107{{/if}}px" key="6">
+            <col width="50%" key="7">
+        </colgroup>
+        <tbody key="2"{{#if rows.0.cells}} class="source target"{{/if}}>
+        {{#each rows}}
+            <tr class="layout-grid-row displayBlock"  style="height:100%;{{>styles}}{{>trBackgroundStyle}}"{{#if key}} key="{{key}}"{{/if}} data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="elements.rows.values[{{@index}}]" data-wch-selectable="{{@root.$metadata.id}}#rows.values[{{@index}}]">
+                <td class="layout-grid-section-cell displayNone" key="before">{{!-- Zero column !--}}</td>
+                {{#each cells}}
+                    <td class="layout-grid-cell displayBlock target{{#if content}} source{{/if}}" key="{{@index}}" colSpan="{{span}}" valign="top" style="{{#if content}}height:100%;{{/if}}vertical-align:top;{{>contentAreaPadding row=(plus @../index 1) num-rows=../../rows.length cell=(plus @index 1) num-cells=../cells.length}}{{#if (and @root.contentAreaBackgroundColor.colorCode (not (or ../background.backgroundColor.colorCode ../background.includeBackgroundImage.value))) }}background-color:{{@root.contentAreaBackgroundColor.colorCode}};{{/if}}" data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="elements.rows.values[{{@../index}}].cells.values[{{@index}}].content.values">
+                        {{#each content}}
+                            <div class="layout-grid-cell-content" key="{{ $metadata.id}}" style="{{#equalsLength ../content/values 1}}height:100%;{{/equalsLength}}overflow-wrap:anywhere;overflow:hidden;" data-content-item-id="{{@root.$metadata.id}}" data-wch-editable="elements.rows.values[{{@../../index}}].cells.values[{{@../index}}].content.values[{{@index}}]" data-wch-selectable="{{ $metadata.id}}">
+                                {{{ $markup }}}
+                            </div>
+                        {{/each}}
+                    </td>
+                {{/each}}
+                <td class="layout-grid-section-cell displayNone" key="after">{{!-- Seventh column !--}}</td>
+            </tr>
+        {{else}}
+            <tr class="layout-grid-row-empty" key="empty-row" data-content-item-id="{{ $metadata.id}}" data-wch-editable="{{ $metadata.accessor }}.rows.values[0]">
+                <td class="layout-grid-section-cell" key="0">{{!-- Zero column !--}}</td>
+                <td class="layout-grid-cell-empty" key="empty-cell" colSpan="6"></td>
+                <td class="layout-grid-section-cell" key="7">{{!-- Seventh column !--}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+  </body>
+</html>

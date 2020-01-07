@@ -1,0 +1,20 @@
+{
+  "ADD": "Incluir uma seção",
+  "CLOSE_PALETTE": "Fechar",
+  "COPY": "Copiar",
+  "DROP_HERE": "Solte aqui",
+  "DROP_TO_UPLOAD": "Solte para fazer upload",
+  "EMPTY_HTML_DESCRIPTION": "Incluir seu HTML",
+  "EDIT_IMAGE": "Editar imagem",
+  "EMPTY_STATE_DESCRIPTION": "Arraste e solte uma imagem ou [procure bibliotecas].",
+  "INITIAL_SECTION": "Selecione um layout ou arraste o conteúdo aqui",
+  "LOCK": "Bloqueie para evitar a edição",
+  "MOVE": "Clique e pressione para arrastar",
+  "OPEN_PALETTE": "Mudar imagem",
+  "PZN_PICKER_CLOSE": "Fechar",
+  "PZN_PICKER_HEADING": "Escolha um campo de personalização",
+  "REMOVE": "Remover",
+  "REMOVE_IMAGE": "Remover imagem",
+  "SELECT": "Selecionar imagem",
+  "SHUTTERSTOCK_SAVE": "Salvar ..."
+}

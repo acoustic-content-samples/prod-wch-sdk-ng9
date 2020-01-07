@@ -1,0 +1,19 @@
+{
+  "id": "site-layout",
+  "rev": "3-c1d8c40931a93ceb401ca08af5ef5ed7",
+  "name": "siteLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/site-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_8087878b12cc600598116304f0931666"
+  },
+  "template": "/sites/templates/site-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/site-layout/{id}.html"
+}

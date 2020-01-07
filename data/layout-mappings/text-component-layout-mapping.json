@@ -1,0 +1,21 @@
+{
+  "id": "text-component-layout-mapping",
+  "rev": "2-346e896898166466b965db6d8abfc1c0",
+  "name": "textComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "text-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "text-component-layout"
+        }
+      ]
+    }
+  ]
+}

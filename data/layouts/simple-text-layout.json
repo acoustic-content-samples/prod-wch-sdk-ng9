@@ -1,0 +1,9 @@
+{
+  "id": "simple-text-layout",
+  "rev": "1-8114429b73034bf344140ed25a433135",
+  "name": "Simple Text",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/layouts/simple-text-layout.hbs",
+  "templateType": "handlebars"
+}

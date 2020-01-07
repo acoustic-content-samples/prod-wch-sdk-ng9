@@ -1,0 +1,21 @@
+{
+  "id": "html-component-layout-mapping",
+  "rev": "4-e25fad0960b5b0b6b0fc84fa34679880",
+  "name": "htmlComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "aa358e28-2e60-416a-97d7-d1a6dd5e165b"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "html-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "html-component-layout"
+        }
+      ]
+    }
+  ]
+}

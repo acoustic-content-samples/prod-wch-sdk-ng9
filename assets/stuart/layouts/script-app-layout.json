@@ -1,0 +1,12 @@
+{
+  "id": "script-app-layout",
+  "rev": "1-12ad27d5ae35717d464869a34edb1db1",
+  "name": "scriptAppLayout",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/script-app-layout.jpg"
+  },
+  "template": "script-app-layout",
+  "templateType": "angular"
+}

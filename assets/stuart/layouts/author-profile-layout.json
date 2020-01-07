@@ -1,0 +1,12 @@
+{
+  "id": "author-profile-layout",
+  "rev": "1-86bb116fbcc86b6cc8a206a20cefe372",
+  "name": "Author profile",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/author-profile_220.svg"
+  },
+  "template": "author-profile-layout",
+  "templateType": "angular"
+}

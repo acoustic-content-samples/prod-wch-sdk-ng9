@@ -1,0 +1,39 @@
+{
+  "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d",
+  "rev": "4-8650dd437da48fb630a5db1209bfa751",
+  "name": "Custom ImageGroup",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "image",
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      },
+      "label": "Alignment",
+      "key": "align"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding"
+    }
+  ]
+}

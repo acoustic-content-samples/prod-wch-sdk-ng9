@@ -1,0 +1,32 @@
+{
+  "id": "cfedb31b-d8e6-4757-9c11-b6b6ddc662b5",
+  "rev": "8-a8c3163c39564f46b9cf2d43b59bb133",
+  "name": "ReactAppHeadlines",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Headline",
+      "key": "title"
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Welcome Message",
+      "key": "text"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "f9e7f0b9-f57d-4d91-a257-54a64c1ff52f"
+      },
+      "label": "Banner",
+      "key": "image"
+    }
+  ]
+}

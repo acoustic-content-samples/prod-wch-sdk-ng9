@@ -1,0 +1,181 @@
+{
+  "rev": "1-b76f31d3eb9b207a5490f285e8e2e3f4",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-08-30T12:17:20.988Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Social follow",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "social-follow-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "socialLinks": {
+      "values": [
+        {
+          "icon": {
+            "elementType": "text",
+            "value": "Facebook"
+          },
+          "url": {
+            "elementType": "link",
+            "linkURL": "http://www.facebook.com"
+          },
+          "alttext": {
+            "elementType": "text",
+            "value": "Facebook"
+          }
+        },
+        {
+          "icon": {
+            "elementType": "text",
+            "value": "Twitter"
+          },
+          "url": {
+            "elementType": "link",
+            "linkURL": "http://www.twitter.com"
+          },
+          "alttext": {
+            "elementType": "text",
+            "value": "Twitter"
+          }
+        },
+        {
+          "icon": {
+            "elementType": "text",
+            "value": "Instagram"
+          },
+          "url": {
+            "elementType": "link",
+            "linkURL": "http://www.instagram.com"
+          },
+          "alttext": {
+            "elementType": "text",
+            "value": "Instagram"
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "id": "9f1d4f26-b587-4abe-a83c-38df755a6b37"
+      }
+    },
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "size": {
+      "elementType": "number",
+      "value": 20
+    },
+    "iconSet": {
+      "elementType": "text",
+      "value": "bw"
+    },
+    "align": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "center"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "key": {
+      "elementType": "text",
+      "value": "3e8bafe4-7fbb-4020-aba5-a38b44ba8280"
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "spacing": {
+      "elementType": "number",
+      "value": 10
+    }
+  },
+  "name": "Social",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "8bb7f03c-23a2-46c5-bd15-fbf4d1e8bd4f",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/cd769ed8-5e7f-464d-967f-2f106bb04755/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/cd769ed8-5e7f-464d-967f-2f106bb04755/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/cd769ed8-5e7f-464d-967f-2f106bb04755"
+    },
+    "type": {
+      "href": "/authoring/v1/types/8bb7f03c-23a2-46c5-bd15-fbf4d1e8bd4f"
+    }
+  },
+  "id": "cd769ed8-5e7f-464d-967f-2f106bb04755",
+  "lastModified": "2019-08-30T12:17:20.988Z",
+  "systemModified": "2019-08-30T12:17:20.988Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

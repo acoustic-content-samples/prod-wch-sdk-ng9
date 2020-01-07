@@ -1,0 +1,2 @@
+<!-- the page dynamically loads another component based on the context -->
+<wch-content *ngIf="state$ | async as state" [ctx]="state[0]" [layoutMode]="state[1]" (component$)="component$.next($event)"></wch-content>

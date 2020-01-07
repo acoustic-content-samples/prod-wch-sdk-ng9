@@ -1,0 +1,23 @@
+<div {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} style="{{~#if margin.left}}padding-left:{{margin.left}}px;{{~/if~}}
+{{~#if margin.right}}padding-right:{{margin.right}}px;{{~/if~}}
+{{~#if margin.top}}padding-top:{{margin.top}}px;{{~/if~}}
+{{~#if margin.bottom}}padding-bottom:{{margin.bottom}}px;{{~/if~}}">
+	<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+		<tbody>
+			<tr>
+				<td {{#unless image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{else}} align="center" {{~/if~}} style="{{~#if padding.left}}padding-left:{{padding.left}}px;{{~/if~}} {{~#if padding.right}}padding-right:{{padding.right}}px;{{~/if~}} {{~#if padding.top}}padding-top:{{padding.top}}px;{{~/if~}} {{~#if padding.bottom}}padding-bottom:{{padding.bottom}}px;{{~/if~}} {{~#if backgroundColor.colorCode}} background-color:{{backgroundColor.colorCode}};{{~/if~}}">
+	              {{~#if image.link.url}} <a href="{{image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+					{{~#if image.renditions.default.url}}
+						<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.image" src="{{$context.hub.resourceUrl.origin}}{{image.renditions.default.url}}"
+						border="0" {{~#if image.altText}} alt="{{image.altText}}" {{~/if~}}
+						style="display:block; {{~#if image.renditions.default.width}} max-width:{{image.renditions.default.width}}px; {{~/if~}} width:100%;">
+						{{~#if image.link.url}} </a> {{~/if~}}
+					{{else}}
+						<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.image">
+						</div>
+					{{~/if~}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

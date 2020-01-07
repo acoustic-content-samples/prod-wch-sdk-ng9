@@ -1,0 +1,21 @@
+
+<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} width="100%" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+	<tbody>
+		<tr>
+            <td {{#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{/if}}
+                style="{{#if margin.left}} padding-left:{{margin.left}}px; {{/if}}
+                            {{#if margin.right}} padding-right:{{margin.right}}px; {{/if}}
+                            {{#if margin.top}} padding-top:{{margin.top}}px; {{/if}}
+                            {{#if margin.bottom}} padding-bottom:{{margin.bottom}}px; {{/if}}">
+                 <hr data-content-item-id="{{$metadata.id}}" {{#if align.alignmentOptions}} align="{{align.alignmentOptions}}" {{/if}}
+                    {{#if width}} width="{{width}}%" {{/if}}
+                    style="margin-left:0; margin-right:0; {{#if opacity}}opacity:{{divide opacity 100}}; {{/if}}
+                        {{#if lineWeight}} border-width:{{lineWeight}}px 0px 0px 0px; {{/if}}
+                        {{#if lineColor.colorCode}} border-color:{{lineColor.colorCode}}; {{else}} border-color:#838383; {{/if}}
+                        {{#if lineType}} border-style:{{lineType}}; {{/if}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

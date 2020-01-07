@@ -1,0 +1,13 @@
+{
+  "id": "design-article-layout",
+  "rev": "2-84bad71ddbcb3cc2811d4a91bb3b74ff",
+  "name": "Design article",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/article_220.svg",
+    "url": "/authoring/v1/resources/7dddac6b03118956663ae165fa035268_e7ecfd3cb2d37fa9f2b44d1b53fb54d1"
+  },
+  "template": "design-article-layout",
+  "templateType": "angular"
+}

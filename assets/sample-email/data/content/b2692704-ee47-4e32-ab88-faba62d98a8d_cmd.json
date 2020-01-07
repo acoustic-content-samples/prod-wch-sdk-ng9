@@ -1,0 +1,138 @@
+{
+  "rev": "7-f4a537cbb9863f9ad30963862adaefd3",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:52.453Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Divider",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "divider-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "lineColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "#dcdcdc"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "align": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "center"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "lineType": {
+      "elementType": "optionselection",
+      "value": {
+        "selection": "solid"
+      }
+    },
+    "lineWeight": {
+      "elementType": "number",
+      "value": 2
+    },
+    "key": {
+      "elementType": "text",
+      "value": "86377eb5-efce-4173-a13e-fed8fa2bdf00"
+    },
+    "opacity": {
+      "elementType": "number",
+      "value": 100
+    },
+    "width": {
+      "elementType": "number",
+      "value": 100
+    }
+  },
+  "name": "Divider",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/b2692704-ee47-4e32-ab88-faba62d98a8d/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/b2692704-ee47-4e32-ab88-faba62d98a8d/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/b2692704-ee47-4e32-ab88-faba62d98a8d"
+    },
+    "type": {
+      "href": "/authoring/v1/types/251f4c19-ea42-4e4d-8831-1ffca17d6a6d"
+    }
+  },
+  "id": "b2692704-ee47-4e32-ab88-faba62d98a8d",
+  "lastModified": "2019-08-30T12:17:18.379Z",
+  "systemModified": "2019-08-30T12:17:18.379Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

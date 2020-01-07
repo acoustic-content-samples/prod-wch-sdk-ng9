@@ -1,0 +1,33 @@
+/* Copyright IBM Corp. 2017 */
+import { ReactProvider } from '@acoustic-content-sdk/react-api';
+
+import { WCH_PROVIDER_REDUX_AUTH_STATUS } from './auth.status.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_CONTENT_RESOLVER } from './content.module';
+import { WCH_PROVIDER_REDUX_FETCH_TEXT } from './fetch.text.module';
+import { WCH_PROVIDER_REDUX_HANDLEBARS_RESOLVER } from './handlebars.module';
+import { WCH_PROVIDER_REDUX_INLINE_EDIT_SELECTION_PROVIDER } from './inline.edit.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_MAPPING_RESOLVER } from './layout.mapping.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_RESOLVER } from './layout.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER } from './page.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_SITE_RESOLVER } from './site.module';
+import { WCH_PROVIDER_REDUX_DELIVERY_TYPE_RESOLVER } from './type.module';
+import { WCH_PROVIDER_REDUX_URL_CONFIG } from './url.config.module';
+import { WCH_PROVIDER_REDUX_WCH_CONFIG } from './wch.config.module';
+
+/**
+ * Exposes all providers for the redux feature
+ */
+export const WCH_PROVIDERS_REDUX: Array<ReactProvider<any>> = [
+  WCH_PROVIDER_REDUX_DELIVERY_CONTENT_RESOLVER,
+  WCH_PROVIDER_REDUX_HANDLEBARS_RESOLVER,
+  WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_MAPPING_RESOLVER,
+  WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_RESOLVER,
+  WCH_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER,
+  WCH_PROVIDER_REDUX_DELIVERY_SITE_RESOLVER,
+  WCH_PROVIDER_REDUX_DELIVERY_TYPE_RESOLVER,
+  WCH_PROVIDER_REDUX_URL_CONFIG,
+  WCH_PROVIDER_REDUX_WCH_CONFIG,
+  WCH_PROVIDER_REDUX_AUTH_STATUS,
+  WCH_PROVIDER_REDUX_FETCH_TEXT,
+  WCH_PROVIDER_REDUX_INLINE_EDIT_SELECTION_PROVIDER
+];

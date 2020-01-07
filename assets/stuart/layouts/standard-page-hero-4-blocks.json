@@ -1,0 +1,12 @@
+{
+  "id": "standard-page-hero-4-blocks",
+  "rev": "1-71fc8d48edf7277d0de40162b5f8d2b1",
+  "name": "Five blocks",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/standard-page-hero-4-blocks_220.svg"
+  },
+  "template": "standard-page-hero-4-blocks",
+  "templateType": "angular"
+}

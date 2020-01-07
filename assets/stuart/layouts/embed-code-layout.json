@@ -1,0 +1,12 @@
+{
+  "id": "embed-code-layout",
+  "rev": "1-7d2287be8a8110af63cba0d9844dbfcb",
+  "name": "embedCodeLayout",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/embed-code-layout.jpg"
+  },
+  "template": "embed-code-layout",
+  "templateType": "angular"
+}

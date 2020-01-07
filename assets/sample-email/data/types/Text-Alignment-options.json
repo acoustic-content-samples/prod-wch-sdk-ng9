@@ -1,0 +1,35 @@
+{
+  "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097",
+  "rev": "6-14106da780c406c798c6f7865955aa75",
+  "name": "Text Alignment options",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "IBM email sample"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Left",
+          "selection": "left"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Right",
+          "selection": "right"
+        }
+      ],
+      "label": "Alignment options",
+      "key": "alignmentOptions"
+    }
+  ]
+}

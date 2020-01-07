@@ -1,0 +1,47 @@
+{{~#if background.image.asset}}
+{{#eq background.includeBackgroundImage true}}
+<table {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+	<tbody>
+		<tr>
+			<td data-content-item-id="{{ $metadata.id}}" data-wch-editable="{{ $metadata.accessor}}.background.value.image" background="{{ $context.hub.resourceUrl.origin}}{{background.image.renditions.default.url}}" style="vertical-align: top; {{#eq background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if background.backgroundColor.colorCode}} background-color: {{background.backgroundColor.colorCode}};{{~/if~}}">
+					 <!--[if gte mso 9]>
+						  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+						  <v:fill type="frame" src="{{ $context.hub.resourceUrl.origin}}{{background.image.renditions.default.url}}" color="{{background.backgroundColor.colorCode}}"/>
+						  <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+						  <div>
+  				 <![endif]-->
+					 {{/eq}}
+           {{~/if~}}
+					 <div {{#eq hideOnMobile.hideOnMobile true}} class="hide-on-mobile" {{/eq}} style="{{~#if margin.left}} margin-left:{{margin.left}}px; {{~/if~}}
+					 {{~#if margin.right}} margin-right:{{margin.right}}px; {{~/if~}}
+					 {{~#if margin.top}} margin-top:{{margin.top}}px; {{~/if~}}
+					 {{~#if margin.bottom}} margin-bottom:{{margin.bottom}}px; {{~/if~}}">
+						 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important; {{~#if background.image.asset}} {{#eq background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq background.includeBackgroundImage false}} {{~#if background.backgroundColor.colorCode}} background-color: {{background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if background.backgroundColor.colorCode}} background-color: {{background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+	             <tbody>
+	               <tr>
+	                 <td style="{{~#if padding.right}} padding-right:{{padding.right}}px; {{~/if~}}
+	                 {{~#if padding.top}} padding-top:{{padding.top}}px; {{~/if~}}
+	                 {{~#if padding.bottom}} padding-bottom:{{padding.bottom}}px; {{~/if~}} {{~#if padding.left}} padding-left:{{padding.left}}px; {{~/if~}}">
+	                   <div data-content-item-id="{{ $metadata.id}}" data-wch-editable="{{ $metadata.accessor}}.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textStyle.font}} font-family: {{textStyle.font}} !important; {{~/if~}}
+	                   {{~#if textStyle.size}} font-size: {{textStyle.size}}px; {{~/if~}}
+	                   {{~#if textStyle.color}} color: {{textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+	                   {{~#if alignment.alignmentOptions}} text-align: {{alignment.alignmentOptions}}; {{~/if~}}
+	                   {{~#if lineHeight.lineHeightOptions}} line-height:{{lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText . $context.hub.resourceUrl.origin}}}</div>
+	                 </td>
+	               </tr>
+	             </tbody>
+	           </table>
+					 </div>
+          {{~#if background.image.asset}}
+					{{#eq background.includeBackgroundImage true}}
+          <!--[if gte mso 9]>
+                </div>
+								</v:textbox>
+								</v:rect>
+            <![endif]-->
+  		</td>
+  	</tr>
+  </tbody>
+</table>
+{{/eq}}
+{{~/if~}}

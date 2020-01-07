@@ -1,0 +1,21 @@
+{
+  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a",
+  "rev": "4-e89f70cae84e1628978b4731268a62a0",
+  "name": "Colors",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "IBM email sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Color code",
+      "key": "colorCode"
+    }
+  ]
+}

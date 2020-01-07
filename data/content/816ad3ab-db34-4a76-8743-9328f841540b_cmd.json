@@ -1,0 +1,199 @@
+{
+  "rev": "2-efcf74c91aa6ba8e57a49127d8c1329f",
+  "kind": [
+    "email"
+  ],
+  "created": "2019-07-05T08:01:53.488Z",
+  "creatorId": "71e68420-edcb-483f-92c8-da20775ba704",
+  "description": "",
+  "classification": "content",
+  "type": "Email",
+  "tags": [],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af"
+      }
+    }
+  ],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "transparent"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "editor": {
+      "elementType": "text"
+    },
+    "contentAreaBackgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "#FFFFFF"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "rows": {
+      "values": [
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "creatorId": "71e68420-edcb-483f-92c8-da20775ba704",
+                      "typeId": "4e70d4a0-0112-43c5-887b-dde336ebe678",
+                      "id": "22629384-fbc1-41aa-8bf1-af1ffb61d51a",
+                      "status": "ready",
+                      "url": "/api/055722ea-c7ae-4b99-829e-23b24595a65a/delivery/v1/content/22629384-fbc1-41aa-8bf1-af1ffb61d51a",
+                      "protectedUrl": "/api/055722ea-c7ae-4b99-829e-23b24595a65a/mydelivery/v1/content/22629384-fbc1-41aa-8bf1-af1ffb61d51a"
+                    }
+                  ],
+                  "elementType": "reference"
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                },
+                "padding": {
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                  }
+                },
+                "margin": {
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                  }
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          },
+          "margin": {
+            "elementType": "group",
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          },
+          "background": {
+            "elementType": "group",
+            "typeRef": {
+              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+            }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "754fb433-1b03-4fae-8bd6-ffa40d8fb0da"
+          },
+          "padding": {
+            "elementType": "group",
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          },
+          "layout": {
+            "elementType": "optionselection"
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "id": "b908096b-9cd2-4085-bf0c-a510576e633b"
+      }
+    },
+    "width": {
+      "elementType": "number",
+      "value": 640
+    },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": {
+          "elementType": "text"
+        },
+        "fromName": {
+          "elementType": "text"
+        },
+        "subjectLine": {
+          "elementType": "text"
+        },
+        "databaseId": {
+          "elementType": "text"
+        },
+        "replyToAddress": {
+          "elementType": "text"
+        },
+        "fromAddress": {
+          "elementType": "text"
+        }
+      },
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      }
+    }
+  },
+  "name": "ConfigureTextHelperTest",
+  "lastModifierId": "71e68420-edcb-483f-92c8-da20775ba704",
+  "typeId": "51071056-1f70-499e-9ee3-b2066f56b119",
+  "id": "816ad3ab-db34-4a76-8743-9328f841540b",
+  "lastModified": "2019-07-05T09:08:52.508Z",
+  "systemModified": "2019-07-05T09:08:52.508Z",
+  "status": "ready"
+}

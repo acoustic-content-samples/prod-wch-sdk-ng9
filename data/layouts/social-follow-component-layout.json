@@ -1,0 +1,10 @@
+{
+  "id": "social-follow-component-layout",
+  "rev": "4-bb81294ad15189378ff07558532e26a7",
+  "name": "socialFollowComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/social-follow-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

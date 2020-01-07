@@ -1,0 +1,43 @@
+<!-- layout type -->acoustic-content-sdkacoustic-content-sdk
+<h1>HeroImageLayoutComponent</h1>
+<!-- show some metainformation -->
+<h2>Meta Information</h2>
+<dl>
+    <!-- more properties are available, consult https://www.npmjs.com/package/@ibm-wch-sdk/ng for documentation -->
+    <dt>ID</dt>
+    <dd>{{ renderingContext.id }}</dd>
+    <dt>name</dt>
+    <dd>{{ renderingContext.name }}</dd>
+</dl>
+<a href="https://www.npmjs.com/package/@ibm-wch-sdk/ng">more documentation</a>
+<!-- show the fields -->
+<h2>Property List</h2>
+  <dl>
+  <dt>
+    Property: image
+| Key: image
+| Label: Background image
+  </dt>
+  <dd>
+<!-- image -->
+    <img *ngIf="image" [src]="renderingContext.context.hub.deliveryUrl.origin + image.url" [alt]="image.altText" [title]="image.asset.fileName">
+</dd>
+  <dt>
+    Property: text
+| Key: text
+| Label: Headline text
+  </dt>
+  <dd>
+<!-- text type, see https://angular.io/guide/template-syntax#property-binding-or-interpolation -->
+    <div *ngIf="text">{{ text }}</div>
+</dd>
+  <dt>
+    Property: link
+| Key: link
+| Label: Call to action link
+  </dt>
+  <dd>
+<!-- link -->
+    <a *ngIf="link" [href]="link.linkURL" [title]="link.linkDescription">{{ link.linkText }}</a>
+</dd>
+</dl>

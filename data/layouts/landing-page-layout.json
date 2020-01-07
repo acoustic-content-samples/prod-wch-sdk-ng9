@@ -1,0 +1,13 @@
+{
+  "id": "landing-page-layout",
+  "rev": "2-553e693b747a7af0816606634d9d1626",
+  "name": "One Column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/standard-page-hero_220.svg",
+    "url": "/authoring/v1/resources/1291d84b6a43a062178553d6c9dd8053_94fc862fb74f826c4dfb0ff44f22ba13"
+  },
+  "template": "landing-page-layout",
+  "templateType": "angular"
+}

@@ -1,0 +1,104 @@
+{
+  "rev": "1-3e03a9c9fd4d83612e5a478f7df55269",
+  "keywords": [],
+  "kind": [],
+  "draftStatus": "in-progress",
+  "created": "2019-06-11T10:15:24.956Z",
+  "creatorId": "512984c5-bf56-4eb4-bbac-4382617ac074",
+  "description": "",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "locale": "en",
+  "tags": [],
+  "valid": true,
+  "selectedLayouts": [{ "layout": { "id": "text-component-layout" } }],
+  "linkedDocId": "7ef5e498-50e5-489e-935e-125026f9780c",
+  "elements": {
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number", "value": 10 },
+        "bottom": { "elementType": "number", "value": 10 },
+        "left": { "elementType": "number", "value": 10 },
+        "right": { "elementType": "number", "value": 10 }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "background": {
+      "elementType": "group",
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "value": {
+            "colorCode": { "elementType": "text", "value": "transparent" }
+          },
+          "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+        },
+        "includeBackgroundImage": { "elementType": "toggle", "value": false },
+        "image": { "elementType": "image" },
+        "fillOptions": { "elementType": "optionselection" }
+      },
+      "typeRef": { "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5" }
+    },
+    "textStyle": {
+      "elementType": "group",
+      "value": {
+        "font": { "elementType": "text", "value": "Arial" },
+        "size": { "elementType": "number", "value": 16 },
+        "color": { "elementType": "text", "value": "#000000" }
+      },
+      "typeRef": { "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb" }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": { "elementType": "toggle", "value": false },
+        "hideOnMobile": { "elementType": "toggle", "value": false }
+      },
+      "typeRef": { "id": "eeff476e-0559-444f-97d1-486a10a86b80" }
+    },
+    "text": { "elementType": "formattedtext" },
+    "lineHeight": {
+      "elementType": "group",
+      "value": {
+        "lineHeightOptions": {
+          "elementType": "optionselection",
+          "value": { "selection": "1" }
+        }
+      },
+      "typeRef": { "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2" }
+    },
+    "alignment": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": { "selection": "left" }
+        }
+      },
+      "typeRef": { "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097" }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number", "value": 10 },
+        "bottom": { "elementType": "number", "value": 10 },
+        "left": { "elementType": "number", "value": 10 },
+        "right": { "elementType": "number", "value": 10 }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "linkColor": {
+      "elementType": "group",
+      "value": { "colorCode": { "elementType": "text", "value": "#0068FF" } },
+      "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+    }
+  },
+  "name": "Text",
+  "lastModifierId": "512984c5-bf56-4eb4-bbac-4382617ac074",
+  "typeId": "09ed64f3-23d9-48bb-871d-e00430751ea6",
+  "id": "7ef5e498-50e5-489e-935e-125026f9780c",
+  "lastModified": "2019-06-11T10:15:24.956Z",
+  "systemModified": "2019-06-11T10:15:24.956Z",
+  "status": "draft"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "7833ff80-2e61-4e02-be16-c977f1150125",
+  "rev": "4-4cefa15dccec69dadfdb74949ba168c5",
+  "name": "reactAppHBS",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Text",
+      "key": "text"
+    },
+    {
+      "elementType": "text",
+      "label": "Canonical Path",
+      "key": "canonicalPath",
+      "searchKey": "string1",
+      "maxLength": 4000,
+      "required": true,
+      "minLength": 1,
+      "role": [
+        "configuration"
+      ],
+      "allowMultipleValues": true,
+      "minimumValues": 1,
+      "fieldLabel": "Text"
+    },
+    {
+      "elementType": "text",
+      "label": "Config Text",
+      "key": "configText",
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

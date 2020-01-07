@@ -1,0 +1,60 @@
+import { LayoutComponent } from '@acoustic-content-sdk/web-components';
+import { {{{baseClassName}}} } from '{{{baseFileName}}}';
+import { rxPipe } from '@acoustic-content-sdk/utils';
+import { combineLatest, Observable } from 'rxjs';
+import { map, takeUntil } from 'rxjs/operators';
+
+import TEMPLATE from '{{{templateUrl}}}';
+
+// TODO
+import { rxShadow, rxTemplate } from '../../utils';
+
+/** Useful imports */
+// import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+@LayoutComponent({
+    selector: '{{{jsEscape layoutTemplate}}}'
+})
+export class {{{className}}} extends {{{baseClassName}}} {
+
+    /*
+     * TODO add custom fields here. These fields should be those
+     * specific to this layout.
+     */
+
+    constructor() {
+        super();
+        // shortcut
+        const that = this;
+
+        // load the template
+        const onTemplate: Observable<HTMLTemplateElement> = rxTemplate(TEMPLATE);
+        // construct the shadow DOM
+        const onShadow: Observable<ShadowRoot> = rxShadow(this);
+
+        // simple update
+        const onContent = rxPipe(
+            combineLatest(onShadow, onTemplate),
+            map(([shadow, tmp]) => shadow.appendChild(tmp.content.cloneNode(true))),
+            takeUntil(that._onDestroy)
+        );
+
+        // keep up to date
+        onContent.subscribe();
+    }
+
+}

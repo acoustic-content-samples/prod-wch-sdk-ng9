@@ -1,0 +1,32 @@
+{
+  "id": "b76c47e5-b0c0-419e-bd18-bb8b3b02ff50",
+  "rev": "2-4025994704cf89b08492d162a4536161",
+  "name": "All types page",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "9f8e8bb3-ae85-4827-9850-2397141a0f21",
+    "name": "All types page"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "all-types-page-layout",
+        "name": "One column"
+      },
+      "layouts": [
+        {
+          "id": "all-types-page-layout",
+          "name": "One column"
+        },
+        {
+          "id": "all-types-page-hero-2-blocks",
+          "name": "Three blocks"
+        },
+        {
+          "id": "all-types-page-hero-4-blocks",
+          "name": "Five blocks"
+        }
+      ]
+    }
+  ]
+}

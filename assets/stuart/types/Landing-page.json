@@ -1,0 +1,168 @@
+{
+  "id": "5cd736ef-d01c-4dd9-9794-14b2473e9239",
+  "rev": "1-b4722539f2a2e723d86f13290b2d12c3",
+  "name": "Landing page",
+  "classification": "content-type",
+  "kind": [
+    "landing-page"
+  ],
+  "thumbnail": {
+    "id": "d2151a59-068d-4671-b339-42e9932d2ce4"
+  },
+  "contentThumbnail": {
+    "imageElement": "heroImage",
+    "source": "imageElementOrType"
+  },
+  "description": "A two-column landing page with a hero image, feature items, and a contest section.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "image",
+      "label": "Hero image",
+      "key": "heroImage",
+      "imageProfileId": "30caaaf4-227c-4b7c-8f40-a019f5fa7519",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ]
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Hero headline",
+      "key": "heroHeadline",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your hero"
+      }
+    },
+    {
+      "elementType": "text",
+      "label": "Feature headline 1",
+      "key": "featureHeadline1",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your feature"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Feature 1",
+      "key": "feature1",
+      "placeholder": {
+        "show": true,
+        "text": "Describe what's great about your feature in one or two paragraphs."
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Feature image 1",
+      "key": "featureImage1",
+      "imageProfileId": "72359553-b371-4746-81da-67263751e6c4",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ]
+    },
+    {
+      "elementType": "text",
+      "label": "Feature headline 2",
+      "key": "featureHeadline2",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your feature"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Feature 2",
+      "key": "feature2",
+      "placeholder": {
+        "show": true,
+        "text": "Describe what's great about your feature in one or two paragraphs."
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Feature image 2",
+      "key": "featureImage2",
+      "imageProfileId": "72359553-b371-4746-81da-67263751e6c4",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ]
+    },
+    {
+      "elementType": "text",
+      "label": "Feature headline 3",
+      "key": "featureHeadline3",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your feature"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Feature 3",
+      "key": "feature3",
+      "placeholder": {
+        "show": true,
+        "text": "Describe what's great about your feature in one or two paragraphs."
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Feature image 3",
+      "key": "featureImage3",
+      "imageProfileId": "72359553-b371-4746-81da-67263751e6c4",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ]
+    },
+    {
+      "elementType": "reference",
+      "label": "Entry component",
+      "key": "entryComponent",
+      "restrictTypes": [
+        {
+          "id": "7df801d8-1d55-4652-ac59-93589b032375"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "label": "Share component",
+      "key": "shareComponent",
+      "restrictTypes": [
+        {
+          "id": "71689897-4505-4c1e-85c9-a57810158a4e"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "label": "Contest rules",
+      "key": "contestRules",
+      "restrictTypes": [
+        {
+          "id": "b77f0bfd-d068-44cc-a41c-fc15a0123c09"
+        }
+      ]
+    }
+  ]
+}

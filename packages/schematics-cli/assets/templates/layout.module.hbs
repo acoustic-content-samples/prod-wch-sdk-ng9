@@ -1,0 +1,24 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { WchNgComponentsModule } from '@acoustic-content-sdk/ng';
+
+import { {{{layoutClassName}}} } from '{{{layoutFileName}}}';
+
+@NgModule({
+    /**
+     * TODO explicitly add those modules that are used by the layout
+     */
+    imports: [
+        CommonModule,
+        WchNgComponentsModule
+    ],
+    declarations: [{{{layoutClassName}}}],
+    exports: [{{{layoutClassName}}}],
+    entryComponents: [{{{layoutClassName}}}]
+})
+export class {{{moduleClassName}}} {
+  /**
+   * Reference the component to prevent ivy from tree shaking it
+   */
+  private readonly ref = {{{layoutClassName}}};
+}

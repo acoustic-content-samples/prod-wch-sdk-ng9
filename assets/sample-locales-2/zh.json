@@ -1,0 +1,20 @@
+{
+  "ADD": "添加一个部分",
+  "CLOSE_PALETTE": "关闭",
+  "COPY": "复制",
+  "DROP_HERE": "放到此处",
+  "DROP_TO_UPLOAD": "拖到此处以上载",
+  "EMPTY_HTML_DESCRIPTION": "添加 HTML",
+  "EDIT_IMAGE": "编辑图像",
+  "EMPTY_STATE_DESCRIPTION": "拖放图像，或[浏览库]。",
+  "INITIAL_SECTION": "选择布局或将内容拖拽到此处",
+  "LOCK": "锁定以防止进行编辑",
+  "MOVE": "单击并按住鼠标进行拖动",
+  "OPEN_PALETTE": "更改图像",
+  "PZN_PICKER_CLOSE": "关闭",
+  "PZN_PICKER_HEADING": "选择个性化字段",
+  "REMOVE": "除去",
+  "REMOVE_IMAGE": "除去图像",
+  "SELECT": "选择图像",
+  "SHUTTERSTOCK_SAVE": "保存..."
+}

@@ -1,0 +1,4 @@
+{
+  "PHOTOS": "{name} machte am {takenDate, date, short} {numPhotos, plural,=0 {kein Foto.} =1 {ein Foto.} other {# Fotos.} }",
+  "ONLY_GERMAN": "Nur auf Deutsch"
+}

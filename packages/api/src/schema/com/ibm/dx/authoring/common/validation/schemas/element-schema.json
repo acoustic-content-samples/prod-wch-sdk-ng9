@@ -1,0 +1,81 @@
+{
+  "id": "http://www.ibm.com/schemas/element-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Element Schema",
+  "description": "Schema for element definitions",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$"
+    },
+    "rev": { "type": "string" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "classification": { "enum": ["element-definition"] },
+    "description": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "creatorId": { "type": "string" },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifierId": { "type": "string" },
+    "lastModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "linkedDocId": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "type": "string" }
+    },
+    "status": {
+      "enum": ["draft", "ready", "retired"]
+    },
+    "mandatoryFieldsWhenRequired": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "elementFragment": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "enum": ["$ELEMENT_KEY$"]
+        },
+        "label": {
+          "type": "string",
+          "enum": ["$ELEMENT_LABEL$"]
+        },
+        "elementType": {"type": "string"},
+        "required": {"type": "boolean"},
+        "helpText": {"type": "string"},
+        "locked": {"enum": [true, false]},
+        "hidden": {"enum": [true, false]}
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "classification",
+    "description",
+    "creatorId",
+    "created",
+    "lastModifierId",
+    "lastModified",
+    "tags",
+    "status",
+    "elementFragment"
+  ],
+  "additionalProperties": false
+}

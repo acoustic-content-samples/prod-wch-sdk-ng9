@@ -1,0 +1,44 @@
+{
+  "name": "@acoustic-content-sdk/api",
+  "version": "9.0.0",
+  "description": "> TODO: description",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-api.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-api.js",
+  "typings": "dist/acoustic-content-sdk-api.d.ts",
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "rxjs": "^6"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-api.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-api.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-api.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-api.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-api.js",
+  "metadata": "dist/acoustic-content-sdk-api.metadata.json",
+  "ngPackage": {},
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

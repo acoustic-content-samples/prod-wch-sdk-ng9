@@ -1,0 +1,12 @@
+{
+  "id": "design-page-right",
+  "rev": "1-5e3b4401ac51741559238e636d12d91b",
+  "name": "Two column, right",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/two-column-right_220.svg"
+  },
+  "template": "design-page-right",
+  "templateType": "angular"
+}

@@ -1,0 +1,9 @@
+{{#if selected}}
+{{#each @root}}
+{{#eq @key ../selected}}
+<div data-wch-selectable="{{ @root.$metadata.id }}#{{ $metadata.accessor }}">
+{{{ $markup }}}
+</div>
+{{/eq}}
+{{/each}}
+{{/if}}

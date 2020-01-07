@@ -1,0 +1,12 @@
+{
+  "id": "contest-rules-layout",
+  "rev": "2-2e0c02ec85939a83b31d50e7ac5c09b6",
+  "name": "One Column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/contest-rules-layout.jpg"
+  },
+  "template": "contest-rules-layout",
+  "templateType": "angular"
+}

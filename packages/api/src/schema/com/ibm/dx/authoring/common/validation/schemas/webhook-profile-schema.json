@@ -1,0 +1,69 @@
+{
+  "id": "http://www.ibm.com/schemas/webhook-profile-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Webhook Profile Schema",
+  "description": "Schema for Webhook Profile",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9*.\\-+_~$!',():]*$",
+      "maxLength": 100
+    },
+    "rev": {"type": "string" },
+    "_revisions": { "type": "object" },
+    "classification": {
+      "enum": [ "webhook-profile" ]
+    },
+    "creatorId": {"type": "string"},
+    "created": {"type": "string", "format": "date-time" },
+    "lastModifierId": {"type": "string"},
+    "lastModified": {"type": "string", "format": "date-time" },
+    "webhooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {"type": "string"},
+          "secretId": {"type": "string"},
+          "active": {"type": "boolean"},
+          "filter": {
+            "type": "object",
+            "properties": {
+              "description": {"type": "string", "maxLength": 500},
+              "eventType": {
+                "type": "array",
+                "items": {"enum": ["create", "update", "delete"]},
+                "uniqueItems": true
+              },
+              "classification": {
+                "type": "array",
+                "items": {
+                  "enum": ["asset", "category", "comment", "content", "content-type",
+                    "default-content", "image-profile", "layout", "layout-mapping", "project", "review", "taxonomy"]
+                },
+                "uniqueItems": true
+              },
+              "status": {
+                "type": "array",
+                "items": {"enum": ["draft", "ready", "retired"]},
+                "uniqueItems": true
+              },
+              "tags": {
+                "type": "array",
+                "items": {"type": "string"},
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": ["url"],
+        "additionalProperties": false
+      },
+      "maxItems": 5
+    }
+  },
+  "required": ["classification"],
+  "additionalProperties": false
+}

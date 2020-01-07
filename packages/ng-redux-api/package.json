@@ -1,0 +1,56 @@
+{
+  "name": "@acoustic-content-sdk/ng-redux-api",
+  "version": "9.0.0",
+  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-ng-redux-api.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-ng-redux-api.js",
+  "typings": "dist/acoustic-content-sdk-ng-redux-api.d.ts",
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/redux-store": "9.0.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "next"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-ng-redux-api.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-ng-redux-api.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-ng-redux-api.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng-redux-api.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-ng-redux-api.js",
+  "metadata": "dist/acoustic-content-sdk-ng-redux-api.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

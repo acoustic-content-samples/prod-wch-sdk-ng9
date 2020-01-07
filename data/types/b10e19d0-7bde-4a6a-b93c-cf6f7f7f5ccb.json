@@ -1,0 +1,190 @@
+{
+  "id": "b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb",
+  "rev": "1-7a2a979aa3cdbd640cc8389803613107",
+  "name": "AllTypes",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "contentThumbnail": {
+    "imageElement": "singleimage",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "category",
+      "label": "singleCat",
+      "key": "singlecat"
+    },
+    {
+      "elementType": "category",
+      "label": "multiCat",
+      "key": "multicat",
+      "allowMultipleValues": true,
+      "minimumValues": 0
+    },
+    {
+      "elementType": "datetime",
+      "fieldType": "date-time",
+      "label": "singleDate",
+      "key": "singledate"
+    },
+    {
+      "elementType": "datetime",
+      "fieldType": "date-time",
+      "label": "multiDate",
+      "key": "multidate",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Date"
+    },
+    {
+      "elementType": "file",
+      "label": "singleFile",
+      "key": "singlefile"
+    },
+    {
+      "elementType": "file",
+      "label": "multiFile",
+      "key": "multifile",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "File"
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "singleFormattedText",
+      "key": "singleformattedtext"
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "multiFormattedText",
+      "key": "multiformattedtext",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Formatted Text"
+    },
+    {
+      "elementType": "image",
+      "label": "singleImage",
+      "key": "singleimage"
+    },
+    {
+      "elementType": "image",
+      "label": "multiImage",
+      "key": "multiimage",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Image"
+    },
+    {
+      "elementType": "link",
+      "label": "singleLink",
+      "key": "singlelink"
+    },
+    {
+      "elementType": "link",
+      "label": "multiLink",
+      "key": "multilink",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Link"
+    },
+    {
+      "elementType": "location",
+      "label": "singleLocation",
+      "key": "singlelocation"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "singleNumber",
+      "key": "singlenumber"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "multiNumber",
+      "key": "multinumber",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Number"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "a",
+          "selection": "va"
+        },
+        {
+          "label": "b",
+          "selection": "vb"
+        }
+      ],
+      "label": "singleOption",
+      "key": "singleoption"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "a",
+          "selection": "va"
+        },
+        {
+          "label": "b",
+          "selection": "vb"
+        }
+      ],
+      "label": "multiOptions",
+      "key": "multioptions",
+      "allowMultipleValues": true,
+      "minimumValues": 0
+    },
+    {
+      "elementType": "reference",
+      "label": "singleReference",
+      "key": "singlereference"
+    },
+    {
+      "elementType": "reference",
+      "label": "multiReference",
+      "key": "multireference",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Content item"
+    },
+    {
+      "elementType": "text",
+      "label": "singleText",
+      "key": "singletext"
+    },
+    {
+      "elementType": "text",
+      "label": "multiText",
+      "key": "multitext",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Text"
+    },
+    {
+      "elementType": "toggle",
+      "label": "singleToggle",
+      "key": "singletoggle"
+    },
+    {
+      "elementType": "video",
+      "label": "singleVideo",
+      "key": "singlevideo"
+    },
+    {
+      "elementType": "video",
+      "label": "multiVideo",
+      "key": "multivideo"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+   "id": "http://www.ibm.com/schemas/type-schema.json",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Content Type Schema",
+   "description": "Schema for blank content type",
+   "type": "object",
+   "properties": {
+      "id": {
+         "type": "string",
+         "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$",
+         "maxLength": 100
+      },
+      "rev": {
+         "type": "string"
+      },
+      "_revisions": { "type": "object" },
+      "name": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 250
+      },
+      "path" : { "type":  "string" },
+      "classification": {
+         "enum": [ "content-type" ]
+      },
+      "description": {
+         "type": "string",
+         "maxLength": 500
+      },
+      "kind" : {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "uniqueItems": true
+      },
+      "thumbnail": {
+         "type":  "object",
+         "properties" : {
+            "id" : { "type":  "string", "minLength": 1, "maxLength": 100 },
+            "path" : { "type":  "string" },
+            "url" : { "type":  "string" }
+         },
+         "additionalProperties": false
+      },
+      "contentThumbnail": {
+         "type": "object",
+         "properties": {
+            "source": { "enum": [ "imageElementOrType", "imageElement", "type", "none" ]},
+            "imageElement": { "type": "string",  "maxLength": 100}
+         },
+         "required": [ "source" ],
+         "additionalProperties": false
+      },
+      "creatorId": {
+         "type": "string"
+      },
+      "created": {
+         "type": "string",
+         "format": "date-time"
+      },
+      "lastModifierId": {
+         "type": "string"
+      },
+      "lastModified": {
+         "type": "string",
+         "format": "date-time"
+      },
+      "linkedDocId": {
+         "type": "string",
+         "maxLength": 100
+      },
+      "tags": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "maxItems": 100,
+         "uniqueItems": true
+      },
+      "categoryIds": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      },
+      "categories": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      },
+      "status": {
+         "enum": [
+            "draft",
+            "ready",
+            "retired"
+         ]
+      },
+      "elements": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {}
+         }
+      },
+      "uiExtensions": {
+         "type": "object",
+         "properties": {
+            "element": { "type": "string" },
+            "elementBuiltin": { "type": "string" },
+            "elementConfig": { "type": "object" }
+         },
+         "additionalProperties": false
+      },
+      "icon": {
+         "enum": [
+            "category",
+            "group",
+            "datetime",
+            "formattedtext",
+            "file",
+            "image",
+            "link",
+            "location",
+            "number",
+            "reference",
+            "optionselection",
+            "text",
+            "toggle",
+            "variabletype",
+            "video"
+         ]
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "name",
+      "classification",
+      "status",
+      "elements"
+   ]
+}

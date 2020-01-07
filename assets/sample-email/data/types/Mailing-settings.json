@@ -1,0 +1,58 @@
+{
+  "id": "16e486dd-3c33-485c-a9e5-7617fbc67424",
+  "rev": "45-5420fad91da851151bd726ce6159fb4d",
+  "name": "Mailing settings",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [{
+      "elementType": "number",
+      "label": "Database ID",
+      "key": "databaseId"
+    },
+    {
+      "elementType": "text",
+      "label": "Subject line",
+      "key": "subjectLine"
+    },
+    {
+      "elementType": "text",
+      "label": "From name",
+      "key": "fromName"
+    },
+    {
+      "elementType": "text",
+      "label": "From address",
+      "key": "fromAddress"
+    },
+    {
+      "elementType": "text",
+      "label": "Reply-to address",
+      "key": "replyToAddress"
+    },
+    {
+      "elementType": "text",
+      "label": "Preheader",
+      "key": "preHeader"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Include plain text body",
+      "key": "includePlainTextBody"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Default click to view",
+      "key": "defaultClickToView"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

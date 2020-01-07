@@ -1,0 +1,101 @@
+{
+  "id": "a8fa51a3-4919-4308-a0b3-6cd31ae15d7e",
+  "rev": "2-ff0d72cba2d2bdd0ff9276d1b2e28486",
+  "name": "Design article",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "c98d44eb-5976-42a1-97d6-9a5840fa9fb4",
+    "path": "/dxdam/c9/c98d44eb-5976-42a1-97d6-9a5840fa9fb4/article_icon_220.png",
+    "url": "/authoring/v1/resources/9a069bfa086cfe1ae7c98e789fec1c58"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Topic title",
+      "key": "heading",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your article"
+      }
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe",
+        "name": "Lead image"
+      },
+      "label": "Lead image",
+      "key": "mainImage"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Author name",
+      "key": "author",
+      "helpText": "",
+      "placeholder": {
+        "show": true,
+        "text": "Author name"
+      }
+    },
+    {
+      "elementType": "datetime",
+      "fieldLabel": "Date",
+      "label": "Date",
+      "key": "date",
+      "fieldType": "date-time",
+      "helpText": "Date and time is used when ordering a list of design articles.  The time will not display in the website."
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Text chunk",
+      "label": "Text for body section",
+      "key": "body",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "The design topic, when displayed in the website, will interleave the text chunks and images to create a fluid layout.",
+      "placeholder": {
+        "show": true,
+        "text": "Start writing! Text does not need to be bound to one section. Spice up your article with images in between chunks of text."
+      }
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "f9e7f0b9-f57d-4d91-a257-54a64c1ff52f",
+        "name": "Article image"
+      },
+      "label": "images for body sections",
+      "key": "bodyImage",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Design article image"
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "label": "Author bio",
+      "key": "authorBio",
+      "restrictTypes": [
+        {
+          "id": "b0b91aad-8a9a-4d46-9aff-e35d004f0a1f",
+          "name": "Author profile"
+        }
+      ]
+    }
+  ]
+}

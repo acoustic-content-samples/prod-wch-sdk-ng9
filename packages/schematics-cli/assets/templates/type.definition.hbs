@@ -1,0 +1,97 @@
+/**
+ * Do not modify this file, it is auto-generated.
+ */
+/* tslint:disable:max-line-length */
+{{#each otherImports}}
+import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
+{{/each}}
+
+export const TYPE_ID = '{{{jsEscape id}}}';
+export const TYPE_NAME = '{{{jsEscape name}}}';
+{{#each bindings}}
+export const {{{ this.constant }}} = '{{{jsEscape this.key}}}';
+{{/each}}
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+export interface {{{definitionName}}} {
+    /**
+     * Metadata reference
+     */
+    $metadata: DeliveryGroupElementMetadata;
+{{#each bindings}}
+
+    /**
+     * @example
+     * ```json
+{{{this.comment}}}
+     * ```
+     */
+    [{{{jsEscape this.constant}}}]{{#if this.optional}}?{{/if}}: {{{this.type}}};
+{{/each}}
+}
+
+/**
+ * Tests if the value is of type {{{baseElementClass}}}
+ *
+ * @param aValue - the value to test
+ * @returns true if the value is of type {{{baseElementClass}}} else false
+ */
+export function is{{{definitionName}}}(aValue: any): aValue is {{{definitionName}}} {
+{{#if hasBindings}}
+    return {{{isNotNil}}}(aValue)
+{{#each bindings}}
+{{#if this.validator}}
+{{#if this.required}}
+{{#if this.multi}}
+        && {{{../isArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+{{else}}
+        && {{{ this.validator }}}(aValue[{{{jsEscape this.constant}}}])
+{{/if}}
+{{else}}
+{{#if this.multi}}
+        && {{{../isOptionalArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+{{else}}
+        && {{{../isOptional}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+{{/if}}
+{{/if}}
+{{/if}}
+{{/each}}
+    ;
+{{else}}
+    return {{{isNotNil}}}(!!aValue);
+{{/if}}
+}
+{{#each bindings}}
+
+/**
+ * Selects the "{{{this.key}}}" property from {{{../definitionName}}}.
+ *
+ * @param aDefault - optional default
+ *
+ * @returns the selector function
+ */
+export const {{{this.selectMethod}}}: (aDefault?: {{{this.type}}}) => UnaryFunction<{{{../definitionName}}}, {{{this.type}}}> = partialLeft(pluckProperty, {{{this.constant}}});
+
+/**
+ * Selects the "{{{this.key}}}" property from {{{../definitionName}}} as an operator.
+ *
+ * @param aDefault - optional default
+ * @param aCmp - optional comparator to compare the results
+ *
+ * @returns the selector operator
+ */
+export const {{{this.rxSelectMethod}}}: (aDefault?: {{{this.type}}}, aCmp?: EqualsPredicate<{{{this.type}}}>) => OperatorFunction<{{{../definitionName}}}, {{{this.type}}}> = partialLeft(rxSelectProperty, {{{this.constant}}});
+{{/each}}

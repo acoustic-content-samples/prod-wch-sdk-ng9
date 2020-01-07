@@ -1,0 +1,28 @@
+{
+  "id": "design-page-left-mapping",
+  "rev": "2-6bd2750eabcc671be805dbb9eb549c2d",
+  "name": "designPageLeftMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "bb79c338-1e20-4d53-9ff3-9a6970ad9ed3",
+    "name": "Design page"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "design-page-left",
+        "name": "Two column, left"
+      },
+      "layouts": [
+        {
+          "id": "design-page-left",
+          "name": "Two column, left"
+        },
+        {
+          "id": "design-page-right",
+          "name": "Two column, right"
+        }
+      ]
+    }
+  ]
+}

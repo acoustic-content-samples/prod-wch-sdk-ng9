@@ -1,0 +1,60 @@
+{
+  "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
+  "rev": "5-055ed50d5d2ec56dfe8fc85732378a88",
+  "name": "Site",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "site"
+  ],
+  "contentThumbnail": {
+    "imageElement": "logo",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "Contributions",
+      "key": "contributions",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Content item",
+      "role": [
+        "configuration"
+      ],
+      "restrictTypes": [
+        {
+          "id": "aab86460-0018-44c2-9f52-3a326e58f7f7",
+          "name": "Page Contributions"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "label": "Navigation",
+      "key": "navigation",
+      "restrictTypes": [
+        {
+          "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
+          "name": "Site Navigation"
+        }
+      ],
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "label": "Title",
+      "key": "title"
+    },
+    {
+      "elementType": "image",
+      "label": "Logo",
+      "key": "logo"
+    }
+  ]
+}

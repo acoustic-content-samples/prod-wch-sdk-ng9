@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "browser": {
+      "implementation": "./../bundles/acoustic-content-sdk-schematics.umd.min#builder",
+      "schema": "./builders/browser.json",
+      "description": "Build extra output files for WCH"
+    }
+  }
+}

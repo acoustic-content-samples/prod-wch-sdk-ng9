@@ -1,0 +1,12 @@
+{
+  "id": "event-layout",
+  "rev": "1-64226665b2613528ae355e35a757ffd1",
+  "name": "Event",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/event_220.svg"
+  },
+  "template": "event-layout",
+  "templateType": "angular"
+}

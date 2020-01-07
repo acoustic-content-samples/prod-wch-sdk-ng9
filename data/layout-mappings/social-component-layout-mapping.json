@@ -1,0 +1,24 @@
+{
+  "id": "social-component-layout-mapping",
+  "rev": "2-96291e5f9e24b310749ba2ce1774800d",
+  "name": "socialComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "71689897-4505-4c1e-85c9-a57810158a4e",
+    "name": "Social component"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "social-component-layout",
+        "name": "One Column"
+      },
+      "layouts": [
+        {
+          "id": "social-component-layout",
+          "name": "One Column"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "10ed9f3f-ab41-45a9-ba24-d988974affa7",
+  "rev": "2-8ac06483b4706438aed0fa2b7144217e",
+  "name": "Event",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "9c6440b5-512c-4cfc-9941-b1ad759f77f5",
+    "path": "/dxdam/9c/9c6440b5-512c-4cfc-9941-b1ad759f77f5/events_icon_220.png",
+    "url": "/authoring/v1/resources/b05c661d5e891602477ea9714733a975"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "Content created from this template is included on the events page in the Oslo site.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Event title",
+      "key": "heading",
+      "placeholder": {
+        "show": true,
+        "text": "Event title"
+      }
+    },
+    {
+      "elementType": "datetime",
+      "fieldLabel": "Date",
+      "label": "Event date",
+      "key": "date"
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Event description",
+      "key": "body",
+      "placeholder": {
+        "show": true,
+        "text": "Tell us about your event and who should attend."
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Event details",
+      "key": "eventDetails",
+      "placeholder": {
+        "show": true,
+        "text": "Reel in your audience with more details about the event."
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Event location",
+      "key": "eventLocation",
+      "placeholder": {
+        "show": true,
+        "text": "Add the event location. "
+      }
+    }
+  ]
+}

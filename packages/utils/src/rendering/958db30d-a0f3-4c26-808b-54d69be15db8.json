@@ -1,0 +1,149 @@
+{
+  "id": "958db30d-a0f3-4c26-808b-54d69be15db8",
+  "rev": "8-82c804925fcef4bef0dc3b2e891c08cb",
+  "name": "TestFamily",
+  "description": "",
+  "typeId": "c867969e-fbd1-439a-af30-e7d0611a47e4",
+  "locale": "en",
+  "tags": [],
+  "keywords": [],
+  "status": "ready",
+  "elements": {
+    "father": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "3567322c-39b2-4257-b042-aa537aec74ac"
+      },
+      "value": {
+        "givenname": {
+          "elementType": "text",
+          "value": "Max"
+        },
+        "familyname": {
+          "elementType": "text",
+          "value": "Mustermann"
+        }
+      }
+    },
+    "mother": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "3567322c-39b2-4257-b042-aa537aec74ac"
+      },
+      "value": {
+        "givenname": {
+          "elementType": "text",
+          "value": "Erika"
+        },
+        "familyname": {
+          "elementType": "text",
+          "value": "Mustermann"
+        }
+      }
+    },
+    "marriage": {
+      "elementType": "datetime",
+      "value": "2018-04-05T22:00:00Z"
+    },
+    "children": {
+      "elementType": "group",
+      "values": [
+        {
+          "givenname": {
+            "elementType": "text",
+            "value": "Erstes Kind"
+          },
+          "familyname": {
+            "elementType": "text",
+            "value": "Mustermann"
+          }
+        },
+        {
+          "givenname": {
+            "elementType": "text",
+            "value": "Zweites Kind"
+          },
+          "familyname": {
+            "elementType": "text",
+            "value": "Mustermann"
+          }
+        }
+      ]
+    },
+    "related": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c867969e-fbd1-439a-af30-e7d0611a47e4"
+      },
+      "value": {
+        "father": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "3567322c-39b2-4257-b042-aa537aec74ac"
+          },
+          "value": {
+            "givenname": {
+              "elementType": "text",
+              "value": "Max"
+            },
+            "familyname": {
+              "elementType": "text",
+              "value": "Mustermann"
+            }
+          }
+        },
+        "mother": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "3567322c-39b2-4257-b042-aa537aec74ac"
+          },
+          "value": {
+            "givenname": {
+              "elementType": "text",
+              "value": "Erika"
+            },
+            "familyname": {
+              "elementType": "text",
+              "value": "Mustermann"
+            }
+          }
+        },
+        "marriage": {
+          "elementType": "datetime",
+          "value": "2018-04-05T22:00:00Z"
+        },
+        "children": {
+          "elementType": "group",
+          "values": [
+            {
+              "givenname": {
+                "elementType": "text",
+                "value": "Erstes Kind"
+              },
+              "familyname": {
+                "elementType": "text",
+                "value": "Mustermann"
+              }
+            },
+            {
+              "givenname": {
+                "elementType": "text",
+                "value": "Zweites Kind"
+              },
+              "familyname": {
+                "elementType": "text",
+                "value": "Mustermann"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "kind": [],
+  "lastModified": "2018-04-24T13:14:58.818Z",
+  "created": "2018-04-23T13:15:00.165Z",
+  "creatorId": "566764ab-5398-487a-a2d6-e3e17b797baa",
+  "classification": "content",
+  "lastModifierId": "566764ab-5398-487a-a2d6-e3e17b797baa"
+}

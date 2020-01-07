@@ -1,0 +1,354 @@
+<table {{#eq commonSettings.hideOnMobile true}} class="hide-on-mobile" {{/eq}} data-content-item-id="{{$metadata.id}}" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0px !important; width:100%; {{~#if margin.left}} padding-left:{{margin.left}}px; {{~/if~}} {{~#if margin.right}} padding-right:{{margin.right}}px; {{~/if~}}
+{{~#if margin.top}} padding-top:{{margin.top}}px; {{~/if~}} {{~#if margin.bottom}} padding-bottom:{{margin.bottom}}px; {{~/if~}} {{#eq background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}}
+{{#eq background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}} {{~#if background.backgroundColor.colorCode}} background-color:{{background.backgroundColor.colorCode}} {{~/if~}}" {{~#if background.image.asset}} {{#eq background.includeBackgroundImage true}} background="{{$context.hub.resourceUrl.origin}}{{background.image.renditions.default.url}}" {{/eq}}{{~/if~}}>
+	<tbody>
+		{{~#if layout}}
+			{{!-- Image Left layout --}}
+			{{#eq layout "image-left"}}
+				<tr>
+					<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+							<tbody>
+								<tr>
+									<td {{#unless imageGroup.image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if imageGroup.align.alignmentOptions}} align="{{imageGroup.align.alignmentOptions}}" {{else}} align="left" {{~/if~}} style="{{~#if imageGroup.padding.left}}padding-left:{{imageGroup.padding.left}}px;{{~/if~}} {{~#if imageGroup.padding.right}}padding-right:{{imageGroup.padding.right}}px;{{~/if~}} {{~#if imageGroup.padding.top}}padding-top:{{imageGroup.padding.top}}px;{{~/if~}} {{~#if imageGroup.padding.bottom}}padding-bottom:{{imageGroup.padding.bottom}}px;{{~/if~}}">
+													{{~#if imageGroup.image.link.url}} <a href="{{imageGroup.image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+										{{~#if imageGroup.image.renditions.default.url}}
+											<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image" src="{{$context.hub.resourceUrl.origin}}{{imageGroup.image.renditions.default.url}}"
+											border="0" {{~#if imageGroup.image.altText}} alt="{{imageGroup.image.altText}}" {{~/if~}}
+											style="display:block; {{~#if imageGroup.image.renditions.default.width}} max-width:{{imageGroup.image.renditions.default.width}}px; {{~/if~}} width:100%;">
+											{{~#if imageGroup.image.link.url}} </a> {{~/if~}}
+										{{else}}
+											<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image">
+											</div>
+										{{~/if~}}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+					<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+						{{~#if textGroup.background.image.asset}}
+						{{#eq textGroup.background.includeBackgroundImage true}}
+						<table border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+							<tbody>
+								<tr>
+									<td data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.background.value.image" background="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" style="vertical-align: top; {{#eq textGroup.background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq textGroup.background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq textGroup.background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}};{{~/if~}}">
+											 <!--[if gte mso 9]>
+												  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+												  <v:fill type="frame" src="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" color="{{textGroup.background.backgroundColor.colorCode}}"/>
+												  <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+												  <div>
+						  				 <![endif]-->
+											 {{/eq}}
+											 {{~/if~}}
+											<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height:100%; border-spacing: 0px !important; {{~#if textGroup.background.image.asset}} {{#eq textGroup.background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq textGroup.background.includeBackgroundImage false}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+												<tbody>
+													<tr>
+														<td style="{{~#if textGroup.padding.right}} padding-right:{{textGroup.padding.right}}px; {{~/if~}}
+														{{~#if textGroup.padding.top}} padding-top:{{textGroup.padding.top}}px; {{~/if~}}
+														{{~#if textGroup.padding.bottom}} padding-bottom:{{textGroup.padding.bottom}}px; {{~/if~}} {{~#if textGroup.padding.left}} padding-left:{{textGroup.padding.left}}px; {{~/if~}}">
+															<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textGroup.textStyle.font}} font-family: {{textGroup.textStyle.font}} !important; {{~/if~}}
+															{{~#if textGroup.textStyle.size}} font-size: {{textGroup.textStyle.size}}px; {{~/if~}}
+															{{~#if textGroup.textStyle.color}} color: {{textGroup.textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+															{{~#if textGroup.alignment.alignmentOptions}} text-align: {{textGroup.alignment.alignmentOptions}}; {{~/if~}}
+															{{~#if textGroup.lineHeight.lineHeightOptions}} line-height:{{textGroup.lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText textGroup $context.hub.resourceUrl.origin}}}</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											{{~#if textGroup.background.image.asset}}
+											{{#eq textGroup.background.includeBackgroundImage true}}
+											<!--[if gte mso 9]>
+						                </div>
+														</v:textbox>
+														</v:rect>
+						            <![endif]-->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						{{/eq}}
+						{{~/if~}}
+					</td>
+				</tr>
+			{{/eq}}
+			{{!-- Image Right layout --}}
+			{{#eq layout "image-right"}}
+				<tr>
+					<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+						{{~#if textGroup.background.image.asset}}
+						{{#eq textGroup.background.includeBackgroundImage true}}
+						<table border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+							<tbody>
+								<tr>
+									<td data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.background.value.image" background="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" style="vertical-align: top; {{#eq textGroup.background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq textGroup.background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq textGroup.background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}};{{~/if~}}">
+										<!--[if gte mso 9]>
+											 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+											 <v:fill type="frame" src="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" color="{{textGroup.background.backgroundColor.colorCode}}"/>
+											 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+											 <div>
+										<![endif]-->
+											 {{/eq}}
+											 {{~/if~}}
+											<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height:100%; border-spacing: 0px !important;{{~#if textGroup.background.image.asset}} {{#eq textGroup.background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq textGroup.background.includeBackgroundImage false}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+												<tbody>
+													<tr>
+														<td style="{{~#if textGroup.padding.right}} padding-right:{{textGroup.padding.right}}px; {{~/if~}}
+														{{~#if textGroup.padding.top}} padding-top:{{textGroup.padding.top}}px; {{~/if~}}
+														{{~#if textGroup.padding.bottom}} padding-bottom:{{textGroup.padding.bottom}}px; {{~/if~}} {{~#if textGroup.padding.left}} padding-left:{{textGroup.padding.left}}px; {{~/if~}}">
+															<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textGroup.textStyle.font}} font-family: {{textGroup.textStyle.font}} !important; {{~/if~}}
+															{{~#if textGroup.textStyle.size}} font-size: {{textGroup.textStyle.size}}px; {{~/if~}}
+															{{~#if textGroup.textStyle.color}} color: {{textGroup.textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+															{{~#if textGroup.alignment.alignmentOptions}} text-align: {{textGroup.alignment.alignmentOptions}}; {{~/if~}}
+															{{~#if textGroup.lineHeight.lineHeightOptions}} line-height:{{textGroup.lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText textGroup $context.hub.resourceUrl.origin}}}</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											{{~#if textGroup.background.image.asset}}
+											{{#eq textGroup.background.includeBackgroundImage true}}
+											<!--[if gte mso 9]>
+						                </div>
+														</v:textbox>
+														</v:rect>
+						            <![endif]-->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						{{/eq}}
+						{{~/if~}}
+					</td>
+					<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+							<tbody>
+								<tr>
+									<td {{#unless imageGroup.image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if imageGroup.align.alignmentOptions}} align="{{imageGroup.align.alignmentOptions}}" {{else}} align="left" {{~/if~}} style="{{~#if imageGroup.padding.left}}padding-left:{{imageGroup.padding.left}}px;{{~/if~}} {{~#if imageGroup.padding.right}}padding-right:{{imageGroup.padding.right}}px;{{~/if~}} {{~#if imageGroup.padding.top}}padding-top:{{imageGroup.padding.top}}px;{{~/if~}} {{~#if imageGroup.padding.bottom}}padding-bottom:{{imageGroup.padding.bottom}}px;{{~/if~}}">
+													{{~#if imageGroup.image.link.url}} <a href="{{imageGroup.image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+										{{~#if imageGroup.image.renditions.default.url}}
+											<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image" src="{{$context.hub.resourceUrl.origin}}{{imageGroup.image.renditions.default.url}}"
+											border="0" {{~#if imageGroup.image.altText}} alt="{{imageGroup.image.altText}}" {{~/if~}}
+											style="display:block; {{~#if imageGroup.image.renditions.default.width}} max-width:{{imageGroup.image.renditions.default.width}}px; {{~/if~}} width:100%;">
+											{{~#if imageGroup.image.link.url}} </a> {{~/if~}}
+										{{else}}
+											<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image">
+											</div>
+										{{~/if~}}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			{{/eq}}
+			{{!-- Image Bottom layout --}}
+			{{#eq layout "image-bottom"}}
+			<tr>
+				<td>
+					{{~#if textGroup.background.image.asset}}
+					{{#eq textGroup.background.includeBackgroundImage true}}
+					<table border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+						<tbody>
+							<tr>
+								<td data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.background.value.image" background="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" style="vertical-align: top; {{#eq textGroup.background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq textGroup.background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq textGroup.background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}};{{~/if~}}">
+									<!--[if gte mso 9]>
+										 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+										 <v:fill type="frame" src="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" color="{{textGroup.background.backgroundColor.colorCode}}"/>
+										 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+										 <div>
+									<![endif]-->
+										 {{/eq}}
+					           {{~/if~}}
+					          <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height:100%; border-spacing: 0px !important; {{~#if textGroup.background.image.asset}} {{#eq textGroup.background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq textGroup.background.includeBackgroundImage false}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+					            <tbody>
+					              <tr>
+					                <td style="{{~#if textGroup.padding.right}} padding-right:{{textGroup.padding.right}}px; {{~/if~}}
+					                {{~#if textGroup.padding.top}} padding-top:{{textGroup.padding.top}}px; {{~/if~}}
+					                {{~#if textGroup.padding.bottom}} padding-bottom:{{textGroup.padding.bottom}}px; {{~/if~}} {{~#if textGroup.padding.left}} padding-left:{{textGroup.padding.left}}px; {{~/if~}}">
+					                  <div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textGroup.textStyle.font}} font-family: {{textGroup.textStyle.font}} !important; {{~/if~}}
+					                  {{~#if textGroup.textStyle.size}} font-size: {{textGroup.textStyle.size}}px; {{~/if~}}
+					                  {{~#if textGroup.textStyle.color}} color: {{textGroup.textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+					                  {{~#if textGroup.alignment.alignmentOptions}} text-align: {{textGroup.alignment.alignmentOptions}}; {{~/if~}}
+					                  {{~#if textGroup.lineHeight.lineHeightOptions}} line-height:{{textGroup.lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText textGroup $context.hub.resourceUrl.origin}}}</div>
+					                </td>
+					              </tr>
+					            </tbody>
+					          </table>
+					          {{~#if textGroup.background.image.asset}}
+										{{#eq textGroup.background.includeBackgroundImage true}}
+										<!--[if gte mso 9]>
+					                </div>
+													</v:textbox>
+													</v:rect>
+					            <![endif]-->
+					  		</td>
+					  	</tr>
+					  </tbody>
+					</table>
+					{{/eq}}
+					{{~/if~}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+						<tbody>
+							<tr>
+								<td {{#unless imageGroup.image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if imageGroup.align.alignmentOptions}} align="{{imageGroup.align.alignmentOptions}}" {{else}} align="left" {{~/if~}} style="{{~#if imageGroup.padding.left}}padding-left:{{imageGroup.padding.left}}px;{{~/if~}} {{~#if imageGroup.padding.right}}padding-right:{{imageGroup.padding.right}}px;{{~/if~}} {{~#if imageGroup.padding.top}}padding-top:{{imageGroup.padding.top}}px;{{~/if~}} {{~#if imageGroup.padding.bottom}}padding-bottom:{{imageGroup.padding.bottom}}px;{{~/if~}}">
+					              {{~#if imageGroup.image.link.url}} <a href="{{imageGroup.image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+									{{~#if imageGroup.image.renditions.default.url}}
+										<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image" src="{{$context.hub.resourceUrl.origin}}{{imageGroup.image.renditions.default.url}}"
+										border="0" {{~#if imageGroup.image.altText}} alt="{{imageGroup.image.altText}}" {{~/if~}}
+										style="display:block; {{~#if imageGroup.image.renditions.default.width}} max-width:{{imageGroup.image.renditions.default.width}}px; {{~/if~}} width:100%;">
+										{{~#if imageGroup.image.link.url}} </a> {{~/if~}}
+									{{else}}
+										<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image">
+										</div>
+									{{~/if~}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			{{/eq}}
+			{{!-- Image Top layout --}}
+			{{#eq layout "image-top"}}
+			<tr>
+				<td>
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+						<tbody>
+							<tr>
+								<td {{#unless imageGroup.image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if imageGroup.align.alignmentOptions}} align="{{imageGroup.align.alignmentOptions}}" {{else}} align="left" {{~/if~}} style="{{~#if imageGroup.padding.left}}padding-left:{{imageGroup.padding.left}}px;{{~/if~}} {{~#if imageGroup.padding.right}}padding-right:{{imageGroup.padding.right}}px;{{~/if~}} {{~#if imageGroup.padding.top}}padding-top:{{imageGroup.padding.top}}px;{{~/if~}} {{~#if imageGroup.padding.bottom}}padding-bottom:{{imageGroup.padding.bottom}}px;{{~/if~}}">
+					              {{~#if imageGroup.image.link.url}} <a href="{{imageGroup.image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+									{{~#if imageGroup.image.renditions.default.url}}
+										<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image" src="{{$context.hub.resourceUrl.origin}}{{imageGroup.image.renditions.default.url}}"
+										border="0" {{~#if imageGroup.image.altText}} alt="{{imageGroup.image.altText}}" {{~/if~}}
+										style="display:block; {{~#if imageGroup.image.renditions.default.width}} max-width:{{imageGroup.image.renditions.default.width}}px; {{~/if~}} width:100%;">
+										{{~#if imageGroup.image.link.url}} </a> {{~/if~}}
+									{{else}}
+										<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image">
+										</div>
+									{{~/if~}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{{~#if textGroup.background.image.asset}}
+					{{#eq textGroup.background.includeBackgroundImage true}}
+					<table border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+						<tbody>
+							<tr>
+								<td data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.background.value.image" background="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" style="vertical-align: top; {{#eq textGroup.background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq textGroup.background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq textGroup.background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}};{{~/if~}}">
+									<!--[if gte mso 9]>
+										 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+										 <v:fill type="frame" src="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" color="{{textGroup.background.backgroundColor.colorCode}}"/>
+										 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+										 <div>
+									<![endif]-->
+										 {{/eq}}
+					           {{~/if~}}
+					          <table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height:100%; border-spacing: 0px !important; {{~#if textGroup.background.image.asset}} {{#eq textGroup.background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq textGroup.background.includeBackgroundImage false}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+					            <tbody>
+					              <tr>
+					                <td style="{{~#if textGroup.padding.right}} padding-right:{{textGroup.padding.right}}px; {{~/if~}}
+					                {{~#if textGroup.padding.top}} padding-top:{{textGroup.padding.top}}px; {{~/if~}}
+					                {{~#if textGroup.padding.bottom}} padding-bottom:{{textGroup.padding.bottom}}px; {{~/if~}} {{~#if textGroup.padding.left}} padding-left:{{textGroup.padding.left}}px; {{~/if~}}">
+					                  <div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textGroup.textStyle.font}} font-family: {{textGroup.textStyle.font}} !important; {{~/if~}}
+					                  {{~#if textGroup.textStyle.size}} font-size: {{textGroup.textStyle.size}}px; {{~/if~}}
+					                  {{~#if textGroup.textStyle.color}} color: {{textGroup.textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+					                  {{~#if textGroup.alignment.alignmentOptions}} text-align: {{textGroup.alignment.alignmentOptions}}; {{~/if~}}
+					                  {{~#if textGroup.lineHeight.lineHeightOptions}} line-height:{{textGroup.lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText textGroup $context.hub.resourceUrl.origin}}}</div>
+					                </td>
+					              </tr>
+					            </tbody>
+					          </table>
+					          {{~#if textGroup.background.image.asset}}
+										{{#eq textGroup.background.includeBackgroundImage true}}
+										<!--[if gte mso 9]>
+					                </div>
+													</v:textbox>
+													</v:rect>
+					            <![endif]-->
+					  		</td>
+					  	</tr>
+					  </tbody>
+					</table>
+					{{/eq}}
+					{{~/if~}}
+				</td>
+			</tr>
+			{{/eq}}
+		{{else}}
+				{{!-- Temporary fallback to default Image Left --}}
+				<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+					<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; border-spacing: 0px !important;">
+						<tbody>
+							<tr>
+								<td {{#unless imageGroup.image.renditions.default.url}}class="target wch-image-container"{{/unless}} {{~#if imageGroup.align.alignmentOptions}} align="{{imageGroup.align.alignmentOptions}}" {{else}} align="left" {{~/if~}} style="{{~#if imageGroup.padding.left}}padding-left:{{imageGroup.padding.left}}px;{{~/if~}} {{~#if imageGroup.padding.right}}padding-right:{{imageGroup.padding.right}}px;{{~/if~}} {{~#if imageGroup.padding.top}}padding-top:{{imageGroup.padding.top}}px;{{~/if~}} {{~#if imageGroup.padding.bottom}}padding-bottom:{{imageGroup.padding.bottom}}px;{{~/if~}}">
+												{{~#if imageGroup.image.link.url}} <a href="{{imageGroup.image.link.url}}" target="_blank" style="cursor: pointer;" data-mktcloud-xt="SPCLICK">{{~/if~}}
+									{{~#if imageGroup.image.renditions.default.url}}
+										<img data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image" src="{{$context.hub.resourceUrl.origin}}{{imageGroup.image.renditions.default.url}}"
+										border="0" {{~#if imageGroup.image.altText}} alt="{{imageGroup.image.altText}}" {{~/if~}}
+										style="display:block; {{~#if imageGroup.image.renditions.default.width}} max-width:{{imageGroup.image.renditions.default.width}}px; {{~/if~}} width:100%;">
+										{{~#if imageGroup.image.link.url}} </a> {{~/if~}}
+									{{else}}
+										<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.imageGroup.value.image">
+										</div>
+									{{~/if~}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+				<td data-content-item-id="{{$metadata.id}}" class="displayBlock w100per" style="vertical-align: top; width: 50%;">
+					{{~#if textGroup.background.image.asset}}
+					{{#eq textGroup.background.includeBackgroundImage true}}
+					<table border="0" cellpadding="0" cellspacing="0" align="center" style="width:100%; border-spacing: 0px !important">
+						<tbody>
+							<tr>
+								<td data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.background.value.image" background="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" style="vertical-align: top; {{#eq textGroup.background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}} {{#eq textGroup.background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}} {{#eq textGroup.background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}  {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}};{{~/if~}}">
+									<!--[if gte mso 9]>
+										 <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+										 <v:fill type="frame" src="{{$context.hub.resourceUrl.origin}}{{textGroup.background.image.renditions.default.url}}" color="{{textGroup.background.backgroundColor.colorCode}}"/>
+										 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+										 <div>
+									<![endif]-->
+										 {{/eq}}
+										 {{~/if~}}
+										<table align="center" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height:100%; border-spacing: 0px !important; {{~#if textGroup.background.image.asset}} {{#eq textGroup.background.includeBackgroundImage true}} background-color: transparent; {{/eq}} {{#eq textGroup.background.includeBackgroundImage false}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{/eq}} {{else}} {{~#if textGroup.background.backgroundColor.colorCode}} background-color: {{textGroup.background.backgroundColor.colorCode}}; {{~/if~}} {{~/if~}}">
+											<tbody>
+												<tr>
+													<td style="{{~#if textGroup.padding.right}} padding-right:{{textGroup.padding.right}}px; {{~/if~}}
+													{{~#if textGroup.padding.top}} padding-top:{{textGroup.padding.top}}px; {{~/if~}}
+													{{~#if textGroup.padding.bottom}} padding-bottom:{{textGroup.padding.bottom}}px; {{~/if~}} {{~#if textGroup.padding.left}} padding-left:{{textGroup.padding.left}}px; {{~/if~}}">
+														<div data-content-item-id="{{$metadata.id}}" data-wch-editable="elements.textGroup.value.text.value" data-wch-placeholder="Text" style="height:100%; word-break: break-word; mso-line-height-rule: exactly; {{~#if textGroup.textStyle.font}} font-family: {{textGroup.textStyle.font}} !important; {{~/if~}}
+														{{~#if textGroup.textStyle.size}} font-size: {{textGroup.textStyle.size}}px; {{~/if~}}
+														{{~#if textGroup.textStyle.color}} color: {{textGroup.textStyle.color}}; {{else}} color: #000000; {{~/if~}}
+														{{~#if textGroup.alignment.alignmentOptions}} text-align: {{textGroup.alignment.alignmentOptions}}; {{~/if~}}
+														{{~#if textGroup.lineHeight.lineHeightOptions}} line-height:{{textGroup.lineHeight.lineHeightOptions}}; {{else}} line-height: 1; {{~/if~}}">{{{configureText textGroup $context.hub.resourceUrl.origin}}}</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										{{~#if textGroup.background.image.asset}}
+										{{#eq textGroup.background.includeBackgroundImage true}}
+										<!--[if gte mso 9]>
+					                </div>
+													</v:textbox>
+													</v:rect>
+					            <![endif]-->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					{{/eq}}
+					{{~/if~}}
+				</td>
+		{{~/if~}}
+	</tbody>
+</table>

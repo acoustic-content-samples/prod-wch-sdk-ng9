@@ -1,0 +1,61 @@
+{
+  "id": "8e555ce3-d7fb-462b-8cdc-4e638e9ab4d4",
+  "rev": "7-a7c6b590a96f4626d4310cc8f0834e6b",
+  "name": "Promotion image",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "d1ee9c12-12bb-499b-9e2e-377e065b6691"
+  },
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ],
+      "fieldLabel": "Image",
+      "label": "Promotion image",
+      "key": "image",
+      "imageProfileId": "5bf7ec46-4b14-4120-bded-0febf222e401"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Promotion text",
+      "key": "text",
+      "placeholder": {
+        "show": true,
+        "text": "Banner headline for your hero"
+      }
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "Button label",
+      "key": "link"
+    },
+    {
+      "elementType": "category",
+      "label": "Promotion category",
+      "key": "promotionCategory",
+      "restrictedParents": [
+        "d0607f8b-33e6-42e2-bcad-47be08d4008b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "author-profile-layout",
+  "rev": "2-f073092cbb5bf9f2bd677c0735485af9",
+  "name": "Author profile",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/author-profile_220.svg",
+    "url": "/authoring/v1/resources/48f1853a4ac2f7432f10a81d10ec7f19_ec3c6c2ac07407e2aa1fec6cd2edb985"
+  },
+  "template": "author-profile-layout",
+  "templateType": "angular"
+}

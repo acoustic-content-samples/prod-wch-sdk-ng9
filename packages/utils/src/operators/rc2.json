@@ -1,0 +1,19 @@
+{
+  "$context": {
+    "hub": {
+      "resourceUrl": {
+        "origin": "https://my9.digitalexperience.ibm.com"
+      },
+      "apiUrl": {
+        "origin": "https://my9.digitalexperience.ibm.com"
+      }
+    },
+    "breadcrumb": [
+      {
+        "$metadata": {
+          "id": "5379fb5e-b859-43ae-8bdc-647abf3d235e"
+        }
+      }
+    ]
+  }
+}

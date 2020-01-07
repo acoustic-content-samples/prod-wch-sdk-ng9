@@ -1,0 +1,54 @@
+{
+  "id": "http://www.ibm.com/schemas/image-profile-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Image Profile Schema",
+  "description": "Schema for image profile",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$",
+      "maxLength": 100
+    },
+    "rev": {"type": "string"},
+    "_revisions": { "type": "object" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "description": {"type": "string", "maxLength": 500},
+    "classification": {"enum": [ "image-profile" ]},
+    "creatorId": {"type": "string"},
+    "created": {"type": "string", "format": "date-time"},
+    "lastModifierId": {"type": "string"},
+    "lastModified": {"type": "string", "format": "date-time"},
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "dimensions": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {"type": "string", "pattern": "^(?!\\s*$).+", "minLength": 1, "maxLength": 100},
+          "key": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$", "minLength": 1, "maxLength": 100},
+          "description": {"type": "string", "maxLength": 500},
+          "width": {"type": "integer", "minimum": 1, "maximum": 99999},
+          "height": {"type": "integer", "minimum": 1, "maximum": 99999}
+        },
+        "required": [ "label", "key", "width", "height" ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": ["name", "classification", "dimensions"],
+  "additionalProperties": false
+}

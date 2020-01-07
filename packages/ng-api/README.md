@@ -1,0 +1,1 @@
+Definition of interfaces and constants for the [Angular](https://angular.io/) implementation of the SDK.

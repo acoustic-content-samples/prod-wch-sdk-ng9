@@ -1,0 +1,20 @@
+{
+  "ADD": "Ajouter une section",
+  "CLOSE_PALETTE": "Fermer",
+  "COPY": "Copier",
+  "DROP_HERE": "Déposer ici",
+  "DROP_TO_UPLOAD": "Déposer pour télécharger",
+  "EMPTY_HTML_DESCRIPTION": "Ajouter votre HTML",
+  "EDIT_IMAGE": "Editer l'image",
+  "EMPTY_STATE_DESCRIPTION": "Glissez-déposez une image ou [parcourez la bibliothèque].",
+  "INITIAL_SECTION": "Sélectionnez une présentation ou glissez un contenu ici",
+  "LOCK": "Verrouiller pour empêcher l'édition",
+  "MOVE": "Cliquer et maintenir pour faire glisser",
+  "OPEN_PALETTE": "Changer d'image",
+  "PZN_PICKER_CLOSE": "Fermer",
+  "PZN_PICKER_HEADING": "Choisir une zone de personnalisation",
+  "REMOVE": "Retirer",
+  "REMOVE_IMAGE": "Retirer l'image",
+  "SELECT": "Sélectionner une image",
+  "SHUTTERSTOCK_SAVE": "Sauvegarder..."
+}

@@ -1,0 +1,33 @@
+/**
+ * Do not modify this file, it is auto-generated.
+ */
+/* tslint:disable:max-line-length */
+{{#each otherImports}}
+import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
+{{/each}}
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+export abstract class {{{className}}} extends AbstractRenderingComponent {
+
+    /**
+     * Strongly typed stream of the rendering contexts
+     */
+    readonly renderingContext$: Observable<{{{interfacesName}}}>;
+
+    protected constructor() {
+        super();
+    }
+}

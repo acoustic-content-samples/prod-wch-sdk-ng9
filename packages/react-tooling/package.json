@@ -1,0 +1,62 @@
+{
+  "name": "@acoustic-content-sdk/react-tooling",
+  "version": "9.0.0",
+  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "react",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-react-tooling.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-react-tooling.js",
+  "typings": "dist/acoustic-content-sdk-react-tooling.d.ts",
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "postbuild:packagr": "cpx \"assets/**\" dist/assets --verbose",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^6"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-react-tooling.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-react-tooling.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-react-tooling.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-react-tooling.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-react-tooling.js",
+  "metadata": "dist/acoustic-content-sdk-react-tooling.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*",
+      "loose-envify"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

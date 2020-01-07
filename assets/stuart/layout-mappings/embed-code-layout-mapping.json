@@ -1,0 +1,21 @@
+{
+  "id": "embed-code-layout-mapping",
+  "rev": "1-5e5861e67bf4e769ceafb0d210356b72",
+  "name": "embedCodeLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "fdee49eb-1367-4005-8bfe-7e634a4d7e0f"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "embed-code-layout"
+      },
+      "layouts": [
+        {
+          "id": "embed-code-layout"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "c8b9a333-00de-426a-89b2-4c795f5da2b4",
+  "rev": "3-f6a30d090640965b80652e2bd8216805",
+  "name": "Email Content Layout Mapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "713fbab1-acd2-426b-b190-47abcf9be37e"
+      },
+      "layouts": [
+        {
+          "id": "713fbab1-acd2-426b-b190-47abcf9be37e"
+        }
+      ]
+    }
+  ]
+}

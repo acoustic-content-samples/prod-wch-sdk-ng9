@@ -1,0 +1,12 @@
+{
+  "id": "error-page-layout",
+  "rev": "2-a95ec166f84ae74af565a49ec99a03a0",
+  "name": "One column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/error-page-layout.jpg"
+  },
+  "template": "error-page-layout",
+  "templateType": "angular"
+}

@@ -1,0 +1,1 @@
+Redux based implementation of [Angular](https://angular.io/) providers.

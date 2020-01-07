@@ -1,0 +1,1 @@
+Redux based implementation of [React](https://reactjs.org/) providers.

@@ -1,0 +1,8 @@
+<ng-container [ngSwitch]="showPlaceholder$ | async">
+  <ng-container *ngSwitchCase="true">
+    <ng-content select=".wch-placeholder"></ng-content>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <ng-content select=":not(.wch-placeholder)"></ng-content>
+  </ng-container>
+</ng-container>

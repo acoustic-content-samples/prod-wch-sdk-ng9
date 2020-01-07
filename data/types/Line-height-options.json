@@ -1,0 +1,37 @@
+{
+  "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2",
+  "rev": "2-66ca90bc277ac8f0f30fda5f862f933d",
+  "name": "Line height options",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": ".8",
+          "selection": "0.8"
+        },
+        {
+          "label": "1",
+          "selection": "1"
+        },
+        {
+          "label": "1.5",
+          "selection": "1.5"
+        },
+        {
+          "label": "2",
+          "selection": "2"
+        }
+      ],
+      "label": "Line height options",
+      "key": "lineHeightOptions"
+    }
+  ]
+}

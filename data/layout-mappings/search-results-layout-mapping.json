@@ -1,0 +1,24 @@
+{
+  "id": "search-results-layout-mapping",
+  "rev": "2-b707f7a5a03f42f5739b681ebccfe69c",
+  "name": "searchResultsLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "f9e2e592-81be-4513-86a3-9abd4d869d6e",
+    "name": "Search results"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "search-results-layout",
+        "name": "One column"
+      },
+      "layouts": [
+        {
+          "id": "search-results-layout",
+          "name": "One column"
+        }
+      ]
+    }
+  ]
+}

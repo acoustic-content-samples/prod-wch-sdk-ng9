@@ -1,0 +1,1 @@
+Definition of interfaces and constants for the framework independent implementation of the SDK.

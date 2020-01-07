@@ -1,0 +1,87 @@
+{
+  "id": "d550249a-83b2-4e46-96d1-519732fa5787",
+  "rev": "17-0130f14c246286e6346bd81537d4070e",
+  "name": "Sites Divider",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Solid",
+          "selection": "solid"
+        },
+        {
+          "label": "Dotted",
+          "selection": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "selection": "dashed"
+        }
+      ],
+      "label": "Line type",
+      "key": "lineType"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Line color",
+      "key": "lineColor"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Opacity",
+      "key": "opacity"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Line weight",
+      "key": "lineWeight",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Width",
+      "key": "width"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

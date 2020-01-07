@@ -1,0 +1,12 @@
+{
+  "id": "vertical-dynamic-list",
+  "rev": "1-22645429c8b064eeac9efbf8b9cf7675",
+  "name": "List",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/list_220.svg"
+  },
+  "template": "vertical-dynamic-list",
+  "templateType": "angular"
+}

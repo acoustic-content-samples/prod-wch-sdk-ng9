@@ -1,0 +1,47 @@
+{
+  "id": "bb79c338-1e20-4d53-9ff3-9a6970ad9ed3",
+  "rev": "1-20aa819340099a93a858c48bcf64fe23",
+  "name": "Design page",
+  "classification": "content-type",
+  "kind": [
+    "page"
+  ],
+  "thumbnail": {
+    "id": "4ec4c698-aefb-4168-8e2b-1e5a2237bbcc"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "Design topic uses a two column layout with options for the column widths.  Decide if you want a 75/25% split in column width or 25/75% split in column width.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "label": "Design article",
+      "key": "designTopic",
+      "helpText": "Select an existing design article or click compose to create a new design article.",
+      "restrictTypes": [
+        {
+          "id": "a8fa51a3-4919-4308-a0b3-6cd31ae15d7e"
+        }
+      ]
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "label": "Related articles",
+      "key": "relatedArticles",
+      "restrictTypes": [
+        {
+          "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb"
+        }
+      ]
+    }
+  ]
+}

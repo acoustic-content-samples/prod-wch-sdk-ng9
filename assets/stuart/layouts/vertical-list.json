@@ -1,0 +1,12 @@
+{
+  "id": "vertical-list",
+  "rev": "1-9afa9fecd258ff451f5ff5268d0b645e",
+  "name": "List",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/list_220.svg"
+  },
+  "template": "vertical-list",
+  "templateType": "angular"
+}

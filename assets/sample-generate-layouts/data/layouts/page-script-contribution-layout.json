@@ -1,0 +1,19 @@
+{
+  "id": "page-script-contribution-layout",
+  "rev": "3-69b966b3c37af1cfb43bb05d0eca3b52",
+  "name": "pageScriptContributionLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_63b3f57e91735eaa985f3ace1e44f38a"
+  },
+  "template": "/sites/templates/page-script-contribution-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page-script-contribution/{id}.html"
+}

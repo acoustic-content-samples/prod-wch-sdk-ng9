@@ -1,0 +1,150 @@
+{
+  "rev": "6-244e2f51ffa9a7b0e66963e7364f75b0",
+  "kind": ["email"],
+  "draftStatus": "in-progress",
+  "created": "2019-06-11T09:27:32.845Z",
+  "creatorId": "512984c5-bf56-4eb4-bbac-4382617ac074",
+  "description": "",
+  "classification": "content",
+  "tags": [],
+  "valid": true,
+  "linkedDocId": "afa0d56f-8b19-4ae2-847f-67a77eefb49e",
+  "selectedLayouts": [
+    { "layout": { "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af" } }
+  ],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": { "elementType": "text", "value": "transparent" }
+      },
+      "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number" },
+        "bottom": { "elementType": "number" },
+        "left": { "elementType": "number" },
+        "right": { "elementType": "number" }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "editor": { "elementType": "text" },
+    "contentAreaBackgroundColor": {
+      "elementType": "group",
+      "value": { "colorCode": { "elementType": "text", "value": "#FFFFFF" } },
+      "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": { "elementType": "number" },
+        "bottom": { "elementType": "number" },
+        "left": { "elementType": "number" },
+        "right": { "elementType": "number" }
+      },
+      "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+    },
+    "rows": {
+      "values": [
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [{ "id": "7ef5e498-50e5-489e-935e-125026f9780c" }],
+                  "elementType": "reference"
+                },
+                "span": { "elementType": "number", "value": 6 },
+                "padding": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                },
+                "margin": {
+                  "elementType": "group",
+                  "value": {
+                    "top": { "elementType": "number" },
+                    "bottom": { "elementType": "number" },
+                    "left": { "elementType": "number" },
+                    "right": { "elementType": "number" }
+                  },
+                  "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": { "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7" }
+          },
+          "margin": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          },
+          "background": {
+            "elementType": "group",
+            "value": {
+              "backgroundColor": {
+                "elementType": "group",
+                "value": { "colorCode": { "elementType": "text" } },
+                "typeRef": { "id": "1321a547-287a-477b-a7ec-d191e2cdb70a" }
+              },
+              "includeBackgroundImage": { "elementType": "toggle" },
+              "image": { "elementType": "image" },
+              "fillOptions": { "elementType": "optionselection" }
+            },
+            "typeRef": { "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "349ada80-d929-4e45-831f-5941a330879c"
+          },
+          "padding": {
+            "elementType": "group",
+            "value": {
+              "top": { "elementType": "number" },
+              "bottom": { "elementType": "number" },
+              "left": { "elementType": "number" },
+              "right": { "elementType": "number" }
+            },
+            "typeRef": { "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022" }
+          },
+          "layout": { "elementType": "optionselection" }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": { "id": "b908096b-9cd2-4085-bf0c-a510576e633b" }
+    },
+    "width": { "elementType": "number", "value": 650 },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": { "elementType": "text" },
+        "fromName": { "elementType": "text" },
+        "subjectLine": { "elementType": "text" },
+        "databaseId": { "elementType": "text" },
+        "replyToAddress": { "elementType": "text" },
+        "fromAddress": { "elementType": "text" }
+      },
+      "typeRef": { "id": "16e486dd-3c33-485c-a9e5-7617fbc67424" }
+    }
+  },
+  "name": "Untitled email",
+  "lastModifierId": "512984c5-bf56-4eb4-bbac-4382617ac074",
+  "typeId": "51071056-1f70-499e-9ee3-b2066f56b119",
+  "id": "afa0d56f-8b19-4ae2-847f-67a77eefb49e",
+  "lastModified": "2019-06-11T10:15:25.896Z",
+  "systemModified": "2019-06-11T10:15:25.896Z",
+  "status": "draft"
+}

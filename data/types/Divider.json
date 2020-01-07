@@ -1,0 +1,108 @@
+{
+  "id": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d",
+  "rev": "5-a05d0d0a9011748b08c69f463a57ac90",
+  "name": "Divider",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Solid",
+          "selection": "solid"
+        },
+        {
+          "label": "Dotted",
+          "selection": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "selection": "dashed"
+        }
+      ],
+      "label": "Line type",
+      "key": "lineType",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Line color",
+      "key": "lineColor",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Opacity",
+      "key": "opacity",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      },
+      "label": "Alignment",
+      "key": "align",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margins",
+      "key": "margin",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Line weight",
+      "key": "lineWeight",
+      "role": [
+        "configuration"
+      ],
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Width",
+      "key": "width",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings",
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

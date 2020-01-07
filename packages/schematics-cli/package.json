@@ -1,0 +1,74 @@
+{
+  "name": "@acoustic-content-sdk/schematics",
+  "version": "9.0.0",
+  "description": "A schematics",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/schematics-utils": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "handlebars": "^4",
+    "js-string-escape": "^1",
+    "number-to-words": "^1",
+    "rxjs": "^6",
+    "typescript": "^3"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "builders": "./assets/builders.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "handlebars": "Handlebars",
+        "js-string-escape": "JsStringEscape",
+        "number-to-words": "NumberToWords",
+        "typescript": "Typescript"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/*",
+      "chalk",
+      "comment-json",
+      "handlebars",
+      "handlebars-helpers",
+      "js-string-escape",
+      "lodash",
+      "number-to-words",
+      "semver",
+      "jsdom",
+      "uuid",
+      "toposort"
+    ]
+  },
+  "schematics": "./assets/collection.json",
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

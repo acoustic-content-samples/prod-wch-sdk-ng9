@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsIbmWchSdkGenerateContributions",
+  "title": "IbmWchSdk Generate Contributions Schema",
+  "description": "Generates page contributions from the build output.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to the directory of the WCH data artifacts."
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

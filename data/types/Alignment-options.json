@@ -1,0 +1,35 @@
+{
+  "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6",
+  "rev": "4-8fea02a561b47d78721b92be7358d1d3",
+  "name": "Alignment options",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "IBM email sample"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Left",
+          "selection": "left"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Right",
+          "selection": "right"
+        }
+      ],
+      "label": "Alignment options",
+      "key": "alignmentOptions"
+    }
+  ]
+}

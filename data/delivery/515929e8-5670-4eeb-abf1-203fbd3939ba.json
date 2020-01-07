@@ -1,0 +1,300 @@
+{
+  "rev": "1-c4309954436ee62df3da592f3ab3c2dd",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-05-21T14:26:20.058Z",
+  "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "description": "",
+  "classification": "content",
+  "type": "AllTypes",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "multireference": {
+      "elementType": "reference"
+    },
+    "singlecat": {
+      "elementType": "category"
+    },
+    "multicat": {
+      "elementType": "category"
+    },
+    "singletext": {
+      "elementType": "text"
+    },
+    "singletoggle": {
+      "elementType": "toggle",
+      "value": false
+    },
+    "multitext": {
+      "elementType": "text"
+    },
+    "singlefile": {
+      "elementType": "file"
+    },
+    "multivideo": {
+      "elementType": "video"
+    },
+    "singlevideo": {
+      "elementType": "video"
+    },
+    "singleformattedtext": {
+      "elementType": "formattedtext"
+    },
+    "multinumber": {
+      "elementType": "number"
+    },
+    "multiimage": {
+      "elementType": "image"
+    },
+    "singleimage": {
+      "elementType": "image"
+    },
+    "multilink": {
+      "elementType": "link"
+    },
+    "singlenumber": {
+      "elementType": "number"
+    },
+    "singlegroup": {
+      "elementType": "group",
+      "value": {
+        "content": {
+          "values": [
+            {
+              "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+              "typeId": "e98ba889-d5e4-4b9b-8c42-e3a5c35a10d3",
+              "id": "aa54e833-8ec4-4ee2-8785-be9e632aaa4b",
+              "status": "draft",
+              "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/aa54e833-8ec4-4ee2-8785-be9e632aaa4b",
+              "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/aa54e833-8ec4-4ee2-8785-be9e632aaa4b"
+            }
+          ],
+          "elementType": "reference"
+        },
+        "span": {
+          "elementType": "number",
+          "value": 5
+        },
+        "padding": {
+          "elementType": "group",
+          "value": {
+            "top": {
+              "elementType": "number",
+              "value": 10
+            },
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            }
+          },
+          "typeRef": {
+            "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+          }
+        },
+        "margin": {
+          "elementType": "group",
+          "value": {
+            "top": {
+              "elementType": "number"
+            },
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            }
+          },
+          "typeRef": {
+            "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+      }
+    },
+    "multiformattedtext": {
+      "elementType": "formattedtext"
+    },
+    "multigroup": {
+      "values": [
+        {
+          "content": {
+            "values": [
+              {
+                "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+                "typeId": "4e70d4a0-0112-43c5-887b-dde336ebe678",
+                "id": "b7634ea5-36a1-4277-8642-ff709d32aaa9",
+                "status": "draft",
+                "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/b7634ea5-36a1-4277-8642-ff709d32aaa9",
+                "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/b7634ea5-36a1-4277-8642-ff709d32aaa9"
+              }
+            ],
+            "elementType": "reference"
+          },
+          "span": {
+            "elementType": "number",
+            "value": 6
+          },
+          "padding": {
+            "elementType": "group",
+            "value": {
+              "top": {
+                "elementType": "number"
+              },
+              "bottom": {
+                "elementType": "number"
+              },
+              "left": {
+                "elementType": "number"
+              },
+              "right": {
+                "elementType": "number"
+              }
+            },
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          },
+          "margin": {
+            "elementType": "group",
+            "value": {
+              "top": {
+                "elementType": "number"
+              },
+              "bottom": {
+                "elementType": "number"
+              },
+              "left": {
+                "elementType": "number"
+              },
+              "right": {
+                "elementType": "number"
+              }
+            },
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          }
+        },
+        {
+          "content": {
+            "values": [
+              {
+                "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+                "typeId": "7550d558-29d1-46be-8413-354ad068ee77",
+                "id": "66e4559c-6730-4618-868b-1e5b8e4184c2",
+                "status": "draft",
+                "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/66e4559c-6730-4618-868b-1e5b8e4184c2",
+                "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/66e4559c-6730-4618-868b-1e5b8e4184c2"
+              }
+            ],
+            "elementType": "reference"
+          },
+          "span": {
+            "elementType": "number",
+            "value": 3
+          },
+          "padding": {
+            "elementType": "group",
+            "value": {
+              "top": {
+                "elementType": "number"
+              },
+              "bottom": {
+                "elementType": "number"
+              },
+              "left": {
+                "elementType": "number"
+              },
+              "right": {
+                "elementType": "number"
+              }
+            },
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          },
+          "margin": {
+            "elementType": "group",
+            "value": {
+              "top": {
+                "elementType": "number"
+              },
+              "bottom": {
+                "elementType": "number"
+              },
+              "left": {
+                "elementType": "number"
+              },
+              "right": {
+                "elementType": "number"
+              }
+            },
+            "typeRef": {
+              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+            }
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+      }
+    },
+    "multidate": {
+      "elementType": "datetime"
+    },
+    "singleoption": {
+      "elementType": "optionselection"
+    },
+    "multioptions": {
+      "elementType": "optionselection"
+    },
+    "singledate": {
+      "elementType": "datetime"
+    },
+    "singlelocation": {
+      "elementType": "location"
+    },
+    "multifile": {
+      "elementType": "file"
+    },
+    "singlereference": {
+      "elementType": "reference"
+    },
+    "singlelink": {
+      "elementType": "link"
+    }
+  },
+  "name": "GroupType",
+  "lastModifierId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "typeId": "b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/515929e8-5670-4eeb-abf1-203fbd3939ba/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/515929e8-5670-4eeb-abf1-203fbd3939ba/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/515929e8-5670-4eeb-abf1-203fbd3939ba"
+    },
+    "type": {
+      "href": "/authoring/v1/types/b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb"
+    }
+  },
+  "id": "515929e8-5670-4eeb-abf1-203fbd3939ba",
+  "lastModified": "2019-05-21T14:26:31.334Z",
+  "systemModified": "2019-05-21T14:26:32.332Z",
+  "status": "ready"
+}

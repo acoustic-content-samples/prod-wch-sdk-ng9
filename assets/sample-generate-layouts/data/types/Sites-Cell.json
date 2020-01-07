@@ -1,0 +1,51 @@
+{
+  "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c",
+  "rev": "17-d367e7d805fdaa5d38d20e0e97558446",
+  "name": "Sites Cell",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Span",
+      "key": "span",
+      "minimum": 2,
+      "maximum": 6,
+      "required": true
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "21a8b4fd-0236-4187-bfea-7a94283e7b80"
+      },
+      "label": "Content",
+      "key": "content",
+      "allowMultipleValues": true,
+      "required": false
+    }
+  ]
+}

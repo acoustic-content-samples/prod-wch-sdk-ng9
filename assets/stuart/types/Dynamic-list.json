@@ -1,0 +1,92 @@
+{
+  "id": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c",
+  "rev": "1-c609438fcd4cde5600b5d83e4e81867b",
+  "name": "Dynamic list",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "da3d0b43-51ce-4118-aeed-05764bd0fbaf"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "The dynamic list lets you define what content to include without selecting specific content.  It keeps your website fresh without having to constantly care for it. In Oslo, the dynamic list is used on the latest design topics page.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "List title",
+      "key": "listTitle",
+      "placeholder": {
+        "show": true,
+        "text": "List title"
+      }
+    },
+    {
+      "elementType": "category",
+      "label": "Content to include",
+      "key": "contentType",
+      "restrictedParents": [
+        "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "category",
+      "label": "Dates to include",
+      "key": "datesToInclude",
+      "restrictedParents": [
+        "111fd225-b22f-470c-8bfb-425f3f664b52"
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "category",
+      "label": "List order",
+      "key": "sortOrder",
+      "restrictedParents": [
+        "52265429-9349-49fe-b35d-f7b71493190e"
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "fieldLabel": "Number",
+      "label": "Maximum number of list items",
+      "key": "maxItem",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "View all link",
+      "key": "viewAllLink",
+      "helpText": "Give site visitors the option to access more content beyond what is included in this list."
+    },
+    {
+      "elementType": "toggle",
+      "label": "Show link",
+      "key": "showLink",
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+import {
+    {{#each imports}}
+    {{{this}}},
+    {{/each}}
+    LayoutComponent
+} from '@acoustic-content-sdk/ng';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { {{{baseClassName}}} } from '{{{baseFileName}}}';
+
+/** Useful imports */
+// import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+@LayoutComponent({
+    selector: '{{{jsEscape layoutTemplate}}}'
+})
+@Component({
+  selector: '{{{jsEscape selector}}}',
+  templateUrl: '{{{jsEscape templateUrl}}}',
+  styleUrls: ['{{{jsEscape styleUrl}}}'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  preserveWhitespaces: false
+})
+export class {{{className}}} extends {{{baseClassName}}} {
+
+    /*
+     * TODO add custom fields here. These fields should be those
+     * specific to this layout.
+     */
+
+    constructor() {
+        super();
+    }
+
+}

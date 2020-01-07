@@ -1,0 +1,20 @@
+{
+  "ADD": "Lägg till ett avsnitt",
+  "CLOSE_PALETTE": "Stäng",
+  "COPY": "Kopiera",
+  "DROP_HERE": "Släpp här",
+  "DROP_TO_UPLOAD": "Släpp för att överföra",
+  "EMPTY_HTML_DESCRIPTION": "Lägg till HTML",
+  "EDIT_IMAGE": "Redigera bild",
+  "EMPTY_STATE_DESCRIPTION": "Dra och släpp bild, eller [bläddra i bibliotek].",
+  "INITIAL_SECTION": "Välj en layout eller dra innehåll här",
+  "LOCK": "Lås för att förhindra redigering",
+  "MOVE": "Klicka och håll för att dra",
+  "OPEN_PALETTE": "Ändra bild",
+  "PZN_PICKER_CLOSE": "Stäng",
+  "PZN_PICKER_HEADING": "Välj ett anpassningsfält",
+  "REMOVE": "Ta bort",
+  "REMOVE_IMAGE": "Ta bort bild",
+  "SELECT": "Välj bild",
+  "SHUTTERSTOCK_SAVE": "Spara ..."
+}

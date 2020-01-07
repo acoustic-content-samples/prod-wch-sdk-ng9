@@ -1,0 +1,49 @@
+/**
+ * Do not modify this file, it is auto-generated.
+ */
+import {
+    Observable
+} from 'rxjs';
+{{#each otherImports}}
+import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
+{{/each}}
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+export abstract class {{{className}}} extends AbstractRenderingComponent {
+
+    /**
+    * Strongly typed stream of the rendering contexts
+    */
+    readonly on{{{interfacesName}}}: Observable<{{{interfacesName}}}>;
+
+    {{#each bindings}}
+    /*
+{{{this.comment}}}
+     */
+    readonly {{{this.observableKey}}}: Observable<{{{this.type}}}>;
+
+    {{/each}}
+    protected constructor() {
+        super();
+
+        const onRc = this.on{{{interfacesName}}} = rxPipe(this.onRenderingContext, opFilterNotNil, map(assert{{{interfacesName}}}));
+
+    {{#each bindings}}
+        this.{{{this.observableKey}}} = rxPipe(onRc, map({{{this.selectMethod}}}), opDistinctUntilChanged, opShareLast);
+    {{/each}}
+    }
+
+}

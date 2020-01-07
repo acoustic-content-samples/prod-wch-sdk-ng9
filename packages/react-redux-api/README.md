@@ -1,0 +1,1 @@
+Interfaces and constants for the Redux based [React](https://reactjs.org/) providers.

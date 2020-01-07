@@ -1,0 +1,62 @@
+{
+  "rev": "2-5dbf42a0043c33a3c495876cc34c0a9c",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-05-27T19:55:54.338Z",
+  "creatorId": "f9bc9c56-88bd-4942-a168-e7247e467709",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "classification": "content",
+  "type": "SimpleItem",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "ref": {
+      "elementType": "reference",
+      "value": {
+        "name": "TextReference",
+        "creatorId": "f9bc9c56-88bd-4942-a168-e7247e467709",
+        "typeId": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+        "id": "8c7076b7-ee92-4fed-a7c7-5a01361d58d7",
+        "status": "ready"
+      }
+    },
+    "embedded": {
+      "elementType": "group",
+      "value": {
+        "content": {
+          "elementType": "text",
+          "value": "Embedded Text"
+        }
+      },
+      "typeRef": {
+        "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd"
+      }
+    }
+  },
+  "name": "TextItem",
+  "lastModifierId": "f9bc9c56-88bd-4942-a168-e7247e467709",
+  "typeId": "103ae8d2-2407-4ce4-bffc-a77fa0c73f33",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/b76804ce-aa1e-4240-8012-b79a6f77b50b/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/b76804ce-aa1e-4240-8012-b79a6f77b50b/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/b76804ce-aa1e-4240-8012-b79a6f77b50b"
+    },
+    "type": {
+      "href": "/authoring/v1/types/103ae8d2-2407-4ce4-bffc-a77fa0c73f33"
+    }
+  },
+  "id": "b76804ce-aa1e-4240-8012-b79a6f77b50b",
+  "lastModified": "2019-05-27T20:04:47.070Z",
+  "systemModified": "2019-05-27T20:04:47.070Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

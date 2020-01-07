@@ -1,0 +1,98 @@
+{
+  "id": "http://www.ibm.com/schemas/custom-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Composite Element Schema",
+  "description": "Schema for composite element",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+            "maxLength": 50
+          },
+          "label": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "elementType": {"enum": ["group"]},
+          "allowMultipleValues": {"enum": [true, false]},
+          "minimumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "maximumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "fieldLabel": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "typeRef": {
+            "type": "object",
+            "properties": {
+              "id": {"type": "string", "minLength": 1, "maxLength": 100},
+              "name": { "type":  "string" },
+              "description": { "type":  "string" }
+            },
+            "required": [ "id" ],
+            "additionalProperties": false
+          },
+          "kind" : {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "elements": { "type" : "array"},
+          "required": {"enum": [true, false]},
+          "helpText": {"type": "string", "maxLength": 500},
+          "uiExtensions": {
+            "type": "object",
+            "properties": {
+              "element": { "type": "string" },
+              "elementBuiltin": { "type": "string" },
+              "elementConfig": { "type": "object" }
+            },
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "array",
+            "maxItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["content", "configuration"]}
+          },
+          "icon": {
+            "enum": [
+              "category",
+              "group",
+              "datetime",
+              "formattedtext",
+              "file",
+              "image",
+              "link",
+              "location",
+              "number",
+              "reference",
+              "optionselection",
+              "text",
+              "toggle",
+              "variabletype",
+              "video"
+            ]
+          },
+          "locked": {"enum": [true, false]},
+          "hidden": {"enum": [true, false]}
+        },
+        "required": ["key", "label", "elementType", "typeRef"],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": ["elements"],
+  "additionalProperties": false
+}

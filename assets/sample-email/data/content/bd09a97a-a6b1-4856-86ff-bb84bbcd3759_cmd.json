@@ -1,0 +1,60 @@
+{
+  "rev": "7-6de56f995bd11e946782558416fc9f50",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:53.082Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Video",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "video": {
+      "elementType": "video"
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    }
+  },
+  "name": "Video",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "7f81225a-8827-43d1-9d52-5f83eb6ee54f",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/bd09a97a-a6b1-4856-86ff-bb84bbcd3759/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/bd09a97a-a6b1-4856-86ff-bb84bbcd3759/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/bd09a97a-a6b1-4856-86ff-bb84bbcd3759"
+    },
+    "type": {
+      "href": "/authoring/v1/types/7f81225a-8827-43d1-9d52-5f83eb6ee54f"
+    }
+  },
+  "id": "bd09a97a-a6b1-4856-86ff-bb84bbcd3759",
+  "lastModified": "2019-08-30T12:17:19.194Z",
+  "systemModified": "2019-08-30T12:17:19.194Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

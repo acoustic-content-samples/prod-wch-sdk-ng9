@@ -1,0 +1,184 @@
+{
+  "classification": "content-type",
+  "contentThumbnail": { "imageElement": "", "source": "imageElementOrType" },
+  "created": "2018-10-04T12:45:34.599Z",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "description": "",
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "key": "heading",
+      "label": "Topic title",
+      "minLength": 1,
+      "placeholder": { "show": true, "text": "Headline text goes here" },
+      "required": true
+    },
+    {
+      "elementType": "group",
+      "key": "mainImage",
+      "label": "Lead image",
+      "required": true,
+      "typeRef": {
+        "classification": "content-type",
+        "contentThumbnail": {
+          "imageElement": "leadImage",
+          "source": "imageElementOrType"
+        },
+        "created": "2018-10-04T12:45:35.454Z",
+        "creatorId": "00000000-0000-0000-0000-000000000009",
+        "description": "",
+        "elements": [
+          {
+            "acceptType": ["jpg", "jpeg", "png", "gif"],
+            "elementType": "image",
+            "fieldLabel": "Image",
+            "imageProfileId": "3428916c-b356-4b47-aeb2-5eb8e3494b00",
+            "key": "leadImage",
+            "label": "Lead image",
+            "required": true
+          },
+          {
+            "elementType": "text",
+            "fieldLabel": "Text",
+            "key": "leadImageCaption",
+            "label": "Lead image caption",
+            "placeholder": { "show": true, "text": "Image caption goes here." }
+          },
+          {
+            "elementType": "text",
+            "fieldLabel": "Text",
+            "key": "leadImageCredit",
+            "label": "Lead image credit",
+            "placeholder": { "show": true, "text": "Photographer Name" }
+          }
+        ],
+        "id": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe",
+        "kind": ["embedded", "standalone"],
+        "lastModified": "2018-10-04T12:45:35.454Z",
+        "lastModifierId": "00000000-0000-0000-0000-000000000009",
+        "name": "Lead image",
+        "path": "/Lead-image.json",
+        "rev": "1-48e6451993ee4d354fc8e7b056999a27",
+        "status": "ready",
+        "tags": ["oslo", "IBM sample"],
+        "thumbnail": { "id": "46738ac1-a7aa-4610-ad04-9e523365c501" }
+      }
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "helpText": "",
+      "key": "author",
+      "label": "Author name",
+      "placeholder": { "show": true, "text": "Author Name" }
+    },
+    {
+      "elementType": "datetime",
+      "fieldLabel": "Date",
+      "fieldType": "date-time",
+      "helpText": "Date and time is used when ordering a list of design articles.  The time will not display in the website.",
+      "key": "date",
+      "label": "Date",
+      "required": true
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "formattedtext",
+      "fieldLabel": "Text chunk",
+      "helpText": "The design topic, when displayed in the website, will interleave the text chunks and images to create a fluid layout.",
+      "key": "body",
+      "label": "Text for body section",
+      "minimumValues": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Write your article here. You can add more chunks of text  when you want the images to appear in the flow of the article - instead of at the end of the article. "
+      },
+      "required": true
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "group",
+      "fieldLabel": "Design article image",
+      "key": "bodyImage",
+      "label": "images for body sections",
+      "minimumValues": 3,
+      "required": true,
+      "typeRef": {
+        "classification": "content-type",
+        "contentThumbnail": {
+          "imageElement": "image",
+          "source": "imageElementOrType"
+        },
+        "created": "2018-10-04T12:45:35.394Z",
+        "creatorId": "00000000-0000-0000-0000-000000000009",
+        "description": "Used mainly for the design articles and includes caption and credit information.",
+        "elements": [
+          {
+            "acceptType": ["jpg", "jpeg", "png", "gif"],
+            "elementType": "image",
+            "fieldLabel": "Image",
+            "imageProfileId": "92600283-a254-4965-88fb-4950254f6e67",
+            "key": "image",
+            "label": "Image",
+            "required": true
+          },
+          {
+            "elementType": "category",
+            "key": "imageSize",
+            "label": "Image size",
+            "required": true,
+            "restrictedParents": ["0e1cd869-ee48-4ef6-ae6d-7be957c84d10"]
+          },
+          {
+            "elementType": "category",
+            "helpText": "Image placement is only used with the feature type of content.",
+            "key": "imagePlacement",
+            "label": "Image placement",
+            "restrictedParents": ["6f037a1b-8f2e-4458-839e-a49fa0227dba"]
+          },
+          {
+            "elementType": "text",
+            "fieldLabel": "Text",
+            "key": "imageCaption",
+            "label": "Image caption",
+            "placeholder": { "show": true, "text": "Image caption goes here." }
+          },
+          {
+            "elementType": "text",
+            "fieldLabel": "Text",
+            "key": "imageCredit",
+            "label": "Image credit",
+            "placeholder": { "show": true, "text": "Photographer Name" }
+          }
+        ],
+        "id": "f9e7f0b9-f57d-4d91-a257-54a64c1ff52f",
+        "kind": ["embedded", "standalone"],
+        "lastModified": "2018-10-04T12:45:35.394Z",
+        "lastModifierId": "00000000-0000-0000-0000-000000000009",
+        "name": "Image",
+        "path": "/Image.json",
+        "rev": "1-d3feb141e0795b843d9e10f844f62faf",
+        "status": "ready",
+        "tags": ["oslo", "IBM sample"]
+      }
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "key": "authorBio",
+      "label": "Author bio",
+      "restrictTypes": [{ "id": "b0b91aad-8a9a-4d46-9aff-e35d004f0a1f" }]
+    }
+  ],
+  "id": "a8fa51a3-4919-4308-a0b3-6cd31ae15d7e",
+  "kind": ["standalone"],
+  "lastModified": "2018-10-04T12:45:34.599Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "name": "Design article",
+  "path": "/Design-article.json",
+  "rev": "1-fc979cd6f6430f50b3783c8056406e7d",
+  "status": "ready",
+  "tags": ["oslo", "IBM sample"],
+  "thumbnail": { "id": "c98d44eb-5976-42a1-97d6-9a5840fa9fb4" }
+}

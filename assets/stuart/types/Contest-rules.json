@@ -1,0 +1,35 @@
+{
+  "id": "b77f0bfd-d068-44cc-a41c-fc15a0123c09",
+  "rev": "1-d89df5dcf56d5a2d101bc36af93eb383",
+  "name": "Contest rules",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Title",
+      "key": "title",
+      "placeholder": {
+        "show": true,
+        "text": "Contest rules title"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Contest rules",
+      "key": "contestRules",
+      "placeholder": {
+        "show": true,
+        "text": "Explain the rules, conditions, and exclusions for your contest."
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "http://www.ibm.com/schemas/toggle-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Toggle Element Schema",
+  "description": "Schema for toggle element",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+            "maxLength": 50
+          },
+          "label": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "elementType": {"enum": ["toggle"]},
+          "searchKey": {"enum": ["boolean1","boolean2"]},
+          "statement": {"type": "string", "maxLength": 250},
+          "required": {"enum": [true, false]},
+          "helpText": {"type": "string", "maxLength": 500},
+          "uiExtensions": {
+            "type": "object",
+            "properties": {
+              "element": { "type": "string" },
+              "elementBuiltin": { "type": "string" },
+              "elementConfig": { "type": "object" }
+            },
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "array",
+            "maxItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["content", "configuration"]}
+          },
+          "locked": {"enum": [true, false]},
+          "hidden": {"enum": [true, false]}
+        },
+        "required": ["key", "label", "elementType"],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": ["elements"],
+  "additionalProperties": false
+}

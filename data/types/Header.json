@@ -1,0 +1,37 @@
+{
+  "id": "547dc280-66f9-4d85-ac81-129eaec89e4b",
+  "rev": "2-81e4db1bc2f90e4b4f939bc0aa1395b9",
+  "name": "Header",
+  "classification": "content-type",
+  "kind": [],
+  "thumbnail": {
+    "id": "78490787-4867-4b8f-9a9d-bddd407b854b",
+    "path": "/dxdam/78/78490787-4867-4b8f-9a9d-bddd407b854b/header_icon_220.png",
+    "url": "/authoring/v1/resources/9a069bfa086cfe1ae7c98e789fed8146"
+  },
+  "contentThumbnail": {
+    "imageElement": "websiteLogo",
+    "source": "imageElementOrType"
+  },
+  "description": "Customize elements of the header that shows up on your website pages.  The website navigation is governed by the developer code for the site.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif",
+        "svg"
+      ],
+      "fieldLabel": "Image",
+      "label": "Website logo",
+      "key": "websiteLogo"
+    }
+  ]
+}

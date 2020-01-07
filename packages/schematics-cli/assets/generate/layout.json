@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsIbmWchSdkGenerateLayout",
+  "title": "IbmWchSdk Generate Layout Schema",
+  "description": "Generates a layout and layout mapping for one type. The name of the desired layout can be specified.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to the directory of the WCH data artifacts."
+    },
+    "type": {
+      "type": "string",
+      "description": "The ID or name of the type to create the layout for.",
+      "x-prompt": "What is the name of the content type for your layout?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the layout.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What would you like your layout to be called?"
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+{
+  "ADD": "섹션 추가",
+  "CLOSE_PALETTE": "닫기",
+  "COPY": "복사",
+  "DROP_HERE": "여기에 놓기",
+  "DROP_TO_UPLOAD": "업로드를 위해 놓기",
+  "EMPTY_HTML_DESCRIPTION": "HTML 추가",
+  "EDIT_IMAGE": "이미지 편집",
+  "EMPTY_STATE_DESCRIPTION": "이미지를 끌어서 놓거나, [라이브러리를 찾아보십시오].",
+  "INITIAL_SECTION": "레이아웃을 선택하거나 컨텐츠를 여기로 끌기",
+  "LOCK": "편집 방지를 위해 잠금",
+  "MOVE": "클릭한 상태에서 끌기",
+  "OPEN_PALETTE": "이미지 변경",
+  "PZN_PICKER_CLOSE": "닫기",
+  "PZN_PICKER_HEADING": "개인화 필드 선택",
+  "REMOVE": "제거",
+  "REMOVE_IMAGE": "이미지 제거",
+  "SELECT": "이미지 선택",
+  "SHUTTERSTOCK_SAVE": "저장..."
+}

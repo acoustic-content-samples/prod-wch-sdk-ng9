@@ -1,0 +1,163 @@
+{
+  "rev": "7-8375f0008a861cd8f4d0e8e406c1045f",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:49.082Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Button",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "button-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "#0068FF"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "style": {
+      "elementType": "group",
+      "value": {
+        "font": {
+          "elementType": "text",
+          "value": "Arial"
+        },
+        "size": {
+          "elementType": "number",
+          "value": 16
+        },
+        "color": {
+          "elementType": "text",
+          "value": "#FFFFFF"
+        }
+      },
+      "typeRef": {
+        "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+      }
+    },
+    "align": {
+      "elementType": "group",
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "center"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      }
+    },
+    "label": {
+      "elementType": "text"
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "cornerRadius": {
+      "elementType": "number"
+    },
+    "key": {
+      "elementType": "text",
+      "value": "5ce519da-385e-4c4e-a89d-79c3d1aa6450"
+    },
+    "lineHeight": {
+      "elementType": "group",
+      "value": {
+        "lineHeightOptions": {
+          "elementType": "optionselection",
+          "value": {
+            "selection": "1"
+          }
+        }
+      },
+      "typeRef": {
+        "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+      }
+    },
+    "link": {
+      "elementType": "link"
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 10
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 10
+        },
+        "left": {
+          "elementType": "number",
+          "value": 10
+        },
+        "right": {
+          "elementType": "number",
+          "value": 10
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    }
+  },
+  "name": "Button",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "b201f69e-29ff-4f3e-9a72-6c6be6c7d754",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/7077c398-2692-44c2-b291-aeddec8b869b/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/7077c398-2692-44c2-b291-aeddec8b869b/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/7077c398-2692-44c2-b291-aeddec8b869b"
+    },
+    "type": {
+      "href": "/authoring/v1/types/b201f69e-29ff-4f3e-9a72-6c6be6c7d754"
+    }
+  },
+  "id": "7077c398-2692-44c2-b291-aeddec8b869b",
+  "lastModified": "2019-08-30T12:17:14.854Z",
+  "systemModified": "2019-08-30T12:17:14.854Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

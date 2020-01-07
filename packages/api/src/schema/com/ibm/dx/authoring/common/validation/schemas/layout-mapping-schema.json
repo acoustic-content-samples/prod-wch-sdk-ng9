@@ -1,0 +1,88 @@
+{
+   "id": "http://www.ibm.com/schemas/layout-mapping-schema.json",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Layout Mapping Schema",
+   "description": "Schema for Layout Mappings",
+   "type": "object",
+   "properties": {
+      "id": {
+         "type": "string",
+         "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$",
+         "maxLength": 100
+      },
+      "rev": { "type": "string" },
+      "_revisions": { "type": "object" },
+      "name": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 250
+      },
+      "classification": { "enum": [ "layout-mapping" ] },
+      "path" : { "type":  "string" },
+      "type": {
+         "type":  "object",
+         "properties" : {
+            "id" : { "type":  "string", "minLength": 1, "maxLength": 100 },
+            "name" : { "type":  "string", "maxLength": 250 }
+         },
+         "additionalProperties": false
+      },
+      "creatorId": { "type": "string" },
+      "created": { "type": "string", "format": "date-time" },
+      "lastModifierId": { "type": "string" },
+      "lastModified": { "type": "string", "format": "date-time" },
+      "tags": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "maxItems": 100,
+         "uniqueItems": true
+      },
+      "mappings": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "layoutMode": { "type":  "string", "minLength": 1, "maxLength": 100 },
+               "defaultLayout": {
+                  "type":  "object",
+                  "properties" : {
+                     "id" : { "type":  "string", "minLength": 1, "maxLength": 100 },
+                     "name" : { "type":  "string", "maxLength": 250 }
+                  },
+                  "required": [ "id" ],
+                  "additionalProperties": false
+               },
+               "layouts": {
+                  "type": "array",
+                  "items": {
+                     "type": "object",
+                     "properties": {
+                        "id": { "type": "string", "minLength": 1, "maxLength": 100 },
+                        "name": { "type": "string", "maxLength": 250 }
+                     },
+                     "required": [ "id" ],
+                     "additionalProperties": false
+                  },
+                  "minItems": 1,
+                  "maxItems": 50,
+                  "uniqueItems": true
+               }
+            },
+            "required": [ "defaultLayout", "layouts" ],
+            "additionalProperties": false
+         },
+         "minItems": 1,
+         "maxItems": 50,
+         "uniqueItems": true
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "name",
+      "type",
+      "classification",
+      "mappings"
+   ]
+}

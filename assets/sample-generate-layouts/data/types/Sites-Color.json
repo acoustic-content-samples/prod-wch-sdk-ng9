@@ -1,0 +1,21 @@
+{
+  "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac",
+  "rev": "7-d366d6e2e1ea3dc841ad082dd7c6b39a",
+  "name": "Sites Color",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Color code",
+      "key": "colorCode"
+    }
+  ]
+}

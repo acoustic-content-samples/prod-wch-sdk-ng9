@@ -1,0 +1,92 @@
+{
+  "name": "@acoustic-content-sdk/schematics-utils",
+  "version": "9.0.0",
+  "description": "Helper library to implement schematics.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-schematics-utils.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-schematics-utils.js",
+  "typings": "dist/acoustic-content-sdk-schematics-utils.d.ts",
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/cli-credentials": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "cheerio": "^1",
+    "email-validator": "^2",
+    "request": "^2",
+    "rxjs": "^6",
+    "semver": "^7",
+    "tmp": "^0",
+    "typescript": "^3",
+    "valid-url": "^1",
+    "verror": "^1",
+    "yauzl": "^2"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.0"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-schematics-utils.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-schematics-utils.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-schematics-utils.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-schematics-utils.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-schematics-utils.js",
+  "metadata": "dist/acoustic-content-sdk-schematics-utils.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/cli-credentials": "acoustic-content-sdk.cli-credentials",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "cheerio": "Cheerio",
+        "email-validator": "EmailValidator",
+        "request": "Request",
+        "semver": "Semver",
+        "tmp": "Tmp",
+        "typescript": "Typescript",
+        "valid-url": "ValidUrl",
+        "verror": "Verror",
+        "yauzl": "Yauzl"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/*",
+      "cheerio",
+      "email-validator",
+      "request",
+      "semver",
+      "tmp",
+      "valid-url",
+      "verror",
+      "xhr2",
+      "yauzl"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

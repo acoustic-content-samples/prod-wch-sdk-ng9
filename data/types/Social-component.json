@@ -1,0 +1,72 @@
+{
+  "id": "71689897-4505-4c1e-85c9-a57810158a4e",
+  "rev": "2-beb5bfe30b2d89fb819d0019753c70b3",
+  "name": "Social component",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "contentThumbnail": {
+    "imageElement": "fbImage",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Title",
+      "key": "title",
+      "placeholder": {
+        "show": true,
+        "text": "Social component title"
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Facebook image",
+      "key": "fbImage"
+    },
+    {
+      "elementType": "link",
+      "label": "Facebook",
+      "key": "facebook",
+      "placeholder": {
+        "show": true,
+        "text": "Insert your organizations Facebook page"
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Twitter image",
+      "key": "twitterImage"
+    },
+    {
+      "elementType": "link",
+      "label": "Twitter",
+      "key": "twitter",
+      "placeholder": {
+        "show": true,
+        "text": "Insert your organizations Twitter account"
+      }
+    },
+    {
+      "elementType": "image",
+      "label": "Instagram image",
+      "key": "instagramImage"
+    },
+    {
+      "elementType": "link",
+      "label": "Instagram",
+      "key": "instagram",
+      "placeholder": {
+        "show": true,
+        "text": "Insert your organizations Instagram page"
+      }
+    }
+  ]
+}

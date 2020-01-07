@@ -1,0 +1,37 @@
+{
+  "id": "6943b561-1a32-421b-b6e2-8ca5cb1463a1",
+  "rev": "3-6a1d74efbff9df857b68eaf907529a3d",
+  "name": "Site Navigation Page",
+  "classification": "content-type",
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "Page",
+      "key": "page",
+      "required": true
+    },
+    {
+      "elementType": "reference",
+      "label": "Children",
+      "key": "children",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Content item",
+      "restrictTypes": [
+        {
+          "id": "6943b561-1a32-421b-b6e2-8ca5cb1463a1",
+          "name": "Site Navigation Page"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@ibm-wch-sdk/cross-frame-redux",
+  "version": "9.0.0",
+  "description": "> TODO: description",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/ibm-wch-sdk-cross-frame-redux.umd.js",
+  "module": "dist/fesm5/ibm-wch-sdk-cross-frame-redux.js",
+  "typings": "dist/ibm-wch-sdk-cross-frame-redux.d.ts",
+  "scripts": {
+    "build:packagr": "ng-packagr -p package.json",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/cross-frame-redux": "9.0.0"
+  },
+  "peerDependencies": {},
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/ibm-wch-sdk-cross-frame-redux.js",
+  "esm2015": "dist/esm2015/ibm-wch-sdk-cross-frame-redux.js",
+  "esm5": "dist/esm5/ibm-wch-sdk-cross-frame-redux.js",
+  "fesm2015": "dist/fesm2015/ibm-wch-sdk-cross-frame-redux.js",
+  "fesm5": "dist/fesm5/ibm-wch-sdk-cross-frame-redux.js",
+  "metadata": "dist/ibm-wch-sdk-cross-frame-redux.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/cross-frame-redux": "acoustic-content-sdk.cross-frame-redux"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

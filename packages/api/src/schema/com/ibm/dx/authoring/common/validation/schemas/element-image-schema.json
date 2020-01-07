@@ -1,0 +1,77 @@
+{
+  "id": "http://www.ibm.com/schemas/image-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Image Element Schema",
+  "description": "Schema for image element",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$",
+            "maxLength": 50
+          },
+          "label": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "elementType": {"enum": ["image"]},
+          "acceptType": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"enum": ["jpg", "jpeg", "png", "gif", "svg"]}
+          },
+          "searchKey": {"enum": ["string1","string2","string3","string4","sortableString1","sortableString2","sortableString3","sortableString4"]},
+          "imageProfileId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9*.\\-_]*$",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "imageProfile": {
+            "type": "object"
+          },
+          "allowMultipleValues": {"enum": [true, false]},
+          "minimumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "maximumValues": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+          "fieldLabel": {
+            "type": "string",
+            "pattern": "^(?!\\s*$).+",
+            "maxLength": 100
+          },
+          "required": {"enum": [true, false]},
+          "helpText": {"type": "string", "maxLength": 500},
+          "uiExtensions": {
+            "type": "object",
+            "properties": {
+              "element": { "type": "string" },
+              "elementBuiltin": { "type": "string" },
+              "elementConfig": { "type": "object" }
+            },
+            "additionalProperties": false
+          },
+          "role": {
+            "type": "array",
+            "maxItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["content", "configuration"]}
+          },
+          "linkType": {"enum": ["NONE", "URL"]},
+          "locked": {"enum": [true, false]},
+          "hidden": {"enum": [true, false]}
+        },
+        "required": ["key", "label", "elementType"],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": ["elements"],
+  "additionalProperties": false
+}

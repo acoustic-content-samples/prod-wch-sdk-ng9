@@ -1,0 +1,246 @@
+{
+  "rev": "9-f8715ed03919ebe7794faf8ea2eef668",
+  "thumbnail": {
+    "id": "2802f952-9802-4436-bccd-c6e10c28e43d",
+    "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/resources/cebaad62-faf6-4f87-95a9-2b6fa49363d3?fit=inside%7C220:145"
+  },
+  "keywords": [],
+  "kind": [],
+  "created": "2019-05-20T14:16:54.323Z",
+  "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "description": "",
+  "classification": "content",
+  "type": "AllTypes",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "multireference": {
+      "values": [
+        {
+          "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+          "typeId": "b7b05524-87ed-4509-b6fb-972f2cbf26d5",
+          "id": "8c270c18-761f-4563-b50d-1077fffd664d",
+          "status": "ready",
+          "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/8c270c18-761f-4563-b50d-1077fffd664d",
+          "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/8c270c18-761f-4563-b50d-1077fffd664d"
+        },
+        {
+          "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+          "typeId": "7550d558-29d1-46be-8413-354ad068ee77",
+          "id": "94dcc4ce-a00d-4f7f-9017-01b9629f0751",
+          "status": "ready",
+          "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/94dcc4ce-a00d-4f7f-9017-01b9629f0751",
+          "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/94dcc4ce-a00d-4f7f-9017-01b9629f0751"
+        }
+      ],
+      "elementType": "reference"
+    },
+    "singlecat": {
+      "elementType": "category"
+    },
+    "multicat": {
+      "elementType": "category"
+    },
+    "singletext": {
+      "elementType": "text"
+    },
+    "singletoggle": {
+      "elementType": "toggle",
+      "value": false
+    },
+    "multitext": {
+      "elementType": "text"
+    },
+    "singlefile": {
+      "asset": {
+        "fileName": "OtcBYzA22zM.jpg",
+        "fileSize": 365756,
+        "mediaType": "image/jpeg",
+        "id": "fd11f97f-8df0-4698-b4a5-ec7ef1e5594d",
+        "resourceUri": "/delivery/v1/resources/68fc8084-3246-4851-b275-bb9bb304e9f9"
+      },
+      "elementType": "file",
+      "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/68fc/68fc8084-3246-4851-b275-bb9bb304e9f9.jpg"
+    },
+    "multivideo": {
+      "elementType": "video"
+    },
+    "singlevideo": {
+      "elementType": "video"
+    },
+    "singleformattedtext": {
+      "elementType": "formattedtext",
+      "value": "<p>cdc</p>"
+    },
+    "multinumber": {
+      "elementType": "number"
+    },
+    "multiimage": {
+      "values": [
+        {
+          "mode": "shared",
+          "renditions": {
+            "default": {
+              "width": 1080,
+              "source": "/delivery/v1/resources/68fc8084-3246-4851-b275-bb9bb304e9f9",
+              "height": 1620,
+              "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/68fc/68fc8084-3246-4851-b275-bb9bb304e9f9.jpg"
+            }
+          },
+          "asset": {
+            "fileName": "OtcBYzA22zM.jpg",
+            "altText": "",
+            "fileSize": 365756,
+            "width": 1080,
+            "mediaType": "image/jpeg",
+            "id": "fd11f97f-8df0-4698-b4a5-ec7ef1e5594d",
+            "resourceUri": "/delivery/v1/resources/68fc8084-3246-4851-b275-bb9bb304e9f9",
+            "height": 1620
+          },
+          "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/68fc/68fc8084-3246-4851-b275-bb9bb304e9f9.jpg"
+        },
+        {
+          "mode": "shared",
+          "renditions": {
+            "default": {
+              "width": 550,
+              "source": "/delivery/v1/resources/1e51a079-290b-42ec-879e-bb8700079586",
+              "height": 120,
+              "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/1e51/1e51a079-290b-42ec-879e-bb8700079586.png"
+            }
+          },
+          "asset": {
+            "fileName": "banner_discount2.png",
+            "altText": "",
+            "fileSize": 125647,
+            "width": 550,
+            "mediaType": "image/png",
+            "id": "e326ed7e-a318-4cb5-9b4a-230ceaa023f5",
+            "resourceUri": "/delivery/v1/resources/1e51a079-290b-42ec-879e-bb8700079586",
+            "height": 120
+          },
+          "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/1e51/1e51a079-290b-42ec-879e-bb8700079586.png"
+        }
+      ],
+      "elementType": "image"
+    },
+    "singleimage": {
+      "mode": "shared",
+      "renditions": {
+        "default": {
+          "width": 550,
+          "source": "/delivery/v1/resources/cebaad62-faf6-4f87-95a9-2b6fa49363d3",
+          "height": 120,
+          "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/ceba/cebaad62-faf6-4f87-95a9-2b6fa49363d3.png"
+        }
+      },
+      "asset": {
+        "fileName": "banner_female.png",
+        "altText": "",
+        "fileSize": 130599,
+        "width": 550,
+        "mediaType": "image/png",
+        "id": "2802f952-9802-4436-bccd-c6e10c28e43d",
+        "resourceUri": "/delivery/v1/resources/cebaad62-faf6-4f87-95a9-2b6fa49363d3",
+        "height": 120
+      },
+      "elementType": "image",
+      "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/ceba/cebaad62-faf6-4f87-95a9-2b6fa49363d3.png"
+    },
+    "multilink": {
+      "elementType": "link",
+      "values": [
+        {
+          "linkURL": "fff",
+          "linkText": "fffff"
+        },
+        {
+          "linkText": "text",
+          "linkURL": "tagre",
+          "linkDescription": "dewsac"
+        }
+      ]
+    },
+    "singlenumber": {
+      "elementType": "number"
+    },
+    "multiformattedtext": {
+      "values": ["<p>cc</p>", "<p>cc</p>"],
+      "elementType": "formattedtext"
+    },
+    "multidate": {
+      "elementType": "datetime",
+      "values": ["2019-04-30T22:00:00Z", "2019-04-30T22:00:00Z"]
+    },
+    "singleoption": {
+      "elementType": "optionselection"
+    },
+    "multioptions": {
+      "elementType": "optionselection"
+    },
+    "singledate": {
+      "elementType": "datetime",
+      "value": "2019-04-30T22:00:00Z"
+    },
+    "singlelocation": {
+      "elementType": "location",
+      "latitude": 10,
+      "longitude": 22.33
+    },
+    "multifile": {
+      "values": [
+        {
+          "asset": {
+            "fileName": "OtcBYzA22zM.jpg",
+            "fileSize": 365756,
+            "mediaType": "image/jpeg",
+            "id": "fd11f97f-8df0-4698-b4a5-ec7ef1e5594d",
+            "resourceUri": "/delivery/v1/resources/68fc8084-3246-4851-b275-bb9bb304e9f9"
+          },
+          "url": "/568a6d7b-38ba-448a-b0f6-124d38154365/dxresources/68fc/68fc8084-3246-4851-b275-bb9bb304e9f9.jpg"
+        }
+      ],
+      "elementType": "file"
+    },
+    "singlereference": {
+      "elementType": "reference",
+      "value": {
+        "creatorId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+        "typeId": "b7b05524-87ed-4509-b6fb-972f2cbf26d5",
+        "id": "8c270c18-761f-4563-b50d-1077fffd664d",
+        "status": "ready",
+        "url": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/delivery/v1/content/8c270c18-761f-4563-b50d-1077fffd664d",
+        "protectedUrl": "/api/568a6d7b-38ba-448a-b0f6-124d38154365/mydelivery/v1/content/8c270c18-761f-4563-b50d-1077fffd664d"
+      }
+    },
+    "singlelink": {
+      "elementType": "link",
+      "linkURL": "ffff",
+      "linkText": "ddd"
+    }
+  },
+  "name": "AllTxpes",
+  "lastModifierId": "0a3f13bf-d343-4648-8a2a-8646a8a20657",
+  "typeId": "b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb",
+  "links": {
+    "thumbnail": {
+      "href": "/authoring/v1/resources/cebaad62-faf6-4f87-95a9-2b6fa49363d3?fit=inside%7C220:145"
+    },
+    "createDraft": {
+      "href": "/authoring/v1/content/87a70fb2-dc61-4a87-801d-ee064f5d1ee8/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/87a70fb2-dc61-4a87-801d-ee064f5d1ee8/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/87a70fb2-dc61-4a87-801d-ee064f5d1ee8"
+    },
+    "type": {
+      "href": "/authoring/v1/types/b10e19d0-7bde-4a6a-b93c-cf6f7f7f5ccb"
+    }
+  },
+  "id": "87a70fb2-dc61-4a87-801d-ee064f5d1ee8",
+  "lastModified": "2019-05-20T15:06:14.576Z",
+  "systemModified": "2019-05-20T15:06:14.659Z",
+  "status": "ready"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "083c1cfd-c8b9-4c35-b68c-0ef1f5a53f4b",
+  "rev": "1-1d0e19ad12be0e96a309518f526fbe03",
+  "name": "Copy of Design article",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "5d37254f-2746-4bc4-9dfd-ffc152b8ab13"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "design-article-layout"
+      },
+      "layouts": [
+        {
+          "id": "design-article-layout"
+        }
+      ]
+    }
+  ]
+}

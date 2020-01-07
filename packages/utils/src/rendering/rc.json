@@ -1,0 +1,12 @@
+{
+    "elements": {
+        "text1": {
+            "elementType": "text",
+            "value": "someText"
+        },
+        "text2": {
+            "elementType": "text",
+            "values": ["someText1", "someText2"]
+        }
+    }
+}

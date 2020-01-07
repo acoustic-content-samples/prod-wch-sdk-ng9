@@ -1,0 +1,62 @@
+{
+  "id": "f8253f3b-1a03-4d08-99e0-9723bb4ca3a8",
+  "rev": "6-32a578fb00f16cf4aa2e6eaeb723c7fc",
+  "name": "Font options",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Arial",
+          "selection": "Arial"
+        },
+        {
+          "label": "Comic Sans MS",
+          "selection": "Comic Sans MS"
+        },
+        {
+          "label": "Courier New",
+          "selection": "Courier New"
+        },
+        {
+          "label": "Georgia",
+          "selection": "Georgia"
+        },
+        {
+          "label": "Lucida Sans Unicode",
+          "selection": "Lucida Sans Unicode"
+        },
+        {
+          "label": "Tahoma",
+          "selection": "Tahoma"
+        },
+        {
+          "label": "Times New Roman",
+          "selection": "Times New Roman"
+        },
+        {
+          "label": "Trebuchet MS",
+          "selection": "Trebuchet MS"
+        },
+        {
+          "label": "Verdana",
+          "selection": "Verdana"
+        }
+      ],
+      "label": "Fonts",
+      "key": "fonts"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

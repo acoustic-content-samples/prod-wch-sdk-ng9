@@ -1,0 +1,34 @@
+{
+  "id": "9f1d4f26-b587-4abe-a83c-38df755a6b37",
+  "rev": "2-2ae5a7c35aca307b333444a1af249dfa",
+  "name": "Social Link",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Icon",
+      "key": "icon"
+    },
+    {
+      "elementType": "link",
+      "label": "URL",
+      "key": "url"
+    },
+    {
+      "elementType": "text",
+      "label": "Alt text",
+      "key": "alttext"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

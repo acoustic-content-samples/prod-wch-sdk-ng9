@@ -1,0 +1,4082 @@
+{
+  "rev": "1-a7abf6efe8831f078eac63420611e17d",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": ["email", "sample"],
+  "created": "2019-08-14T09:14:18.542Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "Showcase your latest products and services.",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Email",
+  "locale": "en",
+  "tags": [],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af"
+      }
+    }
+  ],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "transparent"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "editor": {
+      "elementType": "text"
+    },
+    "contentAreaBackgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "#FFFFFF"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "rows": {
+      "values": [
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "image": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 20
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 20
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "image": {
+                            "mode": "snapshot",
+                            "renditions": {
+                              "default": {
+                                "transform": {
+                                  "scale": 1
+                                },
+                                "renditionId": "r=60cb0967-1e49-42dc-9031-39fe2fc621c0&a=ded97ee8-fb38-49b1-ad6a-cdefeee380c4&s=1.0",
+                                "width": 91,
+                                "source": "/authoring/v1/resources/60cb0967-1e49-42dc-9031-39fe2fc621c0?resize=91px:47px",
+                                "height": 47
+                              }
+                            },
+                            "asset": {
+                              "fileName": "Oslo Logo.png",
+                              "altText": "",
+                              "fileSize": 1344,
+                              "width": 91,
+                              "mediaType": "image/png",
+                              "id": "ded97ee8-fb38-49b1-ad6a-cdefeee380c4",
+                              "resourceUri": "/authoring/v1/resources/60cb0967-1e49-42dc-9031-39fe2fc621c0",
+                              "height": 47
+                            },
+                            "elementType": "image"
+                          },
+                          "align": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "b7b05524-87ed-4509-b6fb-972f2cbf26d5"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "image"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "2c704bd5-9b52-4491-b3cf-cb6826907ac7"
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "image": {
+                        "elementType": "group",
+                        "value": {
+                          "image": {
+                            "mode": "snapshot",
+                            "renditions": {
+                              "default": {
+                                "transform": {
+                                  "scale": 1
+                                },
+                                "renditionId": "r=00115206-807a-46e6-a215-68de15d8aa4f&a=7fbb6092-fd5c-4a0c-95c6-4d0ae7f7dc8a&s=1.0",
+                                "width": 325,
+                                "source": "/authoring/v1/resources/00115206-807a-46e6-a215-68de15d8aa4f?resize=325px:300px",
+                                "height": 300
+                              }
+                            },
+                            "asset": {
+                              "fileName": "GettyImages-763279289.jpg",
+                              "altText": "Cushion By Potted Plant On Seat At Home",
+                              "fileSize": 73011,
+                              "width": 325,
+                              "mediaType": "image/jpeg",
+                              "id": "7fbb6092-fd5c-4a0c-95c6-4d0ae7f7dc8a",
+                              "resourceUri": "/authoring/v1/resources/00115206-807a-46e6-a215-68de15d8aa4f",
+                              "height": 300
+                            },
+                            "elementType": "image"
+                          }
+                        },
+                        "typeRef": {
+                          "id": "b7b05524-87ed-4509-b6fb-972f2cbf26d5"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "image"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 3
+                }
+              },
+              {
+                "content": {
+                  "values": [
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#83969E"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Georgia"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 36
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#FFFFFF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p><span style=\"font-size:55px\">LOREM IPSUM</span><br />\n<span style=\"color:#000000\"><span style=\"font-size:36px\">dolor sit amet</span></span></p>\n"
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 50
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 28
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "promotion"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      },
+                      "promotion": {
+                        "elementType": "group",
+                        "value": {
+                          "imageGroup": {
+                            "elementType": "group",
+                            "value": {
+                              "image": {
+                                "mode": "snapshot",
+                                "renditions": {
+                                  "default": {
+                                    "transform": {
+                                      "scale": 0.49
+                                    },
+                                    "renditionId": "r=256d5a91-377b-47cb-a2c3-40770a02bf79&a=cdda7612-e60e-4a26-9df0-31abd935beeb&s=0.49",
+                                    "width": 490,
+                                    "source": "/authoring/v1/resources/256d5a91-377b-47cb-a2c3-40770a02bf79?resize=490px:245px",
+                                    "height": 245
+                                  }
+                                },
+                                "asset": {
+                                  "fileName": "GettyImages-943910360.jpg",
+                                  "altText": "Posters in cozy apartment interior",
+                                  "fileSize": 381496,
+                                  "width": 1000,
+                                  "mediaType": "image/jpeg",
+                                  "id": "cdda7612-e60e-4a26-9df0-31abd935beeb",
+                                  "resourceUri": "/authoring/v1/resources/256d5a91-377b-47cb-a2c3-40770a02bf79",
+                                  "height": 500
+                                },
+                                "elementType": "image"
+                              },
+                              "padding": {
+                                "elementType": "group",
+                                "value": {
+                                  "top": {
+                                    "elementType": "number",
+                                    "value": 50
+                                  },
+                                  "right": {
+                                    "elementType": "number",
+                                    "value": 5
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#f3f3f3"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textGroup": {
+                            "elementType": "group",
+                            "value": {
+                              "textStyle": {
+                                "elementType": "group",
+                                "value": {
+                                  "font": {
+                                    "elementType": "text",
+                                    "value": "Arial"
+                                  },
+                                  "size": {
+                                    "elementType": "number",
+                                    "value": 14
+                                  },
+                                  "color": {
+                                    "elementType": "text",
+                                    "value": "#1E1E1E"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                                }
+                              },
+                              "text": {
+                                "elementType": "formattedtext",
+                                "value": "<p><span style=\"font-size:30px\">LOREM</span></p>\n<p><span style=\"font-size:14px\">_____________________</span></p>\n<p style=\"font-size:14px\">Lorem ipsum lorem ipsum</p>\n\n<p style=\"font-size:14px\">dolor sit lorem ipsum dolor</p>\n\n<p style=\"font-size:14px\">lorem ipsum dolor sit amet</p>\n"
+                              },
+                              "lineHeight": {
+                                "elementType": "group",
+                                "value": {
+                                  "lineHeightOptions": {
+                                    "elementType": "optionselection",
+                                    "value": {
+                                      "selection": "1.5"
+                                    }
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                                }
+                              },
+                              "alignment": {
+                                "elementType": "group",
+                                "value": {
+                                  "alignmentOptions": {
+                                    "elementType": "optionselection",
+                                    "value": {
+                                      "selection": "center"
+                                    }
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55"
+                            }
+                          },
+                          "layout": {
+                            "elementType": "optionselection",
+                            "value": {
+                              "selection": "image-right"
+                            }
+                          },
+                          "buttonGroup": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#123448"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              },
+                              "style": {
+                                "elementType": "group",
+                                "value": {
+                                  "font": {
+                                    "elementType": "text",
+                                    "value": "Arial"
+                                  },
+                                  "size": {
+                                    "elementType": "number",
+                                    "value": 14
+                                  },
+                                  "color": {
+                                    "elementType": "text",
+                                    "value": "#FFFFFF"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                                }
+                              },
+                              "align": {
+                                "elementType": "group",
+                                "value": {
+                                  "alignmentOptions": {
+                                    "elementType": "optionselection",
+                                    "value": {
+                                      "selection": "center"
+                                    }
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                                }
+                              },
+                              "label": {
+                                "elementType": "text",
+                                "value": "SHOP THE LOOK"
+                              },
+                              "link": {
+                                "elementType": "link",
+                                "linkURL": "http://www.ibm.com"
+                              },
+                              "padding": {
+                                "elementType": "group",
+                                "value": {
+                                  "top": {
+                                    "elementType": "number",
+                                    "value": 15
+                                  },
+                                  "bottom": {
+                                    "elementType": "number",
+                                    "value": 15
+                                  },
+                                  "left": {
+                                    "elementType": "number",
+                                    "value": 30
+                                  },
+                                  "right": {
+                                    "elementType": "number",
+                                    "value": 30
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "2d9f0c5e-8a89-4b8c-abfc-7d2de4f623dd"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "e98ba889-d5e4-4b9b-8c42-e3a5c35a10d3"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "spacer": {
+                        "elementType": "group",
+                        "value": {
+                          "height": {
+                            "elementType": "number",
+                            "value": 56
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "209c5579-4e6d-4e88-9c47-76de4c25c6f8"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "spacer"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "f6dcc00c-80ad-4b34-89a8-30ab0b93f690"
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "span": {
+                  "elementType": "number",
+                  "value": 3
+                },
+                "content": {
+                  "values": [
+                    {
+                      "imageAndText": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 25
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 30
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "imageGroup": {
+                            "elementType": "group",
+                            "value": {
+                              "image": {
+                                "mode": "snapshot",
+                                "renditions": {
+                                  "default": {
+                                    "transform": {
+                                      "scale": 1
+                                    },
+                                    "renditionId": "r=3f0e4a68-aca3-457b-a777-8b6da49b6b56&a=082428fe-a457-419c-af16-3ba4e9601626&s=1.0",
+                                    "width": 136,
+                                    "source": "/authoring/v1/resources/3f0e4a68-aca3-457b-a777-8b6da49b6b56?resize=136px:91px",
+                                    "height": 91
+                                  }
+                                },
+                                "asset": {
+                                  "fileName": "GettyImages-909600392_1.jpg",
+                                  "altText": "",
+                                  "fileSize": 14052,
+                                  "width": 136,
+                                  "mediaType": "image/jpeg",
+                                  "id": "082428fe-a457-419c-af16-3ba4e9601626",
+                                  "resourceUri": "/authoring/v1/resources/3f0e4a68-aca3-457b-a777-8b6da49b6b56",
+                                  "height": 91
+                                },
+                                "elementType": "image"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#F3F1ED"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textGroup": {
+                            "elementType": "group",
+                            "value": {
+                              "textStyle": {
+                                "elementType": "group",
+                                "value": {
+                                  "font": {
+                                    "elementType": "text",
+                                    "value": "Arial"
+                                  },
+                                  "size": {
+                                    "elementType": "number",
+                                    "value": 14
+                                  },
+                                  "color": {
+                                    "elementType": "text",
+                                    "value": "#1E1E1E"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                                }
+                              },
+                              "text": {
+                                "elementType": "formattedtext",
+                                "value": "<p><span style=\"font-size:18px\">FROM THE DESIGNER<br />\n____</span><br />\n<br />\n<em>&#34;Lorem ipsum lorem ipsum dolor sit lorem ipsum dolor lorem ipsum dolor sit amet.</em></p>\n\n<p><em>Ipsum dolor lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet dolor sit.&#34;</em></p>\n\n<p><span style=\"font-size:14px\"><span style=\"font-family:&#39;arial&#39; , &#39;helvetica&#39; , sans-serif\"><em>Xoxo</em></span>,</span></p>\n"
+                              },
+                              "lineHeight": {
+                                "elementType": "group",
+                                "value": {
+                                  "lineHeightOptions": {
+                                    "elementType": "optionselection",
+                                    "value": {
+                                      "selection": "1.5"
+                                    }
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                                }
+                              },
+                              "padding": {
+                                "elementType": "group",
+                                "value": {
+                                  "right": {
+                                    "elementType": "number",
+                                    "value": 65
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55"
+                            }
+                          },
+                          "layout": {
+                            "elementType": "optionselection",
+                            "value": {
+                              "selection": "image-bottom"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "4e70d4a0-0112-43c5-887b-dde336ebe678"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "imageAndText"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#F3F1ED"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 14
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1E1E1E"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p>DESIGNER NAME</p>\n"
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 91
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 25
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                }
+              },
+              {
+                "content": {
+                  "values": [
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 21
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1e1e1e"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p style=\"text-align:center\">HEADLINE</p>"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "divider"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      },
+                      "divider": {
+                        "elementType": "group",
+                        "value": {
+                          "lineColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#1E1E1E"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          },
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "align": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                            }
+                          },
+                          "lineType": {
+                            "elementType": "optionselection",
+                            "value": {
+                              "selection": "solid"
+                            }
+                          },
+                          "lineWeight": {
+                            "elementType": "number",
+                            "value": 1
+                          },
+                          "opacity": {
+                            "elementType": "number",
+                            "value": 100
+                          },
+                          "width": {
+                            "elementType": "number",
+                            "value": 60
+                          }
+                        },
+                        "typeRef": {
+                          "id": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1e1e1e"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p style=\"font-size:14px\">Lorem ipsum lorem ipsum</p>\n\n<p style=\"font-size:14px\">dolor sit lorem ipsum dolor</p>\n\n<p style=\"font-size:14px\">lorem ipsum dolor sit amet</p>\n"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1.5"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 5
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 20
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "button"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      },
+                      "button": {
+                        "elementType": "group",
+                        "value": {
+                          "backgroundColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#123448"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          },
+                          "style": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#FFFFFF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "align": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                            }
+                          },
+                          "label": {
+                            "elementType": "text",
+                            "value": "READ MORE"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "link": {
+                            "elementType": "link",
+                            "linkURL": "http://www.ibm.com"
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 15
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 15
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 40
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 40
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "b201f69e-29ff-4f3e-9a72-6c6be6c7d754"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 21
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1e1e1e"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p style=\"text-align:center\">HEADLINE</p>"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "divider"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      },
+                      "divider": {
+                        "elementType": "group",
+                        "value": {
+                          "lineColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#1E1E1E"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          },
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "align": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                            }
+                          },
+                          "lineType": {
+                            "elementType": "optionselection",
+                            "value": {
+                              "selection": "solid"
+                            }
+                          },
+                          "lineWeight": {
+                            "elementType": "number",
+                            "value": 1
+                          },
+                          "opacity": {
+                            "elementType": "number",
+                            "value": 100
+                          },
+                          "width": {
+                            "elementType": "number",
+                            "value": 60
+                          }
+                        },
+                        "typeRef": {
+                          "id": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1e1e1e"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p style=\"font-size:14px\">Lorem ipsum lorem ipsum</p>\n\n<p style=\"font-size:14px\">dolor sit lorem ipsum dolor</p>\n\n<p style=\"font-size:14px\">lorem ipsum dolor sit amet</p>\n"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1.5"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 5
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 20
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "button"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      },
+                      "button": {
+                        "elementType": "group",
+                        "value": {
+                          "backgroundColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#123448"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          },
+                          "style": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#FFFFFF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "align": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+                            }
+                          },
+                          "label": {
+                            "elementType": "text",
+                            "value": "READ MORE"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "link": {
+                            "elementType": "link",
+                            "linkURL": "http://www.ibm.com"
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 15
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 15
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 40
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 40
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "b201f69e-29ff-4f3e-9a72-6c6be6c7d754"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 55
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#D4D9D5"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 18
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#1E1E1E"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p>MORE FROM THE COLLECTION</p>\n"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "0.8"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 43
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 35
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "imageGroup": {
+                        "elementType": "group",
+                        "value": {
+                          "backgroundColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#D4D9D5"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          },
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 0
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 0
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "layout": {
+                            "elementType": "optionselection",
+                            "value": {
+                              "selection": "3-col"
+                            }
+                          },
+                          "spacing": {
+                            "elementType": "number",
+                            "value": 10
+                          },
+                          "images": {
+                            "values": [
+                              {
+                                "mode": "snapshot",
+                                "renditions": {
+                                  "default": {
+                                    "transform": {
+                                      "scale": 1
+                                    },
+                                    "renditionId": "r=0619b2b7-13b4-4ec6-9b49-f423f613b246&a=2bd5b3a6-1ad7-4d66-a65a-3bea8f906009&s=1.0",
+                                    "width": 255,
+                                    "source": "/authoring/v1/resources/0619b2b7-13b4-4ec6-9b49-f423f613b246?resize=255px:170px",
+                                    "height": 170
+                                  }
+                                },
+                                "asset": {
+                                  "fileName": "GettyImages-914267858.jpg",
+                                  "altText": "Electric Lamp By Sofa At Home",
+                                  "fileSize": 31830,
+                                  "width": 255,
+                                  "mediaType": "image/jpeg",
+                                  "id": "2bd5b3a6-1ad7-4d66-a65a-3bea8f906009",
+                                  "resourceUri": "/authoring/v1/resources/0619b2b7-13b4-4ec6-9b49-f423f613b246",
+                                  "height": 170
+                                }
+                              },
+                              {
+                                "mode": "snapshot",
+                                "renditions": {
+                                  "default": {
+                                    "transform": {
+                                      "scale": 1
+                                    },
+                                    "renditionId": "r=a518cf18-f3a4-43b8-8bc8-412eee7a4c2f&a=0c6cb343-f116-4af8-9b7b-e92072a0c0b8&s=1.0",
+                                    "width": 255,
+                                    "source": "/authoring/v1/resources/a518cf18-f3a4-43b8-8bc8-412eee7a4c2f?resize=255px:170px",
+                                    "height": 170
+                                  }
+                                },
+                                "asset": {
+                                  "fileName": "GettyImages-899419458.jpg",
+                                  "altText": "Pastel colored sofa with blank wall template",
+                                  "fileSize": 25809,
+                                  "width": 255,
+                                  "mediaType": "image/jpeg",
+                                  "id": "0c6cb343-f116-4af8-9b7b-e92072a0c0b8",
+                                  "resourceUri": "/authoring/v1/resources/a518cf18-f3a4-43b8-8bc8-412eee7a4c2f",
+                                  "height": 170
+                                }
+                              },
+                              {
+                                "mode": "snapshot",
+                                "renditions": {
+                                  "default": {
+                                    "transform": {
+                                      "scale": 1
+                                    },
+                                    "renditionId": "r=865dbd13-9ab4-4132-921c-199ef9a7c41f&a=110a42e5-9500-45be-bb3a-e983c7847168&s=1.0",
+                                    "width": 255,
+                                    "source": "/authoring/v1/resources/865dbd13-9ab4-4132-921c-199ef9a7c41f?resize=255px:170px",
+                                    "height": 170
+                                  }
+                                },
+                                "asset": {
+                                  "fileName": "GettyImages-899419530.jpg",
+                                  "altText": "Pastel colored armchairs with coffee table, window and blank wall template",
+                                  "fileSize": 44009,
+                                  "width": 255,
+                                  "mediaType": "image/jpeg",
+                                  "id": "110a42e5-9500-45be-bb3a-e983c7847168",
+                                  "resourceUri": "/authoring/v1/resources/865dbd13-9ab4-4132-921c-199ef9a7c41f",
+                                  "height": 170
+                                }
+                              }
+                            ],
+                            "elementType": "image"
+                          }
+                        },
+                        "typeRef": {
+                          "id": "7952a5b2-57d0-4a1b-a008-d37c7d7f5261"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "imageGroup"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "spacer": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#D4D9D5"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "height": {
+                            "elementType": "number",
+                            "value": 70
+                          }
+                        },
+                        "typeRef": {
+                          "id": "209c5579-4e6d-4e88-9c47-76de4c25c6f8"
+                        }
+                      },
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "spacer"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "margin": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "transparent"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 16
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#000000"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "left"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 10
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#0068FF"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          }
+        },
+        {
+          "cells": {
+            "values": [
+              {
+                "content": {
+                  "values": [
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#0A1B20"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#838383"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p><em>© 2019. Site your company<br />\n123, Street Name, Address Line 2, Country<br />\ninfo&#64;yourcompany.com</em></p>\n"
+                          },
+                          "lineHeight": {
+                            "elementType": "group",
+                            "value": {
+                              "lineHeightOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "1.5"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+                            }
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "top": {
+                                "elementType": "number",
+                                "value": 50
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#0A1B20"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#838383"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</em></p>\n"
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "left": {
+                                "elementType": "number",
+                                "value": 40
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 40
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    },
+                    {
+                      "selected": {
+                        "elementType": "optionselection",
+                        "value": {
+                          "selection": "text"
+                        }
+                      },
+                      "text": {
+                        "elementType": "group",
+                        "value": {
+                          "background": {
+                            "elementType": "group",
+                            "value": {
+                              "backgroundColor": {
+                                "elementType": "group",
+                                "value": {
+                                  "colorCode": {
+                                    "elementType": "text",
+                                    "value": "#0A1B20"
+                                  }
+                                },
+                                "typeRef": {
+                                  "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+                            }
+                          },
+                          "textStyle": {
+                            "elementType": "group",
+                            "value": {
+                              "font": {
+                                "elementType": "text",
+                                "value": "Arial"
+                              },
+                              "size": {
+                                "elementType": "number",
+                                "value": 10
+                              },
+                              "color": {
+                                "elementType": "text",
+                                "value": "#838383"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+                            }
+                          },
+                          "text": {
+                            "elementType": "formattedtext",
+                            "value": "<p><em>If you do not wish to receive further email from us, please <a href=\"#SPONECLICKOPTOUT\" rel=\"nofollow\"><span style=\"color:#838383\">unsubscribe</span></a></em></p>\n"
+                          },
+                          "alignment": {
+                            "elementType": "group",
+                            "value": {
+                              "alignmentOptions": {
+                                "elementType": "optionselection",
+                                "value": {
+                                  "selection": "center"
+                                }
+                              }
+                            },
+                            "typeRef": {
+                              "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+                            }
+                          },
+                          "padding": {
+                            "elementType": "group",
+                            "value": {
+                              "bottom": {
+                                "elementType": "number",
+                                "value": 50
+                              },
+                              "left": {
+                                "elementType": "number",
+                                "value": 20
+                              },
+                              "right": {
+                                "elementType": "number",
+                                "value": 20
+                              }
+                            },
+                            "typeRef": {
+                              "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+                            }
+                          },
+                          "linkColor": {
+                            "elementType": "group",
+                            "value": {
+                              "colorCode": {
+                                "elementType": "text",
+                                "value": "#F6F4EE"
+                              }
+                            },
+                            "typeRef": {
+                              "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+                            }
+                          }
+                        },
+                        "typeRef": {
+                          "id": "09ed64f3-23d9-48bb-871d-e00430751ea6"
+                        }
+                      }
+                    }
+                  ],
+                  "elementType": "group",
+                  "typeRef": {
+                    "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+                  }
+                },
+                "span": {
+                  "elementType": "number",
+                  "value": 6
+                }
+              }
+            ],
+            "elementType": "group",
+            "typeRef": {
+              "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+            }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "ffde4e78-19b2-486b-a430-5ae507e238c4"
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "id": "b908096b-9cd2-4085-bf0c-a510576e633b"
+      }
+    },
+    "width": {
+      "elementType": "number",
+      "value": 640
+    },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": {
+          "elementType": "text"
+        },
+        "fromName": {
+          "elementType": "text"
+        },
+        "subjectLine": {
+          "elementType": "text"
+        },
+        "databaseId": {
+          "elementType": "text"
+        },
+        "replyToAddress": {
+          "elementType": "text"
+        },
+        "fromAddress": {
+          "elementType": "text"
+        }
+      },
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      }
+    }
+  },
+  "name": "Promotion_embedded",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "51071056-1f70-499e-9ee3-b2066f56b119",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/c0b6c620-de3a-4e26-bc77-ec8a08df073a/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/c0b6c620-de3a-4e26-bc77-ec8a08df073a/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/c0b6c620-de3a-4e26-bc77-ec8a08df073a"
+    },
+    "type": {
+      "href": "/authoring/v1/types/51071056-1f70-499e-9ee3-b2066f56b119"
+    }
+  },
+  "id": "c0b6c620-de3a-4e26-bc77-ec8a08df073a",
+  "lastModified": "2019-08-14T09:14:18.542Z",
+  "systemModified": "2019-08-14T09:14:18.542Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

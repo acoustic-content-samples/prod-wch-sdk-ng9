@@ -1,0 +1,78 @@
+{
+  "name": "@acoustic-content-sdk/ng",
+  "version": "9.0.0",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-ng.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-ng.js",
+  "typings": "dist/acoustic-content-sdk-ng.d.ts",
+  "scripts": {
+    "build": "ng build --prod",
+    "build:api": "api-extractor run --local",
+    "build:packagr": "ng-packagr -p package.json",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "start": "ng serve"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/component-api": "9.0.0",
+    "@acoustic-content-sdk/component-utils": "9.0.0",
+    "@acoustic-content-sdk/ng-api": "9.0.0",
+    "@acoustic-content-sdk/ng-rest-api": "9.0.0",
+    "@acoustic-content-sdk/ng-utils": "9.0.0",
+    "@acoustic-content-sdk/rest-api": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "next",
+    "@angular/core": "next",
+    "@angular/platform-browser": "next",
+    "@angular/router": "next",
+    "rxjs": "^6"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-ng.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-ng.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-ng.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-ng.js",
+  "metadata": "dist/acoustic-content-sdk-ng.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
+        "@acoustic-content-sdk/component-utils": "acoustic-content-sdk.component-utils",
+        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
+        "@acoustic-content-sdk/ng-rest-api": "acoustic-content-sdk.ng-rest-api",
+        "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
+        "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

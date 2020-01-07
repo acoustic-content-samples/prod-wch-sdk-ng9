@@ -1,0 +1,10 @@
+{
+  "id": "button-component-layout",
+  "rev": "4-94c0b30d842ae06bc97d98c5c2285373",
+  "name": "buttonComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/button-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

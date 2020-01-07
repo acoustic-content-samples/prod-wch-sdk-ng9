@@ -1,0 +1,118 @@
+{
+  "id": "http://www.ibm.com/schemas/element-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Element Schema",
+  "description": "Schema for element definitions",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$"
+    },
+    "rev": { "type": "string" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "classification": { "enum": ["element-definition"] },
+    "description": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "creatorId": { "type": "string" },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifierId": { "type": "string" },
+    "lastModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "linkedDocId": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "type": "string" }
+    },
+    "status": {
+      "enum": ["draft", "ready", "retired"]
+    },
+    "mandatoryFieldsWhenRequired": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "schemaFragment": {
+      "type": "object",
+      "properties": {
+        "$ELEMENT_KEY$": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "type": { "enum": ["object"] },
+            "properties": { "type": "object" },
+            "required": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string" }
+            },
+            "additionalProperties": { "enum": [false] },
+            "dependencies": { "type": "object" }
+          },
+          "required": ["title", "type", "properties"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "formFragment": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "enum": ["$ELEMENT_KEY$"]
+        },
+        "type": {
+          "enum": ["dx-fieldset", "dx-modal", "dx-file-upload", "dx-image-upload", "dx-video-upload"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": ["key", "type"]
+          }
+        },
+        "dxIcon": { "type": "string" }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "classification",
+    "description",
+    "creatorId",
+    "created",
+    "lastModifierId",
+    "lastModified",
+    "tags",
+    "status",
+    "schemaFragment",
+    "formFragment"
+  ],
+  "additionalProperties": false
+}

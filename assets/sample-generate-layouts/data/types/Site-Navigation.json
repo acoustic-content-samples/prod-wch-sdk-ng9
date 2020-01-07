@@ -1,0 +1,28 @@
+{
+  "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
+  "rev": "4-8b87392734af2c56d008985b24ab0a68",
+  "name": "Site Navigation",
+  "classification": "content-type",
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Navigation",
+      "key": "navigation",
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "label": "Default Page",
+      "key": "defaultPage"
+    }
+  ]
+}

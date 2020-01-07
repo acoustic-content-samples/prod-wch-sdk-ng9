@@ -1,0 +1,120 @@
+{
+  "rev": "7-d5bd93e8de494d323c3cfc742d1d202a",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-07-10T06:54:42.166Z",
+  "creatorId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "deliveryAccess": "secured",
+  "classification": "content",
+  "type": "Image group",
+  "locale": "en",
+  "tags": [
+    "user:wch-email-block"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "image-group-component-layout"
+      }
+    }
+  ],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "transparent"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number",
+          "value": 0
+        },
+        "bottom": {
+          "elementType": "number",
+          "value": 0
+        },
+        "left": {
+          "elementType": "number",
+          "value": 0
+        },
+        "right": {
+          "elementType": "number",
+          "value": 0
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      },
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      }
+    },
+    "key": {
+      "elementType": "text",
+      "value": "46533f3e-65e7-4609-b0aa-20939cb40c3b"
+    },
+    "layout": {
+      "elementType": "optionselection",
+      "value": {
+        "selection": "2-col"
+      }
+    },
+    "spacing": {
+      "elementType": "number",
+      "value": 10
+    },
+    "images": {
+      "values": [],
+      "elementType": "image"
+    }
+  },
+  "name": "Image group",
+  "lastModifierId": "f0bbaa57-8775-4855-9ded-debc01267fe2",
+  "typeId": "7952a5b2-57d0-4a1b-a008-d37c7d7f5261",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/3b605769-fb3a-445e-9090-db03b51dc98c/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/3b605769-fb3a-445e-9090-db03b51dc98c/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/3b605769-fb3a-445e-9090-db03b51dc98c"
+    },
+    "type": {
+      "href": "/authoring/v1/types/7952a5b2-57d0-4a1b-a008-d37c7d7f5261"
+    }
+  },
+  "id": "3b605769-fb3a-445e-9090-db03b51dc98c",
+  "lastModified": "2019-08-30T12:17:11.123Z",
+  "systemModified": "2019-08-30T12:17:11.123Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

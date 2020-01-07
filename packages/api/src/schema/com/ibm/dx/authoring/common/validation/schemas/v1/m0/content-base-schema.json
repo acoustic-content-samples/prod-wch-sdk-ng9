@@ -1,0 +1,138 @@
+{
+   "id": "http://www.ibm.com/schemas/type-schema.json",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Content Schema",
+   "description": "A Json-Schema for validating a content item against its Type document",
+   "type": "object",
+   "properties": {
+      "id": {
+         "type": "string",
+         "pattern": "^[a-zA-Z0-9*.\\-_:]*$"
+      },
+      "rev": {
+         "type": "string"
+      },
+      "libraryId": {
+         "type": "string"
+      },
+      "projectId": {
+         "type": "string"
+      },
+      "name": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 250
+      },
+      "classification": {
+         "enum": [ "default-content", "content" ]
+      },
+      "typeId" : {
+         "enum" : [ "$$TYPEID$$" ]
+      },
+      "type": {
+         "type": "string",
+         "maxLength": 250
+      },
+      "description": {
+         "type": "string",
+         "maxLength": 500
+      },
+      "locale" : {
+         "type": "string"
+      },
+      "creatorId": {
+         "type": "string"
+      },
+      "creator": {
+         "type": "string"
+      },
+      "created": {
+         "type": "string",
+         "format": "date-time"
+      },
+      "lastModifierId": {
+         "type": "string"
+      },
+      "lastModifier": {
+         "type": "string"
+      },
+      "lastModified": {
+         "type": "string",
+         "format": "date-time"
+      },
+      "systemModified": {
+         "type": "string",
+         "format": "date-time"
+      },
+      "linkedDocId": {
+         "type": "string"
+      },
+      "tags": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "uniqueItems": true
+      },
+      "keywords": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      },
+      "status": {
+         "enum": [
+            "draft",
+            "ready",
+            "retired"
+         ]
+      },
+      "draftStatus": {
+         "enum": [
+            "in-progress",
+            "in-review",
+            "approved"
+         ]
+      },
+      "links" : {
+         "type": "object"
+      },
+      "schema" : {
+         "type": "object"
+      },
+      "form" : {
+         "type": "array"
+      },
+      "elements" : {
+         "type": "object"
+      },
+      "valid": { "type": "boolean"},
+      "review" : { "type": "object" },
+      "kind" : {
+         "type": "array",
+         "items": {
+            "type": "string"
+         },
+         "minItems": 1,
+         "uniqueItems": true
+      },
+      "publishing": {
+         "type":  "object"
+      },
+      "deliveryAccess": {
+         "enum": ["secured"]
+      },
+      "projects": {
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "name",
+      "typeId",
+      "status"
+   ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "a84f2c97-33bb-45fa-8156-25141df73055",
+  "rev": "8-a8290d268cc9fa5c30b8ab33eb218dfd",
+  "name": "Sites Video",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "thumbnail": {
+    "id": "aeef96bb-d0e1-4ebd-8403-f390d48a2d73"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "video",
+      "label": "Video",
+      "key": "video"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

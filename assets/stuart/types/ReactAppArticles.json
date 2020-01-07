@@ -1,0 +1,44 @@
+{
+  "id": "621e2ce8-b7f2-4608-9786-93901b445d3e",
+  "rev": "8-8da6417dbedc837c538ddf19518d24f1",
+  "name": "ReactAppArticles",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "f9e7f0b9-f57d-4d91-a257-54a64c1ff52f"
+      },
+      "label": "Article Image",
+      "key": "articleImage"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe"
+      },
+      "label": "Thumbnail",
+      "key": "thumbnail"
+    },
+    {
+      "elementType": "category",
+      "allowMultipleValues": true,
+      "minimumValues": 1,
+      "label": "Category",
+      "key": "category",
+      "required": true,
+      "maximumValues": 3
+    },
+    {
+      "elementType": "formattedtext",
+      "label": "Article Text",
+      "key": "articleText"
+    }
+  ]
+}

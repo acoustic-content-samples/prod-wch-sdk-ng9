@@ -1,0 +1,107 @@
+{
+  "$$DEBUG": {
+    "hash": "NYGOVt9FoG7n9mrfvd39TjK1wjk="
+  },
+  "classification": "content",
+  "created": "2018-05-04T11:07:21.673Z",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "description": "",
+  "elements": {
+    "image": {
+      "altText": "Open living space of modern house",
+      "asset": {
+        "fileName": "GettyImages-130408308.jpg",
+        "fileSize": 398362,
+        "height": 1329,
+        "id": "a9fec13a-0bd9-47df-99ad-e8f3019afeef",
+        "mediaType": "image/jpeg",
+        "resourceUri": "/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96",
+        "width": 2000
+      },
+      "elementType": "image",
+      "renditions": {
+        "default": {
+          "height": 1329,
+          "renditionId": "r=1c2111ea5e20d25a5502696ceb77cb96&a=a9fec13a-0bd9-47df-99ad-e8f3019afeef:draft",
+          "source": "/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96",
+          "url": "/f18c461e-ffc3-4d6c-a8e3-490270f3f399/dxresources/1c21/1c2111ea5e20d25a5502696ceb77cb96.jpg",
+          "width": 2000
+        },
+        "large": {
+          "height": 797,
+          "renditionId": "8094587b-0067-4e6c-8b96-10372b9c61ad",
+          "source": "/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96?resize=1200px:797px&crop=1200:797;0,0",
+          "url": "/f18c461e-ffc3-4d6c-a8e3-490270f3f399/dxresources/1c21/1c2111ea5e20d25a5502696ceb77cb96.jpg?resize=1200px%3A797px&crop=1200%3A797%3B0%2C0",
+          "width": 1200
+        },
+        "medium": {
+          "height": 400,
+          "renditionId": "5198a1b8-696b-4efa-9f4a-facb54ecac6a",
+          "source": "/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96?resize=602px:400px&crop=600:400;1,0",
+          "url": "/f18c461e-ffc3-4d6c-a8e3-490270f3f399/dxresources/1c21/1c2111ea5e20d25a5502696ceb77cb96.jpg?resize=602px%3A400px&crop=600%3A400%3B1%2C0",
+          "width": 600
+        },
+        "small": {
+          "height": 282,
+          "renditionId": "0f082b7e-8cf5-499d-9f72-5259c016494c",
+          "source": "/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96?resize=424px:282px&crop=360:282;32,0",
+          "url": "/f18c461e-ffc3-4d6c-a8e3-490270f3f399/dxresources/1c21/1c2111ea5e20d25a5502696ceb77cb96.jpg?resize=424px%3A282px&crop=360%3A282%3B32%2C0",
+          "width": 360
+        }
+      },
+      "url": "/f18c461e-ffc3-4d6c-a8e3-490270f3f399/dxresources/1c21/1c2111ea5e20d25a5502696ceb77cb96.jpg"
+    },
+    "imageCaption": {
+      "elementType": "text",
+      "value": "Less is more with modern and conservative furnishings."
+    },
+    "imageCredit": {
+      "elementType": "text",
+      "value": "Janet Guzman"
+    },
+    "imagePlacement": {
+      "categories": [
+        "Image size and placement/Placement/Left"
+      ],
+      "categoryIds": [
+        "f1b8bf80-7b2a-47d5-8875-08daf1567c12"
+      ],
+      "elementType": "category"
+    },
+    "imageSize": {
+      "categories": [
+        "Image size and placement/Size/Medium"
+      ],
+      "categoryIds": [
+        "7225c4dd-dc02-48e3-9d80-0f84c0c1340f"
+      ],
+      "elementType": "category"
+    }
+  },
+  "id": "8f49d97e-c45f-4c57-81f1-4d5b02d9d81e",
+  "keywords": [],
+  "kind": [],
+  "lastModified": "2018-05-04T11:07:21.673Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "layouts": {
+    "default": {
+      "name": "Image with caption",
+      "template": "image-with-information-layout",
+      "templateType": "angular"
+    }
+  },
+  "locale": "en",
+  "name": "Less is more",
+  "rev": "1-9b184ac6e9f9447f8947c50f1c8017ff",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "thumbnail": {
+    "id": "a9fec13a-0bd9-47df-99ad-e8f3019afeef",
+    "url": "/api/f18c461e-ffc3-4d6c-a8e3-490270f3f399/delivery/v1/resources/1c2111ea5e20d25a5502696ceb77cb96?fit=inside%7C220:145"
+  },
+  "type": "Image with information",
+  "typeId": "f9e7f0b9-f57d-4d91-a257-54a64c1ff52f"
+}

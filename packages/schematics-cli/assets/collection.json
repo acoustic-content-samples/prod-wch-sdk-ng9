@@ -1,0 +1,25 @@
+{
+  "$schema": "./../../../@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "contributions": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateContributions",
+      "schema": "./generate/contributions.json",
+      "description": "Generates page contributions from the build output."
+    },
+    "layouts": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateLayouts",
+      "schema": "./generate/layouts.json",
+      "description": "Generates layouts for the content types."
+    },
+    "layout": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateLayout",
+      "schema": "./generate/layout.json",
+      "description": "Generates a layout for a particular content types."
+    },
+    "components": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateComponents",
+      "schema": "./generate/components.json",
+      "description": "Generates code components for registered layouts."
+    }
+  }
+}

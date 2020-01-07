@@ -1,0 +1,58 @@
+{
+  "id": "http://www.ibm.com/schemas/layout-schema.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Layout Schema",
+  "description": "Schema for Layout",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9*.\\-+_~$!',()]*$",
+      "maxLength": 100
+    },
+    "rev": {"type": "string" },
+    "_revisions": { "type": "object" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 250
+    },
+    "path" : { "type":  "string" },
+    "description": {"type": "string", "maxLength": 500 },
+    "classification": {"enum": [ "layout" ] },
+    "creatorId": {"type": "string"},
+    "created": {"type": "string", "format": "date-time" },
+    "lastModifierId": {"type": "string"},
+    "lastModified": {"type": "string", "format": "date-time" },
+    "thumbnail": {
+      "type":  "object",
+      "properties" : {
+        "id" : { "type":  "string", "minLength": 1, "maxLength": 100 },
+        "path" : { "type":  "string" },
+        "url" : { "type":  "string" }
+      },
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 100,
+      "uniqueItems": true
+    },
+    "template": { "type": "string", "minLength" : 1 },
+    "templateType": {
+      "enum": [
+        "handlebars",
+        "angular"
+      ]
+    },
+    "prerender": {
+      "type": "boolean"
+    },
+    "urlTemplate": { "type": "string" }
+  },
+  "required": ["name", "classification", "template"],
+  "additionalProperties": false
+}

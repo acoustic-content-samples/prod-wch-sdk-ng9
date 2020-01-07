@@ -1,0 +1,28 @@
+<table {{#eq commonSettings.hideOnMobile true}} class="hide-on-mobile" {{/eq}} data-content-item-id="{{$metadata.id}}" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0px !important; width:100%;
+		{{#eq background.fillOptions 'center'}}background-size:contain;background-repeat:no-repeat;background-position:center;{{/eq}}
+		{{#eq background.fillOptions 'tile'}}background-repeat:repeat;{{/eq}}
+		{{#eq background.fillOptions 'full-width'}}background-size:cover;background-repeat:no-repeat;{{/eq}}
+		{{#if background.backgroundColor.colorCode}} background-color:{{background.backgroundColor.colorCode}} {{/if}}"
+  	{{#if background.image.asset}} {{#eq background.includeBackgroundImage true}}
+		background="{{context.hub.resourceUrl.origin}}{{background.image.renditions.default.url}}"
+	{{/eq}}{{/if}}>
+	{{!-- For background image in Outlook --}}
+    <!--[if gte mso 9]>
+	{{#if background.image.asset}} {{#eq background.includeBackgroundImage true}}
+		<v:image xmlns:v="urn:schemas-microsoft-com:vml" id="theImage" style='behavior: url(#default#VML); display: inline-block; position: absolute; mso-width-percent:1000; width: 640px; background-position: center; top: 0; left: 0; border: 0; z-index: 1;' src="{{context.hub.resourceUrl.origin}}{{background.includeBackgroundImage}}" color="#EAE9E3"/>
+		<v:shape xmlns:v="urn:schemas-microsoft-com:vml" id="theText" style='behavior: url(#default#VML); display: inline-block; position: absolute; width: 640px; z-index: 2;'>
+		<div style="vertical-align: middle;">
+	{{/eq}}{{/if}}
+	<![endif]-->
+	<tbody>
+		<tr {{#if height}} height="{{height}}px" {{/if}}>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+	<!--[if gte mso 9]>
+	{{#if background.image.asset}} {{#eq background.includeBackgroundImage true}}
+        </div>
+        </v:shape>
+	{{/eq}}{{/if}}
+    <![endif]-->
+</table>

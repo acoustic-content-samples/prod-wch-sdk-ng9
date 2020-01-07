@@ -1,0 +1,22 @@
+{
+  "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+  "rev": "6-6f48196cfb613e4269092d2a3dd61767",
+  "name": "SimpleText",
+  "classification": "content-type",
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "test"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "content",
+      "key": "content"
+    }
+  ]
+}

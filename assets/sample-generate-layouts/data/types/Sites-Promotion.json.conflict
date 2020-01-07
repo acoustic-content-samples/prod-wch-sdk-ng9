@@ -1,0 +1,91 @@
+{
+  "id": "0b1c47a9-eb31-49ec-8fd7-89ca21a36b36",
+  "rev": "27-df09a133a66913a9fb438406ee01c401",
+  "name": "Sites Promotion",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "thumbnail": {
+    "id": "bfe409cf-06c7-4c88-b637-5615989ee17b"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "373c81a5-d86b-4740-8f11-62fcbccfca08"
+      },
+      "label": "Text",
+      "key": "text"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      },
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dee92057-69e3-489b-b13b-15f9b28770a1"
+      },
+      "label": "Button",
+      "key": "button"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "7f81225a-8827-43d1-9d52-5f83eb6ee54f",
+  "rev": "8-5d7721d240b7cdd321275d8af08a1df0",
+  "name": "Video",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "video",
+      "label": "Video",
+      "key": "video"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80",
+        "name": "Common settings"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

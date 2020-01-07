@@ -1,0 +1,478 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.1.0",
+    "title": "Tenant Registry",
+    "serviceName": "prod-infra-rtp-tenant-registry-service",
+    "last-modified": "2018-12-03T13:12:10.000Z"
+  },
+  "x-ibm-dx-api-visibility": "public",
+  "tags": [
+    { "name": "public-api" },
+    {
+      "name": "organization",
+      "description": "operations relating to Organization objects"
+    },
+    {
+      "name": "tenant",
+      "description": "operations relating to Tenant objects"
+    },
+    { "name": "domain", "description": "operations relating to Domain objects" }
+  ],
+  "paths": {
+    "/rest/v2/tenants": {
+      "get": {
+        "tags": ["tenant", "v2"],
+        "x-ibm-dx-api-visibility": "private",
+        "x-ibm-dx-security-user-roles": ["admin", "operator"],
+        "summary": "Gets the tenant objects based on search",
+        "description": "##### Example request using curl\n\n`curl -X GET http://dx-marathon-3-slave1.rtp.raleigh.ibm.com:11972/rest/tenants/?domainID=3a200e48-b40d-431d-9ab6-f602ccd0e132`\n",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "tenant name to search for an exact match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "locked",
+            "in": "query",
+            "description": "tenant locked status to search for (true or false)",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "isOnboarded",
+            "in": "query",
+            "description": "tenant isOnboarded status to search for (true or false)",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "created-start",
+            "in": "query",
+            "description": "time to start search for created field - should be in either milliseconds since epoch or ISO-8601",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "created-end",
+            "in": "query",
+            "description": "time to end search for created field - should be in either milliseconds since epoch or ISO-8601",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last-modified-start",
+            "in": "query",
+            "description": "time to start search for last-modified field - should be in either milliseconds since epoch or ISO-8601",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "last-modified-end",
+            "in": "query",
+            "description": "time to start search for last-modified field - should be in either milliseconds since epoch or ISO-8601",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "domainID",
+            "in": "query",
+            "description": "ID of the domain we want the tenant of",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "apiClientId",
+            "in": "query",
+            "description": "tenant apiClientId to search for an exact match",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "return these json fields ex  ?fields=contactInfo,sbsId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "skip the first X orgs in the list",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "maximum number of orgs in the list",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Successful response" },
+          "400": {
+            "description": "Error response",
+            "schema": { "$ref": "#/definitions/Error" }
+          }
+        }
+      }
+    },
+    "/registry/v1/tenants/{tenant_id}": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "x-ibm-dx-tenant-id",
+          "description": "ID of Tenant",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "in": "path",
+          "name": "tenant_id",
+          "description": "ID of Tenant",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "deprecated": true,
+        "x-ibm-dx-api-visibility": "private",
+        "x-ibm-dx-security-user-roles": ["admin"],
+        "summary": "Retrieve a tenant",
+        "tags": ["tenant"],
+        "description": "Deprecated - use the /currenttenant url instead\n##### Example request using curl\n\n`curl -X GET {api-url}/registry/v1/tenants`\n",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "return these json fields ex  ?fields=contactInfo,sbsId",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": { "$ref": "#/definitions/Tenant" }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": { "$ref": "#/definitions/Error" }
+          },
+          "404": {
+            "description": "Indicates the tenant does not exist",
+            "schema": { "$ref": "#/definitions/Error" }
+          }
+        }
+      },
+      "put": {
+        "deprecated": true,
+        "x-ibm-dx-api-visibility": "private",
+        "x-ibm-dx-security-user-roles": ["admin"],
+        "tags": ["tenant"],
+        "summary": "Update a tenant",
+        "description": "Deprecated - use the /currenttenant url instead\n##### Example request using curl\n\n`curl -X PUT -d '{\"_id\":\"85b4686b-8614-475f-8933-144d42f84521\",\"locale\":\"de\", \"name\":\"sample_tenant\"}' {api-url}/registry/v1/tenants/`\n",
+        "operationId": "updateTenantById",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "tenant_definition",
+            "description": "Definition of the new tenant",
+            "required": true,
+            "schema": { "$ref": "#/definitions/TenantPut" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": { "$ref": "#/definitions/Tenant" }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": { "$ref": "#/definitions/Error" }
+          },
+          "404": {
+            "description": "Indicates the tenant does not exist",
+            "schema": { "$ref": "#/definitions/Error" }
+          }
+        }
+      }
+    },
+    "/registry/v1/currenttenant": {
+      "parameters": [
+        {
+          "in": "header",
+          "name": "x-ibm-dx-tenant-id",
+          "description": "ID of Tenant",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "x-ibm-dx-security-user-roles": [
+          "admin",
+          "manager",
+          "editor",
+          "viewer",
+          "authenticatedVisitor",
+          "anonymous"
+        ],
+        "x-ibm-dx-operator-entrypoint-roles": ["operator"],
+        "summary": "Retrieve a tenant",
+        "tags": ["tenant"],
+        "description": "##### Example request using curl\n\n`curl -X GET {api-url}/registry/v1/currenttenant`\nIf the user is not logged in then the /definitions/TenantAnonymous is returned\n",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "return these json fields ex  ?fields=id,name",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": { "$ref": "#/definitions/Tenant" }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": { "$ref": "#/definitions/Error" }
+          },
+          "404": {
+            "description": "Indicates the tenant does not exist",
+            "schema": { "$ref": "#/definitions/Error" }
+          }
+        }
+      },
+      "put": {
+        "x-ibm-dx-security-user-roles": ["admin"],
+        "x-ibm-dx-operator-entrypoint-roles": ["system"],
+        "tags": ["tenant"],
+        "summary": "Update a tenant",
+        "description": "##### Example request using curl\n\n`curl -X PUT -d '{\"_id\":\"85b4686b-8614-475f-8933-144d42f84521\",\"locale\":\"de\", \"name\":\"sample_tenant\"}' {api-url}/registry/v1/currenttenant`\n",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "tenant_definition",
+            "description": "Definition of the new tenant",
+            "required": true,
+            "schema": { "$ref": "#/definitions/TenantPut" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": { "$ref": "#/definitions/Tenant" }
+          },
+          "400": {
+            "description": "Error response",
+            "schema": { "$ref": "#/definitions/Error" }
+          },
+          "404": {
+            "description": "Indicates the tenant does not exist",
+            "schema": { "$ref": "#/definitions/Error" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Tenant": {
+      "type": "object",
+      "required": ["_id"],
+      "properties": {
+        "name": { "type": "string" },
+        "id": {
+          "type": "string",
+          "description": "read-only - UUID of the domain"
+        },
+        "_id": {
+          "type": "string",
+          "description": "DEPRECATED - read-only - UUID of the domain.  Use 'id' instead of _id"
+        },
+        "locale": {
+          "type": "string",
+          "description": "The locale the UI is shown in",
+          "readOnly": true
+        },
+        "defaultContentLocale": {
+          "type": "string",
+          "description": "The default locale for content"
+        },
+        "locked": {
+          "type": "string",
+          "description": "set to true if the tenant is 'locked' and should not have access to the system"
+        },
+        "watsonConfidenceLevel": { "type": "number", "format": "double" },
+        "maxUploadSize": {
+          "type": "integer",
+          "description": "Max upload size - should apply to files/images/audio/video unless useSingleUploadSize is false in which case the individual max uploads apply"
+        },
+        "maxBulkUploadSize": { "type": "integer" },
+        "useSingleUploadSize": {
+          "type": "boolean",
+          "description": "Use the maxUploadSize to cover all uploads or use the individual max upload sizes"
+        },
+        "maxUploadSizeFiles": {
+          "type": "integer",
+          "description": "Max upload size for files (if useSingleUploadSize is false)"
+        },
+        "maxUploadSizeImage": {
+          "type": "integer",
+          "description": "Max upload size for images (if useSingleUploadSize is false)"
+        },
+        "maxUploadSizeVideo": {
+          "type": "integer",
+          "description": "Max upload size for videos (if useSingleUploadSize is false)"
+        },
+        "maxAuthors": { "type": "integer" },
+        "maxContentItems": {
+          "type": "integer",
+          "description": "Max content items the tenant can have based on plan purchased"
+        },
+        "maxStorageSize": {
+          "type": "integer",
+          "description": "Max amount of storage the tenant has, based on plan purchased"
+        },
+        "maxDataTransfer": {
+          "type": "integer",
+          "description": "Max amount of data transfer the tenant has per month, based on plan purchased"
+        },
+        "isDAMEnabled": { "type": "boolean", "readOnly": true },
+        "tier": {
+          "type": "string",
+          "description": "Which tier of the product the tenant has purchased, set by sbs-provisioning to one of these values; Trial, Base, Standard, Plus"
+        },
+        "ibmUniqueId": { "type": "string" },
+        "isEdgeSideEnabled": { "type": "boolean" },
+        "maxUserSessions": {
+          "type": "integer",
+          "description": "Max number of User sessions"
+        },
+        "capability": {
+          "type": "string",
+          "description": "indicates the capabilities supported by a tenant"
+        },
+        "corsWhitelist": { "type": "array", "items": { "type": "string" } },
+        "mandatoryAssetPublishApproval": {
+          "$ref": "#/definitions/AssetPublishApproval"
+        },
+        "mandatoryContentPublishApproval": {
+          "$ref": "#/definitions/ContentPublishApproval"
+        },
+        "deliveryAccess": { "$ref": "#/definitions/DeliveryAccess" },
+        "ibmCommerce": { "$ref": "#/definitions/IbmCommerce" }
+      }
+    },
+    "TenantAnonymous": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "id": {
+          "type": "string",
+          "description": "read-only - UUID of the domain"
+        },
+        "_id": {
+          "type": "string",
+          "description": "DEPRECATED - read-only - UUID of the domain.  Use 'id' instead of _id"
+        },
+        "ibmCommerce": { "$ref": "#/definitions/IbmCommerce" }
+      }
+    },
+    "TenantPut": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "id": {
+          "type": "string",
+          "description": "read-only - UUID of the domain"
+        },
+        "_id": {
+          "type": "string",
+          "description": "DEPRECATED - read-only - UUID of the domain.  Use 'id' instead of _id"
+        },
+        "locale": { "type": "string" },
+        "watsonConfidenceLevel": { "type": "number", "format": "double" },
+        "maxUploadSize": { "type": "integer" },
+        "maxBulkUploadSize": { "type": "integer" },
+        "useSingleUploadSize": { "type": "boolean" },
+        "maxUploadSizeDocument": { "type": "integer" },
+        "maxUploadSizeImage": { "type": "integer" },
+        "maxUploadSizeAudio": { "type": "integer" },
+        "maxUploadSizeVideo": { "type": "integer" },
+        "maxAuthors": { "type": "integer" },
+        "corsWhitelist": { "type": "array", "items": { "type": "string" } },
+        "mandatoryAssetPublishApproval": {
+          "$ref": "#/definitions/AssetPublishApproval"
+        },
+        "mandatoryContentPublishApproval": {
+          "$ref": "#/definitions/ContentPublishApproval"
+        },
+        "ibmCommerce": { "$ref": "#/definitions/IbmCommerce" }
+      }
+    },
+    "AssetPublishApproval": {
+      "type": "object",
+      "description": "Can not be set for Base tiers",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True if mandatory approval is enabled"
+        },
+        "exemptAssetTypes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ContentPublishApproval": {
+      "type": "object",
+      "description": "Can not be set for Base tiers",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "True if mandatory approval is enabled"
+        },
+        "exemptContentTypes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "DeliveryAccess": {
+      "type": "object",
+      "properties": {
+        "secureAlways": { "type": "boolean" },
+        "content": { "type": "string" },
+        "assets": { "type": "string" }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": { "type": "integer", "format": "int32" },
+        "message": { "type": "string" },
+        "fields": { "type": "string" }
+      }
+    },
+    "IbmCommerce": {
+      "type": "object",
+      "properties": {
+        "tenantId": { "type": "string" },
+        "apiGatewayHost": { "type": "string" },
+        "previewSearchHost": { "type": "string" },
+        "previewTransactionHost": { "type": "string" },
+        "liveSearchHost": { "type": "string" },
+        "liveTransactionHost": { "type": "string" },
+        "environmentType": { "type": "string" }
+      }
+    }
+  },
+  "isInOperatorMode": false,
+  "routesType": "standard"
+}

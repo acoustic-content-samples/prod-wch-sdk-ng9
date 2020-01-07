@@ -1,0 +1,46 @@
+{
+  "rev": "2-64ec7aa2980e6731d12ac684303ec6d2",
+  "creator": "Adam.iem",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-05-27T19:54:34.365Z",
+  "creatorId": "f9bc9c56-88bd-4942-a168-e7247e467709",
+  "description": "",
+  "lastModifier": "Adam.iem",
+  "classification": "content",
+  "type": "SimpleText",
+  "locale": "en",
+  "tags": [
+    "user:test"
+  ],
+  "elements": {
+    "content": {
+      "elementType": "text",
+      "value": "Content Text Reference"
+    }
+  },
+  "name": "TextReference",
+  "lastModifierId": "f9bc9c56-88bd-4942-a168-e7247e467709",
+  "typeId": "cf8c68a2-3ff3-4397-9068-169ffda81dcd",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/8c7076b7-ee92-4fed-a7c7-5a01361d58d7/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/8c7076b7-ee92-4fed-a7c7-5a01361d58d7/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/8c7076b7-ee92-4fed-a7c7-5a01361d58d7"
+    },
+    "type": {
+      "href": "/authoring/v1/types/cf8c68a2-3ff3-4397-9068-169ffda81dcd"
+    }
+  },
+  "id": "8c7076b7-ee92-4fed-a7c7-5a01361d58d7",
+  "lastModified": "2019-05-27T20:04:47.089Z",
+  "systemModified": "2019-05-27T20:04:47.089Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "status": "ready"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "5d37254f-2746-4bc4-9dfd-ffc152b8ab13",
+  "rev": "6-439d7282e3c75313015e41e41df0af3f",
+  "name": "Promotion",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "c98d44eb-5976-42a1-97d6-9a5840fa9fb4"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Promotion title",
+      "key": "heading",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your promotion"
+      },
+      "required": true,
+      "minLength": 5,
+      "maxLength": 250,
+      "displayType": "singleLine",
+      "displayWidth": 50,
+      "helpText": "Give a clear promotion title"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe"
+      },
+      "label": "Promotion image",
+      "key": "mainImage"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Author name",
+      "key": "author",
+      "helpText": "",
+      "placeholder": {
+        "show": true,
+        "text": "Author name"
+      }
+    },
+    {
+      "elementType": "datetime",
+      "fieldLabel": "Date",
+      "label": "Date",
+      "key": "date",
+      "fieldType": "date-time",
+      "helpText": "Date and time is used when ordering a list of design articles.  The time will not display in the website."
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Text chunk",
+      "label": "Text for body section",
+      "key": "body",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "The design topic, when displayed in the website, will interleave the text chunks and images to create a fluid layout.",
+      "placeholder": {
+        "show": true,
+        "text": "Start writing! Text does not need to be bound to one section. Spice up your article with images in between chunks of text."
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "image-group-component-layout",
+  "rev": "4-0e89ff94d1b49d7d6a530eff98455d77",
+  "name": "Image group layout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/image-group-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}
