@@ -1,20 +1,18 @@
 import { execFile } from 'child_process';
-import { RSA_PKCS1_PADDING } from 'constants';
 import {
+  constants,
   privateDecrypt,
   publicEncrypt,
   RsaPrivateKey,
   RsaPublicKey
 } from 'crypto';
 import { readFile, stat, writeFile } from 'fs';
-import { isFunction, isString } from 'lodash';
 import { homedir, platform } from 'os';
 import { join, normalize } from 'path';
 import { env } from 'process';
 import { parseKey } from 'sshpk';
 import { parse } from 'url';
 import { promisify } from 'util';
-
 import {
   assertHasTrailingSlash,
   assertIsValidUserName,
@@ -23,6 +21,7 @@ import {
 import { debugLog, noopLog } from './logger';
 import { Credentials, Logger, Options, WchToolsOptions } from './types';
 import { ensureTrailingSlash, removeTrailingSlash } from './url.utils';
+import { isFunction, isString } from './utils';
 import { isValidCredentials } from './validation';
 
 const mkdirp = require('mkdirp');
@@ -106,7 +105,7 @@ function logCred$<T>(aLogger: Logger, ...aParams: any[]): (aValue: T) => T {
   };
 }
 
-const PADDING_MODE = RSA_PKCS1_PADDING;
+const PADDING_MODE = constants.RSA_PKCS1_PADDING;
 
 function _loadPrivateKey(): Promise<RsaPrivateKey> {
   // filename

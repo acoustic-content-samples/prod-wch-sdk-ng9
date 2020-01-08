@@ -1,5 +1,5 @@
 /* Copyright IBM Corp. 2017 */
-import { isString } from 'lodash';
+import { isString } from './utils';
 
 /*
  * Makes sure our path ends with a proper trailing slash

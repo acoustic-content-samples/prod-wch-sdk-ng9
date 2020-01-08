@@ -74,16 +74,7 @@
       }
     },
     "whitelistedNonPeerDependencies": [
-      "@acoustic-content-sdk/*",
-      "cheerio",
-      "email-validator",
-      "request",
-      "semver",
-      "tmp",
-      "valid-url",
-      "verror",
-      "xhr2",
-      "yauzl"
+      "@acoustic-content-sdk/*"
     ]
   },
   "tsdoc": {

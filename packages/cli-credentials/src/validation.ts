@@ -5,11 +5,11 @@ import {
   REL_PATH_CURRENT_USER
 } from '@acoustic-content-sdk/api';
 import { validate as validateEmail } from 'email-validator';
-import { isArray, isString } from 'lodash';
 import { isWebUri } from 'valid-url';
 
 import { Credentials, WchToolsOptions } from './types';
 import { ensureTrailingSlash } from './url.utils';
+import { isArray, isString } from './utils';
 
 const rp = require('request-promise-native');
 
