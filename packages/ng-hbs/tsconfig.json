@@ -1,1 +1,1 @@
-{"extends":"../tsconfig.settings.json"}
+{ "extends": "../tsconfig.angular.json" }
