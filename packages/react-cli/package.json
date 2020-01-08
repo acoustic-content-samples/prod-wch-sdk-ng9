@@ -36,18 +36,18 @@
     "@acoustic-content-sdk/react-tooling": "9.0.0",
     "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0",
-    "email-validator": "^2",
-    "sshpk": "^1",
-    "valid-url": "^1",
-    "tslib": "^1",
     "chalk": "^3.0.0",
     "commander": "^4.1.0",
+    "email-validator": "^2.0.4",
     "handlebars": "^4.5.3",
     "handlebars-helpers": "^0.10.0",
     "jsdom": "^15.2.1",
     "rxjs": "6.5.3",
     "semver": "^7.1.1",
-    "uuid": "^3.3.3"
+    "sshpk": "^1.16.1",
+    "tslib": "^1.10.0",
+    "uuid": "^3.3.3",
+    "valid-url": "^1.0.9"
   },
   "peerDependencies": {},
   "publishConfig": {
