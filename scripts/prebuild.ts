@@ -104,9 +104,11 @@ function handleVersion(aDir: string) {
       ? `{major: '${major}', minor: '${minor}', patch: '${patch}', branch: '${BRANCH_NAME}'}`
       : `{major: '${major}', minor: '${minor}', patch: '${patch}'}`;
   // construct the export
-  const versionData = `export const VERSION = {version: ${version}, build: new Date(${BUILD_DATE.getTime()})};`;
+  const versionData = `/** Version and build number of the package */\nexport const VERSION = {version: ${version}, build: new Date(${BUILD_DATE.getTime()})};`;
   // module data
-  const moduleData$ = name$.then((name) => `export const MODULE = '${name}';`);
+  const moduleData$ = name$.then(
+    (name) => `/** Module name */\nexport const MODULE = '${name}';`
+  );
   // data
   const data$ = moduleData$.then(
     (moduleData) => `${versionData}\n${moduleData}\n`
