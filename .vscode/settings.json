@@ -24,5 +24,6 @@
   "workbench.colorCustomizations": {},
   "prettier.singleQuote": true,
   "prettier.jsxSingleQuote": true,
-  "typescript.preferences.quoteStyle": "single"
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.implicitProjectConfig.experimentalDecorators": true
 }

@@ -227,7 +227,9 @@ function createPeerDependencies(
 }
 
 const isBinaryPackage = (aPkg: any) =>
-  aPkg.bin || aPkg.name === '@acoustic-content-sdk/rx-utils';
+  Boolean(aPkg.bin) ||
+  aPkg.name === '@acoustic-content-sdk/rx-utils' ||
+  Boolean(aPkg.schematics);
 
 function rewritePackage(
   aDir: string,

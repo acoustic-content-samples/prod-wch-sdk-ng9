@@ -51,6 +51,10 @@ function isRedux(aDeps: Record<string, string>): boolean {
   );
 }
 
+function isSchematics(aPkg: any): boolean {
+  return Boolean(aPkg.schematics);
+}
+
 function rewritePackage(aPkg: any, aRootPkg: any): any {
   // extract
   const { bugs, repository, license, author, publishConfig, tsdoc } = aRootPkg;
@@ -174,6 +178,11 @@ function handleDependencies(aName: string) {
       keywords.add('acoustic');
       keywords.add('acoustic-content');
       keywords.add('sdk');
+      // schematics
+      if (isSchematics(pkg)) {
+        keywords.add('schematics');
+        keywords.add('angular');
+      }
       // check for angular and react dependencies
       if (isAngular(peerDependencies)) {
         keywords.add('angular');

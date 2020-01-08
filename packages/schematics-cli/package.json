@@ -5,6 +5,8 @@
   "keywords": [
     "acoustic",
     "acoustic-content",
+    "angular",
+    "schematics",
     "sdk"
   ],
   "bugs": {
@@ -56,10 +58,20 @@
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "chalk": "Chalk",
+        "cheerio": "Cheerio",
+        "email-validator": "EmailValidator",
         "handlebars": "Handlebars",
         "js-string-escape": "JsStringEscape",
+        "jsdom": "Jsdom",
+        "lodash": "Lodash",
         "number-to-words": "NumberToWords",
-        "typescript": "Typescript"
+        "request": "Request",
+        "semver": "Semver",
+        "sshpk": "Sshpk",
+        "typescript": "Typescript",
+        "valid-url": "ValidUrl",
+        "yauzl": "Yauzl"
       }
     },
     "whitelistedNonPeerDependencies": [
