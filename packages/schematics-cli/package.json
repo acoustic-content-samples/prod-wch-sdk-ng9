@@ -30,7 +30,6 @@
     "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0",
     "chalk": "^3.0.0",
-    "cheerio": "^1.0.0-rc.3",
     "email-validator": "^2.0.4",
     "handlebars": "^4.5.3",
     "handlebars-helpers": "^0.10.0",
@@ -59,7 +58,6 @@
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "chalk": "Chalk",
-        "cheerio": "Cheerio",
         "email-validator": "EmailValidator",
         "handlebars": "Handlebars",
         "js-string-escape": "JsStringEscape",
@@ -75,7 +73,6 @@
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/*",
-      "cheerio",
       "chalk",
       "comment-json",
       "handlebars",

@@ -1,6 +1,5 @@
-import { Tree } from '@angular-devkit/schematics/src/tree/interface';
-import { isNotNil } from '@acoustic-content-sdk/utils';
-import { load } from 'cheerio';
+import { Tree } from '@angular-devkit/schematics';
+import { JSDOM } from 'jsdom';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -10,12 +9,13 @@ import {
   TransformWithPath
 } from './rx.tree';
 
-function _parseHtml(aString?: string): Observable<CheerioStatic> {
-  return of(load(isNotNil(aString) ? aString : ''));
+function _parseHtml(aString?: string): Observable<Document> {
+  const { window } = new JSDOM(aString);
+  return of(window.document);
 }
 
-function _serializeHtml(aHtml: CheerioStatic): Observable<string> {
-  return of(aHtml.html());
+function _serializeHtml(aHtml: Document): Observable<string> {
+  return of(aHtml.documentElement.outerHTML);
 }
 
 /**
@@ -28,11 +28,11 @@ function _serializeHtml(aHtml: CheerioStatic): Observable<string> {
  */
 export function rxTransformHtmlFile(
   aName: string,
-  aOp: TransformCallback<CheerioStatic>,
+  aOp: TransformCallback<Document>,
   aTree: Tree
 ): Observable<string> {
   // cast
-  const op: TransformWithPath<CheerioStatic> = aOp as any;
+  const op: TransformWithPath<Document> = aOp as any;
   // dispatch
   return rxTransformTextFile(
     aName,

@@ -31,8 +31,8 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "cheerio": "^1",
     "email-validator": "^2",
+    "jsdom": "^15",
     "request": "^2",
     "rxjs": "^6",
     "semver": "^7",
@@ -62,7 +62,7 @@
         "@acoustic-content-sdk/cli-credentials": "acoustic-content-sdk.cli-credentials",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "cheerio": "Cheerio",
+        "jsdom": "JSDOM",
         "email-validator": "EmailValidator",
         "request": "Request",
         "semver": "Semver",
