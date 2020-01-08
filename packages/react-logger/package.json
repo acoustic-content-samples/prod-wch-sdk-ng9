@@ -52,8 +52,7 @@
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "ng2-logger": "Ng2Logger",
         "react": "React"
-      },
-      "jsx": "react"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*",

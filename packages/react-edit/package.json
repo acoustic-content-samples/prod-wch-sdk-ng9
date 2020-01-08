@@ -50,8 +50,7 @@
         "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
         "@acoustic-content-sdk/react-edit-api": "acoustic-content-sdk.react-edit-api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
-      },
-      "jsx": "react"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*"

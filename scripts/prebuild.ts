@@ -213,20 +213,14 @@ function handleConfig(aFile: string): Promise<string> {
 }
 
 function rewrite() {
-  // config
-  const cfg$ = dirs$.then((dirs) =>
-    Promise.all(dirs.map((dir) => handleConfig(join(dir, TSCONFIG_JSON))))
-  );
   // packages
-  const pkg$ = dirs$
+  return dirs$
     .then((dirs) =>
       Promise.all(
         dirs.map((dir) => handleDependencies(join(dir, PACKAGE_JSON)))
       )
     )
     .then((res) => res.filter(Boolean));
-
-  return Promise.all([cfg$, pkg$]);
 }
 
 function prebuild() {

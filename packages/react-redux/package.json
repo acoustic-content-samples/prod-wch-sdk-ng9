@@ -60,8 +60,7 @@
         "@acoustic-content-sdk/redux-ajax": "acoustic-content-sdk.redux-ajax",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "react": "React"
-      },
-      "jsx": "react"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*",

@@ -63,8 +63,7 @@
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "react": "React",
         "react-router": "ReactRouter"
-      },
-      "jsx": "react"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*"

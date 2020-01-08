@@ -71,8 +71,7 @@
         "lodash": "Lodash",
         "semver": "Semver",
         "uuid": "Uuid"
-      },
-      "jsx": "react"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*",
