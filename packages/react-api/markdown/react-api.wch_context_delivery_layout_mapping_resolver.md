@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER variable
 
-Injection token for the page service
+Injection token for the DeliveryLayoutMappingResolver
 
 <b>Signature:</b>
 

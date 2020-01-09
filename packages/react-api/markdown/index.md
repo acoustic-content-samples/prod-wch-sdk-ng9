@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-api](./react-api.md) |  |
+|  [@acoustic-content-sdk/react-api](./react-api.md) | Collection of APIs and constants for the React SDK |
 

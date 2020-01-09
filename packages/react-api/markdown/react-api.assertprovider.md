@@ -24,5 +24,5 @@ export declare function assertProvider<T>(aValue: T, aContext: Context<T>, aPare
 
 `NonNullable<T>`
 
-the original value
+the original value, guaranteed that it will not be nil
 

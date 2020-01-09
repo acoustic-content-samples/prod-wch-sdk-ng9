@@ -23,7 +23,7 @@ export interface ReactWchPageService extends WchPageService {
 }
 
 /**
- * Injection token for the page service
+ * Injection token for the ReactWchPageService
  */
 export const WCH_CONTEXT_PAGE_SERVICE = createReactContext<ReactWchPageService>(
   'WCH_CONTEXT_PAGE_SERVICE'

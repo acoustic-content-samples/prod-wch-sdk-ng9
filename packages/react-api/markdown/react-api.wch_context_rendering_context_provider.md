@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_RENDERING\_CONTEXT\_PROVIDER variable
 
-Injection token for the rendering context provider
+Injection token for the RenderingContextProviderV2
 
 <b>Signature:</b>
 

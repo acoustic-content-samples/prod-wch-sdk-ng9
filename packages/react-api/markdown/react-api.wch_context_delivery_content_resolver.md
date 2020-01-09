@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_DELIVERY\_CONTENT\_RESOLVER variable
 
-Injection token for the page service
+Injection token for the DeliveryContentResolver
 
 <b>Signature:</b>
 

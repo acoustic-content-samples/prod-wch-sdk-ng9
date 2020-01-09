@@ -4,6 +4,8 @@
 
 ## ReactComponentProps.renderingContext property
 
+Rendering context that contains the required information about the data item to be rendered
+
 <b>Signature:</b>
 
 ```typescript

@@ -4,8 +4,10 @@
 
 ## ReactModuleType type
 
+Type definition for the react component for a module
+
 <b>Signature:</b>
 
 ```typescript
-export declare type ReactModuleType = ComponentTypeRef<ReactModuleProps>;
+export declare type ReactModuleType = ReactModule;
 ```

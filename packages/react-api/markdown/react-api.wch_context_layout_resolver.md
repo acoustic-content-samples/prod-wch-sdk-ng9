@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_LAYOUT\_RESOLVER variable
 
-Injection token for the page service
+Injection token for the LayoutResolver
 
 <b>Signature:</b>
 

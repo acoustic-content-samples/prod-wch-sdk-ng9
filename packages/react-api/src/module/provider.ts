@@ -9,11 +9,13 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { Context, createElement, FC, ReactElement } from 'react';
 
-import { ComponentTypeRef } from '../type/type.ref';
 import { selectDisplayName } from '../utils/context';
 import { ReactModule, ReactModuleProps } from './module';
 
-export type ReactModuleType = ComponentTypeRef<ReactModuleProps>;
+/**
+ * Type definition for the react component for a module
+ */
+export type ReactModuleType = ReactModule;
 
 /**
  * Declares a react provider. The provider declares the provided

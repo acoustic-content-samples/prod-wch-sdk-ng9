@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_URL\_CONFIG variable
 
-Injection token for the url config
+Injection token for the UrlConfig
 
 <b>Signature:</b>
 

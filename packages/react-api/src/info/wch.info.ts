@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { createReactContext } from '../utils/context';
 
 /**
- * Injection token for the url config
+ * Injection token for the UrlConfig
  */
 export const WCH_CONTEXT_URL_CONFIG = createReactContext<Observable<UrlConfig>>(
   'WCH_CONTEXT_URL_CONFIG'

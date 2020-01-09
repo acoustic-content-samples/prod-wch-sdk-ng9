@@ -4,6 +4,8 @@
 
 ## ReactModuleProps interface
 
+Input properties for dynamically generated react modules
+
 <b>Signature:</b>
 
 ```typescript

@@ -1,3 +1,9 @@
+/**
+ * Collection of APIs and constants for the React SDK
+ *
+ * @packageDocumentation
+ */
+
 export * from './auth-status/auth.status';
 export * from './component/component.registry';
 export * from './component/component.resolver';

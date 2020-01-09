@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_DELIVERY\_PAGE\_SEED variable
 
-Injection token for the page service
+Injection token for the page seed
 
 <b>Signature:</b>
 

@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_HANDLEBARS\_RESOLVER variable
 
-Injection token for the page service
+Injection token for the HandlebarsResolver
 
 <b>Signature:</b>
 

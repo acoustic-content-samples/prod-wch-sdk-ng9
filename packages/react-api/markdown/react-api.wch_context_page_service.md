@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_PAGE\_SERVICE variable
 
-Injection token for the page service
+Injection token for the ReactWchPageService
 
 <b>Signature:</b>
 

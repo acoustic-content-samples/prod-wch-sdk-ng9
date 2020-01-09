@@ -4,6 +4,8 @@
 
 ## ReactComponent type
 
+Definition of a generic react component
+
 <b>Signature:</b>
 
 ```typescript

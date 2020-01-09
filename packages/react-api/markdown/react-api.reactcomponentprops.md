@@ -4,6 +4,8 @@
 
 ## ReactComponentProps interface
 
+Properties of a rendering component
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,6 +16,6 @@ export interface ReactComponentProps
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [layoutMode](./react-api.reactcomponentprops.layoutmode.md) | <code>string</code> |  |
-|  [renderingContext](./react-api.reactcomponentprops.renderingcontext.md) | <code>RenderingContextV2</code> |  |
+|  [layoutMode](./react-api.reactcomponentprops.layoutmode.md) | <code>string</code> | Layout mode used to render the component |
+|  [renderingContext](./react-api.reactcomponentprops.renderingcontext.md) | <code>RenderingContextV2</code> | Rendering context that contains the required information about the data item to be rendered |
 

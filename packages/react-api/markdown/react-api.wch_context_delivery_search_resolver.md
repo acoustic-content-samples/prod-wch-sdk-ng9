@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_DELIVERY\_SEARCH\_RESOLVER variable
 
-Injection token for the navigation service
+Injection token for the DeliverySearchResolver
 
 <b>Signature:</b>
 

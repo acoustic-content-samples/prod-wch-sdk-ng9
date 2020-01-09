@@ -80,7 +80,7 @@ export const createDynamicReactProvider: DynamicReactProviderFactory;
 export const createInjectableReactProvider: InjectableReactProviderFactory;
 
 // @public
-export const createModuleFromProvider: (aProviders: ReactProvider<any>[]) => import("../type/type.ref").ReactComponent<ReactModuleProps, any>;
+export const createModuleFromProvider: (aProviders: ReactProvider<any>[]) => import("../public_api").ReactComponent<ReactModuleProps, any>;
 
 // @public
 export function createReactContext<T>(aName: string, aDefault?: T): Required<Context<T>>;
@@ -172,28 +172,26 @@ export interface InjectableReactProviderFactory {
     <R1, R2, R3, R4, R5, O1, T>(fct: (req: [R1, R2, R3, R4, R5], opt: [O1?]) => T, ctx: Context<T>, req: [Context<R1>, Context<R2>, Context<R3>, Context<R4>, Context<R5>], opt: [Context<O1>]): ReactProvider<T>;
 }
 
-// @public (undocumented)
+// @public
 export type ReactComponent<P = ReactComponentProps, DS = any> = FunctionComponent<P> | ComponentClass<P, DS>;
 
-// @public (undocumented)
+// @public
 export interface ReactComponentProps {
-    // (undocumented)
     [KEY_LAYOUT_MODE]?: string;
-    // (undocumented)
     [KEY_RENDERING_CONTEXT]: RenderingContextV2;
 }
 
-// @public (undocumented)
+// @public
 export type ReactModule = ReactComponent<ReactModuleProps>;
 
-// @public (undocumented)
+// @public
 export interface ReactModuleProps {
     // (undocumented)
     children?: ReactNode;
 }
 
-// @public (undocumented)
-export type ReactModuleType = ComponentTypeRef<ReactModuleProps>;
+// @public
+export type ReactModuleType = ReactModule;
 
 // @public
 export interface ReactProvider<T> {
@@ -329,7 +327,5 @@ export const WCH_CONTEXT_WINDOW: Required<import("react").Context<WindowType>>;
 // @public (undocumented)
 export const WCH_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

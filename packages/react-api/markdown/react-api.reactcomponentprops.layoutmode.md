@@ -4,6 +4,8 @@
 
 ## ReactComponentProps.layoutMode property
 
+Layout mode used to render the component
+
 <b>Signature:</b>
 
 ```typescript

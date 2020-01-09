@@ -4,18 +4,7 @@
 
 ## WCH\_CONTEXT\_COMPONENT\_TYPE\_REF\_RESOLVERS variable
 
-A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./react-api.componenttyperefresolver.md)<!-- -->s.
-
-```typescript
-providers: [
-  {
-     provide: WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS,
-     useClass: MyResolver,
-     multi: true
-  }
-]
-
-```
+A multi-provider token used for dependency injection of the ComponentTypeRefResolvers.
 
 <b>Signature:</b>
 

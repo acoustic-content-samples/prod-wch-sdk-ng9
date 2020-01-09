@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_AUTH\_STATUS variable
 
-Injection token for the authentication status
+Injection token for the AuthStatus
 
 <b>Signature:</b>
 

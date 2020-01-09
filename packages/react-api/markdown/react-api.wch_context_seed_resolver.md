@@ -4,7 +4,7 @@
 
 ## WCH\_CONTEXT\_SEED\_RESOLVER variable
 
-Injection token for the page service
+Injection token for the SeedResolver
 
 <b>Signature:</b>
 

@@ -9,5 +9,5 @@ Constructs a module component that includes the referenced providers in topologi
 <b>Signature:</b>
 
 ```typescript
-createModuleFromProvider: (aProviders: ReactProvider<any>[]) => import("../type/type.ref").ReactComponent<ReactModuleProps, any>
+createModuleFromProvider: (aProviders: ReactProvider<any>[]) => import("../public_api").ReactComponent<ReactModuleProps, any>
 ```

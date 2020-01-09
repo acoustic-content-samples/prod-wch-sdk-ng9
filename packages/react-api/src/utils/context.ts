@@ -33,7 +33,7 @@ export const selectDisplayName = pluckProperty<Context<any>, 'displayName'>(
  * @param aValue - value to check
  * @param aContext - the context, for debugging purposes
  *
- * @returns the original value
+ * @returns the original value, guaranteed that it will not be nil
  */
 export function assertProvider<T>(
   aValue: T,

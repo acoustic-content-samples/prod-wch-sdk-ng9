@@ -15,7 +15,7 @@ export interface ComponentTypeRefResolver
    *
    * @param aLayout -   the layout object
    * @param aLayoutMode - an optional layout mode, defaults to the default mode
-   * @returns the type
+   * @returns the resolved component type
    */
   getTypeByLayout: (
     aLayout: Layout,
@@ -24,18 +24,7 @@ export interface ComponentTypeRefResolver
 }
 
 /**
- * A multi-provider token used for dependency injection of the {@link ComponentTypeRefResolver}s.
- *
- * ```typescript
- * providers: [
- *   {
- *      provide: WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS,
- *      useClass: MyResolver,
- *      multi: true
- *   }
- * ]
- * ```
- *
+ * A multi-provider token used for dependency injection of the ComponentTypeRefResolvers.
  */
 export const WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS = createReactContext<
   ComponentTypeRefResolver[]

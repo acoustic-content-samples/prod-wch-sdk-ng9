@@ -4,6 +4,8 @@
 
 ## ReactModule type
 
+Type definition for the react component for a module
+
 <b>Signature:</b>
 
 ```typescript
