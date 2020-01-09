@@ -123,7 +123,7 @@ export interface SeedResolver {
     getSeed(aID: string, aClassification: string): Observable<string>;
 }
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -144,7 +144,5 @@ export interface WchPageService {
 // @public (undocumented)
 export type WindowType = Window | Object;
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

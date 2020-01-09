@@ -63,14 +63,18 @@
         "chalk": "Chalk",
         "email-validator": "EmailValidator",
         "handlebars": "Handlebars",
+        "handlebars-helpers": "HandlebarsHelpers",
         "js-string-escape": "JsStringEscape",
         "jsdom": "Jsdom",
+        "lodash": "Lodash",
         "number-to-words": "NumberToWords",
         "request": "Request",
         "semver": "Semver",
         "sshpk": "Sshpk",
+        "tmp": "Tmp",
         "typescript": "Typescript",
         "valid-url": "ValidUrl",
+        "verror": "Verror",
         "yauzl": "Yauzl"
       }
     },

@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "cpx \"assets/**\" dist --verbose",
     "test": "jest"
@@ -45,7 +46,6 @@
     "rxjs": "6.5.3",
     "semver": "^7.1.1",
     "sshpk": "^1.16.1",
-    "tslib": "^1.10.0",
     "uuid": "^3.3.3",
     "valid-url": "^1.0.9"
   },
@@ -68,11 +68,14 @@
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "chalk": "Chalk",
         "commander": "Commander",
+        "email-validator": "EmailValidator",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
         "jsdom": "Jsdom",
         "semver": "Semver",
-        "uuid": "Uuid"
+        "sshpk": "Sshpk",
+        "uuid": "Uuid",
+        "valid-url": "ValidUrl"
       }
     },
     "whitelistedNonPeerDependencies": [

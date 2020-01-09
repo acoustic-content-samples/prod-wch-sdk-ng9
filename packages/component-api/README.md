@@ -1,1 +1,1 @@
-Definition of interfaces and constants for the framework independent implementation of the SDK.
+[API Documentation](./markdown/component-api.md)

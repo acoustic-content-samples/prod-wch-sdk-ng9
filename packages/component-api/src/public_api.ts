@@ -1,3 +1,9 @@
+/**
+ * Framework independent collection of APIs and constants
+ *
+ * @packageDocumentation
+ */
+
 export * from './component/component.registry';
 export * from './component/component.resolver';
 export * from './content/delivery.content.resolver';

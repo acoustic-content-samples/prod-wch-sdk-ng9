@@ -1,7 +1,7 @@
 import { readFile, readJson, remove, stat, writeFile } from 'fs-extra';
 import { camelCase, cloneDeep, upperFirst } from 'lodash';
 import { join, normalize, parse } from 'path';
-import { coerce } from 'semver';
+import { rewriteReadme } from 'tools-helper-merge-markdown';
 import {
   createSourceFile,
   isExportDeclaration,
@@ -49,6 +49,21 @@ const refVersions$ = rootPkg$
 const DIST_DIR = 'dist';
 
 const dist$ = dirs$.then((dirs) => dirs.map((dir) => join(dir, DIST_DIR)));
+
+function generateDoc(aSrcDir: string): Promise<string> {
+  // target dir
+  return rewriteReadme(aSrcDir, join(aSrcDir, DIST_DIR)).then(
+    (dst) => dst,
+    (error) => `No doc for ${aSrcDir}.`
+  );
+}
+
+function buildDoc() {
+  // doc files
+  return dirs$
+    .then((dirs) => dirs.filter((dir) => dir.includes('component-api')))
+    .then((dirs) => Promise.all(dirs.map(generateDoc)));
+}
 
 const IMPL_IMPORTS = /define\('([^']*?)'\s*,\s*\[([^\]]*?)\].*?\)/;
 const IMPORT = /\s*'([^']*?)'\s*/;
@@ -352,12 +367,14 @@ function handlePackage(aDir: string): Promise<string> {
 
 function postbuild() {
   // packages
-  return (
-    dist$
-      //    .then((dist) => dist.filter((name) => name.includes('\\redux-utils\\')))
-      .then((dist) => dist.map(handlePackage))
-      .then((all) => Promise.all(all))
-  );
+  const pkg$ = dist$
+    //    .then((dist) => dist.filter((name) => name.includes('\\redux-utils\\')))
+    .then((dist) => dist.map(handlePackage))
+    .then((all) => Promise.all(all));
+  // documentation
+  const doc$ = buildDoc();
+  // combine
+  return Promise.all([pkg$, doc$]).then(([pkg, doc]) => [...pkg, ...doc]);
 }
 
 postbuild().then(console.log);
