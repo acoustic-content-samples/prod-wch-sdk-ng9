@@ -1,1 +1,3 @@
-Definition of interfaces and constants for the [React](https://reactjs.org/) implementation of the SDK.
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/react-api.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/react-api)
+
+[API Documentation](./markdown/react-api.md)
