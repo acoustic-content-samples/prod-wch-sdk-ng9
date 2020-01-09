@@ -1,11 +1,3 @@
-# `@acoustic-content-sdk/api`
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/edit-api.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/edit-api)
 
-> TODO: description
-
-## Usage
-
-```
-const api = require('@acoustic-content-sdk/api');
-
-// TODO: DEMONSTRATE API
-```
+[API Documentation](./markdown/edit-api.md)

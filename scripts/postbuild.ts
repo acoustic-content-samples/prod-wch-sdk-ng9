@@ -60,9 +60,11 @@ function generateDoc(aSrcDir: string): Promise<string> {
 
 function buildDoc() {
   // doc files
-  return dirs$
-    .then((dirs) => dirs.filter((dir) => dir.includes('component-api')))
-    .then((dirs) => Promise.all(dirs.map(generateDoc)));
+  return (
+    dirs$
+      // .then((dirs) => dirs.filter((dir) => dir.includes('component-api')))
+      .then((dirs) => Promise.all(dirs.map(generateDoc)))
+  );
 }
 
 const IMPL_IMPORTS = /define\('([^']*?)'\s*,\s*\[([^\]]*?)\].*?\)/;
