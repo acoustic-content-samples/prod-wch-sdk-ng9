@@ -32,7 +32,7 @@ function deployAll(aFiles: Array<[string, string]>): Promise<string[]> {
   // names
   const names = aFiles.map(([name]) => name);
   // deploy
-  return Promise.resolve(deployPackages(names, version, ['beta']));
+  return Promise.resolve(deployPackages(names, version /*, ['beta']*/));
 }
 
 // read the package names
