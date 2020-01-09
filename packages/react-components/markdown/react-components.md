@@ -17,7 +17,7 @@
 |  [LayoutComponent](./react-components.layoutcomponent.md) | The layout component directive |
 |  [LayoutMapping](./react-components.layoutmapping.md) | The layout mapping directive |
 |  [LayoutRegistration](./react-components.layoutregistration.md) | Component that registers layouts |
-|  [VERSION](./react-components.version.md) |  |
+|  [VERSION](./react-components.version.md) | Version and build number of the package |
 |  [WCH\_PROVIDER\_BROWSER\_WINDOW](./react-components.wch_provider_browser_window.md) | Provides the <code>WCH_CONTEXT_WINDOW</code> token for browser based applications. |
 |  [WCH\_PROVIDER\_COMPONENT\_REGISTRY](./react-components.wch_provider_component_registry.md) | Declares the provider |
 |  [WCH\_PROVIDER\_COMPONENT\_RESOLVER](./react-components.wch_provider_component_resolver.md) | Declares the provider |

@@ -34,7 +34,7 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./ng.version.md) |  |
+|  [VERSION](./ng.version.md) | Version and build number of the package |
 
 ## Type Aliases
 

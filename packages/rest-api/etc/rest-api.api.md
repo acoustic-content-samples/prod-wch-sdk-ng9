@@ -19,7 +19,7 @@ export enum FETCH_PRIORITY {
 // @public
 export type FetchText = (aUrl: string, aPriority?: FETCH_PRIORITY) => Observable<string>;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

@@ -35,7 +35,7 @@
 |  [createInjectableReactProvider](./react-api.createinjectablereactprovider.md) | Creates a <code>ReactProvider</code> that resolves its mandatory and optional elements and delegates the creation of the provided value to a callback function with these dependencies. |
 |  [createModuleFromProvider](./react-api.createmodulefromprovider.md) | Constructs a module component that includes the referenced providers in topological order |
 |  [selectDisplayName](./react-api.selectdisplayname.md) | Returns the display name of a context |
-|  [VERSION](./react-api.version.md) |  |
+|  [VERSION](./react-api.version.md) | Version and build number of the package |
 |  [WCH\_CONTEXT\_API\_URL](./react-api.wch_context_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
 |  [WCH\_CONTEXT\_AUTH\_STATUS](./react-api.wch_context_auth_status.md) | Injection token for the authentication status |
 |  [WCH\_CONTEXT\_BASE\_URL](./react-api.wch_context_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |

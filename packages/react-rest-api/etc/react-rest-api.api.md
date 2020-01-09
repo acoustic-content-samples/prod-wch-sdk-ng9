@@ -6,7 +6,7 @@
 
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

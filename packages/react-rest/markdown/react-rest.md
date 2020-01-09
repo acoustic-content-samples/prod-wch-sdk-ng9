@@ -8,7 +8,7 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./react-rest.version.md) |  |
+|  [VERSION](./react-rest.version.md) | Version and build number of the package |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.wch_provider_rest_delivery_content_resolver.md) | Declares the provider |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_mapping_resolver.md) | Declares the provider |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_resolver.md) | Declares the provider |

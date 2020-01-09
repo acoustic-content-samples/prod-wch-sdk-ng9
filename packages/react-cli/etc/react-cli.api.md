@@ -7,7 +7,7 @@
 // @public (undocumented)
 export function runProgram(aArgs?: string[]): void;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

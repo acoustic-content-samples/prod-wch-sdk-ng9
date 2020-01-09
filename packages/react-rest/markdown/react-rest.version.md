@@ -4,6 +4,8 @@
 
 ## VERSION variable
 
+Version and build number of the package
+
 <b>Signature:</b>
 
 ```typescript

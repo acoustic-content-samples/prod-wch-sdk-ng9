@@ -8,6 +8,6 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./react-rest-api.version.md) |  |
+|  [VERSION](./react-rest-api.version.md) | Version and build number of the package |
 |  [WCH\_CONTEXT\_FETCH\_TEXT](./react-rest-api.wch_context_fetch_text.md) | Injection token for the remote text access |
 

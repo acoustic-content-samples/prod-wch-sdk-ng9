@@ -64,7 +64,7 @@ export class PageComponent extends AbstractBaseComponent implements OnDestroy, R
 // @public
 export type RenderingContextDirective<T> = (ctx: RenderingContextV2) => T;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

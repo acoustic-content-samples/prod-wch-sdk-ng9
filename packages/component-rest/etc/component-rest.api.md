@@ -57,7 +57,7 @@ export class AbstractDeliveryTypeResolverService implements DeliveryTypeResolver
 // @public
 export function createUrlConfig(aBaseUrl?: HubInfoUrlProvider, aApiUrl?: HubInfoUrlProvider, aResourceUrl?: HubInfoUrlProvider, aDocument?: any): Observable<UrlConfig>;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

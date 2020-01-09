@@ -24,5 +24,5 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./component-rest.version.md) |  |
+|  [VERSION](./component-rest.version.md) | Version and build number of the package |
 

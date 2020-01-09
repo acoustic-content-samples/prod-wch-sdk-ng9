@@ -14,5 +14,5 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./react-cli.version.md) |  |
+|  [VERSION](./react-cli.version.md) | Version and build number of the package |
 

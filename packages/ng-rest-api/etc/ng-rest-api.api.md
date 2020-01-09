@@ -7,7 +7,7 @@
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { InjectionToken } from '@angular/core';
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

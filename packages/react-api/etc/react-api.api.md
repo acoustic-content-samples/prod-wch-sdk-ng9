@@ -211,7 +211,7 @@ export interface ReactWchPageService extends WchPageService {
 // @public
 export const selectDisplayName: import("rxjs").UnaryFunction<Context<any>, string>;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

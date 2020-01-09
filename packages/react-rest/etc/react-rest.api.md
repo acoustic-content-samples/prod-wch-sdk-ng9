@@ -7,7 +7,7 @@
 import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

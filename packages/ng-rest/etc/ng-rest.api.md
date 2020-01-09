@@ -11,7 +11,7 @@ import { UrlConfig } from '@acoustic-content-sdk/api';
 // @public (undocumented)
 export function proxyCreateUrlConfig(aBaseUrl?: HubInfoUrlProvider, aApiUrl?: HubInfoUrlProvider, aResourceUrl?: HubInfoUrlProvider, aDocument?: any): Observable<UrlConfig>;
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

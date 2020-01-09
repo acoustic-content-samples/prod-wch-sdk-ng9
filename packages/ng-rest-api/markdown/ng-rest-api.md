@@ -8,6 +8,6 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./ng-rest-api.version.md) |  |
+|  [VERSION](./ng-rest-api.version.md) | Version and build number of the package |
 |  [WCH\_TOKEN\_FETCH\_TEXT](./ng-rest-api.wch_token_fetch_text.md) | Injection token for the remote text access |
 

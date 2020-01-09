@@ -34,7 +34,7 @@ export interface LayoutRegistrationProps {
     register: Consumer<ComponentRegistry>;
 }
 
-// @public (undocumented)
+// @public
 export const VERSION: {
     version: {
         major: string;

@@ -26,5 +26,5 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./ng-rest.version.md) |  |
+|  [VERSION](./ng-rest.version.md) | Version and build number of the package |
 

@@ -14,7 +14,7 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [VERSION](./rest-api.version.md) |  |
+|  [VERSION](./rest-api.version.md) | Version and build number of the package |
 
 ## Type Aliases
 
