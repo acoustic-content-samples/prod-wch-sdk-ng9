@@ -9,4 +9,4 @@ import { HandlebarsComponent } from '../components/hbs.component';
   exports: [HandlebarsComponent],
   entryComponents: [HandlebarsComponent]
 })
-export class WchNgHbsComponentsModule {}
+export class WchNgHbsComponentsEditModule {}

@@ -38,6 +38,14 @@ interface Processor {
   processor: HandlebarsProcessor;
 }
 
+/**
+ * Apply the handlebars template to a context
+ *
+ * @param processor - the processor to invoke
+ * @param aContext - the context
+ *
+ * @returns the resulting markup string
+ */
 function safeApplyTemplate(
   { id, processor }: Processor,
   aContext: RenderingContextV2
