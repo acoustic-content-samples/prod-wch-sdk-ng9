@@ -42,6 +42,6 @@
 |  Type Alias | Description |
 |  --- | --- |
 |  [DelegateComponent](./react-utils.delegatecomponent.md) |  |
-|  [ElementTypeCallback](./react-utils.elementtypecallback.md) |  |
+|  [ElementTypeCallback](./react-utils.elementtypecallback.md) | Callback function to retrieve the element type from the content item given its ID and the accessor string |
 |  [StateFunction](./react-utils.statefunction.md) |  |
 

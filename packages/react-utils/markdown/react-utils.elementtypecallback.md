@@ -4,6 +4,8 @@
 
 ## ElementTypeCallback type
 
+Callback function to retrieve the element type from the content item given its ID and the accessor string
+
 <b>Signature:</b>
 
 ```typescript

@@ -40,7 +40,7 @@ export abstract class AbstractRxComponent<P = {}, S = {}, SS = any> extends Pure
 // @public (undocumented)
 export type DelegateComponent<S, DS = any> = FunctionComponent<S> | ComponentClass<S, DS>;
 
-// @public (undocumented)
+// @public
 export type ElementTypeCallback = BiFunction<string, AccessorType, Observable<ELEMENT_TYPE>>;
 
 // @public

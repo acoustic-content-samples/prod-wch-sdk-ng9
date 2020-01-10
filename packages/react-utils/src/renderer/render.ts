@@ -48,6 +48,9 @@ const DATA_WCH_EDITABLE = 'data-wch-editable';
 
 declare type ReactAttr = Record<string, string | Record<string, string>>;
 
+/**
+ * Callback function to retrieve the element type from the content item given its ID and the accessor string
+ */
 export declare type ElementTypeCallback = BiFunction<
   string,
   AccessorType,
