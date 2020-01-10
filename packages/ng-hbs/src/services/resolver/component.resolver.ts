@@ -13,7 +13,7 @@ import {
 import { Inject, Injectable, Optional } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 
-import { HandlebarsComponent } from './../../components/hbs.component';
+import { HandlebarsComponent } from './../../components/hbs-edit/hbs.component';
 
 const LOGGER = 'HandlebarsComponentResolver';
 

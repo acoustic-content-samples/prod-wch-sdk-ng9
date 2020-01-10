@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/edit-api": "9.0.0",
     "@acoustic-content-sdk/redux-feature-load": "9.0.0",
     "@acoustic-content-sdk/redux-feature-login": "9.0.0",
     "@acoustic-content-sdk/redux-feature-url-config": "9.0.0",
@@ -55,6 +56,7 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
         "@acoustic-content-sdk/redux-feature-load": "acoustic-content-sdk.redux-feature-load",
         "@acoustic-content-sdk/redux-feature-login": "acoustic-content-sdk.redux-feature-login",
         "@acoustic-content-sdk/redux-feature-url-config": "acoustic-content-sdk.redux-feature-url-config",
