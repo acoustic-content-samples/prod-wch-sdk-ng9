@@ -28,6 +28,8 @@ export interface HandlebarsComponentProps {
  * @param aDoc - the document, used to instantiate a template node
  * @param aLogSvc - optionally a logger service
  * @param aScheduler - optionally a scheduler
+ *
+ * @returns a component that renders a content item based on the handlebars templates from the redux store
  */
 export function createHandlebarsComponent(
   aStore: ReduxRootStore,
