@@ -5,7 +5,6 @@ import {
   KEY_VALUES
 } from '@acoustic-content-sdk/api';
 
-import { getProperty } from '../js/pluck';
 import { isEqual, isNotNil } from '../predicates/predicates';
 import { parsePath } from './../path/path';
 
@@ -35,17 +34,13 @@ function internalDeliveryContentByAccessor(
     const val = aPath[aIdx + 1];
     if (isEqual(val, KEY_VALUE)) {
       // recurse
-      return internalDeliveryContentByAccessor(aIdx + 2, aPath, child[val]);
+      return internalDeliveryContentByAccessor(aIdx + 2, aPath, child);
     }
     if (isEqual(val, KEY_VALUES)) {
       // index
       const idx = aPath[aIdx + 2];
       // recurse
-      return internalDeliveryContentByAccessor(
-        aIdx + 3,
-        aPath,
-        getProperty(child[val], idx)
-      );
+      return internalDeliveryContentByAccessor(aIdx + 3, aPath, child[idx]);
     }
   }
   // returns the child
@@ -57,7 +52,9 @@ function internalDeliveryContentByAccessor(
  * in delivery format
  *
  * @param aItem - the root level item (its accessor should be  )
- * @param aAccessor
+ * @param aAccessor - accessor expression to the item (this references the authoring path!)
+ *
+ * @returns the referenced value
  */
 export function wchDeliveryContentByAccessor(
   aItem: DeliveryContentItem,

@@ -7,15 +7,18 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Jest Current File",
+      "name": "Jest Utils",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
         "--coverage",
         "false",
+        "--config",
+        "${workspaceFolder}/packages/utils/jest.config.js",
         "--testPathPattern",
-        "${relativeFile}",
+        "${fileBasenameNoExtension}",
         "--runInBand"
       ],
+      "cwd": "${workspaceFolder}/packages/utils",
       "runtimeArgs": ["--inspect-brk", "--harmony"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
