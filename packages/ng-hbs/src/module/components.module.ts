@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { HandlebarsComponent } from '../components/hbs-edit/hbs.component';
+import { HandlebarsComponent } from '../components/hbs-view/hbs.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -9,4 +8,4 @@ import { HandlebarsComponent } from '../components/hbs-edit/hbs.component';
   exports: [HandlebarsComponent],
   entryComponents: [HandlebarsComponent]
 })
-export class WchNgHbsComponentsEditModule {}
+export class WchNgHbsComponentsViewModule {}

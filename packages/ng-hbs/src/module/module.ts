@@ -1,16 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { WchNgHbsRendererModule } from '../services/renderer/renderer.module';
-import { WchNgHbsResolverEditModule } from '../services/resolver/resolver.module';
-import { WchNgHbsComponentsEditModule } from './components.module';
+import { WchNgHbsResolverViewModule } from '../services/resolver/resolver.module';
+import { WchNgHbsComponentsViewModule } from './components.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    WchNgHbsComponentsEditModule,
-    WchNgHbsResolverEditModule,
-    WchNgHbsRendererModule
+    WchNgHbsComponentsViewModule,
+    WchNgHbsResolverViewModule
   ]
 })
-export class WchNgHbsEditModule {}
+export class WchNgHbsViewModule {}
