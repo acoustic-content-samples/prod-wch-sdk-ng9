@@ -5,6 +5,7 @@ export { rxCachedFunction } from './cache/rx.cache';
 export { getCategoryLeaf } from './categories/categories';
 export { cmpNumbers, cmpStrings, Comparator, safeCmp } from './compare/compare';
 export { BiConsumer, BiFunction, Consumer } from './consumers/consumer';
+export { wchDeliveryContentByAccessor } from './content/delivery.content';
 export {
   isAuthoringGroup,
   isAuthoringImage,

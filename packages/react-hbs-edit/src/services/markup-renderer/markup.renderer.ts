@@ -55,6 +55,8 @@ import {
 } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+const LOGGER = 'createRendererV2';
+
 /**
  * Constructs a new renderer that applies a handlebars transform to produce rendered markup. The
  * markup will be kept current whenever any of the underlying data changes.
@@ -71,7 +73,7 @@ function createRendererV2(
   aScheduler: SchedulerLike = queueScheduler
 ): UnaryFunction<string, Observable<string>> {
   // construct a logger
-  const logger = aLoggerService.get('createRendererV2');
+  const logger = aLoggerService.get(LOGGER);
   logger.info('v2');
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

@@ -42,6 +42,7 @@
   "peerDependencies": {
     "@angular/common": "next",
     "@angular/core": "next",
+    "react": "^16",
     "react-dom": "^16",
     "rxjs": "^6"
   },
@@ -68,6 +69,7 @@
         "@acoustic-content-sdk/react-utils": "acoustic-content-sdk.react-utils",
         "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "react": "React",
         "react-dom": "ReactDom"
       }
     },

@@ -1,13 +1,17 @@
 import {
+  KEY_ACCESSOR,
   KEY_ID,
   KEY_METADATA,
   LoggerService,
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
+import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { AbstractRenderingComponent } from '@acoustic-content-sdk/ng-utils';
 import { rxSelect } from '@acoustic-content-sdk/redux-store';
 import {
+  isNotEmpty,
+  Maybe,
   NOOP_LOGGER_SERVICE,
   pluckPath,
   rxNext,
@@ -20,11 +24,20 @@ import {
   Input,
   Optional
 } from '@angular/core';
-import { MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { combineLatest, MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const LOGGER = 'HandlebarsComponent';
 
 const selectId = pluckPath<string>([KEY_METADATA, KEY_ID]);
+
+const selectAccessor = pluckPath<string>([KEY_METADATA, KEY_ACCESSOR]);
+
+const createContentItemId = (
+  aId?: string,
+  aAccessor?: AccessorType
+): Maybe<string> =>
+  isNotEmpty(aId) && isNotEmpty(aAccessor) ? `${aId}#${aAccessor}` : aId;
 
 @Component({
   selector: 'wch-hbs-content',
@@ -68,10 +81,20 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
       logger
     );
     // extract the ID of the item
-    const contentItemId$ = rxPipe(
+    const id$ = rxPipe(this.renderingContext$, rxSelect(selectId), log('id'));
+
+    // extract the accessor
+    const accessor$ = rxPipe(
       this.renderingContext$,
-      rxSelect(selectId),
-      log('id')
+      rxSelect(selectAccessor),
+      log('accessor')
+    );
+
+    // combine
+    const contentItemId$ = rxPipe(
+      combineLatest([id$, accessor$]),
+      map(([id, accessor]) => createContentItemId(id, accessor)),
+      log('content item id')
     );
 
     // attach the markup observable

@@ -4,13 +4,14 @@ import { rxComponent, StateFunction } from '@acoustic-content-sdk/react-utils';
 import { guaranteeAuthoringContentAction } from '@acoustic-content-sdk/redux-feature-auth-content';
 import { ReduxRootStore, rxDispatch } from '@acoustic-content-sdk/redux-store';
 import {
+  isNotEmpty,
   NOOP_LOGGER_SERVICE,
   opDistinctUntilChanged,
   rxNext,
   rxSelectProperty
 } from '@acoustic-content-sdk/utils';
 import { MonoTypeOperatorFunction, pipe, SchedulerLike } from 'rxjs';
-import { map, startWith, switchMap, tap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 
 import { createMarkupRenderer } from '../../services/markup-renderer/markup.renderer';
 import { LayoutRendererComponentProps } from '../layout-renderer/layout-renderer.component';
@@ -26,6 +27,14 @@ export interface MarkupRendererComponentProps {
 }
 
 const LOGGER = 'MarkupRendererComponent';
+
+/**
+ * Extracts the ID of the content item from the combination ID and accessor
+ *
+ * @param aContentItemId - the ID to split
+ * @returns just the ID
+ */
+const selectId = (aContentItemId?: string) => aContentItemId.split('#')[0];
 
 export function createMarkupRendererComponent(
   aStore: ReduxRootStore,
@@ -51,7 +60,8 @@ export function createMarkupRendererComponent(
     LayoutRendererComponentProps
   > = pipe(
     rxSelectProperty('contentItemId'),
-    tap((id) => dispatch(guaranteeAuthoringContentAction(id))),
+    filter(isNotEmpty),
+    tap((id) => dispatch(guaranteeAuthoringContentAction(selectId(id)))),
     switchMap(renderer),
     opDistinctUntilChanged,
     log('markup'),

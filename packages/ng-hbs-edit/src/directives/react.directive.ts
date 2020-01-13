@@ -25,6 +25,9 @@ const LOGGER = 'ReactDirective';
 
 @Directive({ selector: '[wchReact]' })
 export class ReactDirective implements OnDestroy, AfterViewInit {
+  /**
+   * ID and accessor of the item to be rendered, separated by '#'
+   */
   @Input()
   wchReact: string;
 
@@ -56,11 +59,7 @@ export class ReactDirective implements OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     // log this
-    this.logger.info(
-      'Mounting react component',
-      this.Renderer,
-      this.host.nativeElement
-    );
+    this.logger.info('Mounting react component', this.host.nativeElement);
     // attach the react rendering
     render(createElement(this.Renderer), this.host.nativeElement);
   }
