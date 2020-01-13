@@ -17,8 +17,8 @@ import {
   OnDestroy,
   Optional
 } from '@angular/core';
+import { createElement } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-
 import { HandlebarsRendererComponent } from '../services/renderer/renderer.component';
 
 const LOGGER = 'ReactDirective';
@@ -62,7 +62,7 @@ export class ReactDirective implements OnDestroy, AfterViewInit {
       this.host.nativeElement
     );
     // attach the react rendering
-    render(this.Renderer, this.host.nativeElement);
+    render(createElement(this.Renderer), this.host.nativeElement);
   }
 
   ngOnDestroy() {
