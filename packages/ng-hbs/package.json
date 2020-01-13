@@ -31,13 +31,11 @@
     "@acoustic-content-sdk/component-api": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-utils": "9.0.0",
-    "@acoustic-content-sdk/react-utils": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
     "@angular/common": "next",
     "@angular/core": "next",
-    "react": "^16",
     "rxjs": "^6"
   },
   "publishConfig": {
@@ -56,9 +54,7 @@
         "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
-        "@acoustic-content-sdk/react-utils": "acoustic-content-sdk.react-utils",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "react": "React"
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
     "whitelistedNonPeerDependencies": [

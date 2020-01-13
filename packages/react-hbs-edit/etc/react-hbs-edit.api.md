@@ -10,10 +10,13 @@ import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import { SchedulerLike } from 'rxjs';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 
-// Warning: (ae-forgotten-export) The symbol "HandlebarsComponentProps" needs to be exported by the entry point public_api.d.ts
-//
 // @public
 export function createHandlebarsComponent(aStore: ReduxRootStore, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
+
+// @public
+export interface HandlebarsComponentProps {
+    contentItemId?: string;
+}
 
 // @public
 export const VERSION: {
@@ -25,7 +28,5 @@ export const VERSION: {
     build: Date;
 };
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

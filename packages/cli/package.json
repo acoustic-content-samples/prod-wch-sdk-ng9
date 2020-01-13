@@ -36,7 +36,7 @@
     "chalk": "^3.0.0",
     "commander": "^4.1.0",
     "cross-spawn": "^7.0.1",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.1",
     "handlebars-helpers": "^0.10.0",
     "jsdom": "^15.2.1",
     "lodash": "^4.17.15",

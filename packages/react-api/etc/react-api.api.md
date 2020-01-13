@@ -128,6 +128,10 @@ export interface DynamicReactProviderFactory {
     <R1, R2, R3, R4, O1, T>(fct: (req: [R1, R2, R3, R4], opt: [O1?]) => ObservableInput<T>, ctx: Context<T>, req: [Context<R1>, Context<R2>, Context<R3>, Context<R4>], opt: [Context<O1>]): ReactProvider<T>;
     // (undocumented)
     <R1, R2, R3, R4, R5, O1, T>(fct: (req: [R1, R2, R3, R4, R5], opt: [O1?]) => ObservableInput<T>, ctx: Context<T>, req: [Context<R1>, Context<R2>, Context<R3>, Context<R4>, Context<R5>], opt: [Context<O1>]): ReactProvider<T>;
+    // (undocumented)
+    <R1, R2, R3, R4, R5, R6, O1, T>(fct: (req: [R1, R2, R3, R4, R5, R6], opt: [O1?]) => ObservableInput<T>, ctx: Context<T>, req: [Context<R1>, Context<R2>, Context<R3>, Context<R4>, Context<R5>, Context<R6>], opt: [Context<O1>]): ReactProvider<T>;
+    // (undocumented)
+    <R1, R2, R3, R4, R5, R6, R7, O1, T>(fct: (req: [R1, R2, R3, R4, R5, R6, R7], opt: [O1?]) => ObservableInput<T>, ctx: Context<T>, req: [Context<R1>, Context<R2>, Context<R3>, Context<R4>, Context<R5>, Context<R6>, Context<R7>], opt: [Context<O1>]): ReactProvider<T>;
 }
 
 // @public (undocumented)

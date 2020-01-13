@@ -26,3 +26,5 @@ export declare function createHandlebarsComponent(aStore: ReduxRootStore, aEditS
 
 `ReactComponent<HandlebarsComponentProps>`
 
+a component that renders a content item based on the handlebars templates from the redux store
+

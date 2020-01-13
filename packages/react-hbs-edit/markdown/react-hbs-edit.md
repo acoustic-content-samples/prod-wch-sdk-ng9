@@ -4,11 +4,19 @@
 
 ## react-hbs-edit package
 
+Implementation of utility functions and react components that render the component based on handlebars templates and integrate with inline edit.
+
 ## Functions
 
 |  Function | Description |
 |  --- | --- |
 |  [createHandlebarsComponent(aStore, aEditService, aDoc, aLogSvc, aScheduler)](./react-hbs-edit.createhandlebarscomponent.md) | Returns a React component that renders the content item passed into its properties. Markup elements annotated with inline edit controls will be registered with the inline edit service. |
+
+## Interfaces
+
+|  Interface | Description |
+|  --- | --- |
+|  [HandlebarsComponentProps](./react-hbs-edit.handlebarscomponentprops.md) | Property interface of the handlebars components |
 
 ## Variables
 
