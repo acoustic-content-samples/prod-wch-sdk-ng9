@@ -2,7 +2,10 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import {
+  KEY_LAYOUT_MODE,
+  NOOP_LOGGER_SERVICE
+} from '@acoustic-content-sdk/utils';
 import { SchedulerLike } from 'rxjs';
 
 import { createReactRenderer } from '../../services/react-renderer/react.renderer';
@@ -17,6 +20,10 @@ export interface HandlebarsComponentProps {
    * ID of the item to render
    */
   contentItemId?: string;
+  /**
+   * Optional layout mode
+   */
+  [KEY_LAYOUT_MODE]?: string;
 }
 
 /**

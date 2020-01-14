@@ -3,10 +3,16 @@ import {
   CLASSIFICATION_CONTENT_TYPE,
   CLASSIFICATION_LAYOUT,
   CLASSIFICATION_LAYOUT_MAPPING,
+  DeliveryContentItem,
+  DeliveryContentMetadata,
+  DeliveryGroupElement,
   ExtendedContextV2,
+  KEY_METADATA,
+  Logger,
   LoggerService,
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
+import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import {
   selectAuthLayoutFeature,
   selectAuthoringLayout
@@ -40,9 +46,13 @@ import {
   createMarkupRendererV2,
   escapeHtml,
   isFunction,
+  isNotEmpty,
+  isNotNil,
   opDeepDistinctUntilChanged,
+  pluckProperty,
   rxNext,
-  rxPipe
+  rxPipe,
+  wchDeliveryContentByAccessor
 } from '@acoustic-content-sdk/utils';
 import {
   combineLatest,
@@ -56,6 +66,66 @@ import {
 import { map } from 'rxjs/operators';
 
 const LOGGER = 'createRendererV2';
+
+const selectMetadata = pluckProperty<any, typeof KEY_METADATA>(KEY_METADATA);
+
+/**
+ * Extracts a nested group element as a content item from an existing content item.
+ *
+ * @param aItem  - the original item
+ * @param aAccessor - the accessor string
+ */
+function selectNestedDeliveryContent(
+  aItem: DeliveryContentItem,
+  aAccessor: AccessorType
+): DeliveryContentItem {
+  // select the group item
+  const item = wchDeliveryContentByAccessor(aItem, aAccessor);
+  const itemMetadata = selectMetadata(item);
+  if (isNotNil(itemMetadata)) {
+    // we know that we have a group level item
+    const groupItem: DeliveryContentItem | DeliveryGroupElement = item as any;
+    // merge with the top level metadata
+    const contentMetadata = selectMetadata(aItem);
+    // augmented
+    const augMetadata: DeliveryContentMetadata = {
+      ...contentMetadata,
+      ...itemMetadata
+    };
+    // returns the object
+    return { ...groupItem, [KEY_METADATA]: augMetadata };
+  }
+  // returns the item as is
+  return aItem;
+}
+
+function createNestedDeliveryContentSelector(
+  aDeliveryContent: UnaryFunction<string, Observable<DeliveryContentItem>>,
+  aLogger: Logger
+): UnaryFunction<string, Observable<DeliveryContentItem>> {
+  // some logging
+  const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(aLogger);
+  /**
+   * Our inner function
+   *
+   * @param aCompoundId - a potentially compound ID
+   * @returns the resolved item
+   */
+  return (aCompoundId: string): Observable<DeliveryContentItem> => {
+    // split
+    const [id, accessor] = aCompoundId.split('#');
+    // the original object
+    const content$ = aDeliveryContent(id);
+    // select a sub-content if required
+    return isNotEmpty(accessor)
+      ? rxPipe(
+          content$,
+          map((item) => selectNestedDeliveryContent(item, accessor)),
+          log('nested content')
+        )
+      : content$;
+  };
+}
 
 /**
  * Constructs a new renderer that applies a handlebars transform to produce rendered markup. The
@@ -71,7 +141,7 @@ function createRendererV2(
   aStore: ReduxRootStore,
   aLoggerService: LoggerService,
   aScheduler: SchedulerLike = queueScheduler
-): UnaryFunction<string, Observable<string>> {
+): (aCompoundId: string, aLayoutMode?: string) => Observable<string> {
   // construct a logger
   const logger = aLoggerService.get(LOGGER);
   logger.info('v2');
@@ -176,9 +246,14 @@ function createRendererV2(
         isFunction(tmp) ? applyTemplate(aId, tmp) : emptyString
       )
     );
+  // selector to allow us to resolve nested content
+  const selectedNestedContent$ = createNestedDeliveryContentSelector(
+    selectDeliveryContent$,
+    logger
+  );
   // dispatch
   return createMarkupRendererV2(
-    selectDeliveryContent$,
+    selectedNestedContent$,
     selectAuthType$,
     selectAuthLayoutMapping$,
     selectAuthLayout$,

@@ -5,12 +5,14 @@ import { guaranteeAuthoringContentAction } from '@acoustic-content-sdk/redux-fea
 import { ReduxRootStore, rxDispatch } from '@acoustic-content-sdk/redux-store';
 import {
   isNotEmpty,
+  KEY_LAYOUT_MODE,
   NOOP_LOGGER_SERVICE,
   opDistinctUntilChanged,
   rxNext,
+  rxPipe,
   rxSelectProperty
 } from '@acoustic-content-sdk/utils';
-import { MonoTypeOperatorFunction, pipe, SchedulerLike } from 'rxjs';
+import { combineLatest, MonoTypeOperatorFunction, SchedulerLike } from 'rxjs';
 import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 
 import { createMarkupRenderer } from '../../services/markup-renderer/markup.renderer';
@@ -24,6 +26,10 @@ export interface MarkupRendererComponentProps {
    * ID of the item to render
    */
   contentItemId?: string;
+  /**
+   * Optional layout mode
+   */
+  [KEY_LAYOUT_MODE]?: string;
 }
 
 const LOGGER = 'MarkupRendererComponent';
@@ -58,16 +64,30 @@ export function createMarkupRendererComponent(
   const bloc: StateFunction<
     MarkupRendererComponentProps,
     LayoutRendererComponentProps
-  > = pipe(
-    rxSelectProperty('contentItemId'),
-    filter(isNotEmpty),
-    tap((id) => dispatch(guaranteeAuthoringContentAction(selectId(id)))),
-    switchMap(renderer),
-    opDistinctUntilChanged,
-    log('markup'),
-    startWith(''),
-    map((html) => ({ html }))
-  );
+  > = (props$) => {
+    // select the parts
+    const id$ = rxPipe(
+      props$,
+      rxSelectProperty('contentItemId'),
+      filter(isNotEmpty),
+      tap((id) => dispatch(guaranteeAuthoringContentAction(selectId(id)))),
+      log('id')
+    );
+    const layoutMode$ = rxPipe(
+      props$,
+      rxSelectProperty('layoutMode'),
+      log('layoutMode')
+    );
+    // render
+    return rxPipe(
+      combineLatest([id$, layoutMode$]),
+      switchMap(([id, layoutMode]) => renderer(id, layoutMode)),
+      opDistinctUntilChanged,
+      log('markup'),
+      startWith(''),
+      map((html) => ({ html }))
+    );
+  };
 
   // construct the component
   return rxComponent(bloc, aLayoutRenderer);

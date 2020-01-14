@@ -375,7 +375,7 @@ export function createMarkupRendererV2(
   aExtendedContext$: Observable<ExtendedContextV2>,
   aLoggerService: LoggerService,
   aScheduler: SchedulerLike = queueScheduler
-): UnaryFunction<string, Observable<string>> {
+): (aId: string, aLayoutMode?: string) => Observable<string> {
   // construct a logger
   const logger = aLoggerService.get(LOGGER);
   // next logger
