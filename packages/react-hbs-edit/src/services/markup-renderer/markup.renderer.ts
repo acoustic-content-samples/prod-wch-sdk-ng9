@@ -90,13 +90,13 @@ function selectNestedDeliveryContent(
     // augmented
     const augMetadata: DeliveryContentMetadata = {
       ...contentMetadata,
-      ...itemMetadata
+      ...itemMetadata,
+      selectedLayouts: undefined
     };
     // returns the object
     return {
       ...groupItem,
-      [KEY_METADATA]: augMetadata,
-      selectedLayouts: undefined
+      [KEY_METADATA]: augMetadata
     };
   }
   // returns the item as is
