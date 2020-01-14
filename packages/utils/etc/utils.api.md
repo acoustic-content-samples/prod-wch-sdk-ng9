@@ -1619,6 +1619,4 @@ export interface ZippedArgs {
 }
 
 
-// (No @packageDocumentation comment for this package)
-
 ```
