@@ -1,0 +1,96 @@
+{
+  "name": "Sites Divider",
+  "description": "",
+  "id": "d550249a-83b2-4e46-96d1-519732fa5787",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "key": "lineType",
+      "label": "Line type",
+      "options": [
+        {
+          "label": "Solid",
+          "selection": "solid"
+        },
+        {
+          "label": "Dotted",
+          "selection": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "selection": "dashed"
+        }
+      ]
+    },
+    {
+      "elementType": "group",
+      "key": "lineColor",
+      "label": "Line color",
+      "typeRef": {
+        "name": "Sites Color",
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      }
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "opacity",
+      "label": "Opacity"
+    },
+    {
+      "elementType": "group",
+      "key": "alignment",
+      "label": "Alignment",
+      "typeRef": {
+        "name": "Sites Alignment",
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "lineWeight",
+      "label": "Line weight",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "width",
+      "label": "Width"
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-535ca3f5-bb84-4536-a60d-eec4e0a74317"
+}

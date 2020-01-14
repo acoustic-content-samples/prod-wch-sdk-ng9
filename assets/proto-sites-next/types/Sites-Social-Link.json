@@ -1,0 +1,36 @@
+{
+  "name": "Sites Social Link",
+  "description": "",
+  "id": "98f24456-bf11-4248-bca9-07e273b8dbc4",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "text",
+      "key": "icon",
+      "label": "Icon"
+    },
+    {
+      "elementType": "link",
+      "key": "url",
+      "label": "URL"
+    },
+    {
+      "elementType": "text",
+      "key": "alttext",
+      "label": "Alt text"
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-aacf3bd2-2dac-4eb8-aab1-5b891e225a44"
+}

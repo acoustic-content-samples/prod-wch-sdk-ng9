@@ -194,6 +194,7 @@
 |  [wchCycleHandling(aCycle)](./utils.wchcyclehandling.md) |  |
 |  [wchDecodeAccessor(aPrototype, aAccessor)](./utils.wchdecodeaccessor.md) | Tranlates the accessor to an expression |
 |  [wchDecodeExpression(aExpression)](./utils.wchdecodeexpression.md) | Decodes the expression back to an expression into elements. The expression might point either to the optimized element or to the elements structure itself. |
+|  [wchDeliveryContentByAccessor(aItem, aAccessor)](./utils.wchdeliverycontentbyaccessor.md) | Returns the element identified by the accessor string from a content item in delivery format |
 |  [wchElementFromRenderingContext(aContext, aAccessor)](./utils.wchelementfromrenderingcontext.md) | Decodes an element from the accessor |
 |  [wchForEachRenderingContext(aRenderingContext, aCallback)](./utils.wchforeachrenderingcontext.md) | Iterates over all rendering contexts referenced by this context |
 |  [wchForEachType(aType, aCallback)](./utils.wchforeachtype.md) | Resolves all typeRef |

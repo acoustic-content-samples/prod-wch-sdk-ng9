@@ -1,0 +1,33 @@
+{
+  "name": "Top Navigation",
+  "description": "",
+  "id": "b1a6023b-d866-4772-ac7c-9b60214d4195",
+  "classification": "content",
+  "elements": {
+    "numberOfNavigationLevels": {
+      "elementType": "number",
+      "value": 2
+    },
+    "startingWithNavigationLevel": {
+      "elementType": "number",
+      "value": 1
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-top-navigation-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "6854f419-3b8b-4410-8d33-134a485d05a3",
+  "rev": "0-e97e2581-b795-44cd-8a31-57e6981ab4de"
+}

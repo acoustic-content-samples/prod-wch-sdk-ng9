@@ -1,0 +1,27 @@
+{
+  "name": "siteNavigationPageLayoutMapping",
+  "id": "sites-navigation-page-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "siteNavigationPageLayout",
+        "id": "sites-navigation-page-layout"
+      },
+      "layouts": [
+        {
+          "name": "siteNavigationPageLayout",
+          "id": "sites-navigation-page-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Navigation Page",
+    "id": "6943b561-1a32-421b-b6e2-8ca5cb1463a1"
+  },
+  "rev": "0-7a269ff8-1226-468f-826d-83c614eaaa8f"
+}

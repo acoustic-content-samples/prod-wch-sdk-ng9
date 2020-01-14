@@ -9,7 +9,7 @@ Constructs a new renderer that applies a handlebars transform to produce rendere
 <b>Signature:</b>
 
 ```typescript
-export declare function createMarkupRendererV2(aDeliveryContent: UnaryFunction<string, Observable<DeliveryContentItem>>, aAuthoringType: UnaryFunction<string, Observable<AuthoringType>>, aLayoutMapping: UnaryFunction<string, Observable<AuthoringLayoutMapping>>, aLayout: UnaryFunction<string, Observable<Layout>>, aMarkupTemplate: UnaryFunction<string, Observable<MarkupTemplate>>, aExtendedContext$: Observable<ExtendedContextV2>, aLoggerService: LoggerService, aScheduler?: SchedulerLike): UnaryFunction<string, Observable<string>>;
+export declare function createMarkupRendererV2(aDeliveryContent: UnaryFunction<string, Observable<DeliveryContentItem>>, aAuthoringType: UnaryFunction<string, Observable<AuthoringType>>, aLayoutMapping: UnaryFunction<string, Observable<AuthoringLayoutMapping>>, aLayout: UnaryFunction<string, Observable<Layout>>, aMarkupTemplate: UnaryFunction<string, Observable<MarkupTemplate>>, aExtendedContext$: Observable<ExtendedContextV2>, aLoggerService: LoggerService, aScheduler?: SchedulerLike): (aId: string, aLayoutMode?: string) => Observable<string>;
 ```
 
 ## Parameters
@@ -27,7 +27,7 @@ export declare function createMarkupRendererV2(aDeliveryContent: UnaryFunction<s
 
 <b>Returns:</b>
 
-`UnaryFunction<string, Observable<string>>`
+`(aId: string, aLayoutMode?: string) => Observable<string>`
 
 a function that maps from content item ID to an obervable of the rendered markup
 

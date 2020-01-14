@@ -1,0 +1,60 @@
+{
+  "name": "Page Contribution",
+  "description": "Set of markup contributions of potentially different mime types.",
+  "id": "354743b2-f89a-482b-b447-2b5a2367c8bd",
+  "classification": "content-type",
+  "elements": [
+    {
+      "allowMultipleValues": true,
+      "elementType": "text",
+      "fieldLabel": "Private",
+      "helpText": "Embed the contributions directly into this content item. This field contains the markup of the contributions.",
+      "key": "embed",
+      "label": "embed",
+      "minimumValues": 0
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "reference",
+      "fieldLabel": "Shared",
+      "helpText": "Reference a shared contribution.",
+      "key": "reference",
+      "label": "reference",
+      "minimumValues": 0
+    },
+    {
+      "elementType": "optionselection",
+      "key": "mode",
+      "label": "Mode",
+      "options": [
+        {
+          "label": "Always",
+          "selection": "always"
+        },
+        {
+          "label": "Live",
+          "selection": "live"
+        },
+        {
+          "label": "Preview",
+          "selection": "preview"
+        }
+      ],
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-4ff6353e-c2d3-43ea-97a8-3963ef10d108"
+}

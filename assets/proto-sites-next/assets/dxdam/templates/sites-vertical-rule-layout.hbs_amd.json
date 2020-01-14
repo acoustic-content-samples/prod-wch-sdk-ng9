@@ -1,0 +1,52 @@
+{
+  "name": "sites-vertical-rule-layout.hbs",
+  "description": "",
+  "id": "2ada754c-7697-44c6-aa05-c155170e814c",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-09-11T14:49:01.301Z",
+  "creator": "Adam.iem",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "digest": "6Ypw9+4NdQckQLjESbWH/g==",
+  "fileName": "sites-vertical-rule-layout.hbs",
+  "fileSize": 16,
+  "isManaged": true,
+  "lastModified": "2019-09-11T14:49:01.323Z",
+  "lastModifier": "Adam.iem",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "links": {
+    "media": {
+      "href": "/authoring/v1/resources/e873f5e5-0a86-4b91-920e-fc2237bb194f.hbs"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/2ada754c-7697-44c6-aa05-c155170e814c/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/assets/2ada754c-7697-44c6-aa05-c155170e814c"
+    }
+  },
+  "mediaId": "41678a5d-783a-4148-a12b-f1a237c95d98",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-vertical-rule-layout.hbs",
+  "publishing": {
+    "status": "not-available"
+  },
+  "resource": "e873f5e5-0a86-4b91-920e-fc2237bb194f",
+  "status": "ready",
+  "systemModified": "2019-09-11T14:49:01.323Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-5341e0e0-e2f5-45b2-b31d-5ab3185fcee5"
+}

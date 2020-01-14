@@ -6,6 +6,7 @@ import {
   AuthoringType,
   ELEMENT_TYPE_GROUP,
   ELEMENT_TYPE_REFERENCE,
+  KEY_ELEMENT_TYPE,
   Query,
   RenderingContext,
   TypeRef,
@@ -66,7 +67,6 @@ import {
 } from './../search/search.utils';
 
 const _ELEMENTS = 'elements';
-const _ELEMENT_TYPE = 'elementType';
 
 /**
  * Given a series of type IDs, return the placeholder content items
@@ -92,7 +92,7 @@ function _handleElement(
   aResolver: RenderingContextResolver
 ): AbstractElement {
   // access the element type
-  const elementType = getProperty(aElement || aPlaceholder, _ELEMENT_TYPE);
+  const elementType = getProperty(aElement || aPlaceholder, KEY_ELEMENT_TYPE);
   // special case for references
   if (elementType === ELEMENT_TYPE_REFERENCE) {
     // special case handling for reference elements
@@ -231,11 +231,9 @@ export function wchPlaceholderResolver(
       rows: SEARCH_MAX_ROWS
     };
     // execute the query
-    return aSearch.getRenderingContexts(query).pipe(
-      filterNotNil(),
-      typedPluck('renderingContexts'),
-      filterNotNil()
-    );
+    return aSearch
+      .getRenderingContexts(query)
+      .pipe(filterNotNil(), typedPluck('renderingContexts'), filterNotNil());
   };
 }
 
@@ -277,7 +275,7 @@ const _selectPlaceholderFromElement: UnaryFunction<
 const _selectTypeFromElement: UnaryFunction<
   AuthoringElement,
   string
-> = pluckProperty(_ELEMENT_TYPE);
+> = pluckProperty(KEY_ELEMENT_TYPE);
 
 /**
  * Decodes information from the authoring element identified
@@ -353,7 +351,7 @@ export function isAuthoringGroupElement(
   // some quick test
   return (
     isNotNil(aValue) &&
-    aValue[_ELEMENT_TYPE] === ELEMENT_TYPE_GROUP &&
+    aValue[KEY_ELEMENT_TYPE] === ELEMENT_TYPE_GROUP &&
     isPlainObject(aValue.typeRef)
   );
 }
@@ -595,6 +593,11 @@ export function rxWchFromAuthoringTypeByAccessor<T>(
    * will be represented as a single element in the split result
    */
   if (isString(aAccessor) && isString(aTypeId)) {
+    // special case for top level types
+    if (aAccessor === _ELEMENTS) {
+      // resolve the type directly
+      return rxPipe(aTypeAccessor(aTypeId), map(aSelector));
+    }
     // decode the path
     const path: string[] = aAccessor.split('.');
     // check the elements

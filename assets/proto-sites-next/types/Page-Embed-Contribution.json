@@ -1,0 +1,31 @@
+{
+  "name": "Page Embed Contribution",
+  "description": "",
+  "id": "eedce4a0-9647-4301-9247-6793e08652ea",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "text",
+      "key": "embed",
+      "label": "embed",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone"
+  ],
+  "path": "/Page-Embed-Contribution.json",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-fddfdf2f-9814-4ec7-b560-a81e4bd2886d"
+}

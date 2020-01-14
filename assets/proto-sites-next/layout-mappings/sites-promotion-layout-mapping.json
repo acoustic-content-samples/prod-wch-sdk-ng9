@@ -1,0 +1,27 @@
+{
+  "name": "sitesPromotionLayoutMapping",
+  "id": "sites-promotion-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesPromotionLayout",
+        "id": "sites-promotion-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesPromotionLayout",
+          "id": "sites-promotion-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Promotion",
+    "id": "0b1c47a9-eb31-49ec-8fd7-89ca21a36b36"
+  },
+  "rev": "0-2de4afbb-6e27-4482-b454-d600ebd2b684"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sitesPromotionLayout",
+  "id": "sites-promotion-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-promotion-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-promotion-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_e11d91605edd5dae73b222fb6e0c2bc8"
+  },
+  "urlTemplate": "{templateLocation}/sites/{id}.html",
+  "rev": "0-fbbfe041-197b-4a64-8593-e54f5b426410"
+}

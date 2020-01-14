@@ -1,0 +1,26 @@
+{
+  "name": "sitesHbTextLayoutMapping",
+  "id": "sites-hb-text-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesHbTextLayout",
+        "id": "sites-hb-text-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesHbTextLayout",
+          "id": "sites-hb-text-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites HB Text",
+    "id": "ac299073-48a2-446d-987d-d893257abdb3"
+  }
+}

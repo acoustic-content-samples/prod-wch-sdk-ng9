@@ -1,0 +1,65 @@
+{
+  "name": "Page Descriptor",
+  "description": "",
+  "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "reference",
+      "key": "site",
+      "label": "site",
+      "required": true
+    },
+    {
+      "allowMultipleValues": false,
+      "elementType": "text",
+      "key": "canonicalpath",
+      "label": "canonicalPath",
+      "maxLength": 4000,
+      "minLength": 1,
+      "required": true,
+      "searchKey": "string1"
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "key": "alternativepath",
+      "label": "alternativePath",
+      "minimumValues": 0
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "key": "keywords",
+      "label": "keywords",
+      "minimumValues": 0
+    },
+    {
+      "elementType": "text",
+      "key": "title",
+      "label": "title",
+      "minLength": 1,
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "key": "description",
+      "label": "description"
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-5d487630-eba0-4645-ac9e-8b8b2c381c60"
+}

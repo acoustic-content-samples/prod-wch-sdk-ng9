@@ -1,0 +1,52 @@
+{
+  "name": "sites-top-navigation-layout.hbs",
+  "description": "",
+  "id": "39ed8138-022e-4718-ab3d-e6e8893c45cc",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-09-26T15:26:51.146Z",
+  "creator": "Adam.iem",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "digest": "tt7xiz65re2gPUuPEyb2Qw==",
+  "fileName": "sites-top-navigation-layout.hbs",
+  "fileSize": 78,
+  "isManaged": true,
+  "lastModified": "2019-09-26T15:26:51.196Z",
+  "lastModifier": "Adam.iem",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "links": {
+    "media": {
+      "href": "/authoring/v1/resources/4c9cb2e6-3ab5-4766-93c5-3a592667b781.hbs"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/39ed8138-022e-4718-ab3d-e6e8893c45cc/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/assets/39ed8138-022e-4718-ab3d-e6e8893c45cc"
+    }
+  },
+  "mediaId": "905b361f-b422-4874-8d1a-d8f61fd8cd18",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-top-navigation-layout.hbs",
+  "publishing": {
+    "status": "not-available"
+  },
+  "resource": "4c9cb2e6-3ab5-4766-93c5-3a592667b781",
+  "status": "ready",
+  "systemModified": "2019-09-26T15:26:51.196Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-52b76fc3-3aad-4b19-a10a-639b452f0f94"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "sitesLineHeightLayoutMapping",
+  "id": "sites-line-height-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesLineHeightLayout",
+        "id": "sites-line-height-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesLineHeightLayout",
+          "id": "sites-line-height-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Line Height",
+    "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0"
+  },
+  "rev": "0-8a5b642d-dbfe-4207-9fbd-ce00d5988341"
+}

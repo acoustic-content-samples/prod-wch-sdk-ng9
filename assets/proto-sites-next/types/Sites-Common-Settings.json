@@ -1,0 +1,32 @@
+{
+  "name": "Sites Common Settings",
+  "description": "",
+  "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "toggle",
+      "key": "applyToAll",
+      "label": "Apply to all"
+    },
+    {
+      "elementType": "toggle",
+      "key": "hideOnMobile",
+      "label": "Hide on mobile",
+      "locked": false
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-0c66e275-324f-4f30-b6d3-a77de59c12c7"
+}

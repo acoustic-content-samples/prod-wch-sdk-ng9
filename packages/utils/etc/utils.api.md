@@ -24,6 +24,7 @@ import { CYCLE_HANDLING } from '@acoustic-content-sdk/api';
 import { DateElement } from '@acoustic-content-sdk/api';
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import { DeliveryContentMetadata } from '@acoustic-content-sdk/api';
+import { DeliveryElement } from '@acoustic-content-sdk/api';
 import { DeliveryLayout } from '@acoustic-content-sdk/api';
 import { DeliveryLayoutMapping } from '@acoustic-content-sdk/api';
 import { DeliveryReferenceElement } from '@acoustic-content-sdk/api';
@@ -348,7 +349,7 @@ export function createLoggerService(aLoggerFactory: LoggerFactory): LoggerServic
 export const createLruCache: <V>(aTimeout?: number, aMaxValues?: number, aLogger?: Logger) => CacheAccessor<V>;
 
 // @public
-export function createMarkupRendererV2(aDeliveryContent: UnaryFunction<string, Observable<DeliveryContentItem>>, aAuthoringType: UnaryFunction<string, Observable<AuthoringType>>, aLayoutMapping: UnaryFunction<string, Observable<AuthoringLayoutMapping>>, aLayout: UnaryFunction<string, Observable<Layout>>, aMarkupTemplate: UnaryFunction<string, Observable<MarkupTemplate>>, aExtendedContext$: Observable<ExtendedContextV2>, aLoggerService: LoggerService, aScheduler?: SchedulerLike): UnaryFunction<string, Observable<string>>;
+export function createMarkupRendererV2(aDeliveryContent: UnaryFunction<string, Observable<DeliveryContentItem>>, aAuthoringType: UnaryFunction<string, Observable<AuthoringType>>, aLayoutMapping: UnaryFunction<string, Observable<AuthoringLayoutMapping>>, aLayout: UnaryFunction<string, Observable<Layout>>, aMarkupTemplate: UnaryFunction<string, Observable<MarkupTemplate>>, aExtendedContext$: Observable<ExtendedContextV2>, aLoggerService: LoggerService, aScheduler?: SchedulerLike): (aId: string, aLayoutMode?: string) => Observable<string>;
 
 // @public
 export function createMessageHandler(aCorsWhitelist: Generator<PromiseLike<string[]>>, aMsgHandlers: Generator<SdkMessageHandler[]>, aLogger?: Logger): (aEvent: MessageEvent) => void;
@@ -1522,6 +1523,9 @@ export function wchDecodeAccessor(aPrototype: any, aAccessor: string): string | 
 
 // @public
 export function wchDecodeExpression(aExpression: string): string;
+
+// @public
+export function wchDeliveryContentByAccessor(aItem: DeliveryContentItem, aAccessor: string): DeliveryContentItem | DeliveryElement;
 
 // @public
 export function wchElementFromRenderingContext(aContext: RenderingContext, aAccessor: string): AbstractElement;

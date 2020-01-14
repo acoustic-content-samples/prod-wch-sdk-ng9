@@ -1,0 +1,36 @@
+{
+  "name": "Sites Video",
+  "description": "",
+  "id": "a84f2c97-33bb-45fa-8156-25141df73055",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "video",
+      "key": "video",
+      "label": "Video"
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-60cefb30-0090-49ec-908d-100f3d2b8bbb"
+}

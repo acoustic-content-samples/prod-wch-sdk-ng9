@@ -1,0 +1,18 @@
+{
+  "name": "siteNavigationLayout",
+  "id": "sites-navigation-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "template": "/dxdam/templates/sites-navigation-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/sites-navigation-layout.jpg"
+  },
+  "urlTemplate": "{templateLocation}/sites/sites-navigation/{id}.html",
+  "rev": "0-d306b8af-3880-40a3-bb04-a078c34cdda8"
+}

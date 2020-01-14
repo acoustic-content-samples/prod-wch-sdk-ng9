@@ -1,0 +1,49 @@
+{
+  "name": "Sites Boundary",
+  "description": "",
+  "id": "d403f72d-5383-423c-ba33-5cedd61c9224",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "top",
+      "label": "Top",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "bottom",
+      "label": "Bottom",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "left",
+      "label": "Left",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "right",
+      "label": "Right",
+      "minimum": 0
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-39142db7-686c-40de-87cc-f60e6012a6cd"
+}

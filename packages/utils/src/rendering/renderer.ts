@@ -16,8 +16,11 @@ import {
   ELEMENT_TYPE_GROUP,
   ELEMENT_TYPE_REFERENCE,
   ExtendedContextV2,
+  KEY_ACCESSOR,
   KEY_ID,
   KEY_METADATA,
+  KEY_TYPE_ID,
+  KEY_TYPE_REF,
   Layout,
   Logger,
   LoggerService,
@@ -63,11 +66,14 @@ import { rxLogAll, rxNext } from '../logger/rx.logger';
 import {
   opDistinctUntilChanged,
   opReplayLast,
+  opShareLast,
   safeSwitchMap
 } from '../operators/operators';
 import { pluckPath } from '../path/path';
+import { rxWchFromAuthoringTypeByAccessor } from '../placeholder/placeholder';
 import {
   isArray,
+  isEqual,
   isNil,
   isNilOrEmpty,
   isNotNil
@@ -113,7 +119,7 @@ function assertNotNil(aValue: any, aHint: string) {
 /**
  * Selects the accessor from the rendering context
  */
-const selectAccessor = pluckPath<string>([KEY_METADATA, 'accessor']);
+const selectAccessor = pluckPath<string>([KEY_METADATA, KEY_ACCESSOR]);
 
 interface SelectedLayoutsMetadata {
   selectedLayouts?: DeliverySelectedLayouts;
@@ -124,9 +130,10 @@ interface SelectedLayoutsProvider {
 }
 
 const templateExtractor = pluckProperty<Layout, 'template'>('template');
-const metadataExtractor = pluckProperty<DeliveryContentItem, '$metadata'>(
-  KEY_METADATA
-);
+const metadataExtractor = pluckProperty<
+  DeliveryContentItem,
+  typeof KEY_METADATA
+>(KEY_METADATA);
 
 const selectedLayoutsExtractor = pluckPath<DeliverySelectedLayouts>([
   KEY_METADATA,
@@ -135,8 +142,8 @@ const selectedLayoutsExtractor = pluckPath<DeliverySelectedLayouts>([
 
 const idExtractor = pluckPath<string>([KEY_METADATA, KEY_ID]);
 
-const typeFromContentExtractor = pluckPath<string>([KEY_METADATA, 'typeId']);
-const typeFromGroupExtractor = pluckPath<string>(['typeRef', 'id']);
+const typeFromContentExtractor = pluckPath<string>([KEY_METADATA, KEY_TYPE_ID]);
+const typeFromGroupExtractor = pluckPath<string>([KEY_TYPE_REF, KEY_TYPE_ID]);
 
 /**
  * Maps from string to the rendering context
@@ -177,7 +184,7 @@ interface Context {
 
 const typeKeyExtractor = pluckProperty<AuthoringElement, 'key'>('key');
 
-const typeElementsExtractor = pluckProperty<AuthoringType, 'elements'>(
+const typeElementsExtractor = pluckProperty<AuthoringType, typeof KEY_ELEMENTS>(
   KEY_ELEMENTS
 );
 
@@ -436,6 +443,31 @@ export function createMarkupRendererV2(
   );
 
   /**
+   * Decodes the typeid from the content item and takes the accessor string
+   * in the metadata into account
+   *
+   * @param aItem - the content item to decode the type from
+   * @returns the resolved item
+   */
+  const getTypeIdFromContentItem = (
+    aItem: DeliveryContentItem
+  ): Observable<string> => {
+    // select the root type and the accessor
+    const typeId = typeFromContentExtractor(aItem);
+    const accessor = selectAccessor(aItem);
+    // special case for the root level type
+    return isEqual(accessor, KEY_ELEMENTS)
+      ? single(typeId)
+      : rxWchFromAuthoringTypeByAccessor(
+          accessor,
+          typeId,
+          typeFromGroupExtractor,
+          authoringType,
+          aScheduler
+        );
+  };
+
+  /**
    * Decodes the layout id from a type or provider
    *
    * @param aTypeId - the type ID
@@ -481,7 +513,7 @@ export function createMarkupRendererV2(
   ): Observable<string> =>
     rxPipe(
       getLayoutId(aTypeId, aLayoutMode, aProvider),
-      distinctUntilChanged(),
+      opDistinctUntilChanged,
       safeSwitchMap(layout),
       map(templateExtractor),
       log('getLayoutTemplate', aTypeId, aLayoutMode)
@@ -503,7 +535,7 @@ export function createMarkupRendererV2(
   ): Observable<MarkupTemplate> =>
     rxPipe(
       getLayoutTemplate(aTypeId, aLayoutMode, aProvider),
-      distinctUntilChanged(),
+      opDistinctUntilChanged,
       safeSwitchMap(markupTemplate)
     );
 
@@ -802,21 +834,24 @@ export function createMarkupRendererV2(
     } else {
       // select the content
       const content$ = deliveryContent(aID);
+      // select the type
+      const typeId$ = rxPipe(
+        content$,
+        switchMap(getTypeIdFromContentItem),
+        opDistinctUntilChanged,
+        opShareLast,
+        log('typeId')
+      );
       // get the compiled layout from the store
       const template$ = rxPipe(
-        content$,
-        switchMap((content) =>
-          getTemplate(typeFromContentExtractor(content), aLayoutMode, content)
+        combineLatest([content$, typeId$]),
+        switchMap(([content, typeId]) =>
+          getTemplate(typeId, aLayoutMode, content)
         ),
         opDistinctUntilChanged
       );
       // types
-      const typeInfo$ = rxPipe(
-        content$,
-        map(typeFromContentExtractor),
-        opDistinctUntilChanged,
-        switchMap(typeInfo)
-      );
+      const typeInfo$ = rxPipe(typeId$, switchMap(typeInfo));
       // build the rendering context
       const renderingContext$ = rxPipe(
         combinePair(typeInfo$, content$),

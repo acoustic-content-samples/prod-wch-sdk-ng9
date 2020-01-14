@@ -1,0 +1,52 @@
+{
+  "name": "sites-button-layout.hbs",
+  "description": "",
+  "id": "e5125825-69ef-4017-b933-14d2c9472de6",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-09-11T14:48:49.723Z",
+  "creator": "Adam.iem",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "digest": "33sxj8V0diMWKPcJieTNnA==",
+  "fileName": "sites-button-layout.hbs",
+  "fileSize": 502,
+  "isManaged": true,
+  "lastModified": "2019-09-13T14:02:32.209Z",
+  "lastModifier": "Adam.iem",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "links": {
+    "media": {
+      "href": "/authoring/v1/resources/4a32b9ac-97ae-475c-a14e-7a52cc4c8289.hbs"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/e5125825-69ef-4017-b933-14d2c9472de6/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/assets/e5125825-69ef-4017-b933-14d2c9472de6"
+    }
+  },
+  "mediaId": "175ab197-7a57-43c2-a8d9-598448be443e",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-button-layout.hbs",
+  "publishing": {
+    "status": "not-available"
+  },
+  "resource": "4a32b9ac-97ae-475c-a14e-7a52cc4c8289",
+  "status": "ready",
+  "systemModified": "2019-09-13T14:02:32.209Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-5ca7c0ab-a418-4c85-abd3-5fe380d2f8de"
+}

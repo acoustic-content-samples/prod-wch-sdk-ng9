@@ -16,6 +16,9 @@ import {
   ELEMENT_TYPE_TEXT,
   ELEMENT_TYPE_TOGGLE,
   ELEMENT_TYPE_VIDEO,
+  KEY_ELEMENT_TYPE,
+  KEY_VALUE,
+  KEY_VALUES,
   RenderingContext,
   RenderingContextInterceptor
 } from '@acoustic-content-sdk/api';
@@ -27,7 +30,6 @@ import {
   UnaryFunction
 } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-
 import { mapArray, reduceArray, UNDEFINED } from '../js/js.core';
 import { getProperty, pluckLength } from '../js/pluck';
 import { getPath, parsePath, pluckPath } from '../path/path';
@@ -56,9 +58,6 @@ import {
 export const KEY_PLACEHOLDER = '$$PLACEHOLDER';
 
 const _ELEMENTS = 'elements';
-const _VALUES = 'values';
-const _VALUE = 'value';
-const _ELEMENT_TYPE = 'elementType';
 
 /**
  * Function that extracts a value
@@ -108,7 +107,7 @@ const identityExtractor = identity;
  * @param aValue - */
 function valueValuesExtractor(aValue: any): any | any[] {
   let value;
-  return isArray((value = aValue[_VALUES])) ? value : aValue[_VALUE];
+  return isArray((value = aValue[KEY_VALUES])) ? value : aValue[KEY_VALUE];
 }
 
 /**
@@ -117,7 +116,7 @@ function valueValuesExtractor(aValue: any): any | any[] {
  * @param aValue - */
 function valuesExtractor(aValue: any): any | any[] {
   let value;
-  return isArray((value = aValue[_VALUES])) ? value : aValue;
+  return isArray((value = aValue[KEY_VALUES])) ? value : aValue;
 }
 
 /**
@@ -144,7 +143,7 @@ const categoryConverter = _parseCategories;
  * Converts a group element into a simpler structure
  */
 const groupReducer = (res, el, name) =>
-  objectAssign(name, (_EXTRACTORS[el[_ELEMENT_TYPE]] || identity)(el), res);
+  objectAssign(name, (_EXTRACTORS[el[KEY_ELEMENT_TYPE]] || identity)(el), res);
 const groupConverter = (aGroupElement: any): any =>
   reduceForIn(aGroupElement, groupReducer, {});
 
@@ -279,7 +278,7 @@ function _insertValuePlaceholder(
   aPlaceholder: AbstractElement
 ): AbstractElement {
   // set the placeholder if required
-  return isNil(aElement) || isNil(aElement[_VALUE])
+  return isNil(aElement) || isNil(aElement[KEY_VALUE])
     ? ({
         ...aElement,
         ...aPlaceholder,
@@ -348,9 +347,9 @@ function _insertValuesPlaceholder(
   aPlaceholder: AbstractElement
 ): AbstractElement {
   // the placeholder values
-  const plcValues = aPlaceholder[_VALUES];
+  const plcValues = aPlaceholder[KEY_VALUES];
   // check if we have a value
-  if (isNil(aElement) || isNil(aElement[_VALUES])) {
+  if (isNil(aElement) || isNil(aElement[KEY_VALUES])) {
     // assign the original array
     const res = {
       ...aElement,
@@ -368,12 +367,12 @@ function _insertValuesPlaceholder(
     const res = {
       ...aElement,
       ...aPlaceholder,
-      [_VALUES]: reduceArray(
-        aElement[_VALUES],
+      [KEY_VALUES]: reduceArray(
+        aElement[KEY_VALUES],
         (r, value) => _pushArray(plcValues, arrayPush(value, r)),
         [...plcValues]
       ),
-      [KEY_PLACEHOLDER]: aElement[_VALUES].reduce(
+      [KEY_PLACEHOLDER]: aElement[KEY_VALUES].reduce(
         (r, value, idx) => _pushArray(plcIdx, arrayPush(idx, r)),
         [...plcIdx]
       )
@@ -636,7 +635,7 @@ export function wchAddTypings(
   _assertHandlers();
   // iterate
   forIn(aRenderingContext[_ELEMENTS], (element, name) =>
-    (_LAZY_HANDLERS[element[_ELEMENT_TYPE]] || _ignoreElement)(
+    (_LAZY_HANDLERS[element[KEY_ELEMENT_TYPE]] || _ignoreElement)(
       name,
       element,
       aRenderingContext
@@ -653,7 +652,7 @@ function _addPlaceholderToElement(aElement: any, aType: AbstractElement): any {
   // initialize properly
   _assertHandlers();
   // access the type
-  const elementType = getProperty(aType, _ELEMENT_TYPE);
+  const elementType = getProperty(aType, KEY_ELEMENT_TYPE);
   // check the type
   const handler = _LAZY_PLACEHOLDER_HANDLERS[elementType];
   return isFunction(handler) && isNotNil(aType)
@@ -687,9 +686,9 @@ function _decodeExpression(aExpression: string): string {
       // extract the name
       switch (kind) {
         case HandlerKind.SINGLE_VALUE:
-          return `${_ELEMENTS}.${name}.${_VALUE}`;
+          return `${_ELEMENTS}.${name}.${KEY_VALUE}`;
         case HandlerKind.MULTI_VALUES:
-          return `${_ELEMENTS}.${name}.${_VALUES}`;
+          return `${_ELEMENTS}.${name}.${KEY_VALUES}`;
         case HandlerKind.SINGLE:
           return `${_ELEMENTS}.${name}`;
       }
@@ -786,9 +785,9 @@ function _getExpressionFromAccessor(
       // test the index signature
       if (isNotNil(index)) {
         // append
-        expression.push('.', key, '.', _VALUES, index);
+        expression.push('.', key, '.', KEY_VALUES, index);
       } else {
-        expression.push('.', key, '.', _VALUE);
+        expression.push('.', key, '.', KEY_VALUE);
       }
     }
     // ok
@@ -806,13 +805,21 @@ export interface RenderingContextInterceptors {
 // converts from a single rendering context to an array
 const opRcToRcs: OperatorFunction<RenderingContext, RenderingContext[]> = (
   onRc
-) => rxPipe(onRc, map((rc) => [rc]));
+) =>
+  rxPipe(
+    onRc,
+    map((rc) => [rc])
+  );
 
 // converts an array back to a single context
 const opRcsToRc: OperatorFunction<RenderingContext[], RenderingContext> = (
   onRcs
 ) =>
-  rxPipe(onRcs, filter((rcs) => rcs && rcs.length > 0), map((rcs) => rcs[0]));
+  rxPipe(
+    onRcs,
+    filter((rcs) => rcs && rcs.length > 0),
+    map((rcs) => rcs[0])
+  );
 
 const NOOP_INTERCEPTORS: RenderingContextInterceptors = {
   opRenderingContext: identity,
@@ -831,12 +838,12 @@ function _prepareRenderingContextInterceptors(
     return NOOP_INTERCEPTORS;
   }
   // result sets
-  const arrRenderingContext: Array<
-    MonoTypeOperatorFunction<RenderingContext>
-  > = [];
-  const arrRenderingContexts: Array<
-    MonoTypeOperatorFunction<RenderingContext[]>
-  > = [];
+  const arrRenderingContext: Array<MonoTypeOperatorFunction<
+    RenderingContext
+  >> = [];
+  const arrRenderingContexts: Array<MonoTypeOperatorFunction<
+    RenderingContext[]
+  >> = [];
   // handle
   forEach(aRenderingContextInterceptors, (ic) => {
     // extract
@@ -870,14 +877,14 @@ function _prepareRenderingContextInterceptors(
     }
   });
   // combine into single operators
-  const opRenderingContext: MonoTypeOperatorFunction<
-    RenderingContext
-  > = isNotEmpty(arrRenderingContext)
+  const opRenderingContext: MonoTypeOperatorFunction<RenderingContext> = isNotEmpty(
+    arrRenderingContext
+  )
     ? (opRc) => rxPipe(opRc, ...arrRenderingContext)
     : identity;
-  const opRenderingContexts: MonoTypeOperatorFunction<
-    RenderingContext[]
-  > = isNotEmpty(arrRenderingContexts)
+  const opRenderingContexts: MonoTypeOperatorFunction<RenderingContext[]> = isNotEmpty(
+    arrRenderingContexts
+  )
     ? (opRcs) => rxPipe(opRcs, ...arrRenderingContexts)
     : identity;
   // done
@@ -905,9 +912,9 @@ export function wchElementFromRenderingContext(
       // last elements might be value, values or an index
       const len = path.length;
       const p =
-        path[len - 1] === _VALUE || path[len - 1] === _VALUES
+        path[len - 1] === KEY_VALUE || path[len - 1] === KEY_VALUES
           ? path.slice(0, len - 1)
-          : path[len - 2] === _VALUES
+          : path[len - 2] === KEY_VALUES
           ? path.slice(0, len - 2)
           : path;
       // extract
@@ -939,7 +946,7 @@ function _selectAccessor(aAccessor: string): UnaryFunction<any, any> {
   const path = parsePath(aAccessor);
   // check if we need a fallback
   const len = path.length;
-  if (len > 0 && path[len - 1] === _VALUE) {
+  if (len > 0 && path[len - 1] === KEY_VALUE) {
     // remove the last segment
     const fallback = path.slice(0, -1);
     // implement the fallback logic
@@ -947,10 +954,10 @@ function _selectAccessor(aAccessor: string): UnaryFunction<any, any> {
       // base object
       const base = getPath<AbstractElement>(obj, fallback);
       // check if this is one of the strange types
-      const elementType = getProperty(base, _ELEMENT_TYPE);
+      const elementType = getProperty(base, KEY_ELEMENT_TYPE);
       return _INLINE_VALUES.indexOf(elementType) >= 0
         ? base
-        : getProperty(base as any, _VALUE);
+        : getProperty(base as any, KEY_VALUE);
     };
   }
   // default

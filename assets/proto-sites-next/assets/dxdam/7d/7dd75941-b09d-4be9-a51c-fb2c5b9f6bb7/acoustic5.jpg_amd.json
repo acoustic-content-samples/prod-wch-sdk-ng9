@@ -1,0 +1,77 @@
+{
+  "fileName": "acoustic5.jpg",
+  "metadata": {
+    "width": 150,
+    "height": 150
+  },
+  "creatorId": "d9498c1b-3001-4d47-8908-cee572af07a3",
+  "description": "",
+  "caption": "",
+  "mediaId": "a4607ece-c016-4820-9365-cbc1f47fed30",
+  "path": "/dxdam/7d/7dd75941-b09d-4be9-a51c-fb2c5b9f6bb7/acoustic5.jpg",
+  "digest": "3NwiQWoPgBC8R9uH3rHlsQ==",
+  "lastModifierId": "d9498c1b-3001-4d47-8908-cee572af07a3",
+  "renditions": {
+    "default": {
+      "id": "r=a26100ac-355e-408d-9d13-da0100133164&a=7dd75941-b09d-4be9-a51c-fb2c5b9f6bb7",
+      "source": "/authoring/v1/resources/a26100ac-355e-408d-9d13-da0100133164"
+    }
+  },
+  "id": "7dd75941-b09d-4be9-a51c-fb2c5b9f6bb7",
+  "usageRights": {
+    "categories": []
+  },
+  "systemModified": "2019-12-06T09:33:15.986Z",
+  "rev": "1-1e70789caad4b829c6351f3de8b36fc5",
+  "altText": "",
+  "resource": "a26100ac-355e-408d-9d13-da0100133164",
+  "created": "2019-12-06T09:33:08.052Z",
+  "mediaType": "image/jpeg",
+  "classification": "asset",
+  "assetType": "image",
+  "tags": {
+    "suggested": [
+      "classification:O ring",
+      "classification:fastener",
+      "classification:restraint (chains)",
+      "classification:gasket",
+      "classification:jade green color",
+      "classification:bottle green color"
+    ],
+    "declined": [],
+    "values": [
+      "classification:O ring",
+      "classification:fastener",
+      "classification:restraint (chains)",
+      "classification:gasket",
+      "classification:jade green color",
+      "classification:bottle green color"
+    ],
+    "analysis": "complete"
+  },
+  "isManaged": true,
+  "categoryIds": [],
+  "cognitive": {
+    "classifications": [
+      "O ring",
+      "fastener",
+      "restraint (chains)",
+      "gasket",
+      "jade green color",
+      "bottle green color"
+    ],
+    "colors": {
+      "lightMuted": "#b4dcdc",
+      "darkMuted": "#188070",
+      "lightVibrant": "#7cf4cc",
+      "vibrant": "#22f2aa",
+      "muted": "#089061",
+      "darkVibrant": "#20a792"
+    },
+    "status": "complete"
+  },
+  "fileSize": 6846,
+  "name": "acoustic5.jpg",
+  "lastModified": "2019-12-06T09:33:15.986Z",
+  "status": "ready"
+}

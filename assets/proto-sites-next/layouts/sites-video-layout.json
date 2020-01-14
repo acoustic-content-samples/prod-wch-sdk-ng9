@@ -1,0 +1,17 @@
+{
+  "name": "sitesVideoLayout",
+  "id": "sites-video-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-video-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-video-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_f38378d47d9bde0933d583333728c23a"
+  },
+  "urlTemplate": "{templateLocation}/sites-video-layout/{id}.html",
+  "rev": "0-fee552e0-87f3-40da-9ca2-22f5063b4797"
+}

@@ -1,21 +1,29 @@
 import {
   AuthoringPlaceholder,
   AuthoringType,
+  ELEMENT_TYPE_GROUP,
   ELEMENT_TYPE_TEXT,
   RenderingContext
 } from '@acoustic-content-sdk/api';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { readdir, readFile } from 'fs-extra';
+import { join } from 'path';
+import { from, identity, Observable, of } from 'rxjs';
+import { filter, first, map, mergeMap, tap } from 'rxjs/operators';
 
 import { UNDEFINED } from '../js/js.core';
 import { cloneDeep, deepEquals } from '../js/js.utils';
+import { jsonParse } from '../json/json.utils';
 import { isNotNil } from '../predicates/predicates';
+import { rxPipe } from '../rx/rx.utils';
+import { ASSET_DIR } from './../assets/assets';
 import {
   PlaceholderResolver,
+  rxWchFromAuthoringTypeByAccessor,
   wchInsertPlaceholders,
   wchPlaceholderFromAccessor,
   wchResolveType,
-  wchTypeFromAccessor
+  wchTypeFromAccessor,
+  isAuthoringGroupElement
 } from './placeholder';
 
 describe('placeholder', () => {
@@ -49,6 +57,46 @@ describe('placeholder', () => {
     of(ids.map((id) => TYPES[id]).filter(isNotNil));
 
   const typeInfo: AuthoringType = require('./auth.type.json');
+
+  function resolveType(aTypeId: string): Observable<AuthoringType> {
+    // root
+    const root = join(ASSET_DIR, '..', 'assets', 'proto-sites-next', 'types');
+    // iterate the types dir
+    return rxPipe(
+      from(readdir(root)),
+      mergeMap((dirs) => from(dirs)),
+      map((file) => join(root, file)),
+      filter((name) => name.endsWith('.json')),
+      mergeMap((name) => readFile(name, 'utf-8')),
+      map((name) => jsonParse<AuthoringType>(name)),
+      filter((type) => type.id === aTypeId),
+      first()
+    );
+  }
+
+  it('should resolve an authoring type', () => {
+    // our accessor
+    const accessor =
+      'elements.rows.values[2].cells.values[0].content.values[3].divider.value';
+    const typeId = '9ca02297-a564-40c9-aedc-add9c30f3d7b';
+    // type callback
+    const type$ = rxWchFromAuthoringTypeByAccessor(
+      accessor,
+      typeId,
+      identity,
+      resolveType
+    );
+
+    return rxPipe(
+      type$,
+      filter(isAuthoringGroupElement),
+      first(),
+      tap((type) => expect(type.elementType).toBe(ELEMENT_TYPE_GROUP)),
+      tap((type) =>
+        expect(type.typeRef.id).toBe('d550249a-83b2-4e46-96d1-519732fa5787')
+      )
+    ).toPromise();
+  });
 
   it('should return a non existing placeholder', () => {
     const ph = wchPlaceholderFromAccessor('elements.text.value', typeInfo);

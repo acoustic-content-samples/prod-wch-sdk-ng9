@@ -1,0 +1,17 @@
+{
+  "name": "sitesLineHeightLayout",
+  "id": "sites-line-height-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-line-height-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-line-height-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_d0e20da191627fdc2543780ab94c1640"
+  },
+  "urlTemplate": "{templateLocation}/sites-line-height-layout/{id}.html",
+  "rev": "0-1b218bd0-85bc-4cdf-84bd-902aefba73f6"
+}

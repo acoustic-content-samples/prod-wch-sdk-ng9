@@ -1,0 +1,27 @@
+{
+  "name": "sitesImageAndTextLayoutMapping",
+  "id": "sites-image-and-text-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesImageAndTextLayout",
+        "id": "sites-image-and-text-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesImageAndTextLayout",
+          "id": "sites-image-and-text-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Image And Text",
+    "id": "bee26b87-bbcf-454b-9dc6-7a909ab13fd1"
+  },
+  "rev": "0-dfec0f5f-aeca-406a-a40f-f5a70165c9a1"
+}

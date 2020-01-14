@@ -1,0 +1,52 @@
+{
+  "name": "sites-content-layout.hbs",
+  "description": "",
+  "id": "19940863-ad28-47a9-8698-06e62fee6730",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-09-11T14:48:50.384Z",
+  "creator": "Adam.iem",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "digest": "z7G5MXYjb8rLQq+OvbHaag==",
+  "fileName": "sites-content-layout.hbs",
+  "fileSize": 254,
+  "isManaged": true,
+  "lastModified": "2019-09-12T09:11:05.170Z",
+  "lastModifier": "Adam.iem",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "links": {
+    "media": {
+      "href": "/authoring/v1/resources/731863b2-cdc4-46c4-b160-98ce6745f36c.hbs"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/19940863-ad28-47a9-8698-06e62fee6730/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/assets/19940863-ad28-47a9-8698-06e62fee6730"
+    }
+  },
+  "mediaId": "8ab2aaff-f521-46c6-94b0-9bd13a504e9d",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-content-layout.hbs",
+  "publishing": {
+    "status": "not-available"
+  },
+  "resource": "731863b2-cdc4-46c4-b160-98ce6745f36c",
+  "status": "ready",
+  "systemModified": "2019-09-12T09:11:05.170Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-5e6cd01f-9de4-4ac6-a904-76ffef07d3a1"
+}

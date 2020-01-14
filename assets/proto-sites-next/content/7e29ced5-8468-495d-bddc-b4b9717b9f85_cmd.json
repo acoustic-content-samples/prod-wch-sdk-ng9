@@ -1,0 +1,191 @@
+{
+  "name": "Page Card",
+  "description": "",
+  "id": "7e29ced5-8468-495d-bddc-b4b9717b9f85",
+  "classification": "content",
+  "elements": {
+    "background": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      },
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+          },
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            },
+            "key": {
+              "elementType": "text"
+            }
+          }
+        },
+        "fillOptions": {
+          "elementType": "optionselection"
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "includeBackgroundImage": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "heading": {
+      "elementType": "text"
+    },
+    "image": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      },
+      "value": {
+        "alignment": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+          },
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection"
+            },
+            "key": {
+              "elementType": "text"
+            }
+          }
+        },
+        "commonSettings": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+          },
+          "value": {
+            "applyToAll": {
+              "elementType": "toggle",
+              "value": false
+            },
+            "hideOnMobile": {
+              "elementType": "toggle",
+              "value": false
+            },
+            "key": {
+              "elementType": "text"
+            }
+          }
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "margin": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "key": {
+              "elementType": "text"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        },
+        "padding": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "key": {
+              "elementType": "text"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        }
+      }
+    },
+    "key": {
+      "elementType": "text"
+    },
+    "layout": {
+      "elementType": "optionselection"
+    },
+    "link": {
+      "elementType": "link"
+    },
+    "margin": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "summary": {
+      "elementType": "text"
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-page-card-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "8eb34ed3-fbdf-439e-aaeb-00060cdeb63a",
+  "rev": "0-6b2bb174-c955-415c-8d33-6f8ca593ec13"
+}

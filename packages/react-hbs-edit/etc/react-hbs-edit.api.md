@@ -4,6 +4,7 @@
 
 ```ts
 
+import { KEY_LAYOUT_MODE } from '@acoustic-content-sdk/utils';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
@@ -16,6 +17,7 @@ export function createHandlebarsComponent(aStore: ReduxRootStore, aEditService: 
 // @public
 export interface HandlebarsComponentProps {
     contentItemId?: string;
+    [KEY_LAYOUT_MODE]?: string;
 }
 
 // @public

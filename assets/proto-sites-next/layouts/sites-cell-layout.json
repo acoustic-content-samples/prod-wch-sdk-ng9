@@ -1,0 +1,17 @@
+{
+  "name": "sitesCellLayout",
+  "id": "sites-cell-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-cell-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-cell-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_3f2bba24b631bf1402d50527878cd354"
+  },
+  "urlTemplate": "{templateLocation}/sites/{id}.html",
+  "rev": "0-f29aacd1-bc82-4550-8927-8408e74eb5f6"
+}

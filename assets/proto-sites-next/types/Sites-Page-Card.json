@@ -1,0 +1,94 @@
+{
+  "name": "Sites Page Card",
+  "description": "",
+  "id": "8eb34ed3-fbdf-439e-aaeb-00060cdeb63a",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "created": "2019-11-27T13:11:18.961Z",
+  "elements": [
+    {
+      "elementType": "text",
+      "key": "heading",
+      "label": "Heading"
+    },
+    {
+      "displayHeight": 2,
+      "displayType": "multiLine",
+      "elementType": "text",
+      "key": "summary",
+      "label": "summary"
+    },
+    {
+      "elementType": "link",
+      "key": "link",
+      "label": "link"
+    },
+    {
+      "elementType": "group",
+      "key": "image",
+      "label": "Image",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "background",
+      "label": "Background",
+      "typeRef": {
+        "name": "Sites Background",
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "optionselection",
+      "key": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Bottom",
+          "selection": "image-bottom"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "path": "/Sites-Page-Card.json",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-d8b060f8-59d7-49c0-981d-a8860a8ec362"
+}

@@ -17,4 +17,5 @@ export interface HandlebarsComponentProps
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [contentItemId](./react-hbs-edit.handlebarscomponentprops.contentitemid.md) | <code>string</code> | ID of the item to render |
+|  [layoutMode](./react-hbs-edit.handlebarscomponentprops.layoutmode.md) | <code>string</code> | Optional layout mode |
 

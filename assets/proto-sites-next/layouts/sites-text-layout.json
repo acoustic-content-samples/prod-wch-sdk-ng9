@@ -1,0 +1,17 @@
+{
+  "name": "sitesTextLayout",
+  "id": "sites-text-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-text-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-text-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_9dadde290dd3dfdd6b81d46854808bb8"
+  },
+  "urlTemplate": "{templateLocation}/sites/{id}.html",
+  "rev": "0-40ccef05-ab85-4afe-8c39-544b5ff6bd01"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "sites-rows-layout.hbs",
+  "description": "",
+  "id": "d88b3dbf-8e78-4036-a82d-23b7808390ce",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-09-11T14:48:58.097Z",
+  "creator": "Adam.iem",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "digest": "68LSgUJ+VkR/BOsEEpZtYw==",
+  "fileName": "sites-rows-layout.hbs",
+  "fileSize": 548,
+  "isManaged": true,
+  "lastModified": "2019-09-13T13:47:17.286Z",
+  "lastModifier": "Adam.iem",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "links": {
+    "media": {
+      "href": "/authoring/v1/resources/4cfa6547-2907-4464-9a15-ad8c8b689b09.hbs"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/d88b3dbf-8e78-4036-a82d-23b7808390ce/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/assets/d88b3dbf-8e78-4036-a82d-23b7808390ce"
+    }
+  },
+  "mediaId": "2442f82d-f420-4ef1-9223-1b49870170e2",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-rows-layout.hbs",
+  "publishing": {
+    "status": "not-available"
+  },
+  "resource": "4cfa6547-2907-4464-9a15-ad8c8b689b09",
+  "status": "ready",
+  "systemModified": "2019-09-13T13:47:17.286Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-aedf8f68-2e28-4c7e-8c31-d2a3de73e187"
+}

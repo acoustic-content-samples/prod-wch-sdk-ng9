@@ -1,0 +1,35 @@
+{
+  "name": "sites-page-card-layout.hbs",
+  "description": "",
+  "id": "bfe4412f-f6fc-4e6b-83c0-f34f2470ef81",
+  "classification": "asset",
+  "assetType": "file",
+  "categories": [],
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "created": "2019-11-27T13:28:46.135Z",
+  "creator": "Dieter Bühler",
+  "digest": "9+8e8q9QhLaBt3o5d6Gffg==",
+  "fileName": "sites-page-card-layout.hbs",
+  "fileSize": 93,
+  "isManaged": true,
+  "lastModified": "2019-11-27T13:28:46.139Z",
+  "mediaId": "83d0d64c-4353-4a8d-9393-e9e899d40d91",
+  "mediaType": "text/x-handlebars-template",
+  "metadata": {},
+  "path": "/dxdam/templates/sites-page-card-layout.hbs",
+  "resource": "50aa1dd3-3af9-463b-9b1e-64ba5b9dc33c",
+  "status": "ready",
+  "systemModified": "2019-11-27T13:28:46.139Z",
+  "tags": {
+    "analysis": "none",
+    "declined": [],
+    "values": []
+  },
+  "usageRights": {
+    "categories": []
+  },
+  "rev": "0-7d3dc0f5-d2e2-42c4-8ca9-e5a52c518cbf"
+}

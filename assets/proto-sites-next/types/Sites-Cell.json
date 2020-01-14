@@ -1,0 +1,68 @@
+{
+  "name": "Sites Cell",
+  "description": "",
+  "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "span",
+      "label": "Span",
+      "maximum": 6,
+      "minimum": 2,
+      "required": true
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "mdsize",
+      "label": "Grid size",
+      "maximum": 12,
+      "minimum": 1,
+      "required": false
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "label": "Padding",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "group",
+      "key": "content",
+      "label": "Content",
+      "required": false,
+      "typeRef": {
+        "name": "Sites Content",
+        "id": "21a8b4fd-0236-4187-bfea-7a94283e7b80"
+      }
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "embedded"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-4bfb7d20-2313-48ee-b3f3-6ada47ed20ad"
+}

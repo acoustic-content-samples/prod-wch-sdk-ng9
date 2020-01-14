@@ -1,0 +1,17 @@
+{
+  "name": "sitesCommonSettingsLayout",
+  "id": "sites-common-settings-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/dxdam/templates/sites-common-settings-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-common-settings-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_7ddecec5a7d9ce21db4966fe07698948"
+  },
+  "urlTemplate": "{templateLocation}/sites-common-settings-layout/{id}.html",
+  "rev": "0-3145bcbe-7a2b-4d5c-b368-8686e139c074"
+}

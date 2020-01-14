@@ -1,0 +1,27 @@
+{
+  "name": "sitesSocialFollowLayoutMapping",
+  "id": "sites-social-follow-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesSocialFollowLayout",
+        "id": "sites-social-follow-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesSocialFollowLayout",
+          "id": "sites-social-follow-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Social Follow",
+    "id": "669768ce-44c7-4de3-83c1-a72d871e8df2"
+  },
+  "rev": "0-9c34013d-a3ff-4bdf-a6bc-39ff46670304"
+}

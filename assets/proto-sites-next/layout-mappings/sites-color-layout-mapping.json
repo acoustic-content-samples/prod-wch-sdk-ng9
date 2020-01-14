@@ -1,0 +1,27 @@
+{
+  "name": "sitesColorLayoutMapping",
+  "id": "sites-color-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesColorLayout",
+        "id": "sites-color-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesColorLayout",
+          "id": "sites-color-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Color",
+    "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+  },
+  "rev": "0-da067eab-58cd-46f2-929c-0498ac038a81"
+}

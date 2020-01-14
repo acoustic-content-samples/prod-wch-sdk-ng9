@@ -1,0 +1,65 @@
+{
+  "name": "Site",
+  "description": "",
+  "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "logo",
+    "source": "imageElementOrType"
+  },
+  "elements": [
+    {
+      "allowMultipleValues": true,
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "key": "contributions",
+      "label": "Contributions",
+      "minimumValues": 0,
+      "restrictTypes": [
+        {
+          "name": "Page Contributions",
+          "id": "aab86460-0018-44c2-9f52-3a326e58f7f7"
+        }
+      ],
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "reference",
+      "key": "navigation",
+      "label": "Navigation",
+      "required": true,
+      "restrictTypes": [
+        {
+          "name": "Sites Navigation",
+          "id": "843fb991-7413-4517-bfcb-b59fc4b1f449"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "key": "title",
+      "label": "Title"
+    },
+    {
+      "elementType": "image",
+      "key": "logo",
+      "label": "Logo"
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone",
+    "site"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-17483f70-3aa8-4437-9ea6-ac463868fdc2"
+}
