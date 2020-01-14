@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { HandlebarsRendererComponent } from './renderer.component';
 
 /**
- * Module that exposes a resolver for handlebars components
+ * Module that exposes the react component used actually perform a handlebars based
+ * rendering.
  */
 @NgModule({
   imports: [CommonModule],

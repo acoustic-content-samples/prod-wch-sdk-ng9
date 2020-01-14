@@ -1,5 +1,11 @@
 /* Copyright IBM Corp. 2017 */
+
+/**
+ * Implementation of a logger service based on {@link https://www.npmjs.com/package/ng2-logger | ng2-logger}.
+ *
+ * @packageDocumentation
+ */
+
 export { WchNgLoggingModule } from './module';
-export { Ng2LoggerConfigService } from './services/config/wch.logger.config';
-export { Ng2LoggerFactory } from './services/logger.factory';
+export { Ng2LoggerConfig } from './services/config/wch.logger.config';
 export { VERSION } from './version';

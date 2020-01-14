@@ -3,15 +3,19 @@ import { Injectable } from '@angular/core';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
 
 /*
- * Exposes information
+ * Configuration for the logger
  */
 export interface Ng2LoggerConfig {
-  /*
+  /**
+   * Logging configuration for modules
+   *
    * @see https://github.com/darekf77/ng2-logger#specifying-onlymodules-as-regular-expressions
    */
   onlyModules?: ObservableOrT<string[]>;
 
-  /*
+  /**
+   * Logging configuration for levels
+   *
    * @see https://github.com/darekf77/ng2-logger#selective-debug---global-settings
    */
   onlyLevel?: ObservableOrT<string[]>;
