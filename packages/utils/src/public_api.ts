@@ -1,4 +1,13 @@
 /* Copyright IBM Corp. 2018 */
+
+/**
+ * This library contains a set of utility functions to help implementing applications of libraries against [Watson Content Hub](https://www.ibm.com/products/watson-content-hub).
+ *
+ * Some functions are very general purpose helper functions. We use them instead of 'lodash' to reduce size and improve speed.
+ *
+ * @packageDocumentation
+ */
+
 export { CacheAccessor, CacheCallback, createCache } from './cache/cache.utils';
 export { createLruCache } from './cache/lru.utils';
 export { rxCachedFunction } from './cache/rx.cache';

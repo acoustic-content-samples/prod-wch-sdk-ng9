@@ -93,7 +93,11 @@ function selectNestedDeliveryContent(
       ...itemMetadata
     };
     // returns the object
-    return { ...groupItem, [KEY_METADATA]: augMetadata };
+    return {
+      ...groupItem,
+      [KEY_METADATA]: augMetadata,
+      selectedLayouts: undefined
+    };
   }
   // returns the item as is
   return aItem;

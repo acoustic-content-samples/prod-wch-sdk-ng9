@@ -59,6 +59,7 @@ describe('placeholder', () => {
   const typeInfo: AuthoringType = require('./auth.type.json');
 
   function resolveType(aTypeId: string): Observable<AuthoringType> {
+    console.log('resolve type', aTypeId);
     // root
     const root = join(ASSET_DIR, '..', 'assets', 'proto-sites-next', 'types');
     // iterate the types dir

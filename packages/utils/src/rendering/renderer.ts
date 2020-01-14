@@ -144,6 +144,10 @@ const idExtractor = pluckPath<string>([KEY_METADATA, KEY_ID]);
 
 const typeFromContentExtractor = pluckPath<string>([KEY_METADATA, KEY_TYPE_ID]);
 const typeFromGroupExtractor = pluckPath<string>([KEY_TYPE_REF, KEY_TYPE_ID]);
+const typeFromAuthoringElementExtractor = pluckPath<string>([
+  KEY_TYPE_REF,
+  KEY_ID
+]);
 
 /**
  * Maps from string to the rendering context
@@ -461,7 +465,7 @@ export function createMarkupRendererV2(
       : rxWchFromAuthoringTypeByAccessor(
           accessor,
           typeId,
-          typeFromGroupExtractor,
+          typeFromAuthoringElementExtractor,
           authoringType,
           aScheduler
         );
