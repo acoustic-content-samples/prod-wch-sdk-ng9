@@ -22,6 +22,8 @@
   "module": "dist/fesm5/acoustic-content-sdk-redux-feature-auth-content.js",
   "typings": "dist/acoustic-content-sdk-redux-feature-auth-content.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
