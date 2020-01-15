@@ -1,3 +1,9 @@
+/**
+ * Redux based implementation of {@link https://reactjs.org/|React} providers
+ *
+ * @packageDocumentation
+ */
+
 export * from './redux-parent-frame/module/module';
 export * from './redux-source/module/auth.status.module';
 export * from './redux-source/module/content.module';

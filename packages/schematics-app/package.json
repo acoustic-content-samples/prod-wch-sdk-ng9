@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/app",
   "version": "9.0.0",
-  "description": "A schematics",
+  "description": "Angular schematics used to add application support for Acoustic Content.",
   "keywords": [
     "acoustic",
     "acoustic-content",

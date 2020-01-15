@@ -60,10 +60,10 @@ import {
 import { VERSION } from '../version';
 
 /**
- * Exposes the store as an observable
+ * Exposes the store as an {@link https://rxjs.dev/api/index/class/Observable|Observable}.
  *
  * @param aStore - the store
- * @returns the store as an observable
+ * @returns the store as an {@link https://rxjs.dev/api/index/class/Observable|Observable}
  */
 export function rxStore<S>(aStore: Store<S>): Observable<S> {
   return new Observable<S>((observer: Observer<S>) => {
@@ -84,7 +84,8 @@ export function rxStore<S>(aStore: Store<S>): Observable<S> {
 /**
  * Exposes a memoized selector function
  *
- * @param sel - the selector
+ * @param aSelector - the selector function
+ * @param aCmp - optional comparator used to tell if a value is identical
  *
  * @returns the memoized selector
  */
