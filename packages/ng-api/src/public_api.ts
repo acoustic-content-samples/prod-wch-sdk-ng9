@@ -1,3 +1,9 @@
+/**
+ * Collection of APIs and constants for the Angular SDK
+ *
+ * @packageDocumentation
+ */
+
 export * from './auth-status/auth.status';
 export * from './component/component.resolver';
 export * from './content/delivery.content.resolver';

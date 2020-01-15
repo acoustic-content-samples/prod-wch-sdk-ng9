@@ -26,6 +26,7 @@ export interface ComponentTypeRefResolver
 /**
  * A multi-provider token used for dependency injection of the {@link ComponentTypeRefResolver}s.
  *
+ * @example
  * ```typescript
  * providers: [
  *   {
