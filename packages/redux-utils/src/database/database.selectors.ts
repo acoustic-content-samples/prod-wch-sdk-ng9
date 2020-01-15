@@ -17,7 +17,7 @@ export function isNotFromDataBase(aValue: any): boolean {
  * Adds a key to the item marking it as coming from the local data base
  *
  * @param aValue - the value to work with
- * @return a value with the marker
+ * @returns a value with the marker
  */
 export function markAsFromDataBase<T>(aValue: T): T {
   // add the key
@@ -35,7 +35,7 @@ export function markAsFromDataBase<T>(aValue: T): T {
  * Removes the database marker from the object
  *
  * @param aValue - the value to work with
- * @return a value without the marker
+ * @returns a value without the marker
  */
 export function removeDataBaseMarker<T>(aValue: T): T {
   // add the key

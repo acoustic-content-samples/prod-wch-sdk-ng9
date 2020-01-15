@@ -1,3 +1,9 @@
+/**
+ * Implementation of a {@link https://redux.js.org/api/store|Redux} store with support for adding feature modules, dynamically.
+ *
+ * @packageDocumentation
+ */
+
 export {
   createIdentifier,
   createReduxFeatureModule,
@@ -21,3 +27,4 @@ export {
 export { ReduxRootState } from './store/root.state';
 export { ReduxRootStore, ReduxRootStoreDependencies } from './store/root.store';
 export { STORE_ID } from './store/store.id';
+export { VERSION } from './version';

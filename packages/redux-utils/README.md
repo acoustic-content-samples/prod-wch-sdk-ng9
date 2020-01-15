@@ -1,4 +1,4 @@
-# @acoustic-content-sdk/redux-utils
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/redux-utils.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/redux-utils)
 
 Implementation of utility functions that help working with redux state.
 
@@ -36,3 +36,7 @@ const inv = invarianceChecker(myObject);
 // validate that myObject has not been mutated
 assert(inv());
 ```
+
+## API Documentation
+
+[API Documentation](./markdown/redux-utils.md)

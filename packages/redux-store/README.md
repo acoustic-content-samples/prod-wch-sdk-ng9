@@ -1,4 +1,4 @@
-# @acoustic-content-sdk/redux-store
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/redux-store.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/redux-store)
 
 Implementation of a [Redux](https://redux.js.org/api/store) store with support for adding feature modules, dynamically.
 
@@ -12,7 +12,7 @@ Create and export an instance of `ReduxFeatureModule` for your module.
 import {
   ReduxFeatureModule,
   createReduxFeatureModule
-} from 'prod-publishing-redux-store';
+} from '@acoustic-content-sdk/redux-store';
 
 import { sampleEpic } from './feature.epics';
 import { sampleReducer } from './feature.reducer';
@@ -31,7 +31,7 @@ In some cases a feature module depends on the existence on other feature modules
 import {
   ReduxFeatureModule,
   createReduxFeatureModule
-} from 'prod-publishing-redux-store';
+} from '@acoustic-content-sdk/redux-store';
 
 import { sampleEpic } from './feature.epics';
 import { sampleReducer } from './feature.reducer';
@@ -52,7 +52,7 @@ Register the feature module with the root store using the `addFeatureModule` met
 ```typescript
 import {
   ReduxRootStore
-} from 'prod-publishing-redux-store';
+} from '@acoustic-content-sdk/redux-store';
 
 const store: ReduxRootStore = ...;
 
@@ -66,7 +66,7 @@ Use the `selectFeature` method to create a selector for the desired feature.
 ### Example
 
 ```typescript
-import { selectFeature } from 'prod-publishing-redux-store';
+import { selectFeature } from '@acoustic-content-sdk/redux-store';
 
 const selectSample = selectFeature(sampleFeature);
 ```
@@ -78,7 +78,7 @@ Feature modules may provide side effects ([Epics](https://redux-observable.js.or
 ### Example
 
 ```typescript
-import { ofInitFeature } from 'prod-publishing-redux-store';
+import { ofInitFeature } from '@acoustic-content-sdk/redux-store';
 
 const initEpic: Epic = (actions$) =>
   actions$.pipe(ofInitFeature(sampleFeature), map(...));
@@ -86,4 +86,4 @@ const initEpic: Epic = (actions$) =>
 
 ## API Documentation
 
-Refer to the [API documentation](./markdown/prod-publishing-redux-store.md).
+[API Documentation](./markdown/redux-store.md)

@@ -1,3 +1,9 @@
+/**
+ * Implementation of utility functions that help working with redux state.
+ *
+ * @packageDocumentation
+ */
+
 export { AuthoringItem } from './content/auth.clone';
 export * from './content/content.utils';
 export {
