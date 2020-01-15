@@ -227,8 +227,8 @@ function _invokeHooks(
  * a convenient way to register hooks in the constructor of a subclass without having to override any
  * method.
  *
- * The {@link onDestroy$} observable is especially useful, since it can be used as a termination signal for
- * automatic unsubscriptions via the {@link http://reactivex.io/documentation/operators/takeuntil.html} operation.
+ * The `onDestroy$` observable is especially useful, since it can be used as a termination signal for
+ * automatic unsubscriptions via the {@link http://reactivex.io/documentation/operators/takeuntil.html|takeUntil} operation.
  *
  * Note that hooks such as `onInit$` and `onDestroy$` only fire once. If you depend on such a hook in an observable
  * chain more than once make sure to share the emissions (typically via `shareReplay` )
@@ -245,56 +245,56 @@ export abstract class AbstractLifeCycleComponent
     AfterViewInit,
     AfterViewChecked {
   /**
-   * {@link AfterViewChecked}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterViewChecked}
    */
   ngAfterViewChecked(): void {
     _invokeHooks(HOOK_AFTERVIEWCHECKED, this, arguments);
   }
 
   /**
-   * {@link AfterViewInit}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterViewInit}
    */
   ngAfterViewInit(): void {
     _invokeHooks(HOOK_AFTERVIEWINIT, this, arguments);
   }
 
   /**
-   * {@link AfterContentChecked}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterContentChecked}
    */
   ngAfterContentChecked(): void {
     _invokeHooks(HOOK_AFTERCONTENTCHECKED, this, arguments);
   }
 
   /**
-   * {@link AfterContentInit}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterContentInit}
    */
   ngAfterContentInit(): void {
     _invokeHooks(HOOK_AFTERCONTENTINIT, this, arguments);
   }
 
   /**
-   * {@link DoCheck}
+   * {@link https://angular.io/guide/lifecycle-hooks|DoCheck}
    */
   ngDoCheck(): void {
     _invokeHooks(HOOK_DOCHECK, this, arguments);
   }
 
   /**
-   * {@link OnChanges}
+   * {@link https://angular.io/guide/lifecycle-hooks|OnChanges}
    */
   ngOnChanges(changes: SimpleChanges): void {
     _invokeHooks(HOOK_CHANGES, this, arguments);
   }
 
   /**
-   * {@link OnInit}
+   * {@linkhttps://angular.io/guide/lifecycle-hooks| OnInit}
    */
   ngOnInit(): void {
     _invokeHooks(HOOK_INIT, this, arguments);
   }
 
   /**
-   * {@link OnDestroy}
+   * {@link https://angular.io/guide/lifecycle-hooks|OnDestroy}
    */
   ngOnDestroy(): void {
     /**
@@ -305,7 +305,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link AfterViewChecked}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterViewChecked}
    * @returns the observable representation of this callback
    */
   protected get afterViewChecked$(): Observable<void> {
@@ -313,7 +313,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link AfterViewInit}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterViewInit}
    * @returns the observable representation of this callback
    */
   protected get afterViewInit$(): Observable<void> {
@@ -321,7 +321,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link AfterContentChecked}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterContentChecked}
    * @returns the observable representation of this callback
    */
   protected get afterContentChecked$(): Observable<void> {
@@ -329,7 +329,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link AfterContentInit}
+   * {@link https://angular.io/guide/lifecycle-hooks|AfterContentInit}
    * @returns the observable representation of this callback
    */
   protected get afterContentInit$(): Observable<void> {
@@ -337,7 +337,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link DoCheck}
+   * {@link https://angular.io/guide/lifecycle-hooks|DoCheck}
    * @returns the observable representation of this callback
    */
   protected get doCheck$(): Observable<void> {
@@ -345,7 +345,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link OnChanges}
+   * {@link https://angular.io/guide/lifecycle-hooks|OnChanges}
    * @returns the observable representation of this callback
    */
   protected get onChanges$(): Observable<SimpleChanges> {
@@ -353,7 +353,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link OnInit}
+   * {@link https://angular.io/guide/lifecycle-hooks|OnInit}
    * @returns the observable representation of this callback
    */
   protected get onInit$(): Observable<void> {
@@ -361,7 +361,7 @@ export abstract class AbstractLifeCycleComponent
   }
 
   /**
-   * {@link OnDestroy}
+   * {@link https://angular.io/guide/lifecycle-hooks|OnDestroy}
    * @returns the observable representation of this callback
    */
   protected get onDestroy$(): Observable<void> {

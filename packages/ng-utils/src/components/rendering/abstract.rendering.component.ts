@@ -75,7 +75,7 @@ const keyFromCtx = (
       keyFromMetaData(aIndex, getProperty(aCtx, KEY_METADATA));
 
 /**
- * Convenience base class for components that work with a {@link RenderingContextV2}.
+ * Convenience base class for components that work with a `RenderingContextV2`.
  */
 export abstract class AbstractRenderingComponent extends AbstractBaseComponent
   implements RenderingContextProviderV2 {
