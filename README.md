@@ -4,6 +4,8 @@ Implementation of general purpose components for use in the content editor, site
 
 This repo contains many modules that are inter-related. The idea is that each module represents a logical, self-contained component. Consumers can decide to only depend on a subset of the functionality by pulling in just the required set of modules, without having to worry to pull in too many, undesired dependencies.
 
+The major version number of the repo (and all of its components) follows the major version number of [Angular](https://angular.io/) and the related tooling. Minor version numbers follow the [semantic versioning](https://semver.org/) guidelines and the patch level is the build number assigned by the CI tooling.
+
 None of these modules contains end-user facing UI. The modules are meant to implement or facilitate implementing the business logic layer of an application, without making assumptions on the visual realization.
 
 If a module has a dependency on a particular UI framework such as [Angular](https://angular.io/) or [React](https://reactjs.org/) then we typically split the functionality out into multiple modules
@@ -58,7 +60,7 @@ In particular each module contains [typings](https://www.typescriptlang.org/docs
 
 ## Documentation
 
-Each module carries its own documentation as part of [JSDoc](https://api-extractor.com/pages/setup/generating_docs/) comments, so documentation is available in the IDE using the packages. Also the build process uses [api-documenter](https://www.npmjs.com/package/@microsoft/api-documenter) to generate an API overview as part of the `README` of each component. This documentation is available directly on the [npm](https://www.npmjs.com/) page for the individual component.
+Each module carries its own documentation as part of [JSDoc](https://api-extractor.com/pages/setup/generating_docs/) comments, so documentation is available in the IDE using the components. Also the build process uses [api-documenter](https://www.npmjs.com/package/@microsoft/api-documenter) to generate an API overview as part of the `README` of each component. This documentation is available directly on the [npm](https://www.npmjs.com/) page for the individual component.
 
 ## Dependencies
 
