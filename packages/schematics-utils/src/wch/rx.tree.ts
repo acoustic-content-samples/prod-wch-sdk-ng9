@@ -23,9 +23,9 @@ export type TransformCallback<T> =
  * Reads a text file from the tree and then transforms it using the given function. If the result
  * is null or undefined, the file will be deleted, else replaced or created.
  *
- * @param aName   name of the file
- * @param aOp     the operator
- * @param aTree   the tree to work in
+ * @param aName - name of the file
+ * @param aOp - the operator
+ * @param aTree - the tree to work in
  */
 export function rxTransformTextFile(
   aName: string,
@@ -56,9 +56,9 @@ export function rxTransformTextFile(
  * Reads a JSON file from the tree and then transforms it using the given function. If the result
  * is null or undefined, the file will be deleted, else replaced or created.
  *
- * @param aName   name of the file
- * @param aOp     the operator
- * @param aTree   the tree to work in
+ * @param aName - name of the file
+ * @param aOp - the operator
+ * @param aTree - the tree to work in
  */
 export function rxTransformJsonFile(
   aName: string,
@@ -83,9 +83,9 @@ export function rxTransformJsonFile(
  * Reads a line based file from the tree and then transforms it using the given function. If the result
  * is null or undefined, the file will be deleted, else replaced or created.
  *
- * @param aName   name of the file
- * @param aOp     the operator
- * @param aTree   the tree to work in
+ * @param aName - name of the file
+ * @param aOp - the operator
+ * @param aTree - the tree to work in
  */
 export function rxTransformLinesFile(
   aName: string,

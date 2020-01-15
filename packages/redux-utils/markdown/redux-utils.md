@@ -4,6 +4,8 @@
 
 ## redux-utils package
 
+Implementation of utility functions that help working with redux state.
+
 ## Functions
 
 |  Function | Description |

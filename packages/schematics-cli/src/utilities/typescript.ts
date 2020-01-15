@@ -11,7 +11,7 @@ import { rxWalkFiles } from './rx.dir';
 /**
  * Check if the file is a typescript file
  *
- * @param aFileEntry    the file entry
+ * @param aFileEntry - the file entry
  * @returns true if the entry is a typescript file
  */
 function isTypescriptFile(aFileEntry: FileEntry): boolean {

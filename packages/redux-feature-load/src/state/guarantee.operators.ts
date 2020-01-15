@@ -91,7 +91,7 @@ function filterNonExistent<T>(
  * Returns an operator that guarantees the existence of the resource by checking if the
  * resource should be loaded if it does not exist.
  *
- * @param aState$   the store
+ * @param aState$ - the store
  * @param aLoadAction - creator of the load action
  * @param aLogger - optional logger
  *

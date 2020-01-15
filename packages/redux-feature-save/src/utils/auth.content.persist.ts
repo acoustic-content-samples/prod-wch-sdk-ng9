@@ -475,7 +475,7 @@ function createPublishItem(
  * @param aItem
  * @param aLogger
  * @param aScheduler
- * @return emits a single value after the publish call completed
+ * @returns emits a single value after the publish call completed
  */
 function publishItem(
   aWriteText: WriteText,

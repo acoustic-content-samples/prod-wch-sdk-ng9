@@ -124,7 +124,7 @@ const selectEpic = pluckProperty<ReduxFeatureModule<any>, 'epic'>('epic');
  * Tests if the feature has a reducer
  *
  * @param aModule - the module to check
- * @return true if the module has a reducer
+ * @returns true if the module has a reducer
  */
 const hasReducer = (aModule: ReduxFeatureModule<any>): boolean =>
   isNotNil(selectReducer(aModule));
@@ -133,7 +133,7 @@ const hasReducer = (aModule: ReduxFeatureModule<any>): boolean =>
  * Tests if the feature has an epic
  *
  * @param aModule - the module to check
- * @return true if the module has an epic
+ * @returns true if the module has an epic
  */
 const hasEpic = (aModule: ReduxFeatureModule<any>): boolean =>
   isNotNil(selectEpic(aModule));

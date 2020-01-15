@@ -11,7 +11,7 @@ const reHasRegExpChar = RegExp(reRegExpChar.source);
  *
  * @since 3.0.0
  * @category String
- * @param {string} [string=''] The string to escape.
+ * @param {string} - [string=''] The string to escape.
  * @returns {string} Returns the escaped string.
  * @see escape, escapeRegExp, unescape
  * @example

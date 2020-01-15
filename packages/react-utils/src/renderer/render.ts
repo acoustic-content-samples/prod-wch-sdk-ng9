@@ -153,7 +153,7 @@ function addAttribute(
 /**
  * Executes the style transform
  *
- * @param aElement  the element
+ * @param aElement - the element
  * @returns the transform
  */
 function computeAttrToReact(aElement: Element): Record<string, string> {
@@ -360,7 +360,7 @@ function rxNodeToReactFormatted(
  * @param aNode - the node to convert
  * @param aCtx - the conversion context
  *
- * @return observable of the react node
+ * @returns observable of the react node
  */
 function rxNodeToReact(
   aNode: Node,

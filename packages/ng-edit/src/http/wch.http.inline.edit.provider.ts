@@ -37,10 +37,10 @@ const LOGGER = 'WchHttpInlineEditProviderV2';
 /**
  * Resolves a relative URL against a base URL
  *
- * @param base      the base URL
- * @param relative  the relative URL
+ * @param base - the base URL
+ * @param relative - the relative URL
  *
- * @return the result
+ * @returns the result
  */
 function _getAbsoluteUrl(base: string, relative: string): string {
   // remove everything after #
@@ -124,8 +124,8 @@ export function createWchHttpInlineEditProviderV2(
   /**
    * Loads a file
    *
-   * @param aRelUrl   the relative URL to resolve
-   * @return observable of the result
+   * @param aRelUrl - the relative URL to resolve
+   * @returns observable of the result
    */
   function _loadFile(aRelUrl: string): Promise<string> {
     // use the HTTP service to load the file
@@ -160,8 +160,8 @@ export function createWchHttpInlineEditProviderV2(
   /**
    * Basic require support for edit library
    *
-   * @param aModule   the module
-   * @return the value
+   * @param aModule - the module
+   * @returns the value
    */
   const moduleRequire: WchInlineEditRequireV2 = (aModule: string) => {
     // log the require call

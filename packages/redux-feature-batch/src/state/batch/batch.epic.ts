@@ -327,7 +327,7 @@ function prefixWithContent(aId: string): string {
  * Returns the values of a record as an array
  *
  * @param aData   - the record
- * @return the data array
+ * @returns the data array
  */
 function getValues<T>(aData: Record<any, T>): T[] {
   return reduceForIn(

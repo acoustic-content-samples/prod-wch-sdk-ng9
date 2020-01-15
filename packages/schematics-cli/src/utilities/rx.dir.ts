@@ -7,10 +7,10 @@ import { map } from 'rxjs/operators';
 /**
  * Locates the first directory that contains a certain file
  *
- * @param aSources  the list of source files to check
- * @param aRelPath  the relative path
+ * @param aSources - the list of source files to check
+ * @param aRelPath - the relative path
  *
- * @return the observable
+ * @returns the observable
  */
 export function rxFindDir(
   aSources: Observable<string[]>,

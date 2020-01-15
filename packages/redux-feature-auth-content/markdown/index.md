@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/redux-feature-auth-content](./redux-feature-auth-content.md) |  |
+|  [@acoustic-content-sdk/redux-feature-auth-content](./redux-feature-auth-content.md) | Implementation of a redux feature to manage authoring content. |
 

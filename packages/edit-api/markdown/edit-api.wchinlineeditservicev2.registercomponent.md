@@ -16,11 +16,13 @@ registerComponent(nativeElement: any, accessor: AccessorType, renderingContext$:
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  nativeElement | <code>any</code> |  |
-|  accessor | <code>AccessorType</code> |  |
-|  renderingContext$ | <code>Observable&lt;RenderingContextV2&gt;</code> |  |
+|  nativeElement | <code>any</code> | the DOM element to be edited |
+|  accessor | <code>AccessorType</code> | string identifying the member in the content item record to be edited. The value of 'null' means the the content item itself will be edited. |
+|  renderingContext$ | <code>Observable&lt;RenderingContextV2&gt;</code> | the rendering context associated with the edit operation. The same DOM element might represent multiple contexts over time |
 
 <b>Returns:</b>
 
 `Observable<EventTargetLike>`
+
+the observable representing the registration result. The observable exposes an event producer that a client can attach to to receive edit events. The registration will only take place when subscribing to the observable and it will end when unsubscribing.
 

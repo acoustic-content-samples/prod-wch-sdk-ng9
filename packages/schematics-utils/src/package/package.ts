@@ -22,9 +22,9 @@ export function getFolderForType(aType?: DEP_TYPE): string {
 /**
  * Updates the package JSON to use at least the given version
  *
- * @param aName     name
- * @param aMinVersion   min version
- * @param aPkg  package
+ * @param aName - name
+ * @param aMinVersion - min version
+ * @param aPkg - package
  */
 export function updateMinVersion(
   aName: string,

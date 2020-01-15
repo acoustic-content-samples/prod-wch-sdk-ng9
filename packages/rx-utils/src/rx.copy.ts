@@ -35,9 +35,9 @@ import {
 /**
  * Creates a single directory
  *
- * @param aPath     the path to create
+ * @param aPath - the path to create
  *
- * @return observable with the result
+ * @returns observable with the result
  */
 function _rxMkDir(aPath: string): Observable<string> {
   return Observable.create((observer: Observer<string>) => {
@@ -138,11 +138,11 @@ interface FileInfoWithStats extends FileInfo {
 /**
  * Copies one directory into the other and issues the names of the copied files
  *
- * @param aSrc  the source directory
- * @param aDst  the target directory
- * @param aOverride true if we want to override, else false
+ * @param aSrc - the source directory
+ * @param aDst - the target directory
+ * @param aOverride - true if we want to override, else false
  *
- * @return observable of the copied files
+ * @returns observable of the copied files
  */
 function _doCopyDir(
   aSrc: string,
@@ -212,10 +212,10 @@ function _doCopyDir(
 /**
  * Copies a set of source files to a destination directory
  *
- * @param aSources  the list of source files
- * @param aDst  the target directory
+ * @param aSources - the list of source files
+ * @param aDst - the target directory
  *
- * @return the list of copied filed
+ * @returns the list of copied filed
  */
 function _copyFiles(
   aSources: Observable<FileDescriptor>,
@@ -227,10 +227,10 @@ function _copyFiles(
   /**
    * Copies a single file from source to destination
    *
-   * @param aSrcFile  the source file
-   * @param aDstFile  the destination file
+   * @param aSrcFile - the source file
+   * @param aDstFile - the destination file
    *
-   * @return observable of the copy result
+   * @returns observable of the copy result
    */
   function _copyFile(aSrcFile: string, aDstFile: string): Observable<string> {
     // copy

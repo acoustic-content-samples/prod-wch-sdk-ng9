@@ -4,6 +4,8 @@
 
 ## redux-feature-auth-content package
 
+Implementation of a redux feature to manage authoring content.
+
 ## Interfaces
 
 |  Interface | Description |

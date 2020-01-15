@@ -977,10 +977,10 @@ function _createTypeHtmlContext(aClass: ComponentClass) {
 /**
  * Constructs the context to generate a layout sample
  *
- * @param aLayout   the layout
- * @param aMapping  the layout mapping
- * @param aType     the type
- * @param aTools    access to the tools
+ * @param aLayout - the layout
+ * @param aMapping - the layout mapping
+ * @param aType - the type
+ * @param aTools - access to the tools
  */
 function _createLayoutHtmlContext(aClass: LayoutClass, aOptions: Options) {
   // elements
@@ -1211,10 +1211,10 @@ function _createLayoutComponent(
 /**
  * Get all layouts for a particular layout mapping
  *
- * @param aMapping  the mapping
- * @param aTools    the tools
+ * @param aMapping - the mapping
+ * @param aTools - the tools
  *
- * @return the observable with the layouts
+ * @returns the observable with the layouts
  */
 function _getLayouts(
   aMapping: AuthoringLayoutMapping,
@@ -1641,8 +1641,8 @@ function _matches(aName: string, aMatcher: Predicate<string>): boolean {
 /**
  * Selects components by applying a matching function
  *
- * @param aMatcher  the matcher
- * @param aLogger   the logger
+ * @param aMatcher - the matcher
+ * @param aLogger - the logger
  */
 function _byMatcher(aMatcher: Predicate<string>): Predicate<AuthoringType> {
   // execute the check

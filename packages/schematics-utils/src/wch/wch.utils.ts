@@ -117,8 +117,8 @@ function _validateUser(aFeed: any): Observable<any> {
 /**
  * Tests if  the API URL is valid and if we have sufficient credentials to access the API
  *
- * @param aUrl  the API URL
- * @return the url
+ * @param aUrl - the API URL
+ * @returns the url
  */
 export function validateApiUrl(
   aUrl: string,
@@ -178,9 +178,9 @@ function _findBuildVersion(): Observable<string> {
 /**
  * Decode the version from the dependency
  *
- * @param aVersion  the version
+ * @param aVersion - the version
  *
- * @return observable of the version
+ * @returns observable of the version
  */
 function _fromDependency(aVersion: string): Observable<string> {
   const parsed = coerce(aVersion);

@@ -123,7 +123,7 @@ export function rxWriteFileDescriptor<T>(
  * @param aFile - the file to check
  * @param aRead  - the callback
  *
- * @return true if the file exists, else false
+ * @returns true if the file exists, else false
  */
 export const rxExists = (
   aFile: string,

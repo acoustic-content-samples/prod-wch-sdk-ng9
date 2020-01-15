@@ -92,10 +92,10 @@ const selectLocale = pluckPath<Locale>([KEY_METADATA, 'locale']);
 /**
  * Assigns the text to a value
  *
- * @param aProp the property to assign
- * @param aLocalizedText the actual text
- * @param aElement the native element
- * @param aRenderer render used to assign the text
+ * @param aProp - the property to assign
+ * @param aLocalizedText - the actual text
+ * @param aElement - the native element
+ * @param aRenderer - render used to assign the text
  */
 function _setText(
   aProp: TEXT_PROPERTY,
@@ -120,10 +120,10 @@ function _setText(
 /**
  * Binds the element ref and the renderer
  *
- * @param aElement the eleemnt reference
- * @param aRenderer the renderer
+ * @param aElement - the eleemnt reference
+ * @param aRenderer - the renderer
  *
- * @return function that only takes the property name and the
+ * @returns function that only takes the property name and the
  */
 const _textSetter: (
   aElement: ElementRef,

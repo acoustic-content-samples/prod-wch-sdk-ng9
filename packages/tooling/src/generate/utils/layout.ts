@@ -89,7 +89,7 @@ function getLayoutTemplate(): Observable<string> {
  * Returns the thumbnail for the layout
  *
  * @param aLayout - the layout to create the thumbnail for
- * @return the thumbnail resource
+ * @returns the thumbnail resource
  */
 function createLayoutThumb(
   aLayout: AuthoringLayoutItem,
@@ -114,7 +114,7 @@ function createLayoutThumb(
  * Returns the thumbnail for the layout
  *
  * @param aLayout - the layout to create the thumbnail for
- * @return the thumbnail resource
+ * @returns the thumbnail resource
  */
 function createLayoutTemplate(
   aLayout: AuthoringLayoutItem,

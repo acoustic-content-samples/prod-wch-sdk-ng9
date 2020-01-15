@@ -71,8 +71,8 @@ function _extractEntry(
 /**
  * Opens a ZIP file and communicates the entries
  *
- * @param aZipFile  the zip file
- * @return stream of entries in that file
+ * @param aZipFile - the zip file
+ * @returns stream of entries in that file
  */
 function _rxOpenZip(aZipFile: string): Observable<ZipEntry> {
   return Observable.create((aObserver: Observer<ZipEntry>) => {

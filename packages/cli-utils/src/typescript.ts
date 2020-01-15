@@ -11,7 +11,7 @@ import { createSourceFile, ScriptTarget, SourceFile } from 'typescript';
 /**
  * Check if the file is a typescript file
  *
- * @param aFileEntry    the file entry
+ * @param aFileEntry - the file entry
  * @returns true if the entry is a typescript file
  */
 function isTypescriptFile(aFileEntry: FileDescriptor): boolean {

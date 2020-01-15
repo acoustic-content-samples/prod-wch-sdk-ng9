@@ -4,7 +4,7 @@
 
 ## ng-app-edit package
 
-Module that contains a default configuration to run an \[Angular\](https://angular.io/) application against \[Acoustic Content\](https://www.ibm.com/products/watson-content-hub) in edit mode.
+Module that contains a default configuration to run an [Angular](https://angular.io/) application against [Acoustic Content](https://www.ibm.com/products/watson-content-hub) in edit mode.
 
 ## Classes
 

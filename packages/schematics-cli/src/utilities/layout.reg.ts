@@ -198,12 +198,12 @@ function _getLayoutTemplate(aLayout: AuthoringLayout): string {
 /**
  * Constructs the relevant information for a components class
  *
- * @param aDir      base directory
- * @param aType     type object
- * @param aOptions  options
- * @param aLogger   logger
+ * @param aDir - base directory
+ * @param aType - type object
+ * @param aOptions - options
+ * @param aLogger - logger
  *
- * @return the component object
+ * @returns the component object
  */
 function _initLayoutClass(
   aDir: Path,
@@ -282,10 +282,10 @@ interface LayoutMap {
  * each potential source directory for an existing component file. If non exists, uses the
  * first source directory
  *
- * @param aType        type
- * @param aSources     sources directory
+ * @param aType - type
+ * @param aSources - sources directory
  *
- * @return the selected source directory
+ * @returns the selected source directory
  */
 function _getLayoutsDir(
   aLayout: AuthoringLayout,

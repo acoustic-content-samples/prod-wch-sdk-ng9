@@ -65,11 +65,11 @@ export const phParseExpression = partialSecond(
 /**
  * Decode the default placeholder
  *
- * @param aDefault the text or the localized context for the placeholder
- * @param aEscaper the escape function
- * @param aDefaultLocale the default locale,
+ * @param aDefault - the text or the localized context for the placeholder
+ * @param aEscaper - the escape function
+ * @param aDefaultLocale - the default locale,
  *
- * @return the result
+ * @returns the result
  */
 function _phGetStaticDefault(
   aDefault: string | LocalizedText,
@@ -86,10 +86,10 @@ function _phGetStaticDefault(
 /**
  * Decode the default placeholder
  *
- * @param aDefault the text or the localized context for the placeholder
- * @param aEscaper the escape function
- * @param aDefaultLocale the default locale
- * @return the result
+ * @param aDefault - the text or the localized context for the placeholder
+ * @param aEscaper - the escape function
+ * @param aDefaultLocale - the default locale
+ * @returns the result
  */
 function _phGetDefault(
   aDefault: WchDefaultPlaceholderText,
@@ -107,12 +107,12 @@ function _phGetDefault(
  * Returns the localized text for a placeholder, either from the authoring value
  * or from a fallback.
  *
- * @param aPlaceholder the authoring placeholder
- * @param aDefault the default fallback
- * @param aEscaper the escape function
- * @param aDefaultLocale the default locale
+ * @param aPlaceholder - the authoring placeholder
+ * @param aDefault - the default fallback
+ * @param aEscaper - the escape function
+ * @param aDefaultLocale - the default locale
  *
- * @return the resulting localized text
+ * @returns the resulting localized text
  */
 function _phGetLocalizedText(
   aPlaceholder: AuthoringPlaceholder,
@@ -147,8 +147,8 @@ function _phGetLocalizedText(
 /**
  * Our string conversion
  *
- * @param aValue  the value to convert
- * @return the converted value
+ * @param aValue - the value to convert
+ * @returns the converted value
  */
 const _anyToString = (aValue) =>
   isNotNil(aValue) ? aValue.toString() : UNDEFINED;
@@ -156,8 +156,8 @@ const _anyToString = (aValue) =>
 /**
  * Tests if we want to display a placeholder
  *
- * @param aPlc the placeholder
- * @return true if we want to show the placeholder, else false
+ * @param aPlc - the placeholder
+ * @returns true if we want to show the placeholder, else false
  */
 function _showPlaceholder(aPlc?: AuthoringPlaceholder): boolean {
   /**
@@ -170,11 +170,11 @@ function _showPlaceholder(aPlc?: AuthoringPlaceholder): boolean {
 /**
  * Tests if we should show a placeholder
  *
- * @param aData   the actual data
- * @param aType  the element type
- * @param aPlaceholder  the placeholder
+ * @param aData - the actual data
+ * @param aType - the element type
+ * @param aPlaceholder - the placeholder
  *
- * @return true to show the placeholder else false
+ * @returns true to show the placeholder else false
  */
 export function phShowPlaceholder(
   aData: Observable<any>,
@@ -194,14 +194,14 @@ export function phShowPlaceholder(
 /**
  * Extract text placeholder using an escaping
  *
- * @param aEscaper the escape function
- * @param aLocale the locale
- * @param aData the data
- * @param aPlaceholder  the placeholder
- * @param aDefault the default placeholder
- * @param aDefaultLocale the default locale
+ * @param aEscaper - the escape function
+ * @param aLocale - the locale
+ * @param aData - the data
+ * @param aPlaceholder - the placeholder
+ * @param aDefault - the default placeholder
+ * @param aDefaultLocale - the default locale
  *
- * @return the resulting text
+ * @returns the resulting text
  */
 function _phEscapedText(
   aEscaper: UnaryFunction<string, string>,
@@ -235,11 +235,11 @@ function _phEscapedText(
 /**
  * Returns a localized text item for a placeholder
  *
- * @param aPlaceholder  the placeholder
- * @param aDefault  default placeholder
- * @param aDefaultLocale  the default locale
+ * @param aPlaceholder - the placeholder
+ * @param aDefault - default placeholder
+ * @param aDefaultLocale - the default locale
  *
- * @return the localized text
+ * @returns the localized text
  */
 export const phPlaceholderText = (
   aPlaceholder: AuthoringPlaceholder,
@@ -251,11 +251,11 @@ export const phPlaceholderText = (
 /**
  * Plain text
  *
- * @param aLocale the locale
- * @param aData the data
- * @param aPlaceholder  the placeholder
+ * @param aLocale - the locale
+ * @param aData - the data
+ * @param aPlaceholder - the placeholder
  *
- * @return the resulting plain text
+ * @returns the resulting plain text
  */
 export const phPlainText: (
   aLocale: Observable<Locale>,
@@ -282,11 +282,11 @@ export const phPlainText: (
 /**
  * Formatted text
  *
- * @param aLocale the locale
- * @param aData the data
- * @param aPlaceholder  the placeholder
+ * @param aLocale - the locale
+ * @param aData - the data
+ * @param aPlaceholder - the placeholder
  *
- * @return the resulting formatted text
+ * @returns the resulting formatted text
  */
 export const phFormattedText: (
   aLocale: Observable<Locale>,
@@ -313,10 +313,10 @@ export const phFormattedText: (
 /**
  * Returns a placeholder from an accessor expression and the type
  *
- * @param onAcc the accessor expression
- * @param onType the type
+ * @param onAcc - the accessor expression
+ * @param onType - the type
  *
- * @return the placeholder
+ * @returns the placeholder
  */
 export const phPlaceholderFromAccessor: BiFunction<
   Observable<AccessorType>,
@@ -332,10 +332,10 @@ export const phPlaceholderFromAccessor: BiFunction<
 /**
  * Returns the element type from an accessor expression and the type
  *
- * @param onAcc the accessor expression
- * @param onType the type
+ * @param onAcc - the accessor expression
+ * @param onType - the type
  *
- * @return the element type
+ * @returns the element type
  */
 export const phTypeFromAccessor: BiFunction<
   Observable<AccessorType>,
@@ -349,8 +349,8 @@ export const phTypeFromAccessor: BiFunction<
   );
 
 /**
- * @param aElementType the element type
- * @return the format value
+ * @param aElementType - the element type
+ * @returns the format value
  */
 function _formatFromType(aElementType: string): WchEditableFormat {
   // map from the element type to a data type
@@ -364,10 +364,10 @@ function _formatFromType(aElementType: string): WchEditableFormat {
 /**
  * Decodes the format based on the format input and a potential placeholder
  *
- * @param onFmt the format string
- * @param onPlc the placeholder string
+ * @param onFmt - the format string
+ * @param onPlc - the placeholder string
  *
- * @return the format
+ * @returns the format
  */
 export const phFormat: (
   onFmt: Observable<WchEditableFormat>,
@@ -386,8 +386,8 @@ export const phFormat: (
 /**
  * Constructs a default text in case placeholders are missing
  *
- * @param aDefaultLocale  the locale
- * @return the placeholder
+ * @param aDefaultLocale - the locale
+ * @returns the placeholder
  */
 function _missingPlaceholderText(
   aDefaultLocale: string

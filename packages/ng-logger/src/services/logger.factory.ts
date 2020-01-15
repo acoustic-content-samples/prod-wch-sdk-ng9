@@ -38,8 +38,8 @@ declare type NameValuePairs = Record<string, string[]>;
 /**
  * Enable logging levels
  *
- * @param aLevels   the levels
- * @param aModules  the modules
+ * @param aLevels - the levels
+ * @param aModules - the modules
  */
 const _enableLevels = (aLevels: string[], aModules: string[]) => {
   // tests
@@ -65,8 +65,8 @@ const _enableLevels = (aLevels: string[], aModules: string[]) => {
 /**
  * Safely parses a string
  *
- * @param aValue the value
- * @return the string array
+ * @param aValue - the value
+ * @returns the string array
  */
 const _parseStringToStringArray = (aValue?: string): string[] | undefined => {
   // try to parse the value
@@ -145,8 +145,8 @@ function _getConfig(aConfig: NameValuePairs): NameValuePairs {
 /**
  * Returns the logger config by periodically checking for the actual configuration
  *
- * @param aTimeout  the poll timeout
- * @return the config
+ * @param aTimeout - the poll timeout
+ * @returns the config
  */
 function _defaultNg2LoggerConfig(aTimeout: number): Ng2LoggerConfig {
   // the trigger

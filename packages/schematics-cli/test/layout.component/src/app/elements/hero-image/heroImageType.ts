@@ -74,7 +74,7 @@ export interface MultiHeroImageElement extends HeroImageElement {
 /**
  * Tests if the value is of type HeroImageElement
  *
- * @param aValue the value to test
+ * @param aValue - the value to test
  * @returns true if the value is of type HeroImageElement else false
 */
 export function isHeroImage(aValue: any): aValue is HeroImage {
@@ -88,7 +88,7 @@ export function isHeroImage(aValue: any): aValue is HeroImage {
 /**
  * Tests if the value is of type SingleHeroImageElement
  *
- * @param aValue the value to test
+ * @param aValue - the value to test
  * @returns true if the value if of type SingleHeroImageElement else false
 */
 export function isSingleHeroImageElement(aValue: any, bOptional?: boolean): aValue is SingleHeroImageElement {
@@ -98,7 +98,7 @@ export function isSingleHeroImageElement(aValue: any, bOptional?: boolean): aVal
 /**
  * Tests if the value is of type MultiHeroImageElement
  *
- * @param aValue the value to test
+ * @param aValue - the value to test
  * @returns true if the value if of type MultiHeroImageElement else false
 */
 export function isMultiHeroImageElement(aValue: any, bOptional?: boolean): aValue is MultiHeroImageElement {

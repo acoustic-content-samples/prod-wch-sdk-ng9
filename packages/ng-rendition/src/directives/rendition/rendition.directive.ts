@@ -70,10 +70,10 @@ const mathRound = Math.round;
 /**
  * Compares two dimension objects
  *
- * @param aLeft   left object
- * @param aRight  right object
+ * @param aLeft - left object
+ * @param aRight - right object
  *
- * @return true if the dimensions match, else false
+ * @returns true if the dimensions match, else false
  */
 function _equalDimension(aLeft: Dimension, aRight: Dimension): boolean {
   return aLeft === aRight || (aLeft.w === aRight.w && aLeft.h === aRight.h);
@@ -82,8 +82,8 @@ function _equalDimension(aLeft: Dimension, aRight: Dimension): boolean {
 /**
  * Tests if a URL is a valid, relative URL string
  *
- * @param aValue  any value
- * @return true if the string is a URL, else false
+ * @param aValue - any value
+ * @returns true if the string is a URL, else false
  */
 function _isRelativeURL(aValue: any): aValue is string {
   return isString(aValue) && isNotEmpty(aValue) && !isAbsoluteURL(aValue);
@@ -92,10 +92,10 @@ function _isRelativeURL(aValue: any): aValue is string {
 /**
  * Compares two scaled image objects
  *
- * @param aLeft   left object
- * @param aRight  right object
+ * @param aLeft - left object
+ * @param aRight - right object
  *
- * @return true if the scaled images match, else false
+ * @returns true if the scaled images match, else false
  */
 function _equalScaledImage(aLeft: ScaledImage, aRight: ScaledImage): boolean {
   return (
@@ -109,8 +109,8 @@ function _equalScaledImage(aLeft: ScaledImage, aRight: ScaledImage): boolean {
 /**
  * Constructs the dimensions object based on an array
  *
- * @param aArray  the array
- * @return the dimensions object
+ * @param aArray - the array
+ * @returns the dimensions object
  */
 function _dimensionFromArray(aArray: number[]): Dimension {
   return createDimension(aArray[0], aArray[1]);
@@ -119,9 +119,9 @@ function _dimensionFromArray(aArray: number[]): Dimension {
 /**
  * Returns the measured dimension of an item
  *
- * @param aElement  the element to measure
- * @param aRenderer   the rendered used to access the parent
- * @return the dimension
+ * @param aElement - the element to measure
+ * @param aRenderer - the rendered used to access the parent
+ * @returns the dimension
  */
 function _getMeasuredDimension(
   aElement: HTMLImageElement,

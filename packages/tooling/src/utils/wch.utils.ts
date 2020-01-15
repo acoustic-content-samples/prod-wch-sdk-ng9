@@ -45,9 +45,9 @@ function _rxFindBuildVersion(aReadFile: ReadTextFile): Observable<string> {
 /**
  * Decode the version from the dependency
  *
- * @param aVersion  the version
+ * @param aVersion - the version
  *
- * @return observable of the version
+ * @returns observable of the version
  */
 function _rxFromDependency(
   aVersion: string,

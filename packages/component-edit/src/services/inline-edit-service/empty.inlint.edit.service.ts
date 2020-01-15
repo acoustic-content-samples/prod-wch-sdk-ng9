@@ -29,9 +29,9 @@ const fromEvent: <T>() => Observable<T> = constGenerator(EMPTY);
 /**
  * Registers a dummy component
  *
- * @param nativeElement the native element
- * @param accessor  the accesor
- * @param onRenderingContext    rendering context
+ * @param nativeElement - the native element
+ * @param accessor - the accesor
+ * @param onRenderingContext - rendering context
  */
 const registerComponent = constGenerator(of(EMPTY_REGISTRATION));
 

@@ -56,10 +56,10 @@ const LOGGER = 'AbstractWchInlineEditService';
 /**
  * Constructs the event
  *
- * @param type     the event type
- * @param data     the event data
+ * @param type - the event type
+ * @param data - the event data
  *
- * @return the event object
+ * @returns the event object
  */
 const createWchInlineEditEvent = (
   type: string,
@@ -72,10 +72,10 @@ const createWchInlineEditEvent = (
 /**
  * Registers for an event
  *
- * @param aType         the event type
- * @param aEmitter      the event emitter
+ * @param aType - the event type
+ * @param aEmitter - the event emitter
  *
- * @return the sequence of events
+ * @returns the sequence of events
  */
 function registerForEvent(
   aType: string,
@@ -97,12 +97,12 @@ function registerForEvent(
 /**
  * Constructs the registration for a native element
  *
- * @param aRegisterMethod       registration callback method
- * @param nativeElement         the native element
- * @param accessor              accessor string
- * @param renderingContext$    rendering context
+ * @param aRegisterMethod - registration callback method
+ * @param nativeElement - the native element
+ * @param accessor - accessor string
+ * @param renderingContext$ - rendering context
  *
- * @return observable of the registration result in form of an event emitter
+ * @returns observable of the registration result in form of an event emitter
  */
 function createRegistration(
   aRegisterMethod: WchInlineEditRegistrationV2,
@@ -233,11 +233,11 @@ export class AbstractWchInlineEditService
     /**
      * Our actual callback
      *
-     * @param nativeElement         the native element to attach to
-     * @param accessor              the accessor
-     * @param renderingContext$    our rendering context
+     * @param nativeElement - the native element to attach to
+     * @param accessor - the accessor
+     * @param renderingContext$ - our rendering context
      *
-     * @return observable of the event producer
+     * @returns observable of the event producer
      */
     function internalRegisterComponent(
       nativeElement: any,
@@ -278,7 +278,7 @@ export class AbstractWchInlineEditService
     /**
      * Registers an event with the library
      *
-     * @param aName name of the event
+     * @param aName - name of the event
      */
     function internalFromEvent<T>(aName: string): Observable<T> {
       // attach to the event from the original source

@@ -12,11 +12,11 @@ import { catchError, map, tap } from 'rxjs/operators';
 /**
  * Constructs the event
  *
- * @param aType     the event type
- * @param aTarget   the target node
- * @param aData     the event data
+ * @param aType - the event type
+ * @param aTarget - the target node
+ * @param aData - the event data
  *
- * @return the event object
+ * @returns the event object
  */
 function _createWchEditableEvent(
   aType: string,
@@ -35,11 +35,11 @@ function _createWchEditableEvent(
  *
  * Registers for an event
  *
- * @param aType         the event type
- * @param aTarget       the current element
- * @param aEmitter      the event emitter
+ * @param aType - the event type
+ * @param aTarget - the current element
+ * @param aEmitter - the event emitter
  *
- * @return the sequence of events
+ * @returns the sequence of events
  */
 function _registerForEvent(
   aType: string,
@@ -62,10 +62,10 @@ function _registerForEvent(
 /**
  * Construct the event stream
  *
- * @param aTarget  the target element
- * @param aEmitter the event emitter
+ * @param aTarget - the target element
+ * @param aEmitter - the event emitter
  *
- * @return the event stream
+ * @returns the event stream
  */
 export function createWchEditableEvents(
   aTarget: HTMLElement,

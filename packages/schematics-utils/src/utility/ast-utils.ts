@@ -12,11 +12,11 @@ import { Change, InsertChange, NoopChange } from './change';
 /**
  * Add Import `import { symbolName } from fileName` if the import doesn't exit
  * already. Assumes fileToEdit can be resolved and accessed.
- * @param fileToEdit (file we want to add import to)
- * @param symbolName (item to import)
- * @param fileName (path to the file)
- * @param isDefault (if true, import follows style for importing default exports)
- * @return Change
+ * @param fileToEdit - (file we want to add import to)
+ * @param symbolName - (item to import)
+ * @param fileName - (path to the file)
+ * @param isDefault - (if true, import follows style for importing default exports)
+ * @returns Change
  */
 export function insertImport(source: ts.SourceFile, fileToEdit: string, symbolName: string,
                              fileName: string, isDefault = false): Change {
@@ -92,8 +92,8 @@ export function insertImport(source: ts.SourceFile, fileToEdit: string, symbolNa
  * Find all nodes from the AST in the subtree of node of SyntaxKind kind.
  * @param node
  * @param kind
- * @param max The maximum number of items to return.
- * @return all nodes of kind, or [] if none is found
+ * @param max - The maximum number of items to return.
+ * @returns all nodes of kind, or [] if none is found
  */
 export function findNodes(node: ts.Node, kind: ts.SyntaxKind, max = Infinity): ts.Node[] {
   if (!node || max == 0) {
@@ -126,7 +126,7 @@ export function findNodes(node: ts.Node, kind: ts.SyntaxKind, max = Infinity): t
 
 /**
  * Get all the nodes from a source.
- * @param sourceFile The source file object.
+ * @param sourceFile - The source file object.
  * @returns An observable of all the nodes in the source.
  */
 export function getSourceNodes(sourceFile: ts.SourceFile): ts.Node[] {
@@ -164,7 +164,7 @@ export function findNode(node: ts.Node, kind: ts.SyntaxKind, text: string): ts.N
 
 /**
  * Helper for sorting nodes.
- * @return function to sort nodes in increasing order of position in sourceFile
+ * @returns function to sort nodes in increasing order of position in sourceFile
  */
 function nodesByPosition(first: ts.Node, second: ts.Node): number {
   return first.getStart() - second.getStart();
@@ -176,12 +176,12 @@ function nodesByPosition(first: ts.Node, second: ts.Node): number {
  * or after the last of occurence of `syntaxKind` if the last occurence is a sub child
  * of ts.SyntaxKind[nodes[i].kind] and save the changes in file.
  *
- * @param nodes insert after the last occurence of nodes
- * @param toInsert string to insert
- * @param file file to insert changes into
- * @param fallbackPos position to insert if toInsert happens to be the first occurence
- * @param syntaxKind the ts.SyntaxKind of the subchildren to insert after
- * @return Change instance
+ * @param nodes - insert after the last occurence of nodes
+ * @param toInsert - string to insert
+ * @param file - file to insert changes into
+ * @param fallbackPos - position to insert if toInsert happens to be the first occurence
+ * @param syntaxKind - the ts.SyntaxKind of the subchildren to insert after
+ * @returns Change instance
  * @throw Error if toInsert is first occurence but fall back is not set
  */
 export function insertAfterLastOccurrence(nodes: ts.Node[],
@@ -323,7 +323,7 @@ function findClassDeclarationParent(node: ts.Node): ts.ClassDeclaration|undefine
 /**
  * Given a source file with @NgModule class(es), find the name of the first @NgModule class.
  *
- * @param source source file containing one or more @NgModule
+ * @param source - source file containing one or more @NgModule
  * @returns the name of the first @NgModule, or `undefined` if none is found
  */
 export function getFirstNgModuleName(source: ts.SourceFile): string|undefined {

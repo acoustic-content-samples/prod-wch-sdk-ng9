@@ -44,8 +44,8 @@ import { Observable } from 'rxjs';
  * })
  * ```
  *
- * @param input The resource you would like to fetch. Can be a url or a request object.
- * @param init A configuration object for the fetch.
+ * @param input - The resource you would like to fetch. Can be a url or a request object.
+ * @param init - A configuration object for the fetch.
  * [See MDN for more details](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters)
  * @returns An Observable, that when subscribed to performs an HTTP request using the native `fetch`
  * function. The {@link Subscription} is tied to an `AbortController` for the the fetch.

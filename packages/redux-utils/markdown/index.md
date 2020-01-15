@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/redux-utils](./redux-utils.md) |  |
+|  [@acoustic-content-sdk/redux-utils](./redux-utils.md) | Implementation of utility functions that help working with redux state. |
 

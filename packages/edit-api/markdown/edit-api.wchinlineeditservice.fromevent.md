@@ -16,7 +16,7 @@ fromEvent<T>(aName: string): Observable<T>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aName | <code>string</code> |  |
+|  aName | <code>string</code> | name of the event |
 
 <b>Returns:</b>
 

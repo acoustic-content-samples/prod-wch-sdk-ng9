@@ -3,9 +3,9 @@ import { EqualsPredicate, isEqual } from '@acoustic-content-sdk/utils';
 /**
  * Computes the levensthein matrix as defined here http://www.levenshtein.net/
  *
- * @param src   source sequence
- * @param tgt   target sequence
- * @param eq    equals predicate for the entries
+ * @param src - source sequence
+ * @param tgt - target sequence
+ * @param eq - equals predicate for the entries
  *
  * @returns the distance matrix
  */

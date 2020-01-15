@@ -15,7 +15,7 @@ export const getAttribute = (aElement: Element, aKey: string): string =>
 /**
  * Checks if something is an element
  *
- * @param something something
+ * @param something - something
  * @returns true if the node is an element
  */
 export const isElement = (something: any): something is Element =>
@@ -24,7 +24,7 @@ export const isElement = (something: any): something is Element =>
 /**
  * Checks if something as an HTML element
  *
- * @param something something
+ * @param something - something
  * @returns true if the node is an element
  */
 export const isHTMLElement = (something: any): something is HTMLElement =>

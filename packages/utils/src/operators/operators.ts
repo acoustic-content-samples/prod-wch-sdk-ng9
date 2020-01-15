@@ -514,7 +514,7 @@ export const rxSelectPath: <T, R>(
  * @param aDelegate - the delegate function
  * @param aOp - the actual operator function to apply
  *
- * @return the safe operator function
+ * @returns the safe operator function
  */
 export const safeLowerOrder: <T, R>(
   aDelegate: UnaryFunction<T, R>,
@@ -529,7 +529,7 @@ export const safeLowerOrder: <T, R>(
  * @param aDelegate - the delegate function
  * @param aOp - the actual operator function to apply
  *
- * @return the safe operator function
+ * @returns the safe operator function
  */
 export const safeMap: <T, R>(
   aDelegate: UnaryFunction<T, R>
@@ -542,7 +542,7 @@ export const safeMap: <T, R>(
  * @param aDelegate - the delegate function
  * @param aOp - the actual operator function to apply
  *
- * @return the safe operator function
+ * @returns the safe operator function
  */
 export const safeHigherOrder: <T, R>(
   aDelegate: UnaryFunction<T, ObservableInput<R>>,

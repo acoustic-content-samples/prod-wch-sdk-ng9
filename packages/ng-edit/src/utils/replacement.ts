@@ -5,10 +5,10 @@ const TOKEN_EXP = /\$\{([^\}]+)\}/g;
 /**
  * Replaces a string and resolves the tokens relative to the context object
  *
- * @param aValue    the value
- * @param aContext  the context object
+ * @param aValue - the value
+ * @param aContext - the context object
  *
- * @return the replaced token
+ * @returns the replaced token
  */
 export function replaceWithTokens(aValue: string, aContext: any): string {
   // replace all

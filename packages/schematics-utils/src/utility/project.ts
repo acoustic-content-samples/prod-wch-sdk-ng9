@@ -12,7 +12,7 @@ import { ProjectType, WorkspaceProject, WorkspaceSchema } from '../utility/works
 
 /**
  * Build a default project path for generating.
- * @param project The project to build the path for.
+ * @param project - The project to build the path for.
  */
 export function buildDefaultPath(project: WorkspaceProject): string {
   const root = project.sourceRoot

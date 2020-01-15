@@ -5,10 +5,10 @@ import { mergeMap } from 'rxjs/operators';
 /**
  * Searches the parent directory for a match, if such a parent exists
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate
  *
- * @return the potentially matching source directory
+ * @returns the potentially matching source directory
  */
 function _rxLocateParentDir(
   aSrcDir: string,
@@ -27,10 +27,10 @@ function _rxLocateParentDir(
 /**
  * Locates the directory across the parent chain for which the predicate matches
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate to check
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate to check
  *
- * @return the matching directory
+ * @returns the matching directory
  */
 function _rxLocateDir(
   aSrcDir: string,
@@ -47,10 +47,10 @@ function _rxLocateDir(
 /**
  * Locates the directory across the parent chain for which the predicate matches
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate to check
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate to check
  *
- * @return the matching directory
+ * @returns the matching directory
  */
 export function rxLocateDir(
   aSrcDir: string,

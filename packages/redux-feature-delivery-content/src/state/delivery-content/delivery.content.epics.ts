@@ -198,7 +198,7 @@ function getRenditions(
  *
  * @param aImage - the image element
  * @param aAsset - the asset
- * @return an array of size 2 ([width, height])
+ * @returns an array of size 2 ([width, height])
  */
 function getDefaultImageSize(aImage: Image, aAsset: AuthoringAsset): number[] {
   const scale = getPath(

@@ -96,7 +96,7 @@ function typeFromRenderingContext(
 /**
  * Decodes the element type by resolving the authoring types. Emits undefined if the type is unknown.
  *
- * @param aAuthoringTypes$  the authoring types
+ * @param aAuthoringTypes$ - the authoring types
  * @param aLogger - the logger
  *
  * @returns operator function

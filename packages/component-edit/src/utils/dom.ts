@@ -3,8 +3,8 @@ import { isNotNil, Maybe } from '@acoustic-content-sdk/utils';
 /**
  * Returns the element or one of its parents that has an attribute, or null
  *
- * @param element the element to begin searching
- * @param attributeName the name of the attribute
+ * @param element - the element to begin searching
+ * @param attributeName - the name of the attribute
  * @returns the element that was found, or null
  */
 export const getElementOrParentWithAttribute = (
@@ -23,7 +23,7 @@ export const getElementOrParentWithAttribute = (
 /**
  * Checks if something is an element
  *
- * @param something something
+ * @param something - something
  * @returns true if the node is an element
  */
 export const isElement = (something: any): something is Element =>

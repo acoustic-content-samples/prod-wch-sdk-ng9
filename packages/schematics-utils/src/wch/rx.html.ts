@@ -22,9 +22,9 @@ function _serializeHtml(aHtml: Document): Observable<string> {
  * Reads an HMTL from the tree and then transforms it using the given function. If the result
  * is null or undefined, the file will be deleted, else replaced or created.
  *
- * @param aName   name of the file
- * @param aOp     the operator
- * @param aTree   the tree to work in
+ * @param aName - name of the file
+ * @param aOp - the operator
+ * @param aTree - the tree to work in
  */
 export function rxTransformHtmlFile(
   aName: string,

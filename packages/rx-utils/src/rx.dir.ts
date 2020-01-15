@@ -6,10 +6,10 @@ import { rxStats } from './rx.walk';
 /**
  * Locates the first directory that contains a certain file
  *
- * @param aSources  the list of source files to check
- * @param aRelPath  the relative path
+ * @param aSources - the list of source files to check
+ * @param aRelPath - the relative path
  *
- * @return the observable
+ * @returns the observable
  */
 export function rxFindDir(
   aSources: Observable<string[]>,
@@ -38,10 +38,10 @@ export function rxFindDir(
 /**
  * Searches the parent directory for a match, if such a parent exists
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate
  *
- * @return the potentially matching source directory
+ * @returns the potentially matching source directory
  */
 function _rxLocateParentDir(
   aSrcDir: string,
@@ -60,10 +60,10 @@ function _rxLocateParentDir(
 /**
  * Locates the directory across the parent chain for which the predicate matches
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate to check
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate to check
  *
- * @return the matching directory
+ * @returns the matching directory
  */
 function _rxLocateDir(
   aSrcDir: string,
@@ -80,10 +80,10 @@ function _rxLocateDir(
 /**
  * Locates the directory across the parent chain for which the predicate matches
  *
- * @param aSrcDir     the source directory
- * @param aPredicate  the predicate to check
+ * @param aSrcDir - the source directory
+ * @param aPredicate - the predicate to check
  *
- * @return the matching directory
+ * @returns the matching directory
  */
 export function rxLocateDir(
   aSrcDir: string,

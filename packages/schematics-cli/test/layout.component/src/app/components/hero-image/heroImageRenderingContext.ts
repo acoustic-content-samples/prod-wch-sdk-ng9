@@ -83,7 +83,7 @@ export interface HeroImageRenderingContext extends RenderingContext {
 
 /** Validates that the context is indeed of the desired type
  *
- * @param aContext instance of the {@link RenderingContext} to check
+ * @param aContext - instance of the {@link RenderingContext} to check
  * @returns true if the context is a {@link HeroImageRenderingContext } else false
  */
 export function isHeroImageRenderingContext(aContext: RenderingContext): aContext is HeroImageRenderingContext {
@@ -93,7 +93,7 @@ export function isHeroImageRenderingContext(aContext: RenderingContext): aContex
 /** Provides a type assertion that can be used to validate and convert a generic {@link RenderingContext}
  * info a {@link HeroImageRenderingContext }
  *
- * @param aContext instance of the rendering context to check
+ * @param aContext - instance of the rendering context to check
  * @returns the {@link HeroImageRenderingContext } version of the {@link RenderingContext} or an exception
  *
  * @example this.onRenderingContext.pipe(map(assertHeroImageRenderingContext));
@@ -116,7 +116,7 @@ export const opHeroImageRenderingContext: OperatorFunction<RenderingContext, Her
 /**
  * Selects the image from the HeroImageRenderingContext.
  *
- * @param ctx the HeroImageRenderingContext
+ * @param ctx - the HeroImageRenderingContext
  * @returns the selected value or undefined
  *
  * @example this.onRenderingContext.pipe(opHeroImageRenderingContext, map(selectImage));
@@ -126,7 +126,7 @@ export const selectImage: UnaryFunction<HeroImageRenderingContext, SingleImageEl
 /**
  * Selects the text from the HeroImageRenderingContext.
  *
- * @param ctx the HeroImageRenderingContext
+ * @param ctx - the HeroImageRenderingContext
  * @returns the selected value or undefined
  *
  * @example this.onRenderingContext.pipe(opHeroImageRenderingContext, map(selectText));
@@ -136,7 +136,7 @@ export const selectText: UnaryFunction<HeroImageRenderingContext, string> = pluc
 /**
  * Selects the link from the HeroImageRenderingContext.
  *
- * @param ctx the HeroImageRenderingContext
+ * @param ctx - the HeroImageRenderingContext
  * @returns the selected value or undefined
  *
  * @example this.onRenderingContext.pipe(opHeroImageRenderingContext, map(selectLink));

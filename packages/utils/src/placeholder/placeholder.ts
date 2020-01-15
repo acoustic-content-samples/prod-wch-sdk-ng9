@@ -516,7 +516,7 @@ export function wchTypeFromAccessor(
  * @param aIdx - current index into the path
  * @param aPath - the path expression
  * @param aSelector - selector of the actual item
- * @param aAuthoringTypes$  the map of types
+ * @param aAuthoringTypes$ - the map of types
  */
 function _rxResolveType<T>(
   aElement: AuthoringElement,

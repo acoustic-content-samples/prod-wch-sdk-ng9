@@ -38,8 +38,8 @@ const COMPONENTS_PATH = normalize('components');
 /**
  * Returns the directory name for the type
  *
- * @param aType     the type
- * @return the directory name
+ * @param aType - the type
+ * @returns the directory name
  */
 function _getPathForType(
   aType: AuthoringType,
@@ -85,10 +85,10 @@ function _getTypeComponentPath(
  * each potential source directory for an existing component file. If non exists, uses the
  * first source directory
  *
- * @param aType        type
- * @param aSources     sources directory
+ * @param aType - type
+ * @param aSources - sources directory
  *
- * @return the selected source directory
+ * @returns the selected source directory
  */
 function _getComponentsDir(
   aType: AuthoringType,
@@ -136,12 +136,12 @@ export interface ComponentClass {
 /**
  * Constructs the relevant information for a components class
  *
- * @param aDir      base directory
- * @param aType     type object
- * @param aOptions  options
- * @param aLogger   logger
+ * @param aDir - base directory
+ * @param aType - type object
+ * @param aOptions - options
+ * @param aLogger - logger
  *
- * @return the component object
+ * @returns the component object
  */
 function _initComponentClass(
   aDir: Path,

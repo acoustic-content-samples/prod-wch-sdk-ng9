@@ -52,7 +52,7 @@ export interface NextLoginReduxState extends LoggedInFeatureState {}
 /**
  * Returns an operator that emits once when a user logged in
  *
- * @param aStore$   the store
+ * @param aStore$ - the store
  * @returns  the single emission after the user logged in
  */
 export const nextLogin: OperatorFunction<NextLoginReduxState, boolean> = (

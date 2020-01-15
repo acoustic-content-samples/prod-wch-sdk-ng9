@@ -207,6 +207,4 @@ export function updateSingleItem<T>(aPredicate?: EqualsPredicate<T>): ItemReduce
 export function updateValueByAccessor<T extends BaseAuthoringItem>(aAccessor: AccessorType, aValue: any, aItem: T, aUser?: User): Updater<T>;
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

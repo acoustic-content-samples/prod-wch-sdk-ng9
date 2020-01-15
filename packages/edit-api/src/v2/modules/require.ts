@@ -29,7 +29,7 @@ export interface WchInlineEditRequireMapV2 {
 /**
  * Interface of the require function, strongly typed
  *
- * @param the module identifier
+ * @param the - module identifier
  * @returns the resulting service or resource
  */
 export type WchInlineEditRequireV2 = (<

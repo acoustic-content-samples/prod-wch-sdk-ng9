@@ -45,9 +45,9 @@ export function changeSourceFile(
 /**
  * Changes the identified module by adding a couple of imports
  *
- * @param aFile the filename
- * @param aModules the modules to be added
- * @param aHost the tree
+ * @param aFile - the filename
+ * @param aModules - the modules to be added
+ * @param aHost - the tree
  */
 export function addImportsToModule(
   aFile: string,

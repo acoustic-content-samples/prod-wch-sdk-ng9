@@ -13,8 +13,8 @@ function _stringify(aData: any): string {
 /**
  * Replaces carriage return and line feeds with line feeds
  *
- * @param aValue    the string to replace
- * @return the normalized string
+ * @param aValue - the string to replace
+ * @returns the normalized string
  */
 function _normalizeNewline(aValue: string): string {
   return aValue.replace(CRLF, '\n').trim();

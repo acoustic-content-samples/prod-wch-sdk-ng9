@@ -86,7 +86,7 @@ export interface LoaderReduxState extends LoadingFeatureState {}
  * Returns a loader operator that makes sure not to load resources twice and also
  * to issue loading start and stop events
  *
- * @param aState$   the store
+ * @param aState$ - the store
  * @param aLoader - loader to actually perform the operation
  * @param aLogger - optional logger
  *
@@ -142,7 +142,7 @@ export interface AuthenticatedLoaderReduxState
  * Returns a loader that makes sure to wait for the correct authentication state before
  * loading.
  *
- * @param aState$   the store
+ * @param aState$ - the store
  * @param aLoader - loader to actually perform the operation
  * @param aLogger - optional logger
  *
@@ -179,7 +179,7 @@ export interface PreviewAwareLoaderReduxState
 /**
  * Returns a loader that only waits for a login if we are running against preview
  *
- * @param aState$   the store
+ * @param aState$ - the store
  * @param aLoader - loader to actually perform the operation
  * @param aLogger - optional logger
  *
