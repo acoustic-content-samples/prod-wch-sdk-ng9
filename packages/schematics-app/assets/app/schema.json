@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsWchSdkApplication",
+  "title": "WchSdk Aplication Options Schema",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "editable": {
+      "type": "boolean",
+      "description": "Check if we want to make the project editable.",
+      "default": true
+    },
+    "url": {
+      "type": "string",
+      "description": "The WCH API URL.",
+      "format": "url",
+      "x-prompt": "What is the API URL of your WCH tenant?"
+    },
+    "target": {
+      "type": "string",
+      "description": "The target to apply service worker to.",
+      "default": "build"
+    }
+  },
+  "required": ["url"],
+  "additionalProperties": false
+}

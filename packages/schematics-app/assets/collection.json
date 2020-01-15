@@ -1,0 +1,12 @@
+{
+  "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "factory": "./../bundles/acoustic-content-sdk-app.umd.min#addToApplication",
+      "description": "Update an application with SDK defaults.",
+      "schema": "./app/schema.json",
+      "private": true,
+      "hidden": true
+    }
+  }
+}
