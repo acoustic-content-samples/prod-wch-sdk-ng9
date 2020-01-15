@@ -15,13 +15,13 @@ From the command line from within you application folder run
 npx ng add @acoustic-content-sdk/app
 ```
 
-This will ask for the [API_URL](https://developer.ibm.com/customer-engagement/tutorials/getting-started-api-javascript/#tocstep1) of your WCH tenant.
+This will ask for the [API_URL](https://developer.ibm.com/customer-engagement/tutorials/getting-started-api-javascript/#tocstep1) of your Acoustic Content tenant.
 
 The command will add the [Acoustic Content SDK](https://www.npmjs.com/package/@acoustic-content-sdk/ng) to your project and install the required dependencies.
 
 ## Next Steps
 
-- Consult [@acoustic-content-sdk/schematics](https://www.npmjs.com/package/@acoustic-content-sdk/schematics) for a list of commands that you can use to develop your WCH application.
+- Consult [@acoustic-content-sdk/schematics](https://www.npmjs.com/package/@acoustic-content-sdk/schematics) for a list of commands that you can use to develop your Acoustic Content application.
 - Follow the [guide](https://www.npmjs.com/package/@acoustic-content-sdk/ng) to begin writing awesome applications for [Acoustic Content](https://www.ibm.com/products/watson-content-hub).
 
 [API Documentation](./markdown/app.md)

@@ -7,8 +7,10 @@ import { join } from 'path';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+import { MODULE } from './../version';
+
 function isPkg(aPkg: any): boolean {
-  return aPkg.name === '@acoustic-content-sdk/app';
+  return aPkg.name === MODULE;
 }
 
 function isPkgDir(aDir: string): Observable<boolean> {
