@@ -4,6 +4,8 @@
 
 ## addToApplication() function
 
+Adds SDK support to an existing Angular application
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function addToApplication(options: Schema): Rule;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | <code>Schema</code> |  |
+|  options | <code>Schema</code> | the schematics object used to describe the applicatiojn |
 
 <b>Returns:</b>
 
 `Rule`
+
+the schematics rule that executes the transform
 

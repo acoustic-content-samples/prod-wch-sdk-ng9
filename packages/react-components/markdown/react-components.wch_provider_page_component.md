@@ -9,5 +9,5 @@ Provides the rendering context component
 <b>Signature:</b>
 
 ```typescript
-WCH_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, any>, any>>
+WCH_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>
 ```

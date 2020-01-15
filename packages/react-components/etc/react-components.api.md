@@ -66,7 +66,7 @@ export const WCH_PROVIDER_EDIT_HOST_WINDOW: import("@acoustic-content-sdk/react-
 export const WCH_PROVIDER_LOGGER_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").LoggerService>;
 
 // @public
-export const WCH_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, any>, any>>;
+export const WCH_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>;
 
 // @public
 export const WCH_PROVIDER_PAGE_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactWchPageService>;

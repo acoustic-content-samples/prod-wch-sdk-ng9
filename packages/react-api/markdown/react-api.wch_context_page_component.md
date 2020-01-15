@@ -9,5 +9,5 @@ Injection token for the page component
 <b>Signature:</b>
 
 ```typescript
-WCH_CONTEXT_PAGE_COMPONENT: Required<import("react").Context<import("../../type/type.ref").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, any>, any>>>
+WCH_CONTEXT_PAGE_COMPONENT: Required<import("react").Context<import("../../type/type.ref").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>>
 ```

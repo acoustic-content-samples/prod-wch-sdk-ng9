@@ -4,6 +4,10 @@
 
 ## Ng2LoggerConfig.onlyModules property
 
+Logging configuration for modules
+
+ https://github.com/darekf77/ng2-logger\#specifying-onlymodules-as-regular-expressions
+
 <b>Signature:</b>
 
 ```typescript

@@ -8,8 +8,18 @@ import { Rule } from '@angular-devkit/schematics';
 
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //
-// @public (undocumented)
+// @public
 export function addToApplication(options: Schema): Rule;
+
+// @public
+export const VERSION: {
+    version: {
+        major: string;
+        minor: string;
+        patch: string;
+    };
+    build: Date;
+};
 
 
 // (No @packageDocumentation comment for this package)

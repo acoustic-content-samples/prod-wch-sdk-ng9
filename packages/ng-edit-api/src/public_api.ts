@@ -1,3 +1,9 @@
+/**
+ * Collection of APIs and constants for the Angular SDK in edit mode
+ *
+ * @packageDocumentation
+ */
+
 export * from './interfaces/default.wch.edit.config';
 export * from './interfaces/inline.edit.service';
 export * from './interfaces/placeholder';

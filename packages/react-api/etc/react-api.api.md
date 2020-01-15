@@ -304,7 +304,7 @@ export const WCH_CONTEXT_LOGGER_FACTORY: Required<import("react").Context<Logger
 export const WCH_CONTEXT_LOGGER_SERVICE: Required<import("react").Context<LoggerService>>;
 
 // @public
-export const WCH_CONTEXT_PAGE_COMPONENT: Required<import("react").Context<import("../../type/type.ref").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, any>, any>>>;
+export const WCH_CONTEXT_PAGE_COMPONENT: Required<import("react").Context<import("../../type/type.ref").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>>;
 
 // @public
 export const WCH_CONTEXT_PAGE_SERVICE: Required<import("react").Context<ReactWchPageService>>;

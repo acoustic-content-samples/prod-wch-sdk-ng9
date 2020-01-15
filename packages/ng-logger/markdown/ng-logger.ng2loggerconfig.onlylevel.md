@@ -4,6 +4,10 @@
 
 ## Ng2LoggerConfig.onlyLevel property
 
+Logging configuration for levels
+
+ https://github.com/darekf77/ng2-logger\#selective-debug\-\-\-global-settings
+
 <b>Signature:</b>
 
 ```typescript

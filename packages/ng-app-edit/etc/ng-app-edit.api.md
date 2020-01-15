@@ -19,6 +19,4 @@ export class WchNgAppEditModule {
 }
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

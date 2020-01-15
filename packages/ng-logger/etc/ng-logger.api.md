@@ -4,28 +4,13 @@
 
 ```ts
 
-import { Log } from 'ng2-logger/browser';
-import { LoggerFactory } from '@acoustic-content-sdk/api';
 import { ModuleWithProviders } from '@angular/core';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
-import { OnDestroy } from '@angular/core';
 
 // @public (undocumented)
 export interface Ng2LoggerConfig {
-    // (undocumented)
     onlyLevel?: ObservableOrT<string[]>;
-    // (undocumented)
     onlyModules?: ObservableOrT<string[]>;
-}
-
-// @public (undocumented)
-export class Ng2LoggerFactory implements LoggerFactory, OnDestroy {
-    // Warning: (ae-forgotten-export) The symbol "Ng2LoggerConfigService" needs to be exported by the entry point public_api.d.ts
-    constructor(aConfig?: Ng2LoggerConfigService);
-    // (undocumented)
-    create: typeof Log.create;
-    // (undocumented)
-    ngOnDestroy(): void;
 }
 
 // @public

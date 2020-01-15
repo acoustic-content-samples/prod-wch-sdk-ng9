@@ -14,6 +14,6 @@ export interface Ng2LoggerConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [onlyLevel](./ng-logger.ng2loggerconfig.onlylevel.md) | <code>ObservableOrT&lt;string[]&gt;</code> |  |
-|  [onlyModules](./ng-logger.ng2loggerconfig.onlymodules.md) | <code>ObservableOrT&lt;string[]&gt;</code> |  |
+|  [onlyLevel](./ng-logger.ng2loggerconfig.onlylevel.md) | <code>ObservableOrT&lt;string[]&gt;</code> | Logging configuration for levels https://github.com/darekf77/ng2-logger\#selective-debug\-\-\-global-settings |
+|  [onlyModules](./ng-logger.ng2loggerconfig.onlymodules.md) | <code>ObservableOrT&lt;string[]&gt;</code> | Logging configuration for modules https://github.com/darekf77/ng2-logger\#specifying-onlymodules-as-regular-expressions |
 

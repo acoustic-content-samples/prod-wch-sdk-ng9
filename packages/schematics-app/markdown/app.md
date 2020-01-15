@@ -8,5 +8,11 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [addToApplication(options)](./app.addtoapplication.md) |  |
+|  [addToApplication(options)](./app.addtoapplication.md) | Adds SDK support to an existing Angular application |
+
+## Variables
+
+|  Variable | Description |
+|  --- | --- |
+|  [VERSION](./app.version.md) | Version and build number of the package |
 
