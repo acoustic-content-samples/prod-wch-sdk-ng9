@@ -262,6 +262,13 @@ function updatePackageJson(
   };
 }
 
+/**
+ * Adds SDK support to an existing Angular application
+ *
+ * @param options - the schematics object used to describe the applicatiojn
+ *
+ * @returns the schematics rule that executes the transform
+ */
 export function addToApplication(options: Schema): Rule {
   return (host: Tree, context: SchematicContext) => {
     const workspace = getWorkspace(host);
