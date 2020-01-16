@@ -13,6 +13,7 @@ import { InlineEditSelectionProvider } from '@acoustic-content-sdk/edit-api';
 import { LocalizedText } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
+import { Renderer2 } from '@angular/core';
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
@@ -122,7 +123,8 @@ export interface WchEditableDirectiveOutput {
 
 // @public
 export interface WchEditableDirectiveService {
-    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchEditableDirectiveOutput;
+    // @internal
+    _create(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchEditableDirectiveOutput;
 }
 
 // @public
@@ -141,7 +143,8 @@ export interface WchEditablePlaceholderDirectiveOutput extends WchEditableDirect
 
 // @public
 export interface WchEditablePlaceholderDirectiveService {
-    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditablePlaceholderDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchEditablePlaceholderDirectiveOutput;
+    // @internal
+    _create(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditablePlaceholderDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>, aRenderer: Renderer2): WchEditablePlaceholderDirectiveOutput;
 }
 
 // @public (undocumented)
@@ -173,7 +176,8 @@ export interface WchSelectableDirectiveOutput {
 
 // @public
 export interface WchSelectableDirectiveService {
-    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchSelectableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchSelectableDirectiveOutput;
+    // @internal
+    _create(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchSelectableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>, aRenderer: Renderer2): WchSelectableDirectiveOutput;
 }
 
 

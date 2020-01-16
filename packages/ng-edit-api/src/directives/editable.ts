@@ -61,7 +61,7 @@ export interface WchEditableDirectiveOutput {
 }
 
 /**
- * Implementation of the service
+ * Service that returns an instance of the editable directive
  */
 export interface WchEditableDirectiveService {
   /**
@@ -74,8 +74,10 @@ export interface WchEditableDirectiveService {
    * @param aDone$ - done lifecycle
    *
    * @returns the creator function
+   *
+   * @internal
    */
-  createDirective(
+  _create(
     aElementRef: Generator<any>,
     aProvider: RenderingContextProviderV2,
     aInput: WchEditableDirectiveInput,

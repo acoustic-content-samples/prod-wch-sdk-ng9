@@ -4,17 +4,10 @@
 
 ## WchEditablePlaceholderDirectiveService interface
 
-Implementation of the service
+Service that returns an instance of the editable directive
 
 <b>Signature:</b>
 
 ```typescript
 export interface WchEditablePlaceholderDirectiveService 
 ```
-
-## Methods
-
-|  Method | Description |
-|  --- | --- |
-|  [createDirective(aElementRef, aProvider, aInput, aInit$, aDone$)](./ng-edit-api.wcheditableplaceholderdirectiveservice.createdirective.md) | Constructs an instance of the directive |
-

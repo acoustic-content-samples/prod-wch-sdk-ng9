@@ -26,7 +26,8 @@ import {
   Input,
   OnDestroy,
   OnInit,
-  Output
+  Output,
+  Renderer2
 } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
@@ -157,6 +158,7 @@ export class EditablePlaceholderDirective
 
   constructor(
     aElementRef: ElementRef,
+    aRenderer: Renderer2,
     @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
     @Inject(WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE)
@@ -184,12 +186,13 @@ export class EditablePlaceholderDirective
     };
 
     // construct the directive
-    const output: WchEditablePlaceholderDirectiveOutput = aService.createDirective(
+    const output: WchEditablePlaceholderDirectiveOutput = aService._create(
       elementRef,
       aProvider,
       input,
       onInit$,
-      onDone$
+      onDone$,
+      aRenderer
     );
 
     // assign the properties

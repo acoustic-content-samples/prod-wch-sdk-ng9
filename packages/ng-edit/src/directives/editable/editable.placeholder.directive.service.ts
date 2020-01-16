@@ -43,19 +43,22 @@ export class WchEditablePlaceholderDirectiveServiceImpl
    * @param aInput - the input properties
    * @param aInit$ - init lifecycle
    * @param aDone$ - done lifecycle
+   * @param aRenderer - the renderer, since we cannot instantiate it in a service
    *
    * @returns the creator function
+   *
+   * @internal
    */
-  createDirective: (
+  _create: (
     aElementRef: Generator<any>,
     aProvider: RenderingContextProviderV2,
     aInput: WchEditablePlaceholderDirectiveInput,
     aInit$: Observable<any>,
-    aDone$: Observable<any>
+    aDone$: Observable<any>,
+    aRenderer: Renderer2
   ) => WchEditablePlaceholderDirectiveOutput;
 
   constructor(
-    aRenderer: Renderer2,
     aInternal: WchInternalEditService,
     @Inject(WCH_TOKEN_DELIVERY_TYPE_RESOLVER)
     aTypeResolver: DeliveryTypeResolver,
@@ -76,12 +79,13 @@ export class WchEditablePlaceholderDirectiveServiceImpl
     aLoggerService: LoggerService
   ) {
     // attach the directive creator
-    this.createDirective = (
+    this._create = (
       aElementRef: Generator<HTMLElement>,
       aProvider: RenderingContextProviderV2,
       aInput: WchEditablePlaceholderDirectiveInput,
       aInit$: Observable<any>,
-      aDone$: Observable<any>
+      aDone$: Observable<any>,
+      aRenderer: Renderer2
     ): WchEditablePlaceholderDirectiveOutput =>
       new WchEditablePlaceholderDirective(
         aInput,

@@ -4,17 +4,10 @@
 
 ## WchSelectableDirectiveService interface
 
-Implementation of the service
+Service that returns an instance of the selectable directive
 
 <b>Signature:</b>
 
 ```typescript
 export interface WchSelectableDirectiveService 
 ```
-
-## Methods
-
-|  Method | Description |
-|  --- | --- |
-|  [createDirective(aElementRef, aProvider, aInput, aInit$, aDone$)](./ng-edit-api.wchselectabledirectiveservice.createdirective.md) | Constructs an instance of the directive |
-

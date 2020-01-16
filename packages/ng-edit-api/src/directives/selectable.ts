@@ -1,7 +1,7 @@
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { Generator } from '@acoustic-content-sdk/utils';
-import { InjectionToken } from '@angular/core';
+import { InjectionToken, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs';
 
 /**
@@ -20,7 +20,7 @@ export interface WchSelectableDirectiveInput {
 export interface WchSelectableDirectiveOutput {}
 
 /**
- * Implementation of the service
+ * Service that returns an instance of the selectable directive
  */
 export interface WchSelectableDirectiveService {
   /**
@@ -31,15 +31,19 @@ export interface WchSelectableDirectiveService {
    * @param aInput - the input properties
    * @param aInit$ - init lifecycle
    * @param aDone$ - done lifecycle
+   * @param aRenderer - the renderer, since we cannot instantiate it in a service
    *
    * @returns the creator function
+   *
+   * @internal
    */
-  createDirective(
+  _create(
     aElementRef: Generator<any>,
     aProvider: RenderingContextProviderV2,
     aInput: WchSelectableDirectiveInput,
     aInit$: Observable<any>,
-    aDone$: Observable<any>
+    aDone$: Observable<any>,
+    aRenderer: Renderer2
   ): WchSelectableDirectiveOutput;
 }
 

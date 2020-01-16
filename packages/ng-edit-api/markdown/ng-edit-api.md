@@ -23,15 +23,15 @@ Collection of APIs and constants for the Angular SDK in edit mode
 |  [EditHubInfoService](./ng-edit-api.edithubinfoservice.md) |  |
 |  [WchEditableDirectiveInput](./ng-edit-api.wcheditabledirectiveinput.md) | Input to the editable directive service |
 |  [WchEditableDirectiveOutput](./ng-edit-api.wcheditabledirectiveoutput.md) | Input of the editable directive service |
-|  [WchEditableDirectiveService](./ng-edit-api.wcheditabledirectiveservice.md) | Implementation of the service |
+|  [WchEditableDirectiveService](./ng-edit-api.wcheditabledirectiveservice.md) | Service that returns an instance of the editable directive |
 |  [WchEditablePlaceholderDirectiveInput](./ng-edit-api.wcheditableplaceholderdirectiveinput.md) | Input to the editable directive service |
 |  [WchEditablePlaceholderDirectiveOutput](./ng-edit-api.wcheditableplaceholderdirectiveoutput.md) | Input of the editable directive service |
-|  [WchEditablePlaceholderDirectiveService](./ng-edit-api.wcheditableplaceholderdirectiveservice.md) | Implementation of the service |
+|  [WchEditablePlaceholderDirectiveService](./ng-edit-api.wcheditableplaceholderdirectiveservice.md) | Service that returns an instance of the editable directive |
 |  [WchPlaceholder](./ng-edit-api.wchplaceholder.md) |  |
 |  [WchPlaceholderProvider](./ng-edit-api.wchplaceholderprovider.md) |  |
 |  [WchSelectableDirectiveInput](./ng-edit-api.wchselectabledirectiveinput.md) | Input to the editable directive service |
 |  [WchSelectableDirectiveOutput](./ng-edit-api.wchselectabledirectiveoutput.md) | Output of the editable directive service |
-|  [WchSelectableDirectiveService](./ng-edit-api.wchselectabledirectiveservice.md) | Implementation of the service |
+|  [WchSelectableDirectiveService](./ng-edit-api.wchselectabledirectiveservice.md) | Service that returns an instance of the selectable directive |
 
 ## Variables
 

@@ -23,8 +23,10 @@ export class WchEditablePlaceholderDirectiveServiceImpl
    * @param aDone$ - done lifecycle
    *
    * @returns the creator function
+   *
+   * @internal
    */
-  createDirective: (
+  _create: (
     aElementRef: Generator<any>,
     aProvider: RenderingContextProviderV2,
     aInput: WchEditablePlaceholderDirectiveInput,
@@ -34,7 +36,7 @@ export class WchEditablePlaceholderDirectiveServiceImpl
 
   constructor() {
     // attach the directive creator
-    this.createDirective = (
+    this._create = (
       aElementRef: Generator<HTMLElement>,
       aProvider: RenderingContextProviderV2,
       aInput: WchEditablePlaceholderDirectiveInput,

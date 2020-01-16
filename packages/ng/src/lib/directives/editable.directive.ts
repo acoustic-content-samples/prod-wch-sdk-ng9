@@ -151,7 +151,7 @@ export class EditableDirective
     };
 
     // construct the directive
-    const output: WchEditableDirectiveOutput = aService.createDirective(
+    const output: WchEditableDirectiveOutput = aService._create(
       elementRef,
       aProvider,
       input,

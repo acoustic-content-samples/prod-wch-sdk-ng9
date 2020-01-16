@@ -3,9 +3,8 @@ import {
   RenderingContextProviderV2
 } from '@acoustic-content-sdk/api';
 import { Generator } from '@acoustic-content-sdk/utils';
-import { InjectionToken } from '@angular/core';
+import { InjectionToken, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { WchPlaceholder } from '../interfaces/placeholder';
 import {
   WchEditableDirectiveInput,
@@ -51,7 +50,7 @@ export interface WchEditablePlaceholderDirectiveOutput
 }
 
 /**
- * Implementation of the service
+ * Service that returns an instance of the editable directive
  */
 export interface WchEditablePlaceholderDirectiveService {
   /**
@@ -62,15 +61,19 @@ export interface WchEditablePlaceholderDirectiveService {
    * @param aInput - the input properties
    * @param aInit$ - init lifecycle
    * @param aDone$ - done lifecycle
+   * @param aRenderer - the renderer, since we cannot instantiate it in a service
    *
    * @returns the creator function
+   *
+   * @internal
    */
-  createDirective(
+  _create(
     aElementRef: Generator<any>,
     aProvider: RenderingContextProviderV2,
     aInput: WchEditablePlaceholderDirectiveInput,
     aInit$: Observable<any>,
-    aDone$: Observable<any>
+    aDone$: Observable<any>,
+    aRenderer: Renderer2
   ): WchEditablePlaceholderDirectiveOutput;
 }
 

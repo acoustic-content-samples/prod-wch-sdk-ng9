@@ -2,10 +2,10 @@ import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { WCH_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
 import {
+  WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
   WchSelectableDirectiveInput,
   WchSelectableDirectiveOutput,
-  WchSelectableDirectiveService,
-  WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE
+  WchSelectableDirectiveService
 } from '@acoustic-content-sdk/ng-edit-api';
 import {
   BiConsumer,
@@ -20,7 +20,8 @@ import {
   Inject,
   Input,
   OnDestroy,
-  OnInit
+  OnInit,
+  Renderer2
 } from '@angular/core';
 
 const assignProps: BiConsumer<
@@ -57,6 +58,7 @@ export class SelectableDirective
 
   constructor(
     aElementRef: ElementRef,
+    aRenderer: Renderer2,
     @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
     @Inject(WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE)
@@ -81,12 +83,13 @@ export class SelectableDirective
     };
 
     // construct the directive
-    const output: WchSelectableDirectiveOutput = aService.createDirective(
+    const output: WchSelectableDirectiveOutput = aService._create(
       elementRef,
       aProvider,
       input,
       onInit$,
-      onDone$
+      onDone$,
+      aRenderer
     );
 
     assignProps(this, output);
