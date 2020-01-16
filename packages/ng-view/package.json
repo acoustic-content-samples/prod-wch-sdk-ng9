@@ -29,11 +29,13 @@
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/edit-api": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
+    "@acoustic-content-sdk/ng-edit-api": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
     "@angular/common": "next",
-    "@angular/core": "next"
+    "@angular/core": "next",
+    "rxjs": "^6"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
@@ -50,6 +52,7 @@
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
+        "@acoustic-content-sdk/ng-edit-api": "acoustic-content-sdk.ng-edit-api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
