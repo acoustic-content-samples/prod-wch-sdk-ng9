@@ -1,4 +1,5 @@
 import {
+  WchNgEditDirectivesModule,
   WchNgInlineEditSelectionModule,
   WchNgInlineEditServiceModule,
   WchNgParentInlineEditProviderModule
@@ -23,7 +24,8 @@ import { NgModule } from '@angular/core';
     WchNgReduxModule,
     // TODO this is just a workaround
     WchNgHbsEditModule,
-    WchNgInlineEditSelectionModule
+    WchNgInlineEditSelectionModule,
+    WchNgEditDirectivesModule
   ]
 })
 export class WchNgAppEditModule {}
