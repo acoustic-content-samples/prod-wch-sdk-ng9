@@ -5,9 +5,10 @@ import {
 } from '@acoustic-content-sdk/api';
 import { WchEditableEvent } from '@acoustic-content-sdk/edit-api';
 import {
-  WchEditableDirectiveInput,
-  WchEditableDirectiveOutput
+  WchEditablePlaceholderDirectiveInput,
+  WchEditablePlaceholderDirectiveOutput
 } from '@acoustic-content-sdk/ng-edit-api';
+import { UNDEFINED$ } from '@acoustic-content-sdk/utils';
 import { EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -18,34 +19,45 @@ import { AbstractWchEditableDirective } from './abstract.editable.directive';
  * a rendering context via the 'onRenderingContext' member. It will then attach to the 'WchInlineEditService' to register
  * the element for edit operations.
  */
-export class WchEditableDirective extends AbstractWchEditableDirective
-  implements WchEditableDirectiveOutput {
+export class WchEditablePlaceholderDirective
+  extends AbstractWchEditableDirective
+  implements WchEditablePlaceholderDirectiveOutput {
   /**
    * The accessor expression
    */
   accessor$: Observable<string>;
-
   /**
    * Event that tells about the inline edit process
    */
   wchEditable$: EventEmitter<WchEditableEvent>;
 
   /**
-   * Event exposing the current placeholder. If no placeholder exists or placeholders are disabled, this
-   * will return `undefined`.
+   * Event exposing the current placeholder. Note that this fill only fire if the application
+   * runs in preview mode. In live mode this is just the empty event.
    */
   placeholder$: Observable<AuthoringPlaceholder>;
 
   /**
-   * Event exposing the current placeholder text. If placeholders are disabled, this will return. If no placeholder
+   * Event exposing the current placeholder text. Note that this fill only fire if the application
+   * runs in preview mode. In live mode this is just the empty event. If no placeholder
    * has been defined this returns the default placeholder as specified by the application
    */
-  placeholderText$: Observable<LocalizedText>;
+  placeholderText$: Observable<LocalizedText> = UNDEFINED$;
 
   /**
-   * Checks if we should show or hide placeholders
+   * Generates the text of an element, potentially replaced by the placeholder
    */
-  showPlaceholder$: Observable<boolean>;
+  plainText$: Observable<LocalizedText> = UNDEFINED$;
+
+  /**
+   * Generates the formatted text of an element, potentially replaced by the placeholder
+   */
+  formattedText$: Observable<LocalizedText>;
+
+  /**
+   * Generates the accessed data, decoded from the accessor expression
+   */
+  data$: Observable<any>;
 
   /**
    * Generates the type of the current element
@@ -53,12 +65,12 @@ export class WchEditableDirective extends AbstractWchEditableDirective
   typeId$: Observable<string>;
 
   /**
-   * Generates the accessed data, decoded from the accessor expression
+   * Checks if we should show or hide placeholders
    */
-  data$: Observable<any>;
+  showPlaceholder$: Observable<boolean>;
 
   constructor(
-    aInput: WchEditableDirectiveInput,
+    aInput: WchEditablePlaceholderDirectiveInput,
     aProvider: RenderingContextProviderV2
   ) {
     // default

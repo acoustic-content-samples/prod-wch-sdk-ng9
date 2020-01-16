@@ -4,23 +4,25 @@ import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
 
-import { WchPlaceholderComponent } from '../components/placeholder/placeholder.component';
-import { EditItemPipe } from './../pipes/edit.item.pipe';
-import { MODULE, VERSION } from './../version';
+import { WchNgEditableDirectiveModule } from '../directives/editable/editable.directive.module';
+import { WchNgEditablePlaceholderDirectiveModule } from '../directives/editable/editable.placeholder.directive.module';
+import { WchNgSelectableDirectiveModule } from '../directives/selectable/selectable.directive.module';
+import { MODULE, VERSION } from '../version';
 
-const LOGGER = 'WchNgEditComponentsModule';
+const LOGGER = 'WchNgEditDirectivesModule';
 
 /**
- * Exports the components and directives used to attach inline edit to code level
- * angular components.
+ * Exports the services required to implement the editable directives
  */
 @NgModule({
-  imports: [CommonModule],
-  declarations: [WchPlaceholderComponent, EditItemPipe],
-  providers: [],
-  exports: [WchPlaceholderComponent, EditItemPipe]
+  imports: [
+    CommonModule,
+    WchNgEditableDirectiveModule,
+    WchNgEditablePlaceholderDirectiveModule,
+    WchNgSelectableDirectiveModule
+  ]
 })
-export class WchNgEditComponentsModule {
+export class WchNgEditDirectivesModule {
   constructor(
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)

@@ -2,10 +2,10 @@ import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { WCH_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
   WchSelectableDirectiveInput,
   WchSelectableDirectiveOutput,
-  WchSelectableDirectiveService
+  WchSelectableDirectiveService,
+  WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE
 } from '@acoustic-content-sdk/ng-edit-api';
 import {
   BiConsumer,
@@ -28,6 +28,17 @@ const assignProps: BiConsumer<
   WchSelectableDirectiveOutput
 > = noop;
 
+/**
+ * Directive that allow an element to be selectable.
+ *
+ * @remarks
+ * The directive relies on a `RenderingContextProviderV2` in the injection chain to tell which element is currently being rendered.
+ *
+ * @privateRemarks
+ * This class is only a proxy. The actual implementation is injected via the `WchSelectableDirectiveService` service, which
+ * allows us to inject a real implementation in edit mode and a noop implementation in view mode. Afaik there is
+ * no way to directly inject a directive, hence the split.
+ */
 @Directive({
   selector: '[wchSelectable]',
   exportAs: 'wchSelectable'

@@ -55,9 +55,15 @@ const assignProps: BiConsumer<
   });
 
 /**
- * Directive that allows an element of a layout to be editable. The directive assumes that the hosting component exposes
- * a rendering context via the 'onRenderingContext' member. It will then attach to the 'WchInlineEditService' to register
- * the element for edit operations.
+ * Directive that allows an element of a layout to be editable.
+ *
+ * @remarks
+ * The directive relies on a `RenderingContextProviderV2` in the injection chain to tell which element is currently being rendered.
+ *
+ * @privateRemarks
+ * This class is only a proxy. The actual implementation is injected via the `WchEditableDirectiveService` service, which
+ * allows us to inject a real (expensive) implementation in edit mode and a noop implementation in view mode. Afaik there is
+ * no way to directly inject a directive, hence the split.
  */
 @Directive({
   selector: ':not(wch-placeholder)[wchEditable]:not([wchFormat])',
