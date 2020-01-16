@@ -6,6 +6,7 @@
 
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { AuthoringPlaceholder } from '@acoustic-content-sdk/api';
+import { Generator } from '@acoustic-content-sdk/utils';
 import { HubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { InjectionToken } from '@angular/core';
 import { InlineEditSelectionProvider } from '@acoustic-content-sdk/edit-api';
@@ -15,6 +16,7 @@ import { ObservableOrT } from '@acoustic-content-sdk/utils';
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
+import { WchEditableEvent } from '@acoustic-content-sdk/edit-api';
 import { WchInlineEditProviderV2 } from '@acoustic-content-sdk/edit-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
@@ -70,6 +72,12 @@ export const WCH_TOKEN_DEFAULT_PLACEHOLDER_TEXT: InjectionToken<import("@acousti
 export const WCH_TOKEN_EDIT_HOST_WINDOW: InjectionToken<WindowType>;
 
 // @public
+export const WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE: InjectionToken<WchEditableDirectiveService>;
+
+// @public
+export const WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE: InjectionToken<WchEditablePlaceholderDirectiveService>;
+
+// @public
 export const WCH_TOKEN_INLINE_EDIT_PROVIDER: InjectionToken<Observable<WchInlineEditProviderV2>>;
 
 // @public
@@ -88,10 +96,53 @@ export const WCH_TOKEN_INLINE_EDIT_URL: InjectionToken<StaticHubInfoUrlProvider>
 export const WCH_TOKEN_PLACEHOLDER_PROVIDER: InjectionToken<WchPlaceholderProvider>;
 
 // @public
+export const WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE: InjectionToken<WchSelectableDirectiveService>;
+
+// @public
 export const WCH_TOKEN_WCH_CONFIG: InjectionToken<Observable<WchConfig>>;
 
 // @public
 export type WchDefaultPlaceholder = ObservableOrT<string | LocalizedText>;
+
+// @public
+export interface WchEditableDirectiveInput {
+    wchEditable$: Observable<AccessorType>;
+}
+
+// @public
+export interface WchEditableDirectiveOutput {
+    accessor$: Observable<string>;
+    data$: Observable<any>;
+    placeholder$: Observable<AuthoringPlaceholder>;
+    placeholderText$: Observable<LocalizedText>;
+    showPlaceholder$: Observable<boolean>;
+    typeId$: Observable<string>;
+    wchEditable$: Observable<WchEditableEvent>;
+}
+
+// @public
+export interface WchEditableDirectiveService {
+    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchEditableDirectiveOutput;
+}
+
+// @public
+export type WchEditableFormat = 'text' | 'html' | 'auto';
+
+// @public
+export interface WchEditablePlaceholderDirectiveInput extends WchEditableDirectiveInput {
+    wchFormat$: Observable<WchEditableFormat>;
+}
+
+// @public
+export interface WchEditablePlaceholderDirectiveOutput extends WchEditableDirectiveOutput, WchPlaceholder {
+    formattedText$: Observable<LocalizedText>;
+    plainText$: Observable<LocalizedText>;
+}
+
+// @public
+export interface WchEditablePlaceholderDirectiveService {
+    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchEditablePlaceholderDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchEditablePlaceholderDirectiveOutput;
+}
 
 // @public (undocumented)
 export interface WchPlaceholder {
@@ -109,6 +160,20 @@ export interface WchPlaceholder {
 export interface WchPlaceholderProvider {
     // (undocumented)
     getPlaceholder: (aAccessor: AccessorType, aProvider: RenderingContextProviderV2) => WchPlaceholder;
+}
+
+// @public
+export interface WchSelectableDirectiveInput {
+    wchSelectable$: Observable<AccessorType>;
+}
+
+// @public
+export interface WchSelectableDirectiveOutput {
+}
+
+// @public
+export interface WchSelectableDirectiveService {
+    createDirective(aElementRef: Generator<any>, aProvider: RenderingContextProviderV2, aInput: WchSelectableDirectiveInput, aInit$: Observable<any>, aDone$: Observable<any>): WchSelectableDirectiveOutput;
 }
 
 

@@ -4,6 +4,9 @@
  * @packageDocumentation
  */
 
+export * from './directives/editable';
+export * from './directives/editable.placeholder';
+export * from './directives/selectable';
 export * from './interfaces/default.wch.edit.config';
 export * from './interfaces/inline.edit.service';
 export * from './interfaces/placeholder';

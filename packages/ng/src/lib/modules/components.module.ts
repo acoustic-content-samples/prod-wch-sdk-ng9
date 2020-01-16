@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { ContentComponent } from '../components/content/content.component';
+import { EditableDirective } from '../directives/editable.directive';
+import { EditablePlaceholderDirective } from '../directives/editable.placeholder.directive';
+import { SelectableDirective } from '../directives/selectable.directive';
 import { RenderingContextResolverService } from '../services/rendering/rendering.context.resolver.service';
 import { WchSeedResolver } from '../services/seed/wch.seed.resolver';
 import { DefaultComponent } from './../components/default/default.component';
@@ -13,8 +16,20 @@ import { ContentRefDirective } from './../directives/contentref.directive';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [DefaultComponent, ContentComponent, ContentRefDirective],
-  exports: [ContentComponent],
+  declarations: [
+    DefaultComponent,
+    ContentComponent,
+    ContentRefDirective,
+    SelectableDirective,
+    EditableDirective,
+    EditablePlaceholderDirective
+  ],
+  exports: [
+    SelectableDirective,
+    EditablePlaceholderDirective,
+    EditableDirective,
+    ContentComponent
+  ],
   entryComponents: [DefaultComponent, ContentComponent],
   providers: [
     {

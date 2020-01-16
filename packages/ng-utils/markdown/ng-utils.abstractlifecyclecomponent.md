@@ -10,7 +10,7 @@ The 'ngXXX' methods override the methods from the Angular life cycle interfaces.
 
 The 'onXXX' methods expose observables that will be triggered when the life cycle method occurs. This is a convenient way to register hooks in the constructor of a subclass without having to override any method.
 
-The  observable is especially useful, since it can be used as a termination signal for automatic unsubscriptions via the [http://reactivex.io/documentation/operators/takeuntil.html](http://reactivex.io/documentation/operators/takeuntil.html) operation.
+The `onDestroy$` observable is especially useful, since it can be used as a termination signal for automatic unsubscriptions via the [takeUntil](http://reactivex.io/documentation/operators/takeuntil.html) operation.
 
 Note that hooks such as `onInit$` and `onDestroy$` only fire once. If you depend on such a hook in an observable chain more than once make sure to share the emissions (typically via `shareReplay` )
 
@@ -24,25 +24,25 @@ export declare abstract class AbstractLifeCycleComponent implements OnInit, OnDe
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [afterContentChecked$](./ng-utils.abstractlifecyclecomponent.aftercontentchecked_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [afterContentInit$](./ng-utils.abstractlifecyclecomponent.aftercontentinit_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [afterViewChecked$](./ng-utils.abstractlifecyclecomponent.afterviewchecked_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [afterViewInit$](./ng-utils.abstractlifecyclecomponent.afterviewinit_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [doCheck$](./ng-utils.abstractlifecyclecomponent.docheck_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [onChanges$](./ng-utils.abstractlifecyclecomponent.onchanges_.md) |  | <code>Observable&lt;SimpleChanges&gt;</code> |  |
-|  [onDestroy$](./ng-utils.abstractlifecyclecomponent.ondestroy_.md) |  | <code>Observable&lt;void&gt;</code> |  |
-|  [onInit$](./ng-utils.abstractlifecyclecomponent.oninit_.md) |  | <code>Observable&lt;void&gt;</code> |  |
+|  [afterContentChecked$](./ng-utils.abstractlifecyclecomponent.aftercontentchecked_.md) |  | <code>Observable&lt;void&gt;</code> | [AfterContentChecked](https://angular.io/guide/lifecycle-hooks) |
+|  [afterContentInit$](./ng-utils.abstractlifecyclecomponent.aftercontentinit_.md) |  | <code>Observable&lt;void&gt;</code> | [AfterContentInit](https://angular.io/guide/lifecycle-hooks) |
+|  [afterViewChecked$](./ng-utils.abstractlifecyclecomponent.afterviewchecked_.md) |  | <code>Observable&lt;void&gt;</code> | [AfterViewChecked](https://angular.io/guide/lifecycle-hooks) |
+|  [afterViewInit$](./ng-utils.abstractlifecyclecomponent.afterviewinit_.md) |  | <code>Observable&lt;void&gt;</code> | [AfterViewInit](https://angular.io/guide/lifecycle-hooks) |
+|  [doCheck$](./ng-utils.abstractlifecyclecomponent.docheck_.md) |  | <code>Observable&lt;void&gt;</code> | [DoCheck](https://angular.io/guide/lifecycle-hooks) |
+|  [onChanges$](./ng-utils.abstractlifecyclecomponent.onchanges_.md) |  | <code>Observable&lt;SimpleChanges&gt;</code> | [OnChanges](https://angular.io/guide/lifecycle-hooks) |
+|  [onDestroy$](./ng-utils.abstractlifecyclecomponent.ondestroy_.md) |  | <code>Observable&lt;void&gt;</code> | [OnDestroy](https://angular.io/guide/lifecycle-hooks) |
+|  [onInit$](./ng-utils.abstractlifecyclecomponent.oninit_.md) |  | <code>Observable&lt;void&gt;</code> | [OnInit](https://angular.io/guide/lifecycle-hooks) |
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [ngAfterContentChecked()](./ng-utils.abstractlifecyclecomponent.ngaftercontentchecked.md) |  |  |
-|  [ngAfterContentInit()](./ng-utils.abstractlifecyclecomponent.ngaftercontentinit.md) |  |  |
-|  [ngAfterViewChecked()](./ng-utils.abstractlifecyclecomponent.ngafterviewchecked.md) |  |  |
-|  [ngAfterViewInit()](./ng-utils.abstractlifecyclecomponent.ngafterviewinit.md) |  |  |
-|  [ngDoCheck()](./ng-utils.abstractlifecyclecomponent.ngdocheck.md) |  |  |
-|  [ngOnChanges(changes)](./ng-utils.abstractlifecyclecomponent.ngonchanges.md) |  |  |
-|  [ngOnDestroy()](./ng-utils.abstractlifecyclecomponent.ngondestroy.md) |  |  |
-|  [ngOnInit()](./ng-utils.abstractlifecyclecomponent.ngoninit.md) |  |  |
+|  [ngAfterContentChecked()](./ng-utils.abstractlifecyclecomponent.ngaftercontentchecked.md) |  | [AfterContentChecked](https://angular.io/guide/lifecycle-hooks) |
+|  [ngAfterContentInit()](./ng-utils.abstractlifecyclecomponent.ngaftercontentinit.md) |  | [AfterContentInit](https://angular.io/guide/lifecycle-hooks) |
+|  [ngAfterViewChecked()](./ng-utils.abstractlifecyclecomponent.ngafterviewchecked.md) |  | [AfterViewChecked](https://angular.io/guide/lifecycle-hooks) |
+|  [ngAfterViewInit()](./ng-utils.abstractlifecyclecomponent.ngafterviewinit.md) |  | [AfterViewInit](https://angular.io/guide/lifecycle-hooks) |
+|  [ngDoCheck()](./ng-utils.abstractlifecyclecomponent.ngdocheck.md) |  | [DoCheck](https://angular.io/guide/lifecycle-hooks) |
+|  [ngOnChanges(changes)](./ng-utils.abstractlifecyclecomponent.ngonchanges.md) |  | [OnChanges](https://angular.io/guide/lifecycle-hooks) |
+|  [ngOnDestroy()](./ng-utils.abstractlifecyclecomponent.ngondestroy.md) |  | [OnDestroy](https://angular.io/guide/lifecycle-hooks) |
+|  [ngOnInit()](./ng-utils.abstractlifecyclecomponent.ngoninit.md) |  | {@<!-- -->linkhttps://angular.io/guide/lifecycle-hooks\| OnInit<!-- -->} |
 

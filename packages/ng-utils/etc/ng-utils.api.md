@@ -29,37 +29,21 @@ export abstract class AbstractBaseComponent extends AbstractLifeCycleComponent i
 
 // @public
 export abstract class AbstractLifeCycleComponent implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
-    // (undocumented)
     protected get afterContentChecked$(): Observable<void>;
-    // (undocumented)
     protected get afterContentInit$(): Observable<void>;
-    // (undocumented)
     protected get afterViewChecked$(): Observable<void>;
-    // (undocumented)
     protected get afterViewInit$(): Observable<void>;
-    // (undocumented)
     protected get doCheck$(): Observable<void>;
-    // (undocumented)
     ngAfterContentChecked(): void;
-    // (undocumented)
     ngAfterContentInit(): void;
-    // (undocumented)
     ngAfterViewChecked(): void;
-    // (undocumented)
     ngAfterViewInit(): void;
-    // (undocumented)
     ngDoCheck(): void;
-    // (undocumented)
     ngOnChanges(changes: SimpleChanges): void;
-    // (undocumented)
     ngOnDestroy(): void;
-    // (undocumented)
     ngOnInit(): void;
-    // (undocumented)
     protected get onChanges$(): Observable<SimpleChanges>;
-    // (undocumented)
     protected get onDestroy$(): Observable<void>;
-    // (undocumented)
     protected get onInit$(): Observable<void>;
 }
 
@@ -92,7 +76,5 @@ export class WchNgBrowserWindowModule {
 export class WchNgEditHostWindowModule {
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

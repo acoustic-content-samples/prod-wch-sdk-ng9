@@ -4,7 +4,7 @@
 
 ## AbstractRenderingComponent class
 
-Convenience base class for components that work with a .
+Convenience base class for components that work with a `RenderingContextV2`<!-- -->.
 
 <b>Signature:</b>
 

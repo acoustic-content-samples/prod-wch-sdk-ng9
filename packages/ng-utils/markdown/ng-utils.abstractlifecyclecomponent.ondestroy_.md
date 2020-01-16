@@ -4,6 +4,7 @@
 
 ## AbstractLifeCycleComponent.onDestroy$ property
 
+[OnDestroy](https://angular.io/guide/lifecycle-hooks)
 
 <b>Signature:</b>
 

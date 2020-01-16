@@ -4,6 +4,8 @@
 
 ## app package
 
+[Angular schematics](https://angular.io/guide/schematics) used to add application support for Acoustic Content.
+
 ## Functions
 
 |  Function | Description |

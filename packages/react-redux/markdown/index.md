@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-redux](./react-redux.md) |  |
+|  [@acoustic-content-sdk/react-redux](./react-redux.md) | Redux based implementation of [React](https://reactjs.org/) providers |
 

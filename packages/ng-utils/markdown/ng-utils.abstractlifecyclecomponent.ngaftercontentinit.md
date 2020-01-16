@@ -4,6 +4,7 @@
 
 ## AbstractLifeCycleComponent.ngAfterContentInit() method
 
+[AfterContentInit](https://angular.io/guide/lifecycle-hooks)
 
 <b>Signature:</b>
 

@@ -87,7 +87,7 @@ export const selectFeature: <S, FS = any>(idOrModuleId: string | ReduxFeatureMod
 // @public
 export const selectPayload: <T>(aAction: PayloadAction<T>) => T;
 
-// @public (undocumented)
+// @public
 export const STORE_ID = "@acoustic-content-sdk/redux-store";
 
 // @public

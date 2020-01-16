@@ -17,10 +17,8 @@ import {
   WchEditableEvent,
   WchInlineEditServiceV2
 } from '@acoustic-content-sdk/edit-api';
-import { AbstractLifeCycleComponent } from '@acoustic-content-sdk/ng-utils';
 import {
-  createSetterOnSubject,
-  createSingleSubject,
+  Generator,
   hashRandomIdentifier,
   identity,
   isString,
@@ -40,12 +38,7 @@ import {
   UNDEFINED$,
   wchTypeFromAccessor
 } from '@acoustic-content-sdk/utils';
-import {
-  EventEmitter,
-  OnDestroy,
-  OnInit,
-  ViewContainerRef
-} from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import {
   asyncScheduler,
   combineLatest,
@@ -99,14 +92,15 @@ const COMPONENT_ACCESSOR: AccessorType = null;
 // the accessor if the root level component is edited
 const ON_COMPONENT_ACCESSOR = of(COMPONENT_ACCESSOR);
 
-export abstract class AbstractWchEditableDirective
-  extends AbstractLifeCycleComponent
-  implements OnInit, OnDestroy, RenderingContextProviderV2 {
+export interface AbstractWchEditableDirectiveInput {
   /**
    * Main input value for the directive. It denotes the element that is being edited.
    */
-  wchEditable: AccessorType;
+  wchEditable$: Observable<AccessorType>;
+}
 
+export abstract class AbstractWchEditableDirective
+  implements RenderingContextProviderV2 {
   /**
    * Event that tells about the inline edit process
    */
@@ -160,7 +154,8 @@ export abstract class AbstractWchEditableDirective
   protected authoringType$: Observable<AuthoringType>;
 
   protected constructor(
-    vcRef: ViewContainerRef,
+    aInput: AbstractWchEditableDirectiveInput,
+    aElementRef: Generator<any>,
     aInternal: WchInternalEditService,
     aProvider: RenderingContextProviderV2,
     aTypeResolver: DeliveryTypeResolver,
@@ -168,11 +163,11 @@ export abstract class AbstractWchEditableDirective
     aDefaultPlaceholderText: WchDefaultPlaceholderText,
     aDefaultLocale: string,
     aUrlConfig$: Observable<UrlConfig>,
+    aInit$: Observable<any>,
+    aDone$: Observable<any>,
     aInlineEditService?: WchInlineEditServiceV2,
     aLogSvc?: LoggerService
   ) {
-    // default
-    super();
     // logging
     const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
 
@@ -198,18 +193,14 @@ export abstract class AbstractWchEditableDirective
       handle
     );
 
-    // the accessor definitions
-    const onWchEditable = createSingleSubject<AccessorType>();
-
-    Object.defineProperties(that, {
-      wchEditable: createSetterOnSubject(onWchEditable)
-    });
+    // input
+    const { wchEditable$ } = aInput;
 
     // attach to lifecycle hooks
-    const init$ = that.onInit$;
+    const init$ = aInit$;
     const opUntilDestroyed: <T>(
       src: Observable<T>
-    ) => Observable<T> = takeUntil(that.onDestroy$);
+    ) => Observable<T> = takeUntil(aDone$);
 
     /**
      * Share emission until destroyed
@@ -220,7 +211,7 @@ export abstract class AbstractWchEditableDirective
 
     // the accessor
     const accessor$: Observable<AccessorType> = rxPipe(
-      onWchEditable,
+      wchEditable$,
       opDistinctUntilChanged,
       switchMap((input) =>
         input === null
@@ -375,7 +366,7 @@ export abstract class AbstractWchEditableDirective
     // exposes the current element
     const currentElement$ = rxPipe(
       init$,
-      map(() => vcRef.element.nativeElement as HTMLElement),
+      map(aElementRef),
       tap(
         assertValue(Boolean, () =>
           logger.warn('Native element must be defined.', handle)

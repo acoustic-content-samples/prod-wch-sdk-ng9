@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng-utils](./ng-utils.md) |  |
+|  [@acoustic-content-sdk/ng-utils](./ng-utils.md) | Implementation of a utility methods and classes for Angular based projects |
 

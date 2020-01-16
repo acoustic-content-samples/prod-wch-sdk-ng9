@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/app](./app.md) |  |
+|  [@acoustic-content-sdk/app](./app.md) | [Angular schematics](https://angular.io/guide/schematics) used to add application support for Acoustic Content. |
 

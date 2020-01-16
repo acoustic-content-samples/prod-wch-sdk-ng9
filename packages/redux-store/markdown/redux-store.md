@@ -17,7 +17,7 @@ Implementation of a [Redux](https://redux.js.org/api/store) store with support f
 |  [featureModuleId(id)](./redux-store.featuremoduleid.md) | Constructs a feature module ID that carries type information |
 |  [ofInitFeature(idOrModuleId)](./redux-store.ofinitfeature.md) | Returns an operator function that filters the initialization actions for a particular feature. This is typically used in feature epics. Since we know that an initialization can occur at most once, the operator also terminates automatically after the first emission. |
 |  [rxSelectFeature(idOrModuleId)](./redux-store.rxselectfeature.md) | Returns a selector that selects the given feature from the store and returns an observable to that feature state. |
-|  [rxStore(aStore)](./redux-store.rxstore.md) | Exposes the store as an observable |
+|  [rxStore(aStore)](./redux-store.rxstore.md) | Exposes the store as an [Observable](https://rxjs.dev/api/index/class/Observable)<!-- -->. |
 
 ## Interfaces
 
@@ -37,7 +37,7 @@ Implementation of a [Redux](https://redux.js.org/api/store) store with support f
 |  [rxSelect](./redux-store.rxselect.md) | Exposes a memoized selector function |
 |  [selectFeature](./redux-store.selectfeature.md) | Returns a selector that selects the given feature |
 |  [selectPayload](./redux-store.selectpayload.md) | Selects the payload from a [PayloadAction](./redux-store.payloadaction.md) instance |
-|  [STORE\_ID](./redux-store.store_id.md) |  |
+|  [STORE\_ID](./redux-store.store_id.md) | Exposes the namespace of this store. This constant can e.g. be used to prefix actions. |
 |  [VERSION](./redux-store.version.md) | Version and build number of the package |
 
 ## Type Aliases

@@ -4,6 +4,8 @@
 
 ## react-redux package
 
+Redux based implementation of [React](https://reactjs.org/) providers
+
 ## Variables
 
 |  Variable | Description |

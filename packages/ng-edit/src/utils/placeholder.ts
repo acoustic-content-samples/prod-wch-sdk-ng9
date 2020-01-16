@@ -6,6 +6,7 @@ import {
   LocalizedText
 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
+import { WchEditableFormat } from '@acoustic-content-sdk/ng-edit-api';
 import {
   BiFunction,
   createCache,
@@ -42,11 +43,6 @@ import { map, switchMap } from 'rxjs/operators';
 export declare type WchDefaultPlaceholderText = ObservableOrT<
   string | LocalizedText
 >;
-
-/**
- * Potential values for the 'wchFormat' field
- */
-export declare type WchEditableFormat = 'text' | 'html' | 'auto';
 
 export const WCH_EDITABLE_TEXT_FORMAT = 'text';
 export const WCH_EDITABLE_AUTO_FORMAT = 'auto';

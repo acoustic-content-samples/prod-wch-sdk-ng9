@@ -4,6 +4,7 @@
 
 ## AbstractLifeCycleComponent.ngAfterContentChecked() method
 
+[AfterContentChecked](https://angular.io/guide/lifecycle-hooks)
 
 <b>Signature:</b>
 

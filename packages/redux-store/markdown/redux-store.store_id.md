@@ -4,6 +4,8 @@
 
 ## STORE\_ID variable
 
+Exposes the namespace of this store. This constant can e.g. be used to prefix actions.
+
 <b>Signature:</b>
 
 ```typescript

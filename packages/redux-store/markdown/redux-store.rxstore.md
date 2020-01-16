@@ -4,7 +4,7 @@
 
 ## rxStore() function
 
-Exposes the store as an observable
+Exposes the store as an [Observable](https://rxjs.dev/api/index/class/Observable)<!-- -->.
 
 <b>Signature:</b>
 
@@ -22,5 +22,5 @@ export declare function rxStore<S>(aStore: Store<S>): Observable<S>;
 
 `Observable<S>`
 
-the store as an observable
+the store as an [Observable](https://rxjs.dev/api/index/class/Observable)
 

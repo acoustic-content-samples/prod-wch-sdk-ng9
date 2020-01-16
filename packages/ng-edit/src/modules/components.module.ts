@@ -5,9 +5,6 @@ import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
 
 import { WchPlaceholderComponent } from '../components/placeholder/placeholder.component';
-import { WchEditablePlaceholderDirective } from '../directives/editable/editable.placeholder.directive';
-import { WchSelectableDirective } from '../directives/selectable/selectable.directive';
-import { WchEditableDirective } from './../directives/editable/editable.directive';
 import { EditItemPipe } from './../pipes/edit.item.pipe';
 import { MODULE, VERSION } from './../version';
 import { WchNgInlineEditServiceModule } from './wch.inline.edit.module';
@@ -25,22 +22,9 @@ const LOGGER = 'WchNgEditComponentsModule';
     WchPlaceholderProviderModule,
     WchNgInlineEditServiceModule
   ],
-  declarations: [
-    WchSelectableDirective,
-    WchEditableDirective,
-    WchEditablePlaceholderDirective,
-    WchPlaceholderComponent,
-    EditItemPipe
-  ],
+  declarations: [WchPlaceholderComponent, EditItemPipe],
   providers: [],
-  exports: [
-    WchPlaceholderComponent,
-    WchSelectableDirective,
-    WchEditableDirective,
-    WchEditablePlaceholderDirective,
-    EditItemPipe
-  ],
-  entryComponents: [WchPlaceholderComponent]
+  exports: [WchPlaceholderComponent, EditItemPipe]
 })
 export class WchNgEditComponentsModule {
   constructor(

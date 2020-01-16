@@ -4,6 +4,7 @@
 
 ## AbstractLifeCycleComponent.ngOnInit() method
 
+{@<!-- -->linkhttps://angular.io/guide/lifecycle-hooks\| OnInit<!-- -->}
 
 <b>Signature:</b>
 
