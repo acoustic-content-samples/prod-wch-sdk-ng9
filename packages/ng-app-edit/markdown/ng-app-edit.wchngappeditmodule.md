@@ -11,3 +11,10 @@ Imports the modules required for inline edit functionality
 ```typescript
 export declare class WchNgAppEditModule 
 ```
+
+## Constructors
+
+|  Constructor | Modifiers | Description |
+|  --- | --- | --- |
+|  [(constructor)(aLoggerService)](./ng-app-edit.wchngappeditmodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgAppEditModule</code> class |
+

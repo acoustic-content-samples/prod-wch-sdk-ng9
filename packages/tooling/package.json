@@ -37,7 +37,7 @@
   },
   "peerDependencies": {
     "chalk": "^3",
-    "jsdom": "^15",
+    "jsdom": "^16",
     "lodash": "^4",
     "rxjs": "^6",
     "semver": "^7",

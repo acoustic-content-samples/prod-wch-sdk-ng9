@@ -4,6 +4,8 @@
 
 ```ts
 
+import { LoggerService } from '@acoustic-content-sdk/api';
+
 // @public
 export const VERSION: {
     version: {
@@ -16,6 +18,7 @@ export const VERSION: {
 
 // @public
 export class WchNgAppEditModule {
+    constructor(aLoggerService: LoggerService);
 }
 
 

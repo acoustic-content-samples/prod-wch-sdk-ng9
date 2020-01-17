@@ -36,13 +36,13 @@
     "chalk": "^3.0.0",
     "commander": "^4.1.0",
     "cross-spawn": "^7.0.1",
-    "handlebars": "^4.7.1",
+    "handlebars": "^4.7.2",
     "handlebars-helpers": "^0.10.0",
-    "jsdom": "^15.2.1",
+    "jsdom": "^16.0.0",
     "lodash": "^4.17.15",
     "rxjs": "6.5.3",
     "semver": "^7.1.1",
-    "uuid": "^3.3.3"
+    "uuid": "^3.4.0"
   },
   "peerDependencies": {},
   "publishConfig": {
