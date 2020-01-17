@@ -21,6 +21,9 @@ import {
 
 const sortPackageJson = require('sort-package-json');
 
+const REMOVE_METADATA = false;
+const REPLACE_FESM = false;
+
 const ANGULAR_PREFIX = '@angular/';
 
 const justMajor = (aValue: string) => /\d+/.exec(aValue)[0];
@@ -182,7 +185,7 @@ function fixExports(aPkg: any): any {
   const copy = { ...aPkg };
   // use the `esm5` default export instead of `fesm5`
   const esm5 = copy.esm5;
-  if (esm5) {
+  if (esm5 && REPLACE_FESM) {
     copy.module = esm5;
   }
   return sortPackageJson(copy);
@@ -190,7 +193,7 @@ function fixExports(aPkg: any): any {
 
 function fixPackageJson(aPkg: any, aIsAngular: boolean): any {
   const copy = { ...aPkg };
-  if (!aIsAngular) {
+  if (!aIsAngular && REMOVE_METADATA) {
     delete copy.metadata;
   }
   delete copy.devDependencies;
@@ -284,7 +287,7 @@ function rewritePackage(
     );
     // check if we need to delete the metadata file
     const deleted$ = isAngular$.then((isAngular) =>
-      !isAngular ? remove(metadataName) : undefined
+      !isAngular && REMOVE_METADATA ? remove(metadataName) : undefined
     );
     // combine
     return Promise.all([rewritten$, deleted$]).then(([rewritten]) => rewritten);

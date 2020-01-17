@@ -4,6 +4,7 @@ import { join, parse } from 'path';
 import { bindNodeCallback, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { satisfies } from 'semver';
+import {} from '@angular-devkit/architect';
 
 export enum DEP_TYPE {
   PEER,
@@ -15,8 +16,8 @@ export function getFolderForType(aType?: DEP_TYPE): string {
   return aType === DEP_TYPE.PEER
     ? 'peerDependencies'
     : aType === DEP_TYPE.DEVELOPMENT
-      ? 'devDependencies'
-      : 'dependencies';
+    ? 'devDependencies'
+    : 'dependencies';
 }
 
 /**
@@ -50,7 +51,7 @@ const rxReadFile = bindNodeCallback<string, string, string>(readFile);
 export function findPackageJson(aDir: string): Observable<any> {
   // read
   return rxReadFile(join(aDir, 'package.json'), 'utf-8').pipe(
-    map(data => JSON.parse(data)),
-    catchError(err => findPackageJson(parse(aDir).dir))
+    map((data) => JSON.parse(data)),
+    catchError((err) => findPackageJson(parse(aDir).dir))
   );
 }
