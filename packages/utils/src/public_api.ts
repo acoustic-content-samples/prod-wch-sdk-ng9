@@ -333,6 +333,7 @@ export {
   isURL,
   Predicate
 } from './predicates/predicates';
+export { lazyProxy } from './proxy/lazy.proxy';
 export {
   createDeliveryContentItem,
   createDeliveryContentItemWithMetadata
