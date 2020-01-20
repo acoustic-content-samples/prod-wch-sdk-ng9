@@ -1,0 +1,57 @@
+{
+  "id": "7686ae07-df09-4c11-9305-1894b4f93a9f",
+  "rev": "1-9d8f1ba414eba665ebb2477263129d4d",
+  "name": "HTML Email",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "email"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Markup",
+      "key": "markup"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      },
+      "label": "Settings",
+      "key": "settings",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "label": "Editor",
+      "key": "editor",
+      "hidden": true,
+      "searchKey": "string1",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 32,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "label": "Plain Text",
+      "key": "plainText",
+      "hidden": true
+    },
+    {
+      "elementType": "toggle",
+      "label": "Customized Plain Text",
+      "key": "customizedPlainText",
+      "hidden": true
+    }
+  ]
+}

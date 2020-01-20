@@ -1,0 +1,32 @@
+{
+  "id": "9a7479fc-4ee3-420b-91b7-00ce9c61285a",
+  "rev": "1-480b3575311d2ac014aacb667e0cefef",
+  "name": "Small",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+  "parent": "0e1cd869-ee48-4ef6-ae6d-7be957c84d10",
+  "ancestorIds": [
+    "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+    "0e1cd869-ee48-4ef6-ae6d-7be957c84d10"
+  ],
+  "namePath": [
+    "Image size and placement",
+    "Size",
+    "Small"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/9a7479fc-4ee3-420b-91b7-00ce9c61285a"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/0e1cd869-ee48-4ef6-ae6d-7be957c84d10"
+    }
+  },
+  "created": "2019-08-13T08:33:09.827Z",
+  "lastModified": "2019-08-13T08:33:09.827Z"
+}

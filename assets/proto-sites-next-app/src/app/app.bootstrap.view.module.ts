@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AppViewModule } from './app.view.module';
+import { AppLiveModule } from './app.live.module';
 
 
 
 @NgModule({
   imports: [
-    AppViewModule
+    AppLiveModule
   ],
   bootstrap: [AppComponent]
 })

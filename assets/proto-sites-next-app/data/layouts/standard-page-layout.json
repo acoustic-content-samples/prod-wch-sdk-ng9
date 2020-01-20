@@ -1,0 +1,12 @@
+{
+  "id": "standard-page-layout",
+  "rev": "1-710b082f2dedc12a2610c85a3d4b1710",
+  "name": "One column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/standard-page-hero_220.svg"
+  },
+  "template": "standard-page-layout",
+  "templateType": "angular"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "aab86460-0018-44c2-9f52-3a326e58f7f7",
+  "rev": "4-f6663db83888089f8504dde505779877",
+  "name": "Page Contributions",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "354743b2-f89a-482b-b447-2b5a2367c8bd"
+      },
+      "label": "head",
+      "key": "head",
+      "role": [
+        "configuration"
+      ],
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Custom Element"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "354743b2-f89a-482b-b447-2b5a2367c8bd"
+      },
+      "label": "body",
+      "key": "body",
+      "role": [
+        "configuration"
+      ],
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Custom Element"
+    }
+  ]
+}

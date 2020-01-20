@@ -1,0 +1,60 @@
+{
+  "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28",
+  "rev": "4-10dceb1b7aa8a69d9b523a89862512cb",
+  "name": "Page Descriptor",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "site",
+      "key": "site",
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "label": "canonicalPath",
+      "key": "canonicalpath",
+      "allowMultipleValues": false,
+      "required": true,
+      "minLength": 1,
+      "searchKey": "string1",
+      "maxLength": 4000
+    },
+    {
+      "elementType": "text",
+      "label": "alternativePath",
+      "key": "alternativepath",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Text"
+    },
+    {
+      "elementType": "text",
+      "label": "keywords",
+      "key": "keywords",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Text"
+    },
+    {
+      "elementType": "text",
+      "label": "title",
+      "key": "title",
+      "required": true,
+      "minLength": 1
+    },
+    {
+      "elementType": "text",
+      "label": "description",
+      "key": "description"
+    }
+  ]
+}

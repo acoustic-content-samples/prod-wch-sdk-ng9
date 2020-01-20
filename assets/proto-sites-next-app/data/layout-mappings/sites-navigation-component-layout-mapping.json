@@ -1,0 +1,31 @@
+{
+  "id": "sites-navigation-component-layout-mapping",
+  "rev": "2-9f26c9896b7222fe1f0abf1d6096b360",
+  "name": "sitesNavigationComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "6854f419-3b8b-4410-8d33-134a485d05a3",
+    "name": "Sites Navigation Component"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "sites-top-navigation-layout",
+        "name": "sitesTopNavigationLayout"
+      },
+      "layouts": [
+        {
+          "id": "sites-top-navigation-layout",
+          "name": "sitesTopNavigationLayout"
+        },
+        {
+          "id": "sites-breadcrumb-navigation-layout",
+          "name": "sitesBreadcrumbNavigationLayout"
+        }
+      ]
+    }
+  ]
+}

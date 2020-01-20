@@ -1,0 +1,30 @@
+{
+  "id": "a84f2c97-33bb-45fa-8156-25141df73055",
+  "rev": "7-7e3f7019f65e4cbc044ea8cc0ed036f6",
+  "name": "Sites Video",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "video",
+      "label": "Video",
+      "key": "video"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "landing-page-layout-mapping",
+  "rev": "1-51d6b5c24848e79d6507dc11b7b8a353",
+  "name": "landingPageLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "5cd736ef-d01c-4dd9-9794-14b2473e9239"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "landing-page-layout"
+      },
+      "layouts": [
+        {
+          "id": "landing-page-layout"
+        }
+      ]
+    }
+  ]
+}

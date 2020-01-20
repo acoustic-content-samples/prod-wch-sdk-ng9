@@ -1,0 +1,90 @@
+{
+  "id": "8eb34ed3-fbdf-439e-aaeb-00060cdeb63a",
+  "rev": "38-c934a69445d67ccfbc9b49fc190ee280",
+  "name": "Sites Page Card",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Heading",
+      "key": "heading"
+    },
+    {
+      "elementType": "text",
+      "label": "summary",
+      "key": "summary",
+      "displayType": "multiLine",
+      "displayHeight": 2
+    },
+    {
+      "elementType": "link",
+      "label": "link",
+      "key": "link"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      },
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Bottom",
+          "selection": "image-bottom"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    }
+  ]
+}

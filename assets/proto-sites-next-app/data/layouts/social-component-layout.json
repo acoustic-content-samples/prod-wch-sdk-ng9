@@ -1,0 +1,12 @@
+{
+  "id": "social-component-layout",
+  "rev": "1-d1b049fa72c1481b720e3898030b3541",
+  "name": "One Column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/social-component-layout.jpg"
+  },
+  "template": "social-component-layout",
+  "templateType": "angular"
+}

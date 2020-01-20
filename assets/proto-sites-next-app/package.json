@@ -4,11 +4,13 @@
   "private": true,
   "description": "Sample application for sites-next",
   "scripts": {
-    "build:prod:edit": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration=production,edit",
-    "build:prod:view": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration=production,view",
-    "build:prod": "npm-run-all build:prod:edit build:prod:view",
-    "contributions": "ng g @acoustic-content-sdk/schematics:contributions --data dist/data",
-    "deploy": "npm-run-all build:prod contributions deploy:wchtools deploy:artifactory deploy:module deploy:composer08:sitesv2:1 deploy:composer08:sitesv2",
+    "build:prod:preview": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration=production,preview",
+    "build:prod:live": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration=production,live",
+    "build:prod": "npm-run-all build:prod:preview build:prod:live",
+    "build:contributions:preview": "ng g @acoustic-content-sdk/schematics:contributions --data dist/data --configuration=production,preview --mode=preview",
+    "build:contributions:live": "ng g @acoustic-content-sdk/schematics:contributions --data dist/data --configuration=production,live --mode=live",
+    "build:contributions": "npm-run-all build:contributions:preview build:contributions:live",
+    "deploy": "npm-run-all build:prod build:contributions deploy:wchtools deploy:artifactory deploy:module deploy:composer08:sitesv2:1 deploy:composer08:sitesv2",
     "deploy:all": "npm-run-all --parallel deploy:wchtools deploy:artifactory",
     "deploy:artifactory": "ts-node --project ./scripts/tsconfig.scripts.json ./scripts/artifactory.ts",
     "deploy:composer08:sitesv2": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wchtools push --dir dist/data -cw -fv --url https://my.composer-08.rtp.raleigh.ibm.com/api/13b399fd-83e0-4cce-a767-1eba1ee18888",
@@ -45,7 +47,7 @@
     "print:env": "node print.js",
     "pull": "wchtools pull --dir temp -A -v",
     "push": "wchtools push --dir data -A -v",
-    "start": "ng serve --configuration=edit",
+    "start": "ng serve --configuration=preview",
     "test": "ng test"
   },
   "dependencies": {

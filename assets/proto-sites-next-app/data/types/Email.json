@@ -1,0 +1,99 @@
+{
+  "id": "51071056-1f70-499e-9ee3-b2066f56b119",
+  "rev": "1-54de95f1a37e383ff71e5f480e163c12",
+  "name": "Email",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "email"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "b908096b-9cd2-4085-bf0c-a510576e633b"
+      },
+      "label": "Rows",
+      "key": "rows",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Row"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      },
+      "label": "Settings",
+      "key": "settings"
+    },
+    {
+      "elementType": "text",
+      "label": "Editor",
+      "key": "editor",
+      "role": [
+        "configuration"
+      ],
+      "hidden": true,
+      "searchKey": "string1"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Width",
+      "key": "width",
+      "minimum": 480,
+      "maximum": 900,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margin",
+      "key": "margin",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Background color",
+      "key": "backgroundColor",
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Background color",
+      "key": "contentAreaBackgroundColor",
+      "role": [
+        "configuration"
+      ]
+    }
+  ]
+}

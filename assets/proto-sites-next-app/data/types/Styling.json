@@ -1,0 +1,30 @@
+{
+  "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb",
+  "rev": "1-f1508edb658b32854f79f6cdbb5c8351",
+  "name": "Styling",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Font",
+      "key": "font"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Size",
+      "key": "size"
+    },
+    {
+      "elementType": "text",
+      "label": "Color",
+      "key": "color"
+    }
+  ]
+}

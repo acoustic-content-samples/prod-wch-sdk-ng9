@@ -1,4 +1,4 @@
-import { VirtualTree } from '@angular-devkit/schematics';
+import { HostTree } from '@angular-devkit/schematics';
 import { Change, InsertChange } from '@acoustic-content-sdk/schematics-utils';
 
 import { getFileContent } from './get-file-content';
@@ -8,7 +8,7 @@ export function applyChanges(
   content: string,
   changes: Change[]
 ): string {
-  const tree = new VirtualTree();
+  const tree = new HostTree();
   tree.create(path, content);
   const exportRecorder = tree.beginUpdate(path);
   for (const change of changes) {

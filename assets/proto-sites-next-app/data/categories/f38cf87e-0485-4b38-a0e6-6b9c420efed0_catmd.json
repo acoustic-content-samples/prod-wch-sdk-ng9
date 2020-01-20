@@ -1,0 +1,22 @@
+{
+  "id": "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+  "rev": "1-5e379400ee2937f26ffdc69c6e57304f",
+  "name": "Image size and placement",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "description": "This taxonomy is used with features and design articles. Content creators  select which size image they want to use.",
+  "classification": "taxonomy",
+  "firstClassFor": [
+    ""
+  ],
+  "namePath": [
+    "Image size and placement"
+  ],
+  "links": {
+    "self": {
+      "href": "/authoring/v1/categories/f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+    }
+  },
+  "created": "2019-08-13T08:33:08.618Z",
+  "lastModified": "2019-08-13T08:33:08.618Z"
+}

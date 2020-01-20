@@ -20,5 +20,5 @@ export interface CreateDriverArtifactsSchema {
   /**
    * mode
    */
-  mode?: ArtifactMode;
+  mode?: string;
 }

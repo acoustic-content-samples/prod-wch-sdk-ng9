@@ -1,0 +1,57 @@
+{
+  "id": "fe31fbf4-4bc4-4ffa-9b27-615af51d23fe",
+  "rev": "1-1fdaa8662f012c23bb1515fab43358e8",
+  "name": "Lead image",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "thumbnail": {
+    "id": "46738ac1-a7aa-4610-ad04-9e523365c501"
+  },
+  "contentThumbnail": {
+    "imageElement": "leadImage",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ],
+      "fieldLabel": "Image",
+      "label": "Lead image",
+      "key": "leadImage",
+      "imageProfileId": "3428916c-b356-4b47-aeb2-5eb8e3494b00"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Lead image caption",
+      "key": "leadImageCaption",
+      "placeholder": {
+        "show": true,
+        "text": "Add a caption for your image."
+      }
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Lead image credit",
+      "key": "leadImageCredit",
+      "placeholder": {
+        "show": true,
+        "text": "Photographer name"
+      }
+    }
+  ]
+}

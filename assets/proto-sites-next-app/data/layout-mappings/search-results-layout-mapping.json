@@ -1,0 +1,21 @@
+{
+  "id": "search-results-layout-mapping",
+  "rev": "1-f1a323fb0988e942faab5ae7cf1e5d0f",
+  "name": "searchResultsLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "f9e2e592-81be-4513-86a3-9abd4d869d6e"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "search-results-layout"
+      },
+      "layouts": [
+        {
+          "id": "search-results-layout"
+        }
+      ]
+    }
+  ]
+}

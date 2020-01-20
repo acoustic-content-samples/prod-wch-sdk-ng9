@@ -1,0 +1,30 @@
+{
+  "id": "f9e2e592-81be-4513-86a3-9abd4d869d6e",
+  "rev": "1-197fcd0c1279bb8ff0276f486d332e18",
+  "name": "Search results",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "IBM provided sample of a search results page. A list of suggested articles is displayed when there are no results.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "Suggested articles",
+      "key": "suggestedArticles",
+      "restrictTypes": [
+        {
+          "id": "84c0e928-6585-4d34-ba02-5ed1b2e4c21c"
+        },
+        {
+          "id": "9aeeecef-85ce-4d41-a797-1ad27735d0cb"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "spacer-component-layout-mapping",
+  "rev": "1-577518359434ec024b0a8e94555dad5c",
+  "name": "spacerComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "209c5579-4e6d-4e88-9c47-76de4c25c6f8"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "spacer-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "spacer-component-layout"
+        }
+      ]
+    }
+  ]
+}

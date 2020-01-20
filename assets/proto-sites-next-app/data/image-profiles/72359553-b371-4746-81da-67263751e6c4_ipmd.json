@@ -1,0 +1,27 @@
+{
+  "id": "72359553-b371-4746-81da-67263751e6c4",
+  "rev": "1-221c5c7b5b346aacc6e5a3203f048315",
+  "name": "Profile for feature images",
+  "classification": "image-profile",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2018-04-10T18:57:01.656Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "lastModified": "2019-08-13T08:33:07.496Z",
+  "tags": [],
+  "dimensions": [
+    {
+      "label": "Small",
+      "key": "small",
+      "width": 350,
+      "height": 350,
+      "description": "Images used in features for landing pages"
+    },
+    {
+      "label": "Large",
+      "key": "large",
+      "width": 600,
+      "height": 600,
+      "description": "Images used in features for landing pages"
+    }
+  ]
+}

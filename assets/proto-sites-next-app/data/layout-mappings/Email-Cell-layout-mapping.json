@@ -1,0 +1,21 @@
+{
+  "id": "659a73c9-dd3e-472e-a3c4-0686ad617a79",
+  "rev": "1-233ea31a994a6f4fe85e4e36c13f7405",
+  "name": "Email Cell Layout Mapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "b7c78cbd-83fd-4388-b4d8-d5230ef05f7d"
+      },
+      "layouts": [
+        {
+          "id": "b7c78cbd-83fd-4388-b4d8-d5230ef05f7d"
+        }
+      ]
+    }
+  ]
+}

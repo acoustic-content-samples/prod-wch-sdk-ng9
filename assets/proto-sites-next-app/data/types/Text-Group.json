@@ -1,0 +1,68 @@
+{
+  "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55",
+  "rev": "1-fbfe382ec50ed040719a3d90356a16e0",
+  "name": "Text Group",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "formattedtext",
+      "label": "Text",
+      "key": "text",
+      "hidden": true
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "a93f6a4a-d086-4bb1-9bb4-69fe9cc75cdb"
+      },
+      "label": "Text Style",
+      "key": "textStyle"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Link color",
+      "key": "linkColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "63f1d1c5-fa92-48da-a7a2-a2b700f4b097"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "5b94254c-71a0-42aa-b979-e21ffbae12b2"
+      },
+      "label": "Line height",
+      "key": "lineHeight"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding"
+    }
+  ]
+}

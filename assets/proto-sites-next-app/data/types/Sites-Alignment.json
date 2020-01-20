@@ -1,0 +1,35 @@
+{
+  "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5",
+  "rev": "6-c24efb43d85a86a43f53eaf3ec1cbeae",
+  "name": "Sites Alignment",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Left",
+          "selection": "left"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Right",
+          "selection": "right"
+        }
+      ],
+      "label": "Alignment options",
+      "key": "alignmentOptions"
+    }
+  ]
+}

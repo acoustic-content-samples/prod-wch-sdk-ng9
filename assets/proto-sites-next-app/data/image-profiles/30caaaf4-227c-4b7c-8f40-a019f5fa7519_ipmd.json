@@ -1,0 +1,20 @@
+{
+  "id": "30caaaf4-227c-4b7c-8f40-a019f5fa7519",
+  "rev": "1-8a018713a69c34d6add9bf33d186415f",
+  "name": "Profile for hero images",
+  "classification": "image-profile",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2018-04-10T18:56:24.981Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "lastModified": "2019-08-13T08:33:07.490Z",
+  "tags": [],
+  "dimensions": [
+    {
+      "label": "Hero",
+      "key": "hero",
+      "width": 2000,
+      "height": 833,
+      "description": "Image used as a hero for landing pages and web pages"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Website template",
+  "description": "Template for websites",
+  "kind": [
+    "template"
+  ],
+  "contextRoot": "Website template",
+  "storeId": "",
+  "storeIdentifier": "",
+  "routingMode": "path",
+  "status": "ready",
+  "classification": "site",
+  "lastModified": "2019-08-13T08:34:42.487Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "created": "2019-08-13T08:34:42.487Z",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "id": "d2065ae0-2ee9-4d19-80b1-502b79833cb3",
+  "rev": "1-f55f3c2a1f4cb6a9202559ed39ee2dd1"
+}

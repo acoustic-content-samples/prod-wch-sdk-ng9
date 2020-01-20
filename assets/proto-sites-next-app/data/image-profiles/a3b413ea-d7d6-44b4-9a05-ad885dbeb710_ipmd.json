@@ -1,0 +1,31 @@
+{
+  "id": "a3b413ea-d7d6-44b4-9a05-ad885dbeb710",
+  "rev": "1-9c7481d7d7d43e1bad5f5fd2ddbf7130",
+  "name": "Profile for feature content",
+  "classification": "image-profile",
+  "description": "Profile is used with the feature content type. The author can select which size to use with the image size selection.",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2017-08-10T19:00:21.893Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "lastModified": "2019-08-13T08:33:07.653Z",
+  "dimensions": [
+    {
+      "label": "Small",
+      "key": "small",
+      "width": 379,
+      "height": 465
+    },
+    {
+      "label": "Medium",
+      "key": "medium",
+      "width": 584,
+      "height": 465
+    },
+    {
+      "label": "Large",
+      "key": "large",
+      "width": 790,
+      "height": 465
+    }
+  ]
+}

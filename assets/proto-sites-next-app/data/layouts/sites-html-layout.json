@@ -1,0 +1,10 @@
+{
+  "id": "sites-html-layout",
+  "rev": "1-9560da268d55858c9e3173e55f3d1744",
+  "name": "sitesHtmlLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/html-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

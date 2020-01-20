@@ -1,0 +1,47 @@
+{
+  "id": "0c6b2078-02dd-4c5d-858f-99d6d88114b5",
+  "rev": "1-51b1139b659892069186b7a0f13bc6fb",
+  "name": "Background Image",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "toggle",
+      "label": "Include background image",
+      "key": "includeBackgroundImage"
+    },
+    {
+      "elementType": "image",
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Full Width",
+          "selection": "full-width"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Tile",
+          "selection": "tile"
+        }
+      ],
+      "label": "Fill options",
+      "key": "fillOptions"
+    }
+  ]
+}

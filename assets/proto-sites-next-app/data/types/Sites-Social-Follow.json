@@ -1,0 +1,76 @@
+{
+  "id": "669768ce-44c7-4de3-83c1-a72d871e8df2",
+  "rev": "23-874285ec9041cb8e45f6e9ec0f0eab37",
+  "name": "Sites Social Follow",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Icon Set",
+      "key": "iconSet"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "98f24456-bf11-4248-bca9-07e273b8dbc4"
+      },
+      "label": "Social Links",
+      "key": "socialLinks",
+      "allowMultipleValues": true,
+      "required": false
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Size",
+      "key": "size"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Background Color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Spacing between icons​",
+      "key": "spacing"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

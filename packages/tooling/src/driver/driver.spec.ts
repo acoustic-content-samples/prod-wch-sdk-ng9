@@ -16,14 +16,14 @@ describe('driver', () => {
     const readProto = createReadTextFile(PROTO);
 
     const artifact$ = createDriverArtifacts(readProto, {
-      configuration: 'production, edit'
+      configuration: 'production'
     });
 
     const test$ = rxPipe(
       artifact$,
       map(wchToolsFileDescriptor),
       count(),
-      tap((c) => expect(c).toEqual(8))
+      tap((c) => expect(c).toEqual(15))
     );
 
     await test$.toPromise();
@@ -36,7 +36,7 @@ describe('driver', () => {
       artifact$,
       map(wchToolsFileDescriptor),
       count(),
-      tap((c) => expect(c).toEqual(6))
+      tap((c) => expect(c).toEqual(11))
     );
 
     return test$.toPromise();

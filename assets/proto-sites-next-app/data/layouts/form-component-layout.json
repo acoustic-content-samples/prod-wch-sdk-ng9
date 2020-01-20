@@ -1,0 +1,12 @@
+{
+  "id": "form-component-layout",
+  "rev": "1-2928112add43769d6163adcfd76928cb",
+  "name": "One Column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/form-component-layout.jpg"
+  },
+  "template": "form-component-layout",
+  "templateType": "angular"
+}

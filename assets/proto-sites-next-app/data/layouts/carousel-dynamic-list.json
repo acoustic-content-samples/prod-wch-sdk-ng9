@@ -1,0 +1,12 @@
+{
+  "id": "carousel-dynamic-list",
+  "rev": "1-50930f1293d4bcc2878cc203732e250c",
+  "name": "Carousel",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/list-carousel_220.svg"
+  },
+  "template": "carousel-dynamic-list",
+  "templateType": "angular"
+}

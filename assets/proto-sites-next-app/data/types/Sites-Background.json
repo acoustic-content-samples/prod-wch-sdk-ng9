@@ -1,0 +1,57 @@
+{
+  "id": "0a92059b-de6b-476d-b291-1638a435d0af",
+  "rev": "10-143f4d475fc075522e8a779f20ea88a5",
+  "name": "Sites Background",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "Use for all backgrounds.",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Background Color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Include background image",
+      "key": "includeBackgroundImage"
+    },
+    {
+      "elementType": "image",
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Full Width",
+          "selection": "full-width"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Tile",
+          "selection": "tile"
+        }
+      ],
+      "label": "Fill",
+      "key": "fillOptions"
+    }
+  ]
+}

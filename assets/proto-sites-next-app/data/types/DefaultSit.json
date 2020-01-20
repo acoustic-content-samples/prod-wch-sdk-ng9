@@ -1,0 +1,13 @@
+{
+  "id": "26db51bd-b993-48c4-a8c6-2e90b8575de8",
+  "rev": "1-5348874924c81c92d07fcdd06c62a4c7",
+  "name": "DefaultSit",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": []
+}

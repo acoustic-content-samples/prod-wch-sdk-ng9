@@ -1,0 +1,21 @@
+{
+  "id": "contest-rules-layout-mapping",
+  "rev": "1-9f4db2c79aae9fb0f1994bb68abae160",
+  "name": "contestRulesLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "b77f0bfd-d068-44cc-a41c-fc15a0123c09"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "contest-rules-layout"
+      },
+      "layouts": [
+        {
+          "id": "contest-rules-layout"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "sign-up-layout-mapping",
+  "rev": "1-94298bee3dca365be116f51e979cd832",
+  "name": "signUpLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "58fd2ad1-df13-4a75-9918-6b34852539ab"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "sign-up-layout"
+      },
+      "layouts": [
+        {
+          "id": "sign-up-layout"
+        }
+      ]
+    }
+  ]
+}

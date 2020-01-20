@@ -1,0 +1,21 @@
+{
+  "id": "a7a29edc-1e35-4fb5-89bb-2e8d8e900baf",
+  "rev": "1-f0257bb1145d45a40af3d19dfbd5efd9",
+  "name": "Email Section Layout Mapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "b908096b-9cd2-4085-bf0c-a510576e633b"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "17375714-5c1a-4f82-91d2-7edd6f5b7747"
+      },
+      "layouts": [
+        {
+          "id": "17375714-5c1a-4f82-91d2-7edd6f5b7747"
+        }
+      ]
+    }
+  ]
+}

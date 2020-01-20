@@ -1,0 +1,39 @@
+{
+  "id": "5f53fa8b-c6bd-453b-9ff0-c011e3e3dcf0",
+  "rev": "4-cf2c1fb3fbeb9d712beaef71cc21470c",
+  "name": "Page",
+  "classification": "content-type",
+  "kind": [
+    "page",
+    "landing-page",
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "content",
+      "key": "content",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Content item",
+      "helpText": "Reference the content items displayed on this page."
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28"
+      },
+      "label": "descriptor",
+      "key": "descriptor",
+      "role": [
+        "configuration"
+      ],
+      "required": true
+    }
+  ]
+}

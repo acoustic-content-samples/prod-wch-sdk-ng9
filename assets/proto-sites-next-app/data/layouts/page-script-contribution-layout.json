@@ -1,0 +1,18 @@
+{
+  "id": "page-script-contribution-layout",
+  "rev": "3-69b966b3c37af1cfb43bb05d0eca3b52",
+  "name": "pageScriptContributionLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg"
+  },
+  "template": "/sites/templates/page-script-contribution-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page-script-contribution/{id}.html"
+}

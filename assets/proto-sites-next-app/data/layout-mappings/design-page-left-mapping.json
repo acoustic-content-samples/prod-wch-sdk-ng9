@@ -1,0 +1,24 @@
+{
+  "id": "design-page-left-mapping",
+  "rev": "1-0805757d3377a18f37252c1642d5836c",
+  "name": "designPageLeftMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "bb79c338-1e20-4d53-9ff3-9a6970ad9ed3"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "design-page-left"
+      },
+      "layouts": [
+        {
+          "id": "design-page-left"
+        },
+        {
+          "id": "design-page-right"
+        }
+      ]
+    }
+  ]
+}

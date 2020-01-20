@@ -1,0 +1,50 @@
+{
+  "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7",
+  "rev": "1-b22421d938d9044973e659375f901840",
+  "name": "Email Cell",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Span",
+      "key": "span",
+      "minimum": 2,
+      "maximum": 6,
+      "required": true
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "4cd0fbbb-3bf8-4497-9ee9-c89e37737674"
+      },
+      "label": "Content",
+      "key": "content",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Custom Element"
+    }
+  ]
+}

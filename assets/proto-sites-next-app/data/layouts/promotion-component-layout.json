@@ -1,0 +1,10 @@
+{
+  "id": "promotion-component-layout",
+  "rev": "1-fd75247c16abc74529a78a7ba27bcf8a",
+  "name": "promotionComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/promotion-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

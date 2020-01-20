@@ -1,0 +1,30 @@
+{
+  "id": "6f037a1b-8f2e-4458-839e-a49fa0227dba",
+  "rev": "1-3bf5bffe42b5d762ecd2d3500a177779",
+  "name": "Placement",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+  "parent": "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+  "ancestorIds": [
+    "f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+  ],
+  "namePath": [
+    "Image size and placement",
+    "Placement"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/6f037a1b-8f2e-4458-839e-a49fa0227dba"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+    }
+  },
+  "created": "2019-08-13T08:33:09.185Z",
+  "lastModified": "2019-08-13T08:33:09.185Z"
+}

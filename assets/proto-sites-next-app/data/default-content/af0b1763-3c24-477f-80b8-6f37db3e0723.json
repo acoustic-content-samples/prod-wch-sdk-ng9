@@ -1,0 +1,59 @@
+{
+  "rev": "1-e1f89c86ddb662a0f5458ee5df79c498",
+  "keywords": [],
+  "created": "2019-08-16T14:11:09.322Z",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "description": "",
+  "classification": "default-content",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "markup": {
+      "elementType": "text",
+      "value": ""
+    },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": {
+          "elementType": "text",
+          "value": ""
+        },
+        "fromName": {
+          "elementType": "text",
+          "value": ""
+        },
+        "subjectLine": {
+          "elementType": "text",
+          "value": ""
+        },
+        "databaseId": {
+          "elementType": "text",
+          "value": ""
+        },
+        "replyToAddress": {
+          "elementType": "text",
+          "value": ""
+        },
+        "fromAddress": {
+          "elementType": "text",
+          "value": ""
+        }
+      },
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      }
+    },
+    "editor": {
+      "elementType": "text",
+      "value": "html"
+    }
+  },
+  "name": "HTML Email",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "typeId": "7686ae07-df09-4c11-9305-1894b4f93a9f",
+  "id": "af0b1763-3c24-477f-80b8-6f37db3e0723",
+  "lastModified": "2019-08-16T14:11:09.322Z",
+  "systemModified": "2019-08-16T14:11:09.322Z",
+  "status": "ready"
+}

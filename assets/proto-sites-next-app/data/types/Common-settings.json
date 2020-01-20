@@ -1,0 +1,25 @@
+{
+  "id": "eeff476e-0559-444f-97d1-486a10a86b80",
+  "rev": "1-5edf08bb9ebdd261916be7b1129819e5",
+  "name": "Common settings",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "toggle",
+      "label": "Apply to all",
+      "key": "applyToAll"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Hide on mobile",
+      "key": "hideOnMobile",
+      "locked": false
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "7952a5b2-57d0-4a1b-a008-d37c7d7f5261",
+  "rev": "1-a8b2f03a3555c501805907af61cddd99",
+  "name": "Image group",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "images",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Background color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Spacing between images",
+      "key": "spacing",
+      "minimum": 0
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margins",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "image",
+      "label": "Images",
+      "key": "images",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Image",
+      "required": false,
+      "maximumValues": 5,
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ]
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "1 Row w/ 2 Equal Columns",
+          "selection": "2-col"
+        },
+        {
+          "label": "2 Rows w/ 1 Column Top, 1 Column Bottom",
+          "selection": "1-col-t-1-col-b"
+        },
+        {
+          "label": "1 Row w/ 3 Equal Columns",
+          "selection": "3-col"
+        },
+        {
+          "label": "2 Rows w/ 2 Columns Top, 1 Column Bottom",
+          "selection": "2-col-t-1-col-b"
+        },
+        {
+          "label": "2 Rows w/ 1 Column Top, 2 Columns Bottom",
+          "selection": "1-col-t-2-col-b"
+        },
+        {
+          "label": "1 Row w/ 4 Equal Columns",
+          "selection": "4-col"
+        },
+        {
+          "label": "2 Rows w/ 2 Columns",
+          "selection": "2-col-t-2-col-b"
+        },
+        {
+          "label": "2 Rows w/ 3 Columns Top, 1 Column Bottom",
+          "selection": "3-col-t-1-col-b"
+        },
+        {
+          "label": "2 Rows w/ 1 Column Top, 3 Columns Bottom",
+          "selection": "1-col-t-3-col-b"
+        },
+        {
+          "label": "2 Rows w/ 3 Columns Top, 2 Columns Bottom",
+          "selection": "3-col-t-2-col-b"
+        },
+        {
+          "label": "2 Rows w/ 2 Columns Top, 3 Columns Bottom",
+          "selection": "2-col-t-3-col-b"
+        },
+        {
+          "label": "3 Rows w/ 2 Columns Top, 1 Column Middle, 2 Columns Bottom",
+          "selection": "2-col-t-1-col-m-2-col-b"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "site-navigation-layout",
+  "rev": "3-01d19e6d8fa7554b3bb5321f2eb68a8f",
+  "name": "siteNavigationLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/site-navigation-layout.jpg"
+  },
+  "template": "/sites/templates/site-navigation-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/site-navigation/{id}.html"
+}

@@ -11,11 +11,16 @@ import { rxCacheSingle } from '@acoustic-content-sdk/rx-utils';
 import {
   anyToString,
   arrayPush,
+  assertArray,
+  filterArray,
   getPath,
+  isNotEmpty,
   JSONObject,
+  mapArray,
   opShareLast,
   pluckProperty,
   reduceArray,
+  reduceForIn,
   rxPipe,
   toArray
 } from '@acoustic-content-sdk/utils';
@@ -87,7 +92,7 @@ const SCRIPT_CONTRIBUTION_ID = '5c473463-db07-4132-b8a1-bd40cbdf4b18';
 
 function createName(aLink: string, aBaseName: string): string {
   const baseName = createBaseName(aLink);
-  return `${baseName} - ${aBaseName}`;
+  return `${aBaseName} - ${baseName}`;
 }
 
 /**
@@ -96,11 +101,12 @@ function createName(aLink: string, aBaseName: string): string {
  */
 function createStyleItem(
   aStyle: HTMLLinkElement,
+  aBaseName: string,
   aBasePath: string
 ): AuthoringContentItem {
   // url
   const href = aStyle.href;
-  const name = createName(href, aBasePath);
+  const name = createName(href, aBaseName);
   const id = createGuid(name);
   const path = `${aBasePath}/${href}`;
   const key = createGuid(path);
@@ -132,11 +138,12 @@ function createStyleItem(
  */
 function createScriptItem(
   aScript: HTMLScriptElement,
+  aBaseName: string,
   aBasePath: string
 ): AuthoringContentItem {
   // url
   const src = aScript.src;
-  const name = createName(src, aBasePath);
+  const name = createName(src, aBaseName);
   const id = createGuid(name);
   const path = `${aBasePath}/${src}`;
   const key = createGuid(path);
@@ -174,17 +181,18 @@ function createScriptItem(
 
 function createHeadArtifacts(
   aHead: HTMLElement,
+  aBaseName: string,
   aBasePath: string
 ): Observable<AuthoringContentItem> {
   // head links
   const style$ = rxPipe(
     selectStyleLinks(aHead),
-    map((link) => createStyleItem(link, aBasePath))
+    map((link) => createStyleItem(link, aBaseName, aBasePath))
   );
   // head scripts
   const script$ = rxPipe(
     selectScripts(aHead),
-    map((script) => createScriptItem(script, aBasePath))
+    map((script) => createScriptItem(script, aBaseName, aBasePath))
   );
   // merge
   return merge(style$, script$);
@@ -192,12 +200,13 @@ function createHeadArtifacts(
 
 function createBodyArtifacts(
   aBody: HTMLElement,
+  aBaseName: string,
   aBasePath: string
 ): Observable<AuthoringContentItem> {
   // body scripts
   return rxPipe(
     selectScripts(aBody),
-    map((script) => createScriptItem(script, aBasePath))
+    map((script) => createScriptItem(script, aBaseName, aBasePath))
   );
 }
 
@@ -224,12 +233,33 @@ function appRootContribution(selection: string) {
 
 interface AuthoringIdRef {
   id: string;
+  mode: ArtifactMode;
 }
 
-function reference(aItem: AuthoringContentItem): AuthoringIdRef {
+function reference(aItem: ItemWithMode): AuthoringIdRef {
   return {
-    id: aItem.id
+    id: aItem.item.id,
+    mode: aItem.mode
   };
+}
+
+/**
+ * Organize the IDs by mode
+ *
+ * @param aValues - the authoring IDs
+ * @returns the values organized by mode
+ */
+function byMode(aValues: AuthoringIdRef[]): Record<string, string[]> {
+  // reduce
+  return reduceArray(
+    aValues,
+    (aDst: Record<string, string[]>, aRef: AuthoringIdRef) => {
+      // insert
+      arrayPush(aRef.id, assertArray(aRef.mode, aDst));
+      return aDst;
+    },
+    {}
+  );
 }
 
 /**
@@ -242,21 +272,16 @@ function reference(aItem: AuthoringContentItem): AuthoringIdRef {
  */
 const createReferenceContributionsGuid = (
   aSelection: string,
-  aValues: AuthoringIdRef[]
-) =>
-  createGuid(
-    reduceArray(aValues, (values, ref) => arrayPush(ref.id, values), [
-      aSelection
-    ]).join('/')
-  );
+  aValues: string[]
+) => createGuid([aSelection, ...aValues].join('/'));
 
-function referenceContributions(selection: string, values: AuthoringIdRef[]) {
+function referenceContributions(selection: string, values: string[]) {
   // generate a key
   const key = createReferenceContributionsGuid(selection, values);
   // the reference
   return {
     reference: {
-      values,
+      values: mapArray(values, (id) => ({ id })),
       elementType: ELEMENT_TYPE_REFERENCE
     },
     mode: {
@@ -278,15 +303,22 @@ function referenceContributions(selection: string, values: AuthoringIdRef[]) {
  * @param aMode - the mode
  * @returns the operation that creates the contribution
  */
-function referenceContribution(
-  aMode: string
-): OperatorFunction<AuthoringContentItem, any> {
+function referenceContribution(): OperatorFunction<ItemWithMode, any> {
   return (item$) =>
     rxPipe(
       item$,
       map(reference),
       rxToArray(),
-      map((values) => referenceContributions(aMode, values))
+      map(byMode),
+      map((values) =>
+        reduceForIn(
+          values,
+          (dst: any[], val: string[], mode: string) =>
+            arrayPush(referenceContributions(mode, val), dst),
+          []
+        )
+      ),
+      mergeMap((all) => from(all))
     );
 }
 
@@ -300,25 +332,21 @@ function createPageContribution(values: any[]) {
   };
 }
 
-function headContribution(
-  aMode: string
-): OperatorFunction<AuthoringContentItem, any> {
+function headContribution(): OperatorFunction<ItemWithMode, any> {
   return (item$) =>
     rxPipe(
       item$,
-      referenceContribution(aMode),
+      referenceContribution(),
       rxToArray(),
       map(createPageContribution)
     );
 }
 
-function bodyContribution(
-  aMode: string
-): OperatorFunction<AuthoringContentItem, any> {
+function bodyContribution(): OperatorFunction<ItemWithMode, any> {
   return (item$) =>
     rxPipe(
       item$,
-      referenceContribution(aMode),
+      referenceContribution(),
       //      startWith(appRootContribution(aMode)),
       rxToArray(),
       map(createPageContribution)
@@ -362,25 +390,122 @@ function addRevision<T>(aValue: T): T {
   return value;
 }
 
+const DEFAULT_MODE = `${ArtifactMode.LIVE},${ArtifactMode.PREVIEW}`;
+
 const DEFAULT_CONFIGURATION = 'production';
 
 const DEFAULT_TARGET = 'build';
 
-function createArtifactsForProject(
+interface ModeConfig {
+  /**
+   * The mode
+   */
+  mode: ArtifactMode;
+  /**
+   * The matching output path
+   */
+  outputPath: string;
+}
+
+/**
+ * Constructs a config object
+ *
+ * @param aMode - the mode
+ * @param aOptions - the options object
+ * @returns the matching config
+ */
+const createModeConfig = (aMode: string, aOptions: JSONObject): ModeConfig => ({
+  mode: aMode as ArtifactMode,
+  outputPath: ensureDirPath(anyToString(selectOutputPath(aOptions)))
+});
+
+/**
+ * Returns the configuration options for the project in question
+ *
+ * @param aProject - the project
+ * @param aConfigurations - the basic configurations
+ * @param aMode - the mode
+ *
+ * @returns the options for the mode
+ */
+function getOptions(
   aProject: WorkspaceProject<ProjectType.Application>,
-  aProjectName: string,
-  aMode: string,
   aConfigurations: string,
-  aReadTextFile: ReadTextFile
-): Observable<Artifact> {
+  aMode?: string
+) {
+  // generate an artificial config
+  const config = isNotEmpty(aMode)
+    ? `${aConfigurations},${aMode}`
+    : aConfigurations;
   // access the options
-  const selOptions = selectOptionsForTarget(DEFAULT_TARGET, aConfigurations);
-  const options = selOptions(aProject);
-  // get the output path
-  const root = ensureDirPath(selectRootPath(aProject));
-  const outPath = ensureDirPath(anyToString(selectOutputPath(options)));
+  const selOptions = selectOptionsForTarget(DEFAULT_TARGET, config);
+  return selOptions(aProject);
+}
+
+/**
+ * Decodes the output configurations for a mode
+ *
+ * @param aProject - the project
+ * @param aConfigurations - the configurations
+ * @param aModes - the mode
+ *
+ * @returns the configurations
+ */
+function getModeConfigs(
+  aProject: WorkspaceProject<ProjectType.Application>,
+  aConfigurations: string,
+  aModes?: string[]
+): ModeConfig[] {
+  // check if we have modes
+  if (isNotEmpty(aModes)) {
+    // map the modes to configurations
+    return mapArray(aModes, (mode) =>
+      createModeConfig(mode, getOptions(aProject, aConfigurations, mode))
+    );
+  }
+  // just one config for always mode
+  return [
+    createModeConfig(ArtifactMode.ALWAYS, getOptions(aProject, aConfigurations))
+  ];
+}
+
+interface ItemWithMode {
+  mode: ArtifactMode;
+  item: AuthoringContentItem;
+}
+
+const createItemWithMode = (
+  mode: ArtifactMode,
+  item: AuthoringContentItem
+): ItemWithMode => ({ mode, item });
+
+interface Artifacts {
+  head$: Observable<ItemWithMode>;
+  body$: Observable<ItemWithMode>;
+}
+
+/**
+ * Constructs the artifacts for a particular root
+ *
+ * @param aConfig - the config
+ * @param aRootDir  - root directory
+ * @param aProjectName - name of the project
+ * @param aReadTextFile - read callback
+ *
+ * @returns the contributions
+ */
+function createArtifacts(
+  aConfig: ModeConfig,
+  aRootDir: string,
+  aProjectName: string,
+  aReadTextFile: ReadTextFile
+): Artifacts {
+  // decode the config
+  const { mode, outputPath } = aConfig;
+  // the base name
+  const baseName = `${aProjectName} - ${mode}`;
   // index
-  const indexPath = `${root}${outPath}/index.html`;
+  const indexPath = `${aRootDir}${outputPath}/index.html`;
   // parse the index
   const dom$ = rxPipe(
     aReadTextFile(indexPath),
@@ -392,18 +517,48 @@ function createArtifactsForProject(
   const head$ = rxPipe(
     dom$,
     pluck('head'),
-    mergeMap((el) => createHeadArtifacts(el, aProjectName)),
+    mergeMap((el) => createHeadArtifacts(el, baseName, outputPath)),
+    map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
   const body$ = rxPipe(
     dom$,
     pluck('body'),
-    mergeMap((el) => createBodyArtifacts(el, aProjectName)),
+    mergeMap((el) => createBodyArtifacts(el, baseName, outputPath)),
+    map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
+  // returns the artifacts
+  return { head$, body$ };
+}
+
+function createArtifactsForProject(
+  aProject: WorkspaceProject<ProjectType.Application>,
+  aProjectName: string,
+  aModes: string[],
+  aConfigurations: string,
+  aReadTextFile: ReadTextFile
+): Observable<Artifact> {
+  // root path
+  const root = ensureDirPath(selectRootPath(aProject));
+  // the configs
+  const modeConfigs = getModeConfigs(aProject, aConfigurations, aModes);
+  // read the configs
+  const artifacts = mapArray(modeConfigs, (config) =>
+    createArtifacts(config, root, aProjectName, aReadTextFile)
+  );
+  // merge all body artifacts
+  const head$ = merge(...mapArray(artifacts, (a) => a.head$));
+  const body$ = merge(...mapArray(artifacts, (a) => a.body$));
+  // raw contributions
+  const raw$ = rxPipe(
+    merge(head$, body$),
+    map((item) => item.item)
+  );
+
   // build the contributions
-  const headContribution$ = rxPipe(head$, headContribution(aMode), first());
-  const bodyContribution$ = rxPipe(body$, bodyContribution(aMode), first());
+  const headContribution$ = rxPipe(head$, headContribution(), first());
+  const bodyContribution$ = rxPipe(body$, bodyContribution(), first());
   // combine to build the item
   const pageContribution$ = rxPipe(
     combineLatest([headContribution$, bodyContribution$]),
@@ -411,7 +566,7 @@ function createArtifactsForProject(
   );
   // combine the contributions
   return rxPipe(
-    merge(head$, body$, pageContribution$),
+    merge(raw$, pageContribution$),
     map(canonicalizeJson),
     map(addRevision)
   );
@@ -436,15 +591,18 @@ export function createDriverArtifacts(
       getPath<WorkspaceProject<ProjectType.Application>>(ws, ['projects', name])
     )
   );
-  // the mode
-  const mode = aSchema.mode || ArtifactMode.ALWAYS;
+  // the modes
+  const modes = filterArray(
+    mapArray((aSchema.mode || DEFAULT_MODE).split(','), (m) => m.trim()),
+    isNotEmpty
+  );
   // the configurations
   const config = aSchema.configuration || DEFAULT_CONFIGURATION;
   // dispatch
   return rxPipe(
     combineLatest([projectName$, prj$]),
     mergeMap(([name, prj]) =>
-      createArtifactsForProject(prj, name, mode, config, aHost)
+      createArtifactsForProject(prj, name, modes, config, aHost)
     )
   );
 }

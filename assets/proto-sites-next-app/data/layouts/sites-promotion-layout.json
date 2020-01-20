@@ -1,0 +1,10 @@
+{
+  "id": "sites-promotion-layout",
+  "rev": "1-4516ef14d0c1f5eed8b0d7a4ba8be0a2",
+  "name": "sitesPromotionLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/promotion-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

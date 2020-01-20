@@ -1,0 +1,30 @@
+{
+  "id": "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1",
+  "rev": "1-9f92757504ab13d19853b86ab8a1353d",
+  "name": "Type",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "9d47dccc-f940-40de-a978-82815c805701",
+  "parent": "9d47dccc-f940-40de-a978-82815c805701",
+  "ancestorIds": [
+    "9d47dccc-f940-40de-a978-82815c805701"
+  ],
+  "namePath": [
+    "Dynamic list criteria",
+    "Type"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/9d47dccc-f940-40de-a978-82815c805701"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/9d47dccc-f940-40de-a978-82815c805701"
+    }
+  },
+  "created": "2019-08-13T08:33:09.254Z",
+  "lastModified": "2019-08-13T08:33:09.254Z"
+}

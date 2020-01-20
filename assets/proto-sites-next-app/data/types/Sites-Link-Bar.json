@@ -1,0 +1,81 @@
+{
+  "id": "d0f831c3-1b0a-41ba-8a6b-10f2eca3789a",
+  "rev": "28-a2e1bac3e0b2a5e99316b5025b711f23",
+  "name": "Sites Link Bar",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "link",
+      "allowMultipleValues": true,
+      "minimumValues": 2,
+      "fieldLabel": "Links",
+      "maximumValues": 7,
+      "required": true,
+      "label": "Links",
+      "key": "links"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+      },
+      "label": "Text Style",
+      "key": "textStyle"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Background Color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "label": "Alignment",
+      "key": "alignment"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Spacing between links",
+      "key": "spacingBetweenLinks"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8e460c39-9cf6-4a78-9726-ee43ad961a8a"
+      },
+      "label": "Vertical Rule",
+      "key": "verticalRule"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

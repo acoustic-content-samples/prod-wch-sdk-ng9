@@ -1,0 +1,30 @@
+{
+  "id": "a47af09a-9315-4a01-ad30-cd998d341b0b",
+  "rev": "1-5205468e32c52e5cca7d0115e8a87d0d",
+  "name": "Hero video",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "652c4957-1636-405a-8604-71b22181deda"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "video",
+      "fieldLabel": "Video",
+      "label": "Video",
+      "key": "video"
+    }
+  ]
+}

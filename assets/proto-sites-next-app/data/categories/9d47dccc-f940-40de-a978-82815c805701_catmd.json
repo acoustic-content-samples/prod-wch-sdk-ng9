@@ -1,0 +1,22 @@
+{
+  "id": "9d47dccc-f940-40de-a978-82815c805701",
+  "rev": "1-688c572b9d5f73eddf62eb6f78bed6be",
+  "name": "Dynamic list criteria",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "description": "Enables content creators to select the kinds of content to include in a dynamic list.",
+  "classification": "taxonomy",
+  "firstClassFor": [
+    ""
+  ],
+  "namePath": [
+    "Dynamic list criteria"
+  ],
+  "links": {
+    "self": {
+      "href": "/authoring/v1/categories/9d47dccc-f940-40de-a978-82815c805701"
+    }
+  },
+  "created": "2019-08-13T08:33:08.592Z",
+  "lastModified": "2019-08-13T08:33:08.592Z"
+}

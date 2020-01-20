@@ -1,0 +1,10 @@
+{
+  "id": "713fbab1-acd2-426b-b190-47abcf9be37e",
+  "rev": "1-45d631da7e48535be9314fdf82d31b43",
+  "name": "Email Content",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/email/email-content.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/email-content/{id}.html"
+}

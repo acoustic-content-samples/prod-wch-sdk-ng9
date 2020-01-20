@@ -1,0 +1,32 @@
+{
+  "id": "46d22f42-3fde-4708-9c34-cd6624dda9e4",
+  "rev": "1-c351bbd8072e96bad41e5da87df77487",
+  "name": "Design page",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "9d47dccc-f940-40de-a978-82815c805701",
+  "parent": "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1",
+  "ancestorIds": [
+    "9d47dccc-f940-40de-a978-82815c805701",
+    "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+  ],
+  "namePath": [
+    "Dynamic list criteria",
+    "Type",
+    "Design page"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/9d47dccc-f940-40de-a978-82815c805701"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/46d22f42-3fde-4708-9c34-cd6624dda9e4"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+    }
+  },
+  "created": "2019-08-13T08:33:09.944Z",
+  "lastModified": "2019-08-13T08:33:09.944Z"
+}

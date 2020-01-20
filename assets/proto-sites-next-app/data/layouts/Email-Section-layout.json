@@ -1,0 +1,10 @@
+{
+  "id": "17375714-5c1a-4f82-91d2-7edd6f5b7747",
+  "rev": "1-f5113c3d8ba39bc031a1f63d96518dcb",
+  "name": "Email Section Layout",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/email/Email-Section-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/Email-Section-layout/{id}.html"
+}

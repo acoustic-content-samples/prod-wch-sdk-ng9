@@ -1,0 +1,52 @@
+{
+  "id": "aa358e28-2e60-416a-97d7-d1a6dd5e165b",
+  "rev": "1-25b15d110cb03e9b3de6b18dfd4a071f",
+  "name": "HTML",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Code",
+      "key": "code",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Compose your HTML and Handlebar code here."
+      },
+      "displayType": "multiLine",
+      "displayHeight": 30,
+      "helpText": "Provide your custom HTML code here. You can also include handlebar references to the current rendering context."
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

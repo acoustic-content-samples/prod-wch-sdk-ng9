@@ -1,20 +1,12 @@
-import { normalize, Path, virtualFs } from '@angular-devkit/core';
+import { normalize, Path } from '@angular-devkit/core';
 import { NodeJsSyncHost } from '@angular-devkit/core/node';
 import { ScopedHost } from '@angular-devkit/core/src/virtual-fs/host';
-import {
-  HostTree,
-  VirtualTree,
-  FileEntry,
-  Tree,
-  DelegateTree,
-  url,
-  Rule
-} from '@angular-devkit/schematics';
+import { FileEntry, HostTree, Rule, Tree } from '@angular-devkit/schematics';
 import { join } from 'path';
+import { Observable } from 'rxjs';
 
 import { TEST_DIR } from '../../test/assets';
 import { generateComponents } from './generate.components';
-import { Observable } from 'rxjs';
 
 describe('generate.components', () => {
   // root directory for the test project
@@ -30,7 +22,7 @@ describe('generate.components', () => {
       new ScopedHost(new NodeJsSyncHost(), normalize(SIMPLE_DATA_DIR))
     );
     // merge
-    const tree = new VirtualTree();
+    const tree = new HostTree();
     projectTree.visit((path: Path, entry?: Readonly<FileEntry>) =>
       tree.create(path, entry.content)
     );

@@ -1,0 +1,10 @@
+{
+  "id": "divider-component-layout",
+  "rev": "1-8bd26ec8fef771541a8d2799037799cb",
+  "name": "dividerComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/divider-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

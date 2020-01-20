@@ -1,0 +1,17 @@
+{
+  "name": "About us",
+  "segment": "about",
+  "layoutId": "standard-page-layout",
+  "description": "About Oslo",
+  "contentTypeId": "2af1d22a-fecf-41e1-a808-7301cb37b79f",
+  "title": "About Oslo",
+  "hideFromNavigation": false,
+  "contentId": "e3bfe331-2ea9-4824-b2fc-adcf7b4f6cc0",
+  "contentStatus": "ready",
+  "status": "ready",
+  "classification": "page",
+  "siteId": "d2065ae0-2ee9-4d19-80b1-502b79833cb3",
+  "position": 2,
+  "id": "aad85d4f-c110-4d87-a28b-f1f800a0df10",
+  "rev": "1-68384eba01d5a6e05c1a08c0700170fa"
+}

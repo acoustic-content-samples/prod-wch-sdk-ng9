@@ -1,0 +1,10 @@
+{
+  "id": "link-bar-component-layout",
+  "rev": "1-b8829091c571cacd3850f7c3f75f2297",
+  "name": "linkBarComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/link-bar-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "sites-rows-layout-mapping",
+  "rev": "1-cc5f14a90e23b65e68b5d9737fc5a29a",
+  "name": "sitesRowsLayoutMapping",
+  "classification": "layout-mapping",
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "9ca02297-a564-40c9-aedc-add9c30f3d7b"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "sites-rows-layout"
+      },
+      "layouts": [
+        {
+          "id": "sites-rows-layout"
+        }
+      ]
+    }
+  ]
+}

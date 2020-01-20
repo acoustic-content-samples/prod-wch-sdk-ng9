@@ -1,0 +1,44 @@
+{
+  "id": "16e486dd-3c33-485c-a9e5-7617fbc67424",
+  "rev": "1-861af5937d61a5324ec871d9f307e6d7",
+  "name": "Mailing settings",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Database ID",
+      "key": "databaseId"
+    },
+    {
+      "elementType": "text",
+      "label": "Subject line",
+      "key": "subjectLine"
+    },
+    {
+      "elementType": "text",
+      "label": "From name",
+      "key": "fromName"
+    },
+    {
+      "elementType": "text",
+      "label": "From address",
+      "key": "fromAddress"
+    },
+    {
+      "elementType": "text",
+      "label": "Reply-to address",
+      "key": "replyToAddress"
+    },
+    {
+      "elementType": "text",
+      "label": "Preheader",
+      "key": "preHeader"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Design articles",
+  "segment": "design-topics",
+  "layoutId": "standard-page-layout",
+  "description": "",
+  "contentTypeId": "2af1d22a-fecf-41e1-a808-7301cb37b79f",
+  "title": "Design articles from Oslo",
+  "hideFromNavigation": false,
+  "contentId": "afc419d9-7f94-4cea-92f0-cdcd424c9f2c",
+  "contentStatus": "ready",
+  "status": "ready",
+  "classification": "page",
+  "siteId": "d2065ae0-2ee9-4d19-80b1-502b79833cb3",
+  "position": 1,
+  "id": "69ded997-5eb6-4eab-b689-381ed03f7f36",
+  "rev": "2-62b3b0917b9c31563b61e889e21d184b"
+}

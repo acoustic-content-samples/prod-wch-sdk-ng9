@@ -1,0 +1,10 @@
+{
+  "id": "sites-text-layout",
+  "rev": "1-ff0fe17f55fc3f996016bc94acfc1420",
+  "name": "sitesTextLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/text-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

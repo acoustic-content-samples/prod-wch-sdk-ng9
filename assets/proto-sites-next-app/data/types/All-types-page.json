@@ -1,0 +1,51 @@
+{
+  "id": "9f8e8bb3-ae85-4827-9850-2397141a0f21",
+  "rev": "1-33d11c000a4e954b0e754e9e8cab306e",
+  "name": "All types page",
+  "classification": "content-type",
+  "kind": [
+    "page"
+  ],
+  "thumbnail": {
+    "id": "7be8a32b-6e7f-428e-8903-8f500c69818c"
+  },
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "Include multiple sections for greater flexibility. Each section can include any type of content.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "fieldLabel": "Banner section",
+      "label": "Banner section",
+      "key": "banner",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add content, such as a hero banner, that you want to display at the top of your page."
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Section content",
+      "label": "Section one",
+      "key": "sectionOne",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add body content here."
+    },
+    {
+      "elementType": "reference",
+      "fieldLabel": "Section content",
+      "label": "Section two",
+      "key": "sectionTwo",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "helpText": "Add more related body content, lists, or images."
+    }
+  ]
+}

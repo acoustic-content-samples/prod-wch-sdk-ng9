@@ -1,0 +1,20 @@
+{
+  "name": "Contest landing page",
+  "hideFromNavigation": true,
+  "segment": "contest-landing-page",
+  "layoutId": "landing-page-layout",
+  "description": "Sample contest entry landing page",
+  "contentTypeId": "5cd736ef-d01c-4dd9-9794-14b2473e9239",
+  "title": "",
+  "kind": [
+    "landing-page"
+  ],
+  "contentId": "15d2eab9-ae6b-4b21-a6cd-c5cea58c8b4b",
+  "contentStatus": "ready",
+  "classification": "page",
+  "siteId": "default",
+  "status": "ready",
+  "position": -1,
+  "id": "246a93a0-a1fd-4c65-aa52-7ef886cee3af",
+  "rev": "1-006ad1918ec8ceb43d0dc2292ffcba6b"
+}

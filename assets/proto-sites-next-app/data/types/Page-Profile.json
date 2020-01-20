@@ -1,0 +1,32 @@
+{
+  "id": "c6164ac9-90c5-4d23-8dbf-8378343512b3",
+  "rev": "1-225827e606d6d3ba6a692f918c956623",
+  "name": "Page Profile",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "Set of markup contributions for a page, organized by contributions for the head and the body section.",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "reference",
+      "label": "contributions",
+      "key": "contributions",
+      "allowMultipleValues": true,
+      "minimumValues": 0,
+      "fieldLabel": "Content item",
+      "role": [
+        "configuration"
+      ],
+      "restrictTypes": [
+        {
+          "id": "aab86460-0018-44c2-9f52-3a326e58f7f7"
+        }
+      ]
+    }
+  ]
+}

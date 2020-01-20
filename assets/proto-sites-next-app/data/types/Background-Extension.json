@@ -1,0 +1,55 @@
+{
+  "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5",
+  "rev": "1-3940cae61d2c43645acf2133fee1f4db",
+  "name": "Background Extension",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "description": "Use for all backgrounds.",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Background Color",
+      "key": "backgroundColor"
+    },
+    {
+      "elementType": "toggle",
+      "label": "Include background image",
+      "key": "includeBackgroundImage"
+    },
+    {
+      "elementType": "image",
+      "label": "Image",
+      "key": "image"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Full Width",
+          "selection": "full-width"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Tile",
+          "selection": "tile"
+        }
+      ],
+      "label": "Fill",
+      "key": "fillOptions"
+    }
+  ]
+}

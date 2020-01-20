@@ -1,0 +1,24 @@
+{
+  "id": "page-profile-layout-mapping",
+  "rev": "2-0844c7be69729455212dbeab6e42e914",
+  "name": "pageProfileLayoutMapping",
+  "classification": "layout-mapping",
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "c6164ac9-90c5-4d23-8dbf-8378343512b3"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "page-profile-layout"
+      },
+      "layouts": [
+        {
+          "id": "page-profile-layout"
+        }
+      ]
+    }
+  ]
+}

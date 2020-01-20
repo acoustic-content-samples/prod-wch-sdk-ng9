@@ -1,0 +1,32 @@
+{
+  "id": "4e64204b-ac8e-4594-a87a-dc53b563bc59",
+  "rev": "1-774aa9e78e0eb9b77a34c21e8fec61fc",
+  "name": "Event",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "9d47dccc-f940-40de-a978-82815c805701",
+  "parent": "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1",
+  "ancestorIds": [
+    "9d47dccc-f940-40de-a978-82815c805701",
+    "8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+  ],
+  "namePath": [
+    "Dynamic list criteria",
+    "Type",
+    "Event"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/9d47dccc-f940-40de-a978-82815c805701"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/4e64204b-ac8e-4594-a87a-dc53b563bc59"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/8a1cca57-4e5b-4d66-b8fa-668490b8e9b1"
+    }
+  },
+  "created": "2019-08-13T08:33:09.678Z",
+  "lastModified": "2019-08-13T08:33:09.678Z"
+}

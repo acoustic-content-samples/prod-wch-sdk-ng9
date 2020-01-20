@@ -1,0 +1,30 @@
+{
+  "id": "a24ceea5-c591-40e1-ada8-eea2ea4bd35c",
+  "rev": "1-3721da5798b188524f8a8d3fd0cad00e",
+  "name": "Alphabetical descending",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "52265429-9349-49fe-b35d-f7b71493190e",
+  "parent": "52265429-9349-49fe-b35d-f7b71493190e",
+  "ancestorIds": [
+    "52265429-9349-49fe-b35d-f7b71493190e"
+  ],
+  "namePath": [
+    "List ordering options",
+    "Alphabetical descending"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/52265429-9349-49fe-b35d-f7b71493190e"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/a24ceea5-c591-40e1-ada8-eea2ea4bd35c"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/52265429-9349-49fe-b35d-f7b71493190e"
+    }
+  },
+  "created": "2019-08-13T08:33:08.837Z",
+  "lastModified": "2019-08-13T08:33:08.837Z"
+}

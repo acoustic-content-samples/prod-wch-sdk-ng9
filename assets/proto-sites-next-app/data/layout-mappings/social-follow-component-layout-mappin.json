@@ -1,0 +1,21 @@
+{
+  "id": "social-follow-component-layout-mapping",
+  "rev": "1-92700d21004ab71c9a0ef706492ae06b",
+  "name": "socialFollowComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "8bb7f03c-23a2-46c5-bd15-fbf4d1e8bd4f"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "social-follow-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "social-follow-component-layout"
+        }
+      ]
+    }
+  ]
+}

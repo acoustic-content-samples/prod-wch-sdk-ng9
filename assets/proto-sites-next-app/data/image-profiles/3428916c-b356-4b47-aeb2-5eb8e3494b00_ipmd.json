@@ -1,0 +1,26 @@
+{
+  "id": "3428916c-b356-4b47-aeb2-5eb8e3494b00",
+  "rev": "1-79de9fa1f56b3bbc0206c30f725eb6bf",
+  "name": "Profile for lead image",
+  "classification": "image-profile",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2017-08-11T19:56:20.449Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "lastModified": "2019-08-13T08:33:07.480Z",
+  "dimensions": [
+    {
+      "label": "Lead",
+      "key": "lead",
+      "width": 1200,
+      "height": 624,
+      "description": "Used in the lead space area of design articles."
+    },
+    {
+      "label": "Card",
+      "key": "card",
+      "width": 640,
+      "height": 360,
+      "description": "Used for summary card view of the design articles."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "4e70d4a0-0112-43c5-887b-dde336ebe678",
+  "rev": "1-f7aa337d278b844179907c0457f49296",
+  "name": "Image and text",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "f71e2d31-6536-4016-9f89-c6848d0f4b55"
+      },
+      "label": "Text",
+      "key": "textGroup"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "39bd65fc-2733-4c8a-a700-3075f127fb2d"
+      },
+      "label": "Image",
+      "key": "imageGroup"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Bottom",
+          "selection": "image-bottom"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022",
+  "rev": "1-800cbdb892870778a302212a080b53b9",
+  "name": "Boundary options",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Top",
+      "key": "top",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Bottom",
+      "key": "bottom",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Left",
+      "key": "left",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Right",
+      "key": "right",
+      "minimum": 0
+    }
+  ]
+}

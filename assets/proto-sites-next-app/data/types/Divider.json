@@ -1,0 +1,85 @@
+{
+  "id": "251f4c19-ea42-4e4d-8831-1ffca17d6a6d",
+  "rev": "1-37ed8d73f05eccff7a890d4d9dfcaab6",
+  "name": "Divider",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "Solid",
+          "selection": "solid"
+        },
+        {
+          "label": "Dotted",
+          "selection": "dotted"
+        },
+        {
+          "label": "Dashed",
+          "selection": "dashed"
+        }
+      ],
+      "label": "Line type",
+      "key": "lineType"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      },
+      "label": "Line color",
+      "key": "lineColor"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Opacity",
+      "key": "opacity"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0915841f-cf93-4e3c-8ece-f22b0c41a9e6"
+      },
+      "label": "Alignment",
+      "key": "align"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margins",
+      "key": "margin"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Line weight",
+      "key": "lineWeight",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Width",
+      "key": "width"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "eeff476e-0559-444f-97d1-486a10a86b80"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

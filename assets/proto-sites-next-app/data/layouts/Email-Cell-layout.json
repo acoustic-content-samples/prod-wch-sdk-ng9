@@ -1,0 +1,10 @@
+{
+  "id": "b7c78cbd-83fd-4388-b4d8-d5230ef05f7d",
+  "rev": "1-9de6597c7bd97c0de17e61aa85556539",
+  "name": "Email Cell Layout",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/email/Email-Cell-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/Email-Cell-layout/{id}.html"
+}

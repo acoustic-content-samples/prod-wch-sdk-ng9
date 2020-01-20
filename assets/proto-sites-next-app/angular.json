@@ -61,15 +61,15 @@
                 }
               ]
             },
-            "edit": {
-              "outputPath": "dist/proto-sites-next-app-edit",
-              "main": "src/main.edit.ts",
-              "tsConfig": "tsconfig.app.edit.json"
+            "preview": {
+              "outputPath": "dist/proto-sites-next-app/preview",
+              "main": "src/main.preview.ts",
+              "tsConfig": "tsconfig.app.preview.json"
             },
-            "view": {
-              "outputPath": "dist/proto-sites-next-app-view",
-              "main": "src/main.view.ts",
-              "tsConfig": "tsconfig.app.view.json"
+            "live": {
+              "outputPath": "dist/proto-sites-next-app/live",
+              "main": "src/main.live.ts",
+              "tsConfig": "tsconfig.app.live.json"
             }
           }
         },
@@ -82,11 +82,11 @@
             "production": {
               "browserTarget": "proto-sites-next-app:build:production"
             },
-            "edit": {
-              "browserTarget": "proto-sites-next-app:build:edit"
+            "preview": {
+              "browserTarget": "proto-sites-next-app:build:preview"
             },
-            "view": {
-              "browserTarget": "proto-sites-next-app:build:view"
+            "live": {
+              "browserTarget": "proto-sites-next-app:build:live"
             }
           }
         },

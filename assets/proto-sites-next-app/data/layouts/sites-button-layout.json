@@ -1,0 +1,10 @@
+{
+  "id": "sites-button-layout",
+  "rev": "1-d3ac96de3dc28bb29013666b7b4a708b",
+  "name": "sitesButtonLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/button-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

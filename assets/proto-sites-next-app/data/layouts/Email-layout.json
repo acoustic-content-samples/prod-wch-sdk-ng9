@@ -1,0 +1,10 @@
+{
+  "id": "d8f3731d-4b51-4fef-a9b0-662ae824d8af",
+  "rev": "1-b73e6df4fd4f65ea136d05a081f03dc9",
+  "name": "Email Layout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/Email-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/Email-layout/{id}.html"
+}

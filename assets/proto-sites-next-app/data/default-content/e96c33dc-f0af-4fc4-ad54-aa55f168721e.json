@@ -1,0 +1,123 @@
+{
+  "rev": "1-8a5c39a10dfcde878bb6ad8402df4d65",
+  "keywords": [],
+  "created": "2019-08-20T13:44:24.540Z",
+  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "description": "",
+  "classification": "default-content",
+  "locale": "en",
+  "tags": [],
+  "elements": {
+    "backgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "transparent"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "editor": {
+      "elementType": "text"
+    },
+    "contentAreaBackgroundColor": {
+      "elementType": "group",
+      "value": {
+        "colorCode": {
+          "elementType": "text",
+          "value": "#FFFFFF"
+        }
+      },
+      "typeRef": {
+        "id": "1321a547-287a-477b-a7ec-d191e2cdb70a"
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "value": {
+        "top": {
+          "elementType": "number"
+        },
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        }
+      },
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      }
+    },
+    "rows": {
+      "values": [],
+      "elementType": "group",
+      "typeRef": {
+        "id": "b908096b-9cd2-4085-bf0c-a510576e633b"
+      }
+    },
+    "width": {
+      "elementType": "number",
+      "value": 640
+    },
+    "settings": {
+      "elementType": "group",
+      "value": {
+        "preHeader": {
+          "elementType": "text"
+        },
+        "fromName": {
+          "elementType": "text"
+        },
+        "subjectLine": {
+          "elementType": "text"
+        },
+        "databaseId": {
+          "elementType": "text"
+        },
+        "replyToAddress": {
+          "elementType": "text"
+        },
+        "fromAddress": {
+          "elementType": "text"
+        }
+      },
+      "typeRef": {
+        "id": "16e486dd-3c33-485c-a9e5-7617fbc67424"
+      }
+    }
+  },
+  "name": "Email",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+  "typeId": "9ca02297-a564-40c9-aedc-add9c30f3d7b",
+  "id": "e96c33dc-f0af-4fc4-ad54-aa55f168721e",
+  "lastModified": "2019-08-20T13:44:24.540Z",
+  "systemModified": "2019-08-20T13:44:24.540Z",
+  "status": "ready"
+}

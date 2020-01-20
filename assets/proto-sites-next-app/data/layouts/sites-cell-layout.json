@@ -1,0 +1,10 @@
+{
+  "id": "sites-cell-layout",
+  "rev": "1-728b40fddf0f905d38afb2e1841db3e7",
+  "name": "sitesCellLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/cell-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

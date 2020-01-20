@@ -1,0 +1,18 @@
+{
+  "name": "Sanctuary seating",
+  "segment": "sanctuary-seating",
+  "layoutId": "design-page-left",
+  "description": "",
+  "contentTypeId": "bb79c338-1e20-4d53-9ff3-9a6970ad9ed3",
+  "title": "Sanctuary seating on private places - Oslo",
+  "contentId": "eed417c3-09d7-4202-a7e0-fa94970a314b",
+  "contentStatus": "ready",
+  "classification": "page",
+  "hideFromNavigation": false,
+  "siteId": "default",
+  "status": "ready",
+  "position": 5,
+  "id": "02aaa329-5d49-407b-a871-68a7cc3d4015",
+  "rev": "1-a80fb37cf945c982c420e69e00dfb875",
+  "parentId": "898ba2e5-0ccb-4616-804b-1570c3ffd820"
+}

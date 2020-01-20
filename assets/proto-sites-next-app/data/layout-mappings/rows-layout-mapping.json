@@ -1,0 +1,21 @@
+{
+  "id": "24baaf5f-1a0c-4f13-974b-58f54a36dced",
+  "rev": "1-86b9082c7e5a459f9c690660003ccf4c",
+  "name": "Rows Layout Mapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "9ca02297-a564-40c9-aedc-add9c30f3d7b"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "a53a1152-7c94-46fc-b37e-2768f231e6da"
+      },
+      "layouts": [
+        {
+          "id": "a53a1152-7c94-46fc-b37e-2768f231e6da"
+        }
+      ]
+    }
+  ]
+}

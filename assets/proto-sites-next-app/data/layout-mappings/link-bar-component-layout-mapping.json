@@ -1,0 +1,21 @@
+{
+  "id": "link-bar-component-layout-mapping",
+  "rev": "1-8e8c8223c75e2a3040a4f508c7bceb05",
+  "name": "linkBarComponentLayoutMapping",
+  "classification": "layout-mapping",
+  "type": {
+    "id": "98bec4ac-6170-402c-9405-6e8cfd99508a"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "link-bar-component-layout"
+      },
+      "layouts": [
+        {
+          "id": "link-bar-component-layout"
+        }
+      ]
+    }
+  ]
+}

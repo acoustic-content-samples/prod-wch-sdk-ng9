@@ -1,0 +1,18 @@
+{
+  "id": "page-style-contribution-layout",
+  "rev": "3-fb9ff71bf874f69e964bdf9ae8c46da4",
+  "name": "pageStyleContributionLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg"
+  },
+  "template": "/sites/templates/page-style-contribution-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page-styke-contribution/{id}.html"
+}

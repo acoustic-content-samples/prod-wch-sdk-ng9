@@ -1,0 +1,31 @@
+{
+  "id": "98f24456-bf11-4248-bca9-07e273b8dbc4",
+  "rev": "4-22c9b89ad0afcb150fdad2fa21bc2859",
+  "name": "Sites Social Link",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Icon",
+      "key": "icon"
+    },
+    {
+      "elementType": "link",
+      "label": "URL",
+      "key": "url"
+    },
+    {
+      "elementType": "text",
+      "label": "Alt text",
+      "key": "alttext"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "page-profile-layout",
+  "rev": "1-53e8060ab90fa51500ca73afcf1e18b4",
+  "name": "pageProfileLayout",
+  "classification": "layout",
+  "prerender": true,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-profile-layout.jpg"
+  },
+  "template": "/sites/templates/page-profile-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page-profile/{id}.html"
+}

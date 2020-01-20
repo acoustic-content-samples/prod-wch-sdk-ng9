@@ -1,0 +1,10 @@
+{
+  "id": "spacer-component-layout",
+  "rev": "1-82eff9c0a7bb3d2a07a3bea89a453d03",
+  "name": "spacerComponentLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/email/components/spacer-component-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "/emails/{name}.html"
+}

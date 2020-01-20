@@ -1,0 +1,17 @@
+{
+  "name": "Search Results",
+  "hideFromNavigation": true,
+  "segment": "searchresults",
+  "layoutId": "all-types-page-layout",
+  "description": "",
+  "contentTypeId": "9f8e8bb3-ae85-4827-9850-2397141a0f21",
+  "title": "Search Results",
+  "contentId": "4fdb3d13-cc7c-4910-9834-2fd58f4fbcbc",
+  "contentStatus": "ready",
+  "status": "ready",
+  "classification": "page",
+  "siteId": "d2065ae0-2ee9-4d19-80b1-502b79833cb3",
+  "position": 3,
+  "id": "7fc8af44-3420-4caa-abf4-b6eabb016691",
+  "rev": "1-f41871a17241f39a2949b720009a0bd5"
+}

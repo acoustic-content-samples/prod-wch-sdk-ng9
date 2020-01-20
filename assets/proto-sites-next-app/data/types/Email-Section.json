@@ -1,0 +1,83 @@
+{
+  "id": "b908096b-9cd2-4085-bf0c-a510576e633b",
+  "rev": "1-0246e7f34e13f054ecfd6807b7c59028",
+  "name": "Email Section",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "b80af051-6cae-4c82-8a99-b1f1c4c06bd7"
+      },
+      "label": "Cells",
+      "key": "cells",
+      "allowMultipleValues": true,
+      "minimumValues": 1,
+      "fieldLabel": "Column",
+      "required": true,
+      "maximumValues": 3
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "9c5e08f5-e54d-42c4-b855-c73eb0908022"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "text",
+      "label": "Key",
+      "key": "key"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "8c4a8b02-67a1-4849-8e2d-f90be58485c5"
+      },
+      "label": "Background",
+      "key": "background"
+    },
+    {
+      "elementType": "optionselection",
+      "options": [
+        {
+          "label": "1 Column",
+          "selection": "1-col"
+        },
+        {
+          "label": "2 equally sized columns",
+          "selection": "2-col-12-12"
+        },
+        {
+          "label": "2 Columns, left column 1/3, right column 2/3",
+          "selection": "2-col-13-23"
+        },
+        {
+          "label": "2 Columns, left column 2/3, right column 1/3",
+          "selection": "2-col-23-13"
+        },
+        {
+          "label": "3 Columns",
+          "selection": "3-col"
+        }
+      ],
+      "label": "Layout",
+      "key": "layout"
+    }
+  ]
+}

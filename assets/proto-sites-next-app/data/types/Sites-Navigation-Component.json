@@ -1,0 +1,28 @@
+{
+  "id": "6854f419-3b8b-4410-8d33-134a485d05a3",
+  "rev": "7-3a8cf36ffac6a6a4b5e60c9483ef720c",
+  "name": "Sites Navigation Component",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [],
+  "elements": [
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Starting with Navigation Level",
+      "key": "startingWithNavigationLevel",
+      "required": true
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Number of Navigation Levels",
+      "key": "numberOfNavigationLevels",
+      "required": true
+    }
+  ]
+}

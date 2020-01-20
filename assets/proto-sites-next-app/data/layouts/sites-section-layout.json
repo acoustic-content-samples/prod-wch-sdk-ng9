@@ -1,0 +1,10 @@
+{
+  "id": "sites-section-layout",
+  "rev": "1-a6566690e7c827f06e18c03541926d38",
+  "name": "sitesSectionLayout",
+  "classification": "layout",
+  "prerender": true,
+  "template": "/sites/section-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/{id}.html"
+}

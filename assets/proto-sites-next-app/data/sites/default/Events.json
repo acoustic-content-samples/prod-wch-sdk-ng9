@@ -1,0 +1,17 @@
+{
+  "name": "Events",
+  "segment": "events",
+  "layoutId": "standard-page-layout",
+  "description": "",
+  "contentTypeId": "2af1d22a-fecf-41e1-a808-7301cb37b79f",
+  "title": "Oslo events",
+  "contentId": "25c233ed-e7f8-4849-a355-a1afaf2e4a2d",
+  "contentStatus": "ready",
+  "classification": "page",
+  "hideFromNavigation": false,
+  "siteId": "default",
+  "status": "ready",
+  "position": 2,
+  "id": "a2594a36-7ddb-4305-9ffb-29aa106ac0e8",
+  "rev": "1-e1e874b49bfed84c87ce3a3832727c94"
+}

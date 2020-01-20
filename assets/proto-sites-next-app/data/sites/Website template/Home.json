@@ -1,0 +1,17 @@
+{
+  "name": "Home",
+  "segment": "home",
+  "layoutId": "standard-page-layout",
+  "description": "",
+  "contentTypeId": "2af1d22a-fecf-41e1-a808-7301cb37b79f",
+  "title": "Oslo",
+  "hideFromNavigation": false,
+  "contentId": "3872b3c8-f0f4-4eb4-8192-c6952cd8fd00",
+  "contentStatus": "ready",
+  "status": "ready",
+  "classification": "page",
+  "siteId": "d2065ae0-2ee9-4d19-80b1-502b79833cb3",
+  "position": 0,
+  "id": "9f32901d-95e5-4c2a-b136-a92bd2f370ae",
+  "rev": "1-e7ab8e9733f6c67696a08bbfda7588a0"
+}

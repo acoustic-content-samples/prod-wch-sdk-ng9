@@ -1,0 +1,24 @@
+{
+  "id": "page-markup-contribution-layout-mapping",
+  "rev": "3-e16a20e5ba344f1d51a4436ded005a5e",
+  "name": "pageMarkupContributionLayoutMapping",
+  "classification": "layout-mapping",
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "2b0cd235-16ad-42ec-aea7-a05df105604c"
+  },
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "page-markup-contribution-layout"
+      },
+      "layouts": [
+        {
+          "id": "page-markup-contribution-layout"
+        }
+      ]
+    }
+  ]
+}

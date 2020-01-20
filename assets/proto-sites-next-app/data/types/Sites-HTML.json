@@ -1,0 +1,54 @@
+{
+  "id": "85bdc88c-5b4c-4002-a665-37ba5bf95cb6",
+  "rev": "17-69d055c98ab4f0ce722495fc11e7c043",
+  "name": "Sites HTML",
+  "classification": "content-type",
+  "kind": [
+    "standalone",
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "label": "Code",
+      "key": "code",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Compose your HTML and Handlebar code here."
+      },
+      "displayType": "multiLine",
+      "displayHeight": 30,
+      "helpText": "Provide your custom HTML code here. You can also include handlebar references to the current rendering context."
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Padding",
+      "key": "padding"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "label": "Margin",
+      "key": "margin"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "label": "Common Settings",
+      "key": "commonSettings"
+    }
+  ]
+}

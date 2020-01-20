@@ -50,5 +50,3 @@ yarn.lock
 /temp
 
 .wchtoolshashes
-
-!dist

@@ -1,0 +1,35 @@
+{
+  "id": "8e460c39-9cf6-4a78-9726-ee43ad961a8a",
+  "rev": "11-9ffb07df700b92b246083790f8cc36f5",
+  "name": "Sites Vertical Rule",
+  "classification": "content-type",
+  "kind": [
+    "embedded"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "toggle",
+      "label": "Include vertical rule between links",
+      "key": "includeVerticalRuleBetweenLinks"
+    },
+    {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "label": "Line Color",
+      "key": "lineColor"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "label": "Opacity",
+      "key": "opacity"
+    }
+  ]
+}

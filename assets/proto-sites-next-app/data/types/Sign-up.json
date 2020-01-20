@@ -1,0 +1,67 @@
+{
+  "id": "58fd2ad1-df13-4a75-9918-6b34852539ab",
+  "rev": "1-6a03680a5e4c43cc32101c7257fe19a5",
+  "name": "Sign up",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "thumbnail": {
+    "id": "49d6b9fd-573e-472e-94ff-49de07601a5b"
+  },
+  "contentThumbnail": {
+    "imageElement": "backgroundImage",
+    "source": "imageElementOrType"
+  },
+  "description": "Sign up Newsletter content type.",
+  "status": "ready",
+  "tags": [
+    "oslo",
+    "IBM sample"
+  ],
+  "elements": [
+    {
+      "elementType": "image",
+      "acceptType": [
+        "jpg",
+        "jpeg",
+        "png",
+        "gif"
+      ],
+      "fieldLabel": "Image",
+      "label": "Background image",
+      "key": "backgroundImage",
+      "imageProfileId": "763cc433-46d8-4a1e-9155-878ae8cf4dbc"
+    },
+    {
+      "elementType": "text",
+      "fieldLabel": "Text",
+      "label": "Headline text",
+      "key": "text",
+      "placeholder": {
+        "show": true,
+        "text": "Headline for your sign-up"
+      }
+    },
+    {
+      "elementType": "link",
+      "fieldLabel": "Link",
+      "label": "Button label",
+      "key": "link",
+      "placeholder": {
+        "show": true,
+        "text": "Subscribe"
+      }
+    },
+    {
+      "elementType": "formattedtext",
+      "fieldLabel": "Formatted Text",
+      "label": "Confirmation message",
+      "key": "dialogMessage",
+      "placeholder": {
+        "show": true,
+        "text": "Provide a friendly confirmation and thank you message to your website visitor."
+      }
+    }
+  ]
+}

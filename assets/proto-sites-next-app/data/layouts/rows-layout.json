@@ -1,0 +1,10 @@
+{
+  "id": "a53a1152-7c94-46fc-b37e-2768f231e6da",
+  "rev": "1-5d6d5351ba56135f4012ae6e95fd0015",
+  "name": "Rows Layout",
+  "classification": "layout",
+  "prerender": false,
+  "template": "/sites/rows-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/rows-layout/{id}.html"
+}

@@ -1,10 +1,14 @@
-import { SchematicContext } from '@angular-devkit/schematics';
-import { Logger, LoggerFactory, LoggerService } from '@acoustic-content-sdk/api';
+import {
+  Logger,
+  LoggerFactory,
+  LoggerService
+} from '@acoustic-content-sdk/api';
 import {
   createLoggerService as _createLoggerService,
   isNotNil,
   NOOP_LOGGER_SERVICE
 } from '@acoustic-content-sdk/utils';
+import { SchematicContext } from '@angular-devkit/schematics';
 
 export const NOOP_LOGGER = NOOP_LOGGER_SERVICE.get('default');
 
@@ -17,8 +21,9 @@ export const NOOP_LOGGER = NOOP_LOGGER_SERVICE.get('default');
  */
 export function createLoggerService(context: SchematicContext): LoggerService {
   // access the logger
-  const logger = context.logger;
-  if (isNotNil(logger)) {
+  if (isNotNil(context) && isNotNil(context.logger)) {
+    // extract the logger
+    const { logger } = context;
     // create the logger factory
     const create = (aName: string): Logger => {
       const delegate = logger.createChild(aName);

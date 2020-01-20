@@ -1,0 +1,31 @@
+{
+  "id": "92600283-a254-4965-88fb-4950254f6e67",
+  "rev": "1-fe2a15adf27ed72d44f71f3597c78346",
+  "name": "Profile for design articles",
+  "classification": "image-profile",
+  "description": "Provides different renditions of images for the design articles.",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "created": "2017-08-11T01:03:48.504Z",
+  "lastModifierId": "00000000-0000-0000-0000-000000000009",
+  "lastModified": "2019-08-13T08:33:07.652Z",
+  "dimensions": [
+    {
+      "label": "Large",
+      "key": "large",
+      "width": 1200,
+      "height": 797
+    },
+    {
+      "label": "Medium",
+      "key": "medium",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "label": "Small",
+      "key": "small",
+      "width": 360,
+      "height": 282
+    }
+  ]
+}

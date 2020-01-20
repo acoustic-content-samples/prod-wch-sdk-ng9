@@ -1,0 +1,32 @@
+{
+  "id": "7225c4dd-dc02-48e3-9d80-0f84c0c1340f",
+  "rev": "1-a3a36e96673f07aa4932ffee7152dcfc",
+  "name": "Medium",
+  "creatorId": "00000000-0000-0000-0000-000000000009",
+  "creator": "System User",
+  "classification": "category",
+  "taxonomy": "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+  "parent": "0e1cd869-ee48-4ef6-ae6d-7be957c84d10",
+  "ancestorIds": [
+    "f38cf87e-0485-4b38-a0e6-6b9c420efed0",
+    "0e1cd869-ee48-4ef6-ae6d-7be957c84d10"
+  ],
+  "namePath": [
+    "Image size and placement",
+    "Size",
+    "Medium"
+  ],
+  "links": {
+    "taxonomy": {
+      "href": "/authoring/v1/categories/f38cf87e-0485-4b38-a0e6-6b9c420efed0"
+    },
+    "self": {
+      "href": "/authoring/v1/categories/7225c4dd-dc02-48e3-9d80-0f84c0c1340f"
+    },
+    "parent": {
+      "href": "/authoring/v1/categories/0e1cd869-ee48-4ef6-ae6d-7be957c84d10"
+    }
+  },
+  "created": "2019-08-13T08:33:09.473Z",
+  "lastModified": "2019-08-13T08:33:09.473Z"
+}

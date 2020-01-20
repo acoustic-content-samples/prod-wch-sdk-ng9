@@ -1,0 +1,12 @@
+{
+  "id": "search-results-layout",
+  "rev": "1-d5018a0909109827f1e13c1ac52aa069",
+  "name": "One column",
+  "classification": "layout",
+  "prerender": false,
+  "thumbnail": {
+    "path": "/layouts/thumbnails/search-results-layout.jpg"
+  },
+  "template": "search-results-layout",
+  "templateType": "angular"
+}
