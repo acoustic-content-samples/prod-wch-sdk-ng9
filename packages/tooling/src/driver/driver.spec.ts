@@ -5,11 +5,29 @@ import { count, map, tap } from 'rxjs/operators';
 import { createReadTextFile } from '../file/file';
 import { ASSET_ROOT } from '../test/assets';
 import { wchToolsFileDescriptor } from '../utils/wchtools';
-import { createDriverArtifacts } from './driver';
+import { createDriverArtifacts, copyDriverFiles } from './driver';
+import { createReadDirectory } from '../dir/dir';
 
 describe('driver', () => {
   const BASE = join(ASSET_ROOT, 'sample-spa');
   const readFile = createReadTextFile(BASE);
+
+  fit('should read the binary files', async () => {
+    const PROTO = join(ASSET_ROOT, 'proto-sites-next-app');
+    const readProto = createReadTextFile(PROTO);
+    const readDir = createReadDirectory(PROTO);
+
+    const artifact$ = copyDriverFiles(readProto, readDir, {
+      configuration: 'production'
+    });
+
+    const test$ = rxPipe(
+      artifact$,
+      tap(([name]) => console.log(name))
+    );
+
+    await test$.toPromise();
+  });
 
   it('should generate descriptors for preview mode', async () => {
     const PROTO = join(ASSET_ROOT, 'proto-sites-next-app');

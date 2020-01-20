@@ -35,13 +35,22 @@ import {
   toArray as rxToArray
 } from 'rxjs/operators';
 
-import { ReadTextFile } from '../file/file';
+import {
+  createFileDescriptor,
+  FileDescriptor,
+  ReadTextFile
+} from '../file/file';
 import { rxGetWorkspace, selectOptionsForTarget } from '../utils/config';
 import { createGuid, createRevision } from '../utils/guid';
 import { canonicalizeJson } from '../utils/json';
 import { ensureDirPath } from '../utils/url.utils';
 import { rxFindProjectName } from '../utils/wch.utils';
-import { ProjectType, WorkspaceProject } from '../utils/workspace-models';
+import {
+  ProjectType,
+  WorkspaceProject,
+  WorkspaceSchema
+} from '../utils/workspace-models';
+import { ReadDirectory } from './../dir/dir';
 import { ArtifactMode, CreateDriverArtifactsSchema } from './schema';
 
 export type Artifact = AuthoringContentItem;
@@ -572,6 +581,111 @@ function createArtifactsForProject(
   );
 }
 
+/**
+ * Extracts the project from a workspace
+ *
+ * @param aName - the project name
+ * @param aWorkspace - the workspace schema
+ *
+ * @returns the project
+ */
+const getProject = (aName: string, aWorkspace: WorkspaceSchema) =>
+  getPath<WorkspaceProject<ProjectType.Application>>(aWorkspace, [
+    'projects',
+    aName
+  ]);
+
+/**
+ * Decodes the modes from the schema
+ *
+ * @param aSchema - the schema
+ * @returns the modes
+ */
+const getModes = (aSchema: CreateDriverArtifactsSchema) =>
+  filterArray(
+    mapArray((aSchema.mode || DEFAULT_MODE).split(','), (m) => m.trim()),
+    isNotEmpty
+  );
+
+/**
+ * Decodes the configuration from the schema
+ *
+ * @param aSchema - the schema
+ * @returns the configuration
+ */
+const getConfig = (aSchema: CreateDriverArtifactsSchema) =>
+  aSchema.configuration || DEFAULT_CONFIGURATION;
+
+function readFilesForConfig(
+  aRoot: string,
+  aConfig: ModeConfig,
+  aReadDir: ReadDirectory
+): Observable<FileDescriptor<Buffer>> {
+  // target directory
+  const outDir = `${aRoot}${aConfig.outputPath}`;
+  // scan the files
+  return rxPipe(
+    aReadDir(outDir),
+    map(([name, buffer]) => createFileDescriptor(`${outDir}${name}`, buffer))
+  );
+}
+
+/**
+ * Generates the binary artifacts that make up the driver
+ *
+ * @param aHost  - callback to read the binary files
+ * @param aSchema - configuration
+ *
+ * @returns the sequence of file descriptors
+ */
+export function copyDriverFiles(
+  aReadFile: ReadTextFile,
+  aReadDir: ReadDirectory,
+  aSchema: CreateDriverArtifactsSchema = {}
+): Observable<FileDescriptor<Buffer>> {
+  // read the descriptor
+  const ws$ = rxCacheSingle(rxGetWorkspace(aReadFile));
+  // get the project information
+  const projectName$ = rxCacheSingle(
+    rxPipe(
+      ws$,
+      mergeMap((ws) => rxFindProjectName(ws, aSchema))
+    )
+  );
+  // the project
+  const prj$ = rxPipe(
+    combineLatest([projectName$, ws$]),
+    map(([name, ws]) => getProject(name, ws)),
+    opShareLast
+  );
+  // decode the configurations to work on
+  return rxPipe(
+    prj$,
+    mergeMap((project) => {
+      // root
+      const root = ensureDirPath(selectRootPath(project));
+      const configs = getModeConfigs(
+        project,
+        getConfig(aSchema),
+        getModes(aSchema)
+      );
+      // merge everything
+      return rxPipe(
+        from(configs),
+        mergeMap((config) => readFilesForConfig(root, config, aReadDir))
+      );
+    })
+  );
+}
+
+/**
+ * Generates the content items that describe a driver
+ *
+ * @param aHost  - callback to read a text file
+ * @param aSchema - configuration
+ *
+ * @returns the sequence of files
+ */
 export function createDriverArtifacts(
   aHost: ReadTextFile,
   aSchema: CreateDriverArtifactsSchema = {}
@@ -587,17 +701,12 @@ export function createDriverArtifacts(
   );
   const prj$ = rxPipe(
     combineLatest([projectName$, ws$]),
-    map(([name, ws]) =>
-      getPath<WorkspaceProject<ProjectType.Application>>(ws, ['projects', name])
-    )
+    map(([name, ws]) => getProject(name, ws))
   );
   // the modes
-  const modes = filterArray(
-    mapArray((aSchema.mode || DEFAULT_MODE).split(','), (m) => m.trim()),
-    isNotEmpty
-  );
+  const modes = getModes(aSchema);
   // the configurations
-  const config = aSchema.configuration || DEFAULT_CONFIGURATION;
+  const config = getConfig(aSchema);
   // dispatch
   return rxPipe(
     combineLatest([projectName$, prj$]),

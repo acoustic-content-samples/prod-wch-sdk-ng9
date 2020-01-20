@@ -64,6 +64,23 @@ export function rxReadJsonFile<T>(
 }
 
 /**
+ * Generates a {@link ReadTextFile} function on top of a {@link ReadBuffer} function
+ *
+ * @param aReadBuffer - the {@link ReadBuffer} function
+ * @param aEncoding - the encoding
+ *
+ * @returns the new @link ReadTextFile} function
+ */
+export const readTextFile = (
+  aReadBuffer: ReadBuffer,
+  aEncoding?: string
+): ReadTextFile => (aPath) =>
+  rxPipe(
+    aReadBuffer(aPath),
+    map((buffer) => buffer.toString(aEncoding))
+  );
+
+/**
  * Reads a JSON file on top of a text callback
  *
  * @param aFile - filename
