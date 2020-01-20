@@ -1,0 +1,9 @@
+<!-- <h5>{{ title$ | async }}: {{count$ | async }}</h5> -->
+<div class="page-layout-component">
+<wch-content
+  *ngFor="let content of content$ | async; trackBy: trackCtx"
+  [ctx]="content"
+></wch-content>
+</div>
+
+<!-- <pre>{{ renderingContext$ | async | json }}</pre> -->

@@ -1,10 +1,8 @@
-export interface Schema {
+import { CreateDriverArtifactsSchema } from '@acoustic-content-sdk/tooling';
+
+export interface Schema extends CreateDriverArtifactsSchema {
   /**
    * The path to the data directory
    */
   data?: string;
-  /**
-   * The name of the project.
-   */
-  project?: string;
 }

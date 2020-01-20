@@ -1,0 +1,9 @@
+.nav-container {
+  position: relative;
+  z-index: 10;
+}
+
+.secondary-nav-container {
+  transform: translate(0, -100%);
+  margin-bottom: -3.5rem;
+}

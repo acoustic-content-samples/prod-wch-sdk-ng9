@@ -1,12 +1,5 @@
-import { join, Path } from '@angular-devkit/core';
 import {
-  branchAndMerge,
-  chain,
-  Rule,
-  SchematicContext,
-  Tree
-} from '@angular-devkit/schematics';
-import {
+  createLoggerService,
   findDataDir,
   findProjectName,
   getWorkspace,
@@ -14,8 +7,7 @@ import {
   readTextFileOnTree,
   syncDir,
   WorkspaceProject,
-  writeTextFileOnTree,
-  createLoggerService
+  writeTextFileOnTree
 } from '@acoustic-content-sdk/schematics-utils';
 import {
   createDriverArtifacts,
@@ -25,10 +17,22 @@ import {
   rxWriteFileDescriptor,
   wchToolsFileDescriptor
 } from '@acoustic-content-sdk/tooling';
-import { getPath, pluckPath, rxPipe, rxNext } from '@acoustic-content-sdk/utils';
+import {
+  getPath,
+  pluckPath,
+  rxNext,
+  rxPipe
+} from '@acoustic-content-sdk/utils';
+import { join, Path } from '@angular-devkit/core';
+import {
+  branchAndMerge,
+  chain,
+  Rule,
+  SchematicContext,
+  Tree
+} from '@angular-devkit/schematics';
 import { combineLatest, MonoTypeOperatorFunction } from 'rxjs';
 import { count, map, mapTo, mergeMap } from 'rxjs/operators';
-
 import { Schema } from './schema';
 
 function createFileDescriptor<T>(aPath: string, aValue: T): FileDescriptor<T> {
@@ -49,7 +53,7 @@ function generateArtifacts(options: Schema): Rule {
     const writeFile = writeTextFileOnTree(host);
     // the artifacts
     const artifacts$ = rxPipe(
-      createDriverArtifacts(readFile),
+      createDriverArtifacts(readFile, options),
       map(wchToolsFileDescriptor),
       log('artifact')
     );

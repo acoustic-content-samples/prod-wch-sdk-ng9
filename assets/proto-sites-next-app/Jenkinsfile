@@ -1,0 +1,21 @@
+nodeModulePipeline {
+  squad = "infra-boe"
+  name = "proto-sites-next-app"
+	version_minor = "0"
+	version_major = "9"
+	nodeversion = "10"
+
+  Keystore1 = "wchbuild-apikey-wchtools"
+  Keystore2 = "TaaSwchbuild"
+
+  buildserver = "dx-build-server1"
+
+  preBuildScript = "echo 'Nothing to install'"
+	buildScript = "chmod a+x ./build.sh && sh ./build.sh"
+  deploymentScript = "echo 'Nothing to publish'"
+
+  skipStaticResourceUpdate = true
+  skipIntegrationTest = true
+  skipSonarQubeScan = true
+  skipValidation = true
+}

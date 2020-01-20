@@ -1,0 +1,37 @@
+<div class="nav-container">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" *ngIf="!!topNav">
+    <a class="navbar-brand" [routerLink]="rootPage.descriptor.canonicalpath">{{
+      rootPage.$metadata.name
+    }}</a>
+    <ul class="navbar-nav">
+      <li
+        [ngClass]="{ 'nav-item': true, 'active': isActive(item) }"
+        *ngFor="let item of topNav"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="item.descriptor.canonicalpath"
+          href="#"
+          >{{ item.$metadata.name }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="secondary-nav-container" @slide *ngIf="showSecondaryNav">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light secondary-nav">
+    <ul class="navbar-nav">
+      <li
+        [ngClass]="{ 'nav-item': true, 'active': isActive(item) }"
+        *ngFor="let item of secondaryNav"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="item.descriptor.canonicalpath"
+          href="#"
+          >{{ item.$metadata.name }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>

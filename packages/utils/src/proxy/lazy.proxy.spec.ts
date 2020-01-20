@@ -11,6 +11,7 @@ describe('lazy.proxy', () => {
   it('should work for observables', () => {
     let bInit = false;
     const gen: Generator<Observable<string>> = () => {
+      expect(bInit).toBeFalsy();
       bInit = true;
       return of('Test');
     };
@@ -26,6 +27,7 @@ describe('lazy.proxy', () => {
     let bInit = false;
 
     const gen: Generator<TestObject> = () => {
+      expect(bInit).toBeFalsy();
       bInit = true;
       return { a: 'Test' };
     };

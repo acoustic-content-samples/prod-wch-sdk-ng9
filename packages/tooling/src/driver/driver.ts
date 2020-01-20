@@ -9,10 +9,11 @@ import {
 } from '@acoustic-content-sdk/api';
 import { rxCacheSingle } from '@acoustic-content-sdk/rx-utils';
 import {
+  anyToString,
   arrayPush,
   getPath,
+  JSONObject,
   opShareLast,
-  pluckPath,
   pluckProperty,
   reduceArray,
   rxPipe,
@@ -30,23 +31,17 @@ import {
 } from 'rxjs/operators';
 
 import { ReadTextFile } from '../file/file';
-import { rxGetWorkspace } from '../utils/config';
+import { rxGetWorkspace, selectOptionsForTarget } from '../utils/config';
 import { createGuid, createRevision } from '../utils/guid';
 import { canonicalizeJson } from '../utils/json';
 import { ensureDirPath } from '../utils/url.utils';
 import { rxFindProjectName } from '../utils/wch.utils';
 import { ProjectType, WorkspaceProject } from '../utils/workspace-models';
+import { ArtifactMode, CreateDriverArtifactsSchema } from './schema';
 
 export type Artifact = AuthoringContentItem;
 
-const MODE_ALWAYS = 'always';
-
-const selectOutputPath = pluckPath<string>([
-  'architect',
-  'build',
-  'options',
-  'outputPath'
-]);
+const selectOutputPath = pluckProperty<JSONObject, 'outputPath'>('outputPath');
 
 const selectRootPath = pluckProperty<
   WorkspaceProject<ProjectType.Application>,
@@ -367,15 +362,23 @@ function addRevision<T>(aValue: T): T {
   return value;
 }
 
+const DEFAULT_CONFIGURATION = 'production';
+
+const DEFAULT_TARGET = 'build';
+
 function createArtifactsForProject(
   aProject: WorkspaceProject<ProjectType.Application>,
   aProjectName: string,
   aMode: string,
+  aConfigurations: string,
   aReadTextFile: ReadTextFile
 ): Observable<Artifact> {
+  // access the options
+  const selOptions = selectOptionsForTarget(DEFAULT_TARGET, aConfigurations);
+  const options = selOptions(aProject);
   // get the output path
   const root = ensureDirPath(selectRootPath(aProject));
-  const outPath = ensureDirPath(selectOutputPath(aProject));
+  const outPath = ensureDirPath(anyToString(selectOutputPath(options)));
   // index
   const indexPath = `${root}${outPath}/index.html`;
   // parse the index
@@ -415,13 +418,17 @@ function createArtifactsForProject(
 }
 
 export function createDriverArtifacts(
-  aHost: ReadTextFile
+  aHost: ReadTextFile,
+  aSchema: CreateDriverArtifactsSchema = {}
 ): Observable<Artifact> {
   // read the descriptor
   const ws$ = rxCacheSingle(rxGetWorkspace(aHost));
   // get the project information
   const projectName$ = rxCacheSingle(
-    rxPipe(ws$, mergeMap((ws) => rxFindProjectName(ws, {})))
+    rxPipe(
+      ws$,
+      mergeMap((ws) => rxFindProjectName(ws, aSchema))
+    )
   );
   const prj$ = rxPipe(
     combineLatest([projectName$, ws$]),
@@ -429,11 +436,15 @@ export function createDriverArtifacts(
       getPath<WorkspaceProject<ProjectType.Application>>(ws, ['projects', name])
     )
   );
-  // TODO fix
-  const mode = MODE_ALWAYS;
+  // the mode
+  const mode = aSchema.mode || ArtifactMode.ALWAYS;
+  // the configurations
+  const config = aSchema.configuration || DEFAULT_CONFIGURATION;
   // dispatch
   return rxPipe(
     combineLatest([projectName$, prj$]),
-    mergeMap(([name, prj]) => createArtifactsForProject(prj, name, mode, aHost))
+    mergeMap(([name, prj]) =>
+      createArtifactsForProject(prj, name, mode, config, aHost)
+    )
   );
 }

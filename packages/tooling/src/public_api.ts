@@ -2,6 +2,7 @@
 export * from './canonicalize';
 export * from './dir/dir';
 export * from './driver/driver';
+export * from './driver/schema';
 export * from './file/file';
 export * from './generate';
 export * from './logger/chalk.logger';

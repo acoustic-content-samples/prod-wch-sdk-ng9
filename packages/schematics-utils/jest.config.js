@@ -1,5 +1,10 @@
 const base = require('../jest.config.base.js');
 
 module.exports = {
-  ...base
+  ...base,
+  globals: {
+    'ts-jest': {
+      tsConfig: 'tsconfig.test.json'
+    }
+  }
 };

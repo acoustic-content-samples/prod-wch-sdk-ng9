@@ -9,6 +9,20 @@
       "type": "string",
       "format": "path",
       "description": "The path to the directory of the WCH data artifacts."
+    },
+    "project": {
+      "type": "string",
+      "description": "Name of the project."
+    },
+    "configuration": {
+      "type": "string",
+      "description": "The configuration to generate the contributions for.",
+      "default": "production"
+    },
+    "mode": {
+      "type": "string",
+      "description": "The contribution mode, one of 'always', 'live' or 'preview'.",
+      "default": "always"
     }
   },
   "required": [],

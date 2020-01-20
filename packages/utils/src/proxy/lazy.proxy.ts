@@ -1,5 +1,11 @@
+import { lazyGenerator } from '../generators/lazy.generator';
+import { UNDEFINED } from '../js/js.core';
 import { Generator } from './../generators/generator';
 
+/**
+ * We can use one single handler instance for all of our proxies because the
+ * target object will be the generator function.
+ */
 const LAZY_PROXY_HANDLER: ProxyHandler<any> = {
   getPrototypeOf: (target: Generator<any>) => Reflect.getPrototypeOf(target()),
   setPrototypeOf: (target: Generator<any>, v: any) =>
@@ -29,24 +35,17 @@ const LAZY_PROXY_HANDLER: ProxyHandler<any> = {
     Reflect.construct(target(), argArray, newTarget)
 };
 
+const HAS_PROXY = typeof Proxy !== UNDEFINED && typeof Reflect !== UNDEFINED;
+
+const nativeProxy = <T>(aGenerator: Generator<T>): T =>
+  new Proxy(lazyGenerator(aGenerator), LAZY_PROXY_HANDLER);
+
+const fallbackProxy = <T>(aGenerator: Generator<T>): T => aGenerator();
+
 /**
  * Returns an object that is lazily constructed when first accessed
  *
  * @param aGenerator - the generator function for the object
  * @returns the object
  */
-export function lazyProxy<T>(aGenerator: Generator<T>): T {
-  // track the initialization status
-  let bInit = false;
-  // our generated value
-  let value: T;
-  // create the value
-  const create = () => {
-    bInit = true;
-    return (value = aGenerator());
-  };
-  // access the value
-  const access = () => (bInit ? value : create());
-  // construct our generic proxy
-  return new Proxy(access, LAZY_PROXY_HANDLER);
-}
+export const lazyProxy = HAS_PROXY ? nativeProxy : fallbackProxy;
