@@ -710,6 +710,9 @@ export function readBufferOnTree(aHost: Tree, aRoot?: Path): ReadBuffer;
 export function readDirectoryOnTree(aHost: Tree, aRoot?: Path): ReadDirectory;
 
 // @public
+export function readRelativeDirectoryOnTree(aHost: Tree, aRoot?: Path): ReadDirectory;
+
+// @public
 export function readTextFileOnTree(aHost: Tree, aRoot?: Path): ReadTextFile;
 
 // @public

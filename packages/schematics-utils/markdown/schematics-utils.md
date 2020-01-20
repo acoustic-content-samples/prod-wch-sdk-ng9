@@ -98,6 +98,7 @@
 |  [parseName(path, name)](./schematics-utils.parsename.md) |  |
 |  [readBufferOnTree(aHost, aRoot)](./schematics-utils.readbufferontree.md) | Constructs the ReadBuffer callback on top of a host |
 |  [readDirectoryOnTree(aHost, aRoot)](./schematics-utils.readdirectoryontree.md) | Creates a function callback that reads files from a host |
+|  [readRelativeDirectoryOnTree(aHost, aRoot)](./schematics-utils.readrelativedirectoryontree.md) | Creates a function callback that reads files from a host |
 |  [readTextFileOnTree(aHost, aRoot)](./schematics-utils.readtextfileontree.md) | Constructs the ReadTextFile callback on top of a host |
 |  [readWorkspace(aRoot)](./schematics-utils.readworkspace.md) | Reads a workspace definition based on a root path |
 |  [rxDownload(aUri, aDstFile)](./schematics-utils.rxdownload.md) |  |

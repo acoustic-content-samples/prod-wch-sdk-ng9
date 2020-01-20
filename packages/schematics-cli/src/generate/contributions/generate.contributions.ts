@@ -1,8 +1,8 @@
 import {
   createLoggerService,
-  readDirectoryOnTree,
+  readRelativeDirectoryOnTree,
   readTextFileOnTree,
-  writeTextFileOnTree
+  writeBufferOnTree
 } from '@acoustic-content-sdk/schematics-utils';
 import {
   copyDriverFiles,
@@ -16,7 +16,6 @@ import { rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { merge, MonoTypeOperatorFunction } from 'rxjs';
 import { count, map, mapTo, mergeMap } from 'rxjs/operators';
-
 import { Schema } from './schema';
 
 const LOGGER = 'GenerateContributions';
@@ -30,8 +29,8 @@ function generateArtifacts(options: Schema): Rule {
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
     // create the read callback
     const readFile = readTextFileOnTree(host);
-    const readDir = readDirectoryOnTree(host);
-    const writeFile = writeTextFileOnTree(host);
+    const readDir = readRelativeDirectoryOnTree(host);
+    const writeFile = writeBufferOnTree(host);
     // the artifacts
     const artifacts$ = rxPipe(
       createDriverArtifacts(readFile, options),
@@ -55,10 +54,7 @@ function generateArtifacts(options: Schema): Rule {
       )
     );
     // write these files
-    const written$ = rxPipe(
-      files$,
-      mergeMap((file) => rxWriteFileDescriptor(file, writeFile))
-    );
+    const written$ = rxPipe(files$, rxWriteFileDescriptor(writeFile));
 
     // done
     return rxPipe(written$, count(), mapTo(host));

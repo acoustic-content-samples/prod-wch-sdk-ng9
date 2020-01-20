@@ -1,5 +1,3 @@
-import { join, Path } from '@angular-devkit/core';
-import { FileEntry, Tree } from '@angular-devkit/schematics';
 import {
   anyToBuffer,
   createFileDescriptor,
@@ -18,6 +16,8 @@ import {
   Predicate,
   rxPipe
 } from '@acoustic-content-sdk/utils';
+import { join, normalize, Path } from '@angular-devkit/core';
+import { FileEntry, Tree } from '@angular-devkit/schematics';
 import {
   defer,
   identity,
@@ -30,7 +30,6 @@ import {
 } from 'rxjs';
 import { map, mapTo, mergeMap } from 'rxjs/operators';
 import { VError } from 'verror';
-
 import { safeWrite } from './rx.copy';
 
 /**
@@ -61,14 +60,19 @@ function bufferFromTree(aName: string, aHost: Tree): Observable<Buffer> {
  * @returns the observable of the content or a failed observable
  */
 const textFromTree = (aName: string, aHost: Tree): Observable<string> =>
-  rxPipe(bufferFromTree(aName, aHost), map((data) => data.toString()));
+  rxPipe(
+    bufferFromTree(aName, aHost),
+    map((data) => data.toString())
+  );
 
 function isRoot(aRoot?: Path): boolean {
   return isNotNil(aRoot) && aRoot !== '/';
 }
 
-function addRoot(aRoot?: Path): UnaryFunction<string, string> {
-  return isRoot(aRoot) ? (aName: string) => join(aRoot, aName) : identity;
+function addRoot(aRoot?: Path): UnaryFunction<string, Path> {
+  return isRoot(aRoot)
+    ? (aName: string) => join(aRoot, aName)
+    : (aName: string) => normalize(aName);
 }
 
 function removeRoot(aRoot?: Path): UnaryFunction<string, string> {
@@ -146,6 +150,28 @@ function directoryOnTree(
       aObserver.complete();
     }
   );
+}
+
+/**
+ * Creates a function callback that reads files from a host
+ *
+ * @param aHost - the host
+ * @param aRoot - optional root path
+ *
+ * @returns the callback
+ */
+export function readRelativeDirectoryOnTree(
+  aHost: Tree,
+  aRoot?: Path
+): ReadDirectory {
+  // root callback
+  const addPath = addRoot(aRoot);
+  // the function
+  return (aName: string, aAccept: Predicate<ReadDirectoryEntry>) => {
+    // full root
+    const fullPath = addPath(aName);
+    return directoryOnTree(fullPath, aHost, aAccept, removeRoot(fullPath));
+  };
 }
 
 /**

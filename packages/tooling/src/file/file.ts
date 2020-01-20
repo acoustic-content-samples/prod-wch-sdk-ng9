@@ -114,25 +114,38 @@ export function rxWriteJsonFile(
 }
 
 /**
+ * Creates a {@link WriteTextFile} function on top of a {@link WriteBuffer} function
+ *
+ * @param aWriteBuffer  - the {@link WriteBuffer} function
+ * @param aEncoding - the encoding
+ *
+ * @returns the {@link WriteTextFile} function
+ */
+export const writeTextFile = (
+  aWriteBuffer: WriteBuffer,
+  aEncoding: BufferEncoding = 'utf-8'
+): WriteTextFile => (aName: string, aText: string) =>
+  aWriteBuffer(aName, Buffer.from(aText, aEncoding));
+
+/**
  * Persists a file descriptor
  *
- * @param aDesc  - the descriptor
- * @param aHost  - host
+ * @param aWriteBuffer  - the write buffer function
  *
- * @returns the descriptor
+ * @returns the operator function that writes the descriptor
  */
-export function rxWriteFileDescriptor<T>(
-  aDesc: FileDescriptor<T>,
-  aHost: WriteTextFile
-): Observable<FileDescriptor<T>> {
-  // data
-  const [path, data] = aDesc;
-  // check for the operation
-  return rxPipe(
-    isString(data) ? aHost(path, data) : rxWriteJsonFile(path, data, aHost),
-    mapTo(aDesc)
+export const rxWriteFileDescriptor = <T>(
+  aWriteBuffer: WriteBuffer
+): MonoTypeOperatorFunction<FileDescriptor<T>> => (src$) =>
+  rxPipe(
+    src$,
+    mergeMap((desc) => {
+      // data
+      const [path, data] = desc;
+      // check for the operation
+      return rxPipe(aWriteBuffer(path, anyToBuffer(data)), mapTo(desc));
+    })
   );
-}
 
 /**
  * Tests if a file exists
