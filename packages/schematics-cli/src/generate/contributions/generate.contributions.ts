@@ -1,43 +1,23 @@
 import {
   createLoggerService,
-  findDataDir,
-  findProjectName,
-  getWorkspace,
-  ProjectType,
+  readDirectoryOnTree,
   readTextFileOnTree,
-  syncDir,
-  WorkspaceProject,
   writeTextFileOnTree
 } from '@acoustic-content-sdk/schematics-utils';
 import {
+  copyDriverFiles,
   createDriverArtifacts,
-  ensureDirPath,
-  FileDescriptor,
+  createFileDescriptor,
   rxFindDataDir,
   rxWriteFileDescriptor,
   wchToolsFileDescriptor
 } from '@acoustic-content-sdk/tooling';
-import {
-  getPath,
-  pluckPath,
-  rxNext,
-  rxPipe
-} from '@acoustic-content-sdk/utils';
-import { join, Path } from '@angular-devkit/core';
-import {
-  branchAndMerge,
-  chain,
-  Rule,
-  SchematicContext,
-  Tree
-} from '@angular-devkit/schematics';
-import { combineLatest, MonoTypeOperatorFunction } from 'rxjs';
+import { rxNext, rxPipe } from '@acoustic-content-sdk/utils';
+import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { merge, MonoTypeOperatorFunction } from 'rxjs';
 import { count, map, mapTo, mergeMap } from 'rxjs/operators';
-import { Schema } from './schema';
 
-function createFileDescriptor<T>(aPath: string, aValue: T): FileDescriptor<T> {
-  return [aPath, aValue];
-}
+import { Schema } from './schema';
 
 const LOGGER = 'GenerateContributions';
 
@@ -50,6 +30,7 @@ function generateArtifacts(options: Schema): Rule {
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
     // create the read callback
     const readFile = readTextFileOnTree(host);
+    const readDir = readDirectoryOnTree(host);
     const writeFile = writeTextFileOnTree(host);
     // the artifacts
     const artifacts$ = rxPipe(
@@ -57,13 +38,20 @@ function generateArtifacts(options: Schema): Rule {
       map(wchToolsFileDescriptor),
       log('artifact')
     );
+    // the binary files
+    const binary$ = copyDriverFiles(readFile, readDir, options);
+    // all items
+    const all$ = merge(artifacts$, binary$);
     // locate the data directory
     const dataDir$ = rxFindDataDir(readFile, options);
     // compose so we have the correct filenames
     const files$ = rxPipe(
-      combineLatest([dataDir$, artifacts$]),
-      map(([dataDir, [path, data]]) =>
-        createFileDescriptor(`${dataDir}${path}`, data)
+      dataDir$,
+      mergeMap((dataDir) =>
+        rxPipe(
+          all$,
+          map(([path, data]) => createFileDescriptor(`${dataDir}${path}`, data))
+        )
       )
     );
     // write these files
@@ -77,44 +65,7 @@ function generateArtifacts(options: Schema): Rule {
   };
 }
 
-const selectOutputPath = pluckPath<string>([
-  'architect',
-  'build',
-  'options',
-  'outputPath'
-]);
-
-function copyFiles(options: Schema): Rule {
-  return (host: Tree, context: SchematicContext) => {
-    // construct the logger
-    const logSvc = createLoggerService(context);
-    const logger = logSvc.get(LOGGER);
-    // next logger
-    const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
-    // locate source and target
-    const workspace = getWorkspace(host);
-    const projectName = findProjectName(workspace, options);
-    // get the project
-    const project = getPath<WorkspaceProject<ProjectType.Application>>(
-      workspace,
-      ['projects', projectName]
-    );
-    // build path
-    const srcPath: Path = ensureDirPath(selectOutputPath(project)) as any;
-    // target path
-    const dataDir: Path = ensureDirPath(findDataDir(host, options)) as any;
-    const dstPath: Path = ensureDirPath(
-      join(dataDir, 'assets', projectName)
-    ) as any;
-    // copy
-    return syncDir(srcPath, dstPath, host, logger);
-  };
-}
-
 export function generateContributions(options: Schema): Rule {
-  return (host: Tree, context: SchematicContext) => {
-    return chain([
-      branchAndMerge(chain([generateArtifacts(options), copyFiles(options)]))
-    ])(host, context);
-  };
+  // rule for the artifact
+  return generateArtifacts(options);
 }
