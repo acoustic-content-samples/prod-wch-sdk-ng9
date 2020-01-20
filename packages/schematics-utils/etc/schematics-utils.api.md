@@ -31,6 +31,7 @@ import { Tree } from '@angular-devkit/schematics';
 import * as ts from 'typescript';
 import { UnaryFunction } from 'rxjs';
 import { UpdateRecorder } from '@angular-devkit/schematics';
+import { workspaces } from '@angular-devkit/core';
 import { WriteBuffer } from '@acoustic-content-sdk/tooling';
 import { WriteTextFile } from '@acoustic-content-sdk/tooling';
 
@@ -710,6 +711,11 @@ export function readDirectoryOnTree(aHost: Tree, aRoot?: Path): ReadDirectory;
 
 // @public
 export function readTextFileOnTree(aHost: Tree, aRoot?: Path): ReadTextFile;
+
+// @public
+export function readWorkspace(aRoot: string): Promise<{
+    workspace: workspaces.WorkspaceDefinition;
+}>;
 
 // @public
 export class RemoveChange implements Change {

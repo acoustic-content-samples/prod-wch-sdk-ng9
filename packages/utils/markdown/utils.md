@@ -145,7 +145,6 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [isVideo(aValue, bOptional)](./utils.isvideo.md) | Tests if an element is a video. If the element is optional, it can be null or an arbitrary object. Otherwise we must have at least an asset and a URL. |
 |  [isVideoElement(aValue)](./utils.isvideoelement.md) | Tests if an element is a video element |
 |  [kebabCase(str)](./utils.kebabcase.md) |  |
-|  [lazyGenerator(aGenerator)](./utils.lazygenerator.md) | Creates a lazy generator for the value |
 |  [longHash()](./utils.longhash.md) | Returns an initial value for the hash code |
 |  [luceneEscapeKeyValue(aKey, aTerm)](./utils.luceneescapekeyvalue.md) | Generates a search selector and escapes the value. If the value is missing the method generates an expression that searches for missing values. |
 |  [luceneEscapeKeyValueAnd(aKey, aTerms)](./utils.luceneescapekeyvalueand.md) | Generates a selector and joins with 'AND' |
@@ -344,6 +343,8 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [lastElement](./utils.lastelement.md) |  |
 |  [LAYOUT\_TYPE\_ANGULAR](./utils.layout_type_angular.md) |  |
 |  [LAYOUT\_TYPE\_HANDLEBARS](./utils.layout_type_handlebars.md) |  |
+|  [lazyGenerator](./utils.lazygenerator.md) | Creates a lazy generator for the value |
+|  [lazyProxy](./utils.lazyproxy.md) | Returns an object that is lazily constructed when first accessed |
 |  [localizedText](./utils.localizedtext.md) | expose a tuple as text |
 |  [mapDefault](./utils.mapdefault.md) | Operator that returns the default value for each nil value of the source sequence |
 |  [mapTypeOf](./utils.maptypeof.md) | Returns the object if it is of a particular type, else undefined |

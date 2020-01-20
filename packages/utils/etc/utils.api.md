@@ -939,7 +939,10 @@ export const LAYOUT_TYPE_ANGULAR = "angular";
 export const LAYOUT_TYPE_HANDLEBARS = "handlebars";
 
 // @public
-export function lazyGenerator<T>(aGenerator: Generator<T>): Generator<T>;
+export const lazyGenerator: <T>(aGenerator: Generator<T>) => Generator<T>;
+
+// @public
+export const lazyProxy: <T>(aGenerator: Generator<T>) => T;
 
 // @public
 export const localizedText: BiFunction<string, Locale, LocalizedText>;

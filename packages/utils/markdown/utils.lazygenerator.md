@@ -2,25 +2,12 @@
 
 [Home](./index.md) &gt; [@acoustic-content-sdk/utils](./utils.md) &gt; [lazyGenerator](./utils.lazygenerator.md)
 
-## lazyGenerator() function
+## lazyGenerator variable
 
 Creates a lazy generator for the value
 
 <b>Signature:</b>
 
 ```typescript
-declare function _lazyGenerator<T>(aGenerator: Generator<T>): Generator<T>;
+lazyGenerator: <T>(aGenerator: Generator<T>) => Generator<T>
 ```
-
-## Parameters
-
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  aGenerator | <code>Generator&lt;T&gt;</code> | the generator |
-
-<b>Returns:</b>
-
-`Generator<T>`
-
-the generator
-
