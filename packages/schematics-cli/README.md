@@ -1,6 +1,4 @@
-# WCH SDK Schematics
-
-These [schematics](https://www.npmjs.com/package/@angular-devkit/schematics) add workflow to application development for Angular applications for [Watson Content Hub](https://www.ibm.com/products/watson-content-hub).
+These [schematics](https://www.npmjs.com/package/@angular-devkit/schematics) add workflow to application development for Angular applications for [Acoustic Content](https://www.ibm.com/products/watson-content-hub).
 
 ### Suggestion
 
@@ -76,3 +74,7 @@ Many command operate on top of a [wchtools folder](https://www.npmjs.com/package
 The location of the [wchtools folder](https://www.npmjs.com/package/wchtools-cli) folder can be configured via the `package.json` in the `config.data` field, relative to the location of the `package.json`, we recommend `./data` as the default name of this folder. Specify additional configuration in the `./data/.wchtoolsoptions.json` inside that folder.
 
 If you have bootstrapped your application with [@acoustic-content-sdk/app](https://www.npmjs.com/package/@acoustic-content-sdk/app) then the folder and necessary configuration will be setup, already.
+
+## Documentation
+
+[API Documentation](./markdown/schematics.md)

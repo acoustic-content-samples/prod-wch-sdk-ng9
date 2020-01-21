@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema",
   "id": "SchematicsIbmWchSdkGenerateContributions",
   "title": "IbmWchSdk Generate Contributions Schema",
-  "description": "Generates page contributions from the build output.",
+  "description": "Generates sites-next page contributions from the build output of an Angular build.",
   "type": "object",
   "properties": {
     "data": {
@@ -12,17 +12,17 @@
     },
     "project": {
       "type": "string",
-      "description": "Name of the project."
+      "description": "Name of the project. If missing the command uses the default project."
     },
     "configuration": {
       "type": "string",
-      "description": "The configuration to generate the contributions for.",
+      "description": "The configuration to generate the contributions for. This is a potentially comma separated list, defaults to 'production'.",
       "default": "production"
     },
     "mode": {
       "type": "string",
-      "description": "The contribution mode, one of 'always', 'live' or 'preview'.",
-      "default": "always"
+      "description": "The contribution mode, a comma separated list modes. The mode names must be 'always', 'live' or 'preview'.",
+      "default": "live,preview"
     }
   },
   "required": [],

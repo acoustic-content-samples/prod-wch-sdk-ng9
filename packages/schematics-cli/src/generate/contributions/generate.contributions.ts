@@ -16,6 +16,7 @@ import { rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { merge, MonoTypeOperatorFunction } from 'rxjs';
 import { count, map, mapTo, mergeMap } from 'rxjs/operators';
+
 import { Schema } from './schema';
 
 const LOGGER = 'GenerateContributions';
@@ -61,6 +62,13 @@ function generateArtifacts(options: Schema): Rule {
   };
 }
 
+/**
+ * Generates all wchtools artifacts required to bootstrap a sites next application
+ * from the Angular build configuration that the schema points to.
+ *
+ * @param options  - the options
+ * @returns the rule that generates the artifacts
+ */
 export function generateContributions(options: Schema): Rule {
   // rule for the artifact
   return generateArtifacts(options);

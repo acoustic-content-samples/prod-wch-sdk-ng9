@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/schematics",
   "version": "9.0.0",
-  "description": "A schematics",
+  "description": "Schematics to add workflow to application development for Angular applications for Acoustic Content.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -20,6 +20,8 @@
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
     "test": "jest"
