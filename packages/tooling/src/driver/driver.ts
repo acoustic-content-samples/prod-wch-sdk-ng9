@@ -631,14 +631,14 @@ function readFilesForConfig(
 }
 
 /**
- * Generates the binary artifacts that make up the driver
+ * Generates the binary artifacts that make up the Angular driver
  *
  * @param aHost  - callback to read the binary files
  * @param aSchema - configuration
  *
  * @returns the sequence of file descriptors
  */
-export function copyDriverFiles(
+export function copyNgDriverFiles(
   aReadFile: ReadTextFile,
   aReadDir: ReadDirectory,
   aSchema: CreateDriverArtifactsSchema = {}
@@ -679,14 +679,14 @@ export function copyDriverFiles(
 }
 
 /**
- * Generates the content items that describe a driver
+ * Generates the content items that describe a driver based on an Angular build output
  *
  * @param aHost  - callback to read a text file
  * @param aSchema - configuration
  *
- * @returns the sequence of files
+ * @returns the sequence of artifacts
  */
-export function createDriverArtifacts(
+export function createNgDriverArtifacts(
   aHost: ReadTextFile,
   aSchema: CreateDriverArtifactsSchema = {}
 ): Observable<Artifact> {

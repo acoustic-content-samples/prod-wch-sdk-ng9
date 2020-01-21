@@ -3,8 +3,12 @@ import { isNotEmpty, Predicate } from '@acoustic-content-sdk/utils';
 
 import { fromRegExpString, NEVER } from './black.white.list';
 import { selectId } from './selectors';
+import { WCHTOOLS_FOLDER_CONTENT } from './wchtools';
 
-export const CONTENT_FOLDER = 'content';
+/**
+ * @deprecated
+ */
+export const CONTENT_FOLDER = WCHTOOLS_FOLDER_CONTENT;
 
 export function createContentPredicate(aOptions: {
   include?: string[];

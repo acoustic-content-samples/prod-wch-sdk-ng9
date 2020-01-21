@@ -5,17 +5,19 @@ import {
   writeBufferOnTree
 } from '@acoustic-content-sdk/schematics-utils';
 import {
-  copyDriverFiles,
-  createDriverArtifacts,
+  copyNgDriverFiles,
   createFileDescriptor,
+  createNgDriverArtifacts,
+  FileDescriptor,
   rxFindDataDir,
   rxWriteFileDescriptor,
+  WCHTOOLS_FOLDER_ASSET,
   wchToolsFileDescriptor
 } from '@acoustic-content-sdk/tooling';
-import { rxNext, rxPipe } from '@acoustic-content-sdk/utils';
+import { rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { merge, MonoTypeOperatorFunction } from 'rxjs';
-import { count, map, mapTo, mergeMap } from 'rxjs/operators';
+import { merge } from 'rxjs';
+import { count, map, mapTo, mergeMap, tap } from 'rxjs/operators';
 
 import { Schema } from './schema';
 
@@ -26,20 +28,27 @@ function generateArtifacts(options: Schema): Rule {
     // logger
     const logSvc = createLoggerService(context);
     const logger = logSvc.get(LOGGER);
-    // next logger
-    const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
+    // logs a filename
+    const logFile = () =>
+      tap<FileDescriptor<any>>(([name]) => logger.info('Generated file', name));
     // create the read callback
     const readFile = readTextFileOnTree(host);
     const readDir = readRelativeDirectoryOnTree(host);
     const writeFile = writeBufferOnTree(host);
     // the artifacts
     const artifacts$ = rxPipe(
-      createDriverArtifacts(readFile, options),
+      createNgDriverArtifacts(readFile, options),
       map(wchToolsFileDescriptor),
-      log('artifact')
+      logFile()
     );
     // the binary files
-    const binary$ = copyDriverFiles(readFile, readDir, options);
+    const binary$ = rxPipe(
+      copyNgDriverFiles(readFile, readDir, options),
+      map(([path, data]) =>
+        createFileDescriptor(`/${WCHTOOLS_FOLDER_ASSET}${path}`, data)
+      ),
+      logFile()
+    );
     // all items
     const all$ = merge(artifacts$, binary$);
     // locate the data directory

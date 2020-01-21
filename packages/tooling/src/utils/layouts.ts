@@ -9,12 +9,15 @@ import {
   pluckPath,
   pluckProperty
 } from '@acoustic-content-sdk/utils';
-
 import { LayoutBaseSchema } from '../generate/utils/schema';
 import { camelCase, kebabCase } from './names';
 import { TYPE_SUFFIX } from './types';
+import { WCHTOOLS_FOLDER_LAYOUT } from './wchtools';
 
-export const LAYOUTS_FOLDER = 'layouts';
+/**
+ * @deprecated
+ */
+export const LAYOUTS_FOLDER = WCHTOOLS_FOLDER_LAYOUT;
 
 export const LAYOUT_SUFFIX = 'Layout';
 
@@ -30,9 +33,10 @@ export function getLayoutNameFromTypeName(aTypeName: string): string {
 
 export const selectThumbnailPath = pluckPath<string>(['thumbnail', 'path']);
 
-export const selectUrlTemplate = pluckProperty<AuthoringLayoutItem, 'urlTemplate'>(
+export const selectUrlTemplate = pluckProperty<
+  AuthoringLayoutItem,
   'urlTemplate'
-);
+>('urlTemplate');
 
 export function createLayoutForType(
   aType: AuthoringType,

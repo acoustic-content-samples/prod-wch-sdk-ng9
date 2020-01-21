@@ -8,8 +8,12 @@ import {
 
 import { fromRegExpString, NEVER } from './black.white.list';
 import { selectId } from './selectors';
+import { WCHTOOLS_FOLDER_CONTENT_TYPE } from './wchtools';
 
-export const TYPES_FOLDER = 'types';
+/**
+ * @deprecated
+ */
+export const TYPES_FOLDER = WCHTOOLS_FOLDER_CONTENT_TYPE;
 
 export const TYPE_SUFFIX = 'Type';
 

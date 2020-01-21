@@ -14,12 +14,15 @@ import {
   isNotNil,
   pluckPath
 } from '@acoustic-content-sdk/utils';
-
 import { camelCase, classCase, kebabCase } from './names';
 import { selectId } from './selectors';
 import { TYPE_SUFFIX } from './types';
+import { WCHTOOLS_FOLDER_LAYOUT_MAPPING } from './wchtools';
 
-export const LAYOUT_MAPPINGS_FOLDER = 'layout-mappings';
+/**
+ * @deprecated
+ */
+export const LAYOUT_MAPPINGS_FOLDER = WCHTOOLS_FOLDER_LAYOUT_MAPPING;
 
 export const LAYOUT_MAPPING_SUFFIX = classCase(CLASSIFICATION_LAYOUT_MAPPING);
 
