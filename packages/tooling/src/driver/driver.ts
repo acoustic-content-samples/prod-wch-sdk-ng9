@@ -111,7 +111,8 @@ function createName(aLink: string, aBaseName: string): string {
 function createStyleItem(
   aStyle: HTMLLinkElement,
   aBaseName: string,
-  aBasePath: string
+  aBasePath: string,
+  tags: string[]
 ): AuthoringContentItem {
   // url
   const href = aStyle.href;
@@ -123,6 +124,7 @@ function createStyleItem(
   const item = {
     id,
     name,
+    tags,
     classification: CLASSIFICATION_CONTENT,
     typeId: STYLE_CONTRIBUTION_ID,
     elements: {
@@ -148,7 +150,8 @@ function createStyleItem(
 function createScriptItem(
   aScript: HTMLScriptElement,
   aBaseName: string,
-  aBasePath: string
+  aBasePath: string,
+  tags: string[]
 ): AuthoringContentItem {
   // url
   const src = aScript.src;
@@ -164,6 +167,7 @@ function createScriptItem(
   const item = {
     id,
     name,
+    tags,
     classification: CLASSIFICATION_CONTENT,
     typeId: SCRIPT_CONTRIBUTION_ID,
     elements: {
@@ -191,17 +195,18 @@ function createScriptItem(
 function createHeadArtifacts(
   aHead: HTMLElement,
   aBaseName: string,
-  aBasePath: string
+  aBasePath: string,
+  tags: string[]
 ): Observable<AuthoringContentItem> {
   // head links
   const style$ = rxPipe(
     selectStyleLinks(aHead),
-    map((link) => createStyleItem(link, aBaseName, aBasePath))
+    map((link) => createStyleItem(link, aBaseName, aBasePath, tags))
   );
   // head scripts
   const script$ = rxPipe(
     selectScripts(aHead),
-    map((script) => createScriptItem(script, aBaseName, aBasePath))
+    map((script) => createScriptItem(script, aBaseName, aBasePath, tags))
   );
   // merge
   return merge(style$, script$);
@@ -210,12 +215,13 @@ function createHeadArtifacts(
 function createBodyArtifacts(
   aBody: HTMLElement,
   aBaseName: string,
-  aBasePath: string
+  aBasePath: string,
+  tags: string[]
 ): Observable<AuthoringContentItem> {
   // body scripts
   return rxPipe(
     selectScripts(aBody),
-    map((script) => createScriptItem(script, aBaseName, aBasePath))
+    map((script) => createScriptItem(script, aBaseName, aBasePath, tags))
   );
 }
 
@@ -365,7 +371,8 @@ function bodyContribution(): OperatorFunction<ItemWithMode, any> {
 function createPageContributions(
   aProjectName: string,
   head: any,
-  body: any
+  body: any,
+  tags: string[]
 ): AuthoringContentItem {
   // generate some ids
   const name = `${aProjectName} - Profile`;
@@ -373,6 +380,7 @@ function createPageContributions(
   const key = id;
 
   const item = {
+    tags,
     classification: CLASSIFICATION_CONTENT,
     elements: {
       head,
@@ -499,6 +507,7 @@ interface Artifacts {
  * @param aConfig - the config
  * @param aRootDir  - root directory
  * @param aProjectName - name of the project
+ * @param aTags - the tags for the artifacts
  * @param aReadTextFile - read callback
  *
  * @returns the contributions
@@ -507,6 +516,7 @@ function createArtifacts(
   aConfig: ModeConfig,
   aRootDir: string,
   aProjectName: string,
+  aTags: string[],
   aReadTextFile: ReadTextFile
 ): Artifacts {
   // decode the config
@@ -526,14 +536,14 @@ function createArtifacts(
   const head$ = rxPipe(
     dom$,
     pluck('head'),
-    mergeMap((el) => createHeadArtifacts(el, baseName, outputPath)),
+    mergeMap((el) => createHeadArtifacts(el, baseName, outputPath, aTags)),
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
   const body$ = rxPipe(
     dom$,
     pluck('body'),
-    mergeMap((el) => createBodyArtifacts(el, baseName, outputPath)),
+    mergeMap((el) => createBodyArtifacts(el, baseName, outputPath, aTags)),
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
@@ -546,6 +556,7 @@ function createArtifactsForProject(
   aProjectName: string,
   aModes: string[],
   aConfigurations: string,
+  aTags: string[],
   aReadTextFile: ReadTextFile
 ): Observable<Artifact> {
   // root path
@@ -554,7 +565,7 @@ function createArtifactsForProject(
   const modeConfigs = getModeConfigs(aProject, aConfigurations, aModes);
   // read the configs
   const artifacts = mapArray(modeConfigs, (config) =>
-    createArtifacts(config, root, aProjectName, aReadTextFile)
+    createArtifacts(config, root, aProjectName, aTags, aReadTextFile)
   );
   // merge all body artifacts
   const head$ = merge(...mapArray(artifacts, (a) => a.head$));
@@ -571,7 +582,7 @@ function createArtifactsForProject(
   // combine to build the item
   const pageContribution$ = rxPipe(
     combineLatest([headContribution$, bodyContribution$]),
-    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc))
+    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc, aTags))
   );
   // combine the contributions
   return rxPipe(
@@ -596,15 +607,32 @@ const getProject = (aName: string, aWorkspace: WorkspaceSchema) =>
   ]);
 
 /**
+ * Splits the array into individual values
+ *
+ * @param aValue - the value, separated by ','
+ * @returns the split array
+ */
+const splitArray = (aValue: string): string[] =>
+  filterArray(
+    mapArray(aValue.split(','), (m) => m.trim()),
+    isNotEmpty
+  );
+
+/**
  * Decodes the modes from the schema
  *
  * @param aSchema - the schema
  * @returns the modes
  */
 const getModes = (aSchema: CreateDriverArtifactsSchema) =>
-  filterArray(
-    mapArray((aSchema.mode || DEFAULT_MODE).split(','), (m) => m.trim()),
-    isNotEmpty
+  splitArray(aSchema.mode || DEFAULT_MODE);
+
+/**
+ * Decodes the tags
+ */
+const getTags = (aSchema: CreateDriverArtifactsSchema, aProjectName: string) =>
+  Array.from(
+    new Set([...splitArray(aSchema.tag || ''), aProjectName, 'sites-next'])
   );
 
 /**
@@ -711,7 +739,14 @@ export function createNgDriverArtifacts(
   return rxPipe(
     combineLatest([projectName$, prj$]),
     mergeMap(([name, prj]) =>
-      createArtifactsForProject(prj, name, modes, config, aHost)
+      createArtifactsForProject(
+        prj,
+        name,
+        modes,
+        config,
+        getTags(aSchema, name),
+        aHost
+      )
     )
   );
 }

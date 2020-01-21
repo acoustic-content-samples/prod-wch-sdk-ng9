@@ -21,4 +21,8 @@ export interface CreateDriverArtifactsSchema {
    * mode
    */
   mode?: string;
+  /**
+   * a comma separated list of tags
+   */
+  tag?: string;
 }

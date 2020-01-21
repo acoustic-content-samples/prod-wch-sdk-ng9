@@ -23,6 +23,10 @@
       "type": "string",
       "description": "The contribution mode, a comma separated list modes. The mode names must be 'always', 'live' or 'preview'.",
       "default": "live,preview"
+    },
+    "tag": {
+      "type": "string",
+      "description": "A comma separated list of tags."
     }
   },
   "required": [],
