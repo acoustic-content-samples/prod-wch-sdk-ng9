@@ -1,5 +1,6 @@
 /* Copyright IBM Corp. 2018 */
 export * from './canonicalize';
+export * from './dependencies/dependencies';
 export * from './dir/dir';
 export * from './driver/driver';
 export * from './driver/schema';

@@ -2,11 +2,11 @@ import { rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { count, map, tap } from 'rxjs/operators';
 
+import { createReadDirectory } from '../dir/dir';
 import { createReadTextFile } from '../file/file';
 import { ASSET_ROOT } from '../test/assets';
 import { wchToolsFileDescriptor } from '../utils/wchtools';
-import { createDriverArtifacts, copyDriverFiles } from './driver';
-import { createReadDirectory } from '../dir/dir';
+import { copyNgDriverFiles, createNgDriverArtifacts } from './driver';
 
 describe('driver', () => {
   const BASE = join(ASSET_ROOT, 'sample-spa');
@@ -17,7 +17,7 @@ describe('driver', () => {
     const readProto = createReadTextFile(PROTO);
     const readDir = createReadDirectory(PROTO);
 
-    const artifact$ = copyDriverFiles(readProto, readDir, {
+    const artifact$ = copyNgDriverFiles(readProto, readDir, {
       configuration: 'production'
     });
 
@@ -33,7 +33,7 @@ describe('driver', () => {
     const PROTO = join(ASSET_ROOT, 'proto-sites-next-app');
     const readProto = createReadTextFile(PROTO);
 
-    const artifact$ = createDriverArtifacts(readProto, {
+    const artifact$ = createNgDriverArtifacts(readProto, {
       configuration: 'production'
     });
 
@@ -48,7 +48,7 @@ describe('driver', () => {
   });
 
   it('should generate the descriptors', () => {
-    const artifact$ = createDriverArtifacts(readFile);
+    const artifact$ = createNgDriverArtifacts(readFile);
 
     const test$ = rxPipe(
       artifact$,

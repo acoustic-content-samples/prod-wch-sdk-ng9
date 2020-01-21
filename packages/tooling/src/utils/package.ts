@@ -1,10 +1,18 @@
-import { assertObject, isNil, jsonParse, rxPipe } from '@acoustic-content-sdk/utils';
+import {
+  assertObject,
+  isEqual,
+  isNil,
+  jsonParse,
+  rxPipe
+} from '@acoustic-content-sdk/utils';
 import { join, parse } from 'path';
-import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, mapTo } from 'rxjs/operators';
 import { satisfies } from 'semver';
 
 import { ReadTextFile } from '../file/file';
+
+export const PACKAGE_JSON = 'package.json';
 
 export enum DEP_TYPE {
   PEER,
@@ -52,8 +60,34 @@ export function rxFindPackageJson(
 ): Observable<any> {
   // read
   return rxPipe(
-    aReadFile(join(aDir, 'package.json')),
+    aReadFile(join(aDir, PACKAGE_JSON)),
     map(jsonParse),
     catchError((err) => rxFindPackageJson(parse(aDir).dir, aReadFile))
+  );
+}
+
+/**
+ * Locates the folder that contains the closest package json
+ *
+ * @param aReadFile  - the read file callback
+ * @param aRoot - the directory root
+ *
+ * @returns the folder name or an error
+ */
+export function rxLocatePackageJson(
+  aReadFile: ReadTextFile,
+  aRoot: string = '/'
+): Observable<string> {
+  // read
+  return rxPipe(
+    aReadFile(`${aRoot}/${PACKAGE_JSON}`),
+    mapTo(aRoot),
+    catchError((err) => {
+      // go to the parent dir
+      const { root, dir } = parse(aRoot);
+      return isEqual(root, aRoot)
+        ? throwError(err)
+        : rxLocatePackageJson(aReadFile, dir);
+    })
   );
 }
