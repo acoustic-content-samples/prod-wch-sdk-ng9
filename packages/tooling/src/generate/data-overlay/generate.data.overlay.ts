@@ -31,7 +31,7 @@ const LOGGER = 'GenerateDataOverlay';
  */
 export function generateDataOverlay(aOptions: DataOverlaySchema) {
   // decode the parameters
-  const { src } = aOptions;
+  const src = fixPath(aOptions.src);
 
   return (
     aReadText: ReadTextFile,
@@ -48,7 +48,7 @@ export function generateDataOverlay(aOptions: DataOverlaySchema) {
       tap<FileDescriptor<any>>(([name]) => logger.info(name));
     return rxPipe(
       // decode the dependencies
-      rxGetDependencies(aReadText, fixPath(src)),
+      rxGetDependencies(aReadText, src),
       // extract the data directories from the dependencies
       rxDataDirectory(aReadText),
       log('dataDir'),

@@ -10,7 +10,6 @@ import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { parse, relative } from 'path';
 import { cwd } from 'process';
-
 import { getFullPath } from './utils';
 
 export const GENERATE_DATA_OVERLAY_COMMAND = 'generate-data-overlay';
@@ -63,7 +62,7 @@ export function generateDataOverlayCommand(program: Command): Command {
           createReadDirectory(dstRoot),
           logSvc
         ),
-        writeFiles(dstDir),
+        writeFiles(fullDstDir),
         logFileDescriptor()
       );
       // subscribe
