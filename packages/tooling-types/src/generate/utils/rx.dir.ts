@@ -1,11 +1,10 @@
-import { rxForkJoin } from '@acoustic-content-sdk/rx-utils';
 import {
   ReadBuffer,
   ReadTextFile,
   rxExists
 } from '@acoustic-content-sdk/tooling';
 import { isNotEmpty, mapArray, rxPipe } from '@acoustic-content-sdk/utils';
-import { Observable } from 'rxjs';
+import { EMPTY, forkJoin, OperatorFunction } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 export type ReadFile = ReadTextFile | ReadBuffer;
@@ -18,22 +17,18 @@ export type ReadFile = ReadTextFile | ReadBuffer;
  *
  * @returns the observable
  */
-export function rxFindDir(
-  aSources: Observable<string[]>,
+export const rxFindDir = (
   aRelPath: string,
   aTree: ReadFile
-): Observable<string> {
-  // map each source to a check
-  return rxPipe(
-    aSources,
-    mergeMap((sources) =>
-      rxPipe(
-        rxForkJoin(
-          mapArray(sources, (dir) => rxExists(`${dir}${aRelPath}`, aTree))
-        ),
-        map((result) => sources.filter((src, idx) => result[idx])),
-        map((result) => (isNotEmpty(result) ? result[0] : sources[0]))
-      )
-    )
+): OperatorFunction<string[], string> =>
+  mergeMap((sources) =>
+    isNotEmpty(sources)
+      ? rxPipe(
+          forkJoin(
+            mapArray(sources, (dir) => rxExists(`${dir}${aRelPath}`, aTree))
+          ),
+          map((result) => sources.filter((src, idx) => result[idx])),
+          map((result) => (isNotEmpty(result) ? result[0] : sources[0]))
+        )
+      : EMPTY
   );
-}

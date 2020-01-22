@@ -7,7 +7,7 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { toWords } from 'number-to-words';
-import { Observable } from 'rxjs';
+import { Observable, OperatorFunction, pipe } from 'rxjs';
 import { first, map, shareReplay } from 'rxjs/operators';
 
 import { ReadFile, rxFindDir } from './rx.dir';
@@ -173,34 +173,30 @@ function _initTypeClass(
  *
  * @returns the selected source directory
  */
-function _getTypesDir(
+const getTypesDir = (
   aType: AuthoringType,
-  aSources: Observable<string[]>,
   aOptions: TypeOptions,
   aTree: ReadFile
-): Observable<string> {
+): OperatorFunction<string[], string> => {
   // check for the path suffix
   const typePath = _getTypePath(aType, aOptions);
   const className = _createTypeComponentName(aType.name);
   const relPath = `${typePath}/${_camelCase(className)}.ts`;
   // map each source to a check
-  return rxFindDir(aSources, relPath, aTree);
-}
+  return rxFindDir(relPath, aTree);
+};
 
-function _createTypeClass(
+const createTypeClass = (
   aType: AuthoringType,
-  aSources: Observable<string[]>,
   aOptions: TypeOptions,
   aTree: ReadFile
-): Observable<TypeClass> {
-  // locate the component directory
-  return rxPipe(
-    _getTypesDir(aType, aSources, aOptions, aTree),
+): OperatorFunction<string[], TypeClass> =>
+  pipe(
+    getTypesDir(aType, aOptions, aTree),
     first(),
     map((dir) => _initTypeClass(dir, aType, aOptions)),
     shareReplay()
   );
-}
 
 export class TypeRegistry {
   private typeRegistry: { [typeId: string]: Observable<TypeClass> } = {};
@@ -208,7 +204,7 @@ export class TypeRegistry {
   private typeMap: { [typeId: string]: AuthoringType } = {};
 
   constructor(
-    private aBaseFolders: Observable<string[]>,
+    private aBaseFolder$: Observable<string[]>,
     private aOptions: TypeOptions,
     private aTree: ReadFile
   ) {}
@@ -236,11 +232,9 @@ export class TypeRegistry {
     let rxRunning = this.typeRegistry[typeId];
     if (!rxRunning) {
       // try to find the folder
-      rxRunning = this.typeRegistry[typeId] = _createTypeClass(
-        aType,
-        this.aBaseFolders,
-        this.aOptions,
-        this.aTree
+      rxRunning = this.typeRegistry[typeId] = rxPipe(
+        this.aBaseFolder$,
+        createTypeClass(aType, this.aOptions, this.aTree)
       );
     }
     // ok

@@ -36,6 +36,7 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
+    "number-to-words": "^1",
     "rxjs": "^6"
   },
   "publishConfig": {
@@ -52,7 +53,8 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "number-to-words": "NumberToWords"
       }
     },
     "whitelistedNonPeerDependencies": [
