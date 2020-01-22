@@ -10,10 +10,18 @@ import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { parse, relative } from 'path';
 import { cwd } from 'process';
+
 import { getFullPath } from './utils';
 
 export const GENERATE_DATA_OVERLAY_COMMAND = 'generate-data-overlay';
 
+/**
+ * Generates a data overlay of the wchtools folders referenced by a node module and all
+ * of its dependencies. The resulting folder can then be used with {@link https://www.npmjs.com/package/wchtools-cli|wchtools}.
+ *
+ * @param program - the commander instance to attach the command to
+ * @returns the commander instance
+ */
 export function generateDataOverlayCommand(program: Command): Command {
   // register our commands
   const cmd = program

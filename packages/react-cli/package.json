@@ -42,7 +42,7 @@
     "email-validator": "^2.0.4",
     "handlebars": "^4.7.2",
     "handlebars-helpers": "^0.10.0",
-    "jsdom": "^16.0.0",
+    "jsdom": "^16.0.1",
     "rxjs": "6.5.3",
     "semver": "^7.1.1",
     "sshpk": "^1.16.1",

@@ -14,7 +14,7 @@ export function generateComponents(options: Schema): Rule;
 
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //
-// @public (undocumented)
+// @public
 export function generateContributions(options: Schema_2): Rule;
 
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
@@ -37,7 +37,5 @@ export const VERSION: {
     build: Date;
 };
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/schematics](./schematics.md) |  |
+|  [@acoustic-content-sdk/schematics](./schematics.md) | [Angular schematics](https://angular.io/guide/schematics) used to add workflow support for Acoustic Content. |
 

@@ -39,7 +39,7 @@
     "handlebars": "^4.7.2",
     "handlebars-helpers": "^0.10.0",
     "js-string-escape": "^1.0.1",
-    "jsdom": "^16.0.0",
+    "jsdom": "^16.0.1",
     "lodash": "^4.17.15",
     "number-to-words": "^1.2.4",
     "request": "^2.88.0",

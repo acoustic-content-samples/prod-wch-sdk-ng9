@@ -10,8 +10,10 @@ import { ComponentClass } from 'react';
 import { ELEMENT_TYPE } from '@acoustic-content-sdk/api';
 import { ErrorInfo } from 'react';
 import { FunctionComponent } from 'react';
+import { Generator } from '@acoustic-content-sdk/utils';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
+import { ObservableInput } from 'rxjs';
 import { PropsWithChildren } from 'react';
 import { PureComponent } from 'react';
 import { ReactNode } from 'react';
@@ -88,6 +90,9 @@ export type StateFunction<P, S> = (props$: ValueObservable<Readonly<PropsWithChi
 
 // @public (undocumented)
 export function styleToReact(aStyle: CSSStyleDeclaration): Record<string, string>;
+
+// @public
+export const useAsync: <T>(aIn: ObservableInput<T>, aInitialState?: T | Generator<T>) => T | undefined;
 
 // @public
 export interface ValueObservable<T> extends Observable<T> {

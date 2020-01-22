@@ -35,6 +35,7 @@
 |  [isDevMode](./react-utils.isdevmode.md) |  |
 |  [isProdMode](./react-utils.isprodmode.md) |  |
 |  [isTestMode](./react-utils.istestmode.md) |  |
+|  [useAsync](./react-utils.useasync.md) | React hook to subscribe to an observable and to automatically unsubscribe via an effect. |
 |  [VERSION](./react-utils.version.md) | Version and build number of the package |
 
 ## Type Aliases

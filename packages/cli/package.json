@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/cli",
   "version": "9.0.0",
-  "description": "A schematics",
+  "description": "Command line utility for the Acoustic Content SDK.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -22,6 +22,8 @@
     "acoustic-content-sdk-cli": "./bin/index.js"
   },
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "postbuild:packagr": "sync-files --no-delete ./assets ./dist",
     "cli": "node bin/index.js",
@@ -38,7 +40,7 @@
     "cross-spawn": "^7.0.1",
     "handlebars": "^4.7.2",
     "handlebars-helpers": "^0.10.0",
-    "jsdom": "^16.0.0",
+    "jsdom": "^16.0.1",
     "lodash": "^4.17.15",
     "rxjs": "6.5.3",
     "semver": "^7.1.1",

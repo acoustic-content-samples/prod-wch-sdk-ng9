@@ -4,6 +4,8 @@
 
 ## generateContributions() function
 
+Generates all wchtools artifacts required to bootstrap a sites next application from the Angular build configuration that the schema points to.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function generateContributions(options: Schema): Rule;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | <code>Schema</code> |  |
+|  options | <code>Schema</code> | the options |
 
 <b>Returns:</b>
 
 `Rule`
+
+the rule that generates the artifacts
 
