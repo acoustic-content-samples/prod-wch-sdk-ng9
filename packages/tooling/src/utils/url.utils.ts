@@ -32,3 +32,12 @@ function trimPath(aDir: string): string {
 export function ensureDirPath(aDir: string): string {
   return isNotEmpty(aDir) ? (aDir === '/' ? '' : trimPath(aDir)) : '';
 }
+
+/**
+ * Make sure the path starts with a slash
+ *
+ * @param aPath - the path
+ * @returns the path
+ */
+export const fixPath = (aPath: string): string =>
+  isNotEmpty(aPath) ? ensureDirPath(aPath.replace(/\\/g, '/')) : '';

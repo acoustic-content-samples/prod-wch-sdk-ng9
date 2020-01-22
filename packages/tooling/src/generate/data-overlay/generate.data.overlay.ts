@@ -14,6 +14,7 @@ import {
 } from '../../dependencies/dependencies';
 import { ReadDirectory } from '../../dir/dir';
 import { FileDescriptor, ReadTextFile } from '../../file/file';
+import { fixPath } from '../../utils/url.utils';
 import { DataOverlaySchema } from './schema';
 
 const LOGGER = 'GenerateDataOverlay';
@@ -47,7 +48,7 @@ export function generateDataOverlay(aOptions: DataOverlaySchema) {
       tap<FileDescriptor<any>>(([name]) => logger.info(name));
     return rxPipe(
       // decode the dependencies
-      rxGetDependencies(aReadText, src),
+      rxGetDependencies(aReadText, fixPath(src)),
       // extract the data directories from the dependencies
       rxDataDirectory(aReadText),
       log('dataDir'),

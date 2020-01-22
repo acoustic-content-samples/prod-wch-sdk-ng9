@@ -5,22 +5,13 @@ import {
   rxStats,
   rxWalkFiles
 } from '@acoustic-content-sdk/rx-utils';
-import { FALSE$, isFunction, isNotEmpty, Predicate } from '@acoustic-content-sdk/utils';
+import { FALSE$, isFunction, Predicate } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { EMPTY, Observable, UnaryFunction } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 
 import { FileDescriptor } from '../file/file';
-import { ensureDirPath } from '../utils/url.utils';
-
-/**
- * Make sure the path starts with a slash
- *
- * @param aPath - the path
- * @returns the path
- */
-const fixPath = (aPath: string): string =>
-  isNotEmpty(aPath) ? ensureDirPath(aPath.replace(/\\/g, '/')) : '';
+import { fixPath } from '../utils/url.utils';
 
 /**
  * Reads a binary file if it is not a directory

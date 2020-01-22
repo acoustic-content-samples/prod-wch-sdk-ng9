@@ -8,8 +8,9 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
-import { parse } from 'path';
+import { parse, relative } from 'path';
 import { cwd } from 'process';
+
 import { getFullPath } from './utils';
 
 export const GENERATE_DATA_OVERLAY_COMMAND = 'generate-data-overlay';
@@ -39,14 +40,18 @@ export function generateDataOverlayCommand(program: Command): Command {
       // write callback
       const currentDir = cwd();
       // target dir
-      const dstDir = getFullPath(currentDir, cmd.dir || 'temp');
+      const fullDstDir = getFullPath(currentDir, cmd.dir || 'temp');
       // source dir
-      const srcDir = getFullPath(currentDir, cmd.src || '');
-      // log this
-      logger.info('srcDir', srcDir, 'dstDir', dstDir);
+      const fullSrcDir = getFullPath(currentDir, cmd.src || '');
       // root
-      const { root: srcRoot } = parse(srcDir);
-      const { root: dstRoot } = parse(dstDir);
+      const { root: srcRoot } = parse(fullSrcDir);
+      const { root: dstRoot } = parse(fullDstDir);
+      // decode relative paths
+      const dstDir = relative(dstRoot, fullDstDir);
+      const srcDir = relative(srcRoot, fullSrcDir);
+      // log this
+      logger.info('srcDir', srcDir);
+      logger.info('dstDir', dstDir);
       // execute the command
       const command = generateDataOverlay({
         src: srcDir
