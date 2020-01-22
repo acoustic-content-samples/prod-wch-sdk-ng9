@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { argv } from 'process';
 
 import { canonicalizeAssetsCommand } from '../commands/canonicalize.assets';
+import { generateDataOverlayCommand } from '../commands/generate.data.overlay';
 import { generateKeysCommand } from '../commands/generate.keys';
 import { generateLayoutCommand } from '../commands/generate.layout';
 import { generateLayoutsCommand } from '../commands/generate.layouts';
@@ -21,6 +22,7 @@ export function runProgram(aArgs: string[] = argv) {
   generateLayoutsCommand(program);
   generateLayoutCommand(program);
   generateKeysCommand(program);
+  generateDataOverlayCommand(program);
   canonicalizeAssetsCommand(program);
 
   return program.parse(aArgs);
