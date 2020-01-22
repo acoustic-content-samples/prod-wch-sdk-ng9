@@ -4,7 +4,8 @@ import {
   mapArray,
   objectKeys,
   pluckPath,
-  rxPipe
+  rxPipe,
+  EqualsPredicate
 } from '@acoustic-content-sdk/utils';
 import { parse } from 'path';
 import {
@@ -13,14 +14,16 @@ import {
   Observable,
   of,
   OperatorFunction,
-  throwError
+  throwError,
+  UnaryFunction
 } from 'rxjs';
 import {
   catchError,
   concatMap,
   map,
   mergeMap,
-  startWith
+  startWith,
+  distinct
 } from 'rxjs/operators';
 
 import {
@@ -102,6 +105,8 @@ function rxAddPackage(
     : of(aPkg);
 }
 
+const selectName: UnaryFunction<FileDescriptor<any>, string> = ([name]) => name;
+
 /**
  * Lists all node dependencies of the module
  *
@@ -127,7 +132,8 @@ export function rxGetDependencies(
         map((pkg) => createFileDescriptor(path, pkg))
       )
     ),
-    mergeMap((pkg) => rxAddPackage(dst, pkg, aReadText))
+    mergeMap((pkg) => rxAddPackage(dst, pkg, aReadText)),
+    distinct(selectName)
   );
 }
 
@@ -159,4 +165,4 @@ function rxGetDataDir(
 export const rxDataDirectory = (
   aReadText: ReadTextFile
 ): OperatorFunction<FileDescriptor<any>, string> =>
-  concatMap((file) => rxGetDataDir(aReadText, file));
+  mergeMap((file) => rxGetDataDir(aReadText, file));

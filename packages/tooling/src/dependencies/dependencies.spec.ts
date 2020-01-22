@@ -7,6 +7,21 @@ import { ASSET_ROOT } from '../test/assets';
 import { rxDataDirectory, rxGetDependencies } from './dependencies';
 
 describe('dependencies', () => {
+  xit('should read dependencies from data-sample-site', async () => {
+    const ROOT = '/';
+    const PKG_FOLDER = '/d/sites-next-content/packages/data-sample-site';
+    // read text
+    const readText = createReadTextFile(ROOT);
+    // locate the dependencies
+    const deps$ = rxGetDependencies(readText, PKG_FOLDER);
+
+    const data$ = rxPipe(deps$, rxDataDirectory(readText));
+
+    const test$ = rxPipe(data$, tap(console.log));
+
+    await test$.toPromise();
+  });
+
   it('should read some dependencies', async () => {
     // root folder
     const ROOT = normalize(join(ASSET_ROOT, '..'));
