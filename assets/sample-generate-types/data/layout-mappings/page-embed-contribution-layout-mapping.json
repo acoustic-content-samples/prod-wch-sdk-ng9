@@ -1,0 +1,26 @@
+{
+  "name": "pageEmbedContributionLayoutMapping",
+  "id": "page-embed-contribution-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "pageEmbedContributionLayout",
+        "id": "page-embed-contribution-layout"
+      },
+      "layouts": [
+        {
+          "name": "pageEmbedContributionLayout",
+          "id": "page-embed-contribution-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "eedce4a0-9647-4301-9247-6793e08652ea"
+  },
+  "rev": "0-1087464b-e9ca-4773-926f-654b5769cd64"
+}

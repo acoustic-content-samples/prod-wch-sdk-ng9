@@ -1,0 +1,31 @@
+{
+  "name": "Sites Navigation",
+  "description": "This content item defines the navigation structure for a site.",
+  "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "text",
+      "helpText": "This element contains the serialized JSON object that defines the nested navigation for the site. The individual nodes are referencing individual page content items by ID.",
+      "key": "navigation",
+      "label": "Navigation",
+      "required": true
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element identifies the default page for the site.",
+      "key": "defaultPage",
+      "label": "Default Page"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded", "standalone"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-e90d72ca-5d57-4270-9640-fa719f60eafc"
+}

@@ -1,0 +1,10 @@
+{{#eq $layoutMode "head"}}
+    {{#each contributions}}
+        {{{$markups.head}}}
+    {{/each}}
+{{/eq}}
+{{#eq $layoutMode "body"}}
+    {{#each contributions}}
+        {{{$markups.body}}}
+    {{/each}}
+{{/eq}}

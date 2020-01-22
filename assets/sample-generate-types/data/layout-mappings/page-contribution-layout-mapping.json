@@ -1,0 +1,27 @@
+{
+  "name": "pageContributionLayoutMapping",
+  "id": "page-contribution-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "pageContributionLayout",
+        "id": "page-contribution-layout"
+      },
+      "layouts": [
+        {
+          "name": "pageContributionLayout",
+          "id": "page-contribution-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Page Contribution",
+    "id": "354743b2-f89a-482b-b447-2b5a2367c8bd"
+  },
+  "rev": "0-62c0e585-ec9b-4449-bea9-a921834b4aa1"
+}

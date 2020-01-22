@@ -1,0 +1,63 @@
+{
+  "name": "Site",
+  "description": "This item describes an individual site in the site model. The \"id\" value of this content item is considered the ID for the site. It provides the anchor point that all Page-Descriptor elements of all pages in the site are pointing to. It further defines the site navigation strucutre and the page contributions to be added to all pages of this site. Page contributions are used to manage style files and JavaScript libraries that shall be loaded into all pages of the site.",
+  "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "logo",
+    "source": "imageElementOrType"
+  },
+  "elements": [
+    {
+      "allowMultipleValues": true,
+      "elementType": "reference",
+      "helpText": "The list of page contributions to be added to the pages of this site.",
+      "fieldLabel": "Content item",
+      "key": "contributions",
+      "label": "Contributions",
+      "minimumValues": 0,
+      "restrictTypes": [
+        {
+          "name": "Page Contributions",
+          "id": "aab86460-0018-44c2-9f52-3a326e58f7f7"
+        }
+      ],
+      "role": ["configuration"]
+    },
+    {
+      "elementType": "reference",
+      "helpText": "The page navigation content item for this site.",
+      "key": "navigation",
+      "label": "Navigation",
+      "required": true,
+      "restrictTypes": [
+        {
+          "name": "Sites Navigation",
+          "id": "843fb991-7413-4517-bfcb-b59fc4b1f449"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "The title for this site.",
+      "key": "title",
+      "label": "Title"
+    },
+    {
+      "elementType": "image",
+      "helpText": "The logo for this site.",
+      "key": "logo",
+      "label": "Logo"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "site"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-17483f70-3aa8-4437-9ea6-ac463868fdc2"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "pageScriptContributionLayoutMapping",
+  "id": "page-script-contribution-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "pageScriptContributionLayout",
+        "id": "page-script-contribution-layout"
+      },
+      "layouts": [
+        {
+          "name": "pageScriptContributionLayout",
+          "id": "page-script-contribution-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Page Script Contribution",
+    "id": "5c473463-db07-4132-b8a1-bd40cbdf4b18"
+  },
+  "rev": "0-cb8756dc-0998-420a-8586-62b0945d580d"
+}

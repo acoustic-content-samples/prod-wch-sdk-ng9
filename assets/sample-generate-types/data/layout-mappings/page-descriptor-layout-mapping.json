@@ -1,0 +1,27 @@
+{
+  "name": "pageDescriptorLayoutMapping",
+  "id": "page-descriptor-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "pageDescriptorLayout",
+        "id": "page-descriptor-layout"
+      },
+      "layouts": [
+        {
+          "name": "pageDescriptorLayout",
+          "id": "page-descriptor-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Page Descriptor",
+    "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28"
+  },
+  "rev": "0-893938f2-c87c-4356-bd86-d9bb2d645576"
+}
