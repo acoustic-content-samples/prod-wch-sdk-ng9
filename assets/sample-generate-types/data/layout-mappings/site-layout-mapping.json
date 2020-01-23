@@ -1,17 +1,15 @@
 {
-  "name": "siteLayoutMapping",
-  "id": "sites-layout-mapping",
+  "name": "🗺️ siteLayoutMapping",
+  "id": "1daf5db7-0e44-42c1-b4ff-f76cfd22d522",
   "classification": "layout-mapping",
   "mappings": [
     {
       "defaultLayout": {
-        "name": "siteLayout",
-        "id": "sites-layout"
+        "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6"
       },
       "layouts": [
         {
-          "name": "siteLayout",
-          "id": "sites-layout"
+          "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6"
         }
       ]
     }
@@ -20,8 +18,7 @@
     "sites-next"
   ],
   "type": {
-    "name": "Site",
     "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714"
   },
-  "rev": "0-175cf1e4-bfdb-4320-845b-b20c0f5288e7"
+  "rev": "0-5e512709-0f4f-41c8-8965-da0cde6f8156"
 }

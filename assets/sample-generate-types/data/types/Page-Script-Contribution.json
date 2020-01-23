@@ -1,5 +1,5 @@
 {
-  "name": "Page Script Contribution",
+  "name": "📄 Page Script Contribution",
   "description": "A style contribution added as a <script> element to the page markup",
   "id": "5c473463-db07-4132-b8a1-bd40cbdf4b18",
   "classification": "content-type",
@@ -24,7 +24,9 @@
         }
       ],
       "required": true,
-      "role": ["configuration"]
+      "role": [
+        "configuration"
+      ]
     },
     {
       "elementType": "text",
@@ -32,7 +34,9 @@
       "key": "src",
       "label": "src",
       "required": true,
-      "role": ["configuration"]
+      "role": [
+        "configuration"
+      ]
     },
     {
       "elementType": "text",
@@ -41,8 +45,12 @@
       "label": "Key"
     }
   ],
-  "kind": ["standalone"],
+  "kind": [
+    "standalone"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-d97843cb-da99-4d4c-8c73-013f81a43df7"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-f2e92dd1-236e-44ac-81b7-b0b790a97cea"
 }

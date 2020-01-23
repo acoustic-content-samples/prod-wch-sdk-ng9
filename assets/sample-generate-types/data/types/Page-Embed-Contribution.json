@@ -1,5 +1,5 @@
 {
-  "name": "Page Embed Contribution",
+  "name": "📄 Page Embed Contribution",
   "description": "A page markup contribution directly added into the markup",
   "id": "eedce4a0-9647-4301-9247-6793e08652ea",
   "classification": "content-type",
@@ -10,7 +10,9 @@
       "key": "embed",
       "label": "embed",
       "required": true,
-      "role": ["configuration"]
+      "role": [
+        "configuration"
+      ]
     },
     {
       "elementType": "text",
@@ -19,9 +21,12 @@
       "label": "Key"
     }
   ],
-  "kind": ["standalone"],
-  "path": "/Page-Embed-Contribution.json",
+  "kind": [
+    "standalone"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-fddfdf2f-9814-4ec7-b560-a81e4bd2886d"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-67ad4901-dc8e-4f86-959d-0d7fae7be2c7"
 }

@@ -9,16 +9,10 @@
   "cognitive": {
     "status": "none"
   },
-  "created": "2019-09-11T14:48:44.379Z",
-  "creator": "Adam.iem",
-  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "digest": "DwHDVcBFtxfsI5jB9Vt4sw==",
   "fileName": "page-contribution-layout.hbs",
   "fileSize": 42,
   "isManaged": true,
-  "lastModified": "2019-09-11T14:48:44.383Z",
-  "lastModifier": "Adam.iem",
-  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "links": {
     "media": {
       "href": "/authoring/v1/resources/0ad46b7c-86a9-4757-a778-e9b6bab200d4.hbs"
@@ -34,12 +28,7 @@
   "mediaType": "text/x-handlebars-template",
   "metadata": {},
   "path": "/dxdam/templates/page-contribution-layout.hbs",
-  "publishing": {
-    "status": "not-available"
-  },
   "resource": "0ad46b7c-86a9-4757-a778-e9b6bab200d4",
-  "status": "ready",
-  "systemModified": "2019-09-11T14:48:44.383Z",
   "tags": {
     "analysis": "none",
     "declined": [],
@@ -48,5 +37,5 @@
   "usageRights": {
     "categories": []
   },
-  "rev": "0-39a43704-9b8c-442b-9477-43f1f0a58cba"
+  "rev": "0-308c726c-2902-4f13-8159-0d4c648f8ada"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Site",
-  "description": "This item describes an individual site in the site model. The \"id\" value of this content item is considered the ID for the site. It provides the anchor point that all Page-Descriptor elements of all pages in the site are pointing to. It further defines the site navigation strucutre and the page contributions to be added to all pages of this site. Page contributions are used to manage style files and JavaScript libraries that shall be loaded into all pages of the site.",
+  "name": "📄 Site",
+  "description": "This item describes an individual site in the site model. The \"id\" value of this content item is considered the ID for the site. It provides the anchor point that all Page-Descriptor elements of all pages in the site are pointing to. It further defines the site navigation strucutre and the page modules to be added to all pages of this site. Page modules are used to manage style files and JavaScript libraries that shall be loaded into all pages of the site.",
   "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
   "classification": "content-type",
   "contentThumbnail": {
@@ -11,18 +11,19 @@
     {
       "allowMultipleValues": true,
       "elementType": "reference",
-      "helpText": "The list of page contributions to be added to the pages of this site.",
       "fieldLabel": "Content item",
+      "helpText": "The list of page modules to be added to the pages of this site.",
       "key": "contributions",
       "label": "Contributions",
       "minimumValues": 0,
       "restrictTypes": [
         {
-          "name": "Page Contributions",
           "id": "aab86460-0018-44c2-9f52-3a326e58f7f7"
         }
       ],
-      "role": ["configuration"]
+      "role": [
+        "configuration"
+      ]
     },
     {
       "elementType": "reference",
@@ -32,7 +33,6 @@
       "required": true,
       "restrictTypes": [
         {
-          "name": "Sites Navigation",
           "id": "843fb991-7413-4517-bfcb-b59fc4b1f449"
         }
       ]
@@ -56,8 +56,13 @@
       "label": "Key"
     }
   ],
-  "kind": ["standalone", "site"],
+  "kind": [
+    "standalone",
+    "site"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-17483f70-3aa8-4437-9ea6-ac463868fdc2"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-55358653-2015-426d-9ab5-c2ea921b1a10"
 }

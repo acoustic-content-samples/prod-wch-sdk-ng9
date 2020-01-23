@@ -1,17 +1,15 @@
 {
-  "name": "pageEmbedContributionLayoutMapping",
-  "id": "page-embed-contribution-layout-mapping",
+  "name": "🗺️ Page Embed Contribution Layout Mapping",
+  "id": "e3b87a0e-2648-4a6a-9f22-9871e3bf07ae",
   "classification": "layout-mapping",
   "mappings": [
     {
       "defaultLayout": {
-        "name": "pageEmbedContributionLayout",
-        "id": "page-embed-contribution-layout"
+        "id": "28760700-9fae-40c9-bcab-b40446ed4d37"
       },
       "layouts": [
         {
-          "name": "pageEmbedContributionLayout",
-          "id": "page-embed-contribution-layout"
+          "id": "28760700-9fae-40c9-bcab-b40446ed4d37"
         }
       ]
     }
@@ -22,5 +20,5 @@
   "type": {
     "id": "eedce4a0-9647-4301-9247-6793e08652ea"
   },
-  "rev": "0-1087464b-e9ca-4773-926f-654b5769cd64"
+  "rev": "0-0f13b841-91d1-49fe-ae02-b6f98267f04e"
 }

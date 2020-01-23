@@ -1,13 +1,13 @@
 {
-  "name": "Page Markup Contribution",
+  "name": "📄 Page Markup Contribution",
   "description": "A page markup contribution directly added into the markup",
   "id": "2b0cd235-16ad-42ec-aea7-a05df105604c",
   "classification": "content-type",
   "elements": [
     {
       "allowMultipleValues": false,
-      "helpText": "The markup to be added.",
       "elementType": "text",
+      "helpText": "The markup to be added.",
       "key": "markup",
       "label": "Markup"
     },
@@ -18,8 +18,12 @@
       "label": "Key"
     }
   ],
-  "kind": ["standalone"],
+  "kind": [
+    "standalone"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-95e67560-9104-4653-833f-c38728f93c03"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-bdbf5e27-d3c0-4418-809a-84801e0efcf4"
 }

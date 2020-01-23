@@ -1,6 +1,6 @@
 {
-  "name": "pageDescriptorLayout",
-  "id": "page-descriptor-layout",
+  "name": "📰 Page Descriptor Layout",
+  "id": "51b21bea-d03d-4c03-b06f-9ea4c96ff378",
   "classification": "layout",
   "prerender": false,
   "tags": [
@@ -9,9 +9,8 @@
   "template": "/dxdam/templates/page-descriptor-layout.hbs",
   "templateType": "handlebars",
   "thumbnail": {
-    "path": "/dxauth/thumbnails/layouts/page-descriptor-layout.jpg",
-    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_ea186e8281751f1d6a4c352035dce62f"
+    "path": "/dxauth/thumbnails/layouts/page-descriptor-layout.png"
   },
   "urlTemplate": "{templateLocation}/page-descriptor-layout/{id}.html",
-  "rev": "0-2d2b56e2-601b-4903-b0f9-c1f32368169a"
+  "rev": "0-1b23af2c-364e-4453-b075-d15bffeb01e8"
 }

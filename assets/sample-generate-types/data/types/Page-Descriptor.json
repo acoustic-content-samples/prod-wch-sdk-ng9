@@ -1,5 +1,5 @@
 {
-  "name": "Page Descriptor",
+  "name": "📄 Page Descriptor",
   "description": "This type aggregates all information required by the sites framework to treat content items exposing an element of this type as a page. This includes support for page URL handling and showing the item in the Sites Composer UI. To turn an arbitrary content type into a page content type, add a custom element of this type and element name \"descriptor\" to this type and add \"kind:page\" flag to the type and content items.",
   "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28",
   "classification": "content-type",
@@ -25,8 +25,8 @@
     {
       "allowMultipleValues": true,
       "elementType": "text",
-      "helpText": "The URL path suffix value for an alternative URL pointing to this page. The complete URL is constructed by concatenating the site root context URL with the given alternative path.",
       "fieldLabel": "Text",
+      "helpText": "The URL path suffix value for an alternative URL pointing to this page. The complete URL is constructed by concatenating the site root context URL with the given alternative path.",
       "key": "alternativepath",
       "label": "alternativePath",
       "minimumValues": 0
@@ -34,8 +34,8 @@
     {
       "allowMultipleValues": true,
       "elementType": "text",
-      "helpText": "Keywords to be added as page meta data to the head section of the given page.",
       "fieldLabel": "Text",
+      "helpText": "Keywords to be added as page meta data to the head section of the given page.",
       "key": "keywords",
       "label": "keywords",
       "minimumValues": 0
@@ -61,8 +61,12 @@
       "label": "Key"
     }
   ],
-  "kind": ["embedded"],
+  "kind": [
+    "embedded"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-5d487630-eba0-4645-ac9e-8b8b2c381c60"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-3429ca6a-e7ed-4040-b598-0922f969bc50"
 }

@@ -9,24 +9,15 @@
   "cognitive": {
     "status": "none"
   },
-  "created": "2019-11-27T10:28:21.457Z",
-  "creator": "Dieter Bühler",
   "digest": "9mRzy2kRLRJpo3J8zkLTHA==",
   "fileName": "page-embed-contribution-layout.hbs",
   "fileSize": 13,
   "isManaged": true,
-  "lastModified": "2019-11-27T10:28:21.465Z",
-  "lastModifier": "Dieter Bühler",
   "mediaId": "c9d3b532-6229-4e34-9c7d-407d6b62473f",
   "mediaType": "text/x-handlebars-template",
   "metadata": {},
   "path": "/dxdam/templates/page-embed-contribution-layout.hbs",
-  "publishing": {
-    "status": "not-available"
-  },
   "resource": "f5c846be-4438-4713-b89f-a0bff42b8018",
-  "status": "ready",
-  "systemModified": "2019-11-27T10:28:21.465Z",
   "tags": {
     "analysis": "none",
     "declined": [],
@@ -35,5 +26,5 @@
   "usageRights": {
     "categories": []
   },
-  "rev": "0-27354e2f-d786-42fc-a1dd-afa2ea0c539d"
+  "rev": "0-48595d66-52ef-4602-b02d-65f4b6ffcdb8"
 }

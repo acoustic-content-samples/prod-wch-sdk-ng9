@@ -1,17 +1,15 @@
 {
-  "name": "pageStyleContributionLayoutMapping",
-  "id": "page-style-contribution-layout-mapping",
+  "name": "🗺️ Page Style Contribution Layout Mapping",
+  "id": "18a24d7c-8728-4170-86cc-e6d5768ff9e5",
   "classification": "layout-mapping",
   "mappings": [
     {
       "defaultLayout": {
-        "name": "pageStyleContributionLayout",
-        "id": "page-style-contribution-layout"
+        "id": "959979be-cfd2-47c4-8764-5a89b725da7e"
       },
       "layouts": [
         {
-          "name": "pageStyleContributionLayout",
-          "id": "page-style-contribution-layout"
+          "id": "959979be-cfd2-47c4-8764-5a89b725da7e"
         }
       ]
     }
@@ -20,8 +18,7 @@
     "sites-next"
   ],
   "type": {
-    "name": "Page Style Contribution",
     "id": "3a3726b8-e0b2-4f10-98ed-b1c82e851b99"
   },
-  "rev": "0-01949e7c-65f1-4707-8563-ed0ebcc6b528"
+  "rev": "0-10ceceae-80d1-4d0e-ac43-918e10123bd0"
 }

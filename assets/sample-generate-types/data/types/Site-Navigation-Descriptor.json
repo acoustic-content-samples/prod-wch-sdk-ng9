@@ -1,5 +1,5 @@
 {
-  "name": "Sites Navigation",
+  "name": "📄 Site Navigation Descriptor",
   "description": "This content item defines the navigation structure for a site.",
   "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
   "classification": "content-type",
@@ -24,8 +24,13 @@
       "label": "Key"
     }
   ],
-  "kind": ["embedded", "standalone"],
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-e90d72ca-5d57-4270-9640-fa719f60eafc"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-4e40b840-f869-4e57-b660-66fbb4ff8348"
 }

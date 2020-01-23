@@ -9,16 +9,10 @@
   "cognitive": {
     "status": "none"
   },
-  "created": "2019-09-11T14:48:44.393Z",
-  "creator": "Adam.iem",
-  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "digest": "6Ypw9+4NdQckQLjESbWH/g==",
   "fileName": "page-descriptor-layout.hbs",
   "fileSize": 16,
   "isManaged": true,
-  "lastModified": "2019-09-11T14:48:44.398Z",
-  "lastModifier": "Adam.iem",
-  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "links": {
     "media": {
       "href": "/authoring/v1/resources/413e5f81-3d40-422b-86d0-b044bb8d5e3f.hbs"
@@ -34,12 +28,7 @@
   "mediaType": "text/x-handlebars-template",
   "metadata": {},
   "path": "/dxdam/templates/page-descriptor-layout.hbs",
-  "publishing": {
-    "status": "not-available"
-  },
   "resource": "413e5f81-3d40-422b-86d0-b044bb8d5e3f",
-  "status": "ready",
-  "systemModified": "2019-09-11T14:48:44.398Z",
   "tags": {
     "analysis": "none",
     "declined": [],
@@ -48,5 +37,5 @@
   "usageRights": {
     "categories": []
   },
-  "rev": "0-36e95fc0-dfa0-4cbb-9674-2dea7e29b328"
+  "rev": "0-ea452f59-ffb7-4cb2-979e-0e3c578a8a83"
 }

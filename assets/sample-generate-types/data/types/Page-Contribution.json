@@ -1,5 +1,5 @@
 {
-  "name": "Page Contribution",
+  "name": "📄 Page Contribution",
   "description": "An set of related markup contributions to be added to markup of individual pages. Page contributions can contribute to both, the \"head\" and the \"body\" element of the page.",
   "id": "354743b2-f89a-482b-b447-2b5a2367c8bd",
   "classification": "content-type",
@@ -24,7 +24,7 @@
     },
     {
       "elementType": "optionselection",
-      "helpText": "This element controls if the contribution is meant to be added to pages rendered for \"previeww\" or \"live\" mode. This allows for example to add additional page contributions (like inline-editing modules) only when the page is rendered in preview mode in the authoring UI. This allows to avoid uneccessary bandwith consumption when serving your live. You can use the option \"always\" to include this contributions in both modes (i.e. in \"live\" and \"preview\" mode)",
+      "helpText": "This element controls if the contribution is meant to be added to pages rendered for \"previeww\" or \"live\" mode. This allows for example to add additional Page Module (like inline-editing modules) only when the page is rendered in preview mode in the authoring UI. This allows to avoid uneccessary bandwith consumption when serving your live. You can use the option \"always\" to include this contributions in both modes (i.e. in \"live\" and \"preview\" mode)",
       "key": "mode",
       "label": "Mode",
       "options": [
@@ -50,8 +50,13 @@
       "label": "Key"
     }
   ],
-  "kind": ["embedded", "standalone"],
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
   "status": "ready",
-  "tags": ["sites-next"],
-  "rev": "0-4ff6353e-c2d3-43ea-97a8-3963ef10d108"
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-d35f2570-2ce2-42a8-86bb-7f63f70144dc"
 }

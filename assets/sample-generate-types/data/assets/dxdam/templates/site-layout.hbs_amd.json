@@ -1,5 +1,5 @@
 {
-  "name": "sites-layout.hbs",
+  "name": "site-layout.hbs",
   "description": "",
   "id": "351d453b-3e4b-4d61-9ec6-2cdaeff9b403",
   "classification": "asset",
@@ -9,16 +9,10 @@
   "cognitive": {
     "status": "none"
   },
-  "created": "2019-09-11T14:48:53.049Z",
-  "creator": "Adam.iem",
-  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "digest": "1RunQo8gWnbHv1jxFL1Daw==",
-  "fileName": "sites-layout.hbs",
+  "fileName": "site-layout.hbs",
   "fileSize": 210,
   "isManaged": true,
-  "lastModified": "2019-09-11T14:48:53.052Z",
-  "lastModifier": "Adam.iem",
-  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "links": {
     "media": {
       "href": "/authoring/v1/resources/2ebf6bd1-899e-42ea-8991-0987632c577f.hbs"
@@ -33,13 +27,8 @@
   "mediaId": "579b88f8-5204-4a2d-b261-58f7cb9ac10d",
   "mediaType": "text/x-handlebars-template",
   "metadata": {},
-  "path": "/dxdam/templates/sites-layout.hbs",
-  "publishing": {
-    "status": "not-available"
-  },
+  "path": "/dxdam/templates/site-layout.hbs",
   "resource": "2ebf6bd1-899e-42ea-8991-0987632c577f",
-  "status": "ready",
-  "systemModified": "2019-09-11T14:48:53.052Z",
   "tags": {
     "analysis": "none",
     "declined": [],
@@ -48,5 +37,5 @@
   "usageRights": {
     "categories": []
   },
-  "rev": "0-de8a6983-4ed9-4b44-9ce4-fbba7fe1a47f"
+  "rev": "0-63bc4e8c-d7cf-46cd-98d9-9e49c76de3ea"
 }

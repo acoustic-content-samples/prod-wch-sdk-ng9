@@ -1,5 +1,5 @@
 {
-  "name": "page-contributions-layout.hbs",
+  "name": "page-module-layout.hbs",
   "description": "",
   "id": "b80f57fb-7b8b-44a3-ad30-43cecde69220",
   "classification": "asset",
@@ -9,16 +9,10 @@
   "cognitive": {
     "status": "none"
   },
-  "created": "2019-09-11T14:48:44.534Z",
-  "creator": "Adam.iem",
-  "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "digest": "BFsPnAsMmUzfMgMiNiGcng==",
-  "fileName": "page-contributions-layout.hbs",
+  "fileName": "page-module-layout.hbs",
   "fileSize": 2118,
   "isManaged": true,
-  "lastModified": "2019-09-11T14:48:44.537Z",
-  "lastModifier": "Adam.iem",
-  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "links": {
     "media": {
       "href": "/authoring/v1/resources/a5edc6a6-ebcb-4ecb-b7a0-1cb4133aa7c1.hbs"
@@ -33,13 +27,8 @@
   "mediaId": "974b1a7d-d68e-42dd-9888-5ad9bcd2c58c",
   "mediaType": "text/x-handlebars-template",
   "metadata": {},
-  "path": "/dxdam/templates/page-contributions-layout.hbs",
-  "publishing": {
-    "status": "not-available"
-  },
+  "path": "/dxdam/templates/page-module-layout.hbs",
   "resource": "a5edc6a6-ebcb-4ecb-b7a0-1cb4133aa7c1",
-  "status": "ready",
-  "systemModified": "2019-09-11T14:48:44.537Z",
   "tags": {
     "analysis": "none",
     "declined": [],
@@ -48,5 +37,5 @@
   "usageRights": {
     "categories": []
   },
-  "rev": "0-f03a8963-ab15-40ab-af7a-c2da5ca5ed4d"
+  "rev": "0-de1e0fe5-6856-4c1d-809c-507024d01293"
 }

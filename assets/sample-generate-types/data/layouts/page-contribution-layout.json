@@ -1,6 +1,6 @@
 {
-  "name": "pageContributionLayout",
-  "id": "page-contribution-layout",
+  "name": "📰 Page Contribution Layout",
+  "id": "c20b06b5-7c60-4027-b5a6-16c4da09754b",
   "classification": "layout",
   "prerender": false,
   "tags": [
@@ -11,9 +11,8 @@
   "template": "/dxdam/templates/page-contribution-layout.hbs",
   "templateType": "handlebars",
   "thumbnail": {
-    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg",
-    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_63b3f57e91735eaa985f3ace1e44f38a"
+    "path": "/dxauth/thumbnails/layouts/page-contribution-layout.png"
   },
   "urlTemplate": "{templateLocation}/sites/page-contribution/{id}.html",
-  "rev": "0-8be6b347-a6ef-4192-b74a-0ab7a834a9f7"
+  "rev": "0-b905a5b8-2e5c-41b8-a8de-6d15102bd7cb"
 }

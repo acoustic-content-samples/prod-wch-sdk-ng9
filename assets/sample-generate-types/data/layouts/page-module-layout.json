@@ -1,0 +1,18 @@
+{
+  "name": "📰 Page Module Layout",
+  "id": "4fb15757-66d7-471e-a134-3dd863789ce9",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "template": "/dxdam/templates/page-module-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/page-module-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/sites/page-module/{id}.html",
+  "rev": "0-83856da2-172d-4464-8d47-37e80728df41"
+}
