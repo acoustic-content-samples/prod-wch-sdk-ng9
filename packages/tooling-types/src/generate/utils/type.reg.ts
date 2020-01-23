@@ -82,7 +82,7 @@ function createElementComponentName(aName: string): string {
 
 function createConstantPrefix(aName: string): string {
   // trim
-  const fixed = createElementComponentName(aName);
+  const fixed = createTypeComponentName(aName);
   return constantCase(
     fixed.endsWith(TYPE_SUFFIX)
       ? fixed.substr(0, fixed.length - TYPE_SUFFIX.length)
@@ -104,7 +104,7 @@ function _getPathForType(aType: AuthoringType, aOptions: TypeOptions): string {
   const segments = aOptions.flat ? [] : tags.map(_kebabCase).sort();
   segments.push(typeFolder);
   // return this path
-  return `/{segments.join('/')}`;
+  return `/${segments.join('/')}`;
 }
 
 function getTypePath(aType: AuthoringType, aOptions: TypeOptions): string {
@@ -125,6 +125,7 @@ export interface TypeClass {
   baseElementClass: string;
   singleElementClass: string;
   multiElementClass: string;
+  typeInterfaceClass: string;
 
   // constant prefix
   constantPrefix: string;
@@ -188,6 +189,7 @@ function _initTypeClass(
   return {
     type,
     folder,
+    typeInterfaceClass,
     typeInterfaceFile,
     typeInterfaceRef,
     constantPrefix,

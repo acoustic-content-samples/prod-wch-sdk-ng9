@@ -21,6 +21,7 @@ import { rxReadTemplate } from './templates';
 import { createTypeDefinition } from './type.definition';
 import { createTypeInterface } from './type.interface';
 import { TypeOptions, TypeRegistry } from './type.reg';
+import { createTypeIndex } from './type.index';
 
 const LOGGER = 'GenerateTypes';
 
@@ -40,7 +41,7 @@ export function generate(
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // the options
   const options: TypeOptions = {
-    flat: false
+    flat: true
   };
   // make sure the data dir does not end with a slash
   const dataDir = ensureDirPath(aDataDir);
@@ -55,6 +56,7 @@ export function generate(
     '/templates/type.definition.hbs',
     aCompiler
   );
+  const indexTemplate$ = rxReadTemplate('/templates/type.index.hbs', aCompiler);
   // find types
   const allTypes$ = rxPipe(
     rxFindAuthoringTypes(dataDir, aReadDir),
@@ -88,7 +90,8 @@ export function generate(
         mergeMap((typeCls) =>
           merge(
             createTypeDefinition(typeCls, typeReg, definitionTemplate$),
-            createTypeInterface(typeCls, typeReg, interfaceTemplate$)
+            createTypeInterface(typeCls, typeReg, interfaceTemplate$),
+            createTypeIndex(typeCls, typeReg, indexTemplate$)
           )
         )
       )

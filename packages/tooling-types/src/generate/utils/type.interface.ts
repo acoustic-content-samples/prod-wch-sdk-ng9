@@ -28,7 +28,9 @@ function createTypeInterfaceContext(
   const typeDef = aTypeDef;
   const cloned = cloneDeep(typeDef.type);
   // set class name
+  cloned.constantPrefix = typeDef.constantPrefix;
   cloned.definitionName = typeDef.typeElementClass;
+  cloned.typeInterfaceClass = typeDef.typeInterfaceClass;
 
   // path to the type interface
   // compute the relative path
@@ -169,7 +171,7 @@ export function createTypeInterface(
   // prepare the context
   const rxCtx = createTypeInterfaceContext(aTypeDef, aTypeReg);
   // target name
-  const dstFile = `${aTypeDef.folder}/${aTypeDef.typeInterfaceFile})`;
+  const dstFile = `${aTypeDef.folder}/${aTypeDef.typeInterfaceFile}`;
   // execute the template
   const newContent = rxPipe(
     rxCtx,

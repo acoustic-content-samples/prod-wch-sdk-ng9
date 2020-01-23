@@ -6,65 +6,79 @@
 import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
 {{/each}}
 
-export const TYPE_ID = '{{{jsEscape id}}}';
-export const TYPE_NAME = '{{{jsEscape name}}}';
+/**
+ * Identifier of the content type for {@link {{{definitionName}~}} }.
+ */
+export const TYPE_ID_{{{jsEscape constantPrefix}}} = '{{{jsEscape id}}}';
+/**
+ * Name of the content type for {@link {{{definitionName}~}} }.
+ */
+export const TYPE_NAME_{{{jsEscape constantPrefix}}} = '{{{jsEscape name}}}';
 {{#each bindings}}
+/**
+ * Key name of the `{{{jsEscape this.key}}}` property of {@link {{{../definitionName}~}} }
+ */
 export const {{{ this.constant }}} = '{{{jsEscape this.key}}}';
 {{/each}}
 
-/*
-{{#if name}}
- * @name {{{name}}}
-{{/if}}
-{{#if id}}
- * @id {{{id}}}
-{{/if}}
+/**
+ * Delivery version of the {{{jsEscape name}}} content type.
+ *
+ * See {@link TYPE_ID_{{{jsEscape constantPrefix}~}} } and {@link TYPE_NAME_{{{jsEscape constantPrefix}~}} }
 {{#if description}}
- * @description {{{description}}}
+ * @remarks
+ * {{{description}}}
 {{/if}}
 {{#if creator}}
  * @author {{{creator}}}
 {{/if}}
  */
 export interface {{{definitionName}}} {
-    /**
-     * Metadata reference
-     */
-    $metadata: DeliveryGroupElementMetadata;
+  /**
+   * Metadata reference
+   */
+   $metadata: DeliveryGroupElementMetadata;
 {{#each bindings}}
 
-    /**
-     * @example
-     * ```json
+  /**
+{{#if helpText}}
+   * {{{helpText}}}
+{{/if}}
+   * @remarks
+   * See {@link {{{this.constant}~}} }
+   *
+   * @example
+   * Original type definition in the content type:
+   * ```json
 {{{this.comment}}}
-     * ```
-     */
-    [{{{jsEscape this.constant}}}]{{#if this.optional}}?{{/if}}: {{{this.type}}};
-{{/each}}
+   * ```
+   */
+  [{{{jsEscape this.constant}}}]{{#if this.optional}}?{{/if}}: {{{this.type}}};
+  {{/each}}
 }
 
 /**
- * Tests if the value is of type {{{baseElementClass}}}
+ * Tests if the value is of type {@link {{{definitionName}~}} }
  *
  * @param aValue - the value to test
- * @returns true if the value is of type {{{baseElementClass}}} else false
+ * @returns true if the value is of type {@link {{{definitionName}~}} } else false
  */
 export function is{{{definitionName}}}(aValue: any): aValue is {{{definitionName}}} {
 {{#if hasBindings}}
-    return {{{isNotNil}}}(aValue)
+  return {{{isNotNil}}}(aValue)
 {{#each bindings}}
 {{#if this.validator}}
 {{#if this.required}}
 {{#if this.multi}}
-        && {{{../isArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+    && {{{../isArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
 {{else}}
-        && {{{ this.validator }}}(aValue[{{{jsEscape this.constant}}}])
+    && {{{ this.validator }}}(aValue[{{{jsEscape this.constant}}}])
 {{/if}}
 {{else}}
 {{#if this.multi}}
-        && {{{../isOptionalArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+    && {{{../isOptionalArrayOf}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
 {{else}}
-        && {{{../isOptional}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
+    && {{{../isOptional}}}(aValue[{{{jsEscape this.constant}}}], {{{ this.validator }}})
 {{/if}}
 {{/if}}
 {{/if}}
@@ -77,21 +91,23 @@ export function is{{{definitionName}}}(aValue: any): aValue is {{{definitionName
 {{#each bindings}}
 
 /**
- * Selects the "{{{this.key}}}" property from {{{../definitionName}}}.
+ * Selects the {@link {{{this.constant}~}} } property from {@link {{{../definitionName}~}} }.
  *
  * @param aDefault - optional default
  *
  * @returns the selector function
  */
-export const {{{this.selectMethod}}}: (aDefault?: {{{this.type}}}) => UnaryFunction<{{{../definitionName}}}, {{{this.type}}}> = partialLeft(pluckProperty, {{{this.constant}}});
+export const {{{this.selectMethod}}}: (aDefault?: {{{this.type}}}) => UnaryFunction<{{{../definitionName}}},
+  {{{this.type}}}> = partialLeft(pluckProperty, {{{this.constant}}});
 
 /**
- * Selects the "{{{this.key}}}" property from {{{../definitionName}}} as an operator.
+ * Selects the {@link {{{this.constant}~}} } property from {@link {{{../definitionName}~}} } as an operator.
  *
  * @param aDefault - optional default
  * @param aCmp - optional comparator to compare the results
  *
  * @returns the selector operator
  */
-export const {{{this.rxSelectMethod}}}: (aDefault?: {{{this.type}}}, aCmp?: EqualsPredicate<{{{this.type}}}>) => OperatorFunction<{{{../definitionName}}}, {{{this.type}}}> = partialLeft(rxSelectProperty, {{{this.constant}}});
-{{/each}}
+export const {{{this.rxSelectMethod}}}: (aDefault?: {{{this.type}}}, aCmp?: EqualsPredicate<{{{this.type}}}>) =>
+  OperatorFunction<{{{../definitionName}}}, {{{this.type}}}> = partialLeft(rxSelectProperty, {{{this.constant}}});
+    {{/each}}

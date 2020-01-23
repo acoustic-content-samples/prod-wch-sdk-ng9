@@ -90,9 +90,14 @@ function createTypeDefinitionContext(
     binding.required = !!el.required;
     binding.optional = !!!el.required;
     binding.multi = el.allowMultipleValues;
+    binding.helpText = el.helpText;
 
-    binding.selectMethod = camelCase('select ' + el.key);
-    binding.rxSelectMethod = camelCase('rx select ' + el.key);
+    binding.selectMethod = camelCase(
+      'select ' + typeDef.constantPrefix + ' ' + el.key
+    );
+    binding.rxSelectMethod = camelCase(
+      'rx select ' + typeDef.constantPrefix + ' ' + el.key
+    );
 
     registerImport('pluckProperty', UTILS_MODULE, imports);
     registerImport('partialLeft', UTILS_MODULE, imports);
@@ -250,6 +255,7 @@ function createTypeDefinitionContext(
       // update
       cloned.otherImports = otherImports;
 
+      cloned.constantPrefix = typeDef.constantPrefix;
       cloned.baseElementClass = typeDef.baseElementClass;
       cloned.singleElementClass = typeDef.singleElementClass;
       cloned.multiElementClass = typeDef.multiElementClass;

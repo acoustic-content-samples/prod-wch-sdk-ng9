@@ -6,24 +6,22 @@
 import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
 {{/each}}
 
-/*
-{{#if name}}
- * @name {{{name}}}
-{{/if}}
-{{#if id}}
- * @id {{{id}}}
-{{/if}}
+/**
+ * Strongly typed rendering context for the {@link {{{definitionName}~}} } type.
+ *
+ * See {@link TYPE_ID_{{{jsEscape constantPrefix}~}} } and {@link TYPE_NAME_{{{jsEscape constantPrefix}~}} }
 {{#if description}}
- * @description {{{description}}}
+ * @remarks
+ * {{{description}}}
 {{/if}}
 {{#if creator}}
  * @author {{{creator}}}
 {{/if}}
  */
-export interface {{{interfacesName}}} extends RenderingContextV2, {{{definitionName}}} {
+export interface {{{typeInterfaceClass}}} extends RenderingContextV2, {{{definitionName}}} {
 
   /**
    * Metadata object
    */
-   $metadata: DeliveryContentMetadata;
+  $metadata: DeliveryContentMetadata;
 }

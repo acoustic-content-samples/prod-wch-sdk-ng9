@@ -7,7 +7,7 @@ export function plural(aKey: string) {
 export function toComment(aValue: any): string {
   return serializeJson(canonicalizeJson(aValue))
     .split('\n')
-    .map((line) => '     * ' + line)
+    .map((line) => '   * ' + line)
     .join('\n');
 }
 

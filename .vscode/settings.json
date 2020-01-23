@@ -19,6 +19,9 @@
     "**/node_modules/**": true
   },
   "editor.formatOnSave": true,
+  "[handlebars]": {
+    "editor.formatOnSave": false
+  },
   "files.trimTrailingWhitespace": true,
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "workbench.colorCustomizations": {},
