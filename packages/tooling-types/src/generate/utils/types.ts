@@ -2,6 +2,7 @@ import { AuthoringType, LoggerService } from '@acoustic-content-sdk/api';
 import { TemplateType } from '@acoustic-content-sdk/hbs-tooling';
 import {
   ensureDirPath,
+  FileDescriptor,
   ReadDirectory,
   ReadTextFile,
   rxFindAuthoringTypes
@@ -14,17 +15,36 @@ import {
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { from, merge, MonoTypeOperatorFunction, of, UnaryFunction } from 'rxjs';
-import { filter, map, mergeMap, pluck, reduce } from 'rxjs/operators';
+import {
+  from,
+  merge,
+  MonoTypeOperatorFunction,
+  Observable,
+  of,
+  UnaryFunction
+} from 'rxjs';
+import { filter, map, mergeMap, pluck, reduce, tap } from 'rxjs/operators';
 
 import { rxReadTemplate } from './templates';
 import { createTypeDefinition } from './type.definition';
+import { createTypeIndex } from './type.index';
 import { createTypeInterface } from './type.interface';
 import { TypeOptions, TypeRegistry } from './type.reg';
-import { createTypeIndex } from './type.index';
 
 const LOGGER = 'GenerateTypes';
 
+/**
+ * Generates all files that make up the typings
+ *
+ * @param aDataDir  - data directory for the wchtools artifacts used as a baseline
+ * @param aTypeFilter  - filter that will filter down the generated types
+ * @param aReadDir - callback used to read content of a directory
+ * @param aReadText - callback used to read a text file
+ * @param aCompiler - template compiler to compile a template source into a template function
+ * @param logSvc - logger service
+ *
+ * @returns a stream of generated files
+ */
 export function generate(
   aDataDir: string,
   aTypeFilter: Predicate<AuthoringType>,
@@ -32,13 +52,16 @@ export function generate(
   aReadText: ReadTextFile,
   aCompiler: UnaryFunction<string, TemplateType>,
   logSvc: LoggerService = NOOP_LOGGER_SERVICE
-) {
+): Observable<FileDescriptor<string>> {
   // base folders
   const base$ = of(['/src']);
   // logging
   const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
+  // log the filename
+  const logFile = () =>
+    tap<FileDescriptor<string>>(([name]) => logger.info(name));
   // the options
   const options: TypeOptions = {
     flat: true
@@ -95,6 +118,7 @@ export function generate(
           )
         )
       )
-    )
+    ),
+    logFile()
   );
 }

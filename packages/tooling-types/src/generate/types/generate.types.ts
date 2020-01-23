@@ -14,6 +14,12 @@ import { createHandlebars } from '../utils/templates';
 import { generate } from '../utils/types';
 import { GenerateTypesSchema } from './schema';
 
+/**
+ * Command entry point to generate typings and constants from content types
+ *
+ * @param options - the type options
+ * @returns the stream of files
+ */
 export function generateTypes(options: GenerateTypesSchema) {
   // data directory
   const { data } = options;
