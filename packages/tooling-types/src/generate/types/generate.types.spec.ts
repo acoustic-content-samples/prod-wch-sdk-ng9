@@ -1,4 +1,7 @@
-import { createReadDirectory } from '@acoustic-content-sdk/tooling';
+import {
+  createReadDirectory,
+  createReadTextFile
+} from '@acoustic-content-sdk/tooling';
 import { join } from 'path';
 import { ASSET_ROOT } from '../../test/assets';
 import { generateTypes } from './generate.types';
@@ -11,10 +14,11 @@ describe('generate.types', () => {
     const testDir = join(ASSET_ROOT, 'sample-generate-types');
     // read directory callback
     const readDir = createReadDirectory(testDir);
+    const readText = createReadTextFile(testDir);
     // the generator
     const gen = generateTypes({ data: 'data' });
 
-    const types$ = gen(readDir);
+    const types$ = gen(readDir, readText);
 
     const test$ = rxPipe(types$, tap(console.log));
 

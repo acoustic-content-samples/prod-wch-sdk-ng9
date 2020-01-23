@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function generateTypes(options: GenerateTypesSchema): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/api").AuthoringType>;
+export declare function generateTypes(options: GenerateTypesSchema): (aReadDir: ReadDirectory, aReadText: ReadTextFile, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/tooling").FileDescriptor<string>>;
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ export declare function generateTypes(options: GenerateTypesSchema): (aReadDir: 
 
 <b>Returns:</b>
 
-`(aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/api").AuthoringType>`
+`(aReadDir: ReadDirectory, aReadText: ReadTextFile, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/tooling").FileDescriptor<string>>`
 

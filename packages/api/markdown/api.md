@@ -259,6 +259,7 @@
 |  [KEY\_VALUE](./api.key_value.md) |  |
 |  [KEY\_VALUES](./api.key_values.md) |  |
 |  [KEY\_WCH\_SEED](./api.key_wch_seed.md) |  |
+|  [MODULE](./api.module.md) | Module name |
 |  [PARAM\_REDIRECT\_LOGIN\_TARGET\_TENANT](./api.param_redirect_login_target_tenant.md) |  |
 |  [PARAM\_REDIRECT\_LOGIN\_TARGET\_URL](./api.param_redirect_login_target_url.md) |  |
 |  [REGEXP\_ANONYMOUS\_USER\_ID](./api.regexp_anonymous_user_id.md) |  |

@@ -1393,6 +1393,9 @@ export interface LoggerService {
 }
 
 // @public
+export const MODULE = "@acoustic-content-sdk/api";
+
+// @public
 export interface MultiDateElement extends DateElement {
     // (undocumented)
     readonly values: string[];

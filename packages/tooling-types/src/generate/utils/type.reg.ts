@@ -2,15 +2,19 @@ import { AuthoringType } from '@acoustic-content-sdk/api';
 import {
   camelCase,
   classCase,
+  constantCase,
   dotCase,
   kebabCase
 } from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
+import emojiRegex from 'emoji-regex';
 import { toWords } from 'number-to-words';
 import { Observable, OperatorFunction, pipe } from 'rxjs';
 import { first, map, shareReplay } from 'rxjs/operators';
 
 import { ReadFile, rxFindDir } from './rx.dir';
+
+const RENDERING_CONTEXT_SUFFIX = 'RenderingContext';
 
 function _camelCase(aValue: string): string {
   return camelCase(aValue);
@@ -38,12 +42,25 @@ export interface TypeOptions {
   flat?: boolean;
 }
 
-function _createTypeComponentName(aName: string): string {
-  // trim
-  const trimmedName = aName.trim();
-  const fixed = trimmedName.replace(LEADING_DIGIT, (m, p) =>
+function cleanUp(aName: string): string {
+  const trimmedName = aName.replace(emojiRegex(), ' ').trim();
+  return trimmedName.replace(LEADING_DIGIT, (m, p) =>
     p && p.length > 0 ? toWords(p) + ' ' : ''
   );
+}
+
+function _createTypeInterfaceName(aTypeName: string): string {
+  // trim
+  const fixed = cleanUp(aTypeName);
+  const name = classCase(_camelCase(fixed));
+  return name.endsWith(RENDERING_CONTEXT_SUFFIX)
+    ? name
+    : name + RENDERING_CONTEXT_SUFFIX;
+}
+
+function createTypeComponentName(aName: string): string {
+  // trim
+  const fixed = cleanUp(aName);
   /** check if the layout component starts with a number, in this case
    * convert the number to a string
    */
@@ -51,12 +68,9 @@ function _createTypeComponentName(aName: string): string {
   return name.endsWith(TYPE_SUFFIX) ? name : name + TYPE_SUFFIX;
 }
 
-function _createElementComponentName(aName: string): string {
+function createElementComponentName(aName: string): string {
   // trim
-  const trimmedName = aName.trim();
-  const fixed = trimmedName.replace(LEADING_DIGIT, (m, p) =>
-    p && p.length > 0 ? toWords(p) + ' ' : ''
-  );
+  const fixed = cleanUp(aName);
   /** check if the layout component starts with a number, in this case
    * convert the number to a string
    */
@@ -66,9 +80,19 @@ function _createElementComponentName(aName: string): string {
     : name + ELEMENT_SUFFIX;
 }
 
+function createConstantPrefix(aName: string): string {
+  // trim
+  const fixed = createElementComponentName(aName);
+  return constantCase(
+    fixed.endsWith(TYPE_SUFFIX)
+      ? fixed.substr(0, fixed.length - TYPE_SUFFIX.length)
+      : fixed
+  );
+}
+
 function _getPathForType(aType: AuthoringType, aOptions: TypeOptions): string {
   // name of the layout folder segment
-  let typeName = _createTypeComponentName(aType.name);
+  let typeName = createTypeComponentName(aType.name);
   if (typeName.endsWith(TYPE_SUFFIX)) {
     typeName = typeName.substr(0, typeName.length - TYPE_SUFFIX.length);
   }
@@ -83,7 +107,7 @@ function _getPathForType(aType: AuthoringType, aOptions: TypeOptions): string {
   return `/{segments.join('/')}`;
 }
 
-function _getTypePath(aType: AuthoringType, aOptions: TypeOptions): string {
+function getTypePath(aType: AuthoringType, aOptions: TypeOptions): string {
   // join
   return `/${ELEMENTS_PATH}${_getPathForType(aType, aOptions)}`;
 }
@@ -102,11 +126,16 @@ export interface TypeClass {
   singleElementClass: string;
   multiElementClass: string;
 
+  // constant prefix
+  constantPrefix: string;
+
   // file names
   typeElementFile: string;
+  typeInterfaceFile: string;
 
   // file references
   typeElementRef: string;
+  typeInterfaceRef: string;
 }
 
 /**
@@ -125,27 +154,33 @@ function _initTypeClass(
   aOptions: TypeOptions
 ): TypeClass {
   // check for the path suffix
-  const typePath = _getTypePath(aType, aOptions);
+  const typePath = getTypePath(aType, aOptions);
 
   const type = aType;
   const typeName = type.name;
 
   // component names
-  const typeClass = _createTypeComponentName(typeName);
+  const typeClass = createTypeComponentName(typeName);
   const simpleTypeClass = typeClass;
   const typeElementClass =
     (typeClass.endsWith(TYPE_SUFFIX)
       ? typeClass.substr(0, typeClass.length - TYPE_SUFFIX.length)
       : typeClass) + TYPE_SUFFIX;
-  const baseElementClass = _createElementComponentName(typeName);
+  const baseElementClass = createElementComponentName(typeName);
   const singleElementClass = SINGLE_PREFIX + baseElementClass;
   const multiElementClass = MULTI_PREFIX + baseElementClass;
 
+  const constantPrefix = createConstantPrefix(typeName);
+
+  const typeInterfaceClass = _createTypeInterfaceName(typeName);
+
   // references
   const typeElementRef = _dotCase(typeClass);
+  const typeInterfaceRef = _dotCase(typeInterfaceClass);
 
   // file names
   const typeElementFile = typeElementRef + '.ts';
+  const typeInterfaceFile = typeInterfaceRef + '.ts';
 
   // the base path for the layout
   const folder = `${aDir}${typePath}`;
@@ -153,6 +188,9 @@ function _initTypeClass(
   return {
     type,
     folder,
+    typeInterfaceFile,
+    typeInterfaceRef,
+    constantPrefix,
     simpleTypeClass,
     typeElementClass,
     baseElementClass,
@@ -179,8 +217,8 @@ const getTypesDir = (
   aTree: ReadFile
 ): OperatorFunction<string[], string> => {
   // check for the path suffix
-  const typePath = _getTypePath(aType, aOptions);
-  const className = _createTypeComponentName(aType.name);
+  const typePath = getTypePath(aType, aOptions);
+  const className = createTypeComponentName(aType.name);
   const relPath = `${typePath}/${_camelCase(className)}.ts`;
   // map each source to a check
   return rxFindDir(relPath, aTree);
@@ -206,7 +244,8 @@ export class TypeRegistry {
   constructor(
     private aBaseFolder$: Observable<string[]>,
     private aOptions: TypeOptions,
-    private aTree: ReadFile
+    private aTree: ReadFile,
+    private aAllTypes: Record<string, AuthoringType>
   ) {}
 
   registerType(aType: AuthoringType): boolean {
@@ -223,6 +262,14 @@ export class TypeRegistry {
 
     // ok
     return true;
+  }
+
+  findAuthoringTypeById(aId: string): AuthoringType {
+    return this.aAllTypes[aId];
+  }
+
+  findTypeClassById(aId: string): Observable<TypeClass> {
+    return this.findTypeClass(this.findAuthoringTypeById(aId));
   }
 
   findTypeClass(aType: AuthoringType): Observable<TypeClass> {

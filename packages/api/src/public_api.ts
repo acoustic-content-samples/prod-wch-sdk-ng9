@@ -62,4 +62,4 @@ export * from './services/rendering/rendering.context.interceptor';
 export * from './services/rendering/rendering.context.provider';
 export * from './services/rendering/v2/rendering.context.provider';
 export * from './services/v2/page/active.page';
-export { VERSION } from './version';
+export { MODULE, VERSION } from './version';

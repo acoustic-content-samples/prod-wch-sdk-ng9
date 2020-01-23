@@ -1,7 +1,7 @@
 import { FileDescriptor, rxReadDir } from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { compile, create } from 'handlebars';
-import { Observable } from 'rxjs';
+import { Observable, UnaryFunction } from 'rxjs';
 import { map, mergeMap, shareReplay } from 'rxjs/operators';
 
 export type TemplateType = ReturnType<typeof compile>;
@@ -25,6 +25,21 @@ function createHandlebars() {
 }
 
 /**
+ * Constructs a handlebars compiler
+ *
+ * @param aHandlebars - optionally a handlebars instance
+ * @returns the compiler
+ */
+export function createCompiler(
+  aHandlebars?: HandlebarsType
+): UnaryFunction<string, TemplateType> {
+  // the instance
+  const hbs = aHandlebars || createHandlebars();
+  // compile the value
+  return (aValue: string) => hbs.compile(aValue);
+}
+
+/**
  * Reads a list of files and interprets them as templates, both in the filename and the
  * content.
  *
@@ -37,10 +52,8 @@ export function rxReadTemplates(
   aDir: string,
   aHandlebars?: HandlebarsType
 ): Observable<TemplateDescriptor> {
-  // the instance
-  const hbs = aHandlebars || createHandlebars();
   // compile the value
-  const cmp = (aValue: string) => hbs.compile(aValue);
+  const cmp = createCompiler(aHandlebars);
   // iterate and compile
   return rxPipe(
     rxReadDir(aDir),
@@ -74,5 +87,8 @@ export function rxApplyTemplates(
   // share
   const temp$ = rxPipe(aTemp$, shareReplay());
   // combine
-  return rxPipe(aCtx$, mergeMap((ctx) => applyTemplates(temp$, ctx)));
+  return rxPipe(
+    aCtx$,
+    mergeMap((ctx) => applyTemplates(temp$, ctx))
+  );
 }

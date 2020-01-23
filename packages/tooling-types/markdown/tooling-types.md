@@ -4,6 +4,12 @@
 
 ## tooling-types package
 
+## Classes
+
+|  Class | Description |
+|  --- | --- |
+|  [TypeRegistry](./tooling-types.typeregistry.md) |  |
+
 ## Functions
 
 |  Function | Description |
@@ -15,6 +21,8 @@
 |  Interface | Description |
 |  --- | --- |
 |  [GenerateTypesSchema](./tooling-types.generatetypesschema.md) |  |
+|  [TypeClass](./tooling-types.typeclass.md) |  |
+|  [TypeOptions](./tooling-types.typeoptions.md) |  |
 
 ## Variables
 

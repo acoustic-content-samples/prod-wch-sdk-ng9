@@ -425,7 +425,7 @@ export {
   urlSlashes,
   urlToString
 } from './url/url.utils';
-export { VERSION } from './version';
+export { MODULE, VERSION } from './version';
 export {
   cloneUrlConfig,
   DEFAULT_FETCH_LEVELS,

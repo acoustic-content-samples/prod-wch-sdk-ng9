@@ -1,58 +1,26 @@
+import { AuthoringType, LoggerService } from '@acoustic-content-sdk/api';
+import { TemplateType } from '@acoustic-content-sdk/hbs-tooling';
 import {
-  AuthoringLayoutItem,
-  AuthoringLayoutMapping,
-  AuthoringType,
-  Logger,
-  LoggerService
-} from '@acoustic-content-sdk/api';
+  ensureDirPath,
+  ReadDirectory,
+  ReadTextFile,
+  rxFindAuthoringTypes
+} from '@acoustic-content-sdk/tooling';
 import {
-  rxReadBinaryFile,
-  rxReadTextFile
-} from '@acoustic-content-sdk/rx-utils';
-import {
-  getPath,
-  isEqual,
-  isNil,
-  isNotNil,
-  isString,
-  LAYOUT_TYPE_HANDLEBARS,
   NOOP_LOGGER_SERVICE,
   objectAssign,
   opShareLast,
   Predicate,
-  reduceForIn,
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { join } from 'path';
-import {
-  combineLatest,
-  EMPTY,
-  merge,
-  MonoTypeOperatorFunction,
-  Observable,
-  of,
-  UnaryFunction
-} from 'rxjs';
-import { filter, map, mergeMap, pluck } from 'rxjs/operators';
+import { from, merge, MonoTypeOperatorFunction, of, UnaryFunction } from 'rxjs';
+import { filter, map, mergeMap, pluck, reduce } from 'rxjs/operators';
 
-import { ReadDirectory } from '@acoustic-content-sdk/tooling';
-import {
-  createFileDescriptor,
-  FileDescriptor
-} from '@acoustic-content-sdk/tooling';
-import { ASSET_ROOT$, ASSETS_FOLDER } from '../../utils/assets';
-import { ensureDirPath } from '@acoustic-content-sdk/tooling';
-import {
-  JsonEntryMap,
-  rxFindAuthoringTypes,
-  rxReadAuthoringLayoutMappings,
-  rxReadAuthoringLayouts
-} from '@acoustic-content-sdk/tooling';
-import {
-  wchToolsCleanup,
-  wchToolsFileDescriptor
-} from '@acoustic-content-sdk/tooling';
+import { rxReadTemplate } from './templates';
+import { createTypeDefinition } from './type.definition';
+import { createTypeInterface } from './type.interface';
+import { TypeOptions, TypeRegistry } from './type.reg';
 
 const LOGGER = 'GenerateTypes';
 
@@ -60,23 +28,70 @@ export function generate(
   aDataDir: string,
   aTypeFilter: Predicate<AuthoringType>,
   aReadDir: ReadDirectory,
+  aReadText: ReadTextFile,
+  aCompiler: UnaryFunction<string, TemplateType>,
   logSvc: LoggerService = NOOP_LOGGER_SERVICE
 ) {
+  // base folders
+  const base$ = of(['/src']);
   // logging
   const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
+  // the options
+  const options: TypeOptions = {
+    flat: false
+  };
   // make sure the data dir does not end with a slash
   const dataDir = ensureDirPath(aDataDir);
   // log this
   logger.info('dataDir', dataDir);
+  // templates
+  const interfaceTemplate$ = rxReadTemplate(
+    '/templates/type.interface.hbs',
+    aCompiler
+  );
+  const definitionTemplate$ = rxReadTemplate(
+    '/templates/type.definition.hbs',
+    aCompiler
+  );
   // find types
-  const types$ = rxPipe(
+  const allTypes$ = rxPipe(
     rxFindAuthoringTypes(dataDir, aReadDir),
     pluck('entry'),
+    reduce(
+      (aDst: Record<string, AuthoringType>, aType: AuthoringType) =>
+        objectAssign(aType.id, aType, aDst),
+      {}
+    ),
+    opShareLast
+  );
+  // extract all types that we are interested in
+  const types$ = rxPipe(
+    allTypes$,
+    mergeMap((all) => from(Object.values(all))),
     filter(aTypeFilter),
     log('type')
   );
-
-  return types$;
+  // the type registry
+  const typeReg$ = rxPipe(
+    allTypes$,
+    map((allTypes) => new TypeRegistry(base$, options, aReadText, allTypes))
+  );
+  // generate all types
+  return rxPipe(
+    typeReg$,
+    mergeMap((typeReg) =>
+      rxPipe(
+        types$,
+        mergeMap((type) => typeReg.findTypeClass(type)),
+        mergeMap((typeCls) =>
+          merge(
+            createTypeDefinition(typeCls, typeReg, definitionTemplate$),
+            createTypeInterface(typeCls, typeReg, interfaceTemplate$)
+          )
+        )
+      )
+    )
+  );
 }

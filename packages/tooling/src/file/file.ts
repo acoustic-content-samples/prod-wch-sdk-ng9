@@ -14,7 +14,7 @@ import {
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { PathLike, readFile, writeFile } from 'fs';
-import { join, normalize, parse } from 'path';
+import { join, normalize, parse, relative } from 'path';
 import { cwd } from 'process';
 import {
   bindNodeCallback,
@@ -298,4 +298,8 @@ export function writeFiles<T>(
     ensureWriteFile(aRoot, aDesc, mkdirs, aOverride);
 
   return mergeMap(write);
+}
+
+export function relativePath(aSrc: string, aDst: string): string {
+  return relative(aSrc, aDst).replace(/\\/g, '/');
 }

@@ -984,6 +984,9 @@ export const mergeHubInfo: BiFunction<HubInfo, HubInfo, HubInfo>;
 export function mergeObjects<T>(aLeft: T, aRight: T): T;
 
 // @public
+export const MODULE = "@acoustic-content-sdk/utils";
+
+// @public
 export function nary(aArity: number, aFunction: (...aValues: any[]) => any): (...aValues: any[]) => any;
 
 export { noop }

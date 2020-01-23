@@ -8,6 +8,7 @@ export * from './file/file';
 export * from './generate';
 export * from './logger/chalk.logger';
 export { blackWhiteList } from './utils/black.white.list';
+export { canonicalizeJson, serializeJson } from './utils/json';
 export * from './utils/names';
 export * from './utils/types';
 export * from './utils/url.utils';

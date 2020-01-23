@@ -32,10 +32,15 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
+    "@acoustic-content-sdk/rx-utils": "9.0.0",
     "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
+    "emoji-regex": "^8",
+    "handlebars": "^4",
+    "js-string-escape": "^1",
     "number-to-words": "^1",
     "rxjs": "^6"
   },
@@ -52,8 +57,13 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
+        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "emoji-regex": "EmojiRegex",
+        "handlebars": "Handlebars",
+        "js-string-escape": "JsStringEscape",
         "number-to-words": "NumberToWords"
       }
     },

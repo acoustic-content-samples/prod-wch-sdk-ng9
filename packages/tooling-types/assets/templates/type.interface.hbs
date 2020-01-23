@@ -1,0 +1,29 @@
+/**
+ * Do not modify this file, it is auto-generated.
+ */
+/* tslint:disable:max-line-length */
+{{#each otherImports}}
+import { {{#each this}}{{{this}}}{{#unless @last}}, {{/unless}}{{/each}} } from '{{{@key}}}';
+{{/each}}
+
+/*
+{{#if name}}
+ * @name {{{name}}}
+{{/if}}
+{{#if id}}
+ * @id {{{id}}}
+{{/if}}
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+{{#if creator}}
+ * @author {{{creator}}}
+{{/if}}
+ */
+export interface {{{interfacesName}}} extends RenderingContextV2, {{{definitionName}}} {
+
+  /**
+   * Metadata object
+   */
+   $metadata: DeliveryContentMetadata;
+}

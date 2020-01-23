@@ -349,6 +349,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [mapDefault](./utils.mapdefault.md) | Operator that returns the default value for each nil value of the source sequence |
 |  [mapTypeOf](./utils.maptypeof.md) | Returns the object if it is of a particular type, else undefined |
 |  [mergeHubInfo](./utils.mergehubinfo.md) | Merges the config of two hub infos |
+|  [MODULE](./utils.module.md) | Module name |
 |  [NOOP\_LOGGER\_SERVICE](./utils.noop_logger_service.md) | Fallback logger service that exposes noop loggers |
 |  [not](./utils.not.md) | Negates a function |
 |  [NULL$](./utils.null_.md) | Operator representing undefined |

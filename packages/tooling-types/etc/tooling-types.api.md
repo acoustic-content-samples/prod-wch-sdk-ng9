@@ -4,11 +4,15 @@
 
 ```ts
 
+import { AuthoringType } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { Observable } from 'rxjs';
+import { ReadBuffer } from '@acoustic-content-sdk/tooling';
 import { ReadDirectory } from '@acoustic-content-sdk/tooling';
+import { ReadTextFile } from '@acoustic-content-sdk/tooling';
 
 // @public (undocumented)
-export function generateTypes(options: GenerateTypesSchema): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/api").AuthoringType>;
+export function generateTypes(options: GenerateTypesSchema): (aReadDir: ReadDirectory, aReadText: ReadTextFile, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/tooling").FileDescriptor<string>>;
 
 // @public (undocumented)
 export interface GenerateTypesSchema {
@@ -16,6 +20,54 @@ export interface GenerateTypesSchema {
     exclude?: string[];
     include?: string[];
 }
+
+// @public (undocumented)
+export interface TypeClass {
+    // (undocumented)
+    baseElementClass: string;
+    // (undocumented)
+    constantPrefix: string;
+    // (undocumented)
+    folder: string;
+    // (undocumented)
+    multiElementClass: string;
+    // (undocumented)
+    simpleTypeClass: string;
+    // (undocumented)
+    singleElementClass: string;
+    // (undocumented)
+    type: AuthoringType;
+    // (undocumented)
+    typeElementClass: string;
+    // (undocumented)
+    typeElementFile: string;
+    // (undocumented)
+    typeElementRef: string;
+    // (undocumented)
+    typeInterfaceFile: string;
+    // (undocumented)
+    typeInterfaceRef: string;
+}
+
+// @public (undocumented)
+export interface TypeOptions {
+    // (undocumented)
+    flat?: boolean;
+}
+
+// @public (undocumented)
+export class TypeRegistry {
+    // Warning: (ae-forgotten-export) The symbol "ReadFile" needs to be exported by the entry point public_api.d.ts
+    constructor(aBaseFolder$: Observable<string[]>, aOptions: TypeOptions, aTree: ReadFile, aAllTypes: Record<string, AuthoringType>);
+    // (undocumented)
+    findAuthoringTypeById(aId: string): AuthoringType;
+    // (undocumented)
+    findTypeClass(aType: AuthoringType): Observable<TypeClass>;
+    // (undocumented)
+    findTypeClassById(aId: string): Observable<TypeClass>;
+    // (undocumented)
+    registerType(aType: AuthoringType): boolean;
+    }
 
 // @public
 export const VERSION: {

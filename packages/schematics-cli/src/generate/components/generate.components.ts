@@ -1,12 +1,4 @@
 /* Copyright IBM Corp. 2017 */
-import { join, normalize, Path } from '@angular-devkit/core';
-import {
-  branchAndMerge,
-  chain,
-  Rule,
-  SchematicContext,
-  Tree
-} from '@angular-devkit/schematics';
 import {
   AuthoringLayout,
   AuthoringLayoutMapping,
@@ -28,7 +20,6 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   buildDefaultPath,
-  canonicalizeJSON,
   findDataDir,
   findProject,
   readDirectoryOnTree
@@ -36,12 +27,14 @@ import {
 import {
   blackWhiteList,
   camelCase,
+  canonicalizeJson,
   classCase,
   JsonEntry,
   kebabCase,
   rxFindAuthoringLayoutMappings,
   rxFindAuthoringLayouts,
-  rxFindAuthoringTypes
+  rxFindAuthoringTypes,
+  serializeJson
 } from '@acoustic-content-sdk/tooling';
 import {
   arrayPush,
@@ -61,6 +54,14 @@ import {
   reduceForIn,
   rxPipe
 } from '@acoustic-content-sdk/utils';
+import { join, normalize, Path } from '@angular-devkit/core';
+import {
+  branchAndMerge,
+  chain,
+  Rule,
+  SchematicContext,
+  Tree
+} from '@angular-devkit/schematics';
 import { parse } from 'path';
 import {
   asyncScheduler,
@@ -156,7 +157,7 @@ function _plural(aKey: string) {
 }
 
 function _toComment(aValue: any): string {
-  return JSON.stringify(canonicalizeJSON(aValue), undefined, 2)
+  return serializeJson(canonicalizeJson(aValue))
     .split('\n')
     .map((line) => '     * ' + line)
     .join('\n');
@@ -960,7 +961,10 @@ function _createTypeComponent(
   // target name
   const dstFile = join(aClass.folder, aClass.typeComponentFile);
   // execute the template
-  const newContent = rxPipe(aTemplate, map((tmp) => tmp(ctx)));
+  const newContent = rxPipe(
+    aTemplate,
+    map((tmp) => tmp(ctx))
+  );
   // write the content
   return newContent.pipe(
     map((data) => writeTextSafe(aTools.tree, data, dstFile, bOverride)),
@@ -1011,7 +1015,10 @@ function _createTypeHtml(
   // target name
   const dstFile = join(aClass.folder, aClass.typeTemplateFile);
   // execute the template
-  const newContent = rxPipe(aTemplate, map((tmp) => tmp(ctx)));
+  const newContent = rxPipe(
+    aTemplate,
+    map((tmp) => tmp(ctx))
+  );
   // write the content
   return rxPipe(
     newContent,
@@ -1045,7 +1052,10 @@ function _createTypeCss(
   // target name
   const dstFile = join(aClass.folder, aClass.typeStyleFile);
   // execute the template
-  const newContent = rxPipe(aTemplate, map((tmp) => tmp(ctx)));
+  const newContent = rxPipe(
+    aTemplate,
+    map((tmp) => tmp(ctx))
+  );
   // write the content
   return newContent.pipe(
     map((data) => writeTextSafe(aTools.tree, data, dstFile, bOverride)),
@@ -1677,7 +1687,10 @@ function readWchTools(aDataDir: Path, tree: Tree): Observable<WchTools> {
   // callback
   const readDir = readDirectoryOnTree(tree);
   // visit
-  const types$ = rxPipe(rxFindAuthoringTypes(aDataDir, readDir), reduceToRecord());
+  const types$ = rxPipe(
+    rxFindAuthoringTypes(aDataDir, readDir),
+    reduceToRecord()
+  );
   const layouts$ = rxPipe(
     rxFindAuthoringLayouts(aDataDir, readDir),
     reduceToRecord()
