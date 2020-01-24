@@ -7,6 +7,7 @@ import { generateDataOverlayCommand } from '../commands/generate.data.overlay';
 import { generateKeysCommand } from '../commands/generate.keys';
 import { generateLayoutCommand } from '../commands/generate.layout';
 import { generateLayoutsCommand } from '../commands/generate.layouts';
+import { generateMessagesCommand } from '../commands/generate.messages';
 import { versionCommand } from '../commands/version';
 import { VERSION } from '../version';
 
@@ -23,6 +24,7 @@ export function runProgram(aArgs: string[] = argv) {
   generateLayoutCommand(program);
   generateKeysCommand(program);
   generateDataOverlayCommand(program);
+  generateMessagesCommand(program);
   canonicalizeAssetsCommand(program);
 
   return program.parse(aArgs);
