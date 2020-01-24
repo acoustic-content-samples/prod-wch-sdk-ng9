@@ -4,6 +4,8 @@
 
 ## SdkSetModeResponse.mode property
 
+mode set
+
 <b>Signature:</b>
 
 ```typescript

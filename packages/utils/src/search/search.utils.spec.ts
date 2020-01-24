@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { luceneEscapeTerm, luceneEscapeKeyValue } from './search.utils';
 import { parse } from 'lucene';
 

@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { ReactProvider } from '@acoustic-content-sdk/react-api';
 
 import { WCH_PROVIDER_REDUX_AUTH_STATUS } from './auth.status.module';

@@ -16,6 +16,6 @@ export interface SdkSetModeResponse extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [error](./api.sdksetmoderesponse.error.md) | <code>any</code> |  |
-|  [mode](./api.sdksetmoderesponse.mode.md) | <code>SdkMode</code> |  |
+|  [error](./api.sdksetmoderesponse.error.md) | <code>any</code> | potential error |
+|  [mode](./api.sdksetmoderesponse.mode.md) | <code>SdkMode</code> | mode set |
 

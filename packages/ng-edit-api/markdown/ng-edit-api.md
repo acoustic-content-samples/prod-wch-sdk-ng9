@@ -37,8 +37,8 @@ Collection of APIs and constants for the Angular SDK in edit mode
 
 |  Variable | Description |
 |  --- | --- |
-|  [DEFAULT\_DEBUG\_PLACEHOLDERS](./ng-edit-api.default_debug_placeholders.md) |  |
-|  [DEFAULT\_INLINE\_EDIT\_URL](./ng-edit-api.default_inline_edit_url.md) |  |
+|  [DEFAULT\_DEBUG\_PLACEHOLDERS](./ng-edit-api.default_debug_placeholders.md) | per default do not debug |
+|  [DEFAULT\_INLINE\_EDIT\_URL](./ng-edit-api.default_inline_edit_url.md) | default value for the inline edit URL |
 |  [VERSION](./ng-edit-api.version.md) | Version and build number of the package |
 |  [WCH\_TOKEN\_DEBUG\_PLACEHOLDERS](./ng-edit-api.wch_token_debug_placeholders.md) | Injection token for placeholder debugging |
 |  [WCH\_TOKEN\_DEFAULT\_PLACEHOLDER\_TEXT](./ng-edit-api.wch_token_default_placeholder_text.md) | Injection token for default placeholder text |

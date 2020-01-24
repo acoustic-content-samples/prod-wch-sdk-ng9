@@ -16,7 +16,7 @@ import { RenderingContextV2 } from '@acoustic-content-sdk/api';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 import { WchHttp } from '@acoustic-content-sdk/api';
 
-// @public (undocumented)
+// @public
 export type AccessorType = string | null;
 
 // @public (undocumented)

@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 
 /**
  * Token used to access the http service

@@ -30,7 +30,7 @@ export interface HttpResourceOptions {
   readonly usePolling?: boolean;
 }
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 /**
  * Defines the provider of a URL, either as a URL, a string or a callback that generates either

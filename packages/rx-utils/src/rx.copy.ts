@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { copy, CopyOptions, stat } from 'fs-extra';
 import { mkdir, Stats } from 'graceful-fs';
 import { join, parse } from 'path';

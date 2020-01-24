@@ -1,6 +1,6 @@
 import { FUNCTION_TYPE } from './../js/js.utils';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 let _setCallback: (aFct: Function) => number;
 let _cancelCallback: (aHandle: number) => void;
 

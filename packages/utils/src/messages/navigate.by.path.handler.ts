@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import {
   Logger,
   SDK_NAVIGATE_BY_PATH_EVENT_TYPE,

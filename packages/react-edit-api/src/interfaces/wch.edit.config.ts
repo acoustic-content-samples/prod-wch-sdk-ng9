@@ -7,7 +7,7 @@ import {
 } from './default.wch.edit.config';
 import { WchDefaultPlaceholder } from './placeholder';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 /*
  * Exposes information
  */

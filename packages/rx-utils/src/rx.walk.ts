@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { ensureDir, remove } from 'fs-extra';
 import {
   createReadStream,

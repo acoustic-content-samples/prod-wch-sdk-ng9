@@ -40,13 +40,11 @@ export interface Asset {
     readonly mediaType: string;
     // (undocumented)
     readonly resourceUri: string;
-    // (undocumented)
     readonly width: number;
 }
 
 // @public (undocumented)
 export interface AssetPublishApproval {
-    // (undocumented)
     enabled?: boolean;
     // (undocumented)
     exemptAssetTypes: string[];
@@ -692,7 +690,6 @@ export interface Category {
     readonly categories?: string[];
     // (undocumented)
     readonly categoryIds?: string[];
-    // (undocumented)
     readonly categoryPaths?: string[][];
 }
 
@@ -747,7 +744,6 @@ export interface ContentItemWithLayout extends ContentItem {
 
 // @public (undocumented)
 export interface ContentPublishApproval {
-    // (undocumented)
     enabled?: boolean;
     // (undocumented)
     exemptContentTypes: string[];
@@ -1526,7 +1522,7 @@ export interface Query {
 // @public (undocumented)
 export type QueryInput = string | string[] | null | undefined | URLSearchParams | Query;
 
-// @public (undocumented)
+// @public
 export type QueryValue = string | number | boolean;
 
 // @public
@@ -1598,7 +1594,6 @@ export interface RenderingContext extends ContentItemWithLayout {
     readonly optionselection?: ElementMap<OptionSelection>;
     // (undocumented)
     readonly optionselections?: ElementMap<OptionSelection[]>;
-    // (undocumented)
     readonly product?: ElementMap<string>;
     // (undocumented)
     readonly products?: ElementMap<string[]>;
@@ -1677,7 +1672,6 @@ export interface Rendition {
     readonly source: string;
     // (undocumented)
     readonly transform?: any;
-    // (undocumented)
     readonly url: string;
     // (undocumented)
     readonly width: number;
@@ -1725,15 +1719,12 @@ export const SDK_UNSUBSCRIBE_EVENT_TYPE = "WchSdk.unsubscribe";
 
 // @public (undocumented)
 export interface SdkActiveRouteEvent extends SdkMessagePayload {
-    // (undocumented)
     page: DeliveryContentItem;
-    // (undocumented)
     type: 'WchSdk.router.activeRoute';
 }
 
 // @public
 export interface SdkErrorResponse extends SdkMessagePayload {
-    // (undocumented)
     error: any;
 }
 
@@ -1748,9 +1739,7 @@ export type SdkMessageHandlerCallback = (aPayload: SdkMessagePayload, aEvent: Me
 
 // @public
 export interface SdkMessagePayload {
-    // (undocumented)
     id: string;
-    // (undocumented)
     type: string;
 }
 
@@ -1764,65 +1753,49 @@ export enum SdkMode {
 
 // @public (undocumented)
 export interface SdkModeEvent extends SdkMessagePayload {
-    // (undocumented)
     mode: SdkMode;
-    // (undocumented)
-    type: 'WchSdk.mode';
+    type: typeof SDK_MODE_EVENT_TYPE;
 }
 
 // @public (undocumented)
 export interface SdkNavigateByPathEvent extends SdkMessagePayload {
-    // (undocumented)
     path: string;
-    // (undocumented)
     type: 'WchSdk.router.navigateByPath';
 }
 
 // @public
 export interface SdkNavigateByPathResponse extends SdkMessagePayload {
-    // (undocumented)
     error?: any;
-    // (undocumented)
     path: string;
-    // (undocumented)
     success: boolean;
 }
 
 // @public (undocumented)
 export interface SdkRefreshEvent extends SdkMessagePayload {
-    // (undocumented)
     type: 'WchSdk.refresh';
 }
 
 // @public (undocumented)
 export interface SdkRouteEvent extends SdkMessagePayload {
-    // (undocumented)
     page: DeliveryContentItem;
-    // (undocumented)
     route: string;
-    // (undocumented)
     type: 'WchSdk.router.route';
 }
 
 // @public (undocumented)
 export interface SdkSetModeEvent extends SdkMessagePayload {
-    // (undocumented)
     mode: SdkMode;
-    // (undocumented)
     type: 'WchSdk.setMode';
 }
 
 // @public
 export interface SdkSetModeResponse extends SdkMessagePayload {
-    // (undocumented)
     error?: any;
-    // (undocumented)
     mode: SdkMode;
 }
 
 // @public (undocumented)
 export interface SdkSubscribeActiveRouteEvent extends SdkMessagePayload {
-    // (undocumented)
     type: 'WchSdk.router.activeRoute.subscribe';
 }
 
@@ -1832,14 +1805,12 @@ export interface SdkSubscribeActiveRouteEventResponse extends SdkSubscribeEventR
 
 // @public
 export interface SdkSubscribeEventResponse extends SdkMessagePayload {
-    // (undocumented)
     handle: string;
 }
 
 // @public (undocumented)
 export interface SdkSubscribeModeEvent extends SdkMessagePayload {
-    // (undocumented)
-    type: 'WchSdk.mode.subscribe';
+    type: typeof SDK_SUBSCRIBE_MODE_EVENT_TYPE;
 }
 
 // @public (undocumented)
@@ -1849,7 +1820,6 @@ export interface SdkSubscribeModeEventResponse extends SdkSubscribeEventResponse
 // @public (undocumented)
 export interface SdkSubscribeRouteEvent extends SdkMessagePayload {
     route: string | string[];
-    // (undocumented)
     type: 'WchSdk.router.route.subscribe';
 }
 
@@ -1859,9 +1829,7 @@ export interface SdkSubscribeRouteEventResponse extends SdkSubscribeEventRespons
 
 // @public (undocumented)
 export interface SdkUnsubscribeEvent extends SdkMessagePayload {
-    // (undocumented)
     handle: string;
-    // (undocumented)
     type: 'WchSdk.unsubscribe';
 }
 
@@ -2068,11 +2036,9 @@ export enum Status {
 
 // @public (undocumented)
 export interface Tenant {
-    // (undocumented)
     capability?: string;
     // (undocumented)
     corsWhitelist?: string[];
-    // (undocumented)
     defaultContentLocale?: string;
     // (undocumented)
     deliveryAccess?: DeliveryAccess;
@@ -2080,17 +2046,13 @@ export interface Tenant {
     ibmCommerce?: IbmCommerce;
     // (undocumented)
     ibmUniqueId?: string;
-    // (undocumented)
     id?: string;
-    // (undocumented)
     _id: string;
     // (undocumented)
     isDAMEnabled?: boolean;
     // (undocumented)
     isEdgeSideEnabled?: boolean;
-    // (undocumented)
     locale?: string;
-    // (undocumented)
     locked?: boolean;
     // (undocumented)
     mandatoryAssetPublishApproval?: AssetPublishApproval;
@@ -2100,27 +2062,17 @@ export interface Tenant {
     maxAuthors?: number;
     // (undocumented)
     maxBulkUploadSize?: number;
-    // (undocumented)
     maxContentItems?: number;
-    // (undocumented)
     maxDataTransfer?: number;
-    // (undocumented)
     maxStorageSize?: number;
-    // (undocumented)
     maxUploadSize?: number;
-    // (undocumented)
     maxUploadSizeFiles?: number;
-    // (undocumented)
     maxUploadSizeImage?: number;
-    // (undocumented)
     maxUploadSizeVideo?: number;
-    // (undocumented)
     maxUserSessions?: number;
     // (undocumented)
     name?: string;
-    // (undocumented)
     tier?: TENANT_TIER;
-    // (undocumented)
     useSingleUploadSize?: boolean;
     // (undocumented)
     watsonConfidenceLevel?: number;
@@ -2248,7 +2200,6 @@ export interface WchSdk {
 export interface WchSdkRouter {
     activeRenderingContext: () => Observable<RenderingContext>;
     activeRoute: () => Observable<SitePage>;
-    // (undocumented)
     navigateByPath: (aPath: string) => PromiseLike<boolean>;
 }
 
@@ -2261,9 +2212,7 @@ export interface WchSdkSearch {
 
 // @public
 export interface WchSdkVersion {
-    // (undocumented)
     readonly build: Date;
-    // (undocumented)
     readonly version: {
         readonly major: string;
         readonly minor: string;
@@ -2271,7 +2220,5 @@ export interface WchSdkVersion {
     };
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

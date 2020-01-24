@@ -75,7 +75,7 @@ import {
 } from './../site/site.utils';
 import { DEFAULT_FETCH_LEVELS, wchBoxLayoutMode } from './../wch/wch.utils';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 
 const GEN_UNDEFINED = constGenerator(UNDEFINED);
 

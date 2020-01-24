@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 /**
  * Abstraction of the logger interface, trying to be as generic
@@ -7,7 +7,7 @@
  * to the console instance.
  */
 export interface Logger {
-    error(msg: string, ...data: any[]): void;
-    info(msg: string, ...data: any[]): void;
-    warn(msg: string, ...data: any[]): void;
+  error(msg: string, ...data: any[]): void;
+  info(msg: string, ...data: any[]): void;
+  warn(msg: string, ...data: any[]): void;
 }

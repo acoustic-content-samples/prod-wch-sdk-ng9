@@ -4,6 +4,8 @@
 
 ## WCH\_TOKEN\_WINDOW variable
 
+Create a new injection token for injecting the window into a component.
+
 <b>Signature:</b>
 
 ```typescript

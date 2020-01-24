@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { Observable } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
@@ -22,7 +22,7 @@ import {
   RESPONSE_SUFFIX
 } from './message.event';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 /**
  * Constructs a response
  *

@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import {
   Logger,
   SDK_REFRESH_EVENT_TYPE,

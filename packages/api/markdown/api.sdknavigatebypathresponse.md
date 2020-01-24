@@ -16,7 +16,7 @@ export interface SdkNavigateByPathResponse extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [error](./api.sdknavigatebypathresponse.error.md) | <code>any</code> |  |
-|  [path](./api.sdknavigatebypathresponse.path.md) | <code>string</code> |  |
-|  [success](./api.sdknavigatebypathresponse.success.md) | <code>boolean</code> |  |
+|  [error](./api.sdknavigatebypathresponse.error.md) | <code>any</code> | potential error |
+|  [path](./api.sdknavigatebypathresponse.path.md) | <code>string</code> | path navigated to |
+|  [success](./api.sdknavigatebypathresponse.success.md) | <code>boolean</code> | success of the operation |
 

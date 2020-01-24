@@ -33,7 +33,7 @@ import { cancelExecuteLater, executeLater } from './../idle/idle';
 import { JSONValue } from './../json/json.utils';
 import { isNotNil, isObservable } from './../predicates/predicates';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 /**
  * Binds to the next function of a subject
  *

@@ -16,6 +16,6 @@ export interface SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [id](./api.sdkmessagepayload.id.md) | <code>string</code> |  |
-|  [type](./api.sdkmessagepayload.type.md) | <code>string</code> |  |
+|  [id](./api.sdkmessagepayload.id.md) | <code>string</code> | event identifier, identifying a potential response |
+|  [type](./api.sdkmessagepayload.type.md) | <code>string</code> | the event type |
 

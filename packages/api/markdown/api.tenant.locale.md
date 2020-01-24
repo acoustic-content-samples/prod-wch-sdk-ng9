@@ -4,6 +4,8 @@
 
 ## Tenant.locale property
 
+The locale the UI is shown in
+
 <b>Signature:</b>
 
 ```typescript

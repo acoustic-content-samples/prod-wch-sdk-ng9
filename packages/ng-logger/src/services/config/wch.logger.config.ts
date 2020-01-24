@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { Injectable } from '@angular/core';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
 

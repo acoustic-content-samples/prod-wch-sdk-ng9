@@ -4,6 +4,8 @@
 
 ## SdkMessagePayload.id property
 
+event identifier, identifying a potential response
+
 <b>Signature:</b>
 
 ```typescript

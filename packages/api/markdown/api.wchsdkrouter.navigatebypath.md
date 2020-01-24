@@ -4,6 +4,8 @@
 
 ## WchSdkRouter.navigateByPath property
 
+public APIs
+
 <b>Signature:</b>
 
 ```typescript

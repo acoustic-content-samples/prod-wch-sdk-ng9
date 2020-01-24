@@ -4,6 +4,8 @@
 
 ## AccessorType type
 
+the accessor
+
 <b>Signature:</b>
 
 ```typescript

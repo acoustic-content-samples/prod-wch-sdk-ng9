@@ -16,5 +16,5 @@ export interface SdkSubscribeEventResponse extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [handle](./api.sdksubscribeeventresponse.handle.md) | <code>string</code> |  |
+|  [handle](./api.sdksubscribeeventresponse.handle.md) | <code>string</code> | handle, unsubscribe using this handle |
 

@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { arrayPush } from "./../js/js.utils";
 
 // shortcut to math functions

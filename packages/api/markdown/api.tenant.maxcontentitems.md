@@ -4,6 +4,8 @@
 
 ## Tenant.maxContentItems property
 
+Max content items the tenant can have based on plan purchased
+
 <b>Signature:</b>
 
 ```typescript

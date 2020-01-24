@@ -1,7 +1,9 @@
 import { RenderingContextV2 } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 
-// the processor converts the context into a string
+/**
+ * the processor converts the context into a string
+ */
 export type HandlebarsProcessor = (aContext: RenderingContextV2) => string;
 
 /**

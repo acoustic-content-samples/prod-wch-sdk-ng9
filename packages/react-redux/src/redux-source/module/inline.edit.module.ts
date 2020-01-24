@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { InlineEditSelectionProvider } from '@acoustic-content-sdk/edit-api';
 import {

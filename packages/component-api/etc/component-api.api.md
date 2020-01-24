@@ -79,7 +79,7 @@ export interface DeliveryTypeResolver {
     getDeliveryType(aID: string): Observable<DeliveryType>;
 }
 
-// @public (undocumented)
+// @public
 export type HandlebarsProcessor = (aContext: RenderingContextV2) => string;
 
 // @public

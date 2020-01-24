@@ -4,6 +4,8 @@
 
 ## component-edit package
 
+Framework independent collection of utilities to implement inline edit.
+
 ## Classes
 
 |  Class | Description |

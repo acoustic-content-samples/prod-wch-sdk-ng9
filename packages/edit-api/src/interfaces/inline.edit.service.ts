@@ -1,10 +1,12 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { RenderingContext } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 
 import { EventTargetLike } from './../provider/inline.edit.provider';
 
-// the accessor
+/**
+ * the accessor
+ */
 export type AccessorType = string | null;
 
 /**

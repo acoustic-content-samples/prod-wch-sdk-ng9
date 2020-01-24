@@ -14,6 +14,6 @@ export interface SdkNavigateByPathEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [path](./api.sdknavigatebypathevent.path.md) | <code>string</code> |  |
-|  [type](./api.sdknavigatebypathevent.type.md) | <code>'WchSdk.router.navigateByPath'</code> |  |
+|  [path](./api.sdknavigatebypathevent.path.md) | <code>string</code> | path to navigate to |
+|  [type](./api.sdknavigatebypathevent.type.md) | <code>'WchSdk.router.navigateByPath'</code> | the event type |
 

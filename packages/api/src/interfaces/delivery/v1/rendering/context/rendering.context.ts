@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { AuthoringSelectedLayout } from '../../../../authoring/v1/layout/layout';
 import { Layouts } from '../../layout/layout';
 import { ELEMENT_TYPE } from './../../content/elements';
@@ -250,7 +250,9 @@ export interface MultiDateElement extends DateElement {
 export interface Category {
   readonly categoryIds?: string[];
   readonly categories?: string[];
-  // extension for the local rendering context for convenience
+  /**
+   * extension for the local rendering context for convenience
+   */
   readonly categoryPaths?: string[][];
 }
 
@@ -276,7 +278,9 @@ export interface Asset {
   readonly fileName: string;
   readonly mediaType: string;
   readonly altText?: string;
-  // added by delivery
+  /**
+   * added by delivery
+   */
   readonly width: number;
   readonly height: number;
 }
@@ -349,7 +353,9 @@ export interface Rendition {
   readonly renditionId: string;
   readonly source: string;
   readonly transform?: any;
-  // added by delivery
+  /**
+   * added by delivery
+   */
   readonly url: string;
   readonly width: number;
   readonly height: number;
@@ -475,7 +481,9 @@ export type SimpleType =
 export type GroupType = ElementMap<SimpleType>;
 
 export interface RenderingContext extends ContentItemWithLayout {
-  // typings
+  /**
+   * typings
+   */
   readonly product?: ElementMap<string>;
   readonly products?: ElementMap<string[]>;
   readonly text?: ElementMap<string>;

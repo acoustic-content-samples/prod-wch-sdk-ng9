@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { Tree } from '@angular-devkit/schematics';
 import { isNotNil, opShareLast, rxPipe } from '@acoustic-content-sdk/utils';
 import { join, normalize } from 'path';

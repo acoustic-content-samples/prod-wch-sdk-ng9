@@ -4,6 +4,8 @@
 
 ## ContentPublishApproval.enabled property
 
+True if mandatory approval is enabled
+
 <b>Signature:</b>
 
 ```typescript

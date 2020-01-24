@@ -20,5 +20,5 @@ export interface Category
 |  --- | --- | --- |
 |  [categories](./api.category.categories.md) | <code>string[]</code> |  |
 |  [categoryIds](./api.category.categoryids.md) | <code>string[]</code> |  |
-|  [categoryPaths](./api.category.categorypaths.md) | <code>string[][]</code> |  |
+|  [categoryPaths](./api.category.categorypaths.md) | <code>string[][]</code> | extension for the local rendering context for convenience |
 

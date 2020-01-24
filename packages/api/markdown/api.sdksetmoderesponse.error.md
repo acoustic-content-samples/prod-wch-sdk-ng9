@@ -4,6 +4,8 @@
 
 ## SdkSetModeResponse.error property
 
+potential error
+
 <b>Signature:</b>
 
 ```typescript

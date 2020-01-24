@@ -4,6 +4,8 @@
 
 ## Tenant.maxDataTransfer property
 
+Max amount of data transfer the tenant has per month, based on plan purchased
+
 <b>Signature:</b>
 
 ```typescript

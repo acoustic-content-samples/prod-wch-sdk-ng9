@@ -32,7 +32,7 @@ import {
   isString
 } from './../predicates/predicates';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 
 // removes starting and trailing slashes
 const SLASH_REGEXP = /^(?:\/)*(.*?)(?:\/)*$/;
@@ -138,7 +138,7 @@ const _cloneURL: UnaryFunction<URL, URL> = ternary(
   identity
 );
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 const encode = encodeURIComponent;
 const decode = decodeURIComponent;
 

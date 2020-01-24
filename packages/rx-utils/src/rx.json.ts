@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { readFile, writeFile } from 'graceful-fs';
 import { getType } from 'mime';
 import { Observable, Observer } from 'rxjs';

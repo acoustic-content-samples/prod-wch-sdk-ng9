@@ -4,15 +4,7 @@
 
 ## AbstractLifeCycleComponent class
 
-Base class that allows to register life cycle hooks. This class is supposed to be subclassed before use.
-
-The 'ngXXX' methods override the methods from the Angular life cycle interfaces. If you overridde any of these methods make sure to call the super method.
-
-The 'onXXX' methods expose observables that will be triggered when the life cycle method occurs. This is a convenient way to register hooks in the constructor of a subclass without having to override any method.
-
-The `onDestroy$` observable is especially useful, since it can be used as a termination signal for automatic unsubscriptions via the [takeUntil](http://reactivex.io/documentation/operators/takeuntil.html) operation.
-
-Note that hooks such as `onInit$` and `onDestroy$` only fire once. If you depend on such a hook in an observable chain more than once make sure to share the emissions (typically via `shareReplay` )
+tslint:disable:no-conflicting-lifecycle
 
 <b>Signature:</b>
 

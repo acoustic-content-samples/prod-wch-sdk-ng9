@@ -1,4 +1,11 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
+
+/**
+ * Interfaces and constants to support the Acoustic sites SDK and related modules.
+ *
+ * @packageDocumentation
+ */
+
 export * from './interfaces/authoring/v1/asset/asset.item';
 export * from './interfaces/authoring/v1/base.item';
 export * from './interfaces/authoring/v1/content/content.item';

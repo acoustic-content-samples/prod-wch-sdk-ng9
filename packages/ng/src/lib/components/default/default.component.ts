@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 @Component({
   selector: 'wch-default',
   templateUrl: './default.component.html',

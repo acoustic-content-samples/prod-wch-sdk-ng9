@@ -4,6 +4,8 @@
 
 ## api package
 
+Interfaces and constants to support the Acoustic sites SDK and related modules.
+
 ## Enumerations
 
 |  Enumeration | Description |
@@ -328,7 +330,7 @@
 |  [MultiDeliveryElements](./api.multideliveryelements.md) |  |
 |  [MultiRenderingContextElements](./api.multirenderingcontextelements.md) |  |
 |  [QueryInput](./api.queryinput.md) |  |
-|  [QueryValue](./api.queryvalue.md) |  |
+|  [QueryValue](./api.queryvalue.md) | acceptable values for |
 |  [RenderingContextElements](./api.renderingcontextelements.md) |  |
 |  [SdkMessageHandlerCallback](./api.sdkmessagehandlercallback.md) |  |
 |  [SimpleType](./api.simpletype.md) |  |

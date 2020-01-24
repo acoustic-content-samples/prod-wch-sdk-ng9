@@ -327,7 +327,7 @@ export const WCH_CONTEXT_SEED_RESOLVER: Required<import("react").Context<SeedRes
 // @public
 export const WCH_CONTEXT_URL_CONFIG: Required<import("react").Context<Observable<UrlConfig>>>;
 
-// @public (undocumented)
+// @public
 export const WCH_CONTEXT_WINDOW: Required<import("react").Context<WindowType>>;
 
 // @public (undocumented)

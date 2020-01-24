@@ -68,7 +68,7 @@ import {
   WchDefaultPlaceholderText
 } from './../../utils/placeholder';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 const LOGGER = 'AbstractWchEditableDirective';
 

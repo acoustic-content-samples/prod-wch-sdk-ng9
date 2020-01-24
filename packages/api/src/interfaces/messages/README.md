@@ -48,7 +48,9 @@ var msg = {
 	id: 'someid'
 };
 
-// use a message channel to receive the responses
+/**
+  * use a message channel to receive the responses
+  */
 var channel = new MessageChannel();
 
 /** Perform  the subscription, transfer one end of the channel to the SDK.
@@ -62,10 +64,14 @@ myframe.contentWindow.postMessage(msg, "http://localhost:4200", [channel.port2])
  * and a response sending the subscription handle, so we can unsubscribe later.
  */
 channel.port1.addEventListener('message', msg => {
-  // check for the message type
+  /**
+  * check for the message type
+  */
   const data = msg.data;
   if (data.type === 'WchSdk.router.activeRoute') {
-    // log the active route
+    /**
+  * log the active route
+  */
 	console.log('navigation in iframe', data.page.route);
   } else
   if (data.type === 'WchSdk.router.activeRoute.subscribeResponse') {
@@ -73,6 +79,8 @@ channel.port1.addEventListener('message', msg => {
   }
 
 });
-// start the bi-directional communication
+/**
+  * start the bi-directional communication
+  */
 channel.port1.start();
 ```

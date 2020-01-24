@@ -1364,10 +1364,10 @@ export const safeMergeMap: <T, R>(aDelegate: UnaryFunction<T, ObservableInput<R>
 // @public (undocumented)
 export const safeSwitchMap: <T, R>(aDelegate: UnaryFunction<T, ObservableInput<R>>) => OperatorFunction<T, R>;
 
-// @public (undocumented)
+// @public
 export const safeUnsubscribe: (aSubscription: Unsubscribable) => void;
 
-// @public (undocumented)
+// @public
 export const safeUnsubscribeAll: (aSubscriptions: ArrayLike<Unsubscribable>) => void;
 
 // @public (undocumented)
@@ -1553,7 +1553,7 @@ export function wchGetApiUrlInContext(aApiUrl: URL, aBaseURL: URL, aPreviewCheck
 // @public
 export function wchGetBaseURL(aDocument?: Document, aWindow?: Window): URL;
 
-// @public (undocumented)
+// @public
 export function wchGetHubInfoFromBaseURL(aBaseURL: URL): HubInfo;
 
 // @public

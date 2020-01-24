@@ -17,7 +17,7 @@ import { rxPipe } from './../rx/rx.utils';
 
 const LOGGER = 'http.utils';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 export interface HttpOptions {
   // check if we shoud send the request with credentials
   withCredentials: boolean;

@@ -34,7 +34,7 @@ export interface RenderingContext extends ContentItemWithLayout
 |  [numbers](./api.renderingcontext.numbers.md) | <code>ElementMap&lt;number[]&gt;</code> |  |
 |  [optionselection](./api.renderingcontext.optionselection.md) | <code>ElementMap&lt;OptionSelection&gt;</code> |  |
 |  [optionselections](./api.renderingcontext.optionselections.md) | <code>ElementMap&lt;OptionSelection[]&gt;</code> |  |
-|  [product](./api.renderingcontext.product.md) | <code>ElementMap&lt;string&gt;</code> |  |
+|  [product](./api.renderingcontext.product.md) | <code>ElementMap&lt;string&gt;</code> | typings |
 |  [products](./api.renderingcontext.products.md) | <code>ElementMap&lt;string[]&gt;</code> |  |
 |  [reference](./api.renderingcontext.reference.md) | <code>ElementMap&lt;RenderingContext&gt;</code> |  |
 |  [references](./api.renderingcontext.references.md) | <code>ElementMap&lt;RenderingContext[]&gt;</code> |  |

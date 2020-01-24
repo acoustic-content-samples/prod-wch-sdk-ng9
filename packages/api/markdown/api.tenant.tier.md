@@ -4,6 +4,8 @@
 
 ## Tenant.tier property
 
+Which tier of the product the tenant has purchased, set by sbs-provisioning to one of these values; Trial, Base, Standard, Plus
+
 <b>Signature:</b>
 
 ```typescript

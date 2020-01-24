@@ -50,7 +50,7 @@ import { EMPTY_WCH_INLINE_EDIT_SERVICE } from './empty.inlint.edit.service';
 import { getInlineEditSelection } from './inline.edit.selection';
 
 // need this as a workaround
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 const LOGGER = 'AbstractWchInlineEditService';
 
 /**

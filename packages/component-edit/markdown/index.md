@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/component-edit](./component-edit.md) |  |
+|  [@acoustic-content-sdk/component-edit](./component-edit.md) | Framework independent collection of utilities to implement inline edit. |
 

@@ -4,6 +4,8 @@
 
 ## WchSdkVersion.version property
 
+version number of the SDK
+
 <b>Signature:</b>
 
 ```typescript

@@ -4,6 +4,8 @@
 
 ## Tenant.maxUploadSizeVideo property
 
+Max upload size for videos (if useSingleUploadSize is false)
+
 <b>Signature:</b>
 
 ```typescript

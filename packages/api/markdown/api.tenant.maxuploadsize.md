@@ -4,6 +4,8 @@
 
 ## Tenant.maxUploadSize property
 
+Max upload size - should apply to files/images/audio/video unless useSingleUploadSize is false in which case the individual max uploads apply
+
 <b>Signature:</b>
 
 ```typescript

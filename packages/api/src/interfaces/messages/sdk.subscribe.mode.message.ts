@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { SdkMessagePayload } from './messages';
 import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
 
@@ -7,13 +7,15 @@ import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
  */
 export const SDK_SUBSCRIBE_MODE_EVENT_TYPE = 'WchSdk.mode.subscribe';
 export interface SdkSubscribeModeEvent extends SdkMessagePayload {
-    // the event type
-    type: 'WchSdk.mode.subscribe';
+  /**
+   * the event type
+   */
+  type: typeof SDK_SUBSCRIBE_MODE_EVENT_TYPE;
 }
 
 export enum SdkMode {
-    PUBLIC = 'public',
-    PROTECTED = 'protected'
+  PUBLIC = 'public',
+  PROTECTED = 'protected'
 }
 
 /**
@@ -21,11 +23,15 @@ export enum SdkMode {
  */
 export const SDK_MODE_EVENT_TYPE = 'WchSdk.mode';
 export interface SdkModeEvent extends SdkMessagePayload {
-    // the event type
-    type: 'WchSdk.mode';
-    // the mode
-    mode: SdkMode;
+  /**
+   * the event type
+   */
+  type: typeof SDK_MODE_EVENT_TYPE;
+  /**
+   * the mode
+   */
+  mode: SdkMode;
 }
 
-export interface SdkSubscribeModeEventResponse extends SdkSubscribeEventResponse {
-}
+export interface SdkSubscribeModeEventResponse
+  extends SdkSubscribeEventResponse {}

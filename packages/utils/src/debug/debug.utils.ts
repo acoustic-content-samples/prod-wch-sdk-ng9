@@ -1,7 +1,7 @@
 import { assertObject, KEY_DEBUG } from './../js/js.utils';
 import { isNotNil } from './../predicates/predicates';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 let COUNTER = 0;
 
 function _getCounter() {

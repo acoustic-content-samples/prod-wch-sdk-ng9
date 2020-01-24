@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import {
   DeliveryContentItem,
   Logger,
@@ -29,7 +29,7 @@ import {
   RESPONSE_SUFFIX
 } from './message.event';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 /**
  * Constructs the event for the actual route active route
  *

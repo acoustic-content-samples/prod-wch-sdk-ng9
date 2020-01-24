@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { HubInfo } from './../hub-info/hub-info';
 
 /**

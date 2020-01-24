@@ -12,7 +12,7 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { LayoutComponentDirective } from './../decorators/layout/layout.directive';
 import { createSymbol } from './symbol';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 const EMPTY_ARRAY: string[] = [];
 const REFLECT_ANNOTATIONS = '__annotations__';

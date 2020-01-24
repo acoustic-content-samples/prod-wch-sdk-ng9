@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { LoggerFactory } from '@acoustic-content-sdk/api';
 import { isDevMode } from '@acoustic-content-sdk/react-utils';
 import {

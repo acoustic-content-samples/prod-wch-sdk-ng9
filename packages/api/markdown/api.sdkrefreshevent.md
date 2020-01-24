@@ -14,5 +14,5 @@ export interface SdkRefreshEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [type](./api.sdkrefreshevent.type.md) | <code>'WchSdk.refresh'</code> |  |
+|  [type](./api.sdkrefreshevent.type.md) | <code>'WchSdk.refresh'</code> | the event type |
 

@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { identity, noop } from 'rxjs';
 
 /** This is supposed to work via loose-envify */

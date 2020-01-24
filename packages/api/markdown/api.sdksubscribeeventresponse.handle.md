@@ -4,6 +4,8 @@
 
 ## SdkSubscribeEventResponse.handle property
 
+handle, unsubscribe using this handle
+
 <b>Signature:</b>
 
 ```typescript

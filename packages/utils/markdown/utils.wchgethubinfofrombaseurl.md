@@ -4,6 +4,8 @@
 
 ## wchGetHubInfoFromBaseURL() function
 
+Decodes the hub info from the base URL. This assumes that the application is served from a location in WCH.
+
 <b>Signature:</b>
 
 ```typescript

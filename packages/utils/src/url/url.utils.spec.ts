@@ -16,7 +16,7 @@ import {
   urlSlashes
 } from './url.utils';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 describe('url.utils', () => {
   function testURL(aUrlString: string) {
     // parse the beast

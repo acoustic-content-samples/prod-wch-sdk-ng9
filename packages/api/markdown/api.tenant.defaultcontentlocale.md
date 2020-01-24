@@ -4,6 +4,8 @@
 
 ## Tenant.defaultContentLocale property
 
+The default locale for content
+
 <b>Signature:</b>
 
 ```typescript

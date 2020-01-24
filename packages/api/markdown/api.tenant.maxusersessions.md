@@ -4,6 +4,8 @@
 
 ## Tenant.maxUserSessions property
 
+Max number of User sessions
+
 <b>Signature:</b>
 
 ```typescript

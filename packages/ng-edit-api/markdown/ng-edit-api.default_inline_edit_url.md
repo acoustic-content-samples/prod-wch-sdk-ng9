@@ -4,6 +4,8 @@
 
 ## DEFAULT\_INLINE\_EDIT\_URL variable
 
+default value for the inline edit URL
+
 <b>Signature:</b>
 
 ```typescript

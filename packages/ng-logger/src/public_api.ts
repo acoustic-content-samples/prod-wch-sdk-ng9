@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 /**
  * Implementation of a logger service based on {@link https://www.npmjs.com/package/ng2-logger | ng2-logger}.

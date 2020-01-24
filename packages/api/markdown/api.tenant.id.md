@@ -4,6 +4,8 @@
 
 ## Tenant.id property
 
+read-only - UUID of the domain
+
 <b>Signature:</b>
 
 ```typescript

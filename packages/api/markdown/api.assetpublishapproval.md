@@ -14,6 +14,6 @@ export interface AssetPublishApproval
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [enabled](./api.assetpublishapproval.enabled.md) | <code>boolean</code> |  |
+|  [enabled](./api.assetpublishapproval.enabled.md) | <code>boolean</code> | True if mandatory approval is enabled |
 |  [exemptAssetTypes](./api.assetpublishapproval.exemptassettypes.md) | <code>string[]</code> |  |
 

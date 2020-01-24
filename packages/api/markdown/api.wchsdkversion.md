@@ -16,6 +16,6 @@ export interface WchSdkVersion
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [build](./api.wchsdkversion.build.md) | <code>Date</code> |  |
-|  [version](./api.wchsdkversion.version.md) | <code>{</code><br/><code>        readonly major: string;</code><br/><code>        readonly minor: string;</code><br/><code>        readonly patch: string;</code><br/><code>    }</code> |  |
+|  [build](./api.wchsdkversion.build.md) | <code>Date</code> | build data of the SDK |
+|  [version](./api.wchsdkversion.version.md) | <code>{</code><br/><code>        readonly major: string;</code><br/><code>        readonly minor: string;</code><br/><code>        readonly patch: string;</code><br/><code>    }</code> | version number of the SDK |
 

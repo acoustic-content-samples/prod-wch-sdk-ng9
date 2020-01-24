@@ -4,8 +4,10 @@
 
 ## SdkModeEvent.type property
 
+the event type
+
 <b>Signature:</b>
 
 ```typescript
-type: 'WchSdk.mode';
+type: typeof SDK_MODE_EVENT_TYPE;
 ```

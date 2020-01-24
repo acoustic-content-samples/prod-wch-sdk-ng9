@@ -15,5 +15,5 @@ export interface SdkSubscribeRouteEvent extends SdkMessagePayload
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [route](./api.sdksubscriberouteevent.route.md) | <code>string &#124; string[]</code> | The desired route. If the route is a string, then it is the ESCAPED path. If it is a string array, then each array element contains the UNESCAPED path segment |
-|  [type](./api.sdksubscriberouteevent.type.md) | <code>'WchSdk.router.route.subscribe'</code> |  |
+|  [type](./api.sdksubscriberouteevent.type.md) | <code>'WchSdk.router.route.subscribe'</code> | the event type |
 

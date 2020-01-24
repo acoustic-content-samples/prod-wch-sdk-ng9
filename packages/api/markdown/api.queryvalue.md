@@ -4,6 +4,8 @@
 
 ## QueryValue type
 
+acceptable values for
+
 <b>Signature:</b>
 
 ```typescript

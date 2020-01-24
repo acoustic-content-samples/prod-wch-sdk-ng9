@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { AUTHORING_CONTENT_ITEM_KIND } from '../../../authoring/v1/content/content.item';
 import { DraftStatus } from '../../../status';
 import { BaseDeliveryItem } from './../base.item';

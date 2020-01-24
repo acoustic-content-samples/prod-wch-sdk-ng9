@@ -204,7 +204,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [wchGetApiUrlFromResourceURL(aResourceURL)](./utils.wchgetapiurlfromresourceurl.md) | Computes the API URL given the resource URL |
 |  [wchGetApiUrlInContext(aApiUrl, aBaseURL, aPreviewCheck)](./utils.wchgetapiurlincontext.md) | Constructs a API URL based on a context check callback |
 |  [wchGetBaseURL(aDocument, aWindow)](./utils.wchgetbaseurl.md) | Decodes the base URL. The base URL is the URL that all routing URLs will start with and will be resolved as relative. The URL ends with a slash character. See . |
-|  [wchGetHubInfoFromBaseURL(aBaseURL)](./utils.wchgethubinfofrombaseurl.md) |  |
+|  [wchGetHubInfoFromBaseURL(aBaseURL)](./utils.wchgethubinfofrombaseurl.md) | Decodes the hub info from the base URL. This assumes that the application is served from a location in WCH. |
 |  [wchGetHubInfoFromLinks(aDocument, aWindow)](./utils.wchgethubinfofromlinks.md) | Decodes the hub info from links in the document |
 |  [wchGetHubInfoUrlProvider(aApiUrl, aPreviewCheck)](./utils.wchgethubinfourlprovider.md) | Exposes a provider based on a API URL and a preview callback |
 |  [wchGetLayout(aLayoutMode, aContext)](./utils.wchgetlayout.md) | Returns the layout object for a particular mode for the rendering context |
@@ -412,8 +412,8 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [rxSelectProperty](./utils.rxselectproperty.md) | Memoized selector for a particular property |
 |  [safeMergeMap](./utils.safemergemap.md) |  |
 |  [safeSwitchMap](./utils.safeswitchmap.md) |  |
-|  [safeUnsubscribe](./utils.safeunsubscribe.md) |  |
-|  [safeUnsubscribeAll](./utils.safeunsubscribeall.md) |  |
+|  [safeUnsubscribe](./utils.safeunsubscribe.md) | Unsubscribes if the subscription exists. |
+|  [safeUnsubscribeAll](./utils.safeunsubscribeall.md) | Unsubscribes if the subscription exists. |
 |  [SEARCH\_MAX\_ROWS](./utils.search_max_rows.md) |  |
 |  [selectApiUrl](./utils.selectapiurl.md) |  |
 |  [selectBaseUrl](./utils.selectbaseurl.md) |  |

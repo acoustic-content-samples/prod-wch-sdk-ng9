@@ -4,6 +4,8 @@
 
 ## Tenant.maxStorageSize property
 
+Max amount of storage the tenant has, based on plan purchased
+
 <b>Signature:</b>
 
 ```typescript

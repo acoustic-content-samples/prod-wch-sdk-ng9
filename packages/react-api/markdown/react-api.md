@@ -72,7 +72,7 @@ Collection of APIs and constants for the React SDK
 |  [WCH\_CONTEXT\_RESOURCE\_URL](./react-api.wch_context_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
 |  [WCH\_CONTEXT\_SEED\_RESOLVER](./react-api.wch_context_seed_resolver.md) | Injection token for the SeedResolver |
 |  [WCH\_CONTEXT\_URL\_CONFIG](./react-api.wch_context_url_config.md) | Injection token for the UrlConfig |
-|  [WCH\_CONTEXT\_WINDOW](./react-api.wch_context_window.md) |  |
+|  [WCH\_CONTEXT\_WINDOW](./react-api.wch_context_window.md) | Create a new injection token for injecting the window into a component. |
 |  [WCH\_RC\_INTERCEPTOR\_TOKEN](./react-api.wch_rc_interceptor_token.md) |  |
 
 ## Type Aliases

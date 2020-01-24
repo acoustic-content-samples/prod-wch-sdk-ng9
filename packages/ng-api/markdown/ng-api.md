@@ -50,5 +50,5 @@ Collection of APIs and constants for the Angular SDK
 |  [WCH\_TOKEN\_RESOURCE\_URL](./ng-api.wch_token_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
 |  [WCH\_TOKEN\_SEED\_RESOLVER](./ng-api.wch_token_seed_resolver.md) | Injection token for the page service |
 |  [WCH\_TOKEN\_URL\_CONFIG](./ng-api.wch_token_url_config.md) | Injection token for the url config |
-|  [WCH\_TOKEN\_WINDOW](./ng-api.wch_token_window.md) |  |
+|  [WCH\_TOKEN\_WINDOW](./ng-api.wch_token_window.md) | Create a new injection token for injecting the window into a component. |
 

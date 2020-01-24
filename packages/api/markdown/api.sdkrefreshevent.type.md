@@ -4,6 +4,8 @@
 
 ## SdkRefreshEvent.type property
 
+the event type
+
 <b>Signature:</b>
 
 ```typescript

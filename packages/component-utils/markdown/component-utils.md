@@ -4,6 +4,8 @@
 
 ## component-utils package
 
+Framework independent collection of utility functions to implement services and components for sites next.
+
 ## Classes
 
 |  Class | Description |

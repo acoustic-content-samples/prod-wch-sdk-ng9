@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { move, MoveOptions } from 'fs-extra';
 import { bindNodeCallback, Observable } from 'rxjs';
 import { mapTo } from 'rxjs/operators';

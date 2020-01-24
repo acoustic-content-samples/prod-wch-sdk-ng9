@@ -4,7 +4,7 @@ import { observeOn, subscribeOn, tap } from 'rxjs/operators';
 
 import { createZoneSchedulers } from './../../utils/rx.utils';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 /**
  * Service that exposes schedulers and operators that allow client code
  * to run inside or outside of angular zone.

@@ -4,6 +4,8 @@
 
 ## Asset.width property
 
+added by delivery
+
 <b>Signature:</b>
 
 ```typescript

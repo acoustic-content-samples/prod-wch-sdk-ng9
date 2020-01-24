@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { RenderingContextProvider } from '@acoustic-content-sdk/api';
 import { identity, isObservable, UnaryFunction } from 'rxjs';
 

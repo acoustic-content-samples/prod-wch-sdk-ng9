@@ -4,6 +4,8 @@
 
 ## Tenant.maxUploadSizeFiles property
 
+Max upload size for files (if useSingleUploadSize is false)
+
 <b>Signature:</b>
 
 ```typescript

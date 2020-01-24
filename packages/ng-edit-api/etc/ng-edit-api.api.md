@@ -22,10 +22,10 @@ import { WchInlineEditProviderV2 } from '@acoustic-content-sdk/edit-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
-// @public (undocumented)
+// @public
 export const DEFAULT_DEBUG_PLACEHOLDERS = false;
 
-// @public (undocumented)
+// @public
 export const DEFAULT_INLINE_EDIT_URL = "${authoringUIBaseUrl.protocol}//${authoringUIBaseUrl.host}/authoring-sites-ui/inline-edit/inline-edit.js";
 
 // @public (undocumented)

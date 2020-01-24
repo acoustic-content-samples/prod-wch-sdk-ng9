@@ -16,5 +16,5 @@ export interface WchSdkRouter
 |  --- | --- | --- |
 |  [activeRenderingContext](./api.wchsdkrouter.activerenderingcontext.md) | <code>() =&gt; Observable&lt;RenderingContext&gt;</code> | Returns an observable that represents the active rendering context |
 |  [activeRoute](./api.wchsdkrouter.activeroute.md) | <code>() =&gt; Observable&lt;SitePage&gt;</code> | Returns an observable that represents the active route |
-|  [navigateByPath](./api.wchsdkrouter.navigatebypath.md) | <code>(aPath: string) =&gt; PromiseLike&lt;boolean&gt;</code> |  |
+|  [navigateByPath](./api.wchsdkrouter.navigatebypath.md) | <code>(aPath: string) =&gt; PromiseLike&lt;boolean&gt;</code> | public APIs |
 

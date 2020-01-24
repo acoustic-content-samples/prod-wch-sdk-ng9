@@ -44,7 +44,7 @@
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [AccessorType](./edit-api.accessortype.md) |  |
+|  [AccessorType](./edit-api.accessortype.md) | the accessor |
 |  [EventTargetLike](./edit-api.eventtargetlike.md) |  |
 |  [WchInlineEditRegistration](./edit-api.wchinlineeditregistration.md) |  |
 |  [WchInlineEditRegistrationResult](./edit-api.wchinlineeditregistrationresult.md) |  |

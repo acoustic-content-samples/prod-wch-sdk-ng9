@@ -4,6 +4,8 @@
 
 ## Tenant.capability property
 
+indicates the capabilities supported by a tenant
+
 <b>Signature:</b>
 
 ```typescript

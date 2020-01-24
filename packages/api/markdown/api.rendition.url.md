@@ -4,6 +4,8 @@
 
 ## Rendition.url property
 
+added by delivery
+
 <b>Signature:</b>
 
 ```typescript

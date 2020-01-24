@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { DeliveryContentItem } from './../delivery/v2/content.item';
 import { SdkMessagePayload } from './messages';
 import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
@@ -8,7 +8,9 @@ import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
  */
 export const SDK_SUBSCRIBE_ROUTE_EVENT_TYPE = 'WchSdk.router.route.subscribe';
 export interface SdkSubscribeRouteEvent extends SdkMessagePayload {
-  // the event type
+  /**
+   * the event type
+   */
   type: 'WchSdk.router.route.subscribe';
   /**
    * The desired route. If the route is a string, then it is the ESCAPED path. If it is a string
@@ -22,11 +24,17 @@ export interface SdkSubscribeRouteEvent extends SdkMessagePayload {
  */
 export const SDK_ROUTE_EVENT_TYPE = 'WchSdk.router.route';
 export interface SdkRouteEvent extends SdkMessagePayload {
-  // the event type
+  /**
+   * the event type
+   */
   type: 'WchSdk.router.route';
-  // the route to subscribe to
+  /**
+   * the route to subscribe to
+   */
   route: string;
-  // the page
+  /**
+   * the page
+   */
   page: DeliveryContentItem;
 }
 

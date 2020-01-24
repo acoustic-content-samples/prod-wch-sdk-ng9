@@ -4,6 +4,8 @@
 
 ## SdkNavigateByPathEvent.path property
 
+path to navigate to
+
 <b>Signature:</b>
 
 ```typescript

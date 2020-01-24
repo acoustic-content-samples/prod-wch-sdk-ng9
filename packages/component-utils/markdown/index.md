@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/component-utils](./component-utils.md) |  |
+|  [@acoustic-content-sdk/component-utils](./component-utils.md) | Framework independent collection of utility functions to implement services and components for sites next. |
 

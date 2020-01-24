@@ -22,7 +22,7 @@ import { isNil, isNotNil } from './../predicates/predicates';
 import { urlSlashes } from './../url/url.utils';
 import { UNDEFINED_SITE_CONTEXT } from './sites.constants';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 const _decodeURIComponent = decodeURIComponent;
 const _encodeURIComponent = encodeURIComponent;
 
@@ -100,7 +100,7 @@ function _pageArrayEquals(
   return arrayEquals(aLeft, aRight, _pageEquals);
 }
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 const LOGGER = 'SiteUtils';
 
 // define our map to subject

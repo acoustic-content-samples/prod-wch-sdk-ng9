@@ -4,6 +4,8 @@
 
 ## SdkNavigateByPathResponse.success property
 
+success of the operation
+
 <b>Signature:</b>
 
 ```typescript

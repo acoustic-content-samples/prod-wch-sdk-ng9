@@ -1,6 +1,6 @@
 import { isFunction } from './../predicates/predicates';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 
 export type Generator<T> = () => T | null | undefined;
 

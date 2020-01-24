@@ -18,6 +18,6 @@ export interface Rendition
 |  [renditionId](./api.rendition.renditionid.md) | <code>string</code> |  |
 |  [source](./api.rendition.source.md) | <code>string</code> |  |
 |  [transform](./api.rendition.transform.md) | <code>any</code> |  |
-|  [url](./api.rendition.url.md) | <code>string</code> |  |
+|  [url](./api.rendition.url.md) | <code>string</code> | added by delivery |
 |  [width](./api.rendition.width.md) | <code>number</code> |  |
 

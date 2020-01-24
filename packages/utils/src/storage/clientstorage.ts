@@ -2,7 +2,7 @@ import { UNDEFINED_TYPE } from './../js/js.utils';
 import { jsonParse, jsonStringify, JSONValue } from './../json/json.utils';
 import { isNil, isNotNil } from './../predicates/predicates';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 export interface ClientStorage {
   get(aKey: string): JSONValue | null | undefined;

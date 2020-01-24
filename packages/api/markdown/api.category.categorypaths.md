@@ -4,6 +4,8 @@
 
 ## Category.categoryPaths property
 
+extension for the local rendering context for convenience
+
 <b>Signature:</b>
 
 ```typescript

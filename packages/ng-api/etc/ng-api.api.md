@@ -154,7 +154,7 @@ export const WCH_TOKEN_SEED_RESOLVER: InjectionToken<SeedResolver>;
 // @public
 export const WCH_TOKEN_URL_CONFIG: InjectionToken<Observable<UrlConfig>>;
 
-// @public (undocumented)
+// @public
 export const WCH_TOKEN_WINDOW: InjectionToken<WindowType>;
 
 // @public

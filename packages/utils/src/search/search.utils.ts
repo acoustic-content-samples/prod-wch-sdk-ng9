@@ -1,7 +1,7 @@
 import { mapArray } from '../js/js.core';
 import { isNotNil } from '../predicates/predicates';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 
 // maximum allowed value of rows
 const _VALUE_MAX_ROWS = 0x7fffffff;

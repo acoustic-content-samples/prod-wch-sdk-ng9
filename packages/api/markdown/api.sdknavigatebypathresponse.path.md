@@ -4,6 +4,8 @@
 
 ## SdkNavigateByPathResponse.path property
 
+path navigated to
+
 <b>Signature:</b>
 
 ```typescript

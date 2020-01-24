@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import {
   Logger,
   RenderingContextV2,
@@ -24,7 +24,7 @@ import {
   RESPONSE_SUFFIX
 } from './message.event';
 
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 /**
  * Constructs a response
  *

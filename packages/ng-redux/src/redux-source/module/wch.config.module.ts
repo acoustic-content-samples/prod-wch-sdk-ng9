@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { createWchConfig } from '@acoustic-content-sdk/component-redux';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
 import { WCH_TOKEN_WCH_CONFIG } from '@acoustic-content-sdk/ng-edit-api';

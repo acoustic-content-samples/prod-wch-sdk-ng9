@@ -21,5 +21,5 @@ export interface Asset
 |  [id](./api.asset.id.md) | <code>string</code> |  |
 |  [mediaType](./api.asset.mediatype.md) | <code>string</code> |  |
 |  [resourceUri](./api.asset.resourceuri.md) | <code>string</code> |  |
-|  [width](./api.asset.width.md) | <code>number</code> |  |
+|  [width](./api.asset.width.md) | <code>number</code> | added by delivery |
 

@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/api](./api.md) |  |
+|  [@acoustic-content-sdk/api](./api.md) | Interfaces and constants to support the Acoustic sites SDK and related modules. |
 

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/api",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Interfaces and constants to support the Acoustic sites SDK and related modules.",
   "keywords": [
     "acoustic",
     "acoustic-content",

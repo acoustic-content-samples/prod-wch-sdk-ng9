@@ -4,6 +4,8 @@
 
 ## Tenant.useSingleUploadSize property
 
+Use the maxUploadSize to cover all uploads or use the individual max upload sizes
+
 <b>Signature:</b>
 
 ```typescript

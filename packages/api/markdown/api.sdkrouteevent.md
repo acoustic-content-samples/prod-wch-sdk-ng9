@@ -14,7 +14,7 @@ export interface SdkRouteEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [page](./api.sdkrouteevent.page.md) | <code>DeliveryContentItem</code> |  |
-|  [route](./api.sdkrouteevent.route.md) | <code>string</code> |  |
-|  [type](./api.sdkrouteevent.type.md) | <code>'WchSdk.router.route'</code> |  |
+|  [page](./api.sdkrouteevent.page.md) | <code>DeliveryContentItem</code> | the page |
+|  [route](./api.sdkrouteevent.route.md) | <code>string</code> | the route to subscribe to |
+|  [type](./api.sdkrouteevent.type.md) | <code>'WchSdk.router.route'</code> | the event type |
 

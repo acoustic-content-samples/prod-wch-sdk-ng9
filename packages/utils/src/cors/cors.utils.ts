@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { Logger } from '@acoustic-content-sdk/api';
 import { NOOP_LOGGER } from './../logger/noop.logger';
 import { isArray, isString } from './../predicates/predicates';

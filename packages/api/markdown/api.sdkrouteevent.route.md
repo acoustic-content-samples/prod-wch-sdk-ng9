@@ -4,6 +4,8 @@
 
 ## SdkRouteEvent.route property
 
+the route to subscribe to
+
 <b>Signature:</b>
 
 ```typescript

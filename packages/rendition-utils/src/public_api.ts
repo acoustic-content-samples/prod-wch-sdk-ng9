@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 export { TRANSPARENT_PIXEL } from './utils/empty.image';
 export {
   createDimension,

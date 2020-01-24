@@ -1,10 +1,10 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { Logger } from '@acoustic-content-sdk/api';
 
 import { NOOP_LOGGER } from './../logger/noop.logger';
 import { perfMeasure } from './../perf/perf.utils';
 
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 export type CacheCallback<V> = (aKey: string, aLogger?: Logger) => V;
 export type CacheAccessor<V> = (
   aKey: string,

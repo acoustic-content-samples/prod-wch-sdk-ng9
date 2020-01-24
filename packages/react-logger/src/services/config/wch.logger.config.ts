@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { createReactContext } from '@acoustic-content-sdk/react-api';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
 

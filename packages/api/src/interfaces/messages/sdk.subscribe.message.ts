@@ -1,12 +1,14 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { SdkMessagePayload } from './messages';
 
 /**
  * Response to a subscription
  */
 export interface SdkSubscribeEventResponse extends SdkMessagePayload {
-    // handle, unsubscribe using this handle
-    handle: string;
+  /**
+   * handle, unsubscribe using this handle
+   */
+  handle: string;
 }
 
 /**
@@ -14,9 +16,12 @@ export interface SdkSubscribeEventResponse extends SdkMessagePayload {
  */
 export const SDK_UNSUBSCRIBE_EVENT_TYPE = 'WchSdk.unsubscribe';
 export interface SdkUnsubscribeEvent extends SdkMessagePayload {
-    // the event type
-    type: 'WchSdk.unsubscribe';
-    // handle to unsubscribe on
-    handle: string;
+  /**
+   * the event type
+   */
+  type: 'WchSdk.unsubscribe';
+  /**
+   * handle to unsubscribe on
+   */
+  handle: string;
 }
-

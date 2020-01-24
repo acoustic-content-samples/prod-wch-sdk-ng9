@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { WCH_PROVIDER_REST_DELIVERY_CONTENT_RESOLVER } from '../content/delivery.content.resolver.module';
 import { WCH_PROVIDER_REST_DELIVERY_LAYOUT_MAPPING_RESOLVER } from '../layout-mapping/delivery.layout.mapping.resolver.module';
 import { WCH_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER } from '../layout/delivery.layout.resolver.module';

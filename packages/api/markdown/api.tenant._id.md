@@ -4,6 +4,9 @@
 
 ## Tenant.\_id property
 
+DEPRECATED - read-only - UUID of the domain. Use 'id' instead of \_id
+
+
 <b>Signature:</b>
 
 ```typescript

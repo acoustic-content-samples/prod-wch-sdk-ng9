@@ -14,6 +14,6 @@ export interface SdkUnsubscribeEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [handle](./api.sdkunsubscribeevent.handle.md) | <code>string</code> |  |
-|  [type](./api.sdkunsubscribeevent.type.md) | <code>'WchSdk.unsubscribe'</code> |  |
+|  [handle](./api.sdkunsubscribeevent.handle.md) | <code>string</code> | handle to unsubscribe on |
+|  [type](./api.sdkunsubscribeevent.type.md) | <code>'WchSdk.unsubscribe'</code> | the event type |
 

@@ -14,6 +14,6 @@ export interface SdkSetModeEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [mode](./api.sdksetmodeevent.mode.md) | <code>SdkMode</code> |  |
-|  [type](./api.sdksetmodeevent.type.md) | <code>'WchSdk.setMode'</code> |  |
+|  [mode](./api.sdksetmodeevent.mode.md) | <code>SdkMode</code> | mode to set |
+|  [type](./api.sdksetmodeevent.type.md) | <code>'WchSdk.setMode'</code> | the event type |
 

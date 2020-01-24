@@ -14,6 +14,6 @@ export interface ContentPublishApproval
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [enabled](./api.contentpublishapproval.enabled.md) | <code>boolean</code> |  |
+|  [enabled](./api.contentpublishapproval.enabled.md) | <code>boolean</code> | True if mandatory approval is enabled |
 |  [exemptContentTypes](./api.contentpublishapproval.exemptcontenttypes.md) | <code>string[]</code> |  |
 

@@ -4,6 +4,8 @@
 
 ## SdkModeEvent.mode property
 
+the mode
+
 <b>Signature:</b>
 
 ```typescript

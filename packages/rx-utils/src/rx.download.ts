@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { createWriteStream } from 'graceful-fs';
 import { getRandom } from 'random-useragent';
 import { get, OptionsWithUrl } from 'request';

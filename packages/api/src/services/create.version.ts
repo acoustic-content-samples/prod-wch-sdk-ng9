@@ -13,18 +13,28 @@ export function createVersion(
   aVersionString: string,
   aBuildDate: string
 ): WchSdkVersion {
-  // parse the version string
+  /**
+   * parse the version string
+   */
   const res = aVersionString.split('.');
   if (res && res.length > 2) {
-    // decompose
+    /**
+     * decompose
+     */
     const [major, minor, patch] = res;
     const version = { major, minor, patch };
-    // build date
+    /**
+     * build date
+     */
     const build = new Date(aBuildDate);
-    // returns the object
+    /**
+     * returns the object
+     */
     return { version, build };
   }
-  // fallback
+  /**
+   * fallback
+   */
   return createVersion('x.y.z', aBuildDate);
 }
 
@@ -35,9 +45,13 @@ export function createVersion(
  * @returns the version string
  */
 export function createVersionString(aVersion: WchSdkVersion): string {
-  // extract the fields
+  /**
+   * extract the fields
+   */
   const { version, build } = aVersion;
   const { major, minor, patch } = version;
-  // expose as a version string
+  /**
+   * expose as a version string
+   */
   return `v${major}.${minor}.${patch} - ${build.toUTCString()}`;
 }

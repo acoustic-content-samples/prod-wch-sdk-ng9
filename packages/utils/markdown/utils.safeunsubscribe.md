@@ -4,6 +4,8 @@
 
 ## safeUnsubscribe variable
 
+Unsubscribes if the subscription exists.
+
 <b>Signature:</b>
 
 ```typescript

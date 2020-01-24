@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import {
   WCH_TOKEN_LOGGER_SERVICE,
   WCH_TOKEN_URL_CONFIG

@@ -14,5 +14,5 @@ export interface SdkSubscribeModeEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [type](./api.sdksubscribemodeevent.type.md) | <code>'WchSdk.mode.subscribe'</code> |  |
+|  [type](./api.sdksubscribemodeevent.type.md) | <code>typeof SDK_SUBSCRIBE_MODE_EVENT_TYPE</code> | the event type |
 

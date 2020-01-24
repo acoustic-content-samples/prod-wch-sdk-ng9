@@ -4,6 +4,8 @@
 
 ## RenderingContext.product property
 
+typings
+
 <b>Signature:</b>
 
 ```typescript

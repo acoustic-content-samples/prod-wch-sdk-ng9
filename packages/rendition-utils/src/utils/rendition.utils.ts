@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { Image, Logger, Rendition } from '@acoustic-content-sdk/api';
 import { cmpNumbers, getProperty, isNotEmpty, isNotNil, isPlainObject, objectKeys } from '@acoustic-content-sdk/utils';
 

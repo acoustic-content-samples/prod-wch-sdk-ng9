@@ -14,5 +14,5 @@ export interface SdkSubscribeActiveRouteEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [type](./api.sdksubscribeactiverouteevent.type.md) | <code>'WchSdk.router.activeRoute.subscribe'</code> |  |
+|  [type](./api.sdksubscribeactiverouteevent.type.md) | <code>'WchSdk.router.activeRoute.subscribe'</code> | the event type |
 

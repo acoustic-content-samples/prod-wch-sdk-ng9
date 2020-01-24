@@ -4,6 +4,8 @@
 
 ## Tenant.locked property
 
+set to true if the tenant is 'locked' and should not have access to the system
+
 <b>Signature:</b>
 
 ```typescript

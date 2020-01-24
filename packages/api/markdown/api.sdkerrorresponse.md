@@ -16,5 +16,5 @@ export interface SdkErrorResponse extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [error](./api.sdkerrorresponse.error.md) | <code>any</code> |  |
+|  [error](./api.sdkerrorresponse.error.md) | <code>any</code> | potential error |
 

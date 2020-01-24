@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2017 */
+/* Copyright IBM Corp. 2017 */
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Image, LoggerService } from '@acoustic-content-sdk/api';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';

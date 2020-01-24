@@ -4,6 +4,8 @@
 
 ## HandlebarsProcessor type
 
+the processor converts the context into a string
+
 <b>Signature:</b>
 
 ```typescript

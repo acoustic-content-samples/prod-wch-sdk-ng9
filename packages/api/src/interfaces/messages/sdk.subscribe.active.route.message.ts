@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { DeliveryContentItem } from './../delivery/v2/content.item';
 import { SdkMessagePayload } from './messages';
 import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
@@ -9,7 +9,9 @@ import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
 export const SDK_SUBSCRIBE_ACTIVE_ROUTE_EVENT_TYPE =
   'WchSdk.router.activeRoute.subscribe';
 export interface SdkSubscribeActiveRouteEvent extends SdkMessagePayload {
-  // the event type
+  /**
+   * the event type
+   */
   type: 'WchSdk.router.activeRoute.subscribe';
 }
 
@@ -18,9 +20,13 @@ export interface SdkSubscribeActiveRouteEvent extends SdkMessagePayload {
  */
 export const SDK_ACTIVE_ROUTE_EVENT_TYPE = 'WchSdk.router.activeRoute';
 export interface SdkActiveRouteEvent extends SdkMessagePayload {
-  // the event type
+  /**
+   * the event type
+   */
   type: 'WchSdk.router.activeRoute';
-  // the page
+  /**
+   * the page
+   */
   page: DeliveryContentItem;
 }
 

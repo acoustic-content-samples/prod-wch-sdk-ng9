@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { SdkMessagePayload } from './messages';
 
 /**
@@ -6,6 +6,8 @@ import { SdkMessagePayload } from './messages';
  */
 export const SDK_REFRESH_EVENT_TYPE = 'WchSdk.refresh';
 export interface SdkRefreshEvent extends SdkMessagePayload {
-    // the event type
-    type: 'WchSdk.refresh';
+  /**
+   * the event type
+   */
+  type: 'WchSdk.refresh';
 }

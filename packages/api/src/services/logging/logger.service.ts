@@ -1,4 +1,4 @@
-/** Copyright IBM Corp. 2018 */
+/* Copyright IBM Corp. 2018 */
 import { Logger } from './../../interfaces/logging/logger';
 
 /**
@@ -6,12 +6,11 @@ import { Logger } from './../../interfaces/logging/logger';
  * times with the same name will return the same instance of the logger.
  */
 export interface LoggerService {
-
-    /**
-     * Returns a logger for the given name
-     *
-     * $1$2 -$3
-     * @returns the logger singleton for this name
-    */
-    readonly get: (name: string) => Logger;
+  /**
+   * Returns a logger for the given name
+   *
+   * $1$2 -$3
+   * @returns the logger singleton for this name
+   */
+  readonly get: (name: string) => Logger;
 }

@@ -41,7 +41,7 @@ Framework independent collection of APIs and constants
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [HandlebarsProcessor](./component-api.handlebarsprocessor.md) |  |
+|  [HandlebarsProcessor](./component-api.handlebarsprocessor.md) | the processor converts the context into a string |
 |  [RenderingContextInput](./component-api.renderingcontextinput.md) |  |
 |  [WindowType](./component-api.windowtype.md) |  |
 

@@ -14,6 +14,6 @@ export interface SdkActiveRouteEvent extends SdkMessagePayload
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [page](./api.sdkactiverouteevent.page.md) | <code>DeliveryContentItem</code> |  |
-|  [type](./api.sdkactiverouteevent.type.md) | <code>'WchSdk.router.activeRoute'</code> |  |
+|  [page](./api.sdkactiverouteevent.page.md) | <code>DeliveryContentItem</code> | the page |
+|  [type](./api.sdkactiverouteevent.type.md) | <code>'WchSdk.router.activeRoute'</code> | the event type |
 

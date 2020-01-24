@@ -4,8 +4,10 @@
 
 ## SdkSubscribeModeEvent.type property
 
+the event type
+
 <b>Signature:</b>
 
 ```typescript
-type: 'WchSdk.mode.subscribe';
+type: typeof SDK_SUBSCRIBE_MODE_EVENT_TYPE;
 ```
