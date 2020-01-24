@@ -8,6 +8,7 @@ import { generateKeysCommand } from '../commands/generate.keys';
 import { generateLayoutCommand } from '../commands/generate.layout';
 import { generateLayoutsCommand } from '../commands/generate.layouts';
 import { generateMessagesCommand } from '../commands/generate.messages';
+import { generateTypesCommand } from '../commands/generate.types';
 import { versionCommand } from '../commands/version';
 import { VERSION } from '../version';
 
@@ -25,6 +26,7 @@ export function runProgram(aArgs: string[] = argv) {
   generateKeysCommand(program);
   generateDataOverlayCommand(program);
   generateMessagesCommand(program);
+  generateTypesCommand(program);
   canonicalizeAssetsCommand(program);
 
   return program.parse(aArgs);
