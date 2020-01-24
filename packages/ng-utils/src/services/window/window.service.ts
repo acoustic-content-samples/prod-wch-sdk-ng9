@@ -6,7 +6,7 @@ import { ClassProvider, FactoryProvider, PLATFORM_ID } from '@angular/core';
 import { BrowserWindowRef } from './browser.window.ref';
 import { WindowRef } from './window.ref';
 
-/* Create an factory function that returns the native window object. */
+/** Create an factory function that returns the native window object. */
 export function windowFactory(
   browserWindowRef: BrowserWindowRef,
   platformId: Object
@@ -17,18 +17,18 @@ export function windowFactory(
   return new Object();
 }
 
-/* Create a injectable provider for the WindowRef token that uses the BrowserWindowRef class. */
+/** Create a injectable provider for the WindowRef token that uses the BrowserWindowRef class. */
 const browserWindowProvider: ClassProvider = {
   provide: WindowRef,
   useClass: BrowserWindowRef
 };
 
-/* Create an injectable provider that uses the windowFactory function for returning the native window object. */
+/** Create an injectable provider that uses the windowFactory function for returning the native window object. */
 const windowProvider: FactoryProvider = {
   provide: WCH_TOKEN_WINDOW,
   useFactory: windowFactory,
   deps: [WindowRef, PLATFORM_ID]
 };
 
-/* Create an array of providers. */
+/** Create an array of providers. */
 export const WINDOW_PROVIDERS = [browserWindowProvider, windowProvider];

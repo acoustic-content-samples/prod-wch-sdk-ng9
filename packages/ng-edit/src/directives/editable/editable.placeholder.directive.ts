@@ -52,7 +52,7 @@ import {
 } from './../../utils/placeholder';
 import { AbstractWchEditableDirective } from './abstract.editable.directive';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 const LOGGER = 'WchEditablePlaceholderDirective';
 

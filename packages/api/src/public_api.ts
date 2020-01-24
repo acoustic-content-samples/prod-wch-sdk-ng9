@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 export * from './interfaces/authoring/v1/asset/asset.item';
 export * from './interfaces/authoring/v1/base.item';
 export * from './interfaces/authoring/v1/content/content.item';

@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { arrayPush } from "./../js/js.utils";
 
 // shortcut to math functions
@@ -15,7 +15,7 @@ const GOLDEN_RATIO = (1 + sqrt(5)) / 2;
 // tslint:disable-next-line:no-bitwise
 const GOLDEN_RATIO_64 = floor((GOLDEN_RATIO - floor(GOLDEN_RATIO)) * _MAX_INT);
 
-/* initial value for the hash code */
+/** initial value for the hash code */
 // tslint:disable-next-line:no-bitwise
 const HASH_SEED_64 = floor((PI - floor(PI)) * _MAX_INT);
 

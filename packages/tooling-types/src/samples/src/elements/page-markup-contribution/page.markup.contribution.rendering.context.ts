@@ -1,7 +1,7 @@
 /**
  * Do not modify this file, it is auto-generated.
  */
-/* tslint:disable:max-line-length */
+/** tslint:disable:max-line-length */
 import { PageMarkupContributionType } from './page.markup.contribution.type';
 import { DeliveryContentMetadata, RenderingContextV2 } from '@acoustic-content-sdk/api';
 

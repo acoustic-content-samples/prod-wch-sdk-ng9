@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { Observable } from 'rxjs';
 import { Logger } from './logger';
 

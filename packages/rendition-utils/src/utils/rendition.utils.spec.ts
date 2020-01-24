@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { Image } from '@acoustic-content-sdk/api';
 
 import { getSourceSet } from './rendition.utils';

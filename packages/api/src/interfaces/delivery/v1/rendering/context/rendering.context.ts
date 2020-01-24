@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { AuthoringSelectedLayout } from '../../../../authoring/v1/layout/layout';
 import { Layouts } from '../../layout/layout';
 import { ELEMENT_TYPE } from './../../content/elements';

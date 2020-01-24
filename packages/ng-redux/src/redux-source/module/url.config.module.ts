@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { UrlConfig } from '@acoustic-content-sdk/api';
 import { createUrlConfig } from '@acoustic-content-sdk/component-redux';
 import { WCH_TOKEN_URL_CONFIG } from '@acoustic-content-sdk/ng-api';

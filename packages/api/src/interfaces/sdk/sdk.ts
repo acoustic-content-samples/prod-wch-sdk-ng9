@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { LoggerService } from './../../services/logging/logger.service';
 import { WchSdkRouter } from './router/router';
 import { WchSdkSearch } from './search/search';

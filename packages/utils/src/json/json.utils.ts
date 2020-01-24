@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { UnaryFunction } from 'rxjs';
 import { unary } from './../js/js.utils';
 

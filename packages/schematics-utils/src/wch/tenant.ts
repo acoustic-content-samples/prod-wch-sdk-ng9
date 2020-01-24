@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 
 // regular expression to detect uuid.v4 strings
 const HEX_REGEXP_STRING = '[0-9a-fA-F]';

@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 function _assert<T>(
   aPredicate: (aValue: T) => boolean,

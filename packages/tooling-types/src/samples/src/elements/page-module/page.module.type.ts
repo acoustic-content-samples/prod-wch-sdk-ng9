@@ -1,7 +1,7 @@
 /**
  * Do not modify this file, it is auto-generated.
  */
-/* tslint:disable:max-line-length */
+/** tslint:disable:max-line-length */
 import { PageContributionType, isPageContributionType as _rylEA7Kk } from './../page-contribution/page.contribution.type';
 import { DeliveryGroupElementMetadata, Image } from '@acoustic-content-sdk/api';
 import { EqualsPredicate, isImage as TsPJetPfc, isNotNil as PZ6MJUijH, isOptional as Dl16LDKVr, isOptionalArrayOf as TlMUHGxnv, isString as jEcWTCNgA, partialLeft, pluckProperty, rxSelectProperty } from '@acoustic-content-sdk/utils';

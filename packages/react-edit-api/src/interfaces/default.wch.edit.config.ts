@@ -1,7 +1,7 @@
 import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { createReactContext } from '@acoustic-content-sdk/react-api';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 // default value for the inline edit URL
 export const DEFAULT_INLINE_EDIT_URL =

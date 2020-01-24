@@ -33,7 +33,7 @@ import { cancelExecuteLater, executeLater } from './../idle/idle';
 import { JSONValue } from './../json/json.utils';
 import { isNotNil, isObservable } from './../predicates/predicates';
 
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 /**
  * Binds to the next function of a subject
  *
@@ -183,7 +183,7 @@ export const EMPTY_STRING_OBSERVABLE: Observable<string> = EMPTY;
  */
 export const EMPTY_JSON_OBSERVABLE: Observable<JSONValue> = EMPTY;
 
-/* Unsubscribes if the subscription exists.
+/** Unsubscribes if the subscription exists.
  *
  * @param aSubscription - the subscription
  */
@@ -196,7 +196,7 @@ export const safeUnsubscribe = (
   }
 };
 
-/* Unsubscribes if the subscription exists.
+/** Unsubscribes if the subscription exists.
  *
  * @param aSubscriptions - the subscriptions
  */

@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { Subscription } from 'rxjs';
 
 import { Generator } from '../generators/generator';

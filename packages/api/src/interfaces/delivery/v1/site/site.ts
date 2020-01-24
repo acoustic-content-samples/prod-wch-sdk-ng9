@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { SiteChild } from './site.child';
 
 export interface SiteRoot { }

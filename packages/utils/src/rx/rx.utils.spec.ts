@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { EMPTY, Observable, of, Subject, BehaviorSubject } from 'rxjs';
 import { marbles } from 'rxjs-marbles';
 import { map, tap, toArray, take } from 'rxjs/operators';

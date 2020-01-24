@@ -233,7 +233,7 @@ function _invokeHooks(
  * Note that hooks such as `onInit$` and `onDestroy$` only fire once. If you depend on such a hook in an observable
  * chain more than once make sure to share the emissions (typically via `shareReplay` )
  */
-/* tslint:disable:no-conflicting-lifecycle */
+/** tslint:disable:no-conflicting-lifecycle */
 export abstract class AbstractLifeCycleComponent
   implements
     OnInit,

@@ -2,7 +2,7 @@ import { Logger } from '@acoustic-content-sdk/api';
 
 import { noop } from './../misc';
 
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 /**
  * Logger that really does not log anything
  */

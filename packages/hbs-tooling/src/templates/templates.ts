@@ -1,12 +1,26 @@
-import { FileDescriptor, rxReadDir } from '@acoustic-content-sdk/tooling';
+import {
+  createFileDescriptor,
+  FileDescriptor,
+  rxReadDir
+} from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { compile, create } from 'handlebars';
 import { Observable, UnaryFunction } from 'rxjs';
 import { map, mergeMap, shareReplay } from 'rxjs/operators';
 
+/**
+ * Type definition on the handlebars template function that transforms a context into a markup string
+ */
 export type TemplateType = ReturnType<typeof compile>;
+/**
+ * Type definition on the handlebars API
+ */
 export type HandlebarsType = ReturnType<typeof create>;
 
+/**
+ * Representation of a file descriptor with templates for both the file name
+ * and the file content.
+ */
 export type TemplateDescriptor = [TemplateType, TemplateType];
 
 /**
@@ -14,7 +28,7 @@ export type TemplateDescriptor = [TemplateType, TemplateType];
  *
  * @returns the handlebars instance
  */
-function createHandlebars() {
+function createHandlebars(): HandlebarsType {
   // load the helpers
   const helpers = require('handlebars-helpers');
   // the instance
@@ -57,7 +71,7 @@ export function rxReadTemplates(
   // iterate and compile
   return rxPipe(
     rxReadDir(aDir),
-    map(([name, data]) => [name, data.toString()]),
+    map(([name, data]) => createFileDescriptor(name, data.toString())),
     map(([name, data]) => [cmp(name), cmp(data)])
   );
 }

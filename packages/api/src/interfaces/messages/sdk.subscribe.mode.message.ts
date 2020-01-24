@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { SdkMessagePayload } from './messages';
 import { SdkSubscribeEventResponse } from './sdk.subscribe.message';
 

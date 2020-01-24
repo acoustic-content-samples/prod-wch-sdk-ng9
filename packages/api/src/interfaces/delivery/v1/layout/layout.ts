@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 
 /**
  * Representation of a layout descriptor in the delivery artifacts

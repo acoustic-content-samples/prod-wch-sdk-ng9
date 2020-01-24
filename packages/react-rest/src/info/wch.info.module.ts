@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { HubInfoUrlProvider, UrlConfig } from '@acoustic-content-sdk/api';
 import {
   createInjectableReactProvider,

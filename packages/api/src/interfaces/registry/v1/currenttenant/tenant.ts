@@ -37,7 +37,7 @@ export interface Tenant {
   name?: string;
   // read-only - UUID of the domain
   id?: string;
-  /* DEPRECATED - read-only - UUID of the domain.  Use 'id' instead of _id
+  /** DEPRECATED - read-only - UUID of the domain.  Use 'id' instead of _id
    *
    * @deprectated
    */

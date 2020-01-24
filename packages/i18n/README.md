@@ -1,11 +1,5 @@
-# `@acoustic-content-sdk/utils`
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/i18n.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/i18n)
 
-> TODO: description
+Utility functions to help working with locales.
 
-## Usage
-
-```
-const utils = require('@acoustic-content-sdk/utils');
-
-// TODO: DEMONSTRATE API
-```
+[API Documentation](./markdown/i18n.md)

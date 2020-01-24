@@ -193,7 +193,7 @@ const UNDEFINED_HUB_INFO: HubInfo = {
   resourceUrl: undefined
 };
 
-/* Decodes the hub info from the base URL. This assumes
+/** Decodes the hub info from the base URL. This assumes
  * that the application is served from a location in WCH.
  */
 function _getHubInfoFromBaseURL(aBaseURL: URL): HubInfo {

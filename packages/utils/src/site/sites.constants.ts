@@ -1,6 +1,6 @@
 import { Site, SiteContext } from '@acoustic-content-sdk/api';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 const _EMPTY_SITE: Site = {
   pages: [],

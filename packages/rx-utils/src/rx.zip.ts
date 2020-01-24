@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { mkdirp } from 'fs-extra';
 import { createWriteStream } from 'graceful-fs';
 import { join, normalize, resolve } from 'path';

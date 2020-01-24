@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 /**
  * Exposes information required to access the content hub REST API. This
  * information can be obtained via the 'Watson Content Hub information' section.

@@ -17,7 +17,7 @@ import { rxPipe } from './../rx/rx.utils';
 
 const LOGGER = 'http.utils';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 export interface HttpOptions {
   // check if we shoud send the request with credentials
   withCredentials: boolean;
@@ -269,11 +269,11 @@ function _lazyCache<V>() {
   return lazyGenerator<CacheAccessor<V>>(createLruCache);
 }
 
-/* Maps from URL to connection to that URL */
+/** Maps from URL to connection to that URL */
 const _publicUrlStringCache = _lazyCache<Observable<string>>();
 const _publicUrlJsonCache = _lazyCache<Observable<JSONValue>>();
 
-/* Maps from URL to connection to that URL */
+/** Maps from URL to connection to that URL */
 const _privateUrlStringCache = _lazyCache<Observable<string>>();
 const _privateUrlJsonCache = _lazyCache<Observable<JSONValue>>();
 

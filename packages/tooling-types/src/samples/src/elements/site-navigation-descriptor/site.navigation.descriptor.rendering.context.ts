@@ -1,7 +1,7 @@
 /**
  * Do not modify this file, it is auto-generated.
  */
-/* tslint:disable:max-line-length */
+/** tslint:disable:max-line-length */
 import { SiteNavigationDescriptorType } from './site.navigation.descriptor.type';
 import { DeliveryContentMetadata, RenderingContextV2 } from '@acoustic-content-sdk/api';
 

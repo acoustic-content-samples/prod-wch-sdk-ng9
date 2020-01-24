@@ -5,7 +5,7 @@ import { ajax, AjaxRequest } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { createFromCallback } from './rx.node';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 export const createXHR = () => {
   const XMLHttpRequest = require('xhr2');
   return new XMLHttpRequest();

@@ -361,7 +361,7 @@ export class LayoutMappingService implements LayoutMappingResolver {
 
     let mappingsSubscription: Subscription;
 
-    /* lazily initialize the component map */
+    /** lazily initialize the component map */
     function _initMappingsMap(): Mappings {
       if (isNil(mappingsMap)) {
         /**

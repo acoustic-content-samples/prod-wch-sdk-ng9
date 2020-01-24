@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 /**
  * Abstraction of the logger interface, trying to be as generic

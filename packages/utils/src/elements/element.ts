@@ -82,7 +82,7 @@ import {
   isString
 } from './../predicates/predicates';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 const _PROP_TYPE = 'elementType';
 const _PROP_VALUE = 'value';
 const _PROP_VALUES = 'values';

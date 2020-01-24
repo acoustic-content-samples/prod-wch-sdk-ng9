@@ -27,10 +27,10 @@ const CLEANUP_DELTA = 5000;
 const compareValues = <V>(aLeft: CacheValue<V>, aRight: number): number =>
   cmpNumbers(aLeft[2], aRight);
 
-/* Default timeout */
+/** Default timeout */
 const DEFAULT_TIMEOUT = 30 * 1000;
 
-/* Default count */
+/** Default count */
 const DEFAULT_MAXCOUNT = 100;
 
 /** Time of next cleanup */

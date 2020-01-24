@@ -1,7 +1,7 @@
 import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { InjectionToken } from '@angular/core';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 // default value for the inline edit URL
 export const DEFAULT_INLINE_EDIT_URL =

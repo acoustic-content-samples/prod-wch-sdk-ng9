@@ -456,7 +456,7 @@ export class ComponentsService implements ComponentTypeRefResolver {
     let componentMap: ByLayoutModeMapping;
     let componentSubscription: Subscription;
 
-    /* lazily initialize the component map */
+    /** lazily initialize the component map */
     function _initComponentMap(): ByLayoutModeMapping {
       if (!componentMap) {
         /**

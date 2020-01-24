@@ -7,7 +7,7 @@ import { UNDEFINED_TYPE } from './../js/js.utils';
 import { noop } from './../misc';
 import { isFunction } from './../predicates/predicates';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 let COUNT = 0;
 
 // check if we have the performance object

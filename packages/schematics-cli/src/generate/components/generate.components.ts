@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import {
   AuthoringLayout,
   AuthoringLayoutMapping,
@@ -549,7 +549,7 @@ function _createTypeInterfaceContext(
       const rxImportType = combineLatest(rxFrom, rxType).pipe(
         map(
           ([fromType, name]) =>
-            name /* _registerImport(name, fromType, imports) */
+            name /** _registerImport(name, fromType, imports) */
         )
       );
       // the type name
@@ -1635,7 +1635,7 @@ function _rewriteAppModule(
   aOptions: Options
 ): Observable<string> {
   // just dispatch
-  /*  return !aOptions.skipRegistration
+  /**  return !aOptions.skipRegistration
     ? addLayoutToModule(aLayoutExports, aModuleFile).pipe(
         catchError(() => EMPTY)
       )

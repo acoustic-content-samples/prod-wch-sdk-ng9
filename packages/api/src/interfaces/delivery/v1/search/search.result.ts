@@ -1,7 +1,7 @@
 import { RenderingContext } from './../rendering/context/rendering.context';
 import { SitePage } from './../site/site.page';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 export interface SearchResult<T> {
   document: T;
 }

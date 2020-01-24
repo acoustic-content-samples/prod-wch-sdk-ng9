@@ -7,7 +7,7 @@ import { isAbsoluteURL, isNotNil } from './../predicates/predicates';
 import { EMPTY_JSON_OBSERVABLE } from './../rx/rx.utils';
 import { urlToString } from './../url/url.utils';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 
 /**
  * Accessor for static resources, placed next to the application

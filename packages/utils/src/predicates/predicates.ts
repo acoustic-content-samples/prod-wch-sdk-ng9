@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { RenderingContextProvider } from '@acoustic-content-sdk/api';
 import { identity, isObservable, UnaryFunction } from 'rxjs';
 
@@ -309,7 +309,7 @@ function _isParseableAsDate(aValue: any): aValue is string | number | Date {
 }
 
 export function isFlagSet(aValue: number, aFlag: number): boolean {
-  /* tslint:disable:no-bitwise */
+  /** tslint:disable:no-bitwise */
   return isEqual(aValue & aFlag, aFlag);
 }
 

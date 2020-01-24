@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
 import {

@@ -1,7 +1,7 @@
 /**
  * Do not modify this file, it is auto-generated.
  */
-/* tslint:disable:max-line-length */
+/** tslint:disable:max-line-length */
 import { DeliveryGroupElementMetadata, DeliveryReferenceElement } from '@acoustic-content-sdk/api';
 import { EqualsPredicate, isDeliveryReferenceElement as F5Sl9HaEI, isNotNil as RRw8DnbY_, isOptional as lLbeYfaOI, isOptionalArrayOf as pyhiXE3Mw, isString as VRab9TTrr, partialLeft, pluckProperty, rxSelectProperty } from '@acoustic-content-sdk/utils';
 import { OperatorFunction, UnaryFunction } from 'rxjs';

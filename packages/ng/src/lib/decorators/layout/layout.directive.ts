@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import {
   CONTENT_ITEM_KIND,
   RenderingContextV2

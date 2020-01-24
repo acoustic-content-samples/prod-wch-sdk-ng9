@@ -1,10 +1,10 @@
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 import { Logger } from '@acoustic-content-sdk/api';
 
 import { NOOP_LOGGER } from './../logger/noop.logger';
 import { perfMeasure } from './../perf/perf.utils';
 
-/* Copyright IBM Corp. 2017 */
+/** Copyright IBM Corp. 2017 */
 export type CacheCallback<V> = (aKey: string, aLogger?: Logger) => V;
 export type CacheAccessor<V> = (
   aKey: string,
@@ -15,10 +15,10 @@ export type CacheAccessor<V> = (
 declare type CacheValue<V> = [string, V, boolean, number];
 declare type CacheImpl<V> = Array<CacheValue<V>>;
 
-/* Default timeout */
+/** Default timeout */
 const DEFAULT_TIMEOUT = 30 * 1000;
 
-/* Default count */
+/** Default count */
 const DEFAULT_MAXCOUNT = 100;
 
 // returns the current timestamp

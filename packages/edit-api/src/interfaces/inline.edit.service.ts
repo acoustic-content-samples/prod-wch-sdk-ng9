@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 import { RenderingContext } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 

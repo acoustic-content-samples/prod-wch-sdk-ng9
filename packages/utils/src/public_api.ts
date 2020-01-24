@@ -1,4 +1,4 @@
-/* Copyright IBM Corp. 2018 */
+/** Copyright IBM Corp. 2018 */
 
 /**
  * This library contains a set of utility functions to help implementing applications of libraries against [Watson Content Hub](https://www.ibm.com/products/watson-content-hub).

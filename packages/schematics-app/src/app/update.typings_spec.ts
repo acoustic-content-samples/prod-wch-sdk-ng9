@@ -36,7 +36,7 @@ function getTsSource(path: string, content: string): SourceFile {
 }
 
 const EXISTING_FILE = `
-/* SystemJS module definition */
+/** SystemJS module definition */
 
 declare module '*/.wchtoolsoptions.json' {
   const value: any;
@@ -50,7 +50,7 @@ declare module '*/site.json' {
 `;
 
 const PARTIAL_FILE = `
-/* SystemJS module definition */
+/** SystemJS module definition */
 
 declare module someOtherModule {
   const value: any;

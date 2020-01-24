@@ -92,7 +92,7 @@ function createTypeInterfaceContext(
       const rxImportType = combineLatest(rxFrom, rxType).pipe(
         map(
           ([fromType, name]) =>
-            name /* _registerImport(name, fromType, imports) */
+            name /** _registerImport(name, fromType, imports) */
         )
       );
       // the type name

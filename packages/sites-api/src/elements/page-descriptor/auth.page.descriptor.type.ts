@@ -1,7 +1,7 @@
 /**
  * Do not modify this file, it is auto-generated.
  */
-/* tslint:disable:max-line-length */
+/** tslint:disable:max-line-length */
 import { AuthoringReference, AuthoringText } from '@acoustic-content-sdk/api';
 import {
   isNotNil,

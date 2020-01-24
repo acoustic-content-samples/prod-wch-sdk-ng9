@@ -388,7 +388,7 @@ export class AbstractComponentsService<TYPE>
      */
     let componentMap: ByLayoutModeMapping<TYPE>;
 
-    /* lazily initialize the component map */
+    /** lazily initialize the component map */
     function _initComponentMap(): ByLayoutModeMapping<TYPE> {
       if (!componentMap) {
         /**

@@ -1,3 +1,9 @@
+/**
+ * Framework independent collection of utility functions to implement services and components for sites next.
+ *
+ * @packageDocumentation
+ */
+
 export * from './decorators/layout/layout.decorator';
 export * from './decorators/layout/layout.registrations';
 export * from './services/components/component.resolver.service';
