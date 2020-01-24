@@ -14,7 +14,7 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [generateTypes(options)](./tooling-types.generatetypes.md) |  |
+|  [generateTypes(options)](./tooling-types.generatetypes.md) | Command entry point to generate typings and constants from content types |
 
 ## Interfaces
 

@@ -1,4 +1,9 @@
-/* Copyright IBM Corp. 2018 */
+/**
+ * Implementation of utility methods used for tooling.
+ *
+ * @packageDocumentation
+ */
+
 export * from './canonicalize';
 export * from './dependencies/dependencies';
 export * from './dir/dir';

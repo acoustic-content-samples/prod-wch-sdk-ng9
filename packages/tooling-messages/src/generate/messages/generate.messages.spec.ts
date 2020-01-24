@@ -2,7 +2,7 @@ import { rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { tap } from 'rxjs/operators';
 
-import { createReadDirectory } from '../../dir/dir';
+import { createReadDirectory } from '@acoustic-content-sdk/tooling';
 import { ASSET_ROOT } from '../../test/assets';
 import { generateMessages } from './generate.messages';
 

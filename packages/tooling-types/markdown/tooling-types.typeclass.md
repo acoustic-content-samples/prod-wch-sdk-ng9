@@ -24,6 +24,7 @@ export interface TypeClass
 |  [typeElementClass](./tooling-types.typeclass.typeelementclass.md) | <code>string</code> |  |
 |  [typeElementFile](./tooling-types.typeclass.typeelementfile.md) | <code>string</code> |  |
 |  [typeElementRef](./tooling-types.typeclass.typeelementref.md) | <code>string</code> |  |
+|  [typeInterfaceClass](./tooling-types.typeclass.typeinterfaceclass.md) | <code>string</code> |  |
 |  [typeInterfaceFile](./tooling-types.typeclass.typeinterfacefile.md) | <code>string</code> |  |
 |  [typeInterfaceRef](./tooling-types.typeclass.typeinterfaceref.md) | <code>string</code> |  |
 

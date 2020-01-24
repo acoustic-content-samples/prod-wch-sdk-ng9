@@ -11,7 +11,7 @@ import { ReadBuffer } from '@acoustic-content-sdk/tooling';
 import { ReadDirectory } from '@acoustic-content-sdk/tooling';
 import { ReadTextFile } from '@acoustic-content-sdk/tooling';
 
-// @public (undocumented)
+// @public
 export function generateTypes(options: GenerateTypesSchema): (aReadDir: ReadDirectory, aReadText: ReadTextFile, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/tooling").FileDescriptor<string>>;
 
 // @public (undocumented)
@@ -43,6 +43,8 @@ export interface TypeClass {
     typeElementFile: string;
     // (undocumented)
     typeElementRef: string;
+    // (undocumented)
+    typeInterfaceClass: string;
     // (undocumented)
     typeInterfaceFile: string;
     // (undocumented)

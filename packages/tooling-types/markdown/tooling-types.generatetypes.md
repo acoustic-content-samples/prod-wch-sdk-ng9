@@ -4,6 +4,8 @@
 
 ## generateTypes() function
 
+Command entry point to generate typings and constants from content types
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function generateTypes(options: GenerateTypesSchema): (aReadDir: 
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | <code>GenerateTypesSchema</code> |  |
+|  options | <code>GenerateTypesSchema</code> | the type options |
 
 <b>Returns:</b>
 
 `(aReadDir: ReadDirectory, aReadText: ReadTextFile, logSvc?: LoggerService) => import("rxjs").Observable<import("@acoustic-content-sdk/tooling").FileDescriptor<string>>`
+
+the stream of files
 

@@ -1,5 +1,5 @@
 {
-  "name": "@acoustic-content-sdk/tooling",
+  "name": "@acoustic-content-sdk/tooling-messages",
   "version": "9.0.0",
   "description": "> TODO: description",
   "keywords": [
@@ -17,9 +17,9 @@
   "license": "MIT",
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
-  "main": "dist/bundles/acoustic-content-sdk-tooling.umd.js",
-  "module": "dist/fesm5/acoustic-content-sdk-tooling.js",
-  "typings": "dist/acoustic-content-sdk-tooling.d.ts",
+  "main": "dist/bundles/acoustic-content-sdk-tooling-messages.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-tooling-messages.js",
+  "typings": "dist/acoustic-content-sdk-tooling-messages.d.ts",
   "scripts": {
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
@@ -32,39 +32,29 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
-    "@acoustic-content-sdk/cli-credentials": "9.0.0",
-    "@acoustic-content-sdk/rx-utils": "9.0.0",
+    "@acoustic-content-sdk/i18n": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "chalk": "^3",
-    "jsdom": "^16",
-    "lodash": "^4",
-    "rxjs": "^6",
-    "semver": "^7",
-    "uuid": "^3"
+    "rxjs": "^6"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
   },
-  "es2015": "dist/fesm2015/acoustic-content-sdk-tooling.js",
-  "esm2015": "dist/esm2015/acoustic-content-sdk-tooling.js",
-  "esm5": "dist/esm5/acoustic-content-sdk-tooling.js",
-  "fesm2015": "dist/fesm2015/acoustic-content-sdk-tooling.js",
-  "fesm5": "dist/fesm5/acoustic-content-sdk-tooling.js",
-  "metadata": "dist/acoustic-content-sdk-tooling.metadata.json",
+  "es2015": "dist/fesm2015/acoustic-content-sdk-tooling-messages.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-tooling-messages.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-tooling-messages.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-tooling-messages.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-tooling-messages.js",
+  "metadata": "dist/acoustic-content-sdk-tooling-messages.metadata.json",
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/cli-credentials": "acoustic-content-sdk.cli-credentials",
-        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "chalk": "Chalk",
-        "jsdom": "Jsdom",
-        "lodash": "Lodash",
-        "semver": "Semver",
-        "uuid": "Uuid"
+        "@acoustic-content-sdk/i18n": "acoustic-content-sdk.i18n",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
     "whitelistedNonPeerDependencies": [
