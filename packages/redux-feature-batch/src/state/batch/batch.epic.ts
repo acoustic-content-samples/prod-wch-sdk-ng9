@@ -1,4 +1,5 @@
 import {
+  AuthoringAsset,
   AuthoringContentItem,
   Logger,
   LoggerService
@@ -32,6 +33,7 @@ import {
   DeliveryContentState,
   selectDeliveryContentFeature
 } from '@acoustic-content-sdk/redux-feature-delivery-content';
+import { setErrorAction } from '@acoustic-content-sdk/redux-feature-error';
 import {
   handlebarsAddTemplateAction,
   HandlebarsState,
@@ -51,8 +53,19 @@ import {
   selectLoadingFeature
 } from '@acoustic-content-sdk/redux-feature-load';
 import { saveAuthoringBatchAction } from '@acoustic-content-sdk/redux-feature-save';
+import {
+  uploadingEndAction,
+  uploadingProgressAction,
+  uploadingStartAction
+} from '@acoustic-content-sdk/redux-feature-upload';
+import { selectCurrentUserFeature } from '@acoustic-content-sdk/redux-feature-user';
 import { rxSelect, selectPayload } from '@acoustic-content-sdk/redux-store';
-import { FetchText } from '@acoustic-content-sdk/rest-api';
+import {
+  createUpdater,
+  getDeliveryId,
+  updateImageElement
+} from '@acoustic-content-sdk/redux-utils';
+import { FetchText, WriteText } from '@acoustic-content-sdk/rest-api';
 import {
   arrayPush,
   assertObject,
@@ -90,21 +103,38 @@ import {
   OperatorFunction,
   UnaryFunction
 } from 'rxjs';
-import { filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
-
-import { DRAFT_SUFFIX, draftOverlay } from '../../utils/draft.utils';
+import {
+  catchError,
+  endWith,
+  filter,
+  map,
+  mergeMap,
+  share,
+  withLatestFrom
+} from 'rxjs/operators';
+import { draftOverlay, DRAFT_SUFFIX } from '../../utils/draft.utils';
 import {
   fetchByAuthoringQuery,
   searchByClassificationAndIds
 } from '../../utils/search';
 import {
+  createAsset,
+  createResource,
+  getUniqueIdentifierByIdAndAccessor
+} from './../../utils/auth.content.persist';
+import { isProgressEvent, isResponseEvent } from './../../utils/fetch.text';
+import {
+  ACTION_CREATE_ASSET_REPLACE_REFERENCE,
   ACTION_GUARANTEE_AUTH_CONTENT_BATCH,
+  CreateAssetAndReplaceReferenceAction,
+  CreateAssetAndReplaceReferencePayload,
   GuaranteeAuthoringContentBatchAction,
   guaranteeAuthoringContentBatchAction
 } from './batch.actions';
 
 export interface BatchDependencies {
-  fetchText: UnaryFunction<string, Observable<string>>;
+  fetchText: FetchText;
+  writeText: WriteText;
   logSvc: LoggerService;
 }
 
@@ -638,8 +668,160 @@ const loadSelectedItemEpic: Epic = (actions$) =>
     map(guaranteeAuthoringContentBatchAction)
   );
 
+const createAssetAndReplaceReferenceEpic: Epic = (
+  actions$,
+  state$,
+  { writeText, logSvc }: BatchDependencies
+) => {
+  // create logger
+  const logger = logSvc.get(LOGGER);
+
+  // get content
+  const authContent$ = rxPipe(state$, rxSelect(selectAuthContentFeature));
+
+  // action payload
+  const actionPayload$ = rxPipe(
+    actions$,
+    ofType<CreateAssetAndReplaceReferenceAction>(
+      ACTION_CREATE_ASSET_REPLACE_REFERENCE
+    ),
+    map(selectPayload)
+  );
+
+  // the current user
+  const user$ = rxPipe(state$, rxSelect(selectCurrentUserFeature));
+
+  // sequence of resource upload events
+  const resourceUpload = (
+    actionPayload: CreateAssetAndReplaceReferencePayload
+  ) => {
+    const { file } = actionPayload;
+    return rxPipe(
+      createResource(writeText, logger, file),
+      // share across multiple subscribers (i.e. avoid that resource is created multiple times)
+      share()
+    );
+  };
+
+  // sequence of uploading progress actions (derived from resource upload progress events)
+  const resourceUploadProgressActions = (
+    actionPayload: CreateAssetAndReplaceReferencePayload
+  ) => (resourceUpload$) =>
+    rxPipe(
+      resourceUpload$,
+      filter(isProgressEvent),
+      map((progress) => {
+        const { contentItemId, file, accessor } = actionPayload;
+        return uploadingProgressAction({
+          id: getUniqueIdentifierByIdAndAccessor(contentItemId, accessor),
+          progress: {
+            fileName: file.name,
+            loaded: progress.loaded,
+            total: progress.total
+          }
+        });
+      })
+    );
+
+  // uploading start action
+  const resourceUploadStartAction = (
+    actionPayload: CreateAssetAndReplaceReferencePayload
+  ) =>
+    rxPipe(
+      of(
+        uploadingStartAction({
+          fileName: actionPayload.file.name,
+          id: getUniqueIdentifierByIdAndAccessor(
+            actionPayload.contentItemId,
+            actionPayload.accessor
+          )
+        })
+      )
+    );
+
+  // id of the created resource
+  const resourceId = () => (resourceUpload$) =>
+    rxPipe(
+      resourceUpload$,
+      filter(isResponseEvent),
+      map((response) => getDeliveryId(response.id))
+    );
+
+  // created asset
+  const asset = (actionPayload: CreateAssetAndReplaceReferencePayload) => (
+    resourceId$: Observable<string>
+  ) =>
+    rxPipe(
+      resourceId$,
+      mergeMap((resId) => {
+        const { assetId, asset: baseAsset } = actionPayload;
+        return createAsset(writeText, logger, resId, false, assetId, baseAsset);
+      })
+    );
+
+  // save action batch
+  const saveActions = (actionPayload) => (
+    aAsset$: Observable<AuthoringAsset>
+  ) =>
+    rxPipe(
+      aAsset$,
+      withLatestFrom(authContent$, user$),
+      map(([aAsset, authContent, user]) => {
+        const { accessor, contentItemId } = actionPayload;
+        const itemUpdater = createUpdater(authContent[contentItemId]);
+        return saveAuthoringBatchAction([
+          aAsset,
+          updateImageElement(accessor, itemUpdater, aAsset).get()
+        ]);
+      })
+    );
+
+  return rxPipe(
+    actionPayload$,
+    mergeMap((actionPayload) => {
+      const resourceUpload$ = resourceUpload(actionPayload);
+      const resourceUploadStartAction$ = resourceUploadStartAction(
+        actionPayload
+      );
+
+      const resourceUploadProgressAction$ = rxPipe(
+        resourceUpload$,
+        resourceUploadProgressActions(actionPayload)
+      );
+
+      const saveActions$ = rxPipe(
+        resourceUpload$,
+        resourceId(),
+        asset(actionPayload),
+        saveActions(actionPayload)
+      );
+
+      // combine sequences
+      return rxPipe(
+        merge(
+          resourceUploadStartAction$,
+          resourceUploadProgressAction$,
+          saveActions$
+        ),
+        // error handling
+        catchError((error) => of(setErrorAction(error))),
+        // finally send the end action
+        endWith(
+          uploadingEndAction(
+            getUniqueIdentifierByIdAndAccessor(
+              actionPayload.contentItemId,
+              actionPayload.accessor
+            )
+          )
+        )
+      );
+    })
+  );
+};
+
 export const batchEpic: Epic = combineEpics(
   loadSelectedItemEpic,
   loadBatchEpic,
-  saveBatchContentEpic
+  saveBatchContentEpic,
+  createAssetAndReplaceReferenceEpic
 );

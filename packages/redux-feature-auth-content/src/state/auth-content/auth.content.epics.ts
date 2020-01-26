@@ -33,7 +33,6 @@ import { Action } from 'redux';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import { from, MonoTypeOperatorFunction } from 'rxjs';
 import { filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
-
 import { migrateContentItem } from '../../utils/auth.content.migrate';
 import {
   referencedAssets,

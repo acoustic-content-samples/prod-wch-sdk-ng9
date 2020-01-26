@@ -1,4 +1,7 @@
-import { AuthoringContentItem } from '@acoustic-content-sdk/api';
+import {
+  AuthoringContentItem,
+  AuthoringAsset
+} from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import { PayloadAction } from '@acoustic-content-sdk/redux-store';
 import { createAction } from 'redux-actions';

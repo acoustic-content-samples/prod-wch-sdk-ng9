@@ -32,19 +32,25 @@
     "@acoustic-content-sdk/redux-feature-auth-layout-mapping": "9.0.0",
     "@acoustic-content-sdk/redux-feature-auth-type": "9.0.0",
     "@acoustic-content-sdk/redux-feature-delivery-content": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-error": "9.0.0",
     "@acoustic-content-sdk/redux-feature-handlebars": "9.0.0",
     "@acoustic-content-sdk/redux-feature-inline-edit": "9.0.0",
     "@acoustic-content-sdk/redux-feature-load": "9.0.0",
     "@acoustic-content-sdk/redux-feature-login": "9.0.0",
     "@acoustic-content-sdk/redux-feature-save": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-upload": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-user": "9.0.0",
     "@acoustic-content-sdk/redux-store": "9.0.0",
+    "@acoustic-content-sdk/redux-utils": "9.0.0",
+    "@acoustic-content-sdk/rest-api": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {
     "redux-actions": "^2",
     "redux-observable": "^1",
-    "rxjs": "^6"
+    "rxjs": "^6",
+    "uuid": "^3"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
@@ -64,15 +70,21 @@
         "@acoustic-content-sdk/redux-feature-auth-layout-mapping": "acoustic-content-sdk.redux-feature-auth-layout-mapping",
         "@acoustic-content-sdk/redux-feature-auth-type": "acoustic-content-sdk.redux-feature-auth-type",
         "@acoustic-content-sdk/redux-feature-delivery-content": "acoustic-content-sdk.redux-feature-delivery-content",
+        "@acoustic-content-sdk/redux-feature-error": "acoustic-content-sdk.redux-feature-error",
         "@acoustic-content-sdk/redux-feature-handlebars": "acoustic-content-sdk.redux-feature-handlebars",
         "@acoustic-content-sdk/redux-feature-inline-edit": "acoustic-content-sdk.redux-feature-inline-edit",
         "@acoustic-content-sdk/redux-feature-load": "acoustic-content-sdk.redux-feature-load",
         "@acoustic-content-sdk/redux-feature-login": "acoustic-content-sdk.redux-feature-login",
         "@acoustic-content-sdk/redux-feature-save": "acoustic-content-sdk.redux-feature-save",
+        "@acoustic-content-sdk/redux-feature-upload": "acoustic-content-sdk.redux-feature-upload",
+        "@acoustic-content-sdk/redux-feature-user": "acoustic-content-sdk.redux-feature-user",
         "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
+        "@acoustic-content-sdk/redux-utils": "acoustic-content-sdk.redux-utils",
+        "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "redux-actions": "ReduxActions",
-        "redux-observable": "ReduxObservable"
+        "redux-observable": "ReduxObservable",
+        "uuid": "Uuid"
       }
     },
     "whitelistedNonPeerDependencies": [
