@@ -1,3 +1,8 @@
+/**
+ * Implementation of services for the React SDK based on a REST backend.
+ *
+ * @packageDocumentation
+ */
 export * from './content/delivery.content.resolver.module';
 export * from './info/wch.info.module';
 export * from './layout-mapping/delivery.layout.mapping.resolver.module';

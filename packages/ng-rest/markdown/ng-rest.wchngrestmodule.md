@@ -4,6 +4,8 @@
 
 ## WchNgRestModule class
 
+[Angular Module](https://angular.io/guide/ngmodules) that exposes common services.
+
 <b>Signature:</b>
 
 ```typescript

@@ -1,1 +1,5 @@
-Definition of interfaces and constants for the [React](https://reactjs.org/) implementation of the SDK.
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/ng-rest-api.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/ng-rest-api)
+
+Definition of contexts and interfaces for the Angular SDK based on REST.
+
+[API Documentation](./markdown/ng-rest-api.md)

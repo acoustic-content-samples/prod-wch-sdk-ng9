@@ -9,6 +9,9 @@ import { WchNgRestLayoutModule } from '../layout/delivery.layout.resolver.module
 import { WchNgRestPageModule } from '../page/delivery.page.resolver.module';
 import { WchNgRestTypeModule } from '../type/delivery.type.resolver.module';
 
+/**
+ * {@link https://angular.io/guide/ngmodules|Angular Module} that exposes common services.
+ */
 @NgModule({
   imports: [
     CommonModule,

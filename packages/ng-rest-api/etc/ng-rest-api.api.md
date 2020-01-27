@@ -21,6 +21,4 @@ export const VERSION: {
 export const WCH_TOKEN_FETCH_TEXT: InjectionToken<FetchText>;
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

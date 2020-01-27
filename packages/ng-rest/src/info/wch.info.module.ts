@@ -20,6 +20,9 @@ export function proxyCreateUrlConfig(
   return createUrlConfig(aBaseUrl, aApiUrl, aResourceUrl, aDocument);
 }
 
+/**
+ * {@link https://angular.io/guide/ngmodules|Angular Module} that exposes an implementation of `WCH_TOKEN_URL_CONFIG`.
+ */
 @NgModule({
   imports: [CommonModule],
   providers: [

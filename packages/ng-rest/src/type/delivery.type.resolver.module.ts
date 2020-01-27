@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 
 import { DeliveryTypeResolverService } from './delivery.type.resolver.service';
 
+/**
+ * {@link https://angular.io/guide/ngmodules|Angular Module} that exposes an implementation of `WCH_TOKEN_DELIVERY_TYPE_RESOLVER`.
+ */
 @NgModule({
   imports: [CommonModule],
   providers: [

@@ -4,6 +4,8 @@
 
 ## ng-rest-api package
 
+Definition of contexts and interfaces for the Angular SDK based on REST.
+
 ## Variables
 
 |  Variable | Description |

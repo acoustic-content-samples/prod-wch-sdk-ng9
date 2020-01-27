@@ -21,35 +21,33 @@ export const VERSION: {
     build: Date;
 };
 
-// @public (undocumented)
+// @public
 export class WchNgRestContentModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestLayoutMappingModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestLayoutModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestPageModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestTypeModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgRestUrlConfigModule {
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

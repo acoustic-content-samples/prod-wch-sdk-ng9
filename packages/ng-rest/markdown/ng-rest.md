@@ -4,17 +4,19 @@
 
 ## ng-rest package
 
+Implementation of services for the React SDK based on a REST backend.
+
 ## Classes
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgRestContentModule](./ng-rest.wchngrestcontentmodule.md) |  |
-|  [WchNgRestLayoutMappingModule](./ng-rest.wchngrestlayoutmappingmodule.md) |  |
-|  [WchNgRestLayoutModule](./ng-rest.wchngrestlayoutmodule.md) |  |
-|  [WchNgRestModule](./ng-rest.wchngrestmodule.md) |  |
-|  [WchNgRestPageModule](./ng-rest.wchngrestpagemodule.md) |  |
-|  [WchNgRestTypeModule](./ng-rest.wchngresttypemodule.md) |  |
-|  [WchNgRestUrlConfigModule](./ng-rest.wchngresturlconfigmodule.md) |  |
+|  [WchNgRestContentModule](./ng-rest.wchngrestcontentmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_CONTENT_RESOLVER</code>. |
+|  [WchNgRestLayoutMappingModule](./ng-rest.wchngrestlayoutmappingmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
+|  [WchNgRestLayoutModule](./ng-rest.wchngrestlayoutmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_LAYOUT_RESOLVER</code>. |
+|  [WchNgRestModule](./ng-rest.wchngrestmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes common services. |
+|  [WchNgRestPageModule](./ng-rest.wchngrestpagemodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_PAGE_RESOLVER</code>. |
+|  [WchNgRestTypeModule](./ng-rest.wchngresttypemodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_TYPE_RESOLVER</code>. |
+|  [WchNgRestUrlConfigModule](./ng-rest.wchngresturlconfigmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_URL_CONFIG</code>. |
 
 ## Functions
 
