@@ -4,7 +4,7 @@
 
 ## react-rest-api package
 
-Definition of contexts and interfaces for the react SDK based on REST.
+Definition of contexts and interfaces for the React SDK based on REST.
 
 ## Variables
 

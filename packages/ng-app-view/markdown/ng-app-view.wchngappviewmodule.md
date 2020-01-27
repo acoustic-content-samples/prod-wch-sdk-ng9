@@ -4,9 +4,7 @@
 
 ## WchNgAppViewModule class
 
-Imports the modules required for inline view functionality
-
-TODO pull in the correct dependencies!
+Imports the modules required for view functionality
 
 <b>Signature:</b>
 

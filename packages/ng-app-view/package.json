@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng-app-view",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Module to pull in application dependencies for view mode.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -28,10 +28,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@acoustic-content-sdk/ng-edit": "9.0.0",
-    "@acoustic-content-sdk/ng-hbs-edit": "9.0.0",
-    "@acoustic-content-sdk/ng-redux": "9.0.0",
-    "@acoustic-content-sdk/ng-utils": "9.0.0"
+    "@acoustic-content-sdk/ng-rest": "9.0.0"
   },
   "peerDependencies": {
     "@angular/core": "next"
@@ -48,10 +45,7 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/ng-edit": "acoustic-content-sdk.ng-edit",
-        "@acoustic-content-sdk/ng-hbs-edit": "acoustic-content-sdk.ng-hbs-edit",
-        "@acoustic-content-sdk/ng-redux": "acoustic-content-sdk.ng-redux",
-        "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils"
+        "@acoustic-content-sdk/ng-rest": "acoustic-content-sdk.ng-rest"
       }
     },
     "whitelistedNonPeerDependencies": [

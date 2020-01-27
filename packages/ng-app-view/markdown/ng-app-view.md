@@ -10,7 +10,7 @@ Module that contains a default configuration to run an [Angular](https://angular
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgAppViewModule](./ng-app-view.wchngappviewmodule.md) | Imports the modules required for inline view functionality<!-- -->TODO pull in the correct dependencies! |
+|  [WchNgAppViewModule](./ng-app-view.wchngappviewmodule.md) | Imports the modules required for view functionality |
 
 ## Variables
 

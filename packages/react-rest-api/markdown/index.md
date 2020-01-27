@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-rest-api](./react-rest-api.md) | Definition of contexts and interfaces for the react SDK based on REST. |
+|  [@acoustic-content-sdk/react-rest-api](./react-rest-api.md) | Definition of contexts and interfaces for the React SDK based on REST. |
 
