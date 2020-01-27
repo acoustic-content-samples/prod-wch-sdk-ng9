@@ -4,6 +4,8 @@
 
 ## WCH\_PROVIDERS\_REST variable
 
+List of provider implementations that implement common services via REST
+
 <b>Signature:</b>
 
 ```typescript

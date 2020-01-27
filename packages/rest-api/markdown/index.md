@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/rest-api](./rest-api.md) |  |
+|  [@acoustic-content-sdk/rest-api](./rest-api.md) | Definition of interfaces for services and components that use the REST API of Acoustic Content. |
 

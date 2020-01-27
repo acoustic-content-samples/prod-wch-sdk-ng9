@@ -20,6 +20,11 @@ export type FetchText = (
   aPriority?: FETCH_PRIORITY
 ) => Observable<string>;
 
+/**
+ * Callback interface used to send data to the server.
+ *
+ * The URL can be a relative URL and will be resolved against the API URL
+ */
 export type WriteText = (
   aUrl: string,
   aBody: any,

@@ -4,7 +4,7 @@
 
 ## WCH\_PROVIDER\_REST\_URL\_CONFIG variable
 
-Declares the provider
+Provider implementation for the `WCH_CONTEXT_URL_CONFIG`<!-- -->.
 
 <b>Signature:</b>
 

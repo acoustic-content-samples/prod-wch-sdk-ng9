@@ -4,6 +4,8 @@
 
 ## rest-api package
 
+Definition of interfaces for services and components that use the REST API of Acoustic Content.
+
 ## Enumerations
 
 |  Enumeration | Description |
@@ -21,5 +23,5 @@
 |  Type Alias | Description |
 |  --- | --- |
 |  [FetchText](./rest-api.fetchtext.md) | Callback interface used to make a GET request to the resource and to ask for text content.<!-- -->The URL can be a relative URL and will be resolved against the API URL |
-|  [WriteText](./rest-api.writetext.md) |  |
+|  [WriteText](./rest-api.writetext.md) | Callback interface used to send data to the server.<!-- -->The URL can be a relative URL and will be resolved against the API URL |
 

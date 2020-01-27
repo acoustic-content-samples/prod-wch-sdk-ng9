@@ -23,7 +23,7 @@ function proxyCreateUrlConfig(
 }
 
 /**
- * Declares the provider
+ * Provider implementation for the `WCH_CONTEXT_URL_CONFIG`.
  */
 export const WCH_PROVIDER_REST_URL_CONFIG = createInjectableReactProvider(
   proxyCreateUrlConfig,

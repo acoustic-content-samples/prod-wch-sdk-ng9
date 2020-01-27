@@ -4,16 +4,18 @@
 
 ## react-rest package
 
+Implementation of services for the React SDK based on a REST backend.
+
 ## Variables
 
 |  Variable | Description |
 |  --- | --- |
 |  [VERSION](./react-rest.version.md) | Version and build number of the package |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.wch_provider_rest_delivery_content_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_mapping_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_PAGE\_RESOLVER](./react-rest.wch_provider_rest_delivery_page_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_TYPE\_RESOLVER](./react-rest.wch_provider_rest_delivery_type_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REST\_URL\_CONFIG](./react-rest.wch_provider_rest_url_config.md) | Declares the provider |
-|  [WCH\_PROVIDERS\_REST](./react-rest.wch_providers_rest.md) |  |
+|  [WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.wch_provider_rest_delivery_content_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER</code>. |
+|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_mapping_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
+|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER</code>. |
+|  [WCH\_PROVIDER\_REST\_DELIVERY\_PAGE\_RESOLVER](./react-rest.wch_provider_rest_delivery_page_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_PAGE_RESOLVER</code>. |
+|  [WCH\_PROVIDER\_REST\_DELIVERY\_TYPE\_RESOLVER](./react-rest.wch_provider_rest_delivery_type_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_TYPE_RESOLVER</code>. |
+|  [WCH\_PROVIDER\_REST\_URL\_CONFIG](./react-rest.wch_provider_rest_url_config.md) | Provider implementation for the <code>WCH_CONTEXT_URL_CONFIG</code>. |
+|  [WCH\_PROVIDERS\_REST](./react-rest.wch_providers_rest.md) | List of provider implementations that implement common services via REST |
 

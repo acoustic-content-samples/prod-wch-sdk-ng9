@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-rest](./react-rest.md) |  |
+|  [@acoustic-content-sdk/react-rest](./react-rest.md) | Implementation of services for the React SDK based on a REST backend. |
 

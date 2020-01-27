@@ -15,7 +15,7 @@ const createDeliveryTypeResolver = (
 ) => new DeliveryTypeResolverService(aSearch, aLogSvc);
 
 /**
- * Declares the provider
+ * Provider implementation for the `WCH_CONTEXT_DELIVERY_TYPE_RESOLVER`.
  */
 export const WCH_PROVIDER_REST_DELIVERY_TYPE_RESOLVER = createInjectableReactProvider(
   createDeliveryTypeResolver,

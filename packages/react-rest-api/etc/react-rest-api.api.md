@@ -20,6 +20,4 @@ export const VERSION: {
 export const WCH_CONTEXT_FETCH_TEXT: Required<import("react").Context<FetchText>>;
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

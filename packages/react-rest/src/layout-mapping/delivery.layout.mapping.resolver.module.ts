@@ -16,7 +16,7 @@ const createDeliveryLayoutMappingResolver = (
 ) => new DeliveryLayoutMappingResolverService(aSearch, aLogSvc);
 
 /**
- * Declares the provider
+ * Provider implementation for the `WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER`.
  */
 export const WCH_PROVIDER_REST_DELIVERY_LAYOUT_MAPPING_RESOLVER = createInjectableReactProvider(
   createDeliveryLayoutMappingResolver,

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/react-rest",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Implementation of services for the React SDK based on a REST backend.",
   "keywords": [
     "acoustic",
     "acoustic-content",

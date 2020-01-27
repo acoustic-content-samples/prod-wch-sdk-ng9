@@ -5,6 +5,9 @@ import { WCH_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER } from '../layout/delivery.l
 import { WCH_PROVIDER_REST_DELIVERY_PAGE_RESOLVER } from '../page/delivery.page.resolver.module';
 import { WCH_PROVIDER_REST_DELIVERY_TYPE_RESOLVER } from '../type/delivery.type.resolver.module';
 
+/**
+ * List of provider implementations that implement common services via REST
+ */
 export const WCH_PROVIDERS_REST = [
   WCH_PROVIDER_REST_DELIVERY_CONTENT_RESOLVER,
   WCH_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER,

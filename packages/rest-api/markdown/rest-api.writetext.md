@@ -4,6 +4,10 @@
 
 ## WriteText type
 
+Callback interface used to send data to the server.
+
+The URL can be a relative URL and will be resolved against the API URL
+
 <b>Signature:</b>
 
 ```typescript

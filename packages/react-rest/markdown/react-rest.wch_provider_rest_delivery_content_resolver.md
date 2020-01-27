@@ -4,7 +4,7 @@
 
 ## WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER variable
 
-Declares the provider
+Provider implementation for the `WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER`<!-- -->.
 
 <b>Signature:</b>
 

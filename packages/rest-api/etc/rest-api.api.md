@@ -29,10 +29,8 @@ export const VERSION: {
     build: Date;
 };
 
-// @public (undocumented)
+// @public
 export type WriteText = (aUrl: string, aBody: any, aPriority?: FETCH_PRIORITY) => Observable<any>;
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

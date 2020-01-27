@@ -4,7 +4,7 @@
 
 ## WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER variable
 
-Declares the provider
+Provider implementation for the `WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER`<!-- -->.
 
 <b>Signature:</b>
 

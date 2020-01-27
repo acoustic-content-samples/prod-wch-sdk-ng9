@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-rest-api](./react-rest-api.md) | Definition of contexts and interfaces for the react SDK based on REST. |
+|  [@acoustic-content-sdk/redux-ajax](./redux-ajax.md) | Implementation of the <code>fetchText</code> and <code>writeText</code> callbacks. |
 
