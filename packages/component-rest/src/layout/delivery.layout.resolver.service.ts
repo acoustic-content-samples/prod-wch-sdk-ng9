@@ -20,10 +20,19 @@ import { createResolverFromSearch } from '../utils/resolver.utils';
 
 const LOGGER = 'AbstractDeliveryLayoutResolverService';
 
+/**
+ * Base class to implement `DeliveryLayoutResolver`
+ */
 export class AbstractDeliveryLayoutResolverService
   implements DeliveryLayoutResolver {
   getDeliveryLayout: (aID: string) => Observable<DeliveryLayout>;
 
+  /**
+   * Initialization
+   *
+   * @param aSearch - search service that is uses to back the content service
+   * @param aLogSvc - logger service
+   */
   protected constructor(
     aSearch: DeliverySearchResolver,
     aLogSvc: LoggerService = NOOP_LOGGER_SERVICE

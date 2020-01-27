@@ -19,35 +19,35 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
-// @public (undocumented)
+// @public
 export class AbstractDeliveryContentResolverService implements DeliveryContentResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
     getDeliveryContentItem: (aID: string) => Observable<DeliveryContentItem>;
 }
 
-// @public (undocumented)
+// @public
 export class AbstractDeliveryLayoutMappingResolverService implements DeliveryLayoutMappingResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
     getDeliveryLayoutMapping: (aTypeId: string) => Observable<DeliveryLayoutMapping>;
 }
 
-// @public (undocumented)
+// @public
 export class AbstractDeliveryLayoutResolverService implements DeliveryLayoutResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
     getDeliveryLayout: (aID: string) => Observable<DeliveryLayout>;
 }
 
-// @public (undocumented)
+// @public
 export class AbstractDeliveryPageResolverService implements DeliveryPageResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
     getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
 }
 
-// @public (undocumented)
+// @public
 export class AbstractDeliveryTypeResolverService implements DeliveryTypeResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
@@ -67,7 +67,5 @@ export const VERSION: {
     build: Date;
 };
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

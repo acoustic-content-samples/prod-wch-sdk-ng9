@@ -4,6 +4,8 @@
 
 ## AbstractDeliveryLayoutMappingResolverService class
 
+Base class to implement `DeliveryLayoutMappingResolver`
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ export declare class AbstractDeliveryLayoutMappingResolverService implements Del
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverylayoutmappingresolverservice._constructor_.md) |  | Constructs a new instance of the <code>AbstractDeliveryLayoutMappingResolverService</code> class |
+|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverylayoutmappingresolverservice._constructor_.md) |  | Initialization |
 
 ## Properties
 

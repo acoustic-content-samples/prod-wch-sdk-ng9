@@ -4,6 +4,8 @@
 
 ## AbstractDeliveryLayoutResolverService class
 
+Base class to implement `DeliveryLayoutResolver`
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ export declare class AbstractDeliveryLayoutResolverService implements DeliveryLa
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverylayoutresolverservice._constructor_.md) |  | Constructs a new instance of the <code>AbstractDeliveryLayoutResolverService</code> class |
+|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverylayoutresolverservice._constructor_.md) |  | Initialization |
 
 ## Properties
 

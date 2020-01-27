@@ -4,21 +4,23 @@
 
 ## component-rest package
 
+Implementation of base classes to implement SDK services based on REST.
+
 ## Classes
 
 |  Class | Description |
 |  --- | --- |
-|  [AbstractDeliveryContentResolverService](./component-rest.abstractdeliverycontentresolverservice.md) |  |
-|  [AbstractDeliveryLayoutMappingResolverService](./component-rest.abstractdeliverylayoutmappingresolverservice.md) |  |
-|  [AbstractDeliveryLayoutResolverService](./component-rest.abstractdeliverylayoutresolverservice.md) |  |
-|  [AbstractDeliveryPageResolverService](./component-rest.abstractdeliverypageresolverservice.md) |  |
-|  [AbstractDeliveryTypeResolverService](./component-rest.abstractdeliverytyperesolverservice.md) |  |
+|  [AbstractDeliveryContentResolverService](./component-rest.abstractdeliverycontentresolverservice.md) | Base class to implement <code>DeliveryContentResolver</code> |
+|  [AbstractDeliveryLayoutMappingResolverService](./component-rest.abstractdeliverylayoutmappingresolverservice.md) | Base class to implement <code>DeliveryLayoutMappingResolver</code> |
+|  [AbstractDeliveryLayoutResolverService](./component-rest.abstractdeliverylayoutresolverservice.md) | Base class to implement <code>DeliveryLayoutResolver</code> |
+|  [AbstractDeliveryPageResolverService](./component-rest.abstractdeliverypageresolverservice.md) | Base class to implement <code>DeliveryPageResolver</code> |
+|  [AbstractDeliveryTypeResolverService](./component-rest.abstractdeliverytyperesolverservice.md) | Base class to implement <code>DeliveryTypeResolver</code> |
 
 ## Functions
 
 |  Function | Description |
 |  --- | --- |
-|  [createUrlConfig(aBaseUrl, aApiUrl, aResourceUrl, aDocument)](./component-rest.createurlconfig.md) | Make a custom function for naming purposes |
+|  [createUrlConfig(aBaseUrl, aApiUrl, aResourceUrl, aDocument)](./component-rest.createurlconfig.md) | Construcs a <code>UrlConfig</code> object based on some configuration |
 
 ## Variables
 

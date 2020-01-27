@@ -4,6 +4,8 @@
 
 ## AbstractDeliveryContentResolverService class
 
+Base class to implement `DeliveryContentResolver`
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ export declare class AbstractDeliveryContentResolverService implements DeliveryC
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverycontentresolverservice._constructor_.md) |  | Constructs a new instance of the <code>AbstractDeliveryContentResolverService</code> class |
+|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverycontentresolverservice._constructor_.md) |  | Initialization |
 
 ## Properties
 

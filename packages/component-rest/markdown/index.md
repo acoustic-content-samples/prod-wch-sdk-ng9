@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/component-rest](./component-rest.md) |  |
+|  [@acoustic-content-sdk/component-rest](./component-rest.md) | Implementation of base classes to implement SDK services based on REST. |
 

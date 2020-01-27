@@ -36,10 +36,19 @@ function ensureTrailingSlash(aPath: string): string {
 
 const LOGGER = 'AbstractDeliveryPageResolverService';
 
+/**
+ * Base class to implement `DeliveryPageResolver`
+ */
 export class AbstractDeliveryPageResolverService
   implements DeliveryPageResolver {
   getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
 
+  /**
+   * Initialization
+   *
+   * @param aSearch - search service that is uses to back the content service
+   * @param aLogSvc - logger service
+   */
   protected constructor(
     aSearch: DeliverySearchResolver,
     aLogSvc: LoggerService = NOOP_LOGGER_SERVICE

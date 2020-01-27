@@ -4,7 +4,7 @@
 
 ## AbstractDeliveryLayoutMappingResolverService.(constructor)
 
-Constructs a new instance of the `AbstractDeliveryLayoutMappingResolverService` class
+Initialization
 
 <b>Signature:</b>
 
@@ -16,6 +16,6 @@ protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aSearch | <code>DeliverySearchResolver</code> |  |
-|  aLogSvc | <code>LoggerService</code> |  |
+|  aSearch | <code>DeliverySearchResolver</code> | search service that is uses to back the content service |
+|  aLogSvc | <code>LoggerService</code> | logger service |
 

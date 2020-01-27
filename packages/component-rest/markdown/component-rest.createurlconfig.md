@@ -4,7 +4,7 @@
 
 ## createUrlConfig() function
 
-Make a custom function for naming purposes
+Construcs a `UrlConfig` object based on some configuration
 
 <b>Signature:</b>
 
@@ -24,4 +24,6 @@ export declare function createUrlConfig(aBaseUrl?: HubInfoUrlProvider, aApiUrl?:
 <b>Returns:</b>
 
 `Observable<UrlConfig>`
+
+the observable of the `UrlConfig` object
 

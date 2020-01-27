@@ -4,6 +4,8 @@
 
 ## AbstractDeliveryPageResolverService class
 
+Base class to implement `DeliveryPageResolver`
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ export declare class AbstractDeliveryPageResolverService implements DeliveryPage
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverypageresolverservice._constructor_.md) |  | Constructs a new instance of the <code>AbstractDeliveryPageResolverService</code> class |
+|  [(constructor)(aSearch, aLogSvc)](./component-rest.abstractdeliverypageresolverservice._constructor_.md) |  | Initialization |
 
 ## Properties
 
