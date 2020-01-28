@@ -114,6 +114,7 @@ import { UrlConfig } from '@acoustic-content-sdk/api';
 import { Video } from '@acoustic-content-sdk/api';
 import { VideoElement } from '@acoustic-content-sdk/api';
 import { WchSdkSearch } from '@acoustic-content-sdk/api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
 export function absoluteURL(aUrl: string, aDoc?: Document, aWindow?: Window): string;
@@ -946,6 +947,9 @@ export const lazyProxy: <T>(aGenerator: Generator<T>) => T;
 
 // @public
 export const localizedText: BiFunction<string, Locale, LocalizedText>;
+
+// @public
+export function logModule(aVersion: WchSdkVersion, aModule: string, aLogSvc?: LoggerService): void;
 
 // @public
 export function longHash(): number;

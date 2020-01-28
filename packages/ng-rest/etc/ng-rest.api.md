@@ -26,6 +26,10 @@ export class WchNgRestContentModule {
 }
 
 // @public
+export class WchNgRestFetchTextModule {
+}
+
+// @public
 export class WchNgRestLayoutMappingModule {
 }
 

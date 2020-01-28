@@ -145,6 +145,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [isVideo(aValue, bOptional)](./utils.isvideo.md) | Tests if an element is a video. If the element is optional, it can be null or an arbitrary object. Otherwise we must have at least an asset and a URL. |
 |  [isVideoElement(aValue)](./utils.isvideoelement.md) | Tests if an element is a video element |
 |  [kebabCase(str)](./utils.kebabcase.md) |  |
+|  [logModule(aVersion, aModule, aLogSvc)](./utils.logmodule.md) | Logs version information for a module |
 |  [longHash()](./utils.longhash.md) | Returns an initial value for the hash code |
 |  [luceneEscapeKeyValue(aKey, aTerm)](./utils.luceneescapekeyvalue.md) | Generates a search selector and escapes the value. If the value is missing the method generates an expression that searches for missing values. |
 |  [luceneEscapeKeyValueAnd(aKey, aTerms)](./utils.luceneescapekeyvalueand.md) | Generates a selector and joins with 'AND' |

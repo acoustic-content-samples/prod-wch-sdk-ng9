@@ -4,7 +4,7 @@
 
 ## ng-app-live package
 
-Module that contains a default configuration to run an [Angular](https://angular.io/) application against [Acoustic Content](https://www.ibm.com/products/watson-content-hub) in view mode.
+Module that contains a default configuration to run an [Angular](https://angular.io/) application against [Acoustic Content](https://www.ibm.com/products/watson-content-hub) in live mode.
 
 ## Classes
 

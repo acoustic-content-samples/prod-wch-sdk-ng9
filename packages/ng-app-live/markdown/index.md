@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng-app-live](./ng-app-live.md) | Module that contains a default configuration to run an [Angular](https://angular.io/) application against [Acoustic Content](https://www.ibm.com/products/watson-content-hub) in view mode. |
+|  [@acoustic-content-sdk/ng-app-live](./ng-app-live.md) | Module that contains a default configuration to run an [Angular](https://angular.io/) application against [Acoustic Content](https://www.ibm.com/products/watson-content-hub) in live mode. |
 

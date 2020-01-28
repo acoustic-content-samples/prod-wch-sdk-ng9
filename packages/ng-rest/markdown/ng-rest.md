@@ -11,6 +11,7 @@ Implementation of services for the React SDK based on a REST backend.
 |  Class | Description |
 |  --- | --- |
 |  [WchNgRestContentModule](./ng-rest.wchngrestcontentmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_CONTENT_RESOLVER</code>. |
+|  [WchNgRestFetchTextModule](./ng-rest.wchngrestfetchtextmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that provides an implementation of <code>WCH_TOKEN_FETCH_TEXT</code> |
 |  [WchNgRestLayoutMappingModule](./ng-rest.wchngrestlayoutmappingmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
 |  [WchNgRestLayoutModule](./ng-rest.wchngrestlayoutmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_LAYOUT_RESOLVER</code>. |
 |  [WchNgRestModule](./ng-rest.wchngrestmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes common services. |
