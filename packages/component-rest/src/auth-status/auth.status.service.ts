@@ -11,12 +11,13 @@ import {
   isString,
   jsonParse,
   NOOP_LOGGER_SERVICE,
+  opDistinctUntilChanged,
   opShareLast,
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { catchError, first, map } from 'rxjs/operators';
+import { catchError, first, map, startWith } from 'rxjs/operators';
 
 const LOGGER = 'AbstractAuthStatusService';
 
@@ -68,6 +69,8 @@ export class AbstractAuthStatusService implements AuthStatus {
     // check if we are logged in
     this.authenticated$ = rxPipe(
       rxIsLoggedIn(aFetchText),
+      startWith(false),
+      opDistinctUntilChanged,
       log('authenticated'),
       opShareLast
     );

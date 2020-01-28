@@ -1,4 +1,10 @@
-import { Query, SearchResult, SearchResults } from '@acoustic-content-sdk/api';
+import {
+  KEY_ID,
+  Query,
+  SEARCH_FL_DOCUMENT,
+  SearchResult,
+  SearchResults
+} from '@acoustic-content-sdk/api';
 import { FETCH_PRIORITY, FetchText } from '@acoustic-content-sdk/rest-api';
 import {
   chunkArray,
@@ -68,8 +74,8 @@ function searchChunkByClassificationAndIds<T>(
   // build the query
   const query: Query = {
     q: luceneEscapeKeyValue('classification', aClassification),
-    fq: luceneEscapeKeyValueOr('id', ...aIds),
-    fl: 'id,document:[json]',
+    fq: luceneEscapeKeyValueOr(KEY_ID, ...aIds),
+    fl: `${KEY_ID},${SEARCH_FL_DOCUMENT}`,
     rows
   };
   // make the query

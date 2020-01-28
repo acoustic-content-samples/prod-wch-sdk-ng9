@@ -7,6 +7,7 @@ import {
   Layout,
   Logger,
   RenderingContext,
+  SEARCH_FL_DOCUMENT,
   StaticHubInfoUrlProvider,
   UrlConfig,
   WCH_CONFIG_API_URL,
@@ -358,7 +359,7 @@ const _KEY_ROWS = 'rows';
 const _KEY_PATHS = 'paths';
 const _VALUE_ONE_ROW = '1';
 const _VALUE_MAX_ROWS = anyToString(0x7fffffff);
-const _VALUE_FIELD_LIST = 'document:[json]';
+const _VALUE_FIELD_LIST = SEARCH_FL_DOCUMENT;
 const _KEY_SEARCH_FQ = 'fq';
 const _VALUE_SEARCH_FQ_CONTENT = 'classification:(content)';
 const _VALUE_SEARCH_FQ_PAGE = 'classification:(page)';

@@ -8,6 +8,7 @@ import {
   CLASSIFICATION_LAYOUT_MAPPING,
   LoggerService,
   Query,
+  SEARCH_FL_DOCUMENT,
   SearchResult,
   SearchResults
 } from '@acoustic-content-sdk/api';
@@ -51,7 +52,7 @@ function createSearchQuery(aClassifications: string[]): Query {
   return {
     q: luceneEscapeKeyValueOr('classification', ...cls),
     rows: SEARCH_MAX_ROWS,
-    fl: 'document:[json]'
+    fl: SEARCH_FL_DOCUMENT
   };
 }
 

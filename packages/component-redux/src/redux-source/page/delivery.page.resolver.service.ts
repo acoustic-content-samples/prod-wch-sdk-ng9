@@ -25,7 +25,6 @@ import {
 import {
   createDeliveryContentItem,
   isEqual,
-  luceneEscapeKeyValue,
   luceneEscapeKeyValueOr,
   mapArray,
   NOOP_LOGGER_SERVICE,
@@ -145,7 +144,6 @@ export class AbstractDeliveryPageResolverService
     // basic query
     const query: Query = {
       fl: KEY_ID,
-      fq: luceneEscapeKeyValue('classification', CLASSIFICATION_CONTENT),
       rows: 1
     };
     // send a request

@@ -5,7 +5,8 @@ import {
   Logger,
   Query,
   SearchResult,
-  SearchResults
+  SearchResults,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   createAuthenticatedLoader,
@@ -53,7 +54,7 @@ function createLayoutMappingByTypeQuery(aTypeId: string): Query {
     q: luceneEscapeKeyValue('classification', CLASSIFICATION_LAYOUT_MAPPING),
     fq: luceneEscapeKeyValue(KEY_TYPE_ID, aTypeId),
     rows: 1,
-    fl: 'document:[json]'
+    fl: SEARCH_FL_DOCUMENT
   };
 }
 

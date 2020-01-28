@@ -2,7 +2,8 @@ import {
   CLASSIFICATION_CONTENT_TYPE,
   DeliveryType,
   KEY_ID,
-  LoggerService
+  LoggerService,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   DeliverySearchResolver,
@@ -41,13 +42,13 @@ export class AbstractDeliveryTypeResolverService
     const logger = aLogSvc.get(LOGGER);
     // base keys
     const query = {
-      fl: 'document:[json]',
-      fq: luceneEscapeKeyValue('classification', CLASSIFICATION_CONTENT_TYPE)
+      fl: SEARCH_FL_DOCUMENT
     };
 
     // load the type
     const getDeliveryType = createResolverFromSearch<DeliveryType>(
       aSearch,
+      CLASSIFICATION_CONTENT_TYPE,
       (id) => ({ ...query, q: luceneEscapeKeyValue(KEY_ID, id) }),
       aLogSvc
     );

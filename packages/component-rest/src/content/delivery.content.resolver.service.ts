@@ -3,7 +3,8 @@ import {
   ContentItemWithLayout,
   DeliveryContentItem,
   KEY_ID,
-  LoggerService
+  LoggerService,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   DeliveryContentResolver,
@@ -45,14 +46,14 @@ export class AbstractDeliveryContentResolverService
     const logger = aLogSvc.get(LOGGER);
     // base keys
     const query = {
-      fl: 'document:[json]',
-      fq: luceneEscapeKeyValue('classification', CLASSIFICATION_CONTENT)
+      fl: SEARCH_FL_DOCUMENT
     };
     // callback
     const getContentItemWithLayout = createResolverFromSearch<
       ContentItemWithLayout
     >(
       aSearch,
+      CLASSIFICATION_CONTENT,
       (id) => ({ ...query, q: luceneEscapeKeyValue(KEY_ID, id) }),
       aLogSvc
     );

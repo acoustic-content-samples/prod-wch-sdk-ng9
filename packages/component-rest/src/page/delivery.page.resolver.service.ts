@@ -2,7 +2,8 @@ import {
   CLASSIFICATION_CONTENT,
   ContentItemWithLayout,
   DeliveryContentItem,
-  LoggerService
+  LoggerService,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   DeliveryPageResolver,
@@ -10,7 +11,6 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import {
   createDeliveryContentItem,
-  luceneEscapeKeyValue,
   luceneEscapeKeyValueOr,
   NOOP_LOGGER_SERVICE,
   rxCachedFunction,
@@ -57,18 +57,19 @@ export class AbstractDeliveryPageResolverService
     const logger = aLogSvc.get(LOGGER);
     // base keys
     const query = {
-      fl: 'document:[json]',
-      fq: luceneEscapeKeyValue('classification', CLASSIFICATION_CONTENT)
+      fl: SEARCH_FL_DOCUMENT,
+      rows: 1
     };
     // callback
     const getContentItemWithLayout = createResolverFromSearch<
       ContentItemWithLayout
     >(
       aSearch,
+      CLASSIFICATION_CONTENT,
       (path) => ({
         ...query,
         q: luceneEscapeKeyValueOr(
-          'string1',
+          'path',
           removeTrailingSlash(path),
           ensureTrailingSlash(path)
         )

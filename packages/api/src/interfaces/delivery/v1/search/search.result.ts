@@ -6,7 +6,8 @@ export interface SearchResult<T> {
   document: T;
 }
 
-export interface RenderingContextSearchResult extends SearchResult<RenderingContext> {
+export interface RenderingContextSearchResult
+  extends SearchResult<RenderingContext> {
   document: RenderingContext;
 }
 
@@ -20,15 +21,18 @@ export interface SearchResults<T> {
 }
 
 export interface RenderingContextQueryResult {
-
   numFound: number;
 
   renderingContexts: RenderingContext[];
 }
 
 export interface SitePagesQueryResult {
-
   numFound: number;
 
   sitePages: SitePage[];
 }
+
+/**
+ * Constant to get the full document from the search result
+ */
+export const SEARCH_FL_DOCUMENT = 'document:[json]';

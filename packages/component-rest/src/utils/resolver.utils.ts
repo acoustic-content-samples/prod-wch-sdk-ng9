@@ -64,6 +64,7 @@ const LOGGER = 'createResolverFromSearch';
 
 export function createResolverFromSearch<T>(
   aSearch: DeliverySearchResolver,
+  aClassification: string,
   aCallback: UnaryFunction<string, QueryInput>,
   aLogSvc: LoggerService
 ): UnaryFunction<string, Observable<T>> {
@@ -77,7 +78,7 @@ export function createResolverFromSearch<T>(
   ): Observable<SearchResults<SearchResult<T>>> => {
     // dispatch
     return rxPipe(
-      aSearch.getDeliverySearchResults(aCallback(id), id),
+      aSearch.getDeliverySearchResults(aCallback(id), aClassification),
       catchError((error) => {
         // log
         logger.error(error);

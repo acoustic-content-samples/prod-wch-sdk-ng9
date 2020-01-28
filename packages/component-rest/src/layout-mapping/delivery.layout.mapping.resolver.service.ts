@@ -1,7 +1,8 @@
 import {
   CLASSIFICATION_LAYOUT_MAPPING,
   DeliveryLayoutMapping,
-  LoggerService
+  LoggerService,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   DeliveryLayoutMappingResolver,
@@ -42,8 +43,7 @@ export class AbstractDeliveryLayoutMappingResolverService
     const logger = aLogSvc.get(LOGGER);
     // base keys
     const query = {
-      fl: 'document:[json]',
-      fq: luceneEscapeKeyValue('classification', CLASSIFICATION_LAYOUT_MAPPING)
+      fl: SEARCH_FL_DOCUMENT
     };
 
     // load the layout
@@ -51,6 +51,7 @@ export class AbstractDeliveryLayoutMappingResolverService
       DeliveryLayoutMapping
     >(
       aSearch,
+      CLASSIFICATION_LAYOUT_MAPPING,
       (typeId) => ({ ...query, q: luceneEscapeKeyValue('typeId', typeId) }),
       aLogSvc
     );
