@@ -225,6 +225,7 @@ export {
   rxLogNext,
   rxNext
 } from './logger/rx.logger';
+export { logModule } from './logger/version';
 export { createMessageHandler } from './messages/message.event';
 export { createNavigateByPathHandler } from './messages/navigate.by.path.handler';
 export { createRefreshHandler } from './messages/refresh.handler';

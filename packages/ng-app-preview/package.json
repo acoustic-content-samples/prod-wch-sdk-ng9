@@ -1,0 +1,70 @@
+{
+  "name": "@acoustic-content-sdk/ng-app-preview",
+  "version": "9.0.0",
+  "description": "Module that contains a default configuration to run an Angular application against Acoustic Content in preview mode.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-ng-app-preview.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-ng-app-preview.js",
+  "typings": "dist/acoustic-content-sdk-ng-app-preview.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/ng-api": "9.0.0",
+    "@acoustic-content-sdk/ng-edit": "9.0.0",
+    "@acoustic-content-sdk/ng-hbs-edit": "9.0.0",
+    "@acoustic-content-sdk/ng-redux": "9.0.0",
+    "@acoustic-content-sdk/ng-utils": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "next"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-ng-app-preview.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-ng-app-preview.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-ng-app-preview.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng-app-preview.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-ng-app-preview.js",
+  "metadata": "dist/acoustic-content-sdk-ng-app-preview.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
+        "@acoustic-content-sdk/ng-edit": "acoustic-content-sdk.ng-edit",
+        "@acoustic-content-sdk/ng-hbs-edit": "acoustic-content-sdk.ng-hbs-edit",
+        "@acoustic-content-sdk/ng-redux": "acoustic-content-sdk.ng-redux",
+        "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}
