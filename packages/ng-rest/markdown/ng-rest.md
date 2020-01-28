@@ -10,6 +10,8 @@ Implementation of services for the React SDK based on a REST backend.
 
 |  Class | Description |
 |  --- | --- |
+|  [WchNgRestApiUrlModule](./ng-rest.wchngrestapiurlmodule.md) | Module that provides the <code>WCH_TOKEN_API_URL</code>. Use this to explicitly override the API URL, e.g. in case the application is hosted externally or in case the system is configured for local development. In the typical production case when the application is hosted from Acoustic Content there is no need to configure the API URL explicitly. |
+|  [WchNgRestAuthStatusModule](./ng-rest.wchngrestauthstatusmodule.md) | /\*\* [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_AUTH_STATUS</code>. |
 |  [WchNgRestContentModule](./ng-rest.wchngrestcontentmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_CONTENT_RESOLVER</code>. |
 |  [WchNgRestFetchTextModule](./ng-rest.wchngrestfetchtextmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that provides an implementation of <code>WCH_TOKEN_FETCH_TEXT</code> |
 |  [WchNgRestLayoutMappingModule](./ng-rest.wchngrestlayoutmappingmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |

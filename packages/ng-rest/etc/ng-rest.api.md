@@ -5,6 +5,7 @@
 ```ts
 
 import { HubInfoUrlProvider } from '@acoustic-content-sdk/api';
+import { ModuleWithProviders } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
@@ -20,6 +21,15 @@ export const VERSION: {
     };
     build: Date;
 };
+
+// @public
+export class WchNgRestApiUrlModule {
+    static forRoot(aApiUrl?: HubInfoUrlProvider): ModuleWithProviders;
+}
+
+// @public
+export class WchNgRestAuthStatusModule {
+}
 
 // @public
 export class WchNgRestContentModule {

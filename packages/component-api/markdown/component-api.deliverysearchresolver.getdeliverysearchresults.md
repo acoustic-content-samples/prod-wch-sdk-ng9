@@ -4,7 +4,7 @@
 
 ## DeliverySearchResolver.getDeliverySearchResults() method
 
-Execute the search
+Execute the search. The implementation will add the classification to the `fq` part of the query, automatically, so there is no need to contain it in the query.
 
 <b>Signature:</b>
 

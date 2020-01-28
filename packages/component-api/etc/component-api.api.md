@@ -64,7 +64,7 @@ export interface DeliveryPageResolver {
     getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
 }
 
-// @public (undocumented)
+// @public
 export interface DeliverySearchResolver {
     getDeliverySearchResults<T>(aQuery: QueryInput, aClassification: string): Observable<SearchResults<T>>;
 }

@@ -18,7 +18,7 @@ Framework independent collection of APIs and constants
 |  [DeliveryLayoutMappingResolver](./component-api.deliverylayoutmappingresolver.md) | Service interface that allows to resolve a type |
 |  [DeliveryLayoutResolver](./component-api.deliverylayoutresolver.md) | Service interface that allows to resolve a type |
 |  [DeliveryPageResolver](./component-api.deliverypageresolver.md) | Service interface that allows to resolve a rendering context given its ID. |
-|  [DeliverySearchResolver](./component-api.deliverysearchresolver.md) |  |
+|  [DeliverySearchResolver](./component-api.deliverysearchresolver.md) | Service that performs a search query against delivery search for artifacts of a particular classification. |
 |  [DeliverySiteResolver](./component-api.deliverysiteresolver.md) |  |
 |  [DeliveryTypeResolver](./component-api.deliverytyperesolver.md) | Service interface that allows to resolve a type |
 |  [HandlebarsResolver](./component-api.handlebarsresolver.md) | Service interface to map a template to a (markup) string |

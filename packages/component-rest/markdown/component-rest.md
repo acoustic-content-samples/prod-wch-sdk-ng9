@@ -10,6 +10,7 @@ Implementation of base classes to implement SDK services based on REST.
 
 |  Class | Description |
 |  --- | --- |
+|  [AbstractAuthStatusService](./component-rest.abstractauthstatusservice.md) | Checks for the authentication status based on a REST request |
 |  [AbstractDeliveryContentResolverService](./component-rest.abstractdeliverycontentresolverservice.md) | Base class to implement <code>DeliveryContentResolver</code> |
 |  [AbstractDeliveryLayoutMappingResolverService](./component-rest.abstractdeliverylayoutmappingresolverservice.md) | Base class to implement <code>DeliveryLayoutMappingResolver</code> |
 |  [AbstractDeliveryLayoutResolverService](./component-rest.abstractdeliverylayoutresolverservice.md) | Base class to implement <code>DeliveryLayoutResolver</code> |

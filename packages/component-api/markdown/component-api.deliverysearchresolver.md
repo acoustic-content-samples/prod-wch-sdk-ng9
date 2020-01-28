@@ -4,6 +4,8 @@
 
 ## DeliverySearchResolver interface
 
+Service that performs a search query against delivery search for artifacts of a particular classification.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,5 +16,5 @@ export interface DeliverySearchResolver
 
 |  Method | Description |
 |  --- | --- |
-|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.deliverysearchresolver.getdeliverysearchresults.md) | Execute the search |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.deliverysearchresolver.getdeliverysearchresults.md) | Execute the search. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
 

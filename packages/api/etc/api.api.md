@@ -1833,6 +1833,9 @@ export interface SdkUnsubscribeEvent extends SdkMessagePayload {
     type: 'WchSdk.unsubscribe';
 }
 
+// @public
+export const SEARCH_FL_DOCUMENT = "document:[json]";
+
 // @public (undocumented)
 export interface SearchResult<T> {
     // (undocumented)

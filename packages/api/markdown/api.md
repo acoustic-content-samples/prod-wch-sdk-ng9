@@ -281,6 +281,7 @@ Interfaces and constants to support the Acoustic sites SDK and related modules.
 |  [SDK\_SUBSCRIBE\_MODE\_EVENT\_TYPE](./api.sdk_subscribe_mode_event_type.md) | Event that subscribes a listener for modes |
 |  [SDK\_SUBSCRIBE\_ROUTE\_EVENT\_TYPE](./api.sdk_subscribe_route_event_type.md) | Event that subscribes a listener for a specific route |
 |  [SDK\_UNSUBSCRIBE\_EVENT\_TYPE](./api.sdk_unsubscribe_event_type.md) | Event that unsubscribes a listener |
+|  [SEARCH\_FL\_DOCUMENT](./api.search_fl_document.md) | Constant to get the full document from the search result |
 |  [VALUE\_ACCEPT\_PRIVACY\_NOTICE](./api.value_accept_privacy_notice.md) |  |
 |  [VERSION](./api.version.md) | Version and build number of the package |
 |  [WCH\_CONFIG\_API\_URL](./api.wch_config_api_url.md) | Name of the 'rel' attribute of a link element used to configure the API URL |

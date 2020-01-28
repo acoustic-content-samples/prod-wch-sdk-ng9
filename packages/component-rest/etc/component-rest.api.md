@@ -4,6 +4,7 @@
 
 ```ts
 
+import { AuthStatus } from '@acoustic-content-sdk/api';
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { DeliveryLayout } from '@acoustic-content-sdk/api';
@@ -14,10 +15,18 @@ import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
 import { DeliveryType } from '@acoustic-content-sdk/api';
 import { DeliveryTypeResolver } from '@acoustic-content-sdk/component-api';
+import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { HubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
+
+// @public
+export class AbstractAuthStatusService implements AuthStatus {
+    protected constructor(aFetchText: FetchText, aLogSvc?: LoggerService);
+    // (undocumented)
+    authenticated$: Observable<boolean>;
+}
 
 // @public
 export class AbstractDeliveryContentResolverService implements DeliveryContentResolver {

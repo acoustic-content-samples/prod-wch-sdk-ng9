@@ -11,6 +11,7 @@ Implementation of services for the React SDK based on a REST backend.
 |  Variable | Description |
 |  --- | --- |
 |  [VERSION](./react-rest.version.md) | Version and build number of the package |
+|  [WCH\_PROVIDER\_REST\_AUTH\_STATUS](./react-rest.wch_provider_rest_auth_status.md) | Provider implementation for the <code>WCH_CONTEXT_AUTH_STATUS</code>. |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.wch_provider_rest_delivery_content_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER</code>. |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_mapping_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
 |  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER</code>. |
