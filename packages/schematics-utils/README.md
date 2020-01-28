@@ -1,3 +1,3 @@
-[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/schematic-utils.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/schematic-utils)
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/schematics-utils.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/schematics-utils)
 
-[API Documentation](./markdown/schematic-utils.md)
+[API Documentation](./markdown/schematics-utils.md)
