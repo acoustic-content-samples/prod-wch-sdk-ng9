@@ -30,7 +30,8 @@
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/component-rest": "9.0.0",
-    "@acoustic-content-sdk/react-api": "9.0.0"
+    "@acoustic-content-sdk/react-api": "9.0.0",
+    "@acoustic-content-sdk/react-rest-api": "9.0.0"
   },
   "peerDependencies": {
     "rxjs": "^6"
@@ -49,7 +50,8 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/component-rest": "acoustic-content-sdk.component-rest",
-        "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api"
+        "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
+        "@acoustic-content-sdk/react-rest-api": "acoustic-content-sdk.react-rest-api"
       }
     },
     "whitelistedNonPeerDependencies": [
