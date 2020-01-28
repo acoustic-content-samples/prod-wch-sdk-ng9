@@ -4,6 +4,7 @@
  * @packageDocumentation
  */
 
+export * from './auth-status/auth.status.service';
 export * from './content/delivery.content.resolver.service';
 export * from './info/wch.info.service';
 export * from './layout-mapping/delivery.layout.mapping.resolver.service';

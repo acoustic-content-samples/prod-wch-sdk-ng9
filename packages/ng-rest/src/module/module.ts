@@ -2,6 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { WchNgRestAuthStatusModule } from '../auth-status/auth.status.module';
 import { WchNgRestContentModule } from '../content/delivery.content.resolver.module';
 import { WchNgRestFetchTextModule } from '../fetch/fetch.text.module';
 import { WchNgRestUrlConfigModule } from '../info/wch.info.module';
@@ -22,7 +23,8 @@ import { WchNgRestTypeModule } from '../type/delivery.type.resolver.module';
     WchNgRestLayoutMappingModule,
     WchNgRestTypeModule,
     WchNgRestPageModule,
-    WchNgRestFetchTextModule
+    WchNgRestFetchTextModule,
+    WchNgRestAuthStatusModule
   ]
 })
 export class WchNgRestModule {}

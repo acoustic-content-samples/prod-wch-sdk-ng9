@@ -29,6 +29,7 @@
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/component-api": "9.0.0",
+    "@acoustic-content-sdk/rest-api": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
@@ -48,6 +49,7 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
+        "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
