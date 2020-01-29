@@ -1,3 +1,6 @@
+/**
+ * Definition of the input parameters for the schematic
+ */
 export interface AddFeatureModuleToApplicationSchema {
   /**
    * Name of the module, may be a comma separated list

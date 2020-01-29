@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/schematics-feature-module",
   "version": "9.0.0",
-  "description": "Helper library to implement schematics.",
+  "description": "Schematic to add a feature module to an application.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -24,13 +24,16 @@
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
     "test": "jest"
   },
   "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/schematics-utils": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
+    "rxjs": "^6",
     "typescript": "^3"
   },
   "engines": {
@@ -49,6 +52,7 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "typescript": "Typescript"

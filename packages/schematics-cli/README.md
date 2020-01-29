@@ -89,6 +89,59 @@ The location of the [wchtools folder](https://www.npmjs.com/package/wchtools-cli
 
 If you have bootstrapped your application with [@acoustic-content-sdk/app](https://www.npmjs.com/package/@acoustic-content-sdk/app) then the folder and necessary configuration will be setup, already.
 
-## Documentation
+# Documentation
+
+## Feature Modules
+
+When generating NPM modules for application features it is helpful to include an automated way to [add](https://angular.io/cli/add) the module to an existing application. Modules can use the exported `addFeatureModuleToApplication` function to implement this without any additional coding required:
+
+1. add a `collection.json` file to your module. This schema points to a general purpose implementation of the required command.
+
+```json
+{
+  "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "factory": "@acoustic-content-sdk/schematics#addFeatureModuleToApplication",
+      "description": "YOUR_DESCRIPTION",
+      "schema": "./add/schema.json",
+      "private": true,
+      "hidden": true
+    }
+  }
+}
+```
+
+2. include your `schema.json`. This describes your module to the schematics engine.
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "SOME_UNIQUE_IDENTIFIER",
+  "title": "SOME_NICE_TITLE",
+  "type": "object",
+  "properties": {
+    "module": {
+      "type": "string",
+      "description": "Name of the main module to import. Use a comma separated list for more than one module, defaults to 'YOUR_MODULE_NAME'.",
+      "default": "YOUR_MODULE_NAME"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}
+```
+
+Make sure to replace `YOUR_MODULE_NAME` by the name of the [ngModule](https://angular.io/guide/architecture-modules) that exports your components.
+
+3. Reference your `collection.json` in the `package.json` of your module.
+
+```json
+{
+  "schematics": "./collection.json"
+}
+```
+
+## API Documentation
 
 [API Documentation](./markdown/schematics.md)

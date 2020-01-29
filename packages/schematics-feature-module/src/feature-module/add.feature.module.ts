@@ -1,9 +1,12 @@
+import { createVersionString, Logger } from '@acoustic-content-sdk/api';
 import {
   addImportToModule,
   Change,
   createLoggerService,
   findPackageJson,
   findProjectName,
+  getAppModulePath,
+  getSourceFile,
   getWorkspace,
   insertChanges,
   ProjectType,
@@ -11,8 +14,8 @@ import {
 } from '@acoustic-content-sdk/schematics-utils';
 import {
   firstElement,
-  isNil,
   isNotEmpty,
+  isNotNil,
   pluckPath,
   rxNext,
   rxPipe
@@ -26,17 +29,16 @@ import {
 import { parse } from 'path';
 import { MonoTypeOperatorFunction, Observable, of } from 'rxjs';
 import { map, mapTo } from 'rxjs/operators';
+import { SourceFile } from 'typescript';
 
 import { splitArray } from '../utils/split';
-import {
-  findAllModules,
-  isBaseModule,
-  WCH_NG_APP_BASE_MODULE
-} from './../typescript/modules';
+import { findAllModules, isBaseModule } from './../typescript/modules';
+import { MODULE, VERSION } from './../version';
 import { AddFeatureModuleToApplicationSchema } from './feature.module.schema';
 
 const selectSchema = pluckPath<string>(['schematic', 'description', 'schema']);
 const selectPackageName = pluckPath<string>(['name']);
+const selectMain = pluckPath<string>(['architect', 'build', 'options', 'main']);
 
 /**
  * Locates the package name
@@ -55,9 +57,50 @@ function findPackageName(context: SchematicContext): Observable<string> {
 const LOGGER = 'addFeatureModuleToApplication';
 
 /**
- * Adds SDK support to an existing Angular application
+ * Locates the source file for the application module
  *
- * @param options - the schematics object used to describe the applicatiojn
+ * @param aHost  - the host
+ * @param aProject - the selected project
+ * @param aLogger - some logging
+ *
+ * @returns the source file
+ */
+function findAppModule(
+  aHost: Tree,
+  aProject: WorkspaceProject<ProjectType.Application>,
+  aLogger: Logger
+): SourceFile {
+  // access the root folder
+  const srcRoot = aProject.sourceRoot;
+  // locate the main module
+  const baseModule = firstElement(
+    findAllModules(aHost, srcRoot).filter(isBaseModule)
+  );
+  if (isNotNil(baseModule)) {
+    // insert the modules
+    const [moduleName, srcFile] = baseModule;
+    // log the base module
+    aLogger.info('AppModule', moduleName, srcFile.fileName);
+    // returns the source file
+    return srcFile;
+  }
+  // try to locate it using the default way
+  const mainPath = selectMain(aProject);
+  const modulePath = getAppModulePath(aHost, mainPath);
+  // log the base module
+  aLogger.info('AppModule', modulePath);
+  // load the file
+  return getSourceFile(aHost, modulePath);
+}
+
+/**
+ * Adds a feature module to an application. The feature module is defined as part of the input options.
+ * The schematics fill locate the correct application module and then imports the feature module into the
+ * application module.
+ *
+ * The command is modeled such that it can be referenced from a feature module without any additional coding involved.
+ *
+ * @param options - the schematics object used to describe the feature module
  *
  * @returns the schematics rule that executes the transform
  */
@@ -75,6 +118,8 @@ export function addFeatureModuleToApplication(
     const logger = logSvc.get(LOGGER);
     // logging
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
+    // log some version information
+    logger.info(MODULE, createVersionString(VERSION));
     // access the position of the schema
     const importPath$ = isNotEmpty(importPath)
       ? of(importPath)
@@ -92,20 +137,8 @@ export function addFeatureModuleToApplication(
     }
     // we can safely cast
     const appProject = project as WorkspaceProject<ProjectType.Application>;
-    const srcRoot = appProject.sourceRoot;
-    // locate the main module
-    const baseModule = firstElement(
-      findAllModules(host, srcRoot).filter(isBaseModule)
-    );
-    if (isNil(baseModule)) {
-      throw new SchematicsException(
-        `Cannot find an "NgModule" importing "${WCH_NG_APP_BASE_MODULE}".`
-      );
-    }
-    // insert the modules
-    const [moduleName, srcFile] = baseModule;
-    // log the base module
-    logger.info('AppModule', moduleName, srcFile.fileName);
+    // locate the source file
+    const srcFile = findAppModule(host, appProject, logger);
     // apply the changes
     const changes$ = rxPipe(
       importPath$,

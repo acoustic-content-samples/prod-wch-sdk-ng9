@@ -4,6 +4,8 @@
 
 ## schematics-feature-module package
 
+Schematic to add a feature module to an application.
+
 ## Functions
 
 |  Function | Description |
@@ -14,5 +16,11 @@
 
 |  Interface | Description |
 |  --- | --- |
-|  [AddFeatureModuleToApplicationSchema](./schematics-feature-module.addfeaturemoduletoapplicationschema.md) |  |
+|  [AddFeatureModuleToApplicationSchema](./schematics-feature-module.addfeaturemoduletoapplicationschema.md) | Definition of the input parameters for the schematic |
+
+## Variables
+
+|  Variable | Description |
+|  --- | --- |
+|  [VERSION](./schematics-feature-module.version.md) | Version and build number of the package |
 

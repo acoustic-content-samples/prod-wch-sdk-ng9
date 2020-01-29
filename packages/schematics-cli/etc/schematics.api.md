@@ -4,8 +4,14 @@
 
 ```ts
 
+import { addFeatureModuleToApplication } from '@acoustic-content-sdk/schematics-feature-module';
+import { AddFeatureModuleToApplicationSchema } from '@acoustic-content-sdk/schematics-feature-module';
 import { CreateDriverArtifactsSchema } from '@acoustic-content-sdk/tooling';
 import { Rule } from '@angular-devkit/schematics';
+
+export { addFeatureModuleToApplication }
+
+export { AddFeatureModuleToApplicationSchema }
 
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //

@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/schematics-feature-module](./schematics-feature-module.md) |  |
+|  [@acoustic-content-sdk/schematics-feature-module](./schematics-feature-module.md) | Schematic to add a feature module to an application. |
 

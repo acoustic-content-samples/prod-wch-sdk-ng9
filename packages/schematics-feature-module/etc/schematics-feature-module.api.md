@@ -7,17 +7,24 @@
 import { Rule } from '@angular-devkit/schematics';
 
 // @public
-function addFeatureModuleToApplication(options: AddFeatureModuleToApplicationSchema): Rule;
+export function addFeatureModuleToApplication(options: AddFeatureModuleToApplicationSchema): Rule;
 
-export default addFeatureModuleToApplication;
-
-// @public (undocumented)
+// @public
 export interface AddFeatureModuleToApplicationSchema {
+    importPath?: string;
     module: string;
     project?: string;
 }
 
+// @public
+export const VERSION: {
+    version: {
+        major: string;
+        minor: string;
+        patch: string;
+    };
+    build: Date;
+};
 
-// (No @packageDocumentation comment for this package)
 
 ```
