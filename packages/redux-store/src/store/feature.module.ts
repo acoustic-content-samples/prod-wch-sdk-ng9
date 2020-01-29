@@ -48,7 +48,7 @@ export const initFeatureAction: UnaryFunction<
  * Feature module identifier. This wrapper around an ID is useful, because it carries type
  * information.
  */
-export interface ReduxFeatureModuleId<S, FS> {
+export interface ReduxFeatureModuleId<S, FS = any> {
   /**
    * ID of the feature module, will also be used as the key to the state
    */
@@ -61,7 +61,7 @@ export interface ReduxFeatureModuleId<S, FS> {
  * @param id - the module identifier or empty to create a random identifier
  * @returns the ID
  */
-export function featureModuleId<S, FS>(
+export function featureModuleId<S, FS = any>(
   id: string = hashRandomIdentifier()
 ): ReduxFeatureModuleId<S, FS> {
   return { id };

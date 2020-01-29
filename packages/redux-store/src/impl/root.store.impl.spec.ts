@@ -1,13 +1,9 @@
 import { rxPipe } from '@acoustic-content-sdk/utils';
+import { identity, Observable, asyncScheduler } from 'rxjs';
+import { take, tap, observeOn } from 'rxjs/operators';
 
-import {
-  sampleFeatureModule,
-  selectSampleFeature
-} from '../sample/feature/feature';
 import { createLog4jsLoggerService } from '../utils/log.mock';
-import { createReduxRootStore, rxSelect, rxStore } from './root.store.impl';
-import { Observable, identity } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { rxSelect } from './root.store.impl';
 
 describe('root.store.impl.spec', () => {
   // construct the logging service
@@ -28,7 +24,12 @@ describe('root.store.impl.spec', () => {
       };
     });
 
-    const value$ = rxPipe(ob$, rxSelect(identity), take(2));
+    const value$ = rxPipe(
+      ob$,
+      observeOn(asyncScheduler),
+      rxSelect(identity),
+      take(2)
+    );
 
     return value$.toPromise().then(() => expect(subCount).toBe(0));
   });

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { forEach } from '@acoustic-content-sdk/utils';
-import * as HTML_TAGS from 'html-tag-names';
+import HTML_TAGS from 'html-tag-names';
 
 import { STYLE_KEYS, STYLE_MAP } from './jsx';
 import { getReactElementName } from './render';

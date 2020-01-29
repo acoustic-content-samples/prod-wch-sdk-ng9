@@ -622,6 +622,9 @@ export interface LintBuilderOptions {
 // @public (undocumented)
 export type LintBuilderTarget = BuilderTarget<Builders.TsLint, LintBuilderOptions>;
 
+// @public
+export function locatePackageJson(aDir: string): Observable<string>;
+
 // @public (undocumented)
 export interface Location {
     // (undocumented)

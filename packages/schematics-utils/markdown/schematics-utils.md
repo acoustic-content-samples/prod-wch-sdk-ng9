@@ -94,6 +94,7 @@
 |  [isValidUserName(aValue)](./schematics-utils.isvalidusername.md) |  |
 |  [isWorkspaceProject(project)](./schematics-utils.isworkspaceproject.md) |  |
 |  [isWorkspaceSchema(workspace)](./schematics-utils.isworkspaceschema.md) |  |
+|  [locatePackageJson(aDir)](./schematics-utils.locatepackagejson.md) | Locates the name of the package.json starting with the current directory |
 |  [parseLines(aSource)](./schematics-utils.parselines.md) |  |
 |  [parseName(path, name)](./schematics-utils.parsename.md) |  |
 |  [readBufferOnTree(aHost, aRoot)](./schematics-utils.readbufferontree.md) | Constructs the ReadBuffer callback on top of a host |
