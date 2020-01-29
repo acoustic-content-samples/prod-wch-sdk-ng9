@@ -1,10 +1,9 @@
-import { assertObject, isNil } from '@acoustic-content-sdk/utils';
+import { assertObject, isNil, rxPipe } from '@acoustic-content-sdk/utils';
 import { readFile } from 'fs';
 import { join, parse } from 'path';
 import { bindNodeCallback, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { satisfies } from 'semver';
-import {} from '@angular-devkit/architect';
 
 export enum DEP_TYPE {
   PEER,
@@ -50,7 +49,8 @@ const rxReadFile = bindNodeCallback<string, string, string>(readFile);
 
 export function findPackageJson(aDir: string): Observable<any> {
   // read
-  return rxReadFile(join(aDir, 'package.json'), 'utf-8').pipe(
+  return rxPipe(
+    rxReadFile(join(aDir, 'package.json'), 'utf-8'),
     map((data) => JSON.parse(data)),
     catchError((err) => findPackageJson(parse(aDir).dir))
   );

@@ -7,4 +7,8 @@ export interface AddFeatureModuleToApplicationSchema {
    * The project name, falls back to the default project
    */
   project?: string;
+  /**
+   * Optionally the import path of the module. If missing defaults to the project running the initial schematic.
+   */
+  importPath?: string;
 }
