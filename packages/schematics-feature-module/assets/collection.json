@@ -1,0 +1,10 @@
+{
+  "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "schematics": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics-feature-module.umd.min#generateFeatureModuleSchematic",
+      "schema": "./generate/feature.module.schematics.json",
+      "description": "Adds schematic support to a feature module."
+    }
+  }
+}

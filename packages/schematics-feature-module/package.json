@@ -68,5 +68,6 @@
   },
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
-  }
+  },
+  "schematics": "./assets/collection.json"
 }

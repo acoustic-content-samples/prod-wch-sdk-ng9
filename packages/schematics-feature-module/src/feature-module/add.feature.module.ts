@@ -28,7 +28,7 @@ import {
 } from '@angular-devkit/schematics';
 import { parse } from 'path';
 import { MonoTypeOperatorFunction, Observable, of } from 'rxjs';
-import { map, mapTo } from 'rxjs/operators';
+import { map, mapTo, tap } from 'rxjs/operators';
 import { SourceFile } from 'typescript';
 
 import { splitArray } from '../utils/split';

@@ -53,7 +53,7 @@ function updatePackageJson(aPkg: any, aRoot: string): Observable<any> {
  *
  * @returns the schematics rule that executes the transform
  */
-export function addFeatureModuleSchematic(
+export function generateFeatureModuleSchematic(
   options: GenerateFeatureModuleSchema
 ): Rule {
   // extract the module
