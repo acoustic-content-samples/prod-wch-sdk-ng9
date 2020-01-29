@@ -29,7 +29,7 @@ export function createReduxMetaModule<FS = any>(dependencies: ArrayLike<ReduxFea
 export function createReduxRootStore(aDependencies: any, aPreLoadedState?: ReduxRootState): ReduxRootStore;
 
 // @public
-export function featureModuleId<S, FS>(id?: string): ReduxFeatureModuleId<S, FS>;
+export function featureModuleId<S, FS = any>(id?: string): ReduxFeatureModuleId<S, FS>;
 
 // @public
 export function ofInitFeature<A = AnyAction>(idOrModuleId: string | ReduxFeatureModuleId<any, any>): OperatorFunction<A, string>;
@@ -51,7 +51,7 @@ export interface ReduxFeatureModule<S, FS = any, Input extends Action = AnyActio
 }
 
 // @public
-export interface ReduxFeatureModuleId<S, FS> {
+export interface ReduxFeatureModuleId<S, FS = any> {
     id: string;
 }
 

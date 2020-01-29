@@ -5,6 +5,8 @@
   "keywords": [
     "acoustic",
     "acoustic-content",
+    "angular",
+    "schematics",
     "sdk"
   ],
   "bugs": {
@@ -66,8 +68,8 @@
       "@acoustic-content-sdk/*"
     ]
   },
+  "schematics": "./assets/collection.json",
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
-  },
-  "schematics": "./assets/collection.json"
+  }
 }

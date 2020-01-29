@@ -9,7 +9,7 @@ Constructs a feature module ID that carries type information
 <b>Signature:</b>
 
 ```typescript
-export declare function featureModuleId<S, FS>(id?: string): ReduxFeatureModuleId<S, FS>;
+export declare function featureModuleId<S, FS = any>(id?: string): ReduxFeatureModuleId<S, FS>;
 ```
 
 ## Parameters

@@ -7,9 +7,6 @@
 import { Rule } from '@angular-devkit/schematics';
 
 // @public
-export function addFeatureModuleSchematic(options: GenerateFeatureModuleSchema): Rule;
-
-// @public
 export function addFeatureModuleToApplication(options: AddFeatureModuleToApplicationSchema): Rule;
 
 // @public
@@ -24,6 +21,9 @@ export interface GenerateFeatureModuleSchema {
     module: string;
     project?: string;
 }
+
+// @public
+export function generateFeatureModuleSchematic(options: GenerateFeatureModuleSchema): Rule;
 
 // @public
 export const VERSION: {

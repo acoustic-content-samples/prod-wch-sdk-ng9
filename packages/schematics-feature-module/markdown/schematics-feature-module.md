@@ -10,8 +10,8 @@ Schematic to add a feature module to an application.
 
 |  Function | Description |
 |  --- | --- |
-|  [addFeatureModuleSchematic(options)](./schematics-feature-module.addfeaturemoduleschematic.md) | Adds a feature module to an application. The feature module is defined as part of the input options. The schematics fill locate the correct application module and then imports the feature module into the application module.<!-- -->The command is modeled such that it can be referenced from a feature module without any additional coding involved. |
 |  [addFeatureModuleToApplication(options)](./schematics-feature-module.addfeaturemoduletoapplication.md) | Adds a feature module to an application. The feature module is defined as part of the input options. The schematics fill locate the correct application module and then imports the feature module into the application module.<!-- -->The command is modeled such that it can be referenced from a feature module without any additional coding involved. |
+|  [generateFeatureModuleSchematic(options)](./schematics-feature-module.generatefeaturemoduleschematic.md) | Adds a feature module to an application. The feature module is defined as part of the input options. The schematics fill locate the correct application module and then imports the feature module into the application module.<!-- -->The command is modeled such that it can be referenced from a feature module without any additional coding involved. |
 
 ## Interfaces
 

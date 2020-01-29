@@ -9,7 +9,7 @@ Feature module identifier. This wrapper around an ID is useful, because it carri
 <b>Signature:</b>
 
 ```typescript
-export interface ReduxFeatureModuleId<S, FS> 
+export interface ReduxFeatureModuleId<S, FS = any> 
 ```
 
 ## Properties
