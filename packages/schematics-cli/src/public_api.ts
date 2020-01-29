@@ -4,5 +4,9 @@
  * @packageDocumentation
  */
 
+export {
+  addFeatureModuleToApplication,
+  AddFeatureModuleToApplicationSchema
+} from '@acoustic-content-sdk/schematics-feature-module';
 export * from './generate';
 export { VERSION } from './version';
