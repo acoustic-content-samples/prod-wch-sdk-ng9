@@ -70,6 +70,13 @@
               "outputPath": "dist/proto-sites-next-app/live",
               "main": "src/main.live.ts",
               "tsConfig": "tsconfig.app.live.json"
+            },
+            "sourceMap": {
+              "sourceMap": {
+                "hidden": true,
+                "scripts": true,
+                "styles": true
+              }
             }
           }
         },

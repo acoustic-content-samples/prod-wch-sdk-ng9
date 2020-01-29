@@ -1,4 +1,4 @@
-import { WchNgAppEditModule } from '@acoustic-content-sdk/ng-app-edit';
+import { WchNgAppPreviewModule } from '@acoustic-content-sdk/ng-app-preview';
 import { NgModule } from '@angular/core';
 
 import { AppModule } from './app.module';
@@ -9,7 +9,7 @@ import { AppModule } from './app.module';
 @NgModule({
   imports: [
     AppModule,
-    WchNgAppEditModule
+    WchNgAppPreviewModule
   ]
 })
 export class AppPreviewModule {}

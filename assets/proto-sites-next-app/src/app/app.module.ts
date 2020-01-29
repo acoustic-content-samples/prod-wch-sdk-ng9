@@ -1,7 +1,7 @@
-import { WchLoggerService, WchNgRouterModule, WchNgServicesModule } from '@acoustic-content-sdk/ng';
+import { WchLoggerService } from '@acoustic-content-sdk/ng';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { WchNgAppBaseModule } from '@acoustic-content-sdk/ng-app-base';
 import { WchNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
-import { WchNgBrowserWindowModule } from '@acoustic-content-sdk/ng-utils';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,12 +20,10 @@ import { MODULES } from './modules';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: false }),
-    WchNgBrowserWindowModule,
     WchNgLoggingModule.forRoot({
       onlyModules: ['createRendererV2|SitesRowsLayoutComponent']
     }),
-    WchNgServicesModule,
-    WchNgRouterModule,
+    WchNgAppBaseModule,
     PageLayoutModule,
     BasicBuildingBlocksModule,
     ...MODULES
