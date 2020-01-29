@@ -10,13 +10,15 @@ Schematic to add a feature module to an application.
 
 |  Function | Description |
 |  --- | --- |
-|  [addFeatureModuleToApplication(options)](./schematics-feature-module.addfeaturemoduletoapplication.md) | Adds SDK support to an existing Angular application |
+|  [addFeatureModuleSchematic(options)](./schematics-feature-module.addfeaturemoduleschematic.md) | Adds a feature module to an application. The feature module is defined as part of the input options. The schematics fill locate the correct application module and then imports the feature module into the application module.<!-- -->The command is modeled such that it can be referenced from a feature module without any additional coding involved. |
+|  [addFeatureModuleToApplication(options)](./schematics-feature-module.addfeaturemoduletoapplication.md) | Adds a feature module to an application. The feature module is defined as part of the input options. The schematics fill locate the correct application module and then imports the feature module into the application module.<!-- -->The command is modeled such that it can be referenced from a feature module without any additional coding involved. |
 
 ## Interfaces
 
 |  Interface | Description |
 |  --- | --- |
 |  [AddFeatureModuleToApplicationSchema](./schematics-feature-module.addfeaturemoduletoapplicationschema.md) | Definition of the input parameters for the schematic |
+|  [GenerateFeatureModuleSchema](./schematics-feature-module.generatefeaturemoduleschema.md) |  |
 
 ## Variables
 

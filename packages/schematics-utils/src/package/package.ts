@@ -2,7 +2,7 @@ import { assertObject, isNil, rxPipe } from '@acoustic-content-sdk/utils';
 import { readFile } from 'fs';
 import { join, parse } from 'path';
 import { bindNodeCallback, Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, mapTo } from 'rxjs/operators';
 import { satisfies } from 'semver';
 
 export enum DEP_TYPE {
@@ -52,6 +52,23 @@ export function findPackageJson(aDir: string): Observable<any> {
   return rxPipe(
     rxReadFile(join(aDir, 'package.json'), 'utf-8'),
     map((data) => JSON.parse(data)),
+    catchError((err) => findPackageJson(parse(aDir).dir))
+  );
+}
+
+/**
+ * Locates the name of the package.json starting with the current directory
+ *
+ * @param aDir
+ */
+export function locatePackageJson(aDir: string): Observable<string> {
+  // name of the file
+  const pkgName = join(aDir, 'package.json');
+  // read
+  return rxPipe(
+    rxReadFile(pkgName, 'utf-8'),
+    map((data) => JSON.parse(data)),
+    mapTo(pkgName),
     catchError((err) => findPackageJson(parse(aDir).dir))
   );
 }
