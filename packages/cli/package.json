@@ -36,6 +36,8 @@
     "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/tooling-messages": "9.0.0",
     "@acoustic-content-sdk/tooling-types": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
+    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0",
     "chalk": "^3.0.0",
     "commander": "^4.1.0",

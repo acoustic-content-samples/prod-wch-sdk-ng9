@@ -1,9 +1,9 @@
 import { createVersionString } from '@acoustic-content-sdk/api';
 import { Command } from 'commander';
 import { argv } from 'process';
-
 import { canonicalizeAssetsCommand } from '../commands/canonicalize.assets';
 import { generateDataOverlayCommand } from '../commands/generate.data.overlay';
+import { generateFeatureModuleCommand } from '../commands/generate.feature.module';
 import { generateKeysCommand } from '../commands/generate.keys';
 import { generateLayoutCommand } from '../commands/generate.layout';
 import { generateLayoutsCommand } from '../commands/generate.layouts';
@@ -27,6 +27,7 @@ export function runProgram(aArgs: string[] = argv) {
   generateDataOverlayCommand(program);
   generateMessagesCommand(program);
   generateTypesCommand(program);
+  generateFeatureModuleCommand(program);
   canonicalizeAssetsCommand(program);
 
   return program.parse(aArgs);
