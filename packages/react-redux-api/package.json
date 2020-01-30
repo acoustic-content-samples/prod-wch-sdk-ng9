@@ -21,6 +21,8 @@
   "module": "dist/fesm5/acoustic-content-sdk-react-redux-api.js",
   "typings": "dist/acoustic-content-sdk-react-redux-api.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
@@ -28,7 +30,11 @@
     "@acoustic-content-sdk/react-api": "9.0.0",
     "@acoustic-content-sdk/redux-store": "9.0.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16",
+    "react-redux": "^7",
+    "redux": "^4"
+  },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
   },
@@ -42,7 +48,10 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
-        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store"
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
+        "react": "React",
+        "react-redux": "ReactRedux",
+        "redux": "Redux"
       }
     },
     "whitelistedNonPeerDependencies": [

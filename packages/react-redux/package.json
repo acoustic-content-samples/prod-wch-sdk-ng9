@@ -39,6 +39,7 @@
   },
   "peerDependencies": {
     "react": "^16",
+    "react-redux": "^7",
     "rxjs": "^6"
   },
   "publishConfig": {
@@ -61,7 +62,8 @@
         "@acoustic-content-sdk/react-rest-api": "acoustic-content-sdk.react-rest-api",
         "@acoustic-content-sdk/redux-ajax": "acoustic-content-sdk.redux-ajax",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "react": "React"
+        "react": "React",
+        "react-redux": "ReactRedux"
       }
     },
     "whitelistedNonPeerDependencies": [
