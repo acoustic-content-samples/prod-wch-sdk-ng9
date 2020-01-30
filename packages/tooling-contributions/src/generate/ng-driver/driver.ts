@@ -9,6 +9,22 @@ import {
 } from '@acoustic-content-sdk/api';
 import { rxCacheSingle } from '@acoustic-content-sdk/rx-utils';
 import {
+  canonicalizeJson,
+  createFileDescriptor,
+  createGuid,
+  createRevision,
+  ensureDirPath,
+  FileDescriptor,
+  ProjectType,
+  ReadDirectory,
+  ReadTextFile,
+  rxFindProjectName,
+  rxGetWorkspace,
+  selectOptionsForTarget,
+  WorkspaceProject,
+  WorkspaceSchema
+} from '@acoustic-content-sdk/tooling';
+import {
   anyToString,
   arrayPush,
   assertArray,
@@ -35,23 +51,8 @@ import {
   toArray as rxToArray
 } from 'rxjs/operators';
 
-import {
-  createFileDescriptor,
-  FileDescriptor,
-  ReadTextFile
-} from '../file/file';
-import { rxGetWorkspace, selectOptionsForTarget } from '../utils/config';
-import { createGuid, createRevision } from '../utils/guid';
-import { canonicalizeJson } from '../utils/json';
-import { ensureDirPath } from '../utils/url.utils';
-import { rxFindProjectName } from '../utils/wch.utils';
-import {
-  ProjectType,
-  WorkspaceProject,
-  WorkspaceSchema
-} from '../utils/workspace-models';
-import { ReadDirectory } from './../dir/dir';
-import { ArtifactMode, CreateDriverArtifactsSchema } from './schema';
+import { ArtifactMode } from './../schema';
+import { CreateNgDriverArtifactsSchema } from './schema';
 
 export type Artifact = AuthoringContentItem;
 
@@ -624,13 +625,16 @@ const splitArray = (aValue: string): string[] =>
  * @param aSchema - the schema
  * @returns the modes
  */
-const getModes = (aSchema: CreateDriverArtifactsSchema) =>
+const getModes = (aSchema: CreateNgDriverArtifactsSchema) =>
   splitArray(aSchema.mode || DEFAULT_MODE);
 
 /**
  * Decodes the tags
  */
-const getTags = (aSchema: CreateDriverArtifactsSchema, aProjectName: string) =>
+const getTags = (
+  aSchema: CreateNgDriverArtifactsSchema,
+  aProjectName: string
+) =>
   Array.from(
     new Set([...splitArray(aSchema.tag || ''), aProjectName, 'sites-next'])
   );
@@ -641,7 +645,7 @@ const getTags = (aSchema: CreateDriverArtifactsSchema, aProjectName: string) =>
  * @param aSchema - the schema
  * @returns the configuration
  */
-const getConfig = (aSchema: CreateDriverArtifactsSchema) =>
+const getConfig = (aSchema: CreateNgDriverArtifactsSchema) =>
   aSchema.configuration || DEFAULT_CONFIGURATION;
 
 function readFilesForConfig(
@@ -669,7 +673,7 @@ function readFilesForConfig(
 export function copyNgDriverFiles(
   aReadFile: ReadTextFile,
   aReadDir: ReadDirectory,
-  aSchema: CreateDriverArtifactsSchema = {}
+  aSchema: CreateNgDriverArtifactsSchema = {}
 ): Observable<FileDescriptor<Buffer>> {
   // read the descriptor
   const ws$ = rxCacheSingle(rxGetWorkspace(aReadFile));
@@ -716,7 +720,7 @@ export function copyNgDriverFiles(
  */
 export function createNgDriverArtifacts(
   aHost: ReadTextFile,
-  aSchema: CreateDriverArtifactsSchema = {}
+  aSchema: CreateNgDriverArtifactsSchema = {}
 ): Observable<Artifact> {
   // read the descriptor
   const ws$ = rxCacheSingle(rxGetWorkspace(aHost));

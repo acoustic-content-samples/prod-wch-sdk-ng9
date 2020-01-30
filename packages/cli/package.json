@@ -72,8 +72,10 @@
         "cross-spawn": "CrossSpawn",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
+        "js-string-escape": "JsStringEscape",
         "jsdom": "Jsdom",
         "lodash": "Lodash",
+        "number-to-words": "NumberToWords",
         "semver": "Semver",
         "uuid": "Uuid"
       }

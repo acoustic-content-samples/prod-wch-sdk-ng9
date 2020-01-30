@@ -5,15 +5,17 @@ import {
   writeBufferOnTree
 } from '@acoustic-content-sdk/schematics-utils';
 import {
-  copyNgDriverFiles,
   createFileDescriptor,
-  createNgDriverArtifacts,
   FileDescriptor,
   rxFindDataDir,
   rxWriteFileDescriptor,
   WCHTOOLS_FOLDER_ASSET,
   wchToolsFileDescriptor
 } from '@acoustic-content-sdk/tooling';
+import {
+  copyNgDriverFiles,
+  createNgDriverArtifacts
+} from '@acoustic-content-sdk/tooling-contributions';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { merge } from 'rxjs';

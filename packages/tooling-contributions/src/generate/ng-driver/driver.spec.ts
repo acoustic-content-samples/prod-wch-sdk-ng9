@@ -1,11 +1,12 @@
+import {
+  createReadDirectory,
+  createReadTextFile,
+  wchToolsFileDescriptor
+} from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { count, map, tap } from 'rxjs/operators';
-
-import { createReadDirectory } from '../dir/dir';
-import { createReadTextFile } from '../file/file';
-import { ASSET_ROOT } from '../test/assets';
-import { wchToolsFileDescriptor } from '../utils/wchtools';
+import { ASSET_ROOT } from '../../test/assets';
 import { copyNgDriverFiles, createNgDriverArtifacts } from './driver';
 
 describe('driver', () => {

@@ -1,9 +1,9 @@
-import { CreateDriverArtifactsSchema } from '@acoustic-content-sdk/tooling';
+import { CreateNgDriverArtifactsSchema } from '@acoustic-content-sdk/tooling-contributions';
 
 /**
  * Options for the `generate contributions` command.
  */
-export interface Schema extends CreateDriverArtifactsSchema {
+export interface Schema extends CreateNgDriverArtifactsSchema {
   /**
    * The path to the data directory
    */
