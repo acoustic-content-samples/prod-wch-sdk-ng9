@@ -10,7 +10,7 @@ Implementation of utility methods used for tooling.
 
 |  Enumeration | Description |
 |  --- | --- |
-|  [ArtifactMode](./tooling.artifactmode.md) | Artifact modes, the values need to match the option selections for the <code>Page Contribution</code> type <code>354743b2-f89a-482b-b447-2b5a2367c8bd</code> |
+|  [ProjectType](./tooling.projecttype.md) |  |
 
 ## Functions
 
@@ -19,13 +19,15 @@ Implementation of utility methods used for tooling.
 |  [acceptJsonFile(aFile)](./tooling.acceptjsonfile.md) | Tests if a file is either a directory or a JSON file |
 |  [addToWchToolsDependencies(aDeps, aPkg)](./tooling.addtowchtoolsdependencies.md) |  |
 |  [blackWhiteList(aInclude, aExclude)](./tooling.blackwhitelist.md) |  |
+|  [bufferToIdentifier(aBuffer)](./tooling.buffertoidentifier.md) | Converts a buffer to an identifier string |
 |  [canHaveLayout(aType)](./tooling.canhavelayout.md) |  |
 |  [canonicalizeAssets(options)](./tooling.canonicalizeassets.md) |  |
 |  [canonicalizeJson(aData)](./tooling.canonicalizejson.md) | Performs an inplace canonicalization of a JSON object |
-|  [copyNgDriverFiles(aReadFile, aReadDir, aSchema)](./tooling.copyngdriverfiles.md) | Generates the binary artifacts that make up the Angular driver |
 |  [createFileDescriptor(aName, aValue)](./tooling.createfiledescriptor.md) |  |
-|  [createNgDriverArtifacts(aHost, aSchema)](./tooling.createngdriverartifacts.md) | Generates the content items that describe a driver based on an Angular build output |
+|  [createGuid(aId, aSecret)](./tooling.createguid.md) | Constructs a GUID in a reproducible way from an ID |
+|  [createGuidFromBuffer(aBuffer)](./tooling.createguidfrombuffer.md) | Constructs a GUID in a reproducible way from an ID |
 |  [createReadDirectory(aRoot)](./tooling.createreaddirectory.md) |  |
+|  [createRevision(aObj, aSecret)](./tooling.createrevision.md) |  |
 |  [createTypePredicate(aOptions)](./tooling.createtypepredicate.md) |  |
 |  [ensureDirPath(aDir)](./tooling.ensuredirpath.md) |  |
 |  [ensureLeadingSlash(aUrl)](./tooling.ensureleadingslash.md) |  |
@@ -47,6 +49,8 @@ Implementation of utility methods used for tooling.
 |  [rxFindProjectName(workspaceOrHost, options)](./tooling.rxfindprojectname.md) | Locates the workspace project, either from the configured project name, else falls back to the default project |
 |  [rxFindWchToolsOptions(host, options)](./tooling.rxfindwchtoolsoptions.md) |  |
 |  [rxGetDependencies(aReadText, aRoot)](./tooling.rxgetdependencies.md) | Lists all node dependencies of the module |
+|  [rxGetWorkspace(aReadText)](./tooling.rxgetworkspace.md) |  |
+|  [rxGetWorkspacePath(aReadText)](./tooling.rxgetworkspacepath.md) |  |
 |  [rxLocateRootDir(aBaseDir)](./tooling.rxlocaterootdir.md) | Locates the application root directory based on the working directory |
 |  [rxReadAuthoringContent(aRoot, aTree)](./tooling.rxreadauthoringcontent.md) | Reads the authoring content from a directory |
 |  [rxReadAuthoringLayoutMappings(aRoot, aTree)](./tooling.rxreadauthoringlayoutmappings.md) | Reads the authoring layouts from a directory |
@@ -56,6 +60,7 @@ Implementation of utility methods used for tooling.
 |  [rxReadDir(aBaseDir, aAccept)](./tooling.rxreaddir.md) | Reads all files in the directory and all of its (accepted) subdirectories |
 |  [rxReadJsonFile(aFile, aHost)](./tooling.rxreadjsonfile.md) | Reads a JSON file on top of a text callback |
 |  [rxWriteJsonFile(aName, aValue, aHost)](./tooling.rxwritejsonfile.md) | Persist a JSON file |
+|  [selectOptionsForTarget(aTarget, aConfiguration)](./tooling.selectoptionsfortarget.md) | Returns a selector function that selects the configuration options for a target |
 |  [serializeJson(aData)](./tooling.serializejson.md) |  |
 |  [wchToolsCleanup(aItem)](./tooling.wchtoolscleanup.md) |  |
 |  [wchToolsFileDescriptor(aItem)](./tooling.wchtoolsfiledescriptor.md) | Constructs a file descriptor from the item |
@@ -65,10 +70,11 @@ Implementation of utility methods used for tooling.
 
 |  Interface | Description |
 |  --- | --- |
-|  [CreateDriverArtifactsSchema](./tooling.createdriverartifactsschema.md) |  |
 |  [DataOverlaySchema](./tooling.dataoverlayschema.md) |  |
 |  [JsonEntry](./tooling.jsonentry.md) |  |
 |  [ReadDirectoryEntry](./tooling.readdirectoryentry.md) | File descriptor |
+|  [WorkspaceProject](./tooling.workspaceproject.md) |  |
+|  [WorkspaceSchema](./tooling.workspaceschema.md) |  |
 
 ## Variables
 
@@ -103,7 +109,6 @@ Implementation of utility methods used for tooling.
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [Artifact](./tooling.artifact.md) |  |
 |  [FileDescriptor](./tooling.filedescriptor.md) | File descriptor, first element is path, second is content |
 |  [JsonEntryMap](./tooling.jsonentrymap.md) |  |
 |  [PackageJson](./tooling.packagejson.md) |  |

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/tooling",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Implementation of utility methods used for tooling.",
   "keywords": [
     "acoustic",
     "acoustic-content",

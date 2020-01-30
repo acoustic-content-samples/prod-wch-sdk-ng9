@@ -6,7 +6,7 @@
 
 import { addFeatureModuleToApplication } from '@acoustic-content-sdk/schematics-feature-module';
 import { AddFeatureModuleToApplicationSchema } from '@acoustic-content-sdk/schematics-feature-module';
-import { CreateDriverArtifactsSchema } from '@acoustic-content-sdk/tooling';
+import { CreateNgDriverArtifactsSchema } from '@acoustic-content-sdk/tooling-contributions';
 import { Rule } from '@angular-devkit/schematics';
 
 export { addFeatureModuleToApplication }

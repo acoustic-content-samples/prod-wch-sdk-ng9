@@ -12,6 +12,7 @@ import { BaseAuthoringItem } from '@acoustic-content-sdk/api';
 import { BiFunction } from '@acoustic-content-sdk/utils';
 import { Credentials } from '@acoustic-content-sdk/cli-credentials';
 import { experimental } from '@angular-devkit/core';
+import { JSONObject } from '@acoustic-content-sdk/utils';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -29,20 +30,10 @@ export function addToWchToolsDependencies(aDeps: string[], aPkg: any): void;
 export const anyToBuffer: (aValue: any) => Buffer;
 
 // @public (undocumented)
-export type Artifact = AuthoringContentItem;
+export function blackWhiteList(aInclude?: string[], aExclude?: string[]): Predicate<string>;
 
 // @public
-export enum ArtifactMode {
-    // (undocumented)
-    ALWAYS = "always",
-    // (undocumented)
-    LIVE = "live",
-    // (undocumented)
-    PREVIEW = "preview"
-}
-
-// @public (undocumented)
-export function blackWhiteList(aInclude?: string[], aExclude?: string[]): Predicate<string>;
+export function bufferToIdentifier(aBuffer: Uint8Array): string;
 
 // @public (undocumented)
 export const camelCase: (aValue: string) => string;
@@ -65,24 +56,16 @@ export const classCase: (aValue: string) => string;
 export const constantCase: (aValue: string) => string;
 
 // @public
-export function copyNgDriverFiles(aReadFile: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateDriverArtifactsSchema): Observable<FileDescriptor<Buffer>>;
-
-// @public
 export const createChalkLoggerService: () => import("@acoustic-content-sdk/api").LoggerService;
-
-// @public (undocumented)
-export interface CreateDriverArtifactsSchema {
-    configuration?: string;
-    mode?: string;
-    project?: string;
-    tag?: string;
-}
 
 // @public (undocumented)
 export function createFileDescriptor<T>(aName: string, aValue: T): FileDescriptor<T>;
 
 // @public
-export function createNgDriverArtifacts(aHost: ReadTextFile, aSchema?: CreateDriverArtifactsSchema): Observable<Artifact>;
+export function createGuid(aId: string, aSecret?: string): string;
+
+// @public
+export function createGuidFromBuffer(aBuffer: Buffer): string;
 
 // @public
 export const createReadBuffer: (aRoot: string) => ReadBuffer;
@@ -92,6 +75,9 @@ export function createReadDirectory(aRoot: string): ReadDirectory;
 
 // @public
 export const createReadTextFile: (aRoot: string) => ReadTextFile;
+
+// @public (undocumented)
+export function createRevision(aObj: any, aSecret?: string): string;
 
 // @public (undocumented)
 export function createTypePredicate(aOptions: {
@@ -171,6 +157,14 @@ export function logFileDescriptor<T>(): MonoTypeOperatorFunction<FileDescriptor<
 export type PackageJson = JsonSchemaForNpmPackageJsonFiles;
 
 // @public (undocumented)
+export enum ProjectType {
+    // (undocumented)
+    Application = "application",
+    // (undocumented)
+    Library = "library"
+}
+
+// @public (undocumented)
 export type ReadBuffer = UnaryFunction<string, Observable<Buffer>>;
 
 // @public
@@ -216,10 +210,6 @@ export function rxFindDataDir(host: ReadTextFile, options?: {
     data?: string;
 }): Observable<string>;
 
-// Warning: (ae-forgotten-export) The symbol "ProjectType" needs to be exported by the entry point public_api.d.ts
-// Warning: (ae-forgotten-export) The symbol "WorkspaceSchema" needs to be exported by the entry point public_api.d.ts
-// Warning: (ae-forgotten-export) The symbol "WorkspaceProject" needs to be exported by the entry point public_api.d.ts
-//
 // @public
 export function rxFindProject<TProjectType extends ProjectType = ProjectType.Application>(workspaceOrHost: WorkspaceSchema | ReadTextFile, options: {
     project?: string;
@@ -237,6 +227,12 @@ export function rxFindWchToolsOptions(host: ReadTextFile, options?: {
 
 // @public
 export function rxGetDependencies(aReadText: ReadTextFile, aRoot?: string): Observable<FileDescriptor<any>>;
+
+// @public (undocumented)
+export function rxGetWorkspace(aReadText: ReadTextFile): Observable<WorkspaceSchema>;
+
+// @public (undocumented)
+export function rxGetWorkspacePath(aReadText: ReadTextFile): Observable<string>;
 
 // @public
 export function rxLocateRootDir(aBaseDir?: string): Observable<string>;
@@ -267,6 +263,9 @@ export const rxWriteFileDescriptor: <T>(aWriteBuffer: BiFunction<string, Buffer,
 
 // @public
 export function rxWriteJsonFile(aName: string, aValue: any, aHost: WriteTextFile): Observable<string>;
+
+// @public
+export function selectOptionsForTarget(aTarget?: string, aConfiguration?: string): UnaryFunction<WorkspaceProject, JSONObject>;
 
 // @public (undocumented)
 export function serializeJson(aData: any): string | undefined;
@@ -303,6 +302,22 @@ export function wchToolsFileDescriptor<T extends AuthoringContentItem | Authorin
 
 // @public (undocumented)
 export const wchToolsGetCredentials: (aApiUrl: string) => Observable<Credentials>;
+
+// @public (undocumented)
+export interface WorkspaceProject<TProjectType extends ProjectType = ProjectType.Application> extends experimental.workspace.WorkspaceProject {
+    // Warning: (ae-forgotten-export) The symbol "WorkspaceTargets" needs to be exported by the entry point public_api.d.ts
+    architect?: WorkspaceTargets<TProjectType>;
+    projectType: ProjectType;
+    targets?: WorkspaceTargets<TProjectType>;
+}
+
+// @public (undocumented)
+export interface WorkspaceSchema extends experimental.workspace.WorkspaceSchema {
+    // (undocumented)
+    projects: {
+        [key: string]: WorkspaceProject<ProjectType.Application | ProjectType.Library>;
+    };
+}
 
 // @public (undocumented)
 export type WriteBuffer = BiFunction<string, Buffer, Observable<string>>;
