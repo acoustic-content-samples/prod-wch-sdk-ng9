@@ -45,6 +45,7 @@
     "handlebars": "^4.7.2",
     "handlebars-helpers": "^0.10.0",
     "jsdom": "^16.0.1",
+    "js-string-escape": "^1.0.1",
     "lodash": "^4.17.15",
     "rxjs": "6.5.3",
     "semver": "^7.1.1",
