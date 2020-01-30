@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
-    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
     "@acoustic-content-sdk/schematics-utils": "9.0.0",
+    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
@@ -56,9 +56,8 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/tooling-feature-module": "acoustic-content-sdk.tooling-feature-module",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
-        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/tooling-feature-module": "acoustic-content-sdk.tooling-feature-module",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "typescript": "Typescript"
       }

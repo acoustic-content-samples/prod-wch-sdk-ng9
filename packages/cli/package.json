@@ -32,12 +32,12 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
     "@acoustic-content-sdk/rx-utils": "9.0.0",
     "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
     "@acoustic-content-sdk/tooling-messages": "9.0.0",
     "@acoustic-content-sdk/tooling-types": "9.0.0",
-    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
-    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0",
     "chalk": "^3.0.0",
     "commander": "^4.1.0",
@@ -58,8 +58,10 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/tooling-feature-module": "acoustic-content-sdk.tooling-feature-module",
         "@acoustic-content-sdk/tooling-messages": "acoustic-content-sdk.tooling-messages",
         "@acoustic-content-sdk/tooling-types": "acoustic-content-sdk.tooling-types",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
