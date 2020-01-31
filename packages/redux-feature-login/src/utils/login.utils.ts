@@ -17,6 +17,7 @@ import {
 import { identity, Observable, OperatorFunction } from 'rxjs';
 import { ajax, AjaxRequest } from 'rxjs/ajax';
 import { catchError, filter, first, map, mapTo, take } from 'rxjs/operators';
+
 import {
   LoggedInFeatureState,
   selectLoggedInFeature
@@ -88,7 +89,7 @@ export function login(
   };
   // execute
   return rxFormPost(loginUrl, body).pipe(
-    map((data) => JSON.parse(data)),
+    map((data) => jsonParse(data)),
     mapTo(aApiUrl)
   );
 }

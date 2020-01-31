@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/redux-feature-login",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Feature store for authentication related aspects of Acoustic Content.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -22,12 +22,16 @@
   "module": "dist/fesm5/acoustic-content-sdk-redux-feature-login.js",
   "typings": "dist/acoustic-content-sdk-redux-feature-login.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/redux-actions": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-error": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-url-config": "9.0.0",
     "@acoustic-content-sdk/redux-store": "9.0.0",
     "@acoustic-content-sdk/rest-api": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
@@ -53,6 +57,8 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/redux-actions": "acoustic-content-sdk.redux-actions",
+        "@acoustic-content-sdk/redux-feature-error": "acoustic-content-sdk.redux-feature-error",
+        "@acoustic-content-sdk/redux-feature-url-config": "acoustic-content-sdk.redux-feature-url-config",
         "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",

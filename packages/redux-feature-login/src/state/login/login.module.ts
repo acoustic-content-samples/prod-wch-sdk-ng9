@@ -1,3 +1,4 @@
+import { urlConfigFeature } from '@acoustic-content-sdk/redux-feature-url-config';
 import { createReduxFeatureModule } from '@acoustic-content-sdk/redux-store';
 
 import { loggedInEpic } from './login.epic';
@@ -12,4 +13,4 @@ import { LoggedInState } from './login.state';
 export const loggedInFeature = createReduxFeatureModule<
   LoggedInState,
   LoggedInFeatureState
->(LOGIN_FEATURE, loggedInReducer, loggedInEpic);
+>(LOGIN_FEATURE, loggedInReducer, loggedInEpic, [urlConfigFeature]);
