@@ -27,7 +27,7 @@ export const VERSION: {
 export const WCH_CONTEXT_REACT_REDUX: Context<ReactReduxContextType>;
 
 // @public
-export const WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-redux-api").ReactReduxContextType>;
+export const WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("./react.redux.token").ReactReduxContextType>;
 
 
 ```

@@ -25,9 +25,3 @@ Tooling functions to implement support for feature modules.
 |  --- | --- |
 |  [VERSION](./tooling-contributions.version.md) | Version and build number of the package |
 
-## Type Aliases
-
-|  Type Alias | Description |
-|  --- | --- |
-|  [Artifact](./tooling-contributions.artifact.md) |  |
-

@@ -4,15 +4,7 @@
 
 ```ts
 
-import { Context } from 'react';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
-import { Store } from 'redux';
-
-// @public
-export interface ReactReduxContextType {
-    store: Store;
-    subscription: any;
-}
 
 // @public
 export const VERSION: {
@@ -23,9 +15,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_CONTEXT_REACT_REDUX: Context<ReactReduxContextType>;
 
 // @public
 export const WCH_CONTEXT_REDUX_STORE: Required<import("react").Context<ReduxRootStore<Record<string, any>, import("redux").AnyAction>>>;

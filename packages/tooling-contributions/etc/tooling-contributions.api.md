@@ -10,12 +10,11 @@ import { Observable } from 'rxjs';
 import { ReadDirectory } from '@acoustic-content-sdk/tooling';
 import { ReadTextFile } from '@acoustic-content-sdk/tooling';
 
-// @public (undocumented)
-export type Artifact = AuthoringContentItem;
-
 // @public
 export function copyNgDriverFiles(aReadFile: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateNgDriverArtifactsSchema): Observable<FileDescriptor<Buffer>>;
 
+// Warning: (ae-forgotten-export) The symbol "Artifact" needs to be exported by the entry point public_api.d.ts
+//
 // @public
 export function createNgDriverArtifacts(aHost: ReadTextFile, aSchema?: CreateNgDriverArtifactsSchema): Observable<Artifact>;
 
