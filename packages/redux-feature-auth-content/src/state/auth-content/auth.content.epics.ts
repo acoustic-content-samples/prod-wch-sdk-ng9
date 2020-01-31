@@ -19,7 +19,7 @@ import {
   getDeliveryIdFromAuthoringItem,
   updateValueByAccessor
 } from '@acoustic-content-sdk/redux-utils';
-import { FetchText, WriteText } from '@acoustic-content-sdk/rest-api';
+import { FetchText } from '@acoustic-content-sdk/rest-api';
 import {
   isNil,
   isNotEmpty,
@@ -33,6 +33,7 @@ import { Action } from 'redux';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import { from, MonoTypeOperatorFunction } from 'rxjs';
 import { filter, map, mergeMap, withLatestFrom } from 'rxjs/operators';
+
 import { migrateContentItem } from '../../utils/auth.content.migrate';
 import {
   referencedAssets,
@@ -82,7 +83,6 @@ function guaranteeContentActions(
 
 export interface AuthoringContentDependencies {
   fetchText: FetchText;
-  writeJson: WriteText;
   logSvc: LoggerService;
 }
 

@@ -1,7 +1,7 @@
 import {
   AuthoringAsset,
   BaseAuthoringItem,
-  Logger
+  LoggerService
 } from '@acoustic-content-sdk/api';
 import {
   createAuthenticatedLoader,
@@ -15,7 +15,7 @@ import {
   addToSetEpic,
   getDeliveryIdFromAuthoringItem
 } from '@acoustic-content-sdk/redux-utils';
-import { FetchText, WriteText } from '@acoustic-content-sdk/rest-api';
+import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { jsonParse, rxPipe } from '@acoustic-content-sdk/utils';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import { map } from 'rxjs/operators';
@@ -32,10 +32,11 @@ import {
 } from './auth.asset.actions';
 import { selectAuthAssetFeature } from './auth.asset.feature';
 
+const LOGGER = 'AuthAssetEpic';
+
 export interface AuthoringAssetDependencies {
   fetchText: FetchText;
-  writeJson: WriteText;
-  logger: Logger;
+  logSvc: LoggerService;
 }
 
 /**
@@ -44,8 +45,10 @@ export interface AuthoringAssetDependencies {
 const loadAssetEpic: Epic = (
   actions$,
   state$,
-  { fetchText, logger }: AuthoringAssetDependencies
+  { fetchText, logSvc }: AuthoringAssetDependencies
 ) => {
+  // construct the logger
+  const logger = logSvc.get(LOGGER);
   // loader
   const loader: LoaderType = (id) =>
     rxPipe(
