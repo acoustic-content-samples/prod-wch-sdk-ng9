@@ -1,4 +1,9 @@
-import { isNil, isNotNil, pluckProperty } from '@acoustic-content-sdk/utils';
+import {
+  anyToString,
+  isNil,
+  isNotEmpty,
+  isNotNil
+} from '@acoustic-content-sdk/utils';
 import { Context, createContext } from 'react';
 
 /**
@@ -19,13 +24,14 @@ export function createReactContext<T>(
   // returns the context
   return ctx as any;
 }
-
 /**
  * Returns the display name of a context
  */
-export const selectDisplayName = pluckProperty<Context<any>, 'displayName'>(
-  'displayName'
-);
+export const selectDisplayName = (aCtx: Context<any>): string => {
+  // check if we have a name
+  const { displayName } = aCtx;
+  return isNotEmpty(displayName) ? displayName : anyToString(aCtx);
+};
 
 /**
  * Validates that the value is not nil and throws an exception otherwise

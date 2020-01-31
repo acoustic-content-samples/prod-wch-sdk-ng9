@@ -9,5 +9,5 @@ Returns the display name of a context
 <b>Signature:</b>
 
 ```typescript
-selectDisplayName: import("rxjs").UnaryFunction<Context<any>, string>
+selectDisplayName: (aCtx: Context<any>) => string
 ```

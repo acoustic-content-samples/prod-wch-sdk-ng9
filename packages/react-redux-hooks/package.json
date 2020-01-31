@@ -34,8 +34,7 @@
   },
   "peerDependencies": {
     "react": "^16",
-    "react-redux": "^7",
-    "redux": "^4"
+    "react-redux": "^7"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
@@ -52,8 +51,7 @@
         "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
         "@acoustic-content-sdk/react-redux-api": "acoustic-content-sdk.react-redux-api",
         "react": "React",
-        "react-redux": "ReactRedux",
-        "redux": "Redux"
+        "react-redux": "ReactRedux"
       }
     },
     "whitelistedNonPeerDependencies": [

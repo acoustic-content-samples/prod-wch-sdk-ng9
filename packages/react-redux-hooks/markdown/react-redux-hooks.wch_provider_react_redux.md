@@ -9,5 +9,5 @@ Declares the provider
 <b>Signature:</b>
 
 ```typescript
-WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("./react.redux.token").ReactReduxContextType>
+WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>
 ```

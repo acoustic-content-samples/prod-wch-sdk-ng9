@@ -6,12 +6,6 @@
 
 API constants for React contexts.
 
-## Interfaces
-
-|  Interface | Description |
-|  --- | --- |
-|  [ReactReduxContextType](./react-redux-hooks.reactreduxcontexttype.md) | Reverse engineering of the correct type of the <code>ReactReduxContext</code>. |
-
 ## Variables
 
 |  Variable | Description |

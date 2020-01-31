@@ -9,5 +9,5 @@ Injection token for the [react redux](https://react-redux.js.org/) store
 <b>Signature:</b>
 
 ```typescript
-WCH_CONTEXT_REACT_REDUX: Context<ReactReduxContextType>
+WCH_CONTEXT_REACT_REDUX: import("react").Context<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>
 ```

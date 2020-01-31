@@ -4,15 +4,6 @@
 
 ```ts
 
-import { Context } from 'react';
-import { Store } from 'redux';
-
-// @public
-export interface ReactReduxContextType {
-    store: Store;
-    subscription: any;
-}
-
 // @public
 export const VERSION: {
     version: {
@@ -24,10 +15,10 @@ export const VERSION: {
 };
 
 // @public
-export const WCH_CONTEXT_REACT_REDUX: Context<ReactReduxContextType>;
+export const WCH_CONTEXT_REACT_REDUX: import("react").Context<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
 
 // @public
-export const WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("./react.redux.token").ReactReduxContextType>;
+export const WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
 
 
 ```
