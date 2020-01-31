@@ -1,5 +1,5 @@
 {
-  "name": "@acoustic-content-sdk/react-redux-api",
+  "name": "@acoustic-content-sdk/react-redux-hooks",
   "version": "9.0.0",
   "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
   "keywords": [
@@ -17,9 +17,9 @@
   "license": "MIT",
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
-  "main": "dist/bundles/acoustic-content-sdk-react-redux-api.umd.js",
-  "module": "dist/fesm5/acoustic-content-sdk-react-redux-api.js",
-  "typings": "dist/acoustic-content-sdk-react-redux-api.d.ts",
+  "main": "dist/bundles/acoustic-content-sdk-react-redux-hooks.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-react-redux-hooks.js",
+  "typings": "dist/acoustic-content-sdk-react-redux-hooks.d.ts",
   "scripts": {
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
@@ -28,23 +28,30 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/react-api": "9.0.0",
-    "@acoustic-content-sdk/redux-store": "9.0.0"
+    "@acoustic-content-sdk/react-redux-api": "9.0.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "react": "^16",
+    "react-redux": "^7",
+    "redux": "^4"
+  },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
   },
-  "es2015": "dist/fesm2015/acoustic-content-sdk-react-redux-api.js",
-  "esm2015": "dist/esm2015/acoustic-content-sdk-react-redux-api.js",
-  "esm5": "dist/esm5/acoustic-content-sdk-react-redux-api.js",
-  "fesm2015": "dist/fesm2015/acoustic-content-sdk-react-redux-api.js",
-  "fesm5": "dist/fesm5/acoustic-content-sdk-react-redux-api.js",
-  "metadata": "dist/acoustic-content-sdk-react-redux-api.metadata.json",
+  "es2015": "dist/fesm2015/acoustic-content-sdk-react-redux-hooks.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-react-redux-hooks.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-react-redux-hooks.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-react-redux-hooks.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-react-redux-hooks.js",
+  "metadata": "dist/acoustic-content-sdk-react-redux-hooks.metadata.json",
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
-        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store"
+        "@acoustic-content-sdk/react-redux-api": "acoustic-content-sdk.react-redux-api",
+        "react": "React",
+        "react-redux": "ReactRedux",
+        "redux": "Redux"
       }
     },
     "whitelistedNonPeerDependencies": [

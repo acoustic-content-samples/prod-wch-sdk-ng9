@@ -4,5 +4,6 @@
  * @packageDocumentation
  */
 
-export * from './redux/redux.token';
+export * from './react-redux/react.redux.module';
+export * from './react-redux/react.redux.token';
 export { VERSION } from './version';

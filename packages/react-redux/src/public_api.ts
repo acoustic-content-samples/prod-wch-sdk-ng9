@@ -3,7 +3,6 @@
  *
  * @packageDocumentation
  */
-export * from './react-redux/react.redux.module';
 export * from './redux-parent-frame/module/module';
 export * from './redux-source/module/auth.status.module';
 export * from './redux-source/module/content.module';
