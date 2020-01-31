@@ -1,10 +1,9 @@
 import { createReactProvider } from '@acoustic-content-sdk/react-api';
-import {
-  WCH_CONTEXT_REACT_REDUX,
-  WCH_CONTEXT_REDUX_STORE
-} from '@acoustic-content-sdk/react-redux-api';
+import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 import { createElement, FC, useContext } from 'react';
 import { Provider } from 'react-redux';
+
+import { WCH_CONTEXT_REACT_REDUX } from './react.redux.token';
 
 /**
  * Implementation of a JSX component that provides the redux store to `react-redux`
