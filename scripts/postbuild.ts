@@ -21,8 +21,8 @@ import {
 
 const sortPackageJson = require('sort-package-json');
 
-const REMOVE_METADATA = false;
-const REPLACE_FESM = false;
+const REMOVE_METADATA = true;
+const REPLACE_FESM = true;
 
 const ANGULAR_PREFIX = '@angular/';
 
