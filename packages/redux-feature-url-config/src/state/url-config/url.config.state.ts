@@ -2,6 +2,7 @@ import { UrlConfig } from '@acoustic-content-sdk/api';
 import { selectPayload } from '@acoustic-content-sdk/redux-store';
 import {
   isNotNil,
+  isString,
   mergeHubInfo,
   parseURL,
   UNDEFINED_TYPE,
@@ -112,12 +113,18 @@ export function wchGetUrlConfig(
 /**
  * reducers for config settings
  */
-export const urlConfigReducer: Reducer<UrlConfigState> = handleActions(
+export const urlConfigReducer: Reducer = handleActions(
   {
     [ACTION_SET_URL_CONFIG]: (
       state: UrlConfigState,
       action: SetUrlConfigAction
-    ) => wchGetUrlConfig(selectPayload(action), getDocument()),
+    ): UrlConfig => {
+      // extract the payload
+      const payload = selectPayload(action);
+      return isString(payload)
+        ? wchGetUrlConfig(payload, getDocument())
+        : payload;
+    },
     [ACTION_CLEAR_URL_CONFIG]: (
       state: UrlConfigState,
       action: ClearUrlConfigAction

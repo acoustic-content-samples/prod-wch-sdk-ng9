@@ -1,4 +1,4 @@
-import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
+import { StaticHubInfoUrlProvider, UrlConfig } from '@acoustic-content-sdk/api';
 import { PayloadAction } from '@acoustic-content-sdk/redux-store';
 import {
   Generator,
@@ -9,18 +9,13 @@ import { Action } from 'redux';
 import { createAction } from 'redux-actions';
 import { UnaryFunction } from 'rxjs';
 
-export const ACTION_LOAD_URL_CONFIG = 'ACTION_LOAD_URL_CONFIG';
-export interface LoadUrlConfigAction extends Action {}
+import { isStaticHubInfoUrlProvider } from '../../utils/predicates';
 
 export const ACTION_SET_URL_CONFIG = 'ACTION_SET_URL_CONFIG';
-export type SetUrlConfigAction = PayloadAction<string>;
+export type SetUrlConfigAction = PayloadAction<string | UrlConfig>;
 
 export const ACTION_CLEAR_URL_CONFIG = 'ACTION_CLEAR_URL_CONFIG';
 export type ClearUrlConfigAction = Action;
-
-export const loadUrlConfigAction: Generator<LoadUrlConfigAction> = createAction(
-  ACTION_LOAD_URL_CONFIG
-);
 
 export const clearUrlConfigAction: Generator<ClearUrlConfigAction> = createAction(
   ACTION_CLEAR_URL_CONFIG
@@ -28,6 +23,11 @@ export const clearUrlConfigAction: Generator<ClearUrlConfigAction> = createActio
 
 const _setUrlConfigAction = createAction(ACTION_SET_URL_CONFIG);
 export const setUrlConfigAction: UnaryFunction<
-  StaticHubInfoUrlProvider,
+  StaticHubInfoUrlProvider | UrlConfig,
   SetUrlConfigAction
-> = provider => _setUrlConfigAction(urlToString(urlFromProvider(provider)));
+> = (provider) =>
+  _setUrlConfigAction(
+    isStaticHubInfoUrlProvider(provider)
+      ? urlToString(urlFromProvider(provider))
+      : provider
+  );
