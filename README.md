@@ -63,7 +63,7 @@ npx prod-wch-sdk-ng9
 This command loads the full and consistent set of modules for the latest version from the internal registry and publishes them globally. In order to publish a particular version run
 
 ```bash
-npx prod-wch-sdk-ng9@^<VERSION>
+npx prod-wch-sdk-ng9@<VERSION>
 ```
 
 ## Modules
