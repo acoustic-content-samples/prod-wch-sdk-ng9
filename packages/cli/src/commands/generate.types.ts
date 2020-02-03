@@ -52,7 +52,7 @@ export function generateTypesCommand(program: Command): Command {
       const currentDir = cwd();
       const dataDir = normalize(cmd.data || join(currentDir, 'data'));
       // target dire
-      const dstDir = normalize(cmd.dir || join(currentDir, 'src'));
+      const dstDir = normalize(cmd.dir || currentDir);
       // log this
       logger.info('dataDir', dataDir);
       logger.info('dstDir', dstDir);
