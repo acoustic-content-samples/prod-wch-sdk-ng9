@@ -29,7 +29,7 @@
     "publish:artifactory": "npm-run-all config:artifactory publish:run",
     "publish:global": "ts-node scripts/publish.ts",
     "publish:run": "yarn workspaces run publish dist --non-interactive",
-    "publish:all": "yarn publish dist --non-interactive",
+    "publish:all": "npm publish dist",
     "publish:verdaccio": "npm-run-all config:verdaccio publish:run publish:all",
     "pull": "wchtools pull -A --dir temp --verbose",
     "push": "wchtools push -A --dir data --verbose",
