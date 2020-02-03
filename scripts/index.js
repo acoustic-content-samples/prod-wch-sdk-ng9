@@ -4,6 +4,8 @@ const { readJson, writeJson } = require('fs-extra');
 const { join } = require('path');
 const spawn = require('cross-spawn');
 
+console.log('Carsten', __dirname);
+
 const pkg = join(__dirname, 'package.json');
 const pkg$ = readJson(pkg)
   .then((data) => ({ ...data, private: true }))
