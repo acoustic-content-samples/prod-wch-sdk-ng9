@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/react-utils",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Collection of utility methods to efficiently create react components and modules.",
   "keywords": [
     "acoustic",
     "acoustic-content",

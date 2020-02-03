@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { readJson, writeJson } = require('fs-extra');
 const { join } = require('path');
 const spawn = require('cross-spawn');
