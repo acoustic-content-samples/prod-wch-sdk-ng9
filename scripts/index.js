@@ -10,5 +10,5 @@ const pkg$ = readJson(pkg)
   .then((data) => writeJson(pkg, data));
 
 const pub$ = pkg$.then(() =>
-  spawn('yarn', ['run', 'publish'], { stdio: 'inherit' })
+  spawn('yarn', ['run', 'publish'], { stdio: 'inherit', cwd: __dirname })
 );
