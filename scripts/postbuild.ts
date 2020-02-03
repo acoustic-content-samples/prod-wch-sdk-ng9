@@ -411,21 +411,32 @@ function copyPackage(aPkgFile: string): Promise<string> {
 
 function createDistPackage(): Promise<string> {
   const src$ = readJson(join(ROOT_DIR, PACKAGE_JSON)).then(
-    ({ name, version, license, author, workspaces }) => ({
+    ({ name, version, license, author, workspaces, devDependencies }) => ({
       name,
       version: VERSION_STRING || version,
       license,
       author,
-      workspaces
+      workspaces,
+      dependencies: {
+        'cross-env': devDependencies['cross-env'],
+        'fs-extra': devDependencies['fs-extra']
+      },
+      bin: './index.js'
     })
   );
   const dstName = join(ROOT_DIR, 'dist', PACKAGE_JSON);
+  // copy file
+  const cpy$ = copy(
+    join(__dirname, 'index.js'),
+    join(ROOT_DIR, 'dist', 'index.js')
+  );
   // script section
   const scripts = {
-    publish: 'yarn workspaces run publish dist --non-interactive'
+    publish: 'yarn workspaces run publish --non-interactive'
   };
   // produce
-  return src$
+  return cpy$
+    .then(() => src$)
     .then((src) => ({ ...src, scripts }))
     .then((src) => writeJson(dstName, src))
     .then(() => dstName);
