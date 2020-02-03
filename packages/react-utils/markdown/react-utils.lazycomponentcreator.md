@@ -2,10 +2,10 @@
 
 [Home](./index.md) &gt; [@acoustic-content-sdk/react-utils](./react-utils.md) &gt; [LazyComponentCreator](./react-utils.lazycomponentcreator.md)
 
-## LazyComponentCreator interface
+## LazyComponentCreator type
 
 <b>Signature:</b>
 
 ```typescript
-export interface LazyComponentCreator 
+export declare type LazyComponentCreator = <R extends any[], O extends any[], T>(fct: ObservableInput<(req: R, opt: O) => CmpInput<T>>) => (req: R, opt: O) => CmpInput<T>;
 ```

@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-utils](./react-utils.md) |  |
+|  [@acoustic-content-sdk/react-utils](./react-utils.md) | Collection of utility methods to efficiently create react components and modules. |
 

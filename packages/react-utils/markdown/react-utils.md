@@ -4,6 +4,8 @@
 
 ## react-utils package
 
+Collection of utility methods to efficiently create react components and modules.
+
 ## Classes
 
 |  Class | Description |
@@ -25,7 +27,6 @@
 
 |  Interface | Description |
 |  --- | --- |
-|  [LazyComponentCreator](./react-utils.lazycomponentcreator.md) |  |
 |  [PureLoggingComponentProps](./react-utils.pureloggingcomponentprops.md) |  |
 |  [ValueObservable](./react-utils.valueobservable.md) | Extension of an Observable that allows to access the current value. This is compatible to BehaviorSubject |
 
@@ -46,5 +47,6 @@
 |  --- | --- |
 |  [DelegateComponent](./react-utils.delegatecomponent.md) |  |
 |  [ElementTypeCallback](./react-utils.elementtypecallback.md) | Callback function to retrieve the element type from the content item given its ID and the accessor string |
+|  [LazyComponentCreator](./react-utils.lazycomponentcreator.md) |  |
 |  [StateFunction](./react-utils.statefunction.md) |  |
 
