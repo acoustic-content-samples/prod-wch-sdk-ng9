@@ -23,3 +23,6 @@ pnpm-lock.yaml
 .history
 temp
 test.result.json
+
+wchtools-api.log
+wchtools-cli.log
