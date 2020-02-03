@@ -66,6 +66,11 @@ This command loads the full and consistent set of modules for the latest version
 npx prod-wch-sdk-ng9@<VERSION>
 ```
 
+**Prereqs**:
+
+- the configured registry points to a registry that contains the build artifacts
+- the configuration contains the npm authentication token, e.g. `//registry.npmjs.org/:_authToken=<API_TOKEN>`
+
 ## Modules
 
 Each package in the [monorepo](https://en.wikipedia.org/wiki/Monorepo) will compile to an [npm module](https://docs.npmjs.com/about-packages-and-modules) in [Angular Package Format](https://goo.gl/jB3GVv). This format does not limit the use of the packages to [Angular](https://angular.io/) in any way but instead exposes the source code in a variety of formats, so the components can be optimally used in a variety of environments.
