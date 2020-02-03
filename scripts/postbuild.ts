@@ -411,12 +411,11 @@ function copyPackage(aPkgFile: string): Promise<string> {
 
 function createDistPackage(): Promise<string> {
   const src$ = readJson(join(ROOT_DIR, PACKAGE_JSON)).then(
-    ({ name, version, license, author, workspaces }) => ({
+    ({ name, version, license, author }) => ({
       name,
       version: VERSION_STRING || version,
       license,
-      author,
-      workspaces
+      author
     })
   );
   const dstName = join(ROOT_DIR, 'dist', PACKAGE_JSON);
