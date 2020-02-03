@@ -65,45 +65,101 @@ export interface LazyComponentCreator {
     // Warning: (ae-forgotten-export) The symbol "CmpInput" needs to be exported by the entry point public_api.d.ts
     //
     // (undocumented)
-    <T>(fct: ObservableInput<(req?: never, opt?: never) => CmpInput<T>>): (req?: never, opt?: never) => CmpInput<T>;
+    <T>(fct: ObservableInput<(req: [], opt: []) => CmpInput<T>>): (req: [], opt: []) => CmpInput<T>;
     // (undocumented)
-    <R1, T>(fct: ObservableInput<(req: [R1], opt?: never) => CmpInput<T>>): (req: [R1], opt?: never) => CmpInput<T>;
+    <O0, T>(fct: ObservableInput<(req: [], opt: [O0?]) => CmpInput<T>>): (req: [], opt: [O0?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, T>(fct: ObservableInput<(req: [R1, R2], opt?: never) => CmpInput<T>>): (req: [R1, R2], opt?: never) => CmpInput<T>;
+    <O0, O1, T>(fct: ObservableInput<(req: [], opt: [O0?, O1?]) => CmpInput<T>>): (req: [], opt: [O0?, O1?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, T>(fct: ObservableInput<(req: [R1, R2, R3], opt?: never) => CmpInput<T>>): (req: [R1, R2, R3], opt?: never) => CmpInput<T>;
+    <O0, O1, O2, T>(fct: ObservableInput<(req: [], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [], opt: [O0?, O1?, O2?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, R4, T>(fct: ObservableInput<(req: [R1, R2, R3, R4], opt?: never) => CmpInput<T>>): (req: [R1, R2, R3, R4], opt?: never) => CmpInput<T>;
+    <O0, O1, O2, O3, T>(fct: ObservableInput<(req: [], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
     // (undocumented)
-    <O1, T>(fct: ObservableInput<(req: never, opt: [O1?]) => CmpInput<T>>): (req: never, opt: [O1?]) => CmpInput<T>;
+    <O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
     // (undocumented)
-    <O1, O2, T>(fct: ObservableInput<(req: never, opt: [O1?, O2?]) => CmpInput<T>>): (req: never, opt: [O1?, O2?]) => CmpInput<T>;
+    <R0, T>(fct: ObservableInput<(req: [R0], opt: []) => CmpInput<T>>): (req: [R0], opt: []) => CmpInput<T>;
     // (undocumented)
-    <O1, O2, O3, T>(fct: ObservableInput<(req: never, opt: [O1?, O2?, O3?]) => CmpInput<T>>): (req: never, opt: [O1?, O2?, O3?]) => CmpInput<T>;
+    <R0, O0, T>(fct: ObservableInput<(req: [R0], opt: [O0?]) => CmpInput<T>>): (req: [R0], opt: [O0?]) => CmpInput<T>;
     // (undocumented)
-    <O1, T>(fct: ObservableInput<(req: [], opt: [O1?]) => CmpInput<T>>): (req: [], opt: [O1?]) => CmpInput<T>;
+    <R0, O0, O1, T>(fct: ObservableInput<(req: [R0], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0], opt: [O0?, O1?]) => CmpInput<T>;
     // (undocumented)
-    <O1, O2, T>(fct: ObservableInput<(req: [], opt: [O1?, O2?]) => CmpInput<T>>): (req: [], opt: [O1?, O2?]) => CmpInput<T>;
+    <R0, O0, O1, O2, T>(fct: ObservableInput<(req: [R0], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0], opt: [O0?, O1?, O2?]) => CmpInput<T>;
     // (undocumented)
-    <O1, O2, O3, T>(fct: ObservableInput<(req: [], opt: [O1?, O2?, O3?]) => CmpInput<T>>): (req: [], opt: [O1?, O2?, O3?]) => CmpInput<T>;
+    <R0, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
     // (undocumented)
-    <R1, O1, T>(fct: ObservableInput<(req: [R1], opt: [O1?]) => CmpInput<T>>): (req: [R1], opt: [O1?]) => CmpInput<T>;
+    <R0, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
     // (undocumented)
-    <R1, O1, O2, T>(fct: ObservableInput<(req: [R1], opt: [O1?, O2?]) => CmpInput<T>>): (req: [R1], opt: [O1?, O2?]) => CmpInput<T>;
+    <R0, R1, T>(fct: ObservableInput<(req: [R0, R1], opt: []) => CmpInput<T>>): (req: [R0, R1], opt: []) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, O1, T>(fct: ObservableInput<(req: [R1, R2], opt: [O1?]) => CmpInput<T>>): (req: [R1, R2], opt: [O1?]) => CmpInput<T>;
+    <R0, R1, O0, T>(fct: ObservableInput<(req: [R0, R1], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1], opt: [O0?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, O1, O2, T>(fct: ObservableInput<(req: [R1, R2], opt: [O1?, O2?]) => CmpInput<T>>): (req: [R1, R2], opt: [O1?, O2?]) => CmpInput<T>;
+    <R0, R1, O0, O1, T>(fct: ObservableInput<(req: [R0, R1], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1], opt: [O0?, O1?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, O1, T>(fct: ObservableInput<(req: [R1, R2, R3], opt: [O1?]) => CmpInput<T>>): (req: [R1, R2, R3], opt: [O1?]) => CmpInput<T>;
+    <R0, R1, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1], opt: [O0?, O1?, O2?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, O1, O2, T>(fct: ObservableInput<(req: [R1, R2, R3], opt: [O1?, O2?]) => CmpInput<T>>): (req: [R1, R2, R3], opt: [O1?, O2?]) => CmpInput<T>;
+    <R0, R1, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, R4, O1, T>(fct: ObservableInput<(req: [R1, R2, R3, R4], opt: [O1?]) => CmpInput<T>>): (req: [R1, R2, R3, R4], opt: [O1?]) => CmpInput<T>;
+    <R0, R1, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, R4, R5, O1, T>(fct: ObservableInput<(req: [R1, R2, R3, R4, R5], opt: [O1?]) => CmpInput<T>>): (req: [R1, R2, R3, R4, R5], opt: [O1?]) => CmpInput<T>;
+    <R0, R1, R2, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: []) => CmpInput<T>>): (req: [R0, R1, R2], opt: []) => CmpInput<T>;
     // (undocumented)
-    <R1, R2, R3, R4, R5, R6, O1, T>(fct: ObservableInput<(req: [R1, R2, R3, R4, R5, R6], opt: [O1?]) => CmpInput<T>>): (req: [R1, R2, R3, R4, R5, R6], opt: [O1?]) => CmpInput<T>;
+    <R0, R1, R2, O0, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1, R2], opt: [O0?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, O0, O1, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1, R2], opt: [O0?, O1?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1, R2], opt: [O0?, O1?, O2?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1, R2], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1, R2], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1, R2], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: []) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: []) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, O0, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: [O0?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, O0, O1, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: [O0?, O1?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1, R2, R3], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: []) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: []) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, O0, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: [O0?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, O0, O1, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: [O0?, O1?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: []) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: []) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, O0, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: [O0?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, O0, O1, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: []) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: []) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, O0, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, O0, O1, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, O0, O1, O2, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, O0, O1, O2, O3, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?, O3?]) => CmpInput<T>;
+    // (undocumented)
+    <R0, R1, R2, R3, R4, R5, R6, O0, O1, O2, O3, O4, T>(fct: ObservableInput<(req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>>): (req: [R0, R1, R2, R3, R4, R5, R6], opt: [O0?, O1?, O2?, O3?, O4?]) => CmpInput<T>;
 }
 
 // @public
