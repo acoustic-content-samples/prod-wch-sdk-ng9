@@ -1,5 +1,6 @@
 import {
   copy,
+  ensureDir,
   readFile,
   readJson,
   remove,
@@ -9,6 +10,7 @@ import {
 } from 'fs-extra';
 import { camelCase, cloneDeep, kebabCase, upperFirst } from 'lodash';
 import { join, normalize, parse } from 'path';
+import { env } from 'process';
 import { rewriteReadme } from 'tools-helper-merge-markdown';
 import {
   createSourceFile,
@@ -17,8 +19,6 @@ import {
   isStringLiteral,
   ScriptTarget
 } from 'typescript';
-import { env } from 'process';
-const { BRANCH_NAME, VERSION_STRING } = env;
 
 import {
   dirs$,
@@ -29,6 +29,8 @@ import {
   stringify,
   writePkgSafe
 } from './common';
+
+const { BRANCH_NAME, VERSION_STRING } = env;
 
 const sortPackageJson = require('sort-package-json');
 
@@ -430,7 +432,11 @@ function createDistPackage(): Promise<string> {
 }
 
 function createDist(aPkg: string[]): Promise<string[]> {
-  return Promise.all([...aPkg.map(copyPackage), createDistPackage()]);
+  // dist folder
+  const mainDist$ = ensureDir(join(ROOT_DIR, 'dist'));
+  return mainDist$.then(() =>
+    Promise.all([...aPkg.map(copyPackage), createDistPackage()])
+  );
 }
 
 function postbuild() {
