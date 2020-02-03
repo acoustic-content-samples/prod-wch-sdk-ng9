@@ -1,0 +1,69 @@
+{
+  "name": "Sites Image",
+  "description": "This block represents an image to be shown on the page",
+  "id": "c8295d37-7235-495e-8d40-f3b8bafe4099",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "elements": [
+    {
+      "acceptType": ["jpg", "jpeg", "png", "gif"],
+      "elementType": "image",
+      "helpText": "The image for this block",
+      "key": "image",
+      "label": "Image"
+    },
+    {
+      "elementType": "group",
+      "key": "alignment",
+      "helpText": "This element controls the alignment defintion for this block",
+      "label": "Alignment",
+      "typeRef": {
+        "name": "Sites Alignment",
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "helpText": "This element controls the padding values for this block",
+      "label": "Padding",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "helpText": "This element controls the margin values for this block",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "helpText": "This element controls the common settings for this block",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-994eafcc-4c98-4ae0-9a9a-61fd7462060e"
+}

@@ -1,0 +1,311 @@
+{
+  "name": "Image And Text",
+  "description": "",
+  "id": "2bbb624d-35d3-4ec4-8fad-3c11282c13a0",
+  "classification": "content",
+  "elements": {
+    "background": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      },
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+          },
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            }
+          }
+        },
+        "fillOptions": {
+          "elementType": "optionselection"
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "includeBackgroundImage": {
+          "elementType": "toggle",
+          "value": false
+        }
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      }
+    },
+    "image": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      },
+      "value": {
+        "alignment": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+          },
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection"
+            }
+          }
+        },
+        "commonSettings": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+          },
+          "value": {
+            "applyToAll": {
+              "elementType": "toggle",
+              "value": false
+            },
+            "hideOnMobile": {
+              "elementType": "toggle",
+              "value": false
+            }
+          }
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "margin": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        },
+        "padding": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "elementType": "optionselection"
+    },
+    "margin": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "text": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "373c81a5-d86b-4740-8f11-62fcbccfca08"
+      },
+      "value": {
+        "alignment": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+          },
+          "value": {
+            "alignmentOptions": {
+              "elementType": "optionselection"
+            }
+          }
+        },
+        "background": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+          },
+          "value": {
+            "backgroundColor": {
+              "elementType": "group",
+              "typeRef": {
+                "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+              },
+              "value": {
+                "colorCode": {
+                  "elementType": "text"
+                }
+              }
+            },
+            "fillOptions": {
+              "elementType": "optionselection"
+            },
+            "image": {
+              "elementType": "image"
+            },
+            "includeBackgroundImage": {
+              "elementType": "toggle",
+              "value": false
+            }
+          }
+        },
+        "commonSettings": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+          },
+          "value": {
+            "applyToAll": {
+              "elementType": "toggle",
+              "value": false
+            },
+            "hideOnMobile": {
+              "elementType": "toggle",
+              "value": false
+            }
+          }
+        },
+        "lineHeight": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0"
+          },
+          "value": {
+            "lineHeightOptions": {
+              "elementType": "optionselection"
+            }
+          }
+        },
+        "linkColor": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+          },
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            }
+          }
+        },
+        "margin": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        },
+        "padding": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+          },
+          "value": {
+            "bottom": {
+              "elementType": "number"
+            },
+            "left": {
+              "elementType": "number"
+            },
+            "right": {
+              "elementType": "number"
+            },
+            "top": {
+              "elementType": "number"
+            }
+          }
+        },
+        "text": {
+          "elementType": "formattedtext"
+        },
+        "textStyle": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+          },
+          "value": {
+            "color": {
+              "elementType": "text"
+            },
+            "font": {
+              "elementType": "text"
+            },
+            "size": {
+              "elementType": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "type": "Sites Image And Text",
+  "typeId": "bee26b87-bbcf-454b-9dc6-7a909ab13fd1",
+  "rev": "0-71d85505-5a4f-409f-8725-ee52995a76a5"
+}

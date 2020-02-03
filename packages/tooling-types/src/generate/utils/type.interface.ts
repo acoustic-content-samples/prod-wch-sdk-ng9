@@ -68,11 +68,9 @@ function createTypeInterfaceContext(
 
     const bIsGroup = el.elementType === ELEMENT_TYPE_GROUP;
     if (bIsGroup) {
-      // type id
-      const typeId = el.typeRef.id;
       // locate the type
       const rxRefType = rxPipe(
-        aTypeReg.findTypeClassById(typeId),
+        aTypeReg.findTypeClassByGroup(el),
         shareReplay()
       );
       // the from statement

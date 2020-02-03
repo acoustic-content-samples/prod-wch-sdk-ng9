@@ -1,0 +1,10 @@
+<!-- Sites Button Layout -->
+
+<a class="btn" data-content-item-id="{{ $metadata.id }}" data-accessor="{{ $metadata.accessor }}" 
+  style="{{{alignment.$markup}}} {{{lineHeight.$markup}}} {{{textStyle.$markup}}}
+  {{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{/if}}
+  {{~#if cornerRadius}} border-radius: {{cornerRadius}}; {{/if}}
+  {{~#if padding}}padding: {{{padding.$markup}}}; {{/if}}"
+  href="{{link.linkURL}}">{{label}}</a>
+
+<!-- End Sites Button Layout -->

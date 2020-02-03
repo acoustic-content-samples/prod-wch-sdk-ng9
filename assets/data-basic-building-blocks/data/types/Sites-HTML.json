@@ -1,0 +1,61 @@
+{
+  "name": "Sites HTML",
+  "description": "",
+  "id": "85bdc88c-5b4c-4002-a665-37ba5bf95cb6",
+  "classification": "content-type",
+  "elements": [
+    {
+      "displayHeight": 30,
+      "displayType": "multiLine",
+      "elementType": "text",
+      "helpText": "Provide your custom HTML code here. You can also include handlebar references to the current rendering context.",
+      "key": "code",
+      "label": "Code",
+      "minLength": 1,
+      "placeholder": {
+        "show": true,
+        "text": "Compose your HTML and Handlebar code here."
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "helpText": "This element controls the padding values for this HTML Block",
+      "label": "Padding",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "label": "Margin",
+      "helpText": "This element controls the margin values for this HTML Block",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "helpText": "This element controls the common settings for this HTML block",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-fdf8ed13-225d-47a9-8c3d-37255c244629"
+}

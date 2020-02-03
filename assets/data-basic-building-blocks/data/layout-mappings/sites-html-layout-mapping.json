@@ -1,0 +1,27 @@
+{
+  "name": "sitesHtmlLayoutMapping",
+  "id": "sites-html-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesHtmlLayout",
+        "id": "sites-html-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesHtmlLayout",
+          "id": "sites-html-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites HTML",
+    "id": "85bdc88c-5b4c-4002-a665-37ba5bf95cb6"
+  },
+  "rev": "0-8ef50852-11d4-4b7c-88b0-18f0f83b00db"
+}

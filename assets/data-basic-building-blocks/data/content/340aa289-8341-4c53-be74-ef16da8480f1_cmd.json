@@ -1,0 +1,84 @@
+{
+  "name": "HTML",
+  "description": "",
+  "id": "340aa289-8341-4c53-be74-ef16da8480f1",
+  "classification": "content",
+  "elements": {
+    "code": {
+      "elementType": "text"
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        }
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-html-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "85bdc88c-5b4c-4002-a665-37ba5bf95cb6",
+  "rev": "0-7499310a-fdee-4291-8954-ab0c10d09c68"
+}

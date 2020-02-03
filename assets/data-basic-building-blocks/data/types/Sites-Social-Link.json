@@ -1,0 +1,36 @@
+{
+  "name": "Sites Social Link",
+  "description": "This item represents a link to social follow link.",
+  "id": "98f24456-bf11-4248-bca9-07e273b8dbc4",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "text",
+      "helpText": "This element controls the common settings for this block.",
+      "key": "icon",
+      "label": "Icon"
+    },
+    {
+      "elementType": "link",
+      "helpText": "This element controls the click target for this link.",
+      "key": "url",
+      "label": "URL"
+    },
+    {
+      "elementType": "text",
+      "key": "alttext",
+      "helpText": "This element controls the alternative text for this link.",
+      "label": "Alt text"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-aacf3bd2-2dac-4eb8-aab1-5b891e225a44"
+}

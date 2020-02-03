@@ -1,0 +1,17 @@
+{
+  "name": "sitesPageCardLayout",
+  "id": "sites-page-card-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-page-card-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-image-and-text-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_d405f5b6f6adfe06ab9fbee049cc087c"
+  },
+  "urlTemplate": "{templateLocation}/sites-page-card-layout/{id}.html",
+  "rev": "0-06d551a9-59b0-4905-a3f2-89d2406c54c4"
+}

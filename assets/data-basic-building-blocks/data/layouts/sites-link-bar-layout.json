@@ -1,0 +1,17 @@
+{
+  "name": "sitesLinkBarLayout",
+  "id": "sites-link-bar-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-link-bar-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-link-bar-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_96438d7a305c150fe861b22418945b53"
+  },
+  "urlTemplate": "{templateLocation}/sites-link-bar-layout/{id}.html",
+  "rev": "0-c9fbdf4f-34c9-4447-a6c5-adb6cb092b08"
+}

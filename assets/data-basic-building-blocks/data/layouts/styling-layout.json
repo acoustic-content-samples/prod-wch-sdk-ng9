@@ -1,0 +1,17 @@
+{
+  "name": "stylingLayout",
+  "id": "styling-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/styling-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/styling-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_09abf5e83745c1e397075120ca6159ef"
+  },
+  "urlTemplate": "{templateLocation}/styling-layout/{id}.html",
+  "rev": "0-213af0d5-9b5a-4d7d-989d-0cbf1ede6672"
+}

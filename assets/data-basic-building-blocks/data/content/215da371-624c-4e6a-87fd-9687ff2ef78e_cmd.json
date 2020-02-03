@@ -1,0 +1,33 @@
+{
+  "name": "Breadcrumb Navigation",
+  "description": "",
+  "id": "215da371-624c-4e6a-87fd-9687ff2ef78e",
+  "classification": "content",
+  "elements": {
+    "numberOfNavigationLevels": {
+      "elementType": "number",
+      "value": 0
+    },
+    "startingWithNavigationLevel": {
+      "elementType": "number",
+      "value": 0
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-breadcrumb-navigation-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "6854f419-3b8b-4410-8d33-134a485d05a3",
+  "rev": "0-5b3a26c6-7231-4939-bdb9-e12f8542f08c"
+}

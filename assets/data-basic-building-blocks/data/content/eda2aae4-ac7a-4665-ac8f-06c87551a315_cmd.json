@@ -1,0 +1,142 @@
+{
+  "name": "Button SC",
+  "description": "",
+  "id": "eda2aae4-ac7a-4665-ac8f-06c87551a315",
+  "classification": "content",
+  "elements": {
+    "alignment": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection"
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "backgroundColor": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "value": {
+        "colorCode": {
+          "elementType": "text"
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "cornerRadius": {
+      "elementType": "number"
+    },
+    "key": {
+      "elementType": "text"
+    },
+    "label": {
+      "elementType": "text",
+      "value": "Your Button"
+    },
+    "lineHeight": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0"
+      },
+      "value": {
+        "key": {
+          "elementType": "text"
+        },
+        "lineHeightOptions": {
+          "elementType": "optionselection"
+        }
+      }
+    },
+    "link": {
+      "elementType": "link"
+    },
+    "padding": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "style": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+      },
+      "value": {
+        "color": {
+          "elementType": "text"
+        },
+        "font": {
+          "elementType": "text"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "size": {
+          "elementType": "number"
+        }
+      }
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-button-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "dee92057-69e3-489b-b13b-15f9b28770a1",
+  "rev": "0-ceb28e68-606d-49b6-88c2-143d56f392c1"
+}

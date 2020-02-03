@@ -17,10 +17,12 @@ import {
   MODULE as UTILS_MODULE,
   objectKeys,
   opShareLast,
-  rxPipe
+  rxPipe,
+  isNil,
+  opFilterNotNil
 } from '@acoustic-content-sdk/utils';
 import { combineLatest, EMPTY, merge, Observable, of } from 'rxjs';
-import { map, mergeMap, mergeMapTo, shareReplay } from 'rxjs/operators';
+import { map, mergeMap, mergeMapTo, shareReplay, tap } from 'rxjs/operators';
 
 import { BUILT_IN_TYPES, TYPES } from './constants';
 import { getIdentifierFrom } from './identifiers';
@@ -42,10 +44,13 @@ function getTypeDependencies(
   // type
   const type = aTypeClass.type;
   // analyze the elements
-  return merge(
-    ...type.elements
-      .filter((el: any) => el.elementType === ELEMENT_TYPE_GROUP)
-      .map((el: any) => aTypeReg.findTypeClassById(el.typeRef.id))
+  return rxPipe(
+    merge(
+      ...type.elements
+        .filter((el: any) => el.elementType === ELEMENT_TYPE_GROUP)
+        .map((el: any) => aTypeReg.findTypeClassById(el.typeRef.id))
+    ),
+    opFilterNotNil
   );
 }
 
@@ -135,12 +140,14 @@ function createTypeDefinitionContext(
 
     const bIsGroup = el.elementType === ELEMENT_TYPE_GROUP;
     if (bIsGroup) {
-      // type id
-      const typeId = el.typeRef.id;
       // locate the type
-      const rxRefType = aTypeReg.findTypeClassById(typeId).pipe(shareReplay());
+      const rxRefType = rxPipe(
+        aTypeReg.findTypeClassByGroup(el),
+        shareReplay()
+      );
       // the from statement
-      const rxFrom = rxRefType.pipe(
+      const rxFrom = rxPipe(
+        rxRefType,
         map(
           (def) =>
             './' +
@@ -159,11 +166,8 @@ function createTypeDefinitionContext(
         shareReplay()
       );
       // register the import
-      const rxImportElement: Observable<string> = combineLatest(
-        rxFrom,
-        rxNameEl,
-        rxRefType
-      ).pipe(
+      const rxImportElement: Observable<string> = rxPipe(
+        combineLatest(rxFrom, rxNameEl, rxRefType),
         map(([fromType, name, def]) => {
           const baseName = getBaseName(name);
           const capBaseName = classCase(baseName);
@@ -284,7 +288,12 @@ export function createTypeDefinition(
   // execute the template
   const newContent = rxPipe(
     rxCtx,
-    mergeMap((ctx) => aTemplate$.pipe(map((tmp) => tmp(ctx))))
+    mergeMap((ctx) =>
+      rxPipe(
+        aTemplate$,
+        map((tmp) => tmp(ctx))
+      )
+    )
   );
   // write the content
   const rxResult = rxPipe(

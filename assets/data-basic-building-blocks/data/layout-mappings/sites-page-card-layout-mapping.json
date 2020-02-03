@@ -1,0 +1,25 @@
+{
+  "name": "sitesPageCardLayoutMapping",
+  "id": "sites-page-card-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "sites-page-card-layout"
+      },
+      "layouts": [
+        {
+          "id": "sites-page-card-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Image And Text",
+    "id": "8eb34ed3-fbdf-439e-aaeb-00060cdeb63a"
+  },
+  "rev": "0-146d41dc-ec41-4042-97b6-5bc502502e0d"
+}

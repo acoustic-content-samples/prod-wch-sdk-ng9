@@ -1,0 +1,97 @@
+{
+  "name": "Sites Page Card",
+  "description": "This page represents a page card comprised of a heading, a summary text, an image and a clickable link.",
+  "id": "8eb34ed3-fbdf-439e-aaeb-00060cdeb63a",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "created": "2019-11-27T13:11:18.961Z",
+  "elements": [
+    {
+      "elementType": "text",
+      "helpText": "This element controls the heading of this page card.",
+      "key": "heading",
+      "label": "Heading"
+    },
+    {
+      "displayHeight": 2,
+      "helpText": "This element controls the summary text of this page card.",
+      "displayType": "multiLine",
+      "elementType": "text",
+      "key": "summary",
+      "label": "summary"
+    },
+    {
+      "elementType": "link",
+      "helpText": "This element holds the link that controls click target for this page card.",
+      "key": "link",
+      "label": "link"
+    },
+    {
+      "elementType": "group",
+      "key": "image",
+      "helpText": "This element holds the image for this page card.",
+      "label": "Image",
+      "typeRef": {
+        "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "background",
+      "helpText": "This element controls the background for this page card.",
+      "label": "Background",
+      "typeRef": {
+        "name": "Sites Background",
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "helpText": "This element controls the margin values for this page card.",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "optionselection",
+      "key": "layout",
+      "helpText": "This element controls the layout to be applied to this page card.",
+      "label": "Layout",
+      "options": [
+        {
+          "label": "Image Left",
+          "selection": "image-left"
+        },
+        {
+          "label": "Image Right",
+          "selection": "image-right"
+        },
+        {
+          "label": "Image Bottom",
+          "selection": "image-bottom"
+        },
+        {
+          "label": "Image Top",
+          "selection": "image-top"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "path": "/Sites-Page-Card.json",
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-d8b060f8-59d7-49c0-981d-a8860a8ec362"
+}

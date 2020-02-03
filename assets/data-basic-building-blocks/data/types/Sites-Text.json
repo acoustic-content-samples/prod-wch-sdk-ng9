@@ -1,0 +1,108 @@
+{
+  "name": "Sites Text",
+  "description": "",
+  "id": "373c81a5-d86b-4740-8f11-62fcbccfca08",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "formattedtext",
+      "key": "text",
+      "helpText": "The actual formatted text",
+      "label": "text",
+      "placeholder": {
+        "show": true,
+        "text": "Text"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "textStyle",
+      "helpText": "This element holds a reference to the text styling to be applied to this text block",
+      "label": "Text Style",
+      "typeRef": {
+        "name": "Sites Styling",
+        "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "linkColor",
+      "helpText": "This element holds a reference to a color defintion to by applied to links in this text block",
+      "label": "Link Color",
+      "typeRef": {
+        "name": "Sites Color",
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "background",
+      "helpText": "This element holds a reference to the baground defintion for this text block",
+      "label": "Background",
+      "typeRef": {
+        "name": "Sites Background",
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "alignment",
+      "helpText": "This element holds a reference to the alignment defintion for this text block",
+      "label": "Alignment",
+      "typeRef": {
+        "name": "Sites Alignment",
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "lineHeight",
+      "helpText": "This element holds a reference to the line hight defintion for this text block",
+      "label": "Line Height",
+      "typeRef": {
+        "name": "Sites Line Height",
+        "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "helpText": "A reference to a boundary item providing the padding values for this text block",
+      "label": "Padding",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "helpText": "A reference to a boundary item providing the margin values for this text block",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "helpText": "A reference to a common settings definition to be applied to this text block",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-2462bdc9-04e6-43fe-a213-2fee3c4fe665"
+}

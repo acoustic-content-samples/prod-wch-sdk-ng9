@@ -1,0 +1,19 @@
+{
+  "name": "sitesRowsLayout",
+  "id": "sites-rows-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "template": "/templates/sites-rows-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-rows-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_e1b1860c322536cdf3588b61874113ef"
+  },
+  "urlTemplate": "{templateLocation}/sites/{id}.html",
+  "rev": "0-7962004d-28fd-4518-9284-ae211b3060d7"
+}

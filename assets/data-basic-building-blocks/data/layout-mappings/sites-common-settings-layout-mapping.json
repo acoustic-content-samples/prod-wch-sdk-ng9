@@ -1,0 +1,27 @@
+{
+  "name": "sitesCommonSettingsLayoutMapping",
+  "id": "sites-common-settings-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesCommonSettingsLayout",
+        "id": "sites-common-settings-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesCommonSettingsLayout",
+          "id": "sites-common-settings-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Common Settings",
+    "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+  },
+  "rev": "0-28e2a2b0-1094-440f-907c-88c316989c63"
+}

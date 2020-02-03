@@ -1,0 +1,27 @@
+{
+  "name": "sitesImageLayoutMapping",
+  "id": "sites-image-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesImageLayout",
+        "id": "sites-image-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesImageLayout",
+          "id": "sites-image-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Image",
+    "id": "c8295d37-7235-495e-8d40-f3b8bafe4099"
+  },
+  "rev": "0-1949ee67-3531-471d-820f-dfe6a3900ac6"
+}

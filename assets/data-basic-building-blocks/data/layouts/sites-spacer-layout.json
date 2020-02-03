@@ -1,0 +1,17 @@
+{
+  "name": "sitesSpacerLayout",
+  "id": "sites-spacer-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-spacer-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-spacer-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_81fb6926e8799f214a3505ae922f1e1f"
+  },
+  "urlTemplate": "{templateLocation}/sites-spacer-layout/{id}.html",
+  "rev": "0-c62b272b-4a50-4319-92c9-f9cb0c48375b"
+}

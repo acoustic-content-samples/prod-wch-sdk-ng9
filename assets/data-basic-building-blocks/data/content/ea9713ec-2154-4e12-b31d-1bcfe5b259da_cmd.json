@@ -1,0 +1,193 @@
+{
+  "name": "HB Text SC",
+  "description": "",
+  "id": "ea9713ec-2154-4e12-b31d-1bcfe5b259da",
+  "classification": "content",
+  "elements": {
+    "alignment": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection"
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "background": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      },
+      "value": {
+        "backgroundColor": {
+          "elementType": "group",
+          "typeRef": {
+            "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+          },
+          "value": {
+            "colorCode": {
+              "elementType": "text"
+            },
+            "key": {
+              "elementType": "text"
+            }
+          }
+        },
+        "fillOptions": {
+          "elementType": "optionselection"
+        },
+        "image": {
+          "elementType": "image"
+        },
+        "includeBackgroundImage": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "key": {
+      "elementType": "text"
+    },
+    "lineHeight": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "e5e97340-b03b-42ea-9d03-f8bc214f42b0"
+      },
+      "value": {
+        "key": {
+          "elementType": "text"
+        },
+        "lineHeightOptions": {
+          "elementType": "optionselection"
+        }
+      }
+    },
+    "linkColor": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      },
+      "value": {
+        "colorCode": {
+          "elementType": "text"
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "margin": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "text": {
+      "elementType": "formattedtext",
+      "value": "<p>Your text</p>\n"
+    },
+    "textStyle": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+      },
+      "value": {
+        "color": {
+          "elementType": "text"
+        },
+        "font": {
+          "elementType": "text"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "size": {
+          "elementType": "number"
+        }
+      }
+    }
+  },
+  "keywords": [],
+  "kind": [],
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-hb-text-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "ac299073-48a2-446d-987d-d893257abdb3"
+}

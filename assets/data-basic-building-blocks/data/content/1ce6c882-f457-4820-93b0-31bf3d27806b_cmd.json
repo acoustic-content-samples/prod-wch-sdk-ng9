@@ -1,0 +1,117 @@
+{
+  "name": "Image SC",
+  "thumbnail": {
+    "id": "cb25d0d7-035b-4746-b4a7-8c4902365132"
+  },
+  "keywords": [],
+  "kind": [],
+  "description": "",
+  "id": "1ce6c882-f457-4820-93b0-31bf3d27806b",
+  "classification": "content",
+  "elements": {
+    "alignment": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+      },
+      "value": {
+        "alignmentOptions": {
+          "elementType": "optionselection"
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "image": {
+      "mode": "shared",
+      "asset": {
+        "id": "cb25d0d7-035b-4746-b4a7-8c4902365132"
+      },
+      "elementType": "image"
+    },
+    "commonSettings": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      },
+      "value": {
+        "applyToAll": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "hideOnMobile": {
+          "elementType": "toggle",
+          "value": false
+        },
+        "key": {
+          "elementType": "text"
+        }
+      }
+    },
+    "key": {
+      "elementType": "text"
+    },
+    "margin": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    },
+    "padding": {
+      "elementType": "group",
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      },
+      "value": {
+        "bottom": {
+          "elementType": "number"
+        },
+        "key": {
+          "elementType": "text"
+        },
+        "left": {
+          "elementType": "number"
+        },
+        "right": {
+          "elementType": "number"
+        },
+        "top": {
+          "elementType": "number"
+        }
+      }
+    }
+  },
+  "locale": "en",
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "sites-image-layout"
+      }
+    }
+  ],
+  "status": "ready",
+  "tags": [
+    "user:sites-block",
+    "sites-next"
+  ],
+  "typeId": "c8295d37-7235-495e-8d40-f3b8bafe4099",
+  "rev": "0-e680c5a7-494c-451f-a656-c3776daa9e81"
+}

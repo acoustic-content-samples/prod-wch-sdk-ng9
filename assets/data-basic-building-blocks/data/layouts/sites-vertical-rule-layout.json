@@ -1,0 +1,17 @@
+{
+  "name": "sitesVerticalRuleLayout",
+  "id": "sites-vertical-rule-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-vertical-rule-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-vertical-rule-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_1e274ec66c889b95600c6a6348d48dba"
+  },
+  "urlTemplate": "{templateLocation}/sites-vertical-rule-layout/{id}.html",
+  "rev": "0-70b1e2b4-7955-472f-8fe5-4514cbc307da"
+}

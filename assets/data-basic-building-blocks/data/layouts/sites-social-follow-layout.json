@@ -1,0 +1,17 @@
+{
+  "name": "sitesSocialFollowLayout",
+  "id": "sites-social-follow-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-social-follow-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-social-follow-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_2136f3a5c8ee4708e0fd2c370cdc6c0a"
+  },
+  "urlTemplate": "{templateLocation}/sites-social-follow-layout/{id}.html",
+  "rev": "0-0cedd362-9b4b-4412-a793-55ada1640d7f"
+}

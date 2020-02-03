@@ -1,0 +1,17 @@
+{
+  "name": "sitesColorLayout",
+  "id": "sites-color-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-color-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-color-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_7de4ff58e762882cdf8cf4c4a9ad8de1"
+  },
+  "urlTemplate": "{templateLocation}/sites-color-layout/{id}.html",
+  "rev": "0-04feede9-0fb0-4a0b-a407-f8e98cb4378e"
+}

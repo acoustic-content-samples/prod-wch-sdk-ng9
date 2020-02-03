@@ -1,0 +1,37 @@
+{
+  "name": "Sites Styling",
+  "description": "This item represents general styling information that can be applied to elements of page blocks.",
+  "id": "cfa7081a-921d-4f50-a543-027b983b01b5",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "text",
+      "helpText": "This element controls the font to be used for a text.",
+      "key": "font",
+      "label": "Font"
+    },
+    {
+      "elementType": "number",
+      "helpText": "This element controls size.",
+      "fieldType": "integer",
+      "key": "size",
+      "label": "Size"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element controls the color.",
+      "key": "color",
+      "label": "Color"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-891fc2c8-ce44-4334-8962-4e8a4d654071"
+}

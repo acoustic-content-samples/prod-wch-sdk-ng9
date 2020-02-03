@@ -1,0 +1,37 @@
+{
+  "name": "Sites Navigation Page",
+  "description": "",
+  "id": "6943b561-1a32-421b-b6e2-8ca5cb1463a1",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "reference",
+      "key": "page",
+      "label": "Page",
+      "required": true
+    },
+    {
+      "allowMultipleValues": true,
+      "elementType": "reference",
+      "fieldLabel": "Content item",
+      "key": "children",
+      "label": "Children",
+      "minimumValues": 0,
+      "restrictTypes": [
+        {
+          "id": "6943b561-1a32-421b-b6e2-8ca5cb1463a1"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded", "standalone"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-8d52d855-c5b6-4bd8-9afe-14a80908b05d"
+}

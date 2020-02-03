@@ -1,0 +1,17 @@
+{
+  "name": "sitesButtonLayout",
+  "id": "sites-button-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-button-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-button-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_658af5c5c2fa44aca4f2dec26c36bbf1"
+  },
+  "urlTemplate": "{templateLocation}/sites/{id}.html",
+  "rev": "0-2973f9f7-df63-4009-93c0-10510f88751b"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "sitesButtonLayoutMapping",
+  "id": "sites-button-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesButtonLayout",
+        "id": "sites-button-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesButtonLayout",
+          "id": "sites-button-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Button",
+    "id": "dee92057-69e3-489b-b13b-15f9b28770a1"
+  },
+  "rev": "0-42e27bd1-4ac0-4cb9-a445-f960c77e9f70"
+}

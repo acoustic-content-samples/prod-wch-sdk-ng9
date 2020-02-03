@@ -1,0 +1,27 @@
+{
+  "name": "sitesBoundaryLayoutMapping",
+  "id": "sites-boundary-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesBoundaryLayout",
+        "id": "sites-boundary-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesBoundaryLayout",
+          "id": "sites-boundary-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Boundary",
+    "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+  },
+  "rev": "0-1e7dc6c6-3d6e-4af5-9fc4-eac83d0bb96b"
+}

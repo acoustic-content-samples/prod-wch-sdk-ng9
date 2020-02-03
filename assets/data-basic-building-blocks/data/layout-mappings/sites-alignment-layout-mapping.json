@@ -1,0 +1,27 @@
+{
+  "name": "sitesAlignmentLayoutMapping",
+  "id": "sites-alignment-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesAlignmentLayout",
+        "id": "sites-alignment-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesAlignmentLayout",
+          "id": "sites-alignment-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Alignment",
+    "id": "d0cf6fd8-e061-4bd6-8f62-fd3ea795b4e5"
+  },
+  "rev": "0-a109af31-94f0-4d64-aca6-a132b1c436f1"
+}

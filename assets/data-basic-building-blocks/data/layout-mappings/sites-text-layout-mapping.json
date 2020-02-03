@@ -1,0 +1,27 @@
+{
+  "name": "sitesTextLayoutMapping",
+  "id": "sites-text-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesTextLayout",
+        "id": "sites-text-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesTextLayout",
+          "id": "sites-text-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Text",
+    "id": "373c81a5-d86b-4740-8f11-62fcbccfca08"
+  },
+  "rev": "0-077ba859-2ad5-4353-8605-fc0587bd7336"
+}

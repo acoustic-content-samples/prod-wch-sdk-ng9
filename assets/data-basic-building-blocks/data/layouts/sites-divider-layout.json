@@ -1,0 +1,17 @@
+{
+  "name": "sitesDividerLayout",
+  "id": "sites-divider-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-divider-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-divider-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_0970b6cfaa5b514a5c9453689dea9dc2"
+  },
+  "urlTemplate": "{templateLocation}/sites-divider-layout/{id}.html",
+  "rev": "0-1ade1eb4-50bf-40c3-b48e-716d65f2a397"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Sites Boundary",
+  "description": "This element controls the boundary dimensions to be used for padding/margin styling for a given block",
+  "id": "d403f72d-5383-423c-ba33-5cedd61c9224",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "number",
+      "helpText": "The value for the top boundary",
+      "fieldType": "integer",
+      "key": "top",
+      "label": "Top",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "helpText": "The value for the bottom boundary",
+      "fieldType": "integer",
+      "key": "bottom",
+      "label": "Bottom",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "helpText": "The value for the left boundary",
+      "fieldType": "integer",
+      "key": "left",
+      "label": "Left",
+      "minimum": 0
+    },
+    {
+      "elementType": "number",
+      "helpText": "The value for the right boundary",
+      "fieldType": "integer",
+      "key": "right",
+      "label": "Right",
+      "minimum": 0
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-39142db7-686c-40de-87cc-f60e6012a6cd"
+}

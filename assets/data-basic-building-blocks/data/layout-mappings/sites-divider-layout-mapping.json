@@ -1,0 +1,27 @@
+{
+  "name": "sitesDividerLayoutMapping",
+  "id": "sites-divider-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesDividerLayout",
+        "id": "sites-divider-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesDividerLayout",
+          "id": "sites-divider-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Divider",
+    "id": "d550249a-83b2-4e46-96d1-519732fa5787"
+  },
+  "rev": "0-f9f50034-dd13-46eb-8853-8275fa7dd062"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Sites Spacer",
+  "description": "This block represents a spacer allowing to add extra empty space between blocks.",
+  "id": "b2a9542d-b432-48b3-8322-2464765f323b",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "",
+    "source": "imageElementOrType"
+  },
+  "elements": [
+    {
+      "elementType": "group",
+      "key": "background",
+      "helpText": "This element controls the background for this spacer.",
+      "label": "Background",
+      "typeRef": {
+        "name": "Sites Background",
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      }
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "height",
+      "helpText": "This element controls the height of this spacer in pixels.",
+      "label": "Spacer height",
+      "minimum": 0
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "helpText": "This element controls the common settings for this block.",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-bef45ebe-d244-45a7-a575-e22d4d26b530"
+}

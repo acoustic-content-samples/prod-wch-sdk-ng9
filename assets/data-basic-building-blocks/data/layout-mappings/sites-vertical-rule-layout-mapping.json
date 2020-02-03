@@ -1,0 +1,27 @@
+{
+  "name": "sitesVerticalRuleLayoutMapping",
+  "id": "sites-vertical-rule-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesVerticalRuleLayout",
+        "id": "sites-vertical-rule-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesVerticalRuleLayout",
+          "id": "sites-vertical-rule-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Vertical Rule",
+    "id": "8e460c39-9cf6-4a78-9726-ee43ad961a8a"
+  },
+  "rev": "0-f2e825d8-5dad-4986-b112-dc1a1d0f11fd"
+}

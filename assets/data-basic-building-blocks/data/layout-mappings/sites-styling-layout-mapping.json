@@ -1,0 +1,27 @@
+{
+  "name": "sitesStylingLayoutMapping",
+  "id": "sites-styling-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesStylingLayout",
+        "id": "sites-styling-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesStylingLayout",
+          "id": "sites-styling-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Styling",
+    "id": "cfa7081a-921d-4f50-a543-027b983b01b5"
+  },
+  "rev": "0-b71ecd5c-f2f7-465b-8a97-cc488eae664f"
+}

@@ -1,4 +1,9 @@
-import { AuthoringType } from '@acoustic-content-sdk/api';
+import {
+  AuthoringType,
+  AuthoringReferenceElement,
+  AuthoringReferenceValue,
+  AuthoringGroupElement
+} from '@acoustic-content-sdk/api';
 import {
   camelCase,
   classCase,
@@ -6,7 +11,13 @@ import {
   dotCase,
   kebabCase
 } from '@acoustic-content-sdk/tooling';
-import { rxPipe } from '@acoustic-content-sdk/utils';
+import {
+  rxPipe,
+  isNotEmpty,
+  isNil,
+  UNDEFINED$,
+  isNotNil
+} from '@acoustic-content-sdk/utils';
 import emojiRegex from 'emoji-regex';
 import { toWords } from 'number-to-words';
 import { Observable, OperatorFunction, pipe } from 'rxjs';
@@ -267,14 +278,27 @@ export class TypeRegistry {
   }
 
   findAuthoringTypeById(aId: string): AuthoringType {
-    return this.aAllTypes[aId];
+    return isNotEmpty(aId) ? this.aAllTypes[aId] : undefined;
   }
 
   findTypeClassById(aId: string): Observable<TypeClass> {
     return this.findTypeClass(this.findAuthoringTypeById(aId));
   }
 
+  findTypeClassByGroup(aElement: AuthoringGroupElement): Observable<TypeClass> {
+    // type ref
+    const { id } = aElement.typeRef;
+    // locate by ID
+    return this.findTypeClass(
+      this.findAuthoringTypeById(id) || (aElement.typeRef as AuthoringType)
+    );
+  }
+
   findTypeClass(aType: AuthoringType): Observable<TypeClass> {
+    // bail out
+    if (isNil(aType)) {
+      return UNDEFINED$;
+    }
     // the name
     const typeId = aType.id;
     // check if we are already searching

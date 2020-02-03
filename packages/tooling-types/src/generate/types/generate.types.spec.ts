@@ -11,6 +11,29 @@ import { ASSET_ROOT } from '../../test/assets';
 import { generateTypes } from './generate.types';
 
 describe('generate.types', () => {
+  fit('data-basic-building-blocks', async () => {
+    // root directory
+    const testDir = join(ASSET_ROOT, 'data-basic-building-blocks');
+    // read directory callback
+    const readDir = createReadDirectory(testDir);
+    const readText = createReadTextFile(testDir);
+    // target folder
+    const ROOT = 'src/samples';
+    const writeText = writeFiles(ROOT, true);
+    // the generator
+    const gen = generateTypes({ data: 'data' });
+
+    const types$ = gen(readDir, readText);
+
+    const test$ = rxPipe(
+      types$,
+      writeText,
+      tap(([name]) => console.log(name))
+    );
+
+    return await test$.toPromise();
+  });
+
   it('should produce typings', async () => {
     // root directory
     const testDir = join(ASSET_ROOT, 'sample-generate-types');

@@ -1,0 +1,34 @@
+{
+  "name": "Sites Video",
+  "description": "This block represents a video to be rendered on pages.",
+  "id": "a84f2c97-33bb-45fa-8156-25141df73055",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "video",
+      "helpText": "This element holds the reference to the video asset",
+      "key": "video",
+      "label": "Video"
+    },
+    {
+      "elementType": "group",
+      "key": "commonSettings",
+      "helpText": "This element controls the common settings for this block",
+      "label": "Common Settings",
+      "typeRef": {
+        "name": "Sites Common Settings",
+        "id": "dba345e3-10a0-44ed-b0aa-6cffe74e1343"
+      }
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["standalone", "embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-60cefb30-0090-49ec-908d-100f3d2b8bbb"
+}
