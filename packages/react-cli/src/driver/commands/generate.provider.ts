@@ -7,6 +7,7 @@ import {
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 export function generateProviderCommand(program: Command): Command {
   // register our commands
@@ -38,7 +39,8 @@ export function generateProviderCommand(program: Command): Command {
       const cmp$ = rxPipe(
         generateProvider({ name, suffix, store }),
         writeFiles(dstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return cmp$.toPromise();

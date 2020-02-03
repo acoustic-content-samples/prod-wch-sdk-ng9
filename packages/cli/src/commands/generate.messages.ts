@@ -8,6 +8,7 @@ import { generateMessages } from '@acoustic-content-sdk/tooling-messages';
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 export const GENERATE_MESSAGES_COMMAND = 'generate-messages';
 
@@ -46,7 +47,8 @@ export function generateMessagesCommand(program: Command): Command {
       const cmp$ = rxPipe(
         command(createReadDirectory(srcDir), logSvc),
         writeFiles(dstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return cmp$.toPromise();

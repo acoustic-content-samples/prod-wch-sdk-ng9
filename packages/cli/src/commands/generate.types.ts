@@ -10,6 +10,7 @@ import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { join, normalize } from 'path';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 import { splitParams } from './utils';
 
@@ -69,7 +70,8 @@ export function generateTypesCommand(program: Command): Command {
           logSvc
         ),
         writeFiles(dstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return files$.toPromise();

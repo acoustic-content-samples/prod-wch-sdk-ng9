@@ -10,6 +10,7 @@ import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { parse, relative } from 'path';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 import { getFullPath } from './utils';
 
@@ -71,7 +72,8 @@ export function generateDataOverlayCommand(program: Command): Command {
           logSvc
         ),
         writeFiles(fullDstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return files$.toPromise();

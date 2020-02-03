@@ -8,6 +8,7 @@ import { generateFeatureModule } from '@acoustic-content-sdk/tooling-feature-mod
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 import { getFullPath } from './utils';
 
@@ -56,7 +57,8 @@ export function generateFeatureModuleCommand(program: Command): Command {
       const files$ = rxPipe(
         command(createReadTextFile(srcDir), logSvc),
         writeFiles(srcDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return files$.toPromise();

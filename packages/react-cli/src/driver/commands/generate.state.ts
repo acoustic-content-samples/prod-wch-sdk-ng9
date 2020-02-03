@@ -7,6 +7,7 @@ import {
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
 import { Command } from 'commander';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 export function generateStateCommand(program: Command): Command {
   // register our commands
@@ -30,7 +31,8 @@ export function generateStateCommand(program: Command): Command {
       const cmp$ = rxPipe(
         generateState(name),
         writeFiles(dstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return cmp$.toPromise();

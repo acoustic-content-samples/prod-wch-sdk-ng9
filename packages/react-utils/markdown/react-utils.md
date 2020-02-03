@@ -25,6 +25,7 @@
 
 |  Interface | Description |
 |  --- | --- |
+|  [LazyComponentCreator](./react-utils.lazycomponentcreator.md) |  |
 |  [PureLoggingComponentProps](./react-utils.pureloggingcomponentprops.md) |  |
 |  [ValueObservable](./react-utils.valueobservable.md) | Extension of an Observable that allows to access the current value. This is compatible to BehaviorSubject |
 
@@ -32,6 +33,7 @@
 
 |  Variable | Description |
 |  --- | --- |
+|  [createLazyComponent](./react-utils.createlazycomponent.md) | Creates a synchronous creator function for a React component from an asynchronous function. |
 |  [isDevMode](./react-utils.isdevmode.md) |  |
 |  [isProdMode](./react-utils.isprodmode.md) |  |
 |  [isTestMode](./react-utils.istestmode.md) |  |

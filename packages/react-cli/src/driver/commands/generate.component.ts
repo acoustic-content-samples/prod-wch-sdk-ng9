@@ -1,12 +1,13 @@
+import { generateComponent } from '@acoustic-content-sdk/react-tooling';
 import {
   createChalkLoggerService,
   logFileDescriptor,
   writeFiles
 } from '@acoustic-content-sdk/tooling';
 import { NOOP_LOGGER_SERVICE, rxPipe } from '@acoustic-content-sdk/utils';
-import { generateComponent } from '@acoustic-content-sdk/react-tooling';
 import { Command } from 'commander';
 import { cwd } from 'process';
+import { ignoreElements } from 'rxjs/operators';
 
 export function generateComponentCommand(program: Command): Command {
   // register our commands
@@ -37,7 +38,8 @@ export function generateComponentCommand(program: Command): Command {
       const cmp$ = rxPipe(
         generateComponent({ name, carbon, store, di }),
         writeFiles(dstDir),
-        logFileDescriptor()
+        logFileDescriptor(),
+        ignoreElements()
       );
       // subscribe
       return cmp$.toPromise();
