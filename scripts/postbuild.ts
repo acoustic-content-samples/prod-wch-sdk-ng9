@@ -1,5 +1,13 @@
-import { readFile, readJson, remove, stat, writeFile } from 'fs-extra';
-import { camelCase, cloneDeep, upperFirst } from 'lodash';
+import {
+  copy,
+  readFile,
+  readJson,
+  remove,
+  stat,
+  writeFile,
+  writeJson
+} from 'fs-extra';
+import { camelCase, cloneDeep, kebabCase, upperFirst } from 'lodash';
 import { join, normalize, parse } from 'path';
 import { rewriteReadme } from 'tools-helper-merge-markdown';
 import {
@@ -9,11 +17,14 @@ import {
   isStringLiteral,
   ScriptTarget
 } from 'typescript';
+import { env } from 'process';
+const { BRANCH_NAME, VERSION_STRING } = env;
 
 import {
   dirs$,
   isOwnPackage,
   PACKAGE_JSON,
+  ROOT_DIR,
   rootPkg$,
   stringify,
   writePkgSafe
@@ -370,6 +381,58 @@ function handlePackage(aDir: string): Promise<string> {
   return Promise.all([parent$, done$]).then(([, done]) => done);
 }
 
+const PUBLISH_CONFIG = {
+  publishConfig: { registry: 'https://registry.npmjs.org/', access: 'public' }
+};
+
+function rewriteGlobalPackage(aDstDir: string): Promise<string> {
+  const dstName = join(aDstDir, PACKAGE_JSON);
+  return readJson(dstName)
+    .then((pkg) => ({ ...pkg, ...PUBLISH_CONFIG }))
+    .then((pkg) => writeJson(dstName, pkg))
+    .then(() => aDstDir);
+}
+
+function copyPackage(aPkgFile: string): Promise<string> {
+  const pkg$ = readJson(aPkgFile);
+  const dstDir$ = pkg$
+    .then((pkg) => pkg.name)
+    .then(kebabCase)
+    .then((name) => join(ROOT_DIR, 'dist', 'packages', name));
+  const { dir } = parse(aPkgFile);
+  // copy
+  return dstDir$
+    .then((name) => copy(dir, name))
+    .then(() => dstDir$)
+    .then(rewriteGlobalPackage);
+}
+
+function createDistPackage(): Promise<string> {
+  const src$ = readJson(join(ROOT_DIR, PACKAGE_JSON)).then(
+    ({ name, version, license, author, workspaces }) => ({
+      name,
+      version: VERSION_STRING || version,
+      license,
+      author,
+      workspaces
+    })
+  );
+  const dstName = join(ROOT_DIR, 'dist', PACKAGE_JSON);
+  // script section
+  const scripts = {
+    publish: 'yarn workspaces run publish dist --non-interactive'
+  };
+  // produce
+  return src$
+    .then((src) => ({ ...src, scripts }))
+    .then((src) => writeJson(dstName, src))
+    .then(() => dstName);
+}
+
+function createDist(aPkg: string[]): Promise<string[]> {
+  return Promise.all([...aPkg.map(copyPackage), createDistPackage()]);
+}
+
 function postbuild() {
   // packages
   const pkg$ = dist$
@@ -379,7 +442,10 @@ function postbuild() {
   // documentation
   const doc$ = buildDoc();
   // combine
-  return Promise.all([pkg$, doc$]).then(([pkg, doc]) => [...pkg, ...doc]);
+  return Promise.all([pkg$, doc$])
+    .then(([pkg, doc]) => [...pkg, ...doc])
+    .then(() => pkg$)
+    .then(createDist);
 }
 
 postbuild().then(console.log);
