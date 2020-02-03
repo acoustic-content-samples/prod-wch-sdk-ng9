@@ -30,7 +30,7 @@
     "publish:global": "ts-node scripts/publish.ts",
     "publish:run": "yarn workspaces run publish dist --non-interactive",
     "publish:all": "yarn publish dist --non-interactive",
-    "publish:verdaccio": "npm-run-all config:verdaccio publish:all publish:run",
+    "publish:verdaccio": "npm-run-all config:verdaccio publish:run publish:all",
     "pull": "wchtools pull -A --dir temp --verbose",
     "push": "wchtools push -A --dir data --verbose",
     "test": "wsrun test --passWithNoTests --json --outputFile test.result.json"
