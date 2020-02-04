@@ -4,6 +4,7 @@
 
 ```ts
 
+import { AuthoringGroupElement } from '@acoustic-content-sdk/api';
 import { AuthoringType } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
@@ -65,6 +66,8 @@ export class TypeRegistry {
     findAuthoringTypeById(aId: string): AuthoringType;
     // (undocumented)
     findTypeClass(aType: AuthoringType): Observable<TypeClass>;
+    // (undocumented)
+    findTypeClassByGroup(aElement: AuthoringGroupElement): Observable<TypeClass>;
     // (undocumented)
     findTypeClassById(aId: string): Observable<TypeClass>;
     // (undocumented)

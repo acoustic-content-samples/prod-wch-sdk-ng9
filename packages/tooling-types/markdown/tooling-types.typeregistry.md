@@ -22,6 +22,7 @@ export declare class TypeRegistry
 |  --- | --- | --- |
 |  [findAuthoringTypeById(aId)](./tooling-types.typeregistry.findauthoringtypebyid.md) |  |  |
 |  [findTypeClass(aType)](./tooling-types.typeregistry.findtypeclass.md) |  |  |
+|  [findTypeClassByGroup(aElement)](./tooling-types.typeregistry.findtypeclassbygroup.md) |  |  |
 |  [findTypeClassById(aId)](./tooling-types.typeregistry.findtypeclassbyid.md) |  |  |
 |  [registerType(aType)](./tooling-types.typeregistry.registertype.md) |  |  |
 
