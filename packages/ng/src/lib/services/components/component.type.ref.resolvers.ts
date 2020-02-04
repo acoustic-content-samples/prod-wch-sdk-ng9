@@ -3,7 +3,11 @@ import {
   ComponentTypeRef,
   ComponentTypeRefResolver
 } from '@acoustic-content-sdk/ng-api';
-import { constGenerator, isNilOrEmpty } from '@acoustic-content-sdk/utils';
+import {
+  constGenerator,
+  isNilOrEmpty,
+  isNotNil
+} from '@acoustic-content-sdk/utils';
 import { EMPTY, Observable, race } from 'rxjs';
 
 /**
@@ -21,9 +25,13 @@ function _getTypeByLayout(
   aLayoutMode?: string
 ): Observable<ComponentTypeRef<any>> {
   // use the first to resolve
-  return race(
-    aResolvers.map((resolver) => resolver.getTypeByLayout(aLayout, aLayoutMode))
-  );
+  return isNotNil(aLayout)
+    ? race(
+        aResolvers.map((resolver) =>
+          resolver.getTypeByLayout(aLayout, aLayoutMode)
+        )
+      )
+    : EMPTY;
 }
 
 /**

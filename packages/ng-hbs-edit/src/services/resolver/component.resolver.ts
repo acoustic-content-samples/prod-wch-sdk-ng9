@@ -52,7 +52,7 @@ export class HandlebarsComponentResolver implements ComponentTypeRefResolver {
       aLayoutMode?: string
     ): Observable<ComponentTypeRef<any>> => {
       // log the layout
-      const isHbsLayout = isHandlebarsLayout(aLayout);
+      const isHbsLayout = isNotNil(aLayout) && isHandlebarsLayout(aLayout);
       logger.info('Layout', aLayout, isHbsLayout);
       return isHbsLayout ? of(HBS_TYPE_REF) : EMPTY;
     };
