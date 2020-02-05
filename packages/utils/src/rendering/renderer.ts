@@ -846,8 +846,8 @@ export function createMarkupRendererV2(
         content$,
         switchMap(getTypeIdFromContentItem),
         opDistinctUntilChanged,
-        opShareLast,
-        log('typeId')
+        log('typeId'),
+        opShareLast
       );
       // get the compiled layout from the store
       const template$ = rxPipe(

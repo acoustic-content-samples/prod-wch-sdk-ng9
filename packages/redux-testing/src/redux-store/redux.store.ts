@@ -1,13 +1,11 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { createCompiler } from '@acoustic-content-sdk/hbs-tooling';
-import { HandlebarsCompiler } from '@acoustic-content-sdk/redux-feature-handlebars';
 import {
   createReduxRootStore,
   ReduxRootStore
 } from '@acoustic-content-sdk/redux-store';
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
-
 import { createFetchTextOnFolder } from '../fetch-text/fetch.text';
 
 export function createReduxRootStoreOnFolder(
@@ -17,7 +15,7 @@ export function createReduxRootStoreOnFolder(
   // construct the services
   const logSvc: LoggerService = aLogSvc || NOOP_LOGGER_SERVICE;
   const fetchText: FetchText = createFetchTextOnFolder(aFolder, logSvc);
-  const templateCompiler: HandlebarsCompiler = createCompiler();
+  const templateCompiler = createCompiler();
   // create the store
   return createReduxRootStore({ fetchText, logSvc, templateCompiler });
 }

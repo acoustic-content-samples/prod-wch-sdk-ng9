@@ -12,7 +12,7 @@ import {
 } from '@acoustic-content-sdk/redux-testing';
 import { isNotEmpty, rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
-import { filter, first } from 'rxjs/operators';
+import { filter, first, tap } from 'rxjs/operators';
 
 import { ASSET_ROOT } from '../../utils/assets';
 import { getLoggerService } from './../../utils/logger';
@@ -42,6 +42,6 @@ describe('markup.renderer', () => {
 
     const markup$ = renderer('593730b0-c45e-4888-8d94-9a986be3d51f');
 
-    return rxPipe(markup$, filter(isNotEmpty), first()).toPromise();
+    return rxPipe(markup$, filter(isNotEmpty), tap(console.log)).toPromise();
   });
 });
