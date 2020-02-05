@@ -1,5 +1,6 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { authoringContentFeature } from '@acoustic-content-sdk/redux-feature-auth-content';
+import { authoringLayoutMappingFeature } from '@acoustic-content-sdk/redux-feature-auth-layout-mapping';
 import { authoringTypeFeature } from '@acoustic-content-sdk/redux-feature-auth-type';
 import { deliveryContentFeature } from '@acoustic-content-sdk/redux-feature-delivery-content';
 import { handlebarsFeature } from '@acoustic-content-sdk/redux-feature-handlebars';
@@ -29,6 +30,7 @@ describe('markup.renderer', () => {
     // add the content feature
     store.addFeatureModule(authoringContentFeature);
     store.addFeatureModule(authoringTypeFeature);
+    store.addFeatureModule(authoringLayoutMappingFeature);
     store.addFeatureModule(deliveryContentFeature);
     store.addFeatureModule(handlebarsFeature);
     // init
