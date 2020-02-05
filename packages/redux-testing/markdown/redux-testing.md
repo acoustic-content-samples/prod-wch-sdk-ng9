@@ -10,7 +10,7 @@ Implementation of helper functions and mocks to assist in the implementation of 
 
 |  Function | Description |
 |  --- | --- |
-|  [createFetchTextOnFolder(aFolder)](./redux-testing.createfetchtextonfolder.md) |  |
+|  [createFetchTextOnFolder(aFolder, aLogSvc)](./redux-testing.createfetchtextonfolder.md) |  |
 |  [createReduxRootStoreOnFolder(aFolder, aLogSvc)](./redux-testing.createreduxrootstoreonfolder.md) |  |
 |  [createUrlConfigFromBaseURL(aBaseURL)](./redux-testing.createurlconfigfrombaseurl.md) | Constructs a <code>UrlConfig</code> structure based on a base URL |
 

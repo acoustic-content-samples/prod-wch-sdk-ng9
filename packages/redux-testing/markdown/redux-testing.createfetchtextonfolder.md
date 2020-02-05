@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function createFetchTextOnFolder(aFolder: string): FetchText;
+export declare function createFetchTextOnFolder(aFolder: string, aLogSvc?: LoggerService): FetchText;
 ```
 
 ## Parameters
@@ -15,6 +15,7 @@ export declare function createFetchTextOnFolder(aFolder: string): FetchText;
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  aFolder | <code>string</code> |  |
+|  aLogSvc | <code>LoggerService</code> |  |
 
 <b>Returns:</b>
 

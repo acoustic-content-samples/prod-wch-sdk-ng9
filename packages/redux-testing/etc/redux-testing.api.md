@@ -10,7 +10,7 @@ import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
 // @public (undocumented)
-export function createFetchTextOnFolder(aFolder: string): FetchText;
+export function createFetchTextOnFolder(aFolder: string, aLogSvc?: LoggerService): FetchText;
 
 // @public (undocumented)
 export function createReduxRootStoreOnFolder(aFolder: string, aLogSvc?: LoggerService): ReduxRootStore;
