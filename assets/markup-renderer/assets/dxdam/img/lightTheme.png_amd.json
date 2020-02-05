@@ -1,0 +1,100 @@
+{
+  "fileName": "lightTheme.png",
+  "metadata": {
+    "width": 940,
+    "height": 963
+  },
+  "creatorId": "95374ba1-8eee-497e-a971-4a416c81c943",
+  "description": "",
+  "caption": "",
+  "lastModifier": "Dieter Bühler",
+  "mediaId": "a4e7f5b2-656f-4f7b-95c7-fb0baa684234",
+  "path": "/dxdam/img/lightTheme.png",
+  "digest": "xEWyrFwSG6guktbfjzSbyg==",
+  "lastModifierId": "95374ba1-8eee-497e-a971-4a416c81c943",
+  "renditions": {
+    "default": {
+      "id": "r=8c2434d0-e406-4ead-987f-d93c6621a2be&a=3531bfd0-1057-439c-a49c-cba1e5b825da",
+      "source": "/authoring/v1/resources/8c2434d0-e406-4ead-987f-d93c6621a2be"
+    }
+  },
+  "links": {
+    "self": {
+      "href": "/authoring/v1/assets/3531bfd0-1057-439c-a49c-cba1e5b825da"
+    },
+    "media": {
+      "href": "/authoring/v1/resources/8c2434d0-e406-4ead-987f-d93c6621a2be.png"
+    },
+    "thumbnail": {
+      "href": "/authoring/v1/resources/8c2434d0-e406-4ead-987f-d93c6621a2be?fit=inside%7C220:145"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/asset/3531bfd0-1057-439c-a49c-cba1e5b825da/status/retire"
+    }
+  },
+  "id": "3531bfd0-1057-439c-a49c-cba1e5b825da",
+  "categories": [],
+  "usageRights": {
+    "categories": []
+  },
+  "systemModified": "2019-12-02T13:01:15.794Z",
+  "publishing": {
+    "status": "not-available"
+  },
+  "rev": "3-7db067402bba767c52c7a50eb5e57504",
+  "creator": "Dieter Bühler",
+  "altText": "",
+  "resource": "8c2434d0-e406-4ead-987f-d93c6621a2be",
+  "created": "2019-12-02T12:53:21.931Z",
+  "mediaType": "image/png",
+  "classification": "asset",
+  "tags": {
+    "suggested": [
+      "classification:web site",
+      "classification:computer",
+      "classification:machine",
+      "classification:portal site",
+      "classification:print media",
+      "classification:gray color",
+      "classification:greenishness color"
+    ],
+    "declined": [],
+    "values": [
+      "classification:web site",
+      "classification:computer",
+      "classification:machine",
+      "classification:portal site",
+      "classification:print media",
+      "classification:gray color",
+      "classification:greenishness color"
+    ],
+    "analysis": "complete"
+  },
+  "assetType": "image",
+  "isManaged": true,
+  "categoryIds": [],
+  "cognitive": {
+    "classifications": [
+      "web site",
+      "computer",
+      "machine",
+      "portal site",
+      "print media",
+      "gray color",
+      "greenishness color"
+    ],
+    "colors": {
+      "vibrant": "#44749c",
+      "muted": "#937468",
+      "darkVibrant": "#28445c",
+      "darkMuted": "#4f483f",
+      "lightVibrant": "#afcbdc",
+      "lightMuted": "#b0c0c7"
+    },
+    "status": "complete"
+  },
+  "fileSize": 896515,
+  "name": "lightTheme.png",
+  "lastModified": "2019-12-02T13:01:15.794Z",
+  "status": "ready"
+}

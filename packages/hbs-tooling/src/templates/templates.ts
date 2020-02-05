@@ -32,10 +32,10 @@ function createHandlebars(): HandlebarsType {
   // load the helpers
   const helpers = require('handlebars-helpers');
   // the instance
-  const hbs = create();
-  helpers(hbs);
+  const handlebars = create();
+  helpers({ handlebars });
   // ok
-  return hbs;
+  return handlebars;
 }
 
 /**
