@@ -4,6 +4,8 @@
 
 ## redux-feature-delivery-content package
 
+Implementation of a redux feature to convert authoring content into delivery content.
+
 ## Interfaces
 
 |  Interface | Description |

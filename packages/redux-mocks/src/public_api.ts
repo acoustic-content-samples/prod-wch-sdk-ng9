@@ -1,5 +1,5 @@
 /**
- * Implementation of a {@link https://redux.js.org/api/store|Redux} store with support for adding feature modules, dynamically.
+ * Implementation of helper functions and mocks to assist in the implementation of testcases for redux based modules.
  *
  * @packageDocumentation
  */

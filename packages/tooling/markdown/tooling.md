@@ -40,6 +40,7 @@ Implementation of utility methods used for tooling.
 |  [hasTrailingSlash(aUrl)](./tooling.hastrailingslash.md) |  |
 |  [logFileDescriptor()](./tooling.logfiledescriptor.md) |  |
 |  [relativePath(aSrc, aDst)](./tooling.relativepath.md) |  |
+|  [rxFindAuthoringAssets(aRoot, aTree)](./tooling.rxfindauthoringassets.md) | Reads the authoring assets from a directory |
 |  [rxFindAuthoringContent(aRoot, aTree)](./tooling.rxfindauthoringcontent.md) | Reads the authoring types from a directory |
 |  [rxFindAuthoringLayoutMappings(aRoot, aTree)](./tooling.rxfindauthoringlayoutmappings.md) | Reads the authoring layouts from a directory |
 |  [rxFindAuthoringLayouts(aRoot, aTree)](./tooling.rxfindauthoringlayouts.md) | Reads the authoring layouts from a directory |

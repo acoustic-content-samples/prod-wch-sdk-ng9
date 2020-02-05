@@ -106,6 +106,4 @@ export const VERSION: {
 };
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

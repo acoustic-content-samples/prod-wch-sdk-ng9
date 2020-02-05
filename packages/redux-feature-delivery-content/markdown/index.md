@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/redux-feature-delivery-content](./redux-feature-delivery-content.md) |  |
+|  [@acoustic-content-sdk/redux-feature-delivery-content](./redux-feature-delivery-content.md) | Implementation of a redux feature to convert authoring content into delivery content. |
 

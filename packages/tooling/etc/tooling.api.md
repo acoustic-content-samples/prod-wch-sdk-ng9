@@ -4,6 +4,7 @@
 
 ```ts
 
+import { AuthoringAsset } from '@acoustic-content-sdk/api';
 import { AuthoringContentItem } from '@acoustic-content-sdk/api';
 import { AuthoringLayoutItem } from '@acoustic-content-sdk/api';
 import { AuthoringLayoutMapping } from '@acoustic-content-sdk/api';
@@ -192,6 +193,9 @@ export const rxDataDirectory: (aReadText: ReadTextFile) => OperatorFunction<File
 
 // @public
 export const rxExists: (aFile: string, aRead: UnaryFunction<string, Observable<any>>) => Observable<boolean>;
+
+// @public
+export function rxFindAuthoringAssets(aRoot: string, aTree: ReadDirectory): Observable<JsonEntry<AuthoringAsset>>;
 
 // @public
 export function rxFindAuthoringContent(aRoot: string, aTree: ReadDirectory): Observable<JsonEntry<AuthoringContentItem>>;

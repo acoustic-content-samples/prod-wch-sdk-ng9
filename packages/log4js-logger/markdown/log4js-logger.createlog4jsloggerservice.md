@@ -9,8 +9,15 @@ Creates a logger service on top of log4js
 <b>Signature:</b>
 
 ```typescript
-export declare function createLog4jsLoggerService(): LoggerService;
+export declare function createLog4jsLoggerService(aDstPath?: string): LoggerService;
 ```
+
+## Parameters
+
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  aDstPath | <code>string</code> | root path for the logger files |
+
 <b>Returns:</b>
 
 `LoggerService`

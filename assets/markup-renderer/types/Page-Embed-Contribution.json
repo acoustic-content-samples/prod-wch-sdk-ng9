@@ -1,0 +1,32 @@
+{
+  "id": "eedce4a0-9647-4301-9247-6793e08652ea",
+  "rev": "14-bf48026619dd7b6258271ed001549c32",
+  "name": "📄 Page Embed Contribution",
+  "classification": "content-type",
+  "kind": [
+    "standalone"
+  ],
+  "description": "A page markup contribution directly added into the markup",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "elementType": "text",
+      "helpText": "The markup to be added.",
+      "key": "embed",
+      "label": "embed",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ]
+}

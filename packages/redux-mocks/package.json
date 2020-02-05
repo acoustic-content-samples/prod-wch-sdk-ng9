@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/redux-mocks",
   "version": "9.0.0",
-  "description": "Implementation of a Redux store with support for adding feature modules, dynamically.",
+  "description": "Implementation of helper functions and mocks to assist in the implementation of testcases for redux based modules.",
   "keywords": [
     "acoustic",
     "acoustic-content",

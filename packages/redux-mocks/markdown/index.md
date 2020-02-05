@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/redux-mocks](./redux-mocks.md) | Implementation of a [Redux](https://redux.js.org/api/store) store with support for adding feature modules, dynamically. |
+|  [@acoustic-content-sdk/redux-mocks](./redux-mocks.md) | Implementation of helper functions and mocks to assist in the implementation of testcases for redux based modules. |
 

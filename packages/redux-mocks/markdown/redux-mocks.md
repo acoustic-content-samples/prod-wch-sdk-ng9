@@ -4,7 +4,7 @@
 
 ## redux-mocks package
 
-Implementation of a [Redux](https://redux.js.org/api/store) store with support for adding feature modules, dynamically.
+Implementation of helper functions and mocks to assist in the implementation of testcases for redux based modules.
 
 ## Functions
 
@@ -12,12 +12,12 @@ Implementation of a [Redux](https://redux.js.org/api/store) store with support f
 |  --- | --- |
 |  [createFetchTextOnFolder(aFolder)](./redux-mocks.createfetchtextonfolder.md) |  |
 |  [createReduxRootStoreOnFolder(aFolder, aLogSvc)](./redux-mocks.createreduxrootstoreonfolder.md) |  |
-|  [createUrlConfigFromBaseURL(aBaseURL)](./redux-mocks.createurlconfigfrombaseurl.md) |  |
+|  [createUrlConfigFromBaseURL(aBaseURL)](./redux-mocks.createurlconfigfrombaseurl.md) | Constructs a <code>UrlConfig</code> structure based on a base URL |
 
 ## Variables
 
 |  Variable | Description |
 |  --- | --- |
-|  [DEFAULT\_URL\_CONFIG](./redux-mocks.default_url_config.md) |  |
+|  [DEFAULT\_URL\_CONFIG](./redux-mocks.default_url_config.md) | Some arbitray default configuration that can be used for testing purposes. |
 |  [VERSION](./redux-mocks.version.md) | Version and build number of the package |
 

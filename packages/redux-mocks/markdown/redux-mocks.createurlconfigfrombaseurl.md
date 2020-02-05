@@ -4,6 +4,8 @@
 
 ## createUrlConfigFromBaseURL() function
 
+Constructs a `UrlConfig` structure based on a base URL
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function createUrlConfigFromBaseURL(aBaseURL: URL | string): UrlC
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aBaseURL | <code>URL &#124; string</code> |  |
+|  aBaseURL | <code>URL &#124; string</code> | the base URL |
 
 <b>Returns:</b>
 
 `UrlConfig`
+
+the `UrlConfig` object
 

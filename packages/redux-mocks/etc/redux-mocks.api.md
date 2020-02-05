@@ -15,10 +15,10 @@ export function createFetchTextOnFolder(aFolder: string): FetchText;
 // @public (undocumented)
 export function createReduxRootStoreOnFolder(aFolder: string, aLogSvc?: LoggerService): ReduxRootStore;
 
-// @public (undocumented)
+// @public
 export function createUrlConfigFromBaseURL(aBaseURL: URL | string): UrlConfig;
 
-// @public (undocumented)
+// @public
 export const DEFAULT_URL_CONFIG: UrlConfig;
 
 // @public

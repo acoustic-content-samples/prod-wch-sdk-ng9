@@ -10,7 +10,7 @@ Implementation of a LoggerService on top of a log4js configuration
 
 |  Function | Description |
 |  --- | --- |
-|  [createLog4jsLoggerService()](./log4js-logger.createlog4jsloggerservice.md) | Creates a logger service on top of log4js |
+|  [createLog4jsLoggerService(aDstPath)](./log4js-logger.createlog4jsloggerservice.md) | Creates a logger service on top of log4js |
 
 ## Variables
 

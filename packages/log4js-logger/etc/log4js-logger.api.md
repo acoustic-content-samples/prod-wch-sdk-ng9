@@ -7,7 +7,7 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 
 // @public
-export function createLog4jsLoggerService(): LoggerService;
+export function createLog4jsLoggerService(aDstPath?: string): LoggerService;
 
 // @public
 export const VERSION: {

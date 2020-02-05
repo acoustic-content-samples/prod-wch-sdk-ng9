@@ -4,6 +4,8 @@
 
 ## DEFAULT\_URL\_CONFIG variable
 
+Some arbitray default configuration that can be used for testing purposes.
+
 <b>Signature:</b>
 
 ```typescript
