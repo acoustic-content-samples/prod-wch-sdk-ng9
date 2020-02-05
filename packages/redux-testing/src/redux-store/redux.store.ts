@@ -15,8 +15,8 @@ export function createReduxRootStoreOnFolder(
   aLogSvc?: LoggerService
 ): ReduxRootStore {
   // construct the services
-  const fetchText: FetchText = createFetchTextOnFolder(aFolder);
   const logSvc: LoggerService = aLogSvc || NOOP_LOGGER_SERVICE;
+  const fetchText: FetchText = createFetchTextOnFolder(aFolder, logSvc);
   const templateCompiler: HandlebarsCompiler = createCompiler();
   // create the store
   return createReduxRootStore({ fetchText, logSvc, templateCompiler });

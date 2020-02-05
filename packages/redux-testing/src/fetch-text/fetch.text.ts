@@ -1,4 +1,7 @@
-import { REL_PATH_CURRENT_USER } from '@acoustic-content-sdk/api';
+import {
+  REL_PATH_CURRENT_USER,
+  LoggerService
+} from '@acoustic-content-sdk/api';
 import { ItemWithId } from '@acoustic-content-sdk/redux-utils';
 import { FETCH_PRIORITY, FetchText } from '@acoustic-content-sdk/rest-api';
 import { rxReadTextFile } from '@acoustic-content-sdk/rx-utils';
@@ -15,13 +18,16 @@ import {
   isEqual,
   isNotEmpty,
   jsonStringify,
-  rxPipe
+  rxPipe,
+  NOOP_LOGGER_SERVICE
 } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { Observable, of, pipe } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 import { CURRENT_USER } from './../current-user/current.user';
+
+const LOGGER = 'FetchText';
 
 const AUTH_CONTENT = /^authoring\/v1\/content\/([^?]*)(?:\?.*)?$/;
 const AUTH_LAYOUT = /^authoring\/v1\/layouts\/([^?]*)(?:\?.*)?$/;
@@ -58,11 +64,19 @@ function findAuthType(aTree: ReadDirectory, aId: string): Observable<string> {
   return rxPipe(rxFindAuthoringTypes('', aTree), byId(aId));
 }
 
-export function createFetchTextOnFolder(aFolder: string): FetchText {
+export function createFetchTextOnFolder(
+  aFolder: string,
+  aLogSvc?: LoggerService
+): FetchText {
+  // logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logger = logSvc.get(LOGGER);
   // the read callback
   const readDir = createReadDirectory(aFolder);
 
   return (aUrl: string, aPriority?: FETCH_PRIORITY): Observable<string> => {
+    // log this
+    logger.info(aUrl);
     // special cases
     if (isEqual(aUrl, REL_PATH_CURRENT_USER)) {
       return of(jsonStringify(CURRENT_USER));
@@ -88,7 +102,7 @@ export function createFetchTextOnFolder(aFolder: string): FetchText {
       return findAuthAsset(readDir, authAsset[1]);
     }
 
-    console.log('Carsten', 'URL', aUrl);
+    logger.info('Carsten', 'URL', aUrl);
     return rxReadTextFile(join(aFolder, aUrl));
   };
 }
