@@ -29,13 +29,14 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
+    "@acoustic-content-sdk/redux-store": "9.0.0",
+    "@acoustic-content-sdk/rest-api": "9.0.0",
+    "@acoustic-content-sdk/rx-utils": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "redux": "^4",
-    "redux-actions": "^2",
-    "redux-devtools-extension": "^2",
-    "redux-observable": "^1",
     "rxjs": "^6"
   },
   "publishConfig": {
@@ -51,11 +52,12 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "redux": "Redux",
-        "redux-actions": "ReduxActions",
-        "redux-devtools-extension": "ReduxDevtoolsExtension",
-        "redux-observable": "ReduxObservable"
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
+        "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
+        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
     "whitelistedNonPeerDependencies": [

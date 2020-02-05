@@ -33,11 +33,7 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "redux": "^4",
-    "redux-actions": "^2",
-    "redux-devtools-extension": "^2",
-    "redux-observable": "^1",
-    "rxjs": "^6"
+    "log4js": "^4"
   },
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
@@ -53,10 +49,7 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "redux": "Redux",
-        "redux-actions": "ReduxActions",
-        "redux-devtools-extension": "ReduxDevtoolsExtension",
-        "redux-observable": "ReduxObservable"
+        "log4js": "Log4Js"
       }
     },
     "whitelistedNonPeerDependencies": [
