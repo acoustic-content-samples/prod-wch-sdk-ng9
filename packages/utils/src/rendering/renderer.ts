@@ -76,6 +76,7 @@ import {
   isEqual,
   isNil,
   isNilOrEmpty,
+  isNotEmpty,
   isNotNil
 } from '../predicates/predicates';
 import { rxPipe, UNDEFINED$ } from '../rx/rx.utils';
@@ -494,12 +495,13 @@ export function createMarkupRendererV2(
     if (isNotNil(layoutId)) {
       return single(layoutId);
     }
-    logger.info('Carsten', 'getLayoutId', aTypeId);
     // else fallback to the type
-    return rxPipe(
-      layoutMappingInfo(aTypeId),
-      map((info) => layoutIdFromLayoutMappingInfo(aLayoutMode, info))
-    );
+    return isNotEmpty(aTypeId)
+      ? rxPipe(
+          layoutMappingInfo(aTypeId),
+          map((info) => layoutIdFromLayoutMappingInfo(aLayoutMode, info))
+        )
+      : UNDEFINED$;
   }
 
   /**

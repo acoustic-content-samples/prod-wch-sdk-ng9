@@ -24,7 +24,7 @@
   "scripts": {
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
-    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json --verbose",
     "test": "jest"
   },
   "dependencies": {
