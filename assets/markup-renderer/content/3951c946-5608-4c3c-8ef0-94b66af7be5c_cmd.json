@@ -1,0 +1,35 @@
+{
+  "rev": "5-3af8bf19bac380646118f5575ba56d2d",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-12-18T10:04:56.710Z",
+  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "description": "",
+  "classification": "content",
+  "locale": "en",
+  "tags": [],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "page-style-contribution-layout"
+      }
+    }
+  ],
+  "elements": {
+    "href": {
+      "elementType": "text",
+      "value": "lightTheme/main.css"
+    },
+    "key": {
+      "elementType": "text",
+      "value": "47fc5121-78d9-4a9e-bf48-781d3af4190b"
+    }
+  },
+  "name": "Light Theme CSS",
+  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "typeId": "3a3726b8-e0b2-4f10-98ed-b1c82e851b99",
+  "id": "3951c946-5608-4c3c-8ef0-94b66af7be5c",
+  "lastModified": "2019-12-20T11:24:30.566Z",
+  "systemModified": "2019-12-20T11:24:30.566Z",
+  "status": "ready"
+}

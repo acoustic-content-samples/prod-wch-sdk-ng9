@@ -1,7 +1,7 @@
 import {
   AuthoringLayoutItem,
   AuthoringSelectedLayout,
-  Logger
+  LoggerService
 } from '@acoustic-content-sdk/api';
 import {
   createAuthenticatedLoader,
@@ -19,6 +19,7 @@ import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { jsonParse, mapArray, rxPipe } from '@acoustic-content-sdk/utils';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import { map } from 'rxjs/operators';
+
 import {
   ACTION_ADD_AUTH_LAYOUT,
   ACTION_ADD_AUTH_LAYOUT_IF_NONEXISTENT,
@@ -31,9 +32,11 @@ import {
 } from './auth.layout.actions';
 import { selectAuthLayoutFeature } from './auth.layout.feature';
 
+const LOGGER = 'AuthLayoutEpic';
+
 export interface AuthoringLayoutDependencies {
   fetchText: FetchText;
-  logger: Logger;
+  logSvc: LoggerService;
 }
 
 // TODO type fallback for layouts!
@@ -44,8 +47,10 @@ export interface AuthoringLayoutDependencies {
 const loadLayoutEpic: Epic = (
   actions$,
   state$,
-  { fetchText, logger }: AuthoringLayoutDependencies
+  { fetchText, logSvc }: AuthoringLayoutDependencies
 ) => {
+  // logger
+  const logger = logSvc.get(LOGGER);
   // loader
   const loader: LoaderType = (id) =>
     rxPipe(

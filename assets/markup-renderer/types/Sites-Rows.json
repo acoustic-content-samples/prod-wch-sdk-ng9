@@ -1,0 +1,100 @@
+{
+  "id": "9ca02297-a564-40c9-aedc-add9c30f3d7b",
+  "rev": "11-fb109438e31b7e232fde67fac2c0e2c0",
+  "name": "Sites Rows",
+  "classification": "content-type",
+  "kind": [
+    "page",
+    "landing-page",
+    "standalone"
+  ],
+  "description": "",
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "elements": [
+    {
+      "allowMultipleValues": true,
+      "elementType": "group",
+      "fieldLabel": "Rows",
+      "key": "rows",
+      "label": "Rows",
+      "required": false,
+      "typeRef": {
+        "id": "a4516d24-744d-4650-8477-24aa36145e66"
+      }
+    },
+    {
+      "elementType": "text",
+      "hidden": true,
+      "key": "editor",
+      "label": "Editor",
+      "role": [
+        "configuration"
+      ],
+      "searchKey": "string1"
+    },
+    {
+      "elementType": "number",
+      "fieldType": "integer",
+      "key": "width",
+      "label": "Width",
+      "maximum": 900,
+      "minimum": 480,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "label": "Padding",
+      "role": [
+        "configuration"
+      ],
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "label": "Margin",
+      "role": [
+        "configuration"
+      ],
+      "typeRef": {
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "backgroundColor",
+      "label": "Background Color",
+      "role": [
+        "configuration"
+      ],
+      "typeRef": {
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "descriptor",
+      "label": "descriptor",
+      "required": true,
+      "role": [
+        "configuration"
+      ],
+      "typeRef": {
+        "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28"
+      }
+    },
+    {
+      "elementType": "text",
+      "key": "key",
+      "label": "Key"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { AuthoringType, Logger } from '@acoustic-content-sdk/api';
+import { AuthoringType, LoggerService } from '@acoustic-content-sdk/api';
 import {
   createPreviewAwareLoader,
   guaranteeEpic,
@@ -20,6 +20,7 @@ import {
 import { Action } from 'redux';
 import { combineEpics, Epic, ofType } from 'redux-observable';
 import { map } from 'rxjs/operators';
+
 import {
   AuthoringTypeService,
   rxAuthoringType
@@ -36,9 +37,11 @@ import {
 } from './auth.type.actions';
 import { selectAuthTypeFeature } from './auth.type.feature';
 
+const LOGGER = 'AuthTypeEpic';
+
 export interface AuthoringTypeDependencies {
   fetchText: FetchText;
-  logger: Logger;
+  logSvc: LoggerService;
 }
 
 function getAddAuthoringContentTypeActions(
@@ -60,8 +63,10 @@ function getAddAuthoringContentTypeActions(
 const loadTypeEpic: Epic = (
   actions$,
   state$,
-  { fetchText, logger }: AuthoringTypeDependencies
+  { fetchText, logSvc }: AuthoringTypeDependencies
 ) => {
+  // logger
+  const logger = logSvc.get(LOGGER);
   // utility to fetch the types
   const loadType: AuthoringTypeService = rxAuthoringType(fetchText, logger);
   // loader

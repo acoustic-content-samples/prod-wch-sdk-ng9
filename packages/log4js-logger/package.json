@@ -1,0 +1,69 @@
+{
+  "name": "@acoustic-content-sdk/log4js-logger",
+  "version": "9.0.0",
+  "description": "Implementation of a LoggerService on top of a log4js configuration.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "redux",
+    "sdk",
+    "testing"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-log4js-logger.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-log4js-logger.js",
+  "typings": "dist/acoustic-content-sdk-log4js-logger.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "redux": "^4",
+    "redux-actions": "^2",
+    "redux-devtools-extension": "^2",
+    "redux-observable": "^1",
+    "rxjs": "^6"
+  },
+  "publishConfig": {
+    "registry": "http://wats-repob.devlab.ibm.com/"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-log4js-logger.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-log4js-logger.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-log4js-logger.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-log4js-logger.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-log4js-logger.js",
+  "metadata": "dist/acoustic-content-sdk-log4js-logger.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "redux": "Redux",
+        "redux-actions": "ReduxActions",
+        "redux-devtools-extension": "ReduxDevtoolsExtension",
+        "redux-observable": "ReduxObservable"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

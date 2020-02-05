@@ -1,4 +1,5 @@
 import {
+  CLASSIFICATION_ASSET,
   CLASSIFICATION_CONTENT,
   CLASSIFICATION_CONTENT_TYPE,
   CLASSIFICATION_LAYOUT,
@@ -13,15 +14,19 @@ import {
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
+import { guaranteeAuthoringContentAction } from '@acoustic-content-sdk/redux-feature-auth-content';
 import {
+  guaranteeAuthoringLayoutAction,
   selectAuthLayoutFeature,
   selectAuthoringLayout
 } from '@acoustic-content-sdk/redux-feature-auth-layout';
 import {
+  guaranteeAuthoringLayoutMappingAction,
   selectAuthLayoutMappingFeature,
   selectAuthoringLayoutMappingByTypeId
 } from '@acoustic-content-sdk/redux-feature-auth-layout-mapping';
 import {
+  guaranteeAuthoringContentTypeAction,
   selectAuthType,
   selectAuthTypeFeature
 } from '@acoustic-content-sdk/redux-feature-auth-type';
@@ -31,12 +36,14 @@ import {
 } from '@acoustic-content-sdk/redux-feature-delivery-content';
 import { selectEditModeFeature } from '@acoustic-content-sdk/redux-feature-edit-mode';
 import {
+  handlebarsGuaranteeTemplateAction,
   selectHandlebarsFeature,
   selectTemplate
 } from '@acoustic-content-sdk/redux-feature-handlebars';
 import { selectUrlConfigFeature } from '@acoustic-content-sdk/redux-feature-url-config';
 import {
   ReduxRootStore,
+  rxDispatch,
   rxSelect,
   rxStore
 } from '@acoustic-content-sdk/redux-store';
@@ -153,6 +160,8 @@ function createRendererV2(
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // rx wrapper
   const store$ = rxStore(aStore);
+  // dispatch
+  const dispatch = rxDispatch(aStore);
 
   // construct the callbacks
   const deliveryContent$ = rxPipe(
@@ -217,39 +226,69 @@ function createRendererV2(
   };
 
   // construct the selectors
-  const selectDeliveryContent$ = (aId: string) =>
-    rxPipe(
+  const selectDeliveryContent$ = (aId: string) => {
+    // log this
+    logger.info(CLASSIFICATION_CONTENT, aId);
+    // make sure we load the type
+    dispatch(guaranteeAuthoringContentAction(aId));
+    // resolve
+    return rxPipe(
       deliveryContent$,
       rxSelect(selectDeliveryContentItem(aId)),
       rxSelect(createDeliveryContentItem),
       log(CLASSIFICATION_CONTENT, aId)
     );
-  const selectAuthType$ = (aId: string) =>
-    rxPipe(
+  };
+  const selectAuthType$ = (aId: string) => {
+    // log this
+    logger.info(CLASSIFICATION_CONTENT_TYPE, aId);
+    // make sure we load the type
+    dispatch(guaranteeAuthoringContentTypeAction(aId));
+    // resolve
+    return rxPipe(
       authoringType$,
       rxSelect(selectAuthType(aId)),
       log(CLASSIFICATION_CONTENT_TYPE, aId)
     );
-  const selectAuthLayoutMapping$ = (aId: string) =>
-    rxPipe(
+  };
+  const selectAuthLayoutMapping$ = (aId: string) => {
+    // log this
+    logger.info(CLASSIFICATION_LAYOUT_MAPPING, aId);
+    // make sure we load the type
+    dispatch(guaranteeAuthoringLayoutMappingAction(aId));
+    // resolve
+    return rxPipe(
       authLayoutMapping$,
       rxSelect(selectAuthoringLayoutMappingByTypeId(aId)),
       log(CLASSIFICATION_LAYOUT_MAPPING, aId)
     );
-  const selectAuthLayout$ = (aId: string) =>
-    rxPipe(
+  };
+  const selectAuthLayout$ = (aId: string) => {
+    // log this
+    logger.info(CLASSIFICATION_LAYOUT, aId);
+    // make sure we load the type
+    dispatch(guaranteeAuthoringLayoutAction(aId));
+    // resolve
+    return rxPipe(
       authLayout$,
       rxSelect(selectAuthoringLayout(aId)),
       log(CLASSIFICATION_LAYOUT, aId)
     );
-  const selectMarkupTemplate$ = (aId: string) =>
-    rxPipe(
+  };
+  const selectMarkupTemplate$ = (aId: string) => {
+    // log this
+    logger.info(CLASSIFICATION_ASSET, aId);
+    // make sure we load the type
+    dispatch(handlebarsGuaranteeTemplateAction(aId));
+    // resolve
+    return rxPipe(
       handlebars$,
       rxSelect(selectTemplate(aId)),
       rxSelect((tmp) =>
         isFunction(tmp) ? applyTemplate(aId, tmp) : emptyString
       )
     );
+  };
   // selector to allow us to resolve nested content
   const selectedNestedContent$ = createNestedDeliveryContentSelector(
     selectDeliveryContent$,

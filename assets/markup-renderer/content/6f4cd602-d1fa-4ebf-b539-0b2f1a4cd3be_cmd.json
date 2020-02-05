@@ -1,0 +1,87 @@
+{
+  "rev": "5-f07d8f296eef9c08b0696ac6418c5e93",
+  "thumbnail": {
+    "id": "3531bfd0-1057-439c-a49c-cba1e5b825da"
+  },
+  "keywords": [],
+  "kind": [],
+  "created": "2019-12-18T10:04:56.803Z",
+  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "description": "",
+  "classification": "content",
+  "locale": "en",
+  "tags": [
+    "sites-theme"
+  ],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "page-contributions-layout"
+      }
+    }
+  ],
+  "elements": {
+    "body": {
+      "values": [],
+      "elementType": "group",
+      "typeRef": {
+        "name": "Page Contribution",
+        "id": "354743b2-f89a-482b-b447-2b5a2367c8bd"
+      }
+    },
+    "head": {
+      "values": [
+        {
+          "embed": {
+            "elementType": "text",
+            "values": []
+          },
+          "key": {
+            "elementType": "text",
+            "value": "2eebf326-2b98-4747-b988-ea4c6cd349aa"
+          },
+          "mode": {
+            "elementType": "optionselection",
+            "value": {
+              "selection": "always"
+            }
+          },
+          "reference": {
+            "values": [
+              {
+                "id": "921daf61-f9b1-46bd-be59-e15fc5455fea"
+              },
+              {
+                "id": "3951c946-5608-4c3c-8ef0-94b66af7be5c"
+              }
+            ],
+            "elementType": "reference"
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "name": "Page Contribution",
+        "id": "354743b2-f89a-482b-b447-2b5a2367c8bd"
+      }
+    },
+    "key": {
+      "elementType": "text",
+      "value": "ced1b49d-12ca-460b-a1d0-3704be571b16"
+    },
+    "preview": {
+      "mode": "shared",
+      "asset": {
+        "id": "3531bfd0-1057-439c-a49c-cba1e5b825da"
+      },
+      "elementType": "image"
+    }
+  },
+  "name": "Light Theme",
+  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "typeId": "aab86460-0018-44c2-9f52-3a326e58f7f7",
+  "id": "6f4cd602-d1fa-4ebf-b539-0b2f1a4cd3be",
+  "lastModified": "2019-12-20T11:24:30.908Z",
+  "systemModified": "2019-12-20T11:24:30.908Z",
+  "status": "ready"
+}

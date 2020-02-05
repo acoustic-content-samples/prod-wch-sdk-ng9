@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/redux-feature-auth-type",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Implementation of the feature store that manages content types.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -22,6 +22,8 @@
   "module": "dist/fesm5/acoustic-content-sdk-redux-feature-auth-type.js",
   "typings": "dist/acoustic-content-sdk-redux-feature-auth-type.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },

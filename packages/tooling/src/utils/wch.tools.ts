@@ -1,4 +1,5 @@
 import {
+  AuthoringAsset,
   AuthoringContentItem,
   AuthoringLayoutItem,
   AuthoringLayoutMapping,
@@ -15,6 +16,7 @@ import { LAYOUTS_FOLDER } from './layouts';
 import { selectId } from './selectors';
 import { TYPES_FOLDER } from './types';
 import { ensureDirPath } from './url.utils';
+import { WCHTOOLS_FOLDER_ASSET } from './wchtools';
 
 function selectSimpleId(
   aItem: AuthoringLayoutItem | AuthoringLayoutMapping
@@ -97,6 +99,28 @@ export function rxFindAuthoringTypes(
   // scan
   return rxReadAllJsonFiles<AuthoringType>(
     `${root}/${TYPES_FOLDER}`,
+    aTree,
+    selectId
+  );
+}
+
+/**
+ * Reads the authoring assets from a directory
+ *
+ * @param aRoot - root directory
+ * @param aTree - the tree
+ *
+ * @returns the result
+ */
+export function rxFindAuthoringAssets(
+  aRoot: string,
+  aTree: ReadDirectory
+): Observable<JsonEntry<AuthoringAsset>> {
+  // fix the path
+  const root = ensureDirPath(aRoot);
+  // scan
+  return rxReadAllJsonFiles<AuthoringAsset>(
+    `${root}/${WCHTOOLS_FOLDER_ASSET}`,
     aTree,
     selectId
   );

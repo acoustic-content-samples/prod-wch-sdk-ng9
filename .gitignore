@@ -26,3 +26,6 @@ test.result.json
 
 wchtools-api.log
 wchtools-cli.log
+
+
+logs/

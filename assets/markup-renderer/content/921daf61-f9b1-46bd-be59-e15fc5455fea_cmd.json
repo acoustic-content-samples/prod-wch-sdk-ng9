@@ -1,0 +1,35 @@
+{
+  "rev": "5-88af6d6476fe13bcb017bd5bb564f600",
+  "keywords": [],
+  "kind": [],
+  "created": "2019-12-18T10:04:57.101Z",
+  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "description": "",
+  "classification": "content",
+  "locale": "en",
+  "tags": [],
+  "selectedLayouts": [
+    {
+      "layout": {
+        "id": "page-embed-contribution-layout"
+      }
+    }
+  ],
+  "elements": {
+    "embed": {
+      "elementType": "text",
+      "value": "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">"
+    },
+    "key": {
+      "elementType": "text",
+      "value": "c7c09663-9b44-477b-af13-f8c83d88068d"
+    }
+  },
+  "name": "Bootstrap 40",
+  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "typeId": "eedce4a0-9647-4301-9247-6793e08652ea",
+  "id": "921daf61-f9b1-46bd-be59-e15fc5455fea",
+  "lastModified": "2019-12-20T11:24:31.192Z",
+  "systemModified": "2019-12-20T11:24:31.192Z",
+  "status": "ready"
+}

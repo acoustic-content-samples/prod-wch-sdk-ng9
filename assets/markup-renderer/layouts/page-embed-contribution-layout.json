@@ -1,0 +1,18 @@
+{
+  "id": "page-embed-contribution-layout",
+  "rev": "10-73a7152bc64d0e7a17cb5d201b2df1f3",
+  "name": "pageEmbedContributionLayout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "thumbnail": {
+    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg"
+  },
+  "template": "/dxdam/templates/page-embed-contribution-layout.hbs",
+  "templateType": "handlebars",
+  "urlTemplate": "{templateLocation}/sites/page-embed-contribution/{id}.html"
+}

@@ -10,40 +10,41 @@ import {
   Image,
   Layout,
   Logger,
+  LoggerService,
   Rendition
-} from "@acoustic-content-sdk/api";
+} from '@acoustic-content-sdk/api';
 import {
   ACTION_ADD_AUTH_ASSET,
   AddAuthoringAssetAction,
   selectAuthAssetFeature
-} from "@acoustic-content-sdk/redux-feature-auth-asset";
+} from '@acoustic-content-sdk/redux-feature-auth-asset';
 import {
   ACTION_ADD_AUTH_CONTENT,
   AddAuthoringContentAction,
   selectAuthContentFeature
-} from "@acoustic-content-sdk/redux-feature-auth-content";
+} from '@acoustic-content-sdk/redux-feature-auth-content';
 import {
   ACTION_ADD_AUTH_LAYOUT,
   AddAuthoringLayoutAction,
   selectAuthLayoutFeature
-} from "@acoustic-content-sdk/redux-feature-auth-layout";
+} from '@acoustic-content-sdk/redux-feature-auth-layout';
 import {
   ACTION_ADD_AUTH_CONTENT_TYPE,
   AddAuthoringContentTypeAction,
   guaranteeAuthoringContentTypeAction,
   selectAuthTypeFeature
-} from "@acoustic-content-sdk/redux-feature-auth-type";
-import { nonExistentEpic } from "@acoustic-content-sdk/redux-feature-load";
+} from '@acoustic-content-sdk/redux-feature-auth-type';
+import { nonExistentEpic } from '@acoustic-content-sdk/redux-feature-load';
 import {
   selectApiUrl,
   selectUrlConfigFeature,
   UrlConfigFeatureState
-} from "@acoustic-content-sdk/redux-feature-url-config";
-import { rxSelect, selectPayload } from "@acoustic-content-sdk/redux-store";
+} from '@acoustic-content-sdk/redux-feature-url-config';
+import { rxSelect, selectPayload } from '@acoustic-content-sdk/redux-store';
 import {
   addToSetEpic,
   getDeliveryIdFromAuthoringItem
-} from "@acoustic-content-sdk/redux-utils";
+} from '@acoustic-content-sdk/redux-utils';
 import {
   arrayPush,
   DEFAULT_LAYOUT_MODE,
@@ -64,19 +65,19 @@ import {
   rxNext,
   rxPipe,
   UNDEFINED_TYPE
-} from "@acoustic-content-sdk/utils";
-import { combineEpics, Epic, ofType } from "redux-observable";
-import { from, MonoTypeOperatorFunction, Observable } from "rxjs";
-import { map, mergeMap, withLatestFrom } from "rxjs/operators";
+} from '@acoustic-content-sdk/utils';
+import { combineEpics, Epic, ofType } from 'redux-observable';
+import { from, MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { map, mergeMap, withLatestFrom } from 'rxjs/operators';
 
 import {
   hasAsset,
   isMultiImageElementInAuthoring,
   isSingleImageElementInAuthoring
-} from "../../utils/auth.content.utils";
-import { pluckTypeId } from "../../utils/auth.type.utils";
-import { removeStartingSlash } from "../../utils/fetch.text";
-import { selectId } from "../general.selectors";
+} from '../../utils/auth.content.utils';
+import { pluckTypeId } from '../../utils/auth.type.utils';
+import { removeStartingSlash } from '../../utils/fetch.text';
+import { selectId } from '../general.selectors';
 import {
   ACTION_ADD_DELIVERY_CONTENT,
   ACTION_ADD_DELIVERY_CONTENT_IF_NONEXISTENT,
@@ -86,14 +87,16 @@ import {
   ResolveContentItemAction,
   resolveContentItemAction,
   ResolveContentItemPayload
-} from "./delivery.content.actions";
+} from './delivery.content.actions';
 import {
   DeliveryContentFeatureState,
   selectDeliveryContentFeature
-} from "./delivery.content.feature";
+} from './delivery.content.feature';
+
+const LOGGER = 'DeliveryContentEpic';
 
 export interface DeliveryContentDependencies {
-  logger: Logger;
+  logSvc: LoggerService;
 }
 
 function rxGetApiURL(
@@ -158,7 +161,7 @@ function getRenditions(
   const defaultImageSize = getDefaultImageSize(aImage, aAsset);
 
   // each image element has a default rendition
-  result["default"] = {
+  result['default'] = {
     url: getAuthoringResourceUrl(aImage, aAsset, aApiURL),
     width: defaultImageSize[0],
     height: defaultImageSize[1]
@@ -169,10 +172,10 @@ function getRenditions(
   if (isNotNil(imageProfileIds)) {
     // resolve image profile ids against the asset and include matching renditions
     const profileRenditions = aAsset.profileRenditions;
-    profileRenditions.forEach(rendition => {
+    profileRenditions.forEach((rendition) => {
       if (imageProfileIds.includes(rendition.profileId)) {
         const authoringRenditionUri = rendition.uri;
-        const idx = authoringRenditionUri.lastIndexOf("?"); // check if ? exists
+        const idx = authoringRenditionUri.lastIndexOf('?'); // check if ? exists
         let url = `${getAuthoringResourceUrl(aImage, aAsset, aApiURL)}`;
         if (isNotNil(idx)) {
           // add query params (expected to hold rendition parameters such as cropping)
@@ -183,10 +186,10 @@ function getRenditions(
         const deliveryRendition = {
           width: rendition.width,
           height: rendition.height,
-          transform: rendition["transform"],
+          transform: rendition['transform'],
           url
         };
-        result[rendition["key"]] = deliveryRendition as Rendition;
+        result[rendition['key']] = deliveryRendition as Rendition;
       }
     });
   }
@@ -203,20 +206,20 @@ function getRenditions(
 function getDefaultImageSize(aImage: Image, aAsset: AuthoringAsset): number[] {
   const scale = getPath(
     aImage,
-    ["renditions", "default", "transform", "scale"],
+    ['renditions', 'default', 'transform', 'scale'],
     1
   );
 
   // try to load height and width from the image element on the content item first, if it does not exist, fall-back to loading it from the asset itself
   const assetWidth = getPath(
     aImage,
-    ["asset", "width"],
-    getPath(aAsset, ["metadata", "width"], -1)
+    ['asset', 'width'],
+    getPath(aAsset, ['metadata', 'width'], -1)
   );
   const assetHeight = getPath(
     aImage,
-    ["asset", "height"],
-    getPath(aAsset, ["metadata", "height"], -1)
+    ['asset', 'height'],
+    getPath(aAsset, ['metadata', 'height'], -1)
   );
   return [Math.round(scale * assetWidth), Math.round(scale * assetHeight)];
 }
@@ -249,8 +252,8 @@ function transformImageElement(
       resourceUri: `${getAuthoringResourceUrl(aImage, assetItem, aApiUrl)}`,
       fileName: assetItem.fileName,
       mediaType: assetItem.mediaType,
-      width: getPath(assetItem, ["metadata", "width"]),
-      height: getPath(assetItem, ["metadata", "height"]),
+      width: getPath(assetItem, ['metadata', 'width']),
+      height: getPath(assetItem, ['metadata', 'height']),
       altText: assetItem.altText
     }
   };
@@ -264,7 +267,7 @@ export function transformFormattedText(
 ): string {
   // parse value as HTML
   if (HAS_DOCUMENT) {
-    const htmlTemplate = document.createElement("template");
+    const htmlTemplate = document.createElement('template');
     htmlTemplate.innerHTML = htmlString;
 
     // select all image tags with data attribute "data-wch-asset-id"j
@@ -273,11 +276,11 @@ export function transformFormattedText(
     );
 
     // convert relative (authoring) URLs to absolute URLs
-    nodes.forEach(node => {
-      const src = node.getAttribute("src");
+    nodes.forEach((node) => {
+      const src = node.getAttribute('src');
       if (src) {
-        const newSrc = src.replace("/api/", baseUrl.pathname);
-        node.setAttribute("src", newSrc);
+        const newSrc = src.replace('/api/', baseUrl.pathname);
+        node.setAttribute('src', newSrc);
       }
     });
 
@@ -306,7 +309,7 @@ function transformElement(
     return isNotEmpty(values)
       ? {
           ...aElement,
-          values: values.map(value => transformMap(value, assets, aApiUrl))
+          values: values.map((value) => transformMap(value, assets, aApiUrl))
         }
       : aElement;
   } else if (isSingleImageElementInAuthoring(aElement)) {
@@ -319,7 +322,7 @@ function transformElement(
     return isNotEmpty(values)
       ? {
           ...aElement,
-          values: values.map(value => ({
+          values: values.map((value) => ({
             ...value,
             ...transformImageElement(value, assets, aApiUrl)
           }))
@@ -335,7 +338,7 @@ function transformElement(
     return isNotEmpty(values)
       ? {
           ...aElement,
-          values: values.map(value => transformFormattedText(value, aApiUrl))
+          values: values.map((value) => transformFormattedText(value, aApiUrl))
         }
       : aElement;
   } else {
@@ -363,8 +366,8 @@ function getAuthoringResourceUrl(
 
   // e.g. "/authoring/v1/resources/867b0d64-4df0-4f79-8003-a9936242f367"
   const resourceUriFromImageElement = getPath<string>(aImage, [
-    "asset",
-    "resourceUri"
+    'asset',
+    'resourceUri'
   ]);
 
   if (resourceUriFromImageElement) {
@@ -417,12 +420,14 @@ const transformAuthToDelivery = (
 const transformContentItemEpic: Epic = (
   actions$,
   state$,
-  { logger }: DeliveryContentDependencies
+  { logSvc }: DeliveryContentDependencies
 ) => {
+  // access the logger
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,
-    "transformContentItemEpic"
+    'transformContentItemEpic'
   );
 
   return rxPipe(
@@ -435,14 +440,14 @@ const transformContentItemEpic: Epic = (
     // create store action
     map(addDeliveryContentAction),
     // this would be a delivery result
-    log("action")
+    log('action')
   );
 };
 
 /**
  * Trigger loading of the type
  */
-const loadContentTypeEpic: Epic = actions$ =>
+const loadContentTypeEpic: Epic = (actions$) =>
   rxPipe(
     actions$,
     ofType<AddAuthoringContentAction>(ACTION_ADD_AUTH_CONTENT),
@@ -462,12 +467,14 @@ const loadContentTypeEpic: Epic = actions$ =>
 const resolveContentItemEpic: Epic = (
   actions$,
   store$,
-  { logger }: DeliveryContentDependencies
+  { logSvc }: DeliveryContentDependencies
 ) => {
+  // access the logger
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,
-    "resolveContentItemEpic"
+    'resolveContentItemEpic'
   );
 
   // extract the types
@@ -481,7 +488,7 @@ const resolveContentItemEpic: Epic = (
     actions$,
     ofType<AddAuthoringContentAction>(ACTION_ADD_AUTH_CONTENT),
     // log this action
-    log("action"),
+    log('action'),
     // extract the authoring content item
     map(selectPayload),
     // also access the content types
@@ -548,12 +555,14 @@ function actionsByType(
 const resolveContentTypeEpic: Epic = (
   actions$,
   store$,
-  { logger }: DeliveryContentDependencies
+  { logSvc }: DeliveryContentDependencies
 ) => {
+  // access the logger
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,
-    "resolveContentTypeEpic"
+    'resolveContentTypeEpic'
   );
 
   // extract the types
@@ -590,7 +599,7 @@ const resolveContentTypeEpic: Epic = (
       )
     ),
     // dispatch the actions
-    mergeMap(actions => from(actions))
+    mergeMap((actions) => from(actions))
   );
 };
 
@@ -599,7 +608,9 @@ function hasLayout(aId: string, aItem: AuthoringContentItem): boolean {
   const selLayouts = aItem.selectedLayouts;
   if (isNotEmpty(selLayouts)) {
     // scan
-    return isNotNil(selLayouts.find(selLayout => selLayout.layout.id === aId));
+    return isNotNil(
+      selLayouts.find((selLayout) => selLayout.layout.id === aId)
+    );
   }
   // not found
   return false;
@@ -699,12 +710,14 @@ function actionsByAsset(
 const resolveLayoutEpic: Epic = (
   actions$,
   store$,
-  { logger }: DeliveryContentDependencies
+  { logSvc }: DeliveryContentDependencies
 ) => {
+  // access the logger
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,
-    "resolveLayoutEpic"
+    'resolveLayoutEpic'
   );
 
   // extract the types
@@ -741,7 +754,7 @@ const resolveLayoutEpic: Epic = (
       )
     ),
     // dispatch the actions
-    mergeMap(actions => from(actions))
+    mergeMap((actions) => from(actions))
   );
 };
 
@@ -752,12 +765,14 @@ const resolveLayoutEpic: Epic = (
 const resolveAssetEpic: Epic = (
   actions$,
   store$,
-  { logger }: DeliveryContentDependencies
+  { logSvc }: DeliveryContentDependencies
 ) => {
+  // access the logger
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,
-    "resolveAssetEpic"
+    'resolveAssetEpic'
   );
 
   // extract the types
@@ -787,7 +802,7 @@ const resolveAssetEpic: Epic = (
       actionsByAsset(asset, content, types, layouts, assets, apiURL, logger)
     ),
     // dispatch the actions
-    mergeMap(actions => from(actions))
+    mergeMap((actions) => from(actions))
   );
 };
 

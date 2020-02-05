@@ -19,10 +19,16 @@ import {
 } from '@angular/core';
 import { createElement } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
+
 import { HandlebarsRendererComponent } from '../services/renderer/renderer.component';
 
 const LOGGER = 'ReactDirective';
 
+/**
+ * Implementation of the handlebars rendering based on a React implementation. We use
+ * React even for the Angular case, because we need React's reconciliation algorithm to minimize
+ * the number of DOM updates, so we won't constantly recreate inline edit registrations.
+ */
 @Directive({ selector: '[wchReact]' })
 export class ReactDirective implements OnDestroy, AfterViewInit {
   /**

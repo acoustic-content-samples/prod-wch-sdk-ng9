@@ -1,0 +1,43 @@
+{
+  "fileName": "instrumental bank logo blue.svg",
+  "metadata": {},
+  "creatorId": "d78828d3-6476-4b35-af2f-c157b56c5511",
+  "description": "",
+  "caption": "",
+  "mediaId": "2b7a6e23-acbc-4ca7-a685-3f28e7328839",
+  "path": "/dxdam/logo/instrumental bank logo blue.svg",
+  "digest": "OotgSTOnO0s3H2Yym/k9zQ==",
+  "lastModifierId": "d78828d3-6476-4b35-af2f-c157b56c5511",
+  "renditions": {
+    "default": {
+      "id": "r=1c3ff1b7-3e28-429e-aa63-276a13a49ae8&a=66d66c3c-d483-406b-bfcb-9fc9f42f5b9d",
+      "source": "/authoring/v1/resources/1c3ff1b7-3e28-429e-aa63-276a13a49ae8"
+    }
+  },
+  "id": "66d66c3c-d483-406b-bfcb-9fc9f42f5b9d",
+  "usageRights": {
+    "categories": []
+  },
+  "systemModified": "2019-12-03T14:30:57.930Z",
+  "rev": "1-3dc49eb749d7f73d5bf65726e6f4b80f",
+  "altText": "",
+  "resource": "1c3ff1b7-3e28-429e-aa63-276a13a49ae8",
+  "created": "2019-12-03T14:30:57.926Z",
+  "mediaType": "image/svg+xml",
+  "classification": "asset",
+  "assetType": "image",
+  "tags": {
+    "declined": [],
+    "values": [],
+    "analysis": "none"
+  },
+  "isManaged": true,
+  "categoryIds": [],
+  "cognitive": {
+    "status": "none"
+  },
+  "fileSize": 2143,
+  "name": "instrumental bank logo blue.svg",
+  "lastModified": "2019-12-03T14:30:57.930Z",
+  "status": "ready"
+}
