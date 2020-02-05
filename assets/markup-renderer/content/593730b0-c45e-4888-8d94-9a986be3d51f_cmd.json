@@ -2,9 +2,7 @@
   "rev": "15-33b7662559cd9899a4b6942e646f4c78",
   "creator": "Adam P. Mustermann",
   "keywords": [],
-  "kind": [
-    "page"
-  ],
+  "kind": ["page"],
   "created": "2019-12-04T09:33:04.172Z",
   "creatorId": "d78828d3-6476-4b35-af2f-c157b56c5511",
   "description": "",
@@ -181,7 +179,7 @@
                           },
                           "text": {
                             "elementType": "formattedtext",
-                            "value": "<p>Your text</p>\n"
+                            "value": "<p>Text rendered successfully!</p>\n"
                           },
                           "key": {
                             "elementType": "text",
@@ -219,20 +217,24 @@
                             "elementType": "group",
                             "value": {
                               "bottom": {
-                                "elementType": "number"
+                                "elementType": "number",
+                                "value": 13
                               },
                               "left": {
-                                "elementType": "number"
+                                "elementType": "number",
+                                "value": 12
                               },
                               "key": {
-                                "elementType": "text"
+                                "elementType": "text",
+                                "value": "bf41aa2c-773f-4f73-b838-ea6f4e8140a0"
                               },
                               "top": {
                                 "elementType": "number",
                                 "value": 10
                               },
                               "right": {
-                                "elementType": "number"
+                                "elementType": "number",
+                                "value": 11
                               }
                             },
                             "typeRef": {

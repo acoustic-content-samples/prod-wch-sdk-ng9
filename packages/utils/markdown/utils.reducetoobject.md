@@ -9,7 +9,7 @@ Groups an array into an object given a key extractor
 <b>Signature:</b>
 
 ```typescript
-declare function _reduceToObject<T, V = T>(aArray: ArrayLike<T> | null | undefined, aKeyExtractor: UnaryFunction<T, string>, aTransformer?: UnaryFunction<T, V>): Record<string, V>;
+export declare function reduceToObject<T, V = T>(aArray: ArrayLike<T> | null | undefined, aKeyExtractor: UnaryFunction<T, string>, aTransformer?: UnaryFunction<T, V>): Record<string, V>;
 ```
 
 ## Parameters

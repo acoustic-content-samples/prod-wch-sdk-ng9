@@ -347,7 +347,7 @@ function _reduceForIn<T, R>(
  *
  * @returns the mapping
  */
-function _reduceToObject<T, V = T>(
+export function reduceToObject<T, V = T>(
   aArray: ArrayLike<T> | null | undefined,
   aKeyExtractor: UnaryFunction<T, string>,
   aTransformer?: UnaryFunction<T, V>
@@ -753,7 +753,7 @@ function _mergeObjects<T>(aLeft: T, aRight: T): T {
   // the result
   const result: T = _assign({}, aLeft, aRight);
   // merge as we expect
-  return _reduceToObject(
+  return reduceToObject(
     _keys(result),
     identity,
     (key: string) => aRight[key] || aLeft[key]
@@ -817,7 +817,6 @@ export {
   _objectAssign as objectAssign,
   _assign as assignObject,
   _toInteger as toInteger,
-  _reduceToObject as reduceToObject,
   _reduceForIn as reduceForIn,
   _UNDEFINED_TYPE as UNDEFINED_TYPE,
   _FUNCTION_TYPE as FUNCTION_TYPE

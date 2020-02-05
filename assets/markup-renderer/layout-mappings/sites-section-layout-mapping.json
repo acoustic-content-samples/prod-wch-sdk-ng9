@@ -1,0 +1,27 @@
+{
+  "name": "sitesSectionLayoutMapping",
+  "id": "sites-section-layout-mapping",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "name": "sitesSectionLayout",
+        "id": "sites-section-layout"
+      },
+      "layouts": [
+        {
+          "name": "sitesSectionLayout",
+          "id": "sites-section-layout"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "name": "Sites Section",
+    "id": "a4516d24-744d-4650-8477-24aa36145e66"
+  },
+  "rev": "0-bfabc62e-548f-4fae-993f-1bbf3ed37766"
+}

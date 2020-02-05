@@ -16,13 +16,13 @@ export declare function createMarkupRendererV2(aDeliveryContent: UnaryFunction<s
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aDeliveryContent | <code>UnaryFunction&lt;string, Observable&lt;DeliveryContentItem&gt;&gt;</code> | callback function to load a content item |
-|  aAuthoringType | <code>UnaryFunction&lt;string, Observable&lt;AuthoringType&gt;&gt;</code> |  |
-|  aLayoutMapping | <code>UnaryFunction&lt;string, Observable&lt;AuthoringLayoutMapping&gt;&gt;</code> |  |
-|  aLayout | <code>UnaryFunction&lt;string, Observable&lt;Layout&gt;&gt;</code> |  |
+|  aDeliveryContent | <code>UnaryFunction&lt;string, Observable&lt;DeliveryContentItem&gt;&gt;</code> | callback function to load a content item by id |
+|  aAuthoringType | <code>UnaryFunction&lt;string, Observable&lt;AuthoringType&gt;&gt;</code> | callback function to load the type by id |
+|  aLayoutMapping | <code>UnaryFunction&lt;string, Observable&lt;AuthoringLayoutMapping&gt;&gt;</code> | callback function to load the layout mapping given a type id |
+|  aLayout | <code>UnaryFunction&lt;string, Observable&lt;Layout&gt;&gt;</code> | callback function to load the layout by id |
 |  aMarkupTemplate | <code>UnaryFunction&lt;string, Observable&lt;MarkupTemplate&gt;&gt;</code> | callback function to load the markup template from the delivery content item |
-|  aExtendedContext$ | <code>Observable&lt;ExtendedContextV2&gt;</code> |  |
-|  aLoggerService | <code>LoggerService</code> |  |
+|  aExtendedContext$ | <code>Observable&lt;ExtendedContextV2&gt;</code> | the extended context |
+|  aLoggerService | <code>LoggerService</code> | optional logger service |
 |  aScheduler | <code>SchedulerLike</code> | optional scheduler |
 
 <b>Returns:</b>

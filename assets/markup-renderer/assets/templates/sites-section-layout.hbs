@@ -1,0 +1,15 @@
+<!-- Sites Section Layout -->
+
+<div class="row no-gutter sites-section-layout" data-content-item-id="{{ $metadata.id }}" data-accessor="{{ $metadata.accessor }}"
+  style="
+    {{~#if background}}{{{background.$markup}}}{{/if}} 
+    {{~#if padding}}padding: {{{padding.$markup}}}; {{/if}}
+    {{~#if margin}}margin: {{{margin.$markup}}}; {{/if}}">
+
+    {{#each cells}}
+    <div class="col-md{{~#if mdsize}}-{{{mdsize}}}{{/if}}">{{{$markup}}}</div>
+    {{/each}}
+
+</div>
+
+<!-- End Sites Section Layout -->

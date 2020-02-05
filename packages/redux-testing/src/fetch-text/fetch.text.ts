@@ -1,5 +1,5 @@
 import {
-  Logger,
+  AuthoringLayoutMapping,
   LoggerService,
   REL_PATH_CURRENT_USER
 } from '@acoustic-content-sdk/api';
@@ -14,11 +14,13 @@ import {
   ReadTextFile,
   rxFindAuthoringAssets,
   rxFindAuthoringContent,
+  rxFindAuthoringLayoutMappings,
   rxFindAuthoringLayouts,
   rxFindAuthoringTypes,
   WCHTOOLS_FOLDER_ASSET
 } from '@acoustic-content-sdk/tooling';
 import {
+  arrayPush,
   isEqual,
   isNotEmpty,
   jsonStringify,
@@ -27,7 +29,7 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { Observable, of, pipe } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, reduce } from 'rxjs/operators';
 
 import { CURRENT_USER } from './../current-user/current.user';
 
@@ -38,6 +40,7 @@ const AUTH_LAYOUT = /^authoring\/v1\/layouts\/([^?]*)(?:\?.*)?$/;
 const AUTH_ASSET = /^authoring\/v1\/assets\/([^?]*)(?:\?.*)?$/;
 const DELIVERY_TYPE = /^delivery\/v1\/rendering\/type\/([^?]*)(?:\?.*)?$/;
 const DELIVERY_ASSET_TYPE = /^(?:my)?delivery\/v1\/resources\?path=(.*)$/;
+const LAYOUT_MAPPING_BY_TYPE = /^(?:my)?delivery\/v1\/search\?q=classification%3[aA]\(%22layout-mapping%22\)&fq=typeId%3[aA]\(%22([^%\)]+)%22\).*$/;
 
 const byId = <T extends ItemWithId>(aId: string) =>
   pipe(
@@ -45,6 +48,29 @@ const byId = <T extends ItemWithId>(aId: string) =>
     filter((entry) => isEqual(entry.id, aId)),
     map((entry) => jsonStringify(entry))
   );
+
+const byTypeId = (aId: string) =>
+  pipe(
+    map<JsonEntry<AuthoringLayoutMapping>, AuthoringLayoutMapping>(
+      ({ entry }) => entry
+    ),
+    filter((entry) => isEqual(entry.type.id, aId))
+  );
+
+function searchLayoutMappingsByTypeId(
+  aTree: ReadDirectory,
+  aId: string
+): Observable<string> {
+  // root folder
+  return rxPipe(
+    rxFindAuthoringLayoutMappings('', aTree),
+    byTypeId(aId),
+    map((document) => ({ document })),
+    reduce((dst, doc) => arrayPush(doc, dst), []),
+    map((documents) => ({ documents, numFound: documents.length })),
+    map((entry) => jsonStringify(entry))
+  );
+}
 
 function findAuthContent(
   aTree: ReadDirectory,
@@ -56,14 +82,10 @@ function findAuthContent(
 
 function findDeliveryAsset(
   aReader: ReadTextFile,
-  aPath: string,
-  aLogger: Logger
+  aPath: string
 ): Observable<string> {
-  // log this
-  const path = `${WCHTOOLS_FOLDER_ASSET}${aPath}`;
-  aLogger.info('findDeliveryAsset', path);
   // root folder
-  return aReader(path);
+  return aReader(`${WCHTOOLS_FOLDER_ASSET}${aPath}`);
 }
 
 function findAuthAsset(aTree: ReadDirectory, aId: string): Observable<string> {
@@ -122,10 +144,14 @@ export function createFetchTextOnFolder(
     // test delivery asset
     const deliveryAsset = DELIVERY_ASSET_TYPE.exec(aUrl);
     if (isNotEmpty(deliveryAsset)) {
-      return findDeliveryAsset(
-        readFile,
-        decodeURIComponent(deliveryAsset[1]),
-        logger
+      return findDeliveryAsset(readFile, decodeURIComponent(deliveryAsset[1]));
+    }
+    // test layout mapping by type
+    const layoutMapping = LAYOUT_MAPPING_BY_TYPE.exec(aUrl);
+    if (isNotEmpty(layoutMapping)) {
+      return searchLayoutMappingsByTypeId(
+        readDir,
+        decodeURIComponent(layoutMapping[1])
       );
     }
 

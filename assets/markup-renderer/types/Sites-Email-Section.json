@@ -1,0 +1,91 @@
+{
+  "name": "Sites Section",
+  "description": "This item represents a top level container on a page. It contains a list of second level containers of type \"Sites Cell\" which in turn contain the actual page blocks",
+  "id": "a4516d24-744d-4650-8477-24aa36145e66",
+  "classification": "content-type",
+  "elements": [
+    {
+      "allowMultipleValues": true,
+      "elementType": "group",
+      "fieldLabel": "Column",
+      "key": "cells",
+      "helpText": "This element holds the list of cells to be rendered in this section",
+      "label": "Cells",
+      "maximumValues": 3,
+      "minimumValues": 1,
+      "required": true,
+      "typeRef": {
+        "name": "Sites Cell",
+        "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "padding",
+      "helpText": "This element controls the padding values for this section",
+      "label": "Padding",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "margin",
+      "helpText": "This element controls the margin values for this section",
+      "label": "Margin",
+      "typeRef": {
+        "name": "Sites Boundary",
+        "id": "d403f72d-5383-423c-ba33-5cedd61c9224"
+      }
+    },
+    {
+      "elementType": "group",
+      "key": "background",
+      "helpText": "This element controls the background color for this section",
+      "label": "Background",
+      "typeRef": {
+        "name": "Sites Background",
+        "id": "0a92059b-de6b-476d-b291-1638a435d0af"
+      }
+    },
+    {
+      "elementType": "optionselection",
+      "key": "layout",
+      "helpText": "This element controls the column layout for this section",
+      "label": "Layout",
+      "options": [
+        {
+          "label": "1 Column",
+          "selection": "1-col"
+        },
+        {
+          "label": "2 equally sized columns",
+          "selection": "2-col-12-12"
+        },
+        {
+          "label": "2 Columns, left column 1/3, right column 2/3",
+          "selection": "2-col-13-23"
+        },
+        {
+          "label": "2 Columns, left column 2/3, right column 1/3",
+          "selection": "2-col-23-13"
+        },
+        {
+          "label": "3 Columns",
+          "selection": "3-col"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-e4ffe88c-d955-4e36-b149-adfb40f0911f"
+}

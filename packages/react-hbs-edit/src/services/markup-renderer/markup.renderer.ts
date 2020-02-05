@@ -21,7 +21,7 @@ import {
   selectAuthoringLayout
 } from '@acoustic-content-sdk/redux-feature-auth-layout';
 import {
-  guaranteeAuthoringLayoutMappingAction,
+  guaranteeAuthoringLayoutMappingByTypeAction,
   selectAuthLayoutMappingFeature,
   selectAuthoringLayoutMappingByTypeId
 } from '@acoustic-content-sdk/redux-feature-auth-layout-mapping';
@@ -72,7 +72,7 @@ import {
 } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const LOGGER = 'createRendererV2';
+const LOGGER = 'MarkupRendererService';
 
 const selectMetadata = pluckProperty<any, typeof KEY_METADATA>(KEY_METADATA);
 
@@ -84,27 +84,34 @@ const selectMetadata = pluckProperty<any, typeof KEY_METADATA>(KEY_METADATA);
  */
 function selectNestedDeliveryContent(
   aItem: DeliveryContentItem,
-  aAccessor: AccessorType
+  aAccessor: AccessorType,
+  aLogger: Logger
 ): DeliveryContentItem {
-  // select the group item
-  const item = wchDeliveryContentByAccessor(aItem, aAccessor);
-  const itemMetadata = selectMetadata(item);
-  if (isNotNil(itemMetadata)) {
-    // we know that we have a group level item
-    const groupItem: DeliveryContentItem | DeliveryGroupElement = item as any;
-    // merge with the top level metadata
-    const contentMetadata = selectMetadata(aItem);
-    // augmented
-    const augMetadata: DeliveryContentMetadata = {
-      ...contentMetadata,
-      ...itemMetadata,
-      selectedLayouts: undefined
-    };
-    // returns the object
-    return {
-      ...groupItem,
-      [KEY_METADATA]: augMetadata
-    };
+  // sanity check
+  if (isNotNil(aItem)) {
+    // select the group item
+    const item = wchDeliveryContentByAccessor(aItem, aAccessor);
+    const itemMetadata = selectMetadata(item);
+    if (isNotNil(itemMetadata)) {
+      // we know that we have a group level item
+      const groupItem: DeliveryContentItem | DeliveryGroupElement = item as any;
+      // merge with the top level metadata
+      const contentMetadata = selectMetadata(aItem);
+      // augmented
+      const augMetadata: DeliveryContentMetadata = {
+        ...contentMetadata,
+        ...itemMetadata,
+        selectedLayouts: undefined
+      };
+      // returns the object
+      return {
+        ...groupItem,
+        [KEY_METADATA]: augMetadata
+      };
+    } else {
+      // warn
+      aLogger.warn('No metadata for item', item);
+    }
   }
   // returns the item as is
   return aItem;
@@ -131,7 +138,7 @@ function createNestedDeliveryContentSelector(
     return isNotEmpty(accessor)
       ? rxPipe(
           content$,
-          map((item) => selectNestedDeliveryContent(item, accessor)),
+          map((item) => selectNestedDeliveryContent(item, accessor, aLogger)),
           log('nested content')
         )
       : content$;
@@ -255,7 +262,7 @@ function createRendererV2(
     // log this
     logger.info(CLASSIFICATION_LAYOUT_MAPPING, aId);
     // make sure we load the type
-    dispatch(guaranteeAuthoringLayoutMappingAction(aId));
+    dispatch(guaranteeAuthoringLayoutMappingByTypeAction(aId));
     // resolve
     return rxPipe(
       authLayoutMapping$,

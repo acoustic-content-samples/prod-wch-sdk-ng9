@@ -144,7 +144,7 @@ const selectedLayoutsExtractor = pluckPath<DeliverySelectedLayouts>([
 const idExtractor = pluckPath<string>([KEY_METADATA, KEY_ID]);
 
 const typeFromContentExtractor = pluckPath<string>([KEY_METADATA, KEY_TYPE_ID]);
-const typeFromGroupExtractor = pluckPath<string>([KEY_TYPE_REF, KEY_TYPE_ID]);
+const typeFromGroupExtractor = pluckPath<string>([KEY_TYPE_REF, KEY_ID]);
 const typeFromAuthoringElementExtractor = pluckPath<string>([
   KEY_TYPE_REF,
   KEY_ID
@@ -371,9 +371,13 @@ const LOGGER = 'createMarkupRendererV2';
  * Constructs a new renderer that applies a handlebars transform to produce rendered markup. The
  * markup will be kept current whenever any of the underlying data changes.
  *
- * @param aDeliveryContent - callback function to load a content item
+ * @param aDeliveryContent - callback function to load a content item by id
+ * @param aAuthoringType - callback function to load the type by id
+ * @param aLayoutMapping - callback function to load the layout mapping given a type id
+ * @param aLayout - callback function to load the layout by id
  * @param aMarkupTemplate - callback function to load the markup template from the delivery content item
- * @param aLogger  - optional logger
+ * @param aExtendedContext$ - the extended context
+ * @param aLoggerService  - optional logger service
  * @param aScheduler - optional scheduler
  *
  * @returns a function that maps from content item ID to an obervable of the rendered markup
@@ -630,7 +634,7 @@ export function createMarkupRendererV2(
   ): Observable<RenderingElementType> {
     // type id
     const typeId = typeFromGroupExtractor(aType);
-    assertNotNil(typeId, 'typeid');
+    assertNotNil(typeId, 'typeid ' + jsonStringify(aType));
     // locate the markup template for the element
     const markupTemplate$ = getTemplate(typeId, aLayoutMode, aElement);
 
