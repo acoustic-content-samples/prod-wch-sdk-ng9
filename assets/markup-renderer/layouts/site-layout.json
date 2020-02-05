@@ -1,0 +1,18 @@
+{
+  "name": "📰 Site Layout",
+  "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "template": "/templates/site-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/site-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/sites/site-layout/{id}.html",
+  "rev": "0-9d1ce27e-de9f-4465-a2c8-75b0e951a07e"
+}

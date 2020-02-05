@@ -1,7 +1,6 @@
 {
-  "id": "page-style-contribution-layout",
-  "rev": "10-78d033e3674a88f4320d11f22f6510ba",
-  "name": "pageStyleContributionLayout",
+  "name": "📰 Page Style Contribution Layout",
+  "id": "959979be-cfd2-47c4-8764-5a89b725da7e",
   "classification": "layout",
   "prerender": false,
   "tags": [
@@ -9,10 +8,11 @@
     "mode:head",
     "mode:body"
   ],
-  "thumbnail": {
-    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg"
-  },
-  "template": "/dxdam/templates/page-style-contribution-layout.hbs",
+  "template": "/templates/page-style-contribution-layout.hbs",
   "templateType": "handlebars",
-  "urlTemplate": "{templateLocation}/sites/page-styke-contribution/{id}.html"
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/page-style-contribution-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/sites/page-style-contribution/{id}.html",
+  "rev": "0-bcc734c5-4671-40f2-9157-3e66e5ec7d31"
 }

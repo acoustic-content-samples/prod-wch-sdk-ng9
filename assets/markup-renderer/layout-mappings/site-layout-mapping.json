@@ -1,0 +1,24 @@
+{
+  "name": "🗺️ siteLayoutMapping",
+  "id": "1daf5db7-0e44-42c1-b4ff-f76cfd22d522",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6"
+      },
+      "layouts": [
+        {
+          "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "40404250-aa99-427d-a5ac-cb9ce1ebb714"
+  },
+  "rev": "0-5e512709-0f4f-41c8-8965-da0cde6f8156"
+}

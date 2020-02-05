@@ -2,11 +2,11 @@ import {
   AuthoringLayoutMapping,
   CLASSIFICATION_LAYOUT_MAPPING,
   KEY_TYPE_ID,
-  Logger,
+  LoggerService,
   Query,
+  SEARCH_FL_DOCUMENT,
   SearchResult,
-  SearchResults,
-  SEARCH_FL_DOCUMENT
+  SearchResults
 } from '@acoustic-content-sdk/api';
 import {
   createAuthenticatedLoader,
@@ -44,9 +44,11 @@ import {
 } from './auth.layout.mapping.actions';
 import { selectAuthLayoutMappingFeature } from './auth.layout.mapping.feature';
 
+const LOGGER = 'AuthLayoutMappingEpic';
+
 export interface AuthoringLayoutMappingDependencies {
   fetchText: FetchText;
-  logger: Logger;
+  logSvc: LoggerService;
 }
 
 function createLayoutMappingByTypeQuery(aTypeId: string): Query {
@@ -66,8 +68,10 @@ const createLayoutMappingByTypeUrl = (aTypeId: string): string =>
 const guaranteeLayoutMappingByTypeEpic: Epic = (
   actions$,
   state$,
-  { fetchText, logger }: AuthoringLayoutMappingDependencies
+  { fetchText, logSvc }: AuthoringLayoutMappingDependencies
 ) => {
+  // create logger
+  const logger = logSvc.get(LOGGER);
   // loader
   const loader: LoaderType = (id) =>
     rxPipe(
@@ -109,8 +113,10 @@ const guaranteeLayoutMappingByTypeEpic: Epic = (
 const loadLayoutMappingEpic: Epic = (
   actions$,
   state$,
-  { fetchText, logger }: AuthoringLayoutMappingDependencies
+  { fetchText, logSvc }: AuthoringLayoutMappingDependencies
 ) => {
+  // create logger
+  const logger = logSvc.get(LOGGER);
   // loader
   const loader: LoaderType = (id) =>
     rxPipe(

@@ -1,16 +1,8 @@
 {
-  "id": "eedce4a0-9647-4301-9247-6793e08652ea",
-  "rev": "14-bf48026619dd7b6258271ed001549c32",
   "name": "📄 Page Embed Contribution",
-  "classification": "content-type",
-  "kind": [
-    "standalone"
-  ],
   "description": "A page markup contribution directly added into the markup",
-  "status": "ready",
-  "tags": [
-    "sites-next"
-  ],
+  "id": "eedce4a0-9647-4301-9247-6793e08652ea",
+  "classification": "content-type",
   "elements": [
     {
       "elementType": "text",
@@ -28,5 +20,13 @@
       "key": "key",
       "label": "Key"
     }
-  ]
+  ],
+  "kind": [
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-67ad4901-dc8e-4f86-959d-0d7fae7be2c7"
 }

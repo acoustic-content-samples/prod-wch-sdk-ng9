@@ -1,23 +1,21 @@
 {
-  "rev": "6-1feb68392584490c865ceab79d0d3e65",
+  "rev": "50-c00c02914319af83b5ddcb1c34d4857f",
   "thumbnail": {
     "id": "66d66c3c-d483-406b-bfcb-9fc9f42f5b9d"
   },
   "keywords": [],
-  "kind": [
-    "site"
-  ],
-  "created": "2019-11-15T08:18:07.056Z",
+  "kind": ["site"],
+  "created": "2019-08-13T09:19:04.728Z",
   "libraryId": "default",
-  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
   "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
   "classification": "content",
+  "type": "Site",
   "locale": "en",
-  "tags": [],
+  "tags": ["sites-next", "sample"],
   "selectedLayouts": [
     {
       "layout": {
-        "id": "sites-layout"
+        "id": "4611c4ad-3998-4ed6-b211-dc348fb3d9f6"
       }
     }
   ],
@@ -44,7 +42,11 @@
     "navigation": {
       "elementType": "reference",
       "value": {
-        "id": "28bf6437-7e86-48fb-887b-9a8fdf3f7cae"
+        "name": "Default Site Navigation",
+        "creatorId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
+        "typeId": "843fb991-7413-4517-bfcb-b59fc4b1f449",
+        "id": "28bf6437-7e86-48fb-887b-9a8fdf3f7cae",
+        "status": "ready"
       }
     },
     "title": {
@@ -53,10 +55,10 @@
     }
   },
   "name": "Default Site",
-  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "lastModifierId": "b4e74e5c-4928-426e-80ef-c6ad2376b9de",
   "typeId": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
   "id": "043540fd-2904-4613-868b-8835faf81ffe",
-  "lastModified": "2019-12-20T11:24:30.261Z",
-  "systemModified": "2019-12-20T11:24:30.261Z",
+  "lastModified": "2019-09-13T08:04:42.054Z",
+  "systemModified": "2019-09-13T08:04:42.054Z",
   "status": "ready"
 }

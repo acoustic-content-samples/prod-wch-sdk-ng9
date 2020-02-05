@@ -1,22 +1,16 @@
 {
-  "rev": "5-f07d8f296eef9c08b0696ac6418c5e93",
-  "thumbnail": {
-    "id": "3531bfd0-1057-439c-a49c-cba1e5b825da"
-  },
+  "rev": "34-cdf884c056080027bc3a2ee3b7c64c7a",
   "keywords": [],
   "kind": [],
-  "created": "2019-12-18T10:04:56.803Z",
-  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "created": "2019-11-27T11:36:17.676Z",
   "description": "",
   "classification": "content",
   "locale": "en",
-  "tags": [
-    "sites-theme"
-  ],
+  "tags": ["sites-theme", "sites-next", "sample"],
   "selectedLayouts": [
     {
       "layout": {
-        "id": "page-contributions-layout"
+        "id": "4fb15757-66d7-471e-a134-3dd863789ce9"
       }
     }
   ],
@@ -78,10 +72,10 @@
     }
   },
   "name": "Light Theme",
-  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "lastModifierId": "95374ba1-8eee-497e-a971-4a416c81c943",
   "typeId": "aab86460-0018-44c2-9f52-3a326e58f7f7",
   "id": "6f4cd602-d1fa-4ebf-b539-0b2f1a4cd3be",
-  "lastModified": "2019-12-20T11:24:30.908Z",
-  "systemModified": "2019-12-20T11:24:30.908Z",
+  "lastModified": "2019-11-27T11:43:27.244Z",
+  "systemModified": "2019-11-27T11:43:27.244Z",
   "status": "ready"
 }

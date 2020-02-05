@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/redux-feature-auth-layout-mapping",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Implementation of a redux feature to manage authoring layout mappings.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -22,6 +22,8 @@
   "module": "dist/fesm5/acoustic-content-sdk-redux-feature-auth-layout-mapping.js",
   "typings": "dist/acoustic-content-sdk-redux-feature-auth-layout-mapping.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },

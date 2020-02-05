@@ -1,0 +1,24 @@
+{
+  "name": "🗺️ Page Module Layout Mapping",
+  "id": "b2ca1484-f426-4319-91fe-9b2ec929ba05",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "4fb15757-66d7-471e-a134-3dd863789ce9"
+      },
+      "layouts": [
+        {
+          "id": "4fb15757-66d7-471e-a134-3dd863789ce9"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "aab86460-0018-44c2-9f52-3a326e58f7f7"
+  },
+  "rev": "0-2b3d0ea2-a3ba-46a0-ac3b-bc22ece0b9d5"
+}

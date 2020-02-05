@@ -1,0 +1,16 @@
+{
+  "name": "📰 Page Descriptor Layout",
+  "id": "51b21bea-d03d-4c03-b06f-9ea4c96ff378",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/page-descriptor-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/page-descriptor-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/page-descriptor-layout/{id}.html",
+  "rev": "0-1b23af2c-364e-4453-b075-d15bffeb01e8"
+}

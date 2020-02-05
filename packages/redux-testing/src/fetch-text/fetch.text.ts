@@ -1,25 +1,29 @@
 import {
-  REL_PATH_CURRENT_USER,
-  LoggerService
+  Logger,
+  LoggerService,
+  REL_PATH_CURRENT_USER
 } from '@acoustic-content-sdk/api';
 import { ItemWithId } from '@acoustic-content-sdk/redux-utils';
 import { FETCH_PRIORITY, FetchText } from '@acoustic-content-sdk/rest-api';
 import { rxReadTextFile } from '@acoustic-content-sdk/rx-utils';
 import {
   createReadDirectory,
+  createReadTextFile,
   JsonEntry,
   ReadDirectory,
+  ReadTextFile,
   rxFindAuthoringAssets,
   rxFindAuthoringContent,
   rxFindAuthoringLayouts,
-  rxFindAuthoringTypes
+  rxFindAuthoringTypes,
+  WCHTOOLS_FOLDER_ASSET
 } from '@acoustic-content-sdk/tooling';
 import {
   isEqual,
   isNotEmpty,
   jsonStringify,
-  rxPipe,
-  NOOP_LOGGER_SERVICE
+  NOOP_LOGGER_SERVICE,
+  rxPipe
 } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { Observable, of, pipe } from 'rxjs';
@@ -33,6 +37,7 @@ const AUTH_CONTENT = /^authoring\/v1\/content\/([^?]*)(?:\?.*)?$/;
 const AUTH_LAYOUT = /^authoring\/v1\/layouts\/([^?]*)(?:\?.*)?$/;
 const AUTH_ASSET = /^authoring\/v1\/assets\/([^?]*)(?:\?.*)?$/;
 const DELIVERY_TYPE = /^delivery\/v1\/rendering\/type\/([^?]*)(?:\?.*)?$/;
+const DELIVERY_ASSET_TYPE = /^(?:my)?delivery\/v1\/resources\?path=(.*)$/;
 
 const byId = <T extends ItemWithId>(aId: string) =>
   pipe(
@@ -47,6 +52,18 @@ function findAuthContent(
 ): Observable<string> {
   // root folder
   return rxPipe(rxFindAuthoringContent('', aTree), byId(aId));
+}
+
+function findDeliveryAsset(
+  aReader: ReadTextFile,
+  aPath: string,
+  aLogger: Logger
+): Observable<string> {
+  // log this
+  const path = `${WCHTOOLS_FOLDER_ASSET}${aPath}`;
+  aLogger.info('findDeliveryAsset', path);
+  // root folder
+  return aReader(path);
 }
 
 function findAuthAsset(aTree: ReadDirectory, aId: string): Observable<string> {
@@ -73,6 +90,7 @@ export function createFetchTextOnFolder(
   const logger = logSvc.get(LOGGER);
   // the read callback
   const readDir = createReadDirectory(aFolder);
+  const readFile = createReadTextFile(aFolder);
 
   return (aUrl: string, aPriority?: FETCH_PRIORITY): Observable<string> => {
     // log this
@@ -100,6 +118,15 @@ export function createFetchTextOnFolder(
     const authAsset = AUTH_ASSET.exec(aUrl);
     if (isNotEmpty(authAsset)) {
       return findAuthAsset(readDir, authAsset[1]);
+    }
+    // test delivery asset
+    const deliveryAsset = DELIVERY_ASSET_TYPE.exec(aUrl);
+    if (isNotEmpty(deliveryAsset)) {
+      return findDeliveryAsset(
+        readFile,
+        decodeURIComponent(deliveryAsset[1]),
+        logger
+      );
     }
 
     logger.info('Carsten', 'URL', aUrl);

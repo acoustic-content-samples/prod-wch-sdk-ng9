@@ -1,0 +1,24 @@
+{
+  "name": "🗺️ Page Descriptor Layout Mapping",
+  "id": "9eb954f8-03f9-4c7e-a478-88ea8ea77e71",
+  "classification": "layout-mapping",
+  "mappings": [
+    {
+      "defaultLayout": {
+        "id": "51b21bea-d03d-4c03-b06f-9ea4c96ff378"
+      },
+      "layouts": [
+        {
+          "id": "51b21bea-d03d-4c03-b06f-9ea4c96ff378"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "sites-next"
+  ],
+  "type": {
+    "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28"
+  },
+  "rev": "0-e8a3ccd5-13f4-472f-a754-6284694a33d6"
+}

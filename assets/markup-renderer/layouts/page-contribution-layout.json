@@ -1,0 +1,18 @@
+{
+  "name": "📰 Page Contribution Layout",
+  "id": "c20b06b5-7c60-4027-b5a6-16c4da09754b",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next",
+    "mode:head",
+    "mode:body"
+  ],
+  "template": "/templates/page-contribution-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/page-contribution-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/sites/page-contribution/{id}.html",
+  "rev": "0-b905a5b8-2e5c-41b8-a8de-6d15102bd7cb"
+}

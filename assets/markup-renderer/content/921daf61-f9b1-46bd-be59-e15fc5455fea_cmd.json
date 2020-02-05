@@ -1,17 +1,16 @@
 {
-  "rev": "5-88af6d6476fe13bcb017bd5bb564f600",
+  "rev": "31-55d2e43b5d6f52eca7603fab0e0f350b",
   "keywords": [],
   "kind": [],
-  "created": "2019-12-18T10:04:57.101Z",
-  "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "created": "2019-11-27T10:33:20.007Z",
   "description": "",
   "classification": "content",
   "locale": "en",
-  "tags": [],
+  "tags": ["sites-next", "sample"],
   "selectedLayouts": [
     {
       "layout": {
-        "id": "page-embed-contribution-layout"
+        "id": "28760700-9fae-40c9-bcab-b40446ed4d37"
       }
     }
   ],
@@ -26,10 +25,10 @@
     }
   },
   "name": "Bootstrap 40",
-  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "lastModifierId": "95374ba1-8eee-497e-a971-4a416c81c943",
   "typeId": "eedce4a0-9647-4301-9247-6793e08652ea",
   "id": "921daf61-f9b1-46bd-be59-e15fc5455fea",
-  "lastModified": "2019-12-20T11:24:31.192Z",
-  "systemModified": "2019-12-20T11:24:31.192Z",
+  "lastModified": "2019-11-27T10:33:48.147Z",
+  "systemModified": "2019-11-27T10:33:48.147Z",
   "status": "ready"
 }

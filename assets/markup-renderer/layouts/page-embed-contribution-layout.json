@@ -1,7 +1,6 @@
 {
-  "id": "page-embed-contribution-layout",
-  "rev": "10-73a7152bc64d0e7a17cb5d201b2df1f3",
-  "name": "pageEmbedContributionLayout",
+  "name": "📰 Page Embed Contribution Layout",
+  "id": "28760700-9fae-40c9-bcab-b40446ed4d37",
   "classification": "layout",
   "prerender": false,
   "tags": [
@@ -9,10 +8,11 @@
     "mode:head",
     "mode:body"
   ],
-  "thumbnail": {
-    "path": "/dxauth/layoutThumbs/page-contributions-layout.jpg"
-  },
-  "template": "/dxdam/templates/page-embed-contribution-layout.hbs",
+  "template": "/templates/page-embed-contribution-layout.hbs",
   "templateType": "handlebars",
-  "urlTemplate": "{templateLocation}/sites/page-embed-contribution/{id}.html"
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/page-embed-contribution-layout.png"
+  },
+  "urlTemplate": "{templateLocation}/sites/page-embed-contribution/{id}.html",
+  "rev": "0-2e8bd226-498e-45b2-b9e1-795cfd7e802c"
 }

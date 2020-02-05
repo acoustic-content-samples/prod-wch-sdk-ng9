@@ -1,17 +1,8 @@
 {
-  "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
-  "rev": "14-3f34b239a19fc21af6ef38fb4433ad35",
   "name": "📄 Site Navigation Descriptor",
-  "classification": "content-type",
-  "kind": [
-    "embedded",
-    "standalone"
-  ],
   "description": "This content item defines the navigation structure for a site.",
-  "status": "ready",
-  "tags": [
-    "sites-next"
-  ],
+  "id": "843fb991-7413-4517-bfcb-b59fc4b1f449",
+  "classification": "content-type",
   "elements": [
     {
       "elementType": "text",
@@ -32,5 +23,14 @@
       "key": "key",
       "label": "Key"
     }
-  ]
+  ],
+  "kind": [
+    "embedded",
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-4e40b840-f869-4e57-b660-66fbb4ff8348"
 }

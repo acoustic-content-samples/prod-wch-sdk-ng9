@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/redux-feature-auth-content",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "Implementation of a redux feature to manage authoring content.",
   "keywords": [
     "acoustic",
     "acoustic-content",

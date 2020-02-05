@@ -2,6 +2,7 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { authoringContentFeature } from '@acoustic-content-sdk/redux-feature-auth-content';
 import { authoringTypeFeature } from '@acoustic-content-sdk/redux-feature-auth-type';
 import { deliveryContentFeature } from '@acoustic-content-sdk/redux-feature-delivery-content';
+import { handlebarsFeature } from '@acoustic-content-sdk/redux-feature-handlebars';
 import { loggedInAction } from '@acoustic-content-sdk/redux-feature-login';
 import { setUrlConfigAction } from '@acoustic-content-sdk/redux-feature-url-config';
 import {
@@ -29,6 +30,7 @@ describe('markup.renderer', () => {
     store.addFeatureModule(authoringContentFeature);
     store.addFeatureModule(authoringTypeFeature);
     store.addFeatureModule(deliveryContentFeature);
+    store.addFeatureModule(handlebarsFeature);
     // init
     store.dispatch(setUrlConfigAction(DEFAULT_URL_CONFIG));
     store.dispatch(loggedInAction());

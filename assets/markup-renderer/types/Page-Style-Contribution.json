@@ -1,16 +1,8 @@
 {
-  "id": "3a3726b8-e0b2-4f10-98ed-b1c82e851b99",
-  "rev": "14-4ab60e6229e91938818204b79f4c5c07",
   "name": "📄 Page Style Contribution",
-  "classification": "content-type",
-  "kind": [
-    "standalone"
-  ],
   "description": "A style contribution added as a <link rel=\"stylesheet\" href=\"...\"> element to the page markup",
-  "status": "ready",
-  "tags": [
-    "sites-next"
-  ],
+  "id": "3a3726b8-e0b2-4f10-98ed-b1c82e851b99",
+  "classification": "content-type",
   "elements": [
     {
       "elementType": "text",
@@ -28,5 +20,13 @@
       "key": "key",
       "label": "Key"
     }
-  ]
+  ],
+  "kind": [
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-a296a0a8-e306-4c25-a6f7-b6acf319bdda"
 }

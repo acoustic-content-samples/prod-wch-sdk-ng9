@@ -1,0 +1,56 @@
+{
+  "name": "📄 Page Script Contribution",
+  "description": "A style contribution added as a <script> element to the page markup",
+  "id": "5c473463-db07-4132-b8a1-bd40cbdf4b18",
+  "classification": "content-type",
+  "elements": [
+    {
+      "elementType": "optionselection",
+      "helpText": "Identify the type information for the <script> tag to be included",
+      "key": "type",
+      "label": "type",
+      "options": [
+        {
+          "label": "application/javascript",
+          "selection": "application/javascript"
+        },
+        {
+          "label": "module",
+          "selection": "module"
+        },
+        {
+          "label": "nomodule",
+          "selection": "nomodule"
+        }
+      ],
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "The URL pointing to the script realtive to the resource base URL of this tenant.",
+      "key": "src",
+      "label": "src",
+      "required": true,
+      "role": [
+        "configuration"
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-f2e92dd1-236e-44ac-81b7-b0b790a97cea"
+}

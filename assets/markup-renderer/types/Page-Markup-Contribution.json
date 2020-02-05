@@ -1,0 +1,29 @@
+{
+  "name": "📄 Page Markup Contribution",
+  "description": "A page markup contribution directly added into the markup",
+  "id": "2b0cd235-16ad-42ec-aea7-a05df105604c",
+  "classification": "content-type",
+  "elements": [
+    {
+      "allowMultipleValues": false,
+      "elementType": "text",
+      "helpText": "The markup to be added.",
+      "key": "markup",
+      "label": "Markup"
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": [
+    "standalone"
+  ],
+  "status": "ready",
+  "tags": [
+    "sites-next"
+  ],
+  "rev": "0-bdbf5e27-d3c0-4418-809a-84801e0efcf4"
+}
