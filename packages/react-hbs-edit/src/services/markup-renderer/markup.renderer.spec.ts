@@ -7,7 +7,7 @@ import { setUrlConfigAction } from '@acoustic-content-sdk/redux-feature-url-conf
 import {
   createReduxRootStoreOnFolder,
   DEFAULT_URL_CONFIG
-} from '@acoustic-content-sdk/redux-mocks';
+} from '@acoustic-content-sdk/redux-testing';
 import { isNotEmpty, rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
 import { filter, first } from 'rxjs/operators';

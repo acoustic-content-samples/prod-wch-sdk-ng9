@@ -398,7 +398,7 @@ export function createMarkupRendererV2(
     aInfo: string
   ) => MonoTypeOperatorFunction<T> = createDiff(logger);
   // some utility operators
-  const combineArray = <T>(aArray: Array<ObservableInput<T>>) =>
+  const combineArray = <T>(aArray: ObservableInput<T>[]) =>
     USE_DEBOUNCE_TIME
       ? rxPipe(combineLatest(aArray, aScheduler), debounceTime(0))
       : combineLatest(aArray, aScheduler);
@@ -494,6 +494,7 @@ export function createMarkupRendererV2(
     if (isNotNil(layoutId)) {
       return single(layoutId);
     }
+    logger.info('Carsten', 'getLayoutId', aTypeId);
     // else fallback to the type
     return rxPipe(
       layoutMappingInfo(aTypeId),
@@ -770,7 +771,7 @@ export function createMarkupRendererV2(
     assertNotNil(aTypeInfo, 'aTypeInfo');
     // extract keys and values
     const keys: string[] = [];
-    const values: Array<Observable<RenderingElementType>> = [];
+    const values: Observable<RenderingElementType>[] = [];
     // map
     forIn(aItem, (el, key) => {
       arrayPush(key, keys);

@@ -4,4 +4,4 @@ export const VERSION = {
   build: new Date(1578572568571)
 };
 /** Module name */
-export const MODULE = '@acoustic-content-sdk/redux-mocks';
+export const MODULE = '@acoustic-content-sdk/redux-testing';

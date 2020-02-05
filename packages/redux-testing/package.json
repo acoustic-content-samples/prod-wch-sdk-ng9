@@ -1,5 +1,5 @@
 {
-  "name": "@acoustic-content-sdk/redux-mocks",
+  "name": "@acoustic-content-sdk/redux-testing",
   "version": "9.0.0",
   "description": "Implementation of helper functions and mocks to assist in the implementation of testcases for redux based modules.",
   "keywords": [
@@ -18,9 +18,9 @@
   "license": "MIT",
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
-  "main": "dist/bundles/acoustic-content-sdk-redux-mocks.umd.js",
-  "module": "dist/fesm5/acoustic-content-sdk-redux-mocks.js",
-  "typings": "dist/acoustic-content-sdk-redux-mocks.d.ts",
+  "main": "dist/bundles/acoustic-content-sdk-redux-testing.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-redux-testing.js",
+  "typings": "dist/acoustic-content-sdk-redux-testing.d.ts",
   "scripts": {
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
@@ -42,12 +42,12 @@
   "publishConfig": {
     "registry": "http://wats-repob.devlab.ibm.com/"
   },
-  "es2015": "dist/fesm2015/acoustic-content-sdk-redux-mocks.js",
-  "esm2015": "dist/esm2015/acoustic-content-sdk-redux-mocks.js",
-  "esm5": "dist/esm5/acoustic-content-sdk-redux-mocks.js",
-  "fesm2015": "dist/fesm2015/acoustic-content-sdk-redux-mocks.js",
-  "fesm5": "dist/fesm5/acoustic-content-sdk-redux-mocks.js",
-  "metadata": "dist/acoustic-content-sdk-redux-mocks.metadata.json",
+  "es2015": "dist/fesm2015/acoustic-content-sdk-redux-testing.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-redux-testing.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-redux-testing.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-redux-testing.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-redux-testing.js",
+  "metadata": "dist/acoustic-content-sdk-redux-testing.metadata.json",
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
