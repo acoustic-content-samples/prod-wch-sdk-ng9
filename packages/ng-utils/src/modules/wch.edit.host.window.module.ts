@@ -16,7 +16,9 @@ export function proxyGetEditHostWindow(aCurrentWindow: WindowType): WindowType {
 }
 
 /**
- * Exposes the edit host as the `WCH_TOKEN_EDIT_HOST_WINDOW` token
+ * Exposes the edit host as the `WCH_TOKEN_EDIT_HOST_WINDOW` token.
+ *
+ * Depends on: `WCH_TOKEN_WINDOW`
  */
 @NgModule({
   imports: [CommonModule],

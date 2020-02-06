@@ -79,7 +79,7 @@ export function getInlineEditProvider(
 
 /**
  * Exposes the inline edit provider `WCH_TOKEN_INLINE_EDIT_PROVIDER` from the parent frame. The provider
- * must be exposed via the `INLINE_EDIT_PROVIDER_ID` constant.
+ * must have been exposed via the `INLINE_EDIT_PROVIDER_ID` constant on that window.
  *
  * Depends on: `WCH_TOKEN_EDIT_HOST_WINDOW`, `WCH_TOKEN_LOGGER_SERVICE`
  */

@@ -4,7 +4,7 @@
 
 ## WchNgBrowserWindowModule class
 
-Exposes the window as the `WCH_TOKEN_WINDOW` token
+Exposes the window as the `WCH_TOKEN_WINDOW` token for the case that the application runs in the browser (as opposed to running on the server via Angular Universal)
 
 <b>Signature:</b>
 

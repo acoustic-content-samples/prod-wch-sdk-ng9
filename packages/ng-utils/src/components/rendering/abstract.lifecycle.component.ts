@@ -217,7 +217,8 @@ function _invokeHooks(
   }
 }
 
-/** Base class that allows to register life cycle hooks. This class is supposed
+/**
+ * Base class that allows to register life cycle hooks. This class is supposed
  * to be subclassed before use.
  *
  * The 'ngXXX' methods override the methods from the Angular life cycle interfaces. If you overridde

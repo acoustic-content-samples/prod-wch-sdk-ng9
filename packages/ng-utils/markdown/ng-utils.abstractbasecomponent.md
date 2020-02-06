@@ -4,6 +4,8 @@
 
 ## AbstractBaseComponent class
 
+Implementation of a base component for Angular Components that expose the `renderingContext` and `layoutMode` output observables.
+
 <b>Signature:</b>
 
 ```typescript

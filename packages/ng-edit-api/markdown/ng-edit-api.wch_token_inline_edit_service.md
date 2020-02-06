@@ -4,6 +4,8 @@
 
 ## WCH\_TOKEN\_INLINE\_EDIT\_SERVICE variable
 
+Token used to inject the `WchInlineEditServiceV2` service.
+
 <b>Signature:</b>
 
 ```typescript

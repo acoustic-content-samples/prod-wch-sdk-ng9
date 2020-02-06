@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng-edit](./ng-edit.md) |  |
+|  [@acoustic-content-sdk/ng-edit](./ng-edit.md) | Module to attach inline-edit functionality to an WCH based Angular application. |
 

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng-redux",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Implementation of Angular providers based on Redux.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -23,6 +23,8 @@
   "module": "dist/fesm5/acoustic-content-sdk-ng-redux.js",
   "typings": "dist/acoustic-content-sdk-ng-redux.d.ts",
   "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },

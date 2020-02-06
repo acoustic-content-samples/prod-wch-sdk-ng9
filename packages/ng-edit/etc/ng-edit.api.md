@@ -74,6 +74,4 @@ export class WchNgSelectableDirectiveModule {
 }
 
 
-// (No @packageDocumentation comment for this package)
-
 ```

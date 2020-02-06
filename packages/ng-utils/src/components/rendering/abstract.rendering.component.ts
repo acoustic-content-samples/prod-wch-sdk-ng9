@@ -26,12 +26,12 @@ import { AbstractBaseComponent } from './abstract-base.component';
  * Extracts the key field from an item
  */
 const KEY_KEY = 'key';
-const selectKey = pluckProperty<any, 'key'>(KEY_KEY);
+const selectKey = pluckProperty<any, typeof KEY_KEY>(KEY_KEY);
 
 /**
  * Extracts the ID field from any value
  */
-const selectId = pluckProperty<any, 'id'>(KEY_ID);
+const selectId = pluckProperty<any, typeof KEY_ID>(KEY_ID);
 
 /**
  * Extract the iteration key from the metadata object

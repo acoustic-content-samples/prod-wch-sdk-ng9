@@ -9,5 +9,5 @@ Constructs a new instance of the `AbstractBaseComponent` class
 <b>Signature:</b>
 
 ```typescript
-constructor();
+protected constructor();
 ```

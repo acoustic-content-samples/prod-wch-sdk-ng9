@@ -42,7 +42,7 @@
     "chalk": "^3.0.0",
     "commander": "^4.1.1",
     "cross-spawn": "^7.0.1",
-    "handlebars": "^4.7.2",
+    "handlebars": "^4.7.3",
     "handlebars-helpers": "^0.10.0",
     "js-string-escape": "^1.0.1",
     "jsdom": "^16.1.0",

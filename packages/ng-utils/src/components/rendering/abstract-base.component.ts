@@ -16,6 +16,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { defineProperties } from './../../utils/js.utils';
 import { AbstractLifeCycleComponent } from './abstract.lifecycle.component';
 
+/**
+ * Implementation of a base component for Angular Components
+ * that expose the `renderingContext` and `layoutMode` output
+ * observables.
+ */
 export abstract class AbstractBaseComponent extends AbstractLifeCycleComponent
   implements RenderingContextProviderV2 {
   /**
@@ -36,7 +41,7 @@ export abstract class AbstractBaseComponent extends AbstractLifeCycleComponent
    */
   @Input() layoutMode: string;
 
-  constructor() {
+  protected constructor() {
     /**
      *  default
      */

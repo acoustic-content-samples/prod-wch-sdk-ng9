@@ -4,6 +4,8 @@
 
 ## ng-edit package
 
+Module to attach inline-edit functionality to an WCH based Angular application.
+
 ## Classes
 
 |  Class | Description |
@@ -15,7 +17,7 @@
 |  [WchNgHttpInlineEditProviderModule](./ng-edit.wchnghttpinlineeditprovidermodule.md) | Provides token <code>WCH_TOKEN_INLINE_EDIT_PROVIDER</code> |
 |  [WchNgInlineEditSelectionModule](./ng-edit.wchnginlineeditselectionmodule.md) |  |
 |  [WchNgInlineEditServiceModule](./ng-edit.wchnginlineeditservicemodule.md) | Provides token <code>WCH_TOKEN_INLINE_EDIT_SERVICE</code> requires a <code>WCH_TOKEN_INLINE_EDIT_PROVIDER</code> for the backend |
-|  [WchNgParentInlineEditProviderModule](./ng-edit.wchngparentinlineeditprovidermodule.md) | Exposes the inline edit provider <code>WCH_TOKEN_INLINE_EDIT_PROVIDER</code> from the parent frame. The provider must be exposed via the <code>INLINE_EDIT_PROVIDER_ID</code> constant.<!-- -->Depends on: <code>WCH_TOKEN_EDIT_HOST_WINDOW</code>, <code>WCH_TOKEN_LOGGER_SERVICE</code> |
+|  [WchNgParentInlineEditProviderModule](./ng-edit.wchngparentinlineeditprovidermodule.md) | Exposes the inline edit provider <code>WCH_TOKEN_INLINE_EDIT_PROVIDER</code> from the parent frame. The provider must have been exposed via the <code>INLINE_EDIT_PROVIDER_ID</code> constant on that window.<!-- -->Depends on: <code>WCH_TOKEN_EDIT_HOST_WINDOW</code>, <code>WCH_TOKEN_LOGGER_SERVICE</code> |
 |  [WchNgSelectableDirectiveModule](./ng-edit.wchngselectabledirectivemodule.md) | Module implementing the <code>WchSelectableDirectiveService</code> for the edit case |
 
 ## Functions

@@ -19,9 +19,9 @@ import { RenderingContextV2 } from '@acoustic-content-sdk/api';
 import { SimpleChanges } from '@angular/core';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
-// @public (undocumented)
+// @public
 export abstract class AbstractBaseComponent extends AbstractLifeCycleComponent implements RenderingContextProviderV2 {
-    constructor();
+    protected constructor();
     readonly layoutMode$: Observable<string>;
     layoutMode: string;
     renderingContext$: Observable<RenderingContextV2>;

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng-app-base",
   "version": "9.0.0",
-  "description": "Module to pull in application dependencies for view mode.",
+  "description": "Module to pull in application dependencies both for preview and view mode.",
   "keywords": [
     "acoustic",
     "acoustic-content",

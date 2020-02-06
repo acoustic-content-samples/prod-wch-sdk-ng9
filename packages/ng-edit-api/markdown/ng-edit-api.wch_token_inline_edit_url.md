@@ -4,6 +4,8 @@
 
 ## WCH\_TOKEN\_INLINE\_EDIT\_URL variable
 
+Injection token for the inline edit URL
+
 <b>Signature:</b>
 
 ```typescript

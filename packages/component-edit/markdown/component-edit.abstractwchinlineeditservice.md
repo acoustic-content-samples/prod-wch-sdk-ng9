@@ -4,7 +4,7 @@
 
 ## AbstractWchInlineEditService class
 
-Implementation of the [AbstractWchInlineEditService](./component-edit.abstractwchinlineeditservice.md) that loads the inline edit library and allows to attach to that library.
+Implementation of the \`<!-- -->WchInlineEditServiceV2 that loads the inline edit library and allows to attach to that library.
 
 <b>Signature:</b>
 

@@ -23,10 +23,8 @@ Collection of APIs and constants for the Angular SDK in edit mode
 |  [EditHubInfoService](./ng-edit-api.edithubinfoservice.md) |  |
 |  [WchEditableDirectiveInput](./ng-edit-api.wcheditabledirectiveinput.md) | Input to the editable directive service |
 |  [WchEditableDirectiveOutput](./ng-edit-api.wcheditabledirectiveoutput.md) | Input of the editable directive service |
-|  [WchEditableDirectiveService](./ng-edit-api.wcheditabledirectiveservice.md) | Service that returns an instance of the editable directive |
 |  [WchEditablePlaceholderDirectiveInput](./ng-edit-api.wcheditableplaceholderdirectiveinput.md) | Input to the editable directive service |
 |  [WchEditablePlaceholderDirectiveOutput](./ng-edit-api.wcheditableplaceholderdirectiveoutput.md) | Input of the editable directive service |
-|  [WchEditablePlaceholderDirectiveService](./ng-edit-api.wcheditableplaceholderdirectiveservice.md) | Service that returns an instance of the editable directive |
 |  [WchPlaceholder](./ng-edit-api.wchplaceholder.md) |  |
 |  [WchPlaceholderProvider](./ng-edit-api.wchplaceholderprovider.md) |  |
 |  [WchSelectableDirectiveInput](./ng-edit-api.wchselectabledirectiveinput.md) | Input to the editable directive service |
@@ -43,15 +41,12 @@ Collection of APIs and constants for the Angular SDK in edit mode
 |  [WCH\_TOKEN\_DEBUG\_PLACEHOLDERS](./ng-edit-api.wch_token_debug_placeholders.md) | Injection token for placeholder debugging |
 |  [WCH\_TOKEN\_DEFAULT\_PLACEHOLDER\_TEXT](./ng-edit-api.wch_token_default_placeholder_text.md) | Injection token for default placeholder text |
 |  [WCH\_TOKEN\_EDIT\_HOST\_WINDOW](./ng-edit-api.wch_token_edit_host_window.md) | Injects the window that acts as the edit host for an application. This is typically the parent window or the opener window. |
-|  [WCH\_TOKEN\_EDITABLE\_DIRECTIVE\_SERVICE](./ng-edit-api.wch_token_editable_directive_service.md) | Injection token for the [WchEditableDirectiveService](./ng-edit-api.wcheditabledirectiveservice.md) |
-|  [WCH\_TOKEN\_EDITABLE\_PLACEHOLDER\_DIRECTIVE\_SERVICE](./ng-edit-api.wch_token_editable_placeholder_directive_service.md) | Injection token for the [WchEditablePlaceholderDirectiveService](./ng-edit-api.wcheditableplaceholderdirectiveservice.md) |
 |  [WCH\_TOKEN\_INLINE\_EDIT\_PROVIDER](./ng-edit-api.wch_token_inline_edit_provider.md) | Injection token for the inline edit provider |
 |  [WCH\_TOKEN\_INLINE\_EDIT\_SELECTED\_CELL\_CONSUMER](./ng-edit-api.wch_token_inline_edit_selected_cell_consumer.md) | Consumer for inline edit selections |
 |  [WCH\_TOKEN\_INLINE\_EDIT\_SELECTION\_PROVIDER](./ng-edit-api.wch_token_inline_edit_selection_provider.md) | Provides information about the inline edit selection |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_SERVICE](./ng-edit-api.wch_token_inline_edit_service.md) |  |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_URL](./ng-edit-api.wch_token_inline_edit_url.md) |  |
+|  [WCH\_TOKEN\_INLINE\_EDIT\_SERVICE](./ng-edit-api.wch_token_inline_edit_service.md) | Token used to inject the <code>WchInlineEditServiceV2</code> service. |
+|  [WCH\_TOKEN\_INLINE\_EDIT\_URL](./ng-edit-api.wch_token_inline_edit_url.md) | Injection token for the inline edit URL |
 |  [WCH\_TOKEN\_PLACEHOLDER\_PROVIDER](./ng-edit-api.wch_token_placeholder_provider.md) |  |
-|  [WCH\_TOKEN\_SELECTABLE\_DIRECTIVE\_SERVICE](./ng-edit-api.wch_token_selectable_directive_service.md) | Injection token for the [WchSelectableDirectiveService](./ng-edit-api.wchselectabledirectiveservice.md) |
 |  [WCH\_TOKEN\_WCH\_CONFIG](./ng-edit-api.wch_token_wch_config.md) | Injection token for the wch config |
 
 ## Type Aliases

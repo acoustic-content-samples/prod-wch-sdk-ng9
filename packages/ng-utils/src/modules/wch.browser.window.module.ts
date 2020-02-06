@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { WINDOW_PROVIDERS } from '../services/window/window.service';
+import { BROWSER_WINDOW_PROVIDERS } from '../services/window/window.service';
 
 /**
- * Exposes the window as the `WCH_TOKEN_WINDOW` token
+ * Exposes the window as the `WCH_TOKEN_WINDOW` token for the case
+ * that the application runs in the browser (as opposed to running
+ * on the server via Angular Universal)
  */
 @NgModule({
   imports: [CommonModule],
-  providers: [...WINDOW_PROVIDERS]
+  providers: [...BROWSER_WINDOW_PROVIDERS]
 })
 export class WchNgBrowserWindowModule {}

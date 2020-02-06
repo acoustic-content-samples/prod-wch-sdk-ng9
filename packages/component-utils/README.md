@@ -2,4 +2,6 @@
 
 Framework independent collection of utility functions to implement services and components for sites next.
 
-[API Documentation](./markdown/component-utils.md)
+## Table of Contents
+
+- [API Documentation](./markdown/component-utils.md)

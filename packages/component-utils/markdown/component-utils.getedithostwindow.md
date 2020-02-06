@@ -4,7 +4,7 @@
 
 ## getEditHostWindow() function
 
-Returns the window that controls the application
+Returns the window that controls the application. This is either the parent window or the opener window.
 
 <b>Signature:</b>
 

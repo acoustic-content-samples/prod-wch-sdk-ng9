@@ -1,8 +1,29 @@
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { isEqual } from '@acoustic-content-sdk/utils';
+import { isEqual, pluckProperty } from '@acoustic-content-sdk/utils';
 
 /**
- * Returns the window that controls the application
+ * Selects the origin from the window
+ */
+const selectOrigin = pluckProperty<any, 'origin'>('origin');
+
+/**
+ * Validates that the origin of both windows is the same, otherwise throws an exception
+ *
+ * @param aLeft  - left window to check
+ * @param aRight - right window to check
+ */
+export function assertSameOrigin(aLeft: WindowType, aRight: WindowType) {
+  // quick check
+  if (!isEqual(aLeft, aRight)) {
+    // check
+    const leftOrigin = selectOrigin(aLeft);
+    const rightOrigin = selectOrigin(aRight);
+  }
+}
+
+/**
+ * Returns the window that controls the application. This is either the parent
+ * window or the opener window.
  *
  * @param aCurrentWindow - the current window
  * @returns the controlling window

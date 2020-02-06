@@ -1,7 +1,7 @@
-import { createVersionString, LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService } from '@acoustic-content-sdk/api';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { WCH_TOKEN_PLACEHOLDER_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
 
@@ -26,10 +26,7 @@ export class WchPlaceholderProviderModule {
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
-    // log the existence of this service
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
-    const logger = logSvc.get(LOGGER);
-    // log this
-    logger.info(MODULE, createVersionString(VERSION));
+    // log module startup
+    logModule(VERSION, MODULE, aLoggerService);
   }
 }

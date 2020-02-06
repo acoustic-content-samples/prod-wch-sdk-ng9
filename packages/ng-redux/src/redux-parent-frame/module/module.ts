@@ -17,6 +17,8 @@ const LOGGER = 'WchNgParentFrameReduxStoreModule';
  * Module that exposes an implementation of `WCH_TOKEN_REDUX_STORE`. The implementation
  * accesses the store from the parent iframe. Prerequisite is that the parent (the shell)
  * and the application that uses this module run on the same origin.
+ *
+ * Depends on: `WCH_TOKEN_EDIT_HOST_WINDOW`
  */
 @NgModule({
   imports: [CommonModule, RouterModule],
