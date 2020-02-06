@@ -20,5 +20,5 @@ export declare class WchNgAppPreviewModule
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(aLoggerService)](./ng-app-preview.wchngapppreviewmodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgAppPreviewModule</code> class |
+|  [(constructor)(aCurrentWindow, aHostWindow, aLoggerService)](./ng-app-preview.wchngapppreviewmodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgAppPreviewModule</code> class |
 

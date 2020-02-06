@@ -4,6 +4,8 @@
 
 ## ng-redux package
 
+Implementation of Angular providers based on Redux.
+
 ## Classes
 
 |  Class | Description |
@@ -15,7 +17,7 @@
 |  [WchNgReduxHbsModule](./ng-redux.wchngreduxhbsmodule.md) |  |
 |  [WchNgReduxLayoutMappingModule](./ng-redux.wchngreduxlayoutmappingmodule.md) |  |
 |  [WchNgReduxLayoutModule](./ng-redux.wchngreduxlayoutmodule.md) |  |
-|  [WchNgReduxModule](./ng-redux.wchngreduxmodule.md) |  |
+|  [WchNgReduxModule](./ng-redux.wchngreduxmodule.md) | Module that provides the SDK services based on a redux store implementation.<!-- -->Depends on: <code>WCH_TOKEN_REDUX_STORE</code> |
 |  [WchNgReduxPageModule](./ng-redux.wchngreduxpagemodule.md) |  |
 |  [WchNgReduxSiteModule](./ng-redux.wchngreduxsitemodule.md) |  |
 |  [WchNgReduxStoreModule](./ng-redux.wchngreduxstoremodule.md) |  |

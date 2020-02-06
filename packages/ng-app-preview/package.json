@@ -29,8 +29,11 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/component-api": "9.0.0",
+    "@acoustic-content-sdk/component-utils": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-edit": "9.0.0",
+    "@acoustic-content-sdk/ng-edit-api": "9.0.0",
     "@acoustic-content-sdk/ng-hbs-edit": "9.0.0",
     "@acoustic-content-sdk/ng-redux": "9.0.0",
     "@acoustic-content-sdk/ng-utils": "9.0.0",
@@ -52,8 +55,11 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
+        "@acoustic-content-sdk/component-utils": "acoustic-content-sdk.component-utils",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-edit": "acoustic-content-sdk.ng-edit",
+        "@acoustic-content-sdk/ng-edit-api": "acoustic-content-sdk.ng-edit-api",
         "@acoustic-content-sdk/ng-hbs-edit": "acoustic-content-sdk.ng-hbs-edit",
         "@acoustic-content-sdk/ng-redux": "acoustic-content-sdk.ng-redux",
         "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",

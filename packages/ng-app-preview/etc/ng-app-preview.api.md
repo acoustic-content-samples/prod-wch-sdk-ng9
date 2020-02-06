@@ -5,6 +5,7 @@
 ```ts
 
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
 export const VERSION: {
@@ -18,7 +19,7 @@ export const VERSION: {
 
 // @public
 export class WchNgAppPreviewModule {
-    constructor(aLoggerService: LoggerService);
+    constructor(aCurrentWindow: WindowType, aHostWindow: WindowType, aLoggerService: LoggerService);
 }
 
 

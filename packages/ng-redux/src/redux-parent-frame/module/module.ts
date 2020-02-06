@@ -1,9 +1,9 @@
-import { createVersionString, LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService } from '@acoustic-content-sdk/api';
 import { getStoreFromParent } from '@acoustic-content-sdk/component-redux';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { WCH_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
 import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -39,11 +39,7 @@ export class WchNgParentFrameReduxStoreModule {
     private pageSelectionService: PageSelectionService,
     @Optional() @Inject(WCH_TOKEN_LOGGER_SERVICE) aLogSvc: LoggerService
   ) {
-    // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
-    // construct a logger
-    const logger = logSvc.get(LOGGER);
-    // verify that we have the page selection service
-    logger.info(MODULE, createVersionString(VERSION));
+    // log module startup
+    logModule(VERSION, MODULE, aLogSvc);
   }
 }

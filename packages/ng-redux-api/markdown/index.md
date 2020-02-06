@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng-redux](./ng-redux.md) | Implementation of Angular providers based on Redux. |
+|  [@acoustic-content-sdk/ng-redux-api](./ng-redux-api.md) | Interfaces and DI tokens for the Angular binding to Redux for the Acoustic Content SDK. |
 

@@ -15,6 +15,11 @@ import { WchNgReduxTypeModule } from './type.module';
 import { WchNgReduxUrlConfigModule } from './url.config.module';
 import { WchNgReduxWchConfigModule } from './wch.config.module';
 
+/**
+ * Module that provides the SDK services based on a redux store implementation.
+ *
+ * Depends on: `WCH_TOKEN_REDUX_STORE`
+ */
 @NgModule({
   imports: [
     CommonModule,

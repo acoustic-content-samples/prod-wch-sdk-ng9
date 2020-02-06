@@ -9,12 +9,14 @@ Constructs a new instance of the `WchNgAppPreviewModule` class
 <b>Signature:</b>
 
 ```typescript
-constructor(aLoggerService: LoggerService);
+constructor(aCurrentWindow: WindowType, aHostWindow: WindowType, aLoggerService: LoggerService);
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
+|  aCurrentWindow | <code>WindowType</code> |  |
+|  aHostWindow | <code>WindowType</code> |  |
 |  aLoggerService | <code>LoggerService</code> |  |
 

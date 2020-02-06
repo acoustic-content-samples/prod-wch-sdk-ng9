@@ -1,10 +1,10 @@
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { isEqual, pluckProperty } from '@acoustic-content-sdk/utils';
+import { isEqual, pluckPath } from '@acoustic-content-sdk/utils';
 
 /**
  * Selects the origin from the window
  */
-const selectOrigin = pluckProperty<any, 'origin'>('origin');
+const selectOrigin = pluckPath<string>(['location', 'origin']);
 
 /**
  * Validates that the origin of both windows is the same, otherwise throws an exception
@@ -18,6 +18,11 @@ export function assertSameOrigin(aLeft: WindowType, aRight: WindowType) {
     // check
     const leftOrigin = selectOrigin(aLeft);
     const rightOrigin = selectOrigin(aRight);
+    // test the origin
+    if (!isEqual(leftOrigin, rightOrigin)) {
+      // bail out
+      throw new Error(`Origin [${leftOrigin}] does not match [${rightOrigin}]`);
+    }
   }
 }
 

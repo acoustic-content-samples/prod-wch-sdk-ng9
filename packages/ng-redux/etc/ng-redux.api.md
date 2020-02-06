@@ -66,7 +66,7 @@ export class WchNgReduxLayoutMappingModule {
 export class WchNgReduxLayoutModule {
 }
 
-// @public (undocumented)
+// @public
 export class WchNgReduxModule {
 }
 
@@ -95,7 +95,5 @@ export class WchNgReduxUrlConfigModule {
 export class WchNgReduxWchConfigModule {
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

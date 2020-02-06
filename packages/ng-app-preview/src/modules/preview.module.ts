@@ -1,11 +1,17 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { WindowType } from '@acoustic-content-sdk/component-api';
+import { assertSameOrigin } from '@acoustic-content-sdk/component-utils';
+import {
+  WCH_TOKEN_LOGGER_SERVICE,
+  WCH_TOKEN_WINDOW
+} from '@acoustic-content-sdk/ng-api';
 import {
   WchNgEditDirectivesModule,
   WchNgInlineEditSelectionModule,
   WchNgInlineEditServiceModule,
   WchNgParentInlineEditProviderModule
 } from '@acoustic-content-sdk/ng-edit';
+import { WCH_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
 import { WchNgHbsEditModule } from '@acoustic-content-sdk/ng-hbs-edit';
 import {
   WchNgParentFrameReduxStoreModule,
@@ -42,11 +48,17 @@ import { MODULE, VERSION } from '../version';
 })
 export class WchNgAppPreviewModule {
   constructor(
+    @Inject(WCH_TOKEN_WINDOW)
+    aCurrentWindow: WindowType,
+    @Inject(WCH_TOKEN_EDIT_HOST_WINDOW)
+    aHostWindow: WindowType,
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log this module
     logModule(VERSION, MODULE, aLoggerService);
+    // validate same origin
+    assertSameOrigin(aCurrentWindow, aHostWindow);
   }
 }
