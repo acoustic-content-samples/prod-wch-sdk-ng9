@@ -1,0 +1,4 @@
+{{~#if backgroundColor.colorCode}} background-color: {{backgroundColor.colorCode}}; {{/if}}
+{{~#eq includeBackgroundImage true~}}
+background-image=url("{{$context.hub.resourceUrl.origin}}{{image.renditions.default.url}}"); {{#eq background.fillOptions 'center'}}background-size:contain; background-repeat:no-repeat; background-position:center; {{/eq}} {{#eq background.fillOptions 'tile'}}background-repeat:repeat; {{/eq}} {{#eq background.fillOptions 'full-width'}}background-size:cover; background-repeat:no-repeat; {{/eq}}
+{{~/eq~}}

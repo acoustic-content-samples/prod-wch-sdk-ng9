@@ -1,0 +1,17 @@
+{
+  "name": "sitesBackgroundLayout",
+  "id": "sites-background-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-background-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-background-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_752c49478323083eb44023d10c97603e"
+  },
+  "urlTemplate": "{templateLocation}/sites-background-layout/{id}.html",
+  "rev": "0-a9a86bfb-bfc9-4ec4-a0fa-7aa6d09eebe9"
+}

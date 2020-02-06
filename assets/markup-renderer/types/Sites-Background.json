@@ -1,0 +1,64 @@
+{
+  "name": "Sites Background",
+  "description": "This element controls the background styling for a given block",
+  "id": "0a92059b-de6b-476d-b291-1638a435d0af",
+  "classification": "content-type",
+  "contentThumbnail": {
+    "imageElement": "image",
+    "source": "imageElementOrType"
+  },
+  "elements": [
+    {
+      "elementType": "group",
+      "key": "backgroundColor",
+      "helpText": "This element controls the background color for this item",
+      "label": "Background Color",
+      "typeRef": {
+        "name": "Sites Color",
+        "id": "93ed78a8-cea7-4188-8584-a8bedca6ebac"
+      }
+    },
+    {
+      "elementType": "toggle",
+      "helpText": "This element controls if the background image is shown or not",
+      "key": "includeBackgroundImage",
+      "label": "Include background image"
+    },
+    {
+      "elementType": "image",
+      "helpText": "The background image",
+      "key": "image",
+      "label": "Image"
+    },
+    {
+      "elementType": "optionselection",
+      "helpText": "This element controls the fill behavior applied to the bakground image",
+      "key": "fillOptions",
+      "label": "Fill",
+      "options": [
+        {
+          "label": "Full Width",
+          "selection": "full-width"
+        },
+        {
+          "label": "Center",
+          "selection": "center"
+        },
+        {
+          "label": "Tile",
+          "selection": "tile"
+        }
+      ]
+    },
+    {
+      "elementType": "text",
+      "helpText": "This element is used to uniquely identify this element in the current content item",
+      "key": "key",
+      "label": "Key"
+    }
+  ],
+  "kind": ["embedded"],
+  "status": "ready",
+  "tags": ["sites-next"],
+  "rev": "0-d2cce459-3375-43a8-ad5c-b7a56addbd03"
+}

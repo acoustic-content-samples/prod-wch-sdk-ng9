@@ -1,0 +1,17 @@
+{
+  "name": "sitesBoundaryLayout",
+  "id": "sites-boundary-layout",
+  "classification": "layout",
+  "prerender": false,
+  "tags": [
+    "sites-next"
+  ],
+  "template": "/templates/sites-boundary-layout.hbs",
+  "templateType": "handlebars",
+  "thumbnail": {
+    "path": "/dxauth/thumbnails/layouts/sites-boundary-layout.jpg",
+    "url": "/authoring/v1/resources/a9b7575381cd03962dbe81e4116c8663_d203646ea2606cf277f6a3974d0ca768"
+  },
+  "urlTemplate": "{templateLocation}/sites-boundary-layout/{id}.html",
+  "rev": "0-05003f6f-7ffd-439e-8324-3b56e49dc6b8"
+}
