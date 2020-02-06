@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/react-redux-api](./react-redux-api.md) | Collection of APIs and constants for the React SDK for redux. |
+|  [@acoustic-content-sdk/react-edit-api](./react-edit-api.md) | Collection of APIs and constants for the React SDK in edit mode. |
 

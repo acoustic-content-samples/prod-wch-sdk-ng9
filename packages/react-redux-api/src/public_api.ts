@@ -1,5 +1,5 @@
 /**
- * API constants for React contexts.
+ * Collection of APIs and constants for the React SDK for redux.
  *
  * @packageDocumentation
  */
