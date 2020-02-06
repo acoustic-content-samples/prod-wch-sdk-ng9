@@ -13,6 +13,7 @@ import { env } from 'process';
 import { parseKey } from 'sshpk';
 import { parse } from 'url';
 import { promisify } from 'util';
+
 import {
   assertHasTrailingSlash,
   assertIsValidUserName,
@@ -173,16 +174,20 @@ function _createCredentials(aUserName: string, aPassword: string): Credentials {
   };
 }
 
-const ENV_USERNAME = 'ibm_wch_sdk_cli_username';
-const ENV_PASSWORD = 'ibm_wch_sdk_cli_password';
-const ENV_API_URL = 'ibm_wch_sdk_cli_url';
+const OLD_ENV_USERNAME = 'ibm_wch_sdk_cli_username';
+const OLD_ENV_PASSWORD = 'ibm_wch_sdk_cli_password';
+const OLD_ENV_API_URL = 'ibm_wch_sdk_cli_url';
+
+const ENV_USERNAME = 'acoustic_content_sdk_cli_username';
+const ENV_PASSWORD = 'acoustic_content_sdk_cli_password';
+const ENV_API_URL = 'acoustic_content_sdk_cli_url';
 
 function _getCredentialsFromEnvironment(aOptions: Context): Credentials {
   // log
   const logger = aOptions.logger;
   // access the credentials from the environment
-  const username = env[ENV_USERNAME] || '';
-  const password = env[ENV_PASSWORD] || '';
+  const username = env[ENV_USERNAME] || env[OLD_ENV_USERNAME] || '';
+  const password = env[ENV_PASSWORD] || env[OLD_ENV_PASSWORD] || '';
   // construct
   const res: Credentials = { username, password };
   // log this
@@ -387,7 +392,9 @@ function _writeCredentials(
   // fix the base URL
   const wchToolsOptions: WchToolsOptions = {
     ...aWchToolsOptions,
-    baseUrl: ensureTrailingSlash(aWchToolsOptions.baseUrl || env[ENV_API_URL])
+    baseUrl: ensureTrailingSlash(
+      aWchToolsOptions.baseUrl || env[ENV_API_URL] || env[OLD_ENV_API_URL]
+    )
   };
   // logger
   const logger = opts.logger;
@@ -420,7 +427,7 @@ function _removeCredentials(
   // resolve the options
   const opts = _resolveOptions(aOptions);
   // url fallback
-  const apiUrl = aApiUrl || env[ENV_API_URL];
+  const apiUrl = aApiUrl || env[ENV_API_URL] || env[OLD_ENV_API_URL];
   // current credentials
   const currentCred$: Promise<StoredCredentials> = _loadStoredCredentials(opts);
   // update the credentials
@@ -727,7 +734,7 @@ export function wchGetCredentials(
   // resolve the options
   const opts = _resolveOptions(aOptions);
   // url fallback
-  const apiUrl = aApiUrl || env[ENV_API_URL];
+  const apiUrl = aApiUrl || env[ENV_API_URL] || env[OLD_ENV_API_URL];
   assertNotNull(apiUrl, 'apiUrl');
   // return
   return _getStoredCredentials(apiUrl, opts)
