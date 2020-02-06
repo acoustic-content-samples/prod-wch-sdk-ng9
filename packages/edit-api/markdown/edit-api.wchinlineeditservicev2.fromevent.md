@@ -22,3 +22,5 @@ fromEvent<T>(aName: string): Observable<T>;
 
 `Observable<T>`
 
+a stream of events
+

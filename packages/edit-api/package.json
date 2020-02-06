@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/edit-api",
   "version": "9.0.0",
-  "description": "> TODO: description",
+  "description": "The edit API defines interfaces for consumers and providers of inline edit functionality.",
   "keywords": [
     "acoustic",
     "acoustic-content",

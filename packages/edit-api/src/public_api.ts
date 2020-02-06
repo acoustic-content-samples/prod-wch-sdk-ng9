@@ -1,4 +1,10 @@
 /* Copyright IBM Corp. 2018 */
+/**
+ * The edit API defines interfaces for consumers and providers of inline edit functionality.
+ *
+ * @packageDocumentation
+ */
+
 export * from './dnd/dnd';
 export {
   AccessorType,

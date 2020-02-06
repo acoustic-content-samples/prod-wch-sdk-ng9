@@ -52,7 +52,7 @@ export const EVENT_INLINE_EDIT_START = "EVENT_INLINE_EDIT_START";
 // @public (undocumented)
 export type EventTargetLike = Parameters<typeof fromEvent>[0];
 
-// @public (undocumented)
+// @public
 export const INLINE_EDIT_PROVIDER_ID = "@acoustic-content-sdk/inline-edit-provider";
 
 // @public
@@ -115,25 +115,24 @@ export interface WchInlineEditEvent {
     type: string;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 export interface WchInlineEditProvider {
     // (undocumented)
     register: WchInlineEditRegistration;
 }
 
-// @public (undocumented)
+// @public
 export interface WchInlineEditProviderV2 {
-    // (undocumented)
     register: WchInlineEditRegistrationV2;
 }
 
-// @public (undocumented)
+// @public @deprecated (undocumented)
 export type WchInlineEditRegistration = (nativeElement: any, accessor: AccessorType, onRenderingContext: Observable<RenderingContext>) => WchInlineEditRegistrationResult;
 
-// @public (undocumented)
-export type WchInlineEditRegistrationResult = EventTargetLike | EventTargetLike & Disposable;
+// @public
+export type WchInlineEditRegistrationResult = EventTargetLike | (EventTargetLike & Disposable);
 
-// @public (undocumented)
+// @public
 export type WchInlineEditRegistrationV2 = (nativeElement: any, accessor: AccessorType, renderingContext$: Observable<RenderingContextV2>) => WchInlineEditRegistrationResult;
 
 // @public
@@ -180,7 +179,5 @@ export interface WchInlineEditServiceV2 {
     registerComponent(nativeElement: any, accessor: AccessorType, renderingContext$: Observable<RenderingContextV2>): Observable<EventTargetLike>;
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

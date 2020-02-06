@@ -49,6 +49,8 @@ export interface WchSelectableDirectiveService {
 
 /**
  * Injection token for the {@link WchSelectableDirectiveService}
+ *
+ * @internal
  */
 export const WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE = new InjectionToken<
   WchSelectableDirectiveService

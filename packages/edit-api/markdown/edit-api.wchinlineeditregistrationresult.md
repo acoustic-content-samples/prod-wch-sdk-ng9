@@ -4,8 +4,10 @@
 
 ## WchInlineEditRegistrationResult type
 
+Result of an inline edit registration. This is at least an event emitter but may optionally also expose the `Disposable` interface to allow deregistration
+
 <b>Signature:</b>
 
 ```typescript
-export declare type WchInlineEditRegistrationResult = EventTargetLike | EventTargetLike & Disposable;
+export declare type WchInlineEditRegistrationResult = EventTargetLike | (EventTargetLike & Disposable);
 ```

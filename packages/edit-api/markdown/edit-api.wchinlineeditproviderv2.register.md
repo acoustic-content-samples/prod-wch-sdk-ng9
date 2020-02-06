@@ -4,6 +4,8 @@
 
 ## WchInlineEditProviderV2.register property
 
+The register method that allows to register DOM elements with the provider
+
 <b>Signature:</b>
 
 ```typescript

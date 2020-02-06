@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/edit-api](./edit-api.md) | The edit API defines interfaces for consumers and providers of inline edit functionality. |
+|  [@acoustic-content-sdk/ng-edit](./ng-edit.md) |  |
 

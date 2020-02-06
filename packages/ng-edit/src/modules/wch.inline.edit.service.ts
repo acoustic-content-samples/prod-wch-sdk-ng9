@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 import { WchInternalEditService } from '../services/wch.internal.edit.service';
 
 /**
- * Implementation of the {@link WchInlineEditService} that loads the inline edit library and allows
+ * Implementation of the `WchInlineEditServiceV2` that loads the inline edit library and allows
  * to attach to that library.
  */
 @Injectable()

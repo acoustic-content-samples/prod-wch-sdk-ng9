@@ -9,6 +9,9 @@ import { InjectionToken } from '@angular/core';
 export const DEFAULT_INLINE_EDIT_URL =
   '${authoringUIBaseUrl.protocol}//${authoringUIBaseUrl.host}/authoring-sites-ui/inline-edit/inline-edit.js';
 
+/**
+ * Injection token for the inline edit URL
+ */
 export const WCH_TOKEN_INLINE_EDIT_URL = new InjectionToken<
   StaticHubInfoUrlProvider
 >('WCH_TOKEN_INLINE_EDIT_URL');

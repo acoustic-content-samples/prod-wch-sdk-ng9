@@ -4,7 +4,7 @@
 
 ## WchInlineEditRequireMapV2 interface
 
-Helper interface that defines the mappings from module name to actual type
+Helper interface that defines the mappings from module name to actual type. This is a simple dependency injection mechanism from the inline edit host to the inline edit provider.
 
 <b>Signature:</b>
 

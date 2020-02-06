@@ -5,6 +5,7 @@ import {
 import { Generator } from '@acoustic-content-sdk/utils';
 import { InjectionToken, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { WchPlaceholder } from '../interfaces/placeholder';
 import {
   WchEditableDirectiveInput,
@@ -51,6 +52,8 @@ export interface WchEditablePlaceholderDirectiveOutput
 
 /**
  * Service that returns an instance of the editable directive
+ *
+ * @internal
  */
 export interface WchEditablePlaceholderDirectiveService {
   /**
@@ -79,6 +82,8 @@ export interface WchEditablePlaceholderDirectiveService {
 
 /**
  * Injection token for the {@link WchEditablePlaceholderDirectiveService}
+ *
+ * @internal
  */
 export const WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE = new InjectionToken<
   WchEditablePlaceholderDirectiveService

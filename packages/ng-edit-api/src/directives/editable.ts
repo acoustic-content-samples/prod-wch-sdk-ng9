@@ -62,6 +62,8 @@ export interface WchEditableDirectiveOutput {
 
 /**
  * Service that returns an instance of the editable directive
+ *
+ * @internal
  */
 export interface WchEditableDirectiveService {
   /**
@@ -88,6 +90,8 @@ export interface WchEditableDirectiveService {
 
 /**
  * Injection token for the {@link WchEditableDirectiveService}
+ *
+ * @internal
  */
 export const WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE = new InjectionToken<
   WchEditableDirectiveService

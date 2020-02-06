@@ -4,6 +4,8 @@
 
 ## edit-api package
 
+The edit API defines interfaces for consumers and providers of inline edit functionality.
+
 ## Interfaces
 
 |  Interface | Description |
@@ -15,9 +17,9 @@
 |  [WchEditableEvent](./edit-api.wcheditableevent.md) | Event issued by the edit provider. |
 |  [WchInlineEditEvent](./edit-api.wchinlineeditevent.md) | Event issued by the edit library |
 |  [WchInlineEditProvider](./edit-api.wchinlineeditprovider.md) |  |
-|  [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) |  |
+|  [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) | Interface exposed by an inline edit provider implementation<!-- -->Implementors may also implement <code>EventTargetLike</code> to send item independent events |
 |  [WchInlineEditRequireMap](./edit-api.wchinlineeditrequiremap.md) | Helper interface that defines the mappings from module name to actual type |
-|  [WchInlineEditRequireMapV2](./edit-api.wchinlineeditrequiremapv2.md) | Helper interface that defines the mappings from module name to actual type |
+|  [WchInlineEditRequireMapV2](./edit-api.wchinlineeditrequiremapv2.md) | Helper interface that defines the mappings from module name to actual type. This is a simple dependency injection mechanism from the inline edit host to the inline edit provider. |
 |  [WchInlineEditService](./edit-api.wchinlineeditservice.md) | Implementation of the edit service used by the wchEditable directive. |
 |  [WchInlineEditServiceV2](./edit-api.wchinlineeditservicev2.md) | Implementation of the edit service used by the wchEditable directive. |
 
@@ -31,7 +33,7 @@
 |  [EVENT\_INLINE\_EDIT\_END](./edit-api.event_inline_edit_end.md) |  |
 |  [EVENT\_INLINE\_EDIT\_SET\_SELECTED\_CELL](./edit-api.event_inline_edit_set_selected_cell.md) |  |
 |  [EVENT\_INLINE\_EDIT\_START](./edit-api.event_inline_edit_start.md) |  |
-|  [INLINE\_EDIT\_PROVIDER\_ID](./edit-api.inline_edit_provider_id.md) |  |
+|  [INLINE\_EDIT\_PROVIDER\_ID](./edit-api.inline_edit_provider_id.md) | Identifier used to identify an [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) instance on a context, e.g. the window |
 |  [TRANSFER\_FORMAT](./edit-api.transfer_format.md) | Transfer format for our custom dnd components |
 |  [VERSION](./edit-api.version.md) | Version and build number of the package |
 |  [WCH\_ACTIVE\_PAGE\_MODULE](./edit-api.wch_active_page_module.md) | Token used to require the active page service PromiseLike<ActivePage> |
@@ -44,11 +46,11 @@
 
 |  Type Alias | Description |
 |  --- | --- |
-|  [AccessorType](./edit-api.accessortype.md) | the accessor |
+|  [AccessorType](./edit-api.accessortype.md) | The accessor string, a property path relative to the root of a content item that points to the element value to be edited. A value of <code>null</code> denotes the root level element. |
 |  [EventTargetLike](./edit-api.eventtargetlike.md) |  |
 |  [WchInlineEditRegistration](./edit-api.wchinlineeditregistration.md) |  |
-|  [WchInlineEditRegistrationResult](./edit-api.wchinlineeditregistrationresult.md) |  |
-|  [WchInlineEditRegistrationV2](./edit-api.wchinlineeditregistrationv2.md) |  |
+|  [WchInlineEditRegistrationResult](./edit-api.wchinlineeditregistrationresult.md) | Result of an inline edit registration. This is at least an event emitter but may optionally also expose the <code>Disposable</code> interface to allow deregistration |
+|  [WchInlineEditRegistrationV2](./edit-api.wchinlineeditregistrationv2.md) | Type definition of the register method that allows to register DOM elements with an inline edit provider. |
 |  [WchInlineEditRequire](./edit-api.wchinlineeditrequire.md) | Interface of the require function, strongly typed |
 |  [WchInlineEditRequireV2](./edit-api.wchinlineeditrequirev2.md) | Interface of the require function, strongly typed |
 

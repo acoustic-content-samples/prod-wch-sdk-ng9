@@ -1,8 +1,4 @@
-import {
-  createVersionString,
-  Logger,
-  LoggerService
-} from '@acoustic-content-sdk/api';
+import { Logger, LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 import {
   INLINE_EDIT_PROVIDER_ID,
@@ -16,6 +12,7 @@ import {
 import {
   createObservableAdaptor,
   isNil,
+  logModule,
   NOOP_LOGGER_SERVICE
 } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
@@ -26,6 +23,15 @@ import { MODULE, VERSION } from './../version';
 
 const LOGGER = 'WchNgParentInlineEditProviderModule';
 
+/**
+ * Accesses the `WchInlineEditProviderV2` from another window. This other window
+ * must be enabled for cross frame access.
+ *
+ * @param aHostWindow - the parent window
+ * @param logger - logger
+ *
+ * @returns an observable of the inline edit provider
+ */
 export function internalGetInlineEditProvider(
   aHostWindow: WindowType,
   logger: Logger
@@ -42,20 +48,29 @@ export function internalGetInlineEditProvider(
     // error
     return throwError(new Error(msg));
   }
-  // get parent
+  /**
+   * Access the object from the parent window. We make sure
+   * to wrap the `Subscribable` into an `Observable` using
+   * the rxjs implementation in the current frame
+   */
   return from(createObservableAdaptor(provider));
 }
 
 /**
- * Accesses the `WchInlineEditProviderV2` from the parent window.
+ * Accesses the `WchInlineEditProviderV2` from another window. This other window
+ * must be enabled for cross frame access. The provider must be available via the `INLINE_EDIT_PROVIDER_ID` key
+ * on that window.
  *
- * @param aHostWindow
- * @param aLogSvc
+ * @param aHostWindow - the parent window
+ * @param aLogSvc - logger
+ *
+ * @returns an observable of the inline edit provider
  */
 export function getInlineEditProvider(
   aHostWindow: WindowType,
   aLogSvc: LoggerService
 ): Observable<WchInlineEditProviderV2> {
+  // setup some logging
   const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
   const logger = logSvc.get(LOGGER);
   // dispatch
@@ -63,7 +78,10 @@ export function getInlineEditProvider(
 }
 
 /**
- * Exposes the inline edit provider `WCH_TOKEN_INLINE_EDIT_PROVIDER` from the parent frame
+ * Exposes the inline edit provider `WCH_TOKEN_INLINE_EDIT_PROVIDER` from the parent frame. The provider
+ * must be exposed via the `INLINE_EDIT_PROVIDER_ID` constant.
+ *
+ * Depends on: `WCH_TOKEN_EDIT_HOST_WINDOW`, `WCH_TOKEN_LOGGER_SERVICE`
  */
 @NgModule({
   imports: [CommonModule],
@@ -85,9 +103,6 @@ export class WchNgParentInlineEditProviderModule {
     aLoggerService: LoggerService
   ) {
     // log the existence of this service
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
-    const logger = logSvc.get(LOGGER);
-    // log this
-    logger.info(MODULE, createVersionString(VERSION));
+    logModule(VERSION, MODULE, aLoggerService);
   }
 }

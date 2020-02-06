@@ -31,8 +31,9 @@ export interface WchInlineEditServiceV2 {
   /**
    * Attaches to an event issued by the edit library
    *
-   *
    * @param aName - name of the event
+   *
+   * @returns a stream of events
    */
   fromEvent<T>(aName: string): Observable<T>;
 }

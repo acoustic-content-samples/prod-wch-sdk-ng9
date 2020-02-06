@@ -4,7 +4,7 @@
 
 ## AccessorType type
 
-the accessor
+The accessor string, a property path relative to the root of a content item that points to the element value to be edited. A value of `null` denotes the root level element.
 
 <b>Signature:</b>
 

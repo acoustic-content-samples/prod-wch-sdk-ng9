@@ -6,10 +6,10 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   AccessorType,
-  EventTargetLike,
   EVENT_INLINE_EDIT_END,
   EVENT_INLINE_EDIT_SET_SELECTED_CELL,
   EVENT_INLINE_EDIT_START,
+  EventTargetLike,
   WchInlineEditEvent,
   WchInlineEditProviderV2,
   WchInlineEditRegistrationResult,
@@ -46,6 +46,7 @@ import {
   takeUntil,
   tap
 } from 'rxjs/operators';
+
 import { EMPTY_WCH_INLINE_EDIT_SERVICE } from './empty.inlint.edit.service';
 import { getInlineEditSelection } from './inline.edit.selection';
 
@@ -151,7 +152,7 @@ const createSelectionEvent = (data: string): WchInlineEditEvent =>
   createWchInlineEditEvent(EVENT_INLINE_EDIT_SET_SELECTED_CELL, data);
 
 /**
- * Implementation of the {@link AbstractWchInlineEditService} that loads the inline edit library and allows
+ * Implementation of the `WchInlineEditServiceV2 that loads the inline edit library and allows
  * to attach to that library.
  */
 export class AbstractWchInlineEditService

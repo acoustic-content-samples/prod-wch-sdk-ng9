@@ -4,6 +4,8 @@
 
 ## WchInlineEditRegistrationV2 type
 
+Type definition of the register method that allows to register DOM elements with an inline edit provider.
+
 <b>Signature:</b>
 
 ```typescript

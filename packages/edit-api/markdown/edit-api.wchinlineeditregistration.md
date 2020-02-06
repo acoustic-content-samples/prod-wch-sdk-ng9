@@ -4,6 +4,11 @@
 
 ## WchInlineEditRegistration type
 
+> Warning: This API is now obsolete.
+> 
+> use [WchInlineEditRegistrationV2](./edit-api.wchinlineeditregistrationv2.md) instead
+> 
+
 <b>Signature:</b>
 
 ```typescript

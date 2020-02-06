@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 import { EventTargetLike } from './../provider/inline.edit.provider';
 
 /**
- * the accessor
+ * The accessor string, a property path relative to the root of a
+ * content item that points to the element value to be edited. A value of `null` denotes
+ * the root level element.
  */
 export type AccessorType = string | null;
 
@@ -35,8 +37,9 @@ export interface WchInlineEditService {
   /**
    * Attaches to an event issued by the edit library
    *
-   *
    * @param aName - name of the event
+   *
+   * @returns a stream of events
    */
   fromEvent<T>(aName: string): Observable<T>;
 }

@@ -1,14 +1,12 @@
 import {
   ActivePageV2,
   LoggerService,
-  UrlConfig,
-  WchHttp
+  UrlConfig
 } from '@acoustic-content-sdk/api';
 
 import {
   WCH_ACTIVE_PAGE_MODULE,
   WCH_CONFIG_MODULE,
-  WCH_HTTP_MODULE,
   WCH_INFO_MODULE,
   WCH_LOGGER_MODULE
 } from './../../modules/modules';
@@ -16,7 +14,8 @@ import { WchConfig } from './../../modules/wch.config';
 
 /**
  * Helper interface that defines the mappings
- * from module name to actual type
+ * from module name to actual type. This is a simple
+ * dependency injection mechanism from the inline edit host to the inline edit provider.
  */
 export interface WchInlineEditRequireMapV2 {
   //  [WCH_HTTP_MODULE]: PromiseLike<WchHttp>;

@@ -4,6 +4,8 @@
 
 ## INLINE\_EDIT\_PROVIDER\_ID variable
 
+Identifier used to identify an [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) instance on a context, e.g. the window
+
 <b>Signature:</b>
 
 ```typescript

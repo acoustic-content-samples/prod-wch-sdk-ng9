@@ -4,6 +4,11 @@
 
 ## WchInlineEditProvider interface
 
+> Warning: This API is now obsolete.
+> 
+> use [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) instead
+> 
+
 <b>Signature:</b>
 
 ```typescript
