@@ -47,7 +47,7 @@ describe('markup.renderer', () => {
   store.dispatch(setUrlConfigAction(DEFAULT_URL_CONFIG));
   store.dispatch(loggedInAction());
 
-  fit('should render an embedded content item', () => {
+  it('should render an embedded content item', () => {
     // accessor
     const ACCESSOR =
       'elements.rows.values[0].cells.values[0].content.values[0].hbText.value';

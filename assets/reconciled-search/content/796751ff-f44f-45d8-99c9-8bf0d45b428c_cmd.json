@@ -1,0 +1,130 @@
+{
+  "rev": "9-bb368349fbdc78e72430bb59086f55ab",
+  "keywords": [],
+  "kind": ["page"],
+  "created": "2019-12-03T14:28:28.396Z",
+  "creatorId": "d78828d3-6476-4b35-af2f-c157b56c5511",
+  "description": "",
+  "classification": "content",
+  "type": "Sites Rows",
+  "locale": "en",
+  "tags": ["sites-page-template", "local"],
+  "selectedLayouts": [{ "layout": { "id": "sites-rows-layout" } }],
+  "elements": {
+    "descriptor": {
+      "elementType": "group",
+      "value": {
+        "description": { "elementType": "text" },
+        "site": {
+          "elementType": "reference",
+          "value": {
+            "creatorId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+            "typeId": "40404250-aa99-427d-a5ac-cb9ce1ebb714",
+            "id": "043540fd-2904-4613-868b-8835faf81ffe",
+            "status": "ready",
+            "url": "/api/ab3cbc2c-b5e8-4b15-b68b-64fa31070f8b/delivery/v1/content/043540fd-2904-4613-868b-8835faf81ffe",
+            "protectedUrl": "/api/ab3cbc2c-b5e8-4b15-b68b-64fa31070f8b/mydelivery/v1/content/043540fd-2904-4613-868b-8835faf81ffe"
+          }
+        },
+        "alternativepath": { "elementType": "text" },
+        "key": {
+          "elementType": "text",
+          "value": "3d5abc65-5be8-4f57-8191-6efc3e97f1ee"
+        },
+        "canonicalpath": {
+          "elementType": "text",
+          "value": "/796751ff-f44f-45d8-99c9-8bf0d45b428c"
+        },
+        "keywords": { "elementType": "text" },
+        "title": { "elementType": "text", "value": "Default Page" }
+      },
+      "typeRef": { "id": "74f83bd2-2ef6-43f9-8264-bd538e5aad28" }
+    },
+    "rows": {
+      "values": [
+        {
+          "cells": {
+            "values": [{ "span": { "elementType": "number", "value": 2 } }],
+            "elementType": "group",
+            "typeRef": { "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "2ec3cfb3-ca2b-4ce3-94ec-6a285fd1e258"
+          }
+        },
+        {
+          "cells": {
+            "values": [{ "span": { "elementType": "number", "value": 2 } }],
+            "elementType": "group",
+            "typeRef": { "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "a9f0e945-14ac-4405-a066-0488b2586304"
+          }
+        },
+        {
+          "cells": {
+            "values": [{ "span": { "elementType": "number", "value": 2 } }],
+            "elementType": "group",
+            "typeRef": { "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "34efcb38-c27b-4d6a-9448-ab7544d62f59"
+          }
+        },
+        {
+          "cells": {
+            "values": [{ "span": { "elementType": "number", "value": 2 } }],
+            "elementType": "group",
+            "typeRef": { "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "0d3887a4-0a4f-4090-9051-7c024bc3de96"
+          }
+        },
+        {
+          "cells": {
+            "values": [{ "span": { "elementType": "number", "value": 2 } }],
+            "elementType": "group",
+            "typeRef": { "id": "d1e4dd37-8ac5-43a9-9145-1f194053b27c" }
+          },
+          "key": {
+            "elementType": "text",
+            "value": "f5cc47ec-cb73-4297-bb6f-f5dfccfeb5fa"
+          }
+        }
+      ],
+      "elementType": "group",
+      "typeRef": {
+        "name": "Sites Section",
+        "id": "a4516d24-744d-4650-8477-24aa36145e66"
+      }
+    },
+    "width": { "elementType": "number", "value": 900 }
+  },
+  "name": "Empty Page",
+  "lastModifierId": "e02bf44c-0d75-4c75-90cd-eed2cca5ef72",
+  "typeId": "9ca02297-a564-40c9-aedc-add9c30f3d7b",
+  "links": {
+    "createDraft": {
+      "href": "/authoring/v1/content/796751ff-f44f-45d8-99c9-8bf0d45b428c/create-draft"
+    },
+    "retire": {
+      "href": "/authoring/v1/changes/content/796751ff-f44f-45d8-99c9-8bf0d45b428c/status/retire"
+    },
+    "self": {
+      "href": "/authoring/v1/content/796751ff-f44f-45d8-99c9-8bf0d45b428c"
+    },
+    "type": {
+      "href": "/authoring/v1/types/9ca02297-a564-40c9-aedc-add9c30f3d7b"
+    }
+  },
+  "id": "796751ff-f44f-45d8-99c9-8bf0d45b428c",
+  "lastModified": "2019-12-20T11:24:31.076Z",
+  "systemModified": "2019-12-20T11:24:31.448Z",
+  "status": "ready"
+}

@@ -10,7 +10,7 @@ import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import { ReconciledDeliverySearchResolverService } from './reconciled.search.resolver.service';
 
-const createDeliverySearchResolver = (
+const createReconciledDeliverySearchResolver = (
   [aStore, aDelegate]: [ReduxRootStore, DeliverySearchResolver],
   [logSvc]: [LoggerService?]
 ) => new ReconciledDeliverySearchResolverService(aStore, aDelegate, logSvc);
@@ -19,7 +19,7 @@ const createDeliverySearchResolver = (
  * Provider for the `WCH_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER` injection token
  */
 export const WCH_PROVIDER_RECONCILED_DELIVERY_SEARCH_RESOLVER = createInjectableReactProvider(
-  createDeliverySearchResolver,
+  createReconciledDeliverySearchResolver,
   WCH_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER,
   [WCH_CONTEXT_REDUX_STORE, WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER],
   [WCH_CONTEXT_LOGGER_SERVICE]

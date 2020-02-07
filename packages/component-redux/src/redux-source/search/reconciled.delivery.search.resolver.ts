@@ -7,9 +7,9 @@ import {
   KEY_ID,
   LoggerService,
   Query,
-  SEARCH_FL_DOCUMENT,
   SearchResult,
-  SearchResults
+  SearchResults,
+  SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
 import {
   DeliverySearchResolver,
@@ -35,6 +35,7 @@ import {
   NOOP_LOGGER_SERVICE,
   objectAssign,
   opDistinctUntilChanged,
+  opShallowDistinctUntilChanged,
   parseQueryString,
   Predicate,
   queryToString,
@@ -226,6 +227,7 @@ export class AbstractDeliverySearchResolverService
       return rxPipe(
         combineLatest([content$, search$]),
         rxSelect(([content, search]) => reconcileResults(content, search)),
+        opShallowDistinctUntilChanged,
         map(toArray),
         log('from reconciliation')
       );
