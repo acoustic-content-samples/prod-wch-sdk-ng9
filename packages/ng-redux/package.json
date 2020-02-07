@@ -56,9 +56,9 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "next",
-    "@angular/core": "next",
-    "@angular/router": "next",
+    "@angular/common": "^9",
+    "@angular/core": "^9",
+    "@angular/router": "^9",
     "redux": "^4",
     "rxjs": "^6"
   },

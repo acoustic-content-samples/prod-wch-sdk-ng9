@@ -32,8 +32,8 @@
     "@acoustic-content-sdk/component-api": "9.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "next",
-    "@angular/router": "next",
+    "@angular/core": "^9",
+    "@angular/router": "^9",
     "rxjs": "^6"
   },
   "publishConfig": {
