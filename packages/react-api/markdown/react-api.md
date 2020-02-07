@@ -67,6 +67,7 @@ Collection of APIs and constants for the React SDK
 |  [WCH\_CONTEXT\_PAGE\_COMPONENT](./react-api.wch_context_page_component.md) | Injection token for the page component |
 |  [WCH\_CONTEXT\_PAGE\_SERVICE](./react-api.wch_context_page_service.md) | Injection token for the ReactWchPageService |
 |  [WCH\_CONTEXT\_PROTECTED\_CONTENT](./react-api.wch_context_protected_content.md) | Injection token for the protected content status |
+|  [WCH\_CONTEXT\_RECONCILED\_DELIVERY\_SEARCH\_RESOLVER](./react-api.wch_context_reconciled_delivery_search_resolver.md) | Injection token for the ReconciledDeliverySearchResolver |
 |  [WCH\_CONTEXT\_RENDERING\_CONTEXT\_PROVIDER](./react-api.wch_context_rendering_context_provider.md) | Injection token for the RenderingContextProviderV2 |
 |  [WCH\_CONTEXT\_RENDERING\_CONTEXT\_RESOLVER](./react-api.wch_context_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |
 |  [WCH\_CONTEXT\_RESOURCE\_URL](./react-api.wch_context_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |

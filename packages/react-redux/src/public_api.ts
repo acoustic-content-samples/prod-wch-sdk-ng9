@@ -17,4 +17,5 @@ export * from './redux-source/module/site.module';
 export * from './redux-source/module/type.module';
 export * from './redux-source/module/url.config.module';
 export * from './redux-source/module/wch.config.module';
+export * from './redux-source/search/wch.reconciled.search.resolver.module';
 export { VERSION } from './version';

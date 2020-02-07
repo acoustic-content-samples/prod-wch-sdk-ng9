@@ -33,6 +33,7 @@ import { Observable } from 'rxjs';
 import { ObservableInput } from 'rxjs';
 import { ProtectedContent } from '@acoustic-content-sdk/component-api';
 import { ReactNode } from 'react';
+import { ReconciledDeliverySearchResolver } from '@acoustic-content-sdk/component-api';
 import { RenderingContextInput } from '@acoustic-content-sdk/component-api';
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { RenderingContextResolver } from '@acoustic-content-sdk/component-api';
@@ -311,6 +312,9 @@ export const WCH_CONTEXT_PAGE_SERVICE: Required<import("react").Context<ReactWch
 
 // @public
 export const WCH_CONTEXT_PROTECTED_CONTENT: Required<import("react").Context<ProtectedContent>>;
+
+// @public
+export const WCH_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER: Required<import("react").Context<ReconciledDeliverySearchResolver>>;
 
 // @public
 export const WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER: Required<import("react").Context<RenderingContextProviderV2>>;

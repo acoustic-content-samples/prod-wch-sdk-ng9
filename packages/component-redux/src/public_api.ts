@@ -8,6 +8,7 @@ export * from './redux-source/inline-edit/inline.edit.selection.provider';
 export * from './redux-source/layout-mapping/delivery.layout.mapping.resolver.service';
 export * from './redux-source/layout/delivery.layout.resolver.service';
 export * from './redux-source/page/delivery.page.resolver.service';
+export * from './redux-source/search/reconciled.delivery.search.resolver';
 export * from './redux-source/site/site.resolver.service';
 export * from './redux-source/type/delivery.type.resolver.service';
 export * from './redux-store/feature/store.feature';

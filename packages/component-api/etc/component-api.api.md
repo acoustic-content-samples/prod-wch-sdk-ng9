@@ -18,6 +18,7 @@ import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { RenderingContextV2 } from '@acoustic-content-sdk/api';
 import { SearchResults } from '@acoustic-content-sdk/api';
 import { SiteDeliveryContentItem } from '@acoustic-content-sdk/api';
+import { UnaryFunction } from 'rxjs';
 
 // @public (undocumented)
 export interface AbstractComponentResolver<T> {
@@ -108,6 +109,17 @@ export interface LayoutResolver {
 // @public (undocumented)
 export interface ProtectedContent {
     protected$: Observable<boolean>;
+}
+
+// @public
+export interface ReconciledDeliverySearchInput<T> {
+    predicate: UnaryFunction<T, boolean>;
+    query: QueryInput;
+}
+
+// @public
+export interface ReconciledDeliverySearchResolver {
+    getDeliverySearchResults<T>(aQuery: ReconciledDeliverySearchInput<T>, aClassification: string): Observable<T[]>;
 }
 
 // @public (undocumented)

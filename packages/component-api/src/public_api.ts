@@ -18,6 +18,7 @@ export * from './protected-content/protected.content.service';
 export * from './rendering/rendering.context.interceptor';
 export * from './rendering/rendering.context.resolver';
 export * from './search/delivery.search.resolver';
+export * from './search/reconciled.delivery.search.resolver';
 export * from './seed/seed.resolver';
 export * from './services/page/wch.page.service';
 export * from './services/window/window';

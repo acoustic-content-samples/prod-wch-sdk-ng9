@@ -26,6 +26,8 @@ Framework independent collection of APIs and constants
 |  [LayoutMappingResolver](./component-api.layoutmappingresolver.md) |  |
 |  [LayoutResolver](./component-api.layoutresolver.md) | Callback that finds the layout assigned to the object in the current rendering context. |
 |  [ProtectedContent](./component-api.protectedcontent.md) |  |
+|  [ReconciledDeliverySearchInput](./component-api.reconcileddeliverysearchinput.md) | Input to the reconciled search operation |
+|  [ReconciledDeliverySearchResolver](./component-api.reconcileddeliverysearchresolver.md) | Service that performs a search query against delivery search for artifacts of a particular classification. |
 |  [RenderingContextResolver](./component-api.renderingcontextresolver.md) | Constructs a rendering context |
 |  [SeedResolver](./component-api.seedresolver.md) | Service interface that allows to resolve a seed |
 |  [WchPageService](./component-api.wchpageservice.md) | Service interface that allows to resolve a rendering context given the page. |

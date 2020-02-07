@@ -60,7 +60,6 @@ describe('markup.renderer', () => {
     return rxPipe(
       markup$,
       filter(isNotEmpty),
-      tap(console.log),
       map((markup) => JSDOM.fragment(markup)),
       map((dom) => dom.querySelector(`[data-key='${HBS_TEXT_MARKER}']`)),
       opFilterNotNil,

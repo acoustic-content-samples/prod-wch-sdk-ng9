@@ -21,6 +21,9 @@ export const VERSION: {
 export const WCH_PROVIDER_PARENT_FRAME_REDUX_STORE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/redux-store").ReduxRootStore<Record<string, any>, import("redux").AnyAction>>;
 
 // @public
+export const WCH_PROVIDER_RECONCILED_DELIVERY_SEARCH_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").ReconciledDeliverySearchResolver>;
+
+// @public
 export const WCH_PROVIDER_REDUX_AUTH_STATUS: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus>;
 
 // @public
