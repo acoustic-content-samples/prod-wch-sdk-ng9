@@ -37,9 +37,6 @@
     "handlebars": "^4",
     "rxjs": "^6"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-hbs-tooling.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-hbs-tooling.js",
   "esm5": "dist/esm5/acoustic-content-sdk-hbs-tooling.js",

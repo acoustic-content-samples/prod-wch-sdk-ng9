@@ -34,9 +34,6 @@
   "peerDependencies": {
     "@angular/core": "^9"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-ng-rest-api.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-ng-rest-api.js",
   "esm5": "dist/esm5/acoustic-content-sdk-ng-rest-api.js",

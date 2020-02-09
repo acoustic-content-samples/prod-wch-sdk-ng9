@@ -28,9 +28,6 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {},
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-rendition-utils.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-rendition-utils.js",
   "esm5": "dist/esm5/acoustic-content-sdk-rendition-utils.js",

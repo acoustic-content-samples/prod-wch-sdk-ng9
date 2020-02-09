@@ -53,9 +53,6 @@
     "uuid": "^3.4.0"
   },
   "peerDependencies": {},
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "ngPackage": {
     "lib": {
       "umdModuleIds": {

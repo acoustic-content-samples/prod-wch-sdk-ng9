@@ -54,9 +54,6 @@
     "rxjs": "^6",
     "typescript": "^3"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "builders": "./assets/builders.json",
   "ngPackage": {
     "lib": {

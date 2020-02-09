@@ -35,9 +35,6 @@
     "sshpk": "^1",
     "valid-url": "^1"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-cli-credentials.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-cli-credentials.js",
   "esm5": "dist/esm5/acoustic-content-sdk-cli-credentials.js",

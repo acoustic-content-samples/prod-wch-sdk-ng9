@@ -45,9 +45,6 @@
     "rxjs": "^6",
     "uuid": "^3"
   },
-  "publishConfig": {
-    "registry": "http://wats-repob.devlab.ibm.com/"
-  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-redux-feature-save.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-redux-feature-save.js",
   "esm5": "dist/esm5/acoustic-content-sdk-redux-feature-save.js",
