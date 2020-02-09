@@ -5,33 +5,22 @@ import {
   CLASSIFICATION_CONTENT,
   ContentItemWithLayout,
   LoggerService,
-  Query
+  Query,
+  SearchResults,
 } from '@acoustic-content-sdk/api';
 import {
   DeliverySearchResolver,
   ReconciledDeliverySearchInput,
-  ReconciledDeliverySearchResolver
+  ReconciledDeliverySearchResolver,
 } from '@acoustic-content-sdk/component-api';
-import {
-  authoringContentFeature,
-  guaranteeAuthoringContentAction
-} from '@acoustic-content-sdk/redux-feature-auth-content';
+import { authoringContentFeature, guaranteeAuthoringContentAction } from '@acoustic-content-sdk/redux-feature-auth-content';
 import { deliveryContentFeature } from '@acoustic-content-sdk/redux-feature-delivery-content';
 import { loggedInAction } from '@acoustic-content-sdk/redux-feature-login';
 import { setUrlConfigAction } from '@acoustic-content-sdk/redux-feature-url-config';
-import {
-  createReduxRootStoreOnFolder,
-  DEFAULT_URL_CONFIG
-} from '@acoustic-content-sdk/redux-testing';
-import {
-  Predicate,
-  rxPipe,
-  isNilOrEmpty,
-  reduceToObject,
-  getPath
-} from '@acoustic-content-sdk/utils';
+import { createReduxRootStoreOnFolder, DEFAULT_URL_CONFIG } from '@acoustic-content-sdk/redux-testing';
+import { getPath, isNil, Predicate, reduceToObject, rxPipe } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
-import { tap, filter, first } from 'rxjs/operators';
+import { filter, first } from 'rxjs/operators';
 
 import { ASSET_ROOT } from '../../utils/assets';
 import { getLoggerService } from './../../utils/logger';
@@ -68,7 +57,7 @@ describe('reconciled.search.resolver.service', () => {
     const ROOT_ITEM = '796751ff-f44f-45d8-99c9-8bf0d45b428c';
     store.dispatch(guaranteeAuthoringContentAction(ROOT_ITEM));
     // the search
-    const query: Query = { fq: 'name:(*ag*)' };
+    const query: Query = { fq: 'name:(*ag*)', fl: 'name, tags' };
     const predicate: Predicate<ContentItemWithLayout> = (item) =>
       item.name.indexOf('ag') >= 0;
     const input: ReconciledDeliverySearchInput<ContentItemWithLayout> = {
@@ -81,12 +70,13 @@ describe('reconciled.search.resolver.service', () => {
       CLASSIFICATION_CONTENT
     );
 
-    function isValidResult(aResult: ContentItemWithLayout[]): boolean {
-      if (isNilOrEmpty(aResult) || aResult.length !== 2) {
+    function isValidResult(aResult: SearchResults<any>): boolean {
+      if (isNil(aResult) || aResult.documents.length !== 2) {
         return false;
       }
+
       // check
-      const obj = reduceToObject(aResult, (item) => item.id);
+      const obj = reduceToObject(aResult.documents, (item) => item.id);
       const tags = getPath(obj, [ROOT_ITEM, 'tags'], []);
       return tags.indexOf('local') >= 0;
     }

@@ -1,4 +1,4 @@
-import { QueryInput } from '@acoustic-content-sdk/api';
+import { QueryInput, SearchResults } from '@acoustic-content-sdk/api';
 import { Observable, UnaryFunction } from 'rxjs';
 
 /**
@@ -32,8 +32,8 @@ export interface ReconciledDeliverySearchResolver {
    *
    * @returns the search result
    */
-  getDeliverySearchResults<T>(
-    aQuery: ReconciledDeliverySearchInput<T>,
+  getDeliverySearchResults<ITEM, RESULT>(
+    aQuery: ReconciledDeliverySearchInput<ITEM>,
     aClassification: string
-  ): Observable<T[]>;
+  ): Observable<SearchResults<RESULT>>;
 }

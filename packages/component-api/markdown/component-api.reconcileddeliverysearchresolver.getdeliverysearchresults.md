@@ -9,19 +9,19 @@ Execute the search. The implementation will add the classification to the `fq` p
 <b>Signature:</b>
 
 ```typescript
-getDeliverySearchResults<T>(aQuery: ReconciledDeliverySearchInput<T>, aClassification: string): Observable<T[]>;
+getDeliverySearchResults<ITEM, RESULT>(aQuery: ReconciledDeliverySearchInput<ITEM>, aClassification: string): Observable<SearchResults<RESULT>>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aQuery | <code>ReconciledDeliverySearchInput&lt;T&gt;</code> | the query input |
+|  aQuery | <code>ReconciledDeliverySearchInput&lt;ITEM&gt;</code> | the query input |
 |  aClassification | <code>string</code> | the classification |
 
 <b>Returns:</b>
 
-`Observable<T[]>`
+`Observable<SearchResults<RESULT>>`
 
 the search result
 

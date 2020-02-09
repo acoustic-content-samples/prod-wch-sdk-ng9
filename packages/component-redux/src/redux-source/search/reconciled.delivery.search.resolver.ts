@@ -7,7 +7,6 @@ import {
   KEY_ID,
   LoggerService,
   Query,
-  SearchResult,
   SearchResults,
   SEARCH_FL_DOCUMENT
 } from '@acoustic-content-sdk/api';
@@ -28,15 +27,21 @@ import {
   rxStore
 } from '@acoustic-content-sdk/redux-store';
 import {
+  anyToString,
   arrayPush,
   constGenerator,
+  createCache,
   isEmpty,
+  isEqual,
   isNil,
+  isNotEmpty,
+  isNotNil,
+  mapArray,
   NOOP_LOGGER_SERVICE,
   objectAssign,
   opDistinctUntilChanged,
-  opShallowDistinctUntilChanged,
   parseQueryString,
+  partialLeft,
   Predicate,
   queryToString,
   reduceArray,
@@ -52,13 +57,7 @@ import {
   timer,
   UnaryFunction
 } from 'rxjs';
-import {
-  catchError,
-  delayWhen,
-  map,
-  retryWhen,
-  startWith
-} from 'rxjs/operators';
+import { catchError, delayWhen, retryWhen, startWith } from 'rxjs/operators';
 
 const LOGGER = 'AbstractDeliverySearchResolverService';
 
@@ -73,19 +72,13 @@ const FEATURE_SELECTORS = {
   [CLASSIFICATION_ASSET]: selectAuthAssetFeature
 };
 
+const KEY_FL = 'fl';
+
 const EMPTY_SELECTOR = constGenerator({});
 
-interface ResultWithId<T> extends SearchResult<T> {
-  id: string;
-}
-
-const emptySearchResult: <T>() => SearchResults<ResultWithId<T>> = () => ({
+const EMPTY_SEARCH_RESULT = {
   numFound: 0,
   documents: []
-});
-
-const GENERAL_QUERY: Query = {
-  fl: `${KEY_ID},${SEARCH_FL_DOCUMENT}`
 };
 
 /**
@@ -102,20 +95,30 @@ const selectFeature = <T>(
 /**
  * Reducer function that assigns a value if it does not exist, yet
  *
+ * @param aAllContent - the record of all content already considered
  * @param aDst - target record
- * @param aValue - value
+ * @param aSrc - source value
  *
  * @returns the target record
  */
-function reduceFromSearch<T>(
-  aDst: Record<string, T>,
-  { id, document }: ResultWithId<T>
-): Record<string, T> {
+function reduceFromSearch<ITEM, RESULT>(
+  aAllContent: Record<string, ITEM>,
+  aDst: SearchResults<RESULT>,
+  aSrc: RESULT
+): SearchResults<RESULT> {
+  // extract the source id
+  const id = aSrc[KEY_ID];
   // only assign if it does not exist on the target
-  if (isNil(aDst[id])) {
-    aDst[id] = document;
+  if (isNotNil(id)) {
+    // we really have a new item from the remote search
+    if (isNil(aAllContent[id])) {
+      arrayPush(aSrc, aDst.documents);
+    } else {
+      // we counted the item multiple times, fix that
+      aDst.numFound--;
+    }
   }
-  // returns the target document
+  // target
   return aDst;
 }
 
@@ -124,22 +127,117 @@ const toArray = <T>(aMap: Record<string, T>): T[] =>
   reduceForIn(aMap, addToArray, []);
 
 /**
+ * Filter result, will be all content, filtered content
+ */
+declare type FilterResult<ITEM, RESULT> = [
+  Record<string, ITEM>,
+  SearchResults<RESULT>
+];
+
+// assigns the document
+const documentMapper = (
+  aDst: Record<string, any>,
+  aItem: Record<string, any>
+) => objectAssign('document', aItem, aDst);
+// extracts a fiels
+const fieldMapper = (
+  aKey: string,
+  aDst: Record<string, any>,
+  aItem: Record<string, any>
+) => objectAssign(aKey, aItem[aKey], aDst);
+
+/**
+ * Splits the field list
+ *
+ * @param aList - the string based field list
+ * @returns the split list
+ */
+const splitFieldList = (aList?: string) =>
+  isNotEmpty(aList) ? mapArray(aList.split(','), (fl) => fl.trim()) : [];
+
+/**
+ * Constructs a mapper function for the callback
+ *
+ * @param aName - the field name
+ * @returns the callback function
+ */
+const createMapper = (aName: string) =>
+  isEqual(aName, SEARCH_FL_DOCUMENT)
+    ? documentMapper
+    : partialLeft(fieldMapper, aName);
+
+/**
+ * Constructs a mapper function that extracts the desired fields from
+ * a source item
+ *
+ * @param aList - list of fields to extract
+ *
+ * @returns the mappers
+ */
+const createMapperFromFieldList = (
+  aList: string
+): UnaryFunction<Record<string, any>, Record<string, any>> => {
+  // parse the fields
+  const mappers = mapArray(splitFieldList(aList), createMapper);
+  // build the callback
+  return (aItem: Record<string, any>) =>
+    reduceArray(mappers, (aDst, mapper) => mapper(aDst, aItem), {});
+};
+
+/**
+ * Make sure we include the ID in the field list
+ *
+ * @param aQuery - the original query
+ * @returns the augmented query
+ */
+const augmentFieldList = (aQuery: Query): string => {
+  // extract the current field list
+  const currentFl = new Set(splitFieldList(anyToString(aQuery[KEY_FL])));
+  currentFl.add(KEY_ID);
+  // convert back
+  return Array.from(currentFl)
+    .sort()
+    .join(',');
+};
+
+/**
+ * Constructs the filter result
+ *
+ * @param aAllContent - all content items
+ * @param aFilteredContent - filtered content items
+ *
+ * @return the filter result object
+ */
+const createFilterResult = <ITEM, RESULT>(
+  aAllContent: Record<string, ITEM>,
+  aFilteredContent: RESULT[]
+): FilterResult<ITEM, RESULT> => [
+  aAllContent,
+  { numFound: aFilteredContent.length, documents: aFilteredContent }
+];
+
+/**
  * Filters the content of the store based on a predicate
  *
- * @param aContent  - the content in the store
+ * @param aAllContent  - the content in the store
  * @param aPredicate - the predicate
+ * @param aMapper - extracts the portions of the original object that are interesting
  *
  * @returns the filtered content
  */
-const filterStore = <T>(
-  aContent: Record<string, T>,
-  aPredicate: Predicate<T>
-): Record<string, T> =>
-  reduceForIn(
-    aContent,
-    (aDst: Record<string, T>, aValue: T, aKey: string) =>
-      aPredicate(aValue) ? objectAssign(aKey, aValue, aDst) : aDst,
-    {}
+const filterStore = <ITEM, RESULT>(
+  aAllContent: Record<string, ITEM>,
+  aPredicate: Predicate<ITEM>,
+  aMapper: UnaryFunction<ITEM, RESULT>
+): FilterResult<ITEM, RESULT> =>
+  createFilterResult(
+    aAllContent,
+    reduceForIn(
+      aAllContent,
+      (aDst: RESULT[], aValue: ITEM) =>
+        aPredicate(aValue) ? arrayPush(aMapper(aValue), aDst) : aDst,
+      []
+    )
   );
 
 /**
@@ -150,13 +248,16 @@ const filterStore = <T>(
  *
  * @returns the augmented result
  */
-const reconcileResults = <T>(
-  aContent: Record<string, T>,
-  { documents = [] }: SearchResults<ResultWithId<T>>
-): Record<string, T> =>
+const reconcileResults = <ITEM, RESULT>(
+  [allContent, localResults]: FilterResult<ITEM, RESULT>,
+  { numFound, documents = [] }: SearchResults<RESULT>
+): SearchResults<RESULT> =>
   isEmpty(documents)
-    ? aContent
-    : reduceArray(documents, reduceFromSearch, { ...aContent });
+    ? localResults
+    : reduceArray(documents, partialLeft(reduceFromSearch, allContent), {
+        numFound: numFound + localResults.numFound,
+        documents: [...localResults.documents]
+      });
 
 /**
  * Base implementation of the search service against a redux store.
@@ -169,10 +270,10 @@ export class AbstractDeliverySearchResolverService
    * @param aQuery - the query
    * @param aClassification - classification
    */
-  getDeliverySearchResults: <T>(
-    aQuery: ReconciledDeliverySearchInput<T>,
+  getDeliverySearchResults: <ITEM, RESULT>(
+    aQuery: ReconciledDeliverySearchInput<ITEM>,
     aClassification: string
-  ) => Observable<T[]>;
+  ) => Observable<SearchResults<RESULT>>;
 
   protected constructor(
     aReduxStore: ReduxRootStore,
@@ -188,38 +289,42 @@ export class AbstractDeliverySearchResolverService
     );
     // store
     const store$ = rxStore(aReduxStore);
+    // mapper cache
+    const mapperCache = createCache<
+      UnaryFunction<Record<string, any>, Record<string, any>>
+    >();
 
-    function getDeliverySearchResults<T>(
-      { predicate, query }: ReconciledDeliverySearchInput<T>,
+    function getDeliverySearchResults<ITEM, RESULT>(
+      { predicate, query }: ReconciledDeliverySearchInput<ITEM>,
       aClassification: string
-    ): Observable<T[]> {
+    ): Observable<SearchResults<RESULT>> {
       // original query
       const origQuery: Query = parseQueryString(queryToString(query));
+      const fl = augmentFieldList(origQuery);
       // augmented quers
-      const augQuery: Query = { ...origQuery, ...GENERAL_QUERY };
+      const augQuery: Query = { ...origQuery, [KEY_FL]: fl };
+      // construct the mapper
+      const mapper = mapperCache(fl, createMapperFromFieldList);
       // log this
       logger.info('Query', augQuery);
       // select the redux content
       const content$ = rxPipe(
         store$,
-        rxSelect(selectFeature<T>(aClassification)),
-        rxSelect((content) => filterStore(content, predicate)),
+        rxSelect(selectFeature(aClassification)),
+        rxSelect((content) => filterStore(content, predicate, mapper)),
         log('from store')
       );
       // remote search results
       const search$ = rxPipe(
-        aDelegate.getDeliverySearchResults<ResultWithId<T>>(
-          augQuery,
-          aClassification
-        ),
-        startWith(emptySearchResult<T>()),
+        aDelegate.getDeliverySearchResults<RESULT>(augQuery, aClassification),
+        startWith(EMPTY_SEARCH_RESULT),
         retryWhen((errors$) =>
           rxPipe(
             errors$,
             delayWhen(() => timer(1000))
           )
         ),
-        catchError(() => of(emptySearchResult<T>())),
+        catchError(() => of(EMPTY_SEARCH_RESULT)),
         opDistinctUntilChanged,
         log('from search')
       );
@@ -227,8 +332,6 @@ export class AbstractDeliverySearchResolverService
       return rxPipe(
         combineLatest([content$, search$]),
         rxSelect(([content, search]) => reconcileResults(content, search)),
-        opShallowDistinctUntilChanged,
-        map(toArray),
         log('from reconciliation')
       );
     }

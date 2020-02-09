@@ -119,7 +119,7 @@ export interface ReconciledDeliverySearchInput<T> {
 
 // @public
 export interface ReconciledDeliverySearchResolver {
-    getDeliverySearchResults<T>(aQuery: ReconciledDeliverySearchInput<T>, aClassification: string): Observable<T[]>;
+    getDeliverySearchResults<ITEM, RESULT>(aQuery: ReconciledDeliverySearchInput<ITEM>, aClassification: string): Observable<SearchResults<RESULT>>;
 }
 
 // @public (undocumented)
