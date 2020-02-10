@@ -59,6 +59,6 @@ export class WchNgAppPreviewModule {
     // log this module
     logModule(VERSION, MODULE, aLoggerService);
     // validate same origin
-    assertSameOrigin(aCurrentWindow, aHostWindow);
+    assertSameOrigin(aCurrentWindow, aHostWindow, aLoggerService);
   }
 }

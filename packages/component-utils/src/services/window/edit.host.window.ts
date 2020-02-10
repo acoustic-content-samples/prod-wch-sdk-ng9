@@ -1,10 +1,17 @@
+import { LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { isEqual, pluckPath } from '@acoustic-content-sdk/utils';
+import {
+  isEqual,
+  NOOP_LOGGER_SERVICE,
+  pluckPath
+} from '@acoustic-content-sdk/utils';
 
 /**
  * Selects the origin from the window
  */
 const selectOrigin = pluckPath<string>(['location', 'origin']);
+
+const LOGGER = 'EditHostWindow';
 
 /**
  * Validates that the origin of both windows is the same, otherwise throws an exception
@@ -12,7 +19,11 @@ const selectOrigin = pluckPath<string>(['location', 'origin']);
  * @param aLeft  - left window to check
  * @param aRight - right window to check
  */
-export function assertSameOrigin(aLeft: WindowType, aRight: WindowType) {
+export function assertSameOrigin(
+  aLeft: WindowType,
+  aRight: WindowType,
+  aLogSvc?: LoggerService
+) {
   // quick check
   if (!isEqual(aLeft, aRight)) {
     // check
@@ -20,8 +31,11 @@ export function assertSameOrigin(aLeft: WindowType, aRight: WindowType) {
     const rightOrigin = selectOrigin(aRight);
     // test the origin
     if (!isEqual(leftOrigin, rightOrigin)) {
+      // logging
+      const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+      const logger = logSvc.get(LOGGER);
       // bail out
-      throw new Error(`Origin [${leftOrigin}] does not match [${rightOrigin}]`);
+      logger.error(`Origin [${leftOrigin}] does not match [${rightOrigin}]`);
     }
   }
 }
