@@ -1,7 +1,9 @@
 /* Copyright IBM Corp. 2017 */
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { VERSION } from './../../version';
 import { WchNgReduxAuthStatusModule } from './auth.status.module';
 import { WchNgReduxContentModule } from './content.module';
 import { WchNgReduxFetchTextModule } from './fetch.text.module';
@@ -37,4 +39,9 @@ import { WchNgReduxWchConfigModule } from './wch.config.module';
     WchNgReduxInlineEditModule
   ]
 })
-export class WchNgReduxModule {}
+export class WchNgReduxModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+}

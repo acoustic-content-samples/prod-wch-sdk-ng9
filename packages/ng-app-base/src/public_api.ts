@@ -5,4 +5,4 @@
  */
 
 export * from './modules/base.module';
-export { VERSION } from './version';
+export { MODULE, VERSION } from './version';

@@ -1,4 +1,5 @@
 /* Copyright IBM Corp. 2017 */
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +11,7 @@ import { WchNgRestLayoutMappingModule } from '../layout-mapping/delivery.layout.
 import { WchNgRestLayoutModule } from '../layout/delivery.layout.resolver.module';
 import { WchNgRestPageModule } from '../page/delivery.page.resolver.module';
 import { WchNgRestTypeModule } from '../type/delivery.type.resolver.module';
+import { VERSION } from './../version';
 
 /**
  * {@link https://angular.io/guide/ngmodules|Angular Module} that exposes common services.
@@ -27,4 +29,9 @@ import { WchNgRestTypeModule } from '../type/delivery.type.resolver.module';
     WchNgRestAuthStatusModule
   ]
 })
-export class WchNgRestModule {}
+export class WchNgRestModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+}

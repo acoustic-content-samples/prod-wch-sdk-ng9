@@ -4,6 +4,8 @@
 
 ```ts
 
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
+
 // @public
 export const VERSION: {
     version: {
@@ -16,10 +18,12 @@ export const VERSION: {
 
 // @public
 export class WchNgHbsComponentsEditModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public
 export class WchNgHbsEditModule {
+    VERSION: WchSdkVersion;
 }
 
 

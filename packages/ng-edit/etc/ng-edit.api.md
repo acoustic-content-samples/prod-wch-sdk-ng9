@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 import { OnDestroy } from '@angular/core';
 import { WchInlineEditProviderV2 } from '@acoustic-content-sdk/edit-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
@@ -42,6 +43,7 @@ export class WchNgEditablePlaceholderDirectiveModule {
 // @public
 export class WchNgEditComponentsModule {
     constructor(aLoggerService: LoggerService);
+    VERSION: WchSdkVersion;
 }
 
 // @public

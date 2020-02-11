@@ -1,4 +1,4 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
@@ -27,6 +27,11 @@ const LOGGER = 'WchNgEditComponentsModule';
   exports: [WchPlaceholderComponent, EditItemPipe]
 })
 export class WchNgEditComponentsModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+
   constructor(
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)

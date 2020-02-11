@@ -8,6 +8,7 @@ import { HubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { ModuleWithProviders } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public (undocumented)
 export function proxyCreateUrlConfig(aBaseUrl?: HubInfoUrlProvider, aApiUrl?: HubInfoUrlProvider, aResourceUrl?: HubInfoUrlProvider, aDocument?: any): Observable<UrlConfig>;
@@ -49,6 +50,7 @@ export class WchNgRestLayoutModule {
 
 // @public
 export class WchNgRestModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public

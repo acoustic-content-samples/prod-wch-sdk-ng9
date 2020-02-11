@@ -5,6 +5,10 @@
 ```ts
 
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
+
+// @public
+export const MODULE = "@acoustic-content-sdk/ng-app-base";
 
 // @public
 export const VERSION: {
@@ -19,6 +23,7 @@ export const VERSION: {
 // @public
 export class WchNgAppBaseModule {
     constructor(aLoggerService: LoggerService);
+    VERSION: WchSdkVersion;
 }
 
 

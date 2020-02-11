@@ -677,6 +677,9 @@ export function isEqual<T>(aLeft: T, aRight: T): boolean;
 export const isEqualTo: <T, R = T>(aComparison: T, aTransform?: UnaryFunction<R, T>) => Predicate<R>;
 
 // @public
+export const isEqualVersion: EqualsPredicate<WchSdkVersion>;
+
+// @public
 export function isErrorResponse(aResponse: any): aResponse is ErrorResponse;
 
 // @public

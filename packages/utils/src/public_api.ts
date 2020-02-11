@@ -427,6 +427,7 @@ export {
   urlToString
 } from './url/url.utils';
 export { MODULE, VERSION } from './version';
+export { isEqualVersion } from './version/version';
 export {
   cloneUrlConfig,
   DEFAULT_FETCH_LEVELS,

@@ -1,4 +1,4 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
   WchNgRouterModule,
   WchNgServicesModule
@@ -17,6 +17,11 @@ import { MODULE, VERSION } from '../version';
   imports: [WchNgBrowserWindowModule, WchNgServicesModule, WchNgRouterModule]
 })
 export class WchNgAppBaseModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+
   constructor(
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)

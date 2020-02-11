@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 import { Store } from 'redux';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public (undocumented)
 export function createStore(msgService: MessageService, logSvc?: LoggerService): ReduxRootStore;
@@ -68,6 +69,7 @@ export class WchNgReduxLayoutModule {
 
 // @public
 export class WchNgReduxModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public (undocumented)

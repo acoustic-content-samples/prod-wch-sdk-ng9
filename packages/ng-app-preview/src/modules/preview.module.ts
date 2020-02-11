@@ -1,4 +1,4 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 import { assertSameOrigin } from '@acoustic-content-sdk/component-utils';
 import {
@@ -47,6 +47,11 @@ import { MODULE, VERSION } from '../version';
   ]
 })
 export class WchNgAppPreviewModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+
   constructor(
     @Inject(WCH_TOKEN_WINDOW)
     aCurrentWindow: WindowType,
