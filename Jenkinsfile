@@ -1,13 +1,12 @@
 nodeModulePipeline {
   squad = "infra-boe"
   name = "prod-wch-sdk"
-  channel = "@carsten.leue"
   version_minor = "0"
   version_major = "9"
   nodeversion = "10"
 
   preBuildScript = "echo 'Nothing to install'"
-  buildScript = "chmod a+x ./build.sh && sh ./build.sh"
+  buildScript = "chmod a+x ./build_ibm.sh && sh ./build_ibm.sh"
   deploymentScript = "echo 'Nothing to publish'"
 
   skipStaticResourceUpdate = true
@@ -15,5 +14,5 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
-  // triggerDownstream = "squad-infra-boe/prod-publishing-sites-v2-ui/develop, squad-infra-boe/proto-sites-next-app"
+  triggerDownstream = "squad-infra-boe/prod-publishing-sites-v2-ui/develop, squad-infra-boe/proto-sites-next-app"
 }
