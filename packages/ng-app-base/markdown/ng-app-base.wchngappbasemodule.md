@@ -18,3 +18,9 @@ export declare class WchNgAppBaseModule
 |  --- | --- | --- |
 |  [(constructor)(aLoggerService)](./ng-app-base.wchngappbasemodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgAppBaseModule</code> class |
 
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-app-base.wchngappbasemodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

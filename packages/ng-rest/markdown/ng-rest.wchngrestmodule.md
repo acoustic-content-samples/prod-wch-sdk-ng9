@@ -11,3 +11,10 @@
 ```typescript
 export declare class WchNgRestModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-rest.wchngrestmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

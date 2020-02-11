@@ -13,3 +13,10 @@ Pull in this module at root level for your application in edit mode
 ```typescript
 export declare class WchNgHbsEditModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-hbs-edit.wchnghbseditmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

@@ -13,3 +13,10 @@ Depends on: `WCH_TOKEN_REDUX_STORE`
 ```typescript
 export declare class WchNgReduxModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-redux.wchngreduxmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

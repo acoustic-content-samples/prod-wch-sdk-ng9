@@ -18,3 +18,9 @@ export declare class WchNgEditComponentsModule
 |  --- | --- | --- |
 |  [(constructor)(aLoggerService)](./ng-edit.wchngeditcomponentsmodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgEditComponentsModule</code> class |
 
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-edit.wchngeditcomponentsmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

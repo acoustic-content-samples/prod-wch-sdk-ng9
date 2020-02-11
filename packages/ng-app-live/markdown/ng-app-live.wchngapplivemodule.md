@@ -18,3 +18,9 @@ export declare class WchNgAppLiveModule
 |  --- | --- | --- |
 |  [(constructor)(aLoggerService)](./ng-app-live.wchngapplivemodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgAppLiveModule</code> class |
 
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-app-live.wchngapplivemodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

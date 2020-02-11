@@ -16,5 +16,6 @@ Module that contains a default configuration to run an [Angular](https://angular
 
 |  Variable | Description |
 |  --- | --- |
+|  [MODULE](./ng-app-live.module.md) | Module name |
 |  [VERSION](./ng-app-live.version.md) | Version and build number of the package |
 

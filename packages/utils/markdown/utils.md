@@ -324,6 +324,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [isDeepEqualTo](./utils.isdeepequalto.md) | Returns a function that tests if a value is equal to another value |
 |  [isEmpty](./utils.isempty.md) | Tests if an array is empty |
 |  [isEqualTo](./utils.isequalto.md) | Returns a function that tests if a value is equal to another value |
+|  [isEqualVersion](./utils.isequalversion.md) | Tests if two versions are equal |
 |  [isFunction](./utils.isfunction.md) | Tests if an object is a function |
 |  [isNever](./utils.isnever.md) | Never predicate, that never is true |
 |  [isNil](./utils.isnil.md) | Checks for nil |

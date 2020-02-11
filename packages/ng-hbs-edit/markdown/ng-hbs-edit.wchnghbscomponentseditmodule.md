@@ -11,3 +11,10 @@ Module to expose the handlebars rendering component.
 ```typescript
 export declare class WchNgHbsComponentsEditModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-hbs-edit.wchnghbscomponentseditmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+
