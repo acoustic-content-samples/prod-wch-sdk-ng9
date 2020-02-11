@@ -91,7 +91,8 @@ const NO_WHITESPACE_CHILDREN = new Set<string>([
   'TR',
   'TBODY',
   'COLGROUP',
-  'TABLE'
+  'TABLE',
+  '#document-fragment'
 ]);
 
 function isTextNode(aNode: Node): aNode is Text {

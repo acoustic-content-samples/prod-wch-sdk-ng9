@@ -9,7 +9,7 @@ Validates that the origin of both windows is the same, otherwise throws an excep
 <b>Signature:</b>
 
 ```typescript
-export declare function assertSameOrigin(aLeft: WindowType, aRight: WindowType): void;
+export declare function assertSameOrigin(aLeft: WindowType, aRight: WindowType, aLogSvc?: LoggerService): void;
 ```
 
 ## Parameters
@@ -18,6 +18,7 @@ export declare function assertSameOrigin(aLeft: WindowType, aRight: WindowType):
 |  --- | --- | --- |
 |  aLeft | <code>WindowType</code> | left window to check |
 |  aRight | <code>WindowType</code> | right window to check |
+|  aLogSvc | <code>LoggerService</code> | optionally the logger service |
 
 <b>Returns:</b>
 

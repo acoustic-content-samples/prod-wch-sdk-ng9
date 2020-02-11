@@ -9,7 +9,7 @@ Returns a React component that renders the content item passed into its properti
 <b>Signature:</b>
 
 ```typescript
-export declare function createHandlebarsComponent(aStore: ReduxRootStore, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
+export declare function createHandlebarsComponent(aStore: ReduxRootStore, aDeliveryContent: DeliveryContentResolver, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
 ```
 
 ## Parameters
@@ -17,6 +17,7 @@ export declare function createHandlebarsComponent(aStore: ReduxRootStore, aEditS
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  aStore | <code>ReduxRootStore</code> | the redux store that contains all metadata |
+|  aDeliveryContent | <code>DeliveryContentResolver</code> |  |
 |  aEditService | <code>WchInlineEditServiceV2</code> | the edit service |
 |  aDoc | <code>Document</code> | the document, used to instantiate a template node |
 |  aLogSvc | <code>LoggerService</code> | optionally a logger service |

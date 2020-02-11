@@ -4,6 +4,7 @@
 
 ```ts
 
+import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { KEY_LAYOUT_MODE } from '@acoustic-content-sdk/utils';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
@@ -12,7 +13,7 @@ import { SchedulerLike } from 'rxjs';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 
 // @public
-export function createHandlebarsComponent(aStore: ReduxRootStore, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
+export function createHandlebarsComponent(aStore: ReduxRootStore, aDeliveryContent: DeliveryContentResolver, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
 
 // @public
 export interface HandlebarsComponentProps {

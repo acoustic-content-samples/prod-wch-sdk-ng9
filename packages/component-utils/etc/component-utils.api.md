@@ -113,7 +113,7 @@ export class AbstractWchPageService implements WchPageService {
 }
 
 // @public
-export function assertSameOrigin(aLeft: WindowType, aRight: WindowType): void;
+export function assertSameOrigin(aLeft: WindowType, aRight: WindowType, aLogSvc?: LoggerService): void;
 
 // @public
 export function createLayoutComponentDecorator<TYPE, DIRECTIVE extends AbstractLayoutComponentDirective>(aComponentConsumer: BiConsumer<TYPE, AbstractRegisteredComponent<TYPE, DIRECTIVE>>, aLayoutMappingConsumer: BiConsumer<TYPE, AbstractRegisteredLayoutMapping<TYPE>>): <T extends TYPE>(aDirective?: DIRECTIVE) => (cls: T) => void;

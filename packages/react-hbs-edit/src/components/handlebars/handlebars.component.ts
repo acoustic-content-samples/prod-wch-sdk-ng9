@@ -1,12 +1,21 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { ExtendedContextV2, LoggerService } from '@acoustic-content-sdk/api';
+import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
-import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
+import { selectUrlConfigFeature } from '@acoustic-content-sdk/redux-feature-url-config';
 import {
+  ReduxRootStore,
+  rxSelect,
+  rxStore
+} from '@acoustic-content-sdk/redux-store';
+import {
+  cloneUrlConfig,
   KEY_LAYOUT_MODE,
-  NOOP_LOGGER_SERVICE
+  NOOP_LOGGER_SERVICE,
+  rxPipe
 } from '@acoustic-content-sdk/utils';
-import { SchedulerLike } from 'rxjs';
+import { Observable, SchedulerLike } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { createReactRenderer } from '../../services/react-renderer/react.renderer';
 import { createLayoutRendererComponent } from '../layout-renderer/layout-renderer.component';
@@ -40,18 +49,31 @@ export interface HandlebarsComponentProps {
  */
 export function createHandlebarsComponent(
   aStore: ReduxRootStore,
+  aDeliveryContent: DeliveryContentResolver,
   aEditService: WchInlineEditServiceV2,
   aDoc: Document,
   aLogSvc: LoggerService = NOOP_LOGGER_SERVICE,
   aScheduler?: SchedulerLike
 ): ReactComponent<HandlebarsComponentProps> {
+  // access the url config
+  const store$ = rxStore(aStore);
+  // context
+  const urlConfig$ = rxPipe(store$, rxSelect(selectUrlConfigFeature));
+  // base context
+  const $context$: Observable<Partial<ExtendedContextV2>> = rxPipe(
+    urlConfig$,
+    map((urlConfig) => ({
+      hub: cloneUrlConfig(urlConfig)
+    }))
+  );
   // the renderer
   const renderer = createReactRenderer(aStore, aDoc, aLogSvc, aScheduler);
   // the layout renderer
   const LayoutRenderer = createLayoutRendererComponent(
     renderer,
-    aStore,
+    aDeliveryContent,
     aEditService,
+    $context$,
     aLogSvc
   );
   // finally the markup renderer

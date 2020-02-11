@@ -10,7 +10,7 @@ Implementation of utility functions and react components that render the compone
 
 |  Function | Description |
 |  --- | --- |
-|  [createHandlebarsComponent(aStore, aEditService, aDoc, aLogSvc, aScheduler)](./react-hbs-edit.createhandlebarscomponent.md) | Returns a React component that renders the content item passed into its properties. Markup elements annotated with inline edit controls will be registered with the inline edit service. |
+|  [createHandlebarsComponent(aStore, aDeliveryContent, aEditService, aDoc, aLogSvc, aScheduler)](./react-hbs-edit.createhandlebarscomponent.md) | Returns a React component that renders the content item passed into its properties. Markup elements annotated with inline edit controls will be registered with the inline edit service. |
 
 ## Interfaces
 

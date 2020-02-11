@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/component-api": "9.0.0",
     "@acoustic-content-sdk/edit-api": "9.0.0",
     "@acoustic-content-sdk/react-api": "9.0.0",
     "@acoustic-content-sdk/react-utils": "9.0.0",
@@ -57,6 +58,7 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
         "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
         "@acoustic-content-sdk/react-api": "acoustic-content-sdk.react-api",
         "@acoustic-content-sdk/react-utils": "acoustic-content-sdk.react-utils",

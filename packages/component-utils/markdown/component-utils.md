@@ -23,7 +23,7 @@ Framework independent collection of utility functions to implement services and 
 
 |  Function | Description |
 |  --- | --- |
-|  [assertSameOrigin(aLeft, aRight)](./component-utils.assertsameorigin.md) | Validates that the origin of both windows is the same, otherwise throws an exception |
+|  [assertSameOrigin(aLeft, aRight, aLogSvc)](./component-utils.assertsameorigin.md) | Validates that the origin of both windows is the same, otherwise throws an exception |
 |  [createLayoutComponentDecorator(aComponentConsumer, aLayoutMappingConsumer)](./component-utils.createlayoutcomponentdecorator.md) | Layout decorator and metadata. |
 |  [createLayoutMappingDecorator(aLayoutMappingConsumer)](./component-utils.createlayoutmappingdecorator.md) | Constructs the laout mapping decorator. Will callback the given function with the decorated object |
 |  [getEditHostWindow(aCurrentWindow)](./component-utils.getedithostwindow.md) | Returns the window that controls the application. This is either the parent window or the opener window. |

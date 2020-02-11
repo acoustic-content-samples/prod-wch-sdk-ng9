@@ -18,6 +18,7 @@ const LOGGER = 'EditHostWindow';
  *
  * @param aLeft  - left window to check
  * @param aRight - right window to check
+ * @param aLogSvc - optionally the logger service
  */
 export function assertSameOrigin(
   aLeft: WindowType,

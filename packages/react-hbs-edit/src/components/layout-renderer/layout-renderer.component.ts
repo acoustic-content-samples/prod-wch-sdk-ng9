@@ -1,8 +1,8 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { ExtendedContextV2, LoggerService } from '@acoustic-content-sdk/api';
+import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
 import { AbstractRxComponent } from '@acoustic-content-sdk/react-utils';
-import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import {
   opDistinctUntilChanged,
   rxNext,
@@ -33,8 +33,9 @@ const LOGGER = 'createLayoutRendererComponent';
  */
 export function createLayoutRendererComponent(
   aRenderer: UnaryFunction<string, Observable<ReactNode>>,
-  aStore: ReduxRootStore,
+  aDeliveryContent: DeliveryContentResolver,
   aEditService: WchInlineEditServiceV2,
+  aExtendedContext$: Observable<ExtendedContextV2>,
   logSvc: LoggerService
 ): ReactComponent<LayoutRendererComponentProps> {
   /**
@@ -86,8 +87,9 @@ export function createLayoutRendererComponent(
       // construct the event stream of the inline edit events
       this.inlineEditHost = createInlineEditHost(
         this.rootNodeRef.current,
-        aStore,
+        aDeliveryContent,
         aEditService,
+        aExtendedContext$,
         logSvc
       );
       this.inlineEditHost.refresh();

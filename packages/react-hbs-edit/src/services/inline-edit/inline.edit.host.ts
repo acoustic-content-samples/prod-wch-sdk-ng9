@@ -1,14 +1,16 @@
 import {
+  ExtendedContextV2,
   Logger,
   LoggerService,
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
+import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import {
   AccessorType,
   Disposable,
-  EventTargetLike,
   EVENT_EDIT_END,
   EVENT_EDIT_START,
+  EventTargetLike,
   WchEditableEvent,
   WchInlineEditServiceV2
 } from '@acoustic-content-sdk/edit-api';
@@ -25,6 +27,7 @@ import {
 } from '@acoustic-content-sdk/utils';
 import {
   asyncScheduler,
+  combineLatest,
   EMPTY,
   fromEvent,
   merge,
@@ -34,7 +37,6 @@ import {
   Subscription
 } from 'rxjs';
 import { catchError, map, observeOn, switchMap, tap } from 'rxjs/operators';
-import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 
 // plucks the dataset from an element
 const pluckDataId = pluckPath<string>(parsePath('dataset.contentItemId'));
@@ -199,8 +201,9 @@ const LOGGER = 'createInlineEditHost';
 
 export function createInlineEditHost(
   aRootElement: HTMLElement,
-  aStore: ReduxRootStore,
+  aDeliveryContent: DeliveryContentResolver,
   aEditService: WchInlineEditServiceV2,
+  aExtendedContext$: Observable<ExtendedContextV2>,
   aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
 ): InlineEditHost {
   // construct the logger
@@ -212,8 +215,15 @@ export function createInlineEditHost(
 
   const register = createWchInlineEditRegistrationService(aEditService, logger);
 
-  // fix here
-  const getRenderingContext = (aId: string) => EMPTY;
+  // returns the rendering context for a content item
+  const getRenderingContext = (aId: string): Observable<RenderingContextV2> =>
+    rxPipe(
+      combineLatest([
+        aDeliveryContent.getDeliveryContentItem(aId),
+        aExtendedContext$
+      ]),
+      map(([content, $context]) => ({ ...content, $context }))
+    );
 
   function registerElement(
     aCurrentElement: HTMLElement,

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng-hbs-edit",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Implementation of handlebars based component rendering for the preview mode.",
   "keywords": [
     "acoustic",
     "acoustic-content",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/component-api": "9.0.0",
     "@acoustic-content-sdk/edit-api": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-edit-api": "9.0.0",
@@ -58,6 +59,7 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
         "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-edit-api": "acoustic-content-sdk.ng-edit-api",
