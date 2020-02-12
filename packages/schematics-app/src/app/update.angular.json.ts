@@ -23,9 +23,10 @@ const selectBuild = (aName: string) =>
 const KEY_SOURCE_MAP = 'sourceMap';
 const CONFIG_SOURCE_MAP = KEY_SOURCE_MAP;
 
-const KEY_OUTPUT_PATH = 'outputPath';
-const KEY_MAIN = 'main';
-const KEY_TS_CONFIG = 'tsConfig';
+export const KEY_OUTPUT_PATH = 'outputPath';
+export const KEY_MAIN = 'main';
+export const KEY_POLYFILLS = 'polyfills';
+export const KEY_TS_CONFIG = 'tsConfig';
 
 const selectConfigurations = pluckPath<Record<string, any>>(['configurations']);
 const selectOptions = pluckPath<Record<string, any>>(['options']);

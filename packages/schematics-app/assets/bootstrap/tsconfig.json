@@ -1,0 +1,4 @@
+{
+  "extends": "{{{ORIGINAL_CONFIG_PATH}}}",
+  "files": ["{{{MAIN_FILE}}}", "{{{POLYFILLS_FILE}}}"]
+}

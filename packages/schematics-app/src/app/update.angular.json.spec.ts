@@ -1,18 +1,18 @@
-import { Tree } from '@angular-devkit/schematics';
-import { join } from 'path';
-import { ASSET_DIR } from '../test/assets';
 import {
   createTransientTree,
-  WorkspaceSchema,
+  findProjectName,
   getWorkspace,
-  findProjectName
+  WorkspaceSchema
 } from '@acoustic-content-sdk/schematics-utils';
-import { updateAngularJson } from './update.angular.json';
-import { Observable } from 'rxjs';
-import { rxPipe, getPath, jsonStringify } from '@acoustic-content-sdk/utils';
-import { map, tap } from 'rxjs/operators';
-import { Schema } from './schema';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
+import { getPath, rxPipe } from '@acoustic-content-sdk/utils';
+import { Tree } from '@angular-devkit/schematics';
+import { join } from 'path';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ASSET_DIR } from '../test/assets';
+import { Schema } from './schema';
+import { updateAngularJson } from './update.angular.json';
 
 describe('update angular json', () => {
   const ROOT = join(ASSET_DIR, 'ng9-app-with-routing');
