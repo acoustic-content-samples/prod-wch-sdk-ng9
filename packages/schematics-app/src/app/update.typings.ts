@@ -1,30 +1,19 @@
-import { Path } from '@angular-devkit/core';
-import { logging } from '@angular-devkit/core';
 import {
-  Change,
-  getSourceNodes,
   byName,
-  InsertChange,
-  WorkspaceProject,
+  Change,
   changeSourceFile,
-  ProjectType
+  getSourceNodes,
+  InsertChange,
+  ProjectType,
+  WorkspaceProject
 } from '@acoustic-content-sdk/schematics-utils';
-import {
-  ModuleDeclaration,
-  SourceFile,
-  SyntaxKind,
-  updateSourceFile,
-  createSourceFile,
-  ScriptTarget
-} from 'typescript';
-
-import { Schema } from './schema';
-
-import { nodeToDebug } from '../utilities/debug';
-import { sortByPosition } from '../utilities/finders';
 import { isNil } from '@acoustic-content-sdk/utils';
-import { Rule, SchematicContext } from '@angular-devkit/schematics';
-import { Tree } from '@angular-devkit/schematics/src/tree/interface';
+import { logging, Path } from '@angular-devkit/core';
+import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { ModuleDeclaration, SourceFile, SyntaxKind } from 'typescript';
+
+import { sortByPosition } from '../utilities/finders';
+import { Schema } from './schema';
 
 export const WCHTOOLS_OPTIONS_NAME = "'*/.wchtoolsoptions.json'";
 export const SITE_NAME = "'*/site.json'";
@@ -53,8 +42,8 @@ export function addToTypings(
 
   // locate the environment declaration
   const declarations = getSourceNodes(aSource)
-    .filter(node => node.kind === SyntaxKind.ModuleDeclaration)
-    .map(node => node as ModuleDeclaration)
+    .filter((node) => node.kind === SyntaxKind.ModuleDeclaration)
+    .map((node) => node as ModuleDeclaration)
     .sort(sortByPosition);
 
   // add the tools module

@@ -28,7 +28,7 @@ import {
 } from './update.typings';
 import { Schema } from './schema';
 import { Observable } from 'rxjs';
-import { Tree } from '@angular-devkit/schematics/src/tree/interface';
+import { Tree } from '@angular-devkit/schematics';
 import { map } from 'rxjs/operators';
 
 function getTsSource(path: string, content: string): SourceFile {

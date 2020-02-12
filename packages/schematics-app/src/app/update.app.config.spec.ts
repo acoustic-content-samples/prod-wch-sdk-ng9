@@ -4,7 +4,7 @@ import {
   SchematicContext,
   HostTree
 } from '@angular-devkit/schematics';
-import { Tree } from '@angular-devkit/schematics/src/tree/interface';
+import { Tree } from '@angular-devkit/schematics';
 import {
   Builders,
   byType,
@@ -47,8 +47,7 @@ describe('update app config', () => {
 
     const options: Schema = {
       url: 'xxx',
-      editable: true,
-      target: ''
+      editable: true
     };
 
     tree.create(

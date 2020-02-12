@@ -3,7 +3,7 @@ import {
   SchematicContext,
   HostTree
 } from '@angular-devkit/schematics';
-import { Tree } from '@angular-devkit/schematics/src/tree/interface';
+import { Tree } from '@angular-devkit/schematics';
 import {
   Builders,
   ProjectType,
@@ -72,8 +72,7 @@ describe('update app component', () => {
 
     const options: Schema = {
       url: 'xxx',
-      editable: true,
-      target: ''
+      editable: true
     };
 
     tree.create(
