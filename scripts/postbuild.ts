@@ -161,7 +161,8 @@ function getTypescriptDependencies(
 const DEP_MAP = {
   'ng2-logger/browser': 'ng2-logger',
   'rxjs/operators': 'rxjs',
-  '@angular/common/http': '@angular/common'
+  '@angular/common/http': '@angular/common',
+  '@angular-devkit/schematics/tasks': '@angular-devkit/schematics'
 };
 
 function mapDependency(aDep: string): string {
@@ -260,9 +261,7 @@ function createPeerDependencies(
 }
 
 const isBinaryPackage = (aPkg: any) =>
-  Boolean(aPkg.bin) ||
-  aPkg.name === '@acoustic-content-sdk/rx-utils' ||
-  Boolean(aPkg.schematics);
+  Boolean(aPkg.bin) || Boolean(aPkg.schematics);
 
 function rewritePackage(
   aDir: string,
@@ -453,7 +452,7 @@ function createDist(aPkg: string[]): Promise<string[]> {
 function postbuild() {
   // packages
   const pkg$ = dist$
-    //    .then((dist) => dist.filter((name) => name.includes('\\redux-utils\\')))
+    // .then((dist) => dist.filter((name) => name.includes('\\rx-utils\\')))
     .then((dist) => dist.map(handlePackage))
     .then((all) => Promise.all(all));
   // documentation

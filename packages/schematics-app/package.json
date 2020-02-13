@@ -66,10 +66,10 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/tooling-contributions": "acoustic-content-sdk.tooling-contributions",
-        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "chalk": "Chalk",
         "email-validator": "EmailValidator",
@@ -83,8 +83,8 @@
         "semver": "Semver",
         "sshpk": "Sshpk",
         "tmp": "Tmp",
-        "uuid": "Uuid",
         "typescript": "Typescript",
+        "uuid": "Uuid",
         "valid-url": "ValidUrl",
         "yauzl": "Yauzl"
       }

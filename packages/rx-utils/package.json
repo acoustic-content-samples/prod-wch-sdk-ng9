@@ -24,16 +24,17 @@
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "graceful-fs": "^4.2.3",
-    "mime": "^2.4.4",
-    "random-useragent": "^0.3.1",
-    "request": "^2.88.0",
-    "tmp": "^0.1.0",
-    "yauzl": "^2.10.0"
+    "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "rxjs": "^6"
+    "fs-extra": "^8",
+    "graceful-fs": "^4",
+    "mime": "^2",
+    "random-useragent": "^0",
+    "request": "^2",
+    "rxjs": "^6",
+    "tmp": "^0",
+    "yauzl": "^2"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-rx-utils.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-rx-utils.js",
@@ -42,6 +43,18 @@
   "fesm5": "dist/fesm5/acoustic-content-sdk-rx-utils.js",
   "metadata": "dist/acoustic-content-sdk-rx-utils.metadata.json",
   "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "fs-extra": "FsExtra",
+        "graceful-fs": "GracefulFs",
+        "mime": "Mime",
+        "random-useragent": "RandomUseragent",
+        "request": "Request",
+        "tmp": "Tmp",
+        "yauzl": "Yauzl"
+      }
+    },
     "whitelistedNonPeerDependencies": [
       ".*"
     ]
