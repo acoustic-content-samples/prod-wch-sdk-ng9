@@ -19,8 +19,7 @@
     "url": {
       "type": "string",
       "description": "The WCH API URL.",
-      "format": "url",
-      "x-prompt": "What is the API URL of your WCH tenant?"
+      "format": "url"
     },
     "target": {
       "type": "string",

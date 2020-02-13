@@ -1,3 +1,4 @@
+import { parse } from 'path';
 import {
   findProjectName,
   getWorkspacePath,
@@ -17,6 +18,7 @@ import { endWith, ignoreElements } from 'rxjs/operators';
 
 import { addModeToName, addModeToPath } from '../utilities/names';
 import { Schema } from './schema';
+import { ensureDirPath } from '@acoustic-content-sdk/tooling';
 
 const selectBuild = (aName: string) =>
   pluckPath<string>(['projects', aName, 'architect', 'build']);
@@ -29,15 +31,23 @@ export const KEY_MAIN = 'main';
 export const KEY_POLYFILLS = 'polyfills';
 export const KEY_TS_CONFIG = 'tsConfig';
 
+const NAME_TSCONFIG = 'tsconfig.json';
+
 const selectConfigurations = pluckPath<Record<string, any>>(['configurations']);
 const selectOptions = pluckPath<Record<string, any>>(['options']);
 
 function createModeConfig(aMode: ArtifactMode, aOptions: any): any {
+  // names
+  const outputPath = addModeToPath(aOptions[KEY_OUTPUT_PATH], aMode);
+  const main = addModeToName(aOptions[KEY_MAIN], aMode);
+  const { dir } = parse(main);
+  const tsconfig = `${dir}/${NAME_TSCONFIG}`;
+
   // transform
   return {
-    [KEY_OUTPUT_PATH]: addModeToPath(aOptions[KEY_OUTPUT_PATH], aMode),
-    [KEY_MAIN]: addModeToName(aOptions[KEY_MAIN], aMode),
-    [KEY_TS_CONFIG]: addModeToName(aOptions[KEY_TS_CONFIG], aMode)
+    [KEY_OUTPUT_PATH]: outputPath,
+    [KEY_MAIN]: main,
+    [KEY_TS_CONFIG]: tsconfig
   };
 }
 
