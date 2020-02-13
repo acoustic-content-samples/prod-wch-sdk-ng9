@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function findSdkVersion(host: Tree): Observable<string>;
+export declare function findSdkVersion(host: Tree): string;
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ export declare function findSdkVersion(host: Tree): Observable<string>;
 
 <b>Returns:</b>
 
-`Observable<string>`
+`string`
 

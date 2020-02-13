@@ -33,10 +33,12 @@ Implementation of utility methods used for tooling.
 |  [ensureLeadingSlash(aUrl)](./tooling.ensureleadingslash.md) |  |
 |  [ensureTrailingSlash(aUrl)](./tooling.ensuretrailingslash.md) |  |
 |  [findSdkVersion(aReadFile)](./tooling.findsdkversion.md) | Locates the SDK version |
+|  [findSdkVersionFromPkg(aPackage)](./tooling.findsdkversionfrompkg.md) | Locates the SDK version |
 |  [generateDataOverlay(aOptions)](./tooling.generatedataoverlay.md) | Generates a stream of files for all wchtools data folders references by the addressed module. |
 |  [generateKeys(options)](./tooling.generatekeys.md) |  |
 |  [generateLayout(options)](./tooling.generatelayout.md) |  |
 |  [generateLayouts(options)](./tooling.generatelayouts.md) |  |
+|  [getOrganization(aPackageName)](./tooling.getorganization.md) | Extracts the organization from a package name |
 |  [hasTrailingSlash(aUrl)](./tooling.hastrailingslash.md) |  |
 |  [logFileDescriptor()](./tooling.logfiledescriptor.md) |  |
 |  [relativePath(aSrc, aDst)](./tooling.relativepath.md) |  |

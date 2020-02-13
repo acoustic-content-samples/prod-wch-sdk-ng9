@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/schematics-utils](./schematics-utils.md) |  |
+|  [@acoustic-content-sdk/schematics-utils](./schematics-utils.md) | Helper library to implement schematics. |
 

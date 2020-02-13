@@ -38,6 +38,7 @@
   },
   "peerDependencies": {
     "chalk": "^3",
+    "handlebars": "^4",
     "lodash": "^4",
     "rxjs": "^6",
     "semver": "^7",
@@ -57,6 +58,7 @@
         "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "chalk": "Chalk",
+        "handlebars": "Handlebars",
         "lodash": "Lodash",
         "semver": "Semver",
         "uuid": "Uuid"

@@ -4,6 +4,8 @@
 
 ## schematics-utils package
 
+Helper library to implement schematics.
+
 ## Classes
 
 |  Class | Description |
@@ -54,6 +56,7 @@
 |  [changeSourceFile(aFile, aOp, aHost)](./schematics-utils.changesourcefile.md) |  |
 |  [copyDir(aSrc, aDst, aHost, aLogger)](./schematics-utils.copydir.md) | Copies from source to target and overrides the target. But does not delete extra files |
 |  [createLoggerService(context)](./schematics-utils.createloggerservice.md) | Constructs the logger service on top of the context |
+|  [createTransientTree(aRoot)](./schematics-utils.createtransienttree.md) | Creates a transient copy of a tree |
 |  [ensureTrailingSlash(aUrl)](./schematics-utils.ensuretrailingslash.md) |  |
 |  [findBootstrapModuleCall(host, mainPath)](./schematics-utils.findbootstrapmodulecall.md) |  |
 |  [findBootstrapModulePath(host, mainPath)](./schematics-utils.findbootstrapmodulepath.md) |  |
@@ -108,6 +111,7 @@
 |  [rxGetJson(aUri)](./schematics-utils.rxgetjson.md) |  |
 |  [rxLocateDir(aSrcDir, aPredicate)](./schematics-utils.rxlocatedir.md) | Locates the directory across the parent chain for which the predicate matches |
 |  [rxTransformHtmlFile(aName, aOp, aTree)](./schematics-utils.rxtransformhtmlfile.md) | Reads an HMTL from the tree and then transforms it using the given function. If the result is null or undefined, the file will be deleted, else replaced or created. |
+|  [rxTransformHtmlFragment(aName, aOp, aTree)](./schematics-utils.rxtransformhtmlfragment.md) | Reads an HMTL from the tree and then transforms it using the given function. If the result is null or undefined, the file will be deleted, else replaced or created. |
 |  [rxTransformJsonFile(aName, aOp, aTree)](./schematics-utils.rxtransformjsonfile.md) | Reads a JSON file from the tree and then transforms it using the given function. If the result is null or undefined, the file will be deleted, else replaced or created. |
 |  [rxTransformLinesFile(aName, aOp, aTree)](./schematics-utils.rxtransformlinesfile.md) | Reads a line based file from the tree and then transforms it using the given function. If the result is null or undefined, the file will be deleted, else replaced or created. |
 |  [rxTransformTextFile(aName, aOp, aTree)](./schematics-utils.rxtransformtextfile.md) | Reads a text file from the tree and then transforms it using the given function. If the result is null or undefined, the file will be deleted, else replaced or created. |

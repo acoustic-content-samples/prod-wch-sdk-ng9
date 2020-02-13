@@ -11,6 +11,16 @@ import { ReadDirectory } from '@acoustic-content-sdk/tooling';
 import { ReadTextFile } from '@acoustic-content-sdk/tooling';
 
 // @public
+export enum ArtifactMode {
+    // (undocumented)
+    ALWAYS = "always",
+    // (undocumented)
+    LIVE = "live",
+    // (undocumented)
+    PREVIEW = "preview"
+}
+
+// @public
 export function copyNgDriverFiles(aReadFile: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateNgDriverArtifactsSchema): Observable<FileDescriptor<Buffer>>;
 
 // Warning: (ae-forgotten-export) The symbol "Artifact" needs to be exported by the entry point public_api.d.ts

@@ -6,6 +6,12 @@
 
 Tooling functions to implement support for feature modules.
 
+## Enumerations
+
+|  Enumeration | Description |
+|  --- | --- |
+|  [ArtifactMode](./tooling-contributions.artifactmode.md) | Artifact modes, the values need to match the option selections for the <code>Page Contribution</code> type <code>354743b2-f89a-482b-b447-2b5a2367c8bd</code> |
+
 ## Functions
 
 |  Function | Description |

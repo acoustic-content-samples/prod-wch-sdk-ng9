@@ -110,6 +110,9 @@ export type FileDescriptor<T> = [string, T];
 export function findSdkVersion(aReadFile: ReadTextFile): Observable<string>;
 
 // @public
+export function findSdkVersionFromPkg(aPackage: any): string;
+
+// @public
 export const fixPath: (aPath: string) => string;
 
 // @public
@@ -129,6 +132,9 @@ export function generateLayout(options: Schema_3): (aReadDir: ReadDirectory, log
 //
 // @public (undocumented)
 export function generateLayouts(options: Schema_4): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<string | Buffer | import("@acoustic-content-sdk/api").AuthoringLayoutMapping | import("@acoustic-content-sdk/api").AuthoringLayoutItem>>;
+
+// @public
+export function getOrganization(aPackageName: string): string;
 
 // @public (undocumented)
 export function hasTrailingSlash(aUrl: string): boolean;

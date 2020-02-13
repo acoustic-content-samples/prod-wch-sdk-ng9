@@ -404,6 +404,9 @@ export function copyDir(aSrc: string, aDst: string, aHost: Tree, aLogger?: Logge
 // @public
 export function createLoggerService(context: SchematicContext): LoggerService;
 
+// @public
+export function createTransientTree(aRoot: string): Tree;
+
 // @public (undocumented)
 export const createXHR: () => any;
 
@@ -485,7 +488,7 @@ export function findProjectName(workspaceOrHost: WorkspaceSchema | Tree, options
 }): string;
 
 // @public (undocumented)
-export function findSdkVersion(host: Tree): Observable<string>;
+export function findSdkVersion(host: Tree): string;
 
 // @public (undocumented)
 export function findWchToolsOptions(host: Tree, options?: {
@@ -782,6 +785,9 @@ export const rxTmpFile: Observable<string>;
 export function rxTransformHtmlFile(aName: string, aOp: TransformCallback<Document>, aTree: Tree): Observable<string>;
 
 // @public
+export function rxTransformHtmlFragment(aName: string, aOp: TransformCallback<DocumentFragment>, aTree: Tree): Observable<string>;
+
+// @public
 export function rxTransformJsonFile(aName: string, aOp: TransformCallback<any>, aTree: Tree): Observable<string>;
 
 // @public
@@ -954,7 +960,5 @@ export interface ZipEntry {
     fileName: string;
 }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```
