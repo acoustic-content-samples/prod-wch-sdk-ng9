@@ -7,12 +7,12 @@ import {
   SPAWN_OUTPUT_TYPE,
   SpawnLine
 } from '@acoustic-content-sdk/rx-utils';
+import { createError } from '@acoustic-content-sdk/utils';
 import { ExecOptions, SpawnOptions } from 'child_process';
 import { basename, dirname, join } from 'path';
 import { cwd } from 'process';
 import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { catchError, filter, first, map, mergeMap } from 'rxjs/operators';
-import { VError } from 'verror';
 
 const PACKAGE_JSON = 'package.json';
 
@@ -27,7 +27,7 @@ function resolveParentDir(aDir: string): Observable<string> {
   const parentDir = dirname(aDir);
   // recurse
   return parentDir === aDir
-    ? throwError(new VError(`Unable to locate ${PACKAGE_JSON}`))
+    ? throwError(createError(`Unable to locate ${PACKAGE_JSON}`))
     : internalFindPackageJson(parentDir);
 }
 
@@ -112,7 +112,10 @@ export function rxFindPackageManager(aDirOrFile: string): Observable<string> {
   const pkg$ = rxCacheSingle(rxFindPackageJson(aDirOrFile));
   // options
   const options$ = rxCacheSingle<SpawnOptions>(
-    rxPipe(pkg$, map((pkg) => ({ cwd: dirname(pkg) })))
+    rxPipe(
+      pkg$,
+      map((pkg) => ({ cwd: dirname(pkg) }))
+    )
   );
   // global package manager
   const ngLocal$ = rxPipe(
@@ -185,7 +188,10 @@ export function packageInstaller(
   const mgr$ = rxCacheSingle(rxPipe(pkg$, mergeMap(rxFindPackageManager)));
   // options
   const options$ = rxCacheSingle<ExecOptions>(
-    rxPipe(pkg$, map((pkg) => ({ cwd: dirname(pkg) })))
+    rxPipe(
+      pkg$,
+      map((pkg) => ({ cwd: dirname(pkg) }))
+    )
   );
   // returns the callback
   function install(
@@ -193,7 +199,10 @@ export function packageInstaller(
     ...aPackages: string[]
   ): Observable<SpawnLine> {
     // build the command line
-    const args$ = rxPipe(mgr$, map((mgr) => getInstallArgs(aType, mgr)));
+    const args$ = rxPipe(
+      mgr$,
+      map((mgr) => getInstallArgs(aType, mgr))
+    );
     // execute
     return rxPipe(
       combineLatest(mgr$, args$, options$),

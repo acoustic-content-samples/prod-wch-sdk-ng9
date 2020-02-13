@@ -7,6 +7,7 @@ import {
   SpawnLine
 } from '@acoustic-content-sdk/rx-utils';
 import {
+  createError,
   isNotNil,
   NOOP_LOGGER_SERVICE,
   rxNext,
@@ -17,7 +18,6 @@ import { platform } from 'os';
 import { dirname, join } from 'path';
 import { bindNodeCallback, Observable, throwError } from 'rxjs';
 import { catchError, map, mapTo, mergeMap } from 'rxjs/operators';
-import { VError } from 'verror';
 
 import { rxFindPackageJson } from './package';
 
@@ -134,7 +134,7 @@ export function rxFindScript(
     localScript$,
     catchError(globalScript),
     catchError((error) =>
-      throwError(new VError(error, `Unable to locate script [${aName}]`))
+      throwError(createError(`Unable to locate script [${aName}]`, error))
     )
   );
 }

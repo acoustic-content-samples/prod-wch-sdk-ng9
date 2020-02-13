@@ -337,6 +337,9 @@ export function createDeliveryContentItemWithMetadata(aItem: DeliveryContentItem
 // @public (undocumented)
 export const createEmptyLogger: UnaryFunction<string, Logger>;
 
+// @public (undocumented)
+export function createError(aMessage: string, aCause?: Error): Error;
+
 // @public
 export function createGetter<T>(aGetter: Generator<T>): PropertyDescriptor;
 

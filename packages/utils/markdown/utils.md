@@ -37,6 +37,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [cloneUrlConfig(aUrlConfig)](./utils.cloneurlconfig.md) | Constructs a clone |
 |  [createDeliveryContentItem(aItem)](./utils.createdeliverycontentitem.md) | Converts a v1 delivery item structure into a simplified structure |
 |  [createDeliveryContentItemWithMetadata(aItem)](./utils.createdeliverycontentitemwithmetadata.md) | Merges metadata into each level |
+|  [createError(aMessage, aCause)](./utils.createerror.md) |  |
 |  [createGetter(aGetter)](./utils.creategetter.md) | Constructs a getter description |
 |  [createGetterOnObservable(aObservable, aInitial)](./utils.creategetteronobservable.md) | Constructs a getter description |
 |  [createLoggerService(aLoggerFactory)](./utils.createloggerservice.md) | Constructs a logger service on the basis of a logger factory. The service makes sure not to create the same logger multiple times |

@@ -47,7 +47,6 @@
     "sshpk": "^1.16.1",
     "tmp": "^0.1.0",
     "valid-url": "^1.0.9",
-    "verror": "^1.10.0",
     "yauzl": "^2.10.0"
   },
   "peerDependencies": {
@@ -79,7 +78,6 @@
         "tmp": "Tmp",
         "typescript": "Typescript",
         "valid-url": "ValidUrl",
-        "verror": "Verror",
         "yauzl": "Yauzl"
       }
     },
@@ -95,7 +93,6 @@
       "semver",
       "jsdom",
       "uuid",
-      "verror",
       "tmp",
       "lodash",
       "email-validator",

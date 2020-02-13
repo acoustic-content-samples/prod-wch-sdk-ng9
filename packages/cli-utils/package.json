@@ -35,8 +35,7 @@
     "rxjs": "^6",
     "semver": "^7",
     "typescript": "^3",
-    "uuid": "^3",
-    "verror": "^1"
+    "uuid": "^3"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-cli-utils.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-cli-utils.js",
@@ -54,16 +53,14 @@
         "mime": "Mime",
         "semver": "Semver",
         "typescript": "Typescript",
-        "uuid": "Uuid",
-        "verror": "Verror"
+        "uuid": "Uuid"
       }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*",
       "semver",
       "mime",
-      "uuid",
-      "verror"
+      "uuid"
     ]
   },
   "tsdoc": {

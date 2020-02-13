@@ -1,4 +1,5 @@
 /* Copyright IBM Corp. 2017 */
+import { createError } from '@acoustic-content-sdk/utils';
 import { copy, CopyOptions, stat } from 'fs-extra';
 import { mkdir, Stats } from 'graceful-fs';
 import { join, parse } from 'path';
@@ -22,7 +23,6 @@ import {
   mergeMapTo,
   share
 } from 'rxjs/operators';
-import { VError } from 'verror';
 
 import { rxCacheSingle, rxPipe } from './rx.utils';
 import {
@@ -55,7 +55,7 @@ function _rxMkDir(aPath: string): Observable<string> {
             // in case of a stat error, bail our
             if (statError) {
               observer.error(
-                new VError(statError, 'Unable to create directory [%s].', aPath)
+                createError(`Unable to create directory [${aPath}}.`, statError)
               );
             }
             // check if the directory exists
@@ -66,10 +66,9 @@ function _rxMkDir(aPath: string): Observable<string> {
             } else {
               // bail out
               observer.error(
-                new VError(
-                  mkdirError,
-                  'Unable to create directory [%s].',
-                  aPath
+                createError(
+                  `Unable to create directory [${aPath}].`,
+                  mkdirError
                 )
               );
             }
@@ -108,10 +107,9 @@ function _rxMkDirs(): UnaryFunction<string, Observable<string>> {
           mergeMap(() => _mkdir(aDir)),
           catchError((error) =>
             throwError(
-              new VError(
-                error,
-                'Unable to recursively create directory [%s].',
-                aDir
+              createError(
+                `Unable to recursively create directory [${aDir}].`,
+                error
               )
             )
           )
@@ -176,11 +174,7 @@ function _doCopyDir(
     );
   const opFileInfoWithStats: OperatorFunction<string, FileInfoWithStats> = (
     rxFileInfo
-  ) =>
-    rxFileInfo.pipe(
-      opFileInfo,
-      opStats
-    );
+  ) => rxFileInfo.pipe(opFileInfo, opStats);
   const rxFileInfoWithStats: Observable<FileInfoWithStats> = rxChildren.pipe(
     opFileInfoWithStats,
     share<FileInfoWithStats>()
@@ -240,11 +234,9 @@ function _copyFiles(
       mergeMapTo(rxCopyFileStream(aSrcFile, aDstFile)),
       catchError((error) =>
         throwError(
-          new VError(
-            error,
-            'Unable to copy file [%s] to [%s].',
-            aSrcFile,
-            aDstFile
+          createError(
+            `Unable to copy file [${aSrcFile}] to [${aDstFile}].`,
+            error
           )
         )
       )
@@ -263,7 +255,7 @@ const _rxCopyDir = (aSrc: string, aDst: string, aOverride?: boolean) =>
   _doCopyDir(aSrc, aDst, _rxMkDirs(), !!aOverride).pipe(
     catchError((copyError) =>
       throwError(
-        new VError(copyError, 'Unable to copy [%s] to [%s].', aSrc, aDst)
+        createError(`Unable to copy [${aSrc}] to [${aDst}].`, copyError)
       )
     )
   );

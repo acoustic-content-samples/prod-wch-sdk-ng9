@@ -5,7 +5,7 @@ import {
   WCH_CONTEXT_WINDOW
 } from '@acoustic-content-sdk/react-api';
 import { WCH_CONTEXT_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/react-edit-api';
-import { isNil } from '@acoustic-content-sdk/utils';
+import { createError, isNil } from '@acoustic-content-sdk/utils';
 
 /**
  * Validates that we run in a consistent environment
@@ -16,7 +16,7 @@ import { isNil } from '@acoustic-content-sdk/utils';
 function assertEditHostWindow(aWnd: WindowType): WindowType {
   // sanity check
   if (isNil(aWnd)) {
-    throw new Error('Application must run in an edit host window.');
+    throw createError('Application must run in an edit host window.');
   }
   // returns the type
   return aWnd;

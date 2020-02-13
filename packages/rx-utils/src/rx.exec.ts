@@ -1,6 +1,6 @@
+import { createError } from '@acoustic-content-sdk/utils';
 import { ChildProcess, SpawnOptions } from 'child_process';
 import { Observable, Observer } from 'rxjs';
-import { VError } from 'verror';
 
 export enum SPAWN_OUTPUT_TYPE {
   STDOUT,
@@ -78,7 +78,7 @@ export function rxSpawn(
       if (errno === 0) {
         aObserver.complete();
       } else {
-        onError(new VError(aCmd));
+        onError(createError(aCmd));
       }
     };
     // exit state

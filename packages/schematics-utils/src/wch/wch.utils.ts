@@ -11,6 +11,7 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import {
   assertArray,
+  createError,
   getProperty,
   isNil,
   isString,
@@ -21,7 +22,6 @@ import { Tree } from '@angular-devkit/schematics';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, mapTo, switchMap, switchMapTo } from 'rxjs/operators';
 import { isUri } from 'valid-url';
-import { VError } from 'verror';
 
 import { getWorkspace } from '../utility/config';
 import { getProject, isWorkspaceSchema } from '../utility/project';
@@ -44,7 +44,7 @@ function _isValidPassword(aPassword: string): boolean {
 
 function _throwInvalidUrl(aApiUrl: string, aError: Error): Observable<never> {
   return throwError(
-    new VError(aError, 'The API URL [%s] is not a valid WCH API URL.', aApiUrl)
+    createError(`The API URL [${aApiUrl}] is not a valid WCH API URL.`, aError)
   );
 }
 
@@ -58,9 +58,8 @@ function _getCurrentUser(aApiUrl: string): Observable<any> {
 
 function _throwInvalidCredentials(aApiUrl: string): Observable<never> {
   return throwError(
-    new VError(
-      'Unable to access credentials for the API URL [%s]. Please follow the directions on https://www.npmjs.com/package/acoustic-content-sdk-cli#credential-management to register credentials.',
-      aApiUrl
+    createError(
+      `Unable to access credentials for the API URL [${aApiUrl}]. Please follow the directions on https://www.npmjs.com/package/acoustic-content-sdk-cli#credential-management to register credentials.`
     )
   );
 }
@@ -88,11 +87,9 @@ export function validateCredentials(
     map((data) => JSON.parse(data)),
     catchError((error) =>
       throwError(
-        new VError(
-          error,
-          'Unable to login to [%s] with user [%s]. Please check your registered password.',
-          loginUrl,
-          aCredentials.username
+        createError(
+          `Unable to login to [${loginUrl}] with user [${aCredentials.username}]. Please check your registered password.`,
+          error
         )
       )
     ),
@@ -103,7 +100,7 @@ export function validateCredentials(
 function _validateUser(aFeed: any): Observable<any> {
   // test the feed result
   if (!aFeed || !aFeed.externalId) {
-    return throwError(new VError('Invalid currentuser response'));
+    return throwError(createError('Invalid currentuser response'));
   }
   return of(aFeed);
 }
@@ -121,7 +118,7 @@ export function validateApiUrl(
   // check if the URL is valud
   if (!isUri(aUrl)) {
     return throwError(
-      new VError(
+      createError(
         'Please enter a valid API URL. Copy this URL from the "Hub Information" section of your WCH tenant.'
       )
     );

@@ -1,4 +1,10 @@
-import { isFunction, isString, Predicate } from '@acoustic-content-sdk/utils';
+import {
+  createError,
+  isFunction,
+  isString,
+  Predicate
+} from '@acoustic-content-sdk/utils';
+
 import { isDraftId } from '../draft/draft.utils';
 
 const FUNCTION_TYPE = typeof isFunction;
@@ -24,7 +30,7 @@ export function assertIsString(aValue: any, aName: string) {
 
 export function assertIsDraftId(aValue: any, aName: string) {
   if (!isString(aValue) || !isDraftId(aValue)) {
-    throw new Error(
+    throw createError(
       `Expecting [${aName}] to be a draft ID, but it is [${aValue}].`
     );
   }
@@ -32,7 +38,7 @@ export function assertIsDraftId(aValue: any, aName: string) {
 
 export function assertIsNotDraftId(aValue: any, aName: string) {
   if (!isString(aValue) || isDraftId(aValue)) {
-    throw new Error(
+    throw createError(
       `Expecting [${aName}] not to be a draft ID, but it is [${aValue}].`
     );
   }
@@ -44,6 +50,6 @@ export function assertProperties(
   aName: string
 ) {
   if (!aPredicate(aValue)) {
-    throw new Error(`Properties for [${aName}] are not valid.`);
+    throw createError(`Properties for [${aName}] are not valid.`);
   }
 }

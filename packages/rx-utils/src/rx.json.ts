@@ -1,8 +1,8 @@
 /* Copyright IBM Corp. 2017 */
+import { createError } from '@acoustic-content-sdk/utils';
 import { readFile, writeFile } from 'graceful-fs';
 import { getType } from 'mime';
 import { Observable, Observer } from 'rxjs';
-import { VError } from 'verror';
 
 import { FileDescriptor } from './rx.walk';
 
@@ -23,7 +23,7 @@ function _readJSON<T>(aDesc: FileDescriptor): Observable<JsonFile<T>> {
           observer.complete();
         } catch (error) {
           observer.error(
-            new VError(error, 'Unable to parse JSON file %s.', aDesc.absPath)
+            createError(`Unable to parse JSON file [${aDesc.absPath}].`, error)
           );
         }
       }
@@ -38,7 +38,7 @@ function _writeJSON<T>(aDesc: JsonFile<T>): Observable<FileDescriptor> {
       writeFile(
         aDesc.desc.absPath,
         JSON.stringify(aDesc.data, undefined, 2),
-        err => {
+        (err) => {
           if (err) {
             observer.error(err);
           } else {
@@ -49,7 +49,7 @@ function _writeJSON<T>(aDesc: JsonFile<T>): Observable<FileDescriptor> {
       );
     } catch (error) {
       observer.error(
-        new VError(error, 'Unable to write JSON file %s.', aDesc.desc.absPath)
+        createError(`Unable to write JSON file [${aDesc.desc.absPath}].`, error)
       );
     }
   });

@@ -1,5 +1,6 @@
 import {
   anyToString,
+  createError,
   isNil,
   isNotEmpty,
   isNotNil
@@ -54,7 +55,7 @@ export function assertProvider<T>(
     const suffix = isNotNil(parentName) ? ` by [${parentName}]` : '';
     // bail out
     const message = `Missing required provider: [${providerName}]${suffix}`;
-    throw new Error(message);
+    throw createError(message);
   }
   // returns the value
   return aValue as any;

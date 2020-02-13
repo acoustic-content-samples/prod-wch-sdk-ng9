@@ -10,6 +10,7 @@ import {
   WriteTextFile
 } from '@acoustic-content-sdk/tooling';
 import {
+  createError,
   isFunction,
   isNil,
   isNotNil,
@@ -29,7 +30,7 @@ import {
   UnaryFunction
 } from 'rxjs';
 import { map, mapTo, mergeMap } from 'rxjs/operators';
-import { VError } from 'verror';
+
 import { safeWrite } from './rx.copy';
 
 /**
@@ -45,7 +46,7 @@ function bufferFromTree(aName: string, aHost: Tree): Observable<Buffer> {
   const fileEntry = aHost.get(aName);
 
   if (isNil(fileEntry) || isNil(fileEntry.content)) {
-    return throwError(new VError(`The file (${aName}) does not exist.`));
+    return throwError(createError(`The file (${aName}) does not exist.`));
   }
 
   return of(fileEntry.content);

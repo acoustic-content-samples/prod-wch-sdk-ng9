@@ -10,6 +10,7 @@ import {
   WCH_TOKEN_INLINE_EDIT_PROVIDER
 } from '@acoustic-content-sdk/ng-edit-api';
 import {
+  createError,
   createObservableAdaptor,
   isNil,
   logModule,
@@ -46,7 +47,7 @@ export function internalGetInlineEditProvider(
     // log this
     logger.warn(msg);
     // error
-    return throwError(new Error(msg));
+    return throwError(createError(msg));
   }
   /**
    * Access the object from the parent window. We make sure

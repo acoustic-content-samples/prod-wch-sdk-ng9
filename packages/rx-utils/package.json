@@ -30,7 +30,6 @@
     "random-useragent": "^0.3.1",
     "request": "^2.88.0",
     "tmp": "^0.1.0",
-    "verror": "^1.10.0",
     "yauzl": "^2.10.0"
   },
   "peerDependencies": {

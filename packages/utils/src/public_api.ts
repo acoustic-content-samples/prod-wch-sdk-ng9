@@ -82,7 +82,7 @@ export {
   isAuthoringConfigElement,
   isAuthoringContentElement
 } from './elements/type';
-export { isErrorResponse } from './error/error';
+export { createError, isErrorResponse } from './error/error';
 export {
   constGenerator,
   fromGeneratorOrT,

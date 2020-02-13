@@ -1,4 +1,5 @@
 /* Copyright IBM Corp. 2017 */
+import { createError } from '@acoustic-content-sdk/utils';
 import { ensureDir, remove } from 'fs-extra';
 import {
   createReadStream,
@@ -24,7 +25,6 @@ import {
 } from 'rxjs';
 import { catchError, map, mapTo, mergeMap } from 'rxjs/operators';
 import { dir, tmpName } from 'tmp';
-import { VError } from 'verror';
 
 import { rxPipe } from './rx.utils';
 
@@ -169,7 +169,7 @@ function _rxTempDir(): Observable<string> {
     dir((tmpError, tmpPath) => {
       // test for error
       if (tmpError) {
-        o.error(new VError(tmpError, 'Unable to create temporary directory.'));
+        o.error(createError('Unable to create temporary directory.', tmpError));
       } else {
         o.next(tmpPath);
         o.complete();
@@ -184,7 +184,7 @@ function _rxTempName(): Observable<string> {
     tmpName((tmpError, tmpName) => {
       // test for error
       if (tmpError) {
-        o.error(new VError(tmpError, 'Unable to get a temporary name.'));
+        o.error(createError('Unable to get a temporary name.', tmpError));
       } else {
         o.next(tmpName);
         o.complete();

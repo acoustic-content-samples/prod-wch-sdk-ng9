@@ -31,8 +31,10 @@
   },
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
     "@acoustic-content-sdk/schematics-utils": "9.0.0",
     "@acoustic-content-sdk/tooling": "9.0.0",
+    "@acoustic-content-sdk/tooling-contributions": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0",
     "chalk": "^3.0.0",
     "email-validator": "^2.0.4",
@@ -46,8 +48,8 @@
     "semver": "^7.1.2",
     "sshpk": "^1.16.1",
     "tmp": "^0.1.0",
+    "uuid": "^3.4.0",
     "valid-url": "^1.0.9",
-    "verror": "^1.10.0",
     "yauzl": "^2.10.0"
   },
   "peerDependencies": {
@@ -66,6 +68,8 @@
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/tooling-contributions": "acoustic-content-sdk.tooling-contributions",
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "chalk": "Chalk",
         "email-validator": "EmailValidator",
@@ -79,9 +83,9 @@
         "semver": "Semver",
         "sshpk": "Sshpk",
         "tmp": "Tmp",
+        "uuid": "Uuid",
         "typescript": "Typescript",
         "valid-url": "ValidUrl",
-        "verror": "Verror",
         "yauzl": "Yauzl"
       }
     },
@@ -97,7 +101,6 @@
       "semver",
       "jsdom",
       "uuid",
-      "verror",
       "tmp",
       "lodash",
       "email-validator",
