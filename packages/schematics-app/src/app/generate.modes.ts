@@ -23,31 +23,15 @@ import { normalize } from '@angular-devkit/core';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join, parse } from 'path';
 import { merge, Observable, of, UnaryFunction } from 'rxjs';
-import {
-  ignoreElements,
-  map,
-  mapTo,
-  mergeMap,
-  tap,
-  endWith
-} from 'rxjs/operators';
-import {
-  ClassDeclaration,
-  Decorator,
-  isArrayLiteralExpression,
-  isCallExpression,
-  isClassDeclaration,
-  isIdentifier,
-  isImportClause,
-  isImportDeclaration,
-  isImportSpecifier,
-  isNamedImports,
-  isObjectLiteralExpression,
-  isPropertyAssignment,
-  isStringLiteral,
-  SourceFile
-} from 'typescript';
+import { endWith, ignoreElements, map, mergeMap } from 'rxjs/operators';
+import { SourceFile } from 'typescript';
 
+import {
+  findBootstrapComponent,
+  findBootstrapImport,
+  findNgModule,
+  isNgModuleDecorator
+} from '../utilities/ast.utils';
 import { addModeToName } from '../utilities/names';
 import { importFromFileToFile } from '../utilities/path';
 import { ASSETS_DIR$ } from './../utilities/assets';
@@ -125,70 +109,12 @@ function transformApp(
   return of(aTemplate(aCtx));
 }
 
-function isNgModuleDecorator(aDecorator: Decorator): boolean {
-  return (
-    isCallExpression(aDecorator.expression) &&
-    isIdentifier(aDecorator.expression.expression) &&
-    aDecorator.expression.expression.text === 'NgModule'
-  );
-}
-
-function hasNgModuleDecorator(aClassDecl: ClassDeclaration): boolean {
-  return isNotNil(aClassDecl.decorators.find(isNgModuleDecorator));
-}
-
-function findBootstrapComponent(aDecorator: Decorator): string {
-  if (isCallExpression(aDecorator.expression)) {
-    // find the object literal expression
-    const props = aDecorator.expression.arguments
-      .find(isObjectLiteralExpression)
-      .properties.filter(isPropertyAssignment);
-    // find the right one
-    const boostrap = props.find(
-      (prop) => isIdentifier(prop.name) && prop.name.text === 'bootstrap'
-    );
-    if (isNotNil(boostrap) && isArrayLiteralExpression(boostrap.initializer)) {
-      // find the first identifier
-      return boostrap.initializer.elements.find(isIdentifier).text;
-    }
-  }
-  return undefined;
-}
-
-function findBootstrapImport(aName: string, aAppModule: SourceFile): string {
-  // all imports
-  const imp = aAppModule.statements
-    .filter(isImportDeclaration)
-    .find(
-      (im) =>
-        isImportClause(im.importClause) &&
-        isNamedImports(im.importClause.namedBindings) &&
-        isNotNil(
-          im.importClause.namedBindings.elements.find(
-            (el) =>
-              isImportSpecifier(el) &&
-              isIdentifier(el.name) &&
-              el.name.text === aName
-          )
-        )
-    );
-  // returns the path
-  if (isNotNil(imp) && isStringLiteral(imp.moduleSpecifier)) {
-    // the path
-    return imp.moduleSpecifier.text;
-  }
-  // nothing
-  return undefined;
-}
-
 function contextFromAppModule(aAppModule: SourceFile): Record<string, string> {
   // the context
   const ctx: Record<string, string> = {};
   ctx[KEY_ORIGINAL_APP_MODULE_PATH] = aAppModule.fileName;
   // find the name
-  const classDecl = aAppModule.statements
-    .filter(isClassDeclaration)
-    .find(hasNgModuleDecorator);
+  const classDecl = findNgModule(aAppModule);
   if (isNotNil(classDecl)) {
     ctx[KEY_ORIGINAL_APP_MODULE] = classDecl.name.text;
     // get the bootstrap path

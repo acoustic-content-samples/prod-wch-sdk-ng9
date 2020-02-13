@@ -1,5 +1,3 @@
-import { Path, resolve } from '@angular-devkit/core';
-import { Tree } from '@angular-devkit/schematics';
 import {
   KEY_BASICAUTH_LOGIN_PASSWORD,
   KEY_BASICAUTH_LOGIN_USERNAME,
@@ -7,28 +5,24 @@ import {
   REL_PATH_CURRENT_USER
 } from '@acoustic-content-sdk/api';
 import { Credentials } from '@acoustic-content-sdk/cli-credentials';
-import { wchToolsGetCredentials } from '@acoustic-content-sdk/tooling';
+import {
+  findSdkVersionFromPkg,
+  wchToolsGetCredentials
+} from '@acoustic-content-sdk/tooling';
 import {
   assertArray,
   getProperty,
   isNil,
-  isNotNil,
-  isString
+  isString,
+  jsonParse
 } from '@acoustic-content-sdk/utils';
+import { normalize, Path, resolve } from '@angular-devkit/core';
+import { Tree } from '@angular-devkit/schematics';
 import { Observable, of, throwError } from 'rxjs';
-import {
-  catchError,
-  map,
-  mapTo,
-  pluck,
-  switchMap,
-  switchMapTo
-} from 'rxjs/operators';
-import { coerce } from 'semver';
+import { catchError, map, mapTo, switchMap, switchMapTo } from 'rxjs/operators';
 import { isUri } from 'valid-url';
 import { VError } from 'verror';
 
-import { findPackageJson } from '../package';
 import { getWorkspace } from '../utility/config';
 import { getProject, isWorkspaceSchema } from '../utility/project';
 import {
@@ -160,48 +154,23 @@ export function validateApiUrl(
   }
 }
 
-const PACKAGE_JSON = '/package.json' as Path;
-const FALLBACK = '/data' as Path;
+const PACKAGE_JSON = normalize('/package.json');
+const FALLBACK = normalize('/data');
 
-const OPTIONS = '.wchtoolsoptions.json' as Path;
-
-const SDK_IMPORT = '@acoustic-content-sdk/ng';
-const CLI_IMPORT = '@acoustic-content-sdk/cli';
+const OPTIONS = normalize('.wchtoolsoptions.json');
 
 export const WCHTOOLS_DEPENDENCIES = 'wchtools-dependencies';
 
-function _findBuildVersion(): Observable<string> {
-  // find the package
-  return findPackageJson(__dirname).pipe(pluck<any, string>('version'));
-}
-
-/**
- * Decode the version from the dependency
- *
- * @param aVersion - the version
- *
- * @returns observable of the version
- */
-function _fromDependency(aVersion: string): Observable<string> {
-  const parsed = coerce(aVersion);
-  return !!parsed ? of(parsed.version) : _findBuildVersion();
-}
-
-export function findSdkVersion(host: Tree): Observable<string> {
+export function findSdkVersion(host: Tree): string {
   // try to locate the package json
   const buf = host.read(PACKAGE_JSON);
   if (isNil(buf)) {
-    return _findBuildVersion();
+    return undefined;
   }
   // source package
-  const pkg = JSON.parse(buf.toString());
-  // check if we have imports
-  const deps = pkg.dependencies || {};
-  const devDeps = pkg.devDependencies || {};
-
-  const fromPkg = deps[SDK_IMPORT] || devDeps[CLI_IMPORT];
-
-  return isNotNil(fromPkg) ? _fromDependency(fromPkg) : _findBuildVersion();
+  const pkg = jsonParse(buf.toString());
+  // dispatch
+  return findSdkVersionFromPkg(pkg);
 }
 
 /**
@@ -263,7 +232,7 @@ export function findDataDir(host: Tree, options?: { data?: string }): Path {
   const dataFromOptions = getProperty(options, 'data');
   if (isString(dataFromOptions)) {
     // use
-    return dataFromOptions as Path;
+    return normalize(dataFromOptions);
   }
 
   const buf = host.read(PACKAGE_JSON);
@@ -276,7 +245,7 @@ export function findDataDir(host: Tree, options?: { data?: string }): Path {
 
   const data = cfg.data || FALLBACK;
 
-  return resolve('/' as Path, data);
+  return resolve(normalize('/'), data);
 }
 
 export function findWchToolsOptions(

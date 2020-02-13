@@ -65,7 +65,6 @@ describe('generate modes', () => {
     const fullRule = chain([jsonRule, modeRule]);
 
     const tree$ = fullRule(tree, undefined) as Observable<Tree>;
-    console.log('Carsten', tree$);
 
     const test$ = rxPipe(
       tree$,

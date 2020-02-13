@@ -22,7 +22,7 @@ const selectBuild = (aName: string) =>
   pluckPath<string>(['projects', aName, 'architect', 'build']);
 
 const KEY_SOURCE_MAP = 'sourceMap';
-const CONFIG_SOURCE_MAP = KEY_SOURCE_MAP;
+export const CONFIG_SOURCE_MAP = KEY_SOURCE_MAP;
 
 export const KEY_OUTPUT_PATH = 'outputPath';
 export const KEY_MAIN = 'main';

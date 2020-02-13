@@ -1,8 +1,11 @@
 import { ensureTrailingSlash } from '@acoustic-content-sdk/schematics-utils';
+import { getOrganization } from '@acoustic-content-sdk/tooling';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import { parse } from 'path';
 
-const ROOT_PATH = 'acoustic-content-sdk';
+import { MODULE } from './../version';
+
+const ROOT_PATH = getOrganization(MODULE);
 
 /**
  * Inserts the mode into a filename

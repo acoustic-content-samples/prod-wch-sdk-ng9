@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "SchematicsWchSdkApplication",
-  "title": "WchSdk Aplication Options Schema",
+  "id": "@acoustic-content-sdk/app:app",
+  "title": "Acoustic Content Add Aplication Options Schema",
   "type": "object",
   "properties": {
     "project": {
@@ -28,6 +28,5 @@
       "default": "build"
     }
   },
-  "required": ["url"],
   "additionalProperties": false
 }

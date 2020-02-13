@@ -1,5 +1,6 @@
-import { parse } from 'path';
-import { relativePath, ensureDirPath } from '@acoustic-content-sdk/tooling';
+import { ensureDirPath, relativePath } from '@acoustic-content-sdk/tooling';
+import { normalize } from '@angular-devkit/core';
+import { join, parse } from 'path';
 
 export function importFromFileToFile(aSrc: string, aDst: string): string {
   const { dir: srcDir } = parse(aSrc);
@@ -7,4 +8,12 @@ export function importFromFileToFile(aSrc: string, aDst: string): string {
   // compute
   const relPath = relativePath(ensureDirPath(srcDir), ensureDirPath(dstDir));
   return `./${relPath}/${dstName}`;
+}
+
+export function resolveRelativePath(
+  aSrcFile: string,
+  aRelPath: string
+): string {
+  const { dir } = parse(aSrcFile);
+  return normalize(join(dir, aRelPath));
 }

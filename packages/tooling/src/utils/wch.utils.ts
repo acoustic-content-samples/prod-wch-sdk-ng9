@@ -1,21 +1,32 @@
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
   assertArray,
+  filterArray,
   getProperty,
-  isNotNil,
+  isEqual,
+  isNotEmpty,
   isString,
+  jsonStringify,
+  Maybe,
+  objectKeys,
   opShareLast,
+  reduceForIn,
+  reduceToObject,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { combineLatest, Observable, of } from 'rxjs';
+import { Exception } from 'handlebars';
+import { combineLatest, identity, Observable, of } from 'rxjs';
 import { catchError, map, mergeMap, pluck } from 'rxjs/operators';
 import { coerce } from 'semver';
 
 import { ReadTextFile, rxReadJsonFile } from '../file/file';
 import { JsonSchemaForNpmPackageJsonFiles } from '../types/package.schema';
+import { MODULE, VERSION } from './../version';
 import { rxGetWorkspace } from './config';
 import { rxFindPackageJson } from './package';
 import { isWorkspaceSchema, rxGetProject } from './project';
 import { ensureLeadingSlash, ensureTrailingSlash } from './url.utils';
+import { getOrganization } from './version';
 import {
   ProjectType,
   WorkspaceProject,
@@ -33,6 +44,13 @@ const CLI_IMPORT = '@acoustic-content-sdk/cli';
 export const WCHTOOLS_DEPENDENCIES = 'wchtools-dependencies';
 
 export type PackageJson = JsonSchemaForNpmPackageJsonFiles;
+
+function getBuildVersion(aVersion: WchSdkVersion = VERSION): string {
+  const {
+    version: { major, minor, patch }
+  } = aVersion;
+  return `${major}.${minor}.${patch}`;
+}
 
 function _rxFindBuildVersion(aReadFile: ReadTextFile): Observable<string> {
   // find the package
@@ -57,6 +75,56 @@ function _rxFromDependency(
   return !!parsed ? of(parsed.version) : _rxFindBuildVersion(aReadFile);
 }
 
+// the organization prefix for 'our' SDK packages
+const ORG_PREFIX = `@${getOrganization(MODULE)}/`;
+
+/**
+ * Locates the SDK version
+ *
+ * @param aPackage - the package JSON
+ *
+ * @returns the SDK version or an exception if the SDK versions in the package are inconsistent
+ */
+export function findSdkVersionFromPkg(aPackage: any): string {
+  // check if we have imports
+  const {
+    dependencies = {},
+    devDependencies = {},
+    peerDependencies = {}
+  } = aPackage;
+  // merge them all
+  const merged: Record<string, string> = {
+    ...dependencies,
+    devDependencies,
+    peerDependencies
+  };
+  // filter keys
+  const keys = filterArray(objectKeys(merged), (key) =>
+    key.startsWith(ORG_PREFIX)
+  );
+  if (isNotEmpty(keys)) {
+    // get all the versions
+    const sdk = reduceToObject(keys, identity, (key) => merged[key]);
+    // validate that all values are consistent
+    return reduceForIn(
+      sdk,
+      (pre: Maybe<string>, current: string) => {
+        // check if we have a consistent version
+        if (isNotEmpty(pre) && !isEqual(pre, current)) {
+          throw new Exception(
+            `Inconsistent set of SDK versions: ${jsonStringify(sdk)}`
+          );
+        }
+        // the current, consistent version
+        return current;
+      },
+      undefined
+    );
+  }
+  // fallback
+  return getBuildVersion();
+}
+
 /**
  * Locates the SDK version
  *
@@ -65,26 +133,9 @@ function _rxFromDependency(
  */
 export function findSdkVersion(aReadFile: ReadTextFile): Observable<string> {
   // fallback
-  const buildVersion$ = _rxFindBuildVersion(aReadFile);
-  // try to locate the package json
-  const pkg$ = rxReadJsonFile<PackageJson>(PACKAGE_JSON, aReadFile);
-  const fromPkg$ = rxPipe(
-    pkg$,
-    map((pkg) => {
-      // check if we have imports
-      const deps = pkg.dependencies || {};
-      const devDeps = pkg.devDependencies || {};
-      // return based on the SDK import
-      return deps[SDK_IMPORT] || devDeps[CLI_IMPORT];
-    })
-  );
-  // implement the fallback
   return rxPipe(
-    fromPkg$,
-    mergeMap((fromPkg) =>
-      isNotNil(fromPkg) ? _rxFromDependency(fromPkg, aReadFile) : buildVersion$
-    ),
-    catchError(() => buildVersion$)
+    rxReadJsonFile<PackageJson>(PACKAGE_JSON, aReadFile),
+    map(findSdkVersionFromPkg)
   );
 }
 
@@ -181,7 +232,10 @@ export function rxFindWchToolsOptions(
   host: ReadTextFile,
   options?: { data?: string }
 ): Observable<string> {
-  return rxPipe(rxFindDataDir(host, options), map((dir) => `${dir}${OPTIONS}`));
+  return rxPipe(
+    rxFindDataDir(host, options),
+    map((dir) => `${dir}${OPTIONS}`)
+  );
 }
 
 export function addToWchToolsDependencies(aDeps: string[], aPkg: any) {

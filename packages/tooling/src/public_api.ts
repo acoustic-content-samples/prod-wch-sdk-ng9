@@ -17,6 +17,7 @@ export { canonicalizeJson, serializeJson } from './utils/json';
 export * from './utils/names';
 export * from './utils/types';
 export * from './utils/url.utils';
+export * from './utils/version';
 export * from './utils/wch.tools';
 export * from './utils/wch.utils';
 export * from './utils/wchtools';

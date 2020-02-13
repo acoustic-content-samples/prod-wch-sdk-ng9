@@ -1,6 +1,7 @@
+import { Credentials } from '@acoustic-content-sdk/cli-credentials';
+import { map } from 'rxjs/operators';
+
 import { validateCredentials } from './wch.utils';
-import { Credentials, wchGetCredentials } from '@acoustic-content-sdk/cli-credentials';
-import { map } from '../../node_modules/rxjs/operators';
 
 describe('wch.utils', () => {
   it('should validate credentials', () => {
