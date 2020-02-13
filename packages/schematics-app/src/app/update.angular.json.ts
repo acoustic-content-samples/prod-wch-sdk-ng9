@@ -13,7 +13,8 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { Observable, of } from 'rxjs';
-import { mapTo } from 'rxjs/operators';
+import { endWith, ignoreElements } from 'rxjs/operators';
+
 import { addModeToName, addModeToPath } from '../utilities/names';
 import { Schema } from './schema';
 
@@ -101,7 +102,8 @@ export function updateAngularJson(options: Schema): Rule {
         (aWorkspace) => transformAngularJson(aWorkspace, projectName),
         host
       ),
-      mapTo(host)
+      ignoreElements(),
+      endWith(host)
     );
   };
 }

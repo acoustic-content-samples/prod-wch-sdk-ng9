@@ -2,6 +2,8 @@ import { ensureTrailingSlash } from '@acoustic-content-sdk/schematics-utils';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import { parse } from 'path';
 
+const ROOT_PATH = 'acoustic-content-sdk';
+
 /**
  * Inserts the mode into a filename
  *
@@ -14,7 +16,7 @@ export function addModeToName(aName: string, aMode: ArtifactMode): string {
   // locate the actual filename
   const { dir, base } = parse(aName);
   // insert the path
-  return `${dir}/${aMode}/${base}`;
+  return `${dir}/${ROOT_PATH}/${aMode}/${base}`;
 }
 
 /**

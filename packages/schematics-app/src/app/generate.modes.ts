@@ -22,8 +22,15 @@ import {
 import { normalize } from '@angular-devkit/core';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join, parse } from 'path';
-import { merge, Observable, of } from 'rxjs';
-import { ignoreElements, map, mapTo, mergeMap } from 'rxjs/operators';
+import { merge, Observable, of, UnaryFunction } from 'rxjs';
+import {
+  ignoreElements,
+  map,
+  mapTo,
+  mergeMap,
+  tap,
+  endWith
+} from 'rxjs/operators';
 import {
   ClassDeclaration,
   Decorator,
@@ -42,13 +49,16 @@ import {
 } from 'typescript';
 
 import { addModeToName } from '../utilities/names';
+import { importFromFileToFile } from '../utilities/path';
 import { ASSETS_DIR$ } from './../utilities/assets';
 import { Schema } from './schema';
 import { KEY_MAIN, KEY_POLYFILLS, KEY_TS_CONFIG } from './update.angular.json';
 
-const NAME_APP_MODULE = 'app.module.ts';
+const NAME_APP_MODE_MODULE = 'app.mode.module.ts';
+const NAME_APP_BASE_MODULE = 'app.base.module.ts';
 const NAME_MAIN = 'main.ts';
 const NAME_TSCONFIG = 'tsconfig.json';
+const NAME_APP_MODULE = 'app.module.ts';
 
 const KEY_ORIGINAL_COMPONENT_PATH = 'ORIGINAL_COMPONENT_PATH';
 const KEY_ORIGINAL_APP_MODULE_PATH = 'ORIGINAL_APP_MODULE_PATH';
@@ -56,11 +66,16 @@ const KEY_ORIGINAL_APP_MODULE = 'ORIGINAL_APP_MODULE';
 const KEY_ORIGINAL_COMPONENT = 'ORIGINAL_COMPONENT';
 const KEY_WCH_APP_MODULE = 'WCH_APP_MODULE';
 const KEY_WCH_APP_MODULE_PATH = 'WCH_APP_MODULE_PATH';
+const KEY_WCH_APP_BASE_PATH = 'KEY_WCH_APP_BASE_PATH';
 const KEY_ORIGINAL_CONFIG_PATH = 'ORIGINAL_CONFIG_PATH';
 const KEY_MAIN_FILE = 'MAIN_FILE';
 const KEY_POLYFILLS_FILE = 'POLYFILLS_FILE';
 
 const SDK_CONTEXT = {
+  [ArtifactMode.ALWAYS]: {
+    [KEY_WCH_APP_MODULE]: 'WchNgAppBaseModule',
+    [KEY_WCH_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-base'
+  },
   [ArtifactMode.LIVE]: {
     [KEY_WCH_APP_MODULE]: 'WchNgAppLiveModule',
     [KEY_WCH_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-live'
@@ -169,8 +184,7 @@ function findBootstrapImport(aName: string, aAppModule: SourceFile): string {
 function contextFromAppModule(aAppModule: SourceFile): Record<string, string> {
   // the context
   const ctx: Record<string, string> = {};
-  const { dir, name } = parse(aAppModule.fileName);
-  ctx[KEY_ORIGINAL_APP_MODULE_PATH] = `${dir}/${name}`;
+  ctx[KEY_ORIGINAL_APP_MODULE_PATH] = aAppModule.fileName;
   // find the name
   const classDecl = aAppModule.statements
     .filter(isClassDeclaration)
@@ -185,7 +199,8 @@ function contextFromAppModule(aAppModule: SourceFile): Record<string, string> {
       ctx[KEY_ORIGINAL_COMPONENT] = bootstrap;
       const imp = findBootstrapImport(bootstrap, aAppModule);
       if (isNotNil(imp)) {
-        ctx[KEY_ORIGINAL_COMPONENT_PATH] = normalize(join(dir, imp));
+        const { dir } = parse(aAppModule.fileName);
+        ctx[KEY_ORIGINAL_COMPONENT_PATH] = `${normalize(join(dir, imp))}.ts`;
       }
     }
   }
@@ -227,6 +242,17 @@ function createTsConfigContext(
   return ctx;
 }
 
+const createTemplate = (
+  aName: string,
+  aCompiler: UnaryFunction<string, TemplateType>
+) =>
+  rxPipe(
+    BOOTSTRAP$,
+    mergeMap((root) => rxReadTextFile(join(root, aName))),
+    map(aCompiler),
+    opShareLast
+  );
+
 /**
  * Generates the files responsible for the different modes
  *
@@ -238,19 +264,42 @@ export function generateModeFiles(options: Schema): Rule {
   // the compiler
   const compiler = createCompiler();
   // template
-  const appTemplate$ = rxPipe(
-    BOOTSTRAP$,
-    mergeMap((root) => rxReadTextFile(join(root, NAME_APP_MODULE))),
-    map(compiler),
-    opShareLast
-  );
+  const appModeTemplate$ = createTemplate(NAME_APP_MODE_MODULE, compiler);
+  const appBaseTemplate$ = createTemplate(NAME_APP_BASE_MODULE, compiler);
   // template
-  const tsConfigTemplate$ = rxPipe(
-    BOOTSTRAP$,
-    mergeMap((root) => rxReadTextFile(join(root, NAME_TSCONFIG))),
-    map(compiler),
-    opShareLast
-  );
+  const tsConfigTemplate$ = createTemplate(NAME_TSCONFIG, compiler);
+
+  function createBaseModule(
+    aOptions: Record<string, any>,
+    aCtx: Record<string, any>,
+    aHost: Tree
+  ) {
+    // location of the base file
+    const mainBase = addModeToName(aOptions[KEY_MAIN], ArtifactMode.ALWAYS);
+    const { dir: baseDir } = parse(mainBase);
+    const appBase = `${baseDir}/${NAME_APP_MODULE}`;
+    // augment the context
+    const ctx = {
+      ...aCtx,
+      ...SDK_CONTEXT[ArtifactMode.ALWAYS],
+      [KEY_ORIGINAL_APP_MODULE_PATH]: importFromFileToFile(
+        appBase,
+        aCtx[KEY_ORIGINAL_APP_MODULE_PATH]
+      )
+    };
+    // app file
+    return rxPipe(
+      appBaseTemplate$,
+      mergeMap((tmp) =>
+        rxTransformTextFile(
+          appBase,
+          (file) => transformApp(file, ctx, tmp),
+          aHost
+        )
+      )
+    );
+  }
+
   /**
    * Constructs the files per mode
    *
@@ -277,35 +326,44 @@ export function generateModeFiles(options: Schema): Rule {
         )
       )
     );
+    // location of the base file
+    const mainBase = addModeToName(aOptions[KEY_MAIN], ArtifactMode.ALWAYS);
+    const { dir: baseDir } = parse(mainBase);
+    const appBase = `${baseDir}/${NAME_APP_MODULE}`;
     // location of the main file
-    const main = addModeToName(aOptions[KEY_MAIN], aMode);
+    const mainMode = addModeToName(aOptions[KEY_MAIN], aMode);
     // main file
-    const main$ = rxTransformTextFile(main, transformMain, aHost);
+    const mainMode$ = rxTransformTextFile(mainMode, transformMain, aHost);
     // dir of the main file
-    const { dir } = parse(main);
-    const app = `${dir}/${NAME_APP_MODULE}`;
+    const { dir: modeDir } = parse(mainMode);
+    const appMode = `${modeDir}/${NAME_APP_MODULE}`;
     // augment the context
     const ctx = {
       ...aCtx,
       ...SDK_CONTEXT[aMode],
-      [KEY_ORIGINAL_APP_MODULE_PATH]: relativePath(
-        ensureDirPath(app),
-        ensureDirPath(aCtx[KEY_ORIGINAL_APP_MODULE_PATH])
+      [KEY_ORIGINAL_APP_MODULE_PATH]: importFromFileToFile(
+        appMode,
+        aCtx[KEY_ORIGINAL_APP_MODULE_PATH]
       ),
-      [KEY_ORIGINAL_COMPONENT_PATH]: relativePath(
-        ensureDirPath(app),
-        ensureDirPath(aCtx[KEY_ORIGINAL_COMPONENT_PATH])
-      )
+      [KEY_ORIGINAL_COMPONENT_PATH]: importFromFileToFile(
+        appMode,
+        aCtx[KEY_ORIGINAL_COMPONENT_PATH]
+      ),
+      [KEY_WCH_APP_BASE_PATH]: importFromFileToFile(appMode, appBase)
     };
     // app file
     const app$ = rxPipe(
-      appTemplate$,
+      appModeTemplate$,
       mergeMap((tmp) =>
-        rxTransformTextFile(app, (file) => transformApp(file, ctx, tmp), aHost)
+        rxTransformTextFile(
+          appMode,
+          (file) => transformApp(file, ctx, tmp),
+          aHost
+        )
       )
     );
     // merge
-    return merge(main$, app$, tsConfig$);
+    return merge(mainMode$, app$, tsConfig$);
   }
 
   // the transform callback
@@ -325,7 +383,12 @@ export function generateModeFiles(options: Schema): Rule {
     // dispatch
     const live$ = createForMode(ArtifactMode.LIVE, opts, ctx, host);
     const preview$ = createForMode(ArtifactMode.PREVIEW, opts, ctx, host);
+    const always$ = createBaseModule(opts, ctx, host);
     // merge and return
-    return rxPipe(merge(live$, preview$), ignoreElements(), mapTo(host));
+    return rxPipe(
+      merge(live$, preview$, always$),
+      ignoreElements(),
+      endWith(host)
+    );
   };
 }
