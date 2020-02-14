@@ -44,7 +44,7 @@ function fixVersions(aVersion: string, aDeps: Record<string, string>) {
   forEach(keys, (key) => (aDeps[key] = aVersion));
 }
 
-const SYSTEM_DEPENDENCIES = ['npm-run-all', 'react', 'react-dom'];
+const SYSTEM_DEPENDENCIES = ['npm-run-all', 'react', 'react-dom', 'redux'];
 
 /**
  * Identifies the correct version of system level dependencies. We use the
