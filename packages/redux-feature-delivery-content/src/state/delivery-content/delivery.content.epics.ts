@@ -289,10 +289,7 @@ function transformVideoElement(
       fileSize: assetItem.fileSize,
       resourceUri: `${getAuthoringResourceUrl(aVideo, assetItem, aApiUrl)}`,
       fileName: assetItem.fileName,
-      mediaType: assetItem.mediaType,
-      width: getPath(assetItem, ['metadata', 'width']),
-      height: getPath(assetItem, ['metadata', 'height']),
-      altText: assetItem.altText
+      mediaType: assetItem.mediaType
     }
   };
 }
