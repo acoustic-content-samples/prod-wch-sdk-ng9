@@ -137,7 +137,7 @@ export const selectId: import("rxjs").UnaryFunction<any, any>;
 export const selectIdFromRenderingContext: import("rxjs").UnaryFunction<any, string>;
 
 // @public (undocumented)
-export const selectMetadata: import("rxjs").UnaryFunction<DeliveryReferenceElement | DeliveryContentItem | DeliveryGroupElement | RenderingContextV2, import("@acoustic-content-sdk/api").DeliveryReferenceElementMetadata | import("@acoustic-content-sdk/api").DeliveryGroupElementMetadata | import("@acoustic-content-sdk/api").DeliveryContentMetadata>;
+export const selectMetadata: import("rxjs").UnaryFunction<DeliveryReferenceElement | DeliveryContentItem | DeliveryGroupElement | RenderingContextV2, import("@acoustic-content-sdk/api").DeliveryGroupElementMetadata | import("@acoustic-content-sdk/api").DeliveryReferenceElementMetadata | import("@acoustic-content-sdk/api").DeliveryContentMetadata>;
 
 // @public (undocumented)
 export type SendRequest = <T>(aUrl: string, aCredentials: boolean) => Observable<T>;

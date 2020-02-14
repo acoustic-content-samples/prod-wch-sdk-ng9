@@ -99,7 +99,7 @@ export interface AuthoringAsset extends BaseAuthoringItem {
     // (undocumented)
     readonly fileSize?: number;
     // (undocumented)
-    readonly isManaged: any;
+    readonly isManaged: boolean;
     // (undocumented)
     readonly mediaType?: string;
     // (undocumented)
@@ -873,7 +873,7 @@ export type DeliveryFormattedTextElement = string;
 // @public (undocumented)
 export interface DeliveryGroupElement {
     $metadata?: DeliveryGroupElementMetadata;
-    [key: string]: DeliveryElement;
+    [key: string]: DeliveryElement | DeliveryGroupElementMetadata | undefined;
 }
 
 // @public (undocumented)
@@ -1659,7 +1659,7 @@ export interface RenderingContextSearchResult extends SearchResult<RenderingCont
 // @public (undocumented)
 export interface RenderingContextV2 extends DeliveryContentItem {
     $context: ExtendedContextV2;
-    [key: string]: RenderingContextElements;
+    [key: string]: RenderingContextElements | ExtendedContextV2 | DeliveryElement;
 }
 
 // @public (undocumented)

@@ -392,7 +392,7 @@ export function createSubscribeRouteHandler(aGetRenderingContextByPath: (aPath: 
 export function createUnsubscribeHandler(aLogger?: Logger): SdkMessageHandlerCallback;
 
 // @public
-export function dbgAddSource<T>(aSource: string, aObject: T): T;
+export function dbgAddSource<T>(aSource: string, aObject: T | null | undefined): T;
 
 // @public (undocumented)
 export function dbgCounter(): number;

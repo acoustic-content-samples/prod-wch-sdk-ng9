@@ -21,7 +21,7 @@ export interface AuthoringAsset extends BaseAuthoringItem
 |  [digest](./api.authoringasset.digest.md) | <code>string</code> |  |
 |  [fileName](./api.authoringasset.filename.md) | <code>string</code> |  |
 |  [fileSize](./api.authoringasset.filesize.md) | <code>number</code> |  |
-|  [isManaged](./api.authoringasset.ismanaged.md) | <code>any</code> |  |
+|  [isManaged](./api.authoringasset.ismanaged.md) | <code>boolean</code> |  |
 |  [mediaType](./api.authoringasset.mediatype.md) | <code>string</code> |  |
 |  [metadata](./api.authoringasset.metadata.md) | <code>AuthoringAssetMetadata</code> |  |
 |  [path](./api.authoringasset.path.md) | <code>string</code> |  |

@@ -4,13 +4,14 @@ import {
   rxReadTextFile,
   rxTransformJsonFile
 } from '@acoustic-content-sdk/schematics-utils';
-import { getOrganization } from '@acoustic-content-sdk/tooling';
+import {
+  canonicalizeJson,
+  getOrganization
+} from '@acoustic-content-sdk/tooling';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import {
-  assertFromGenerator,
   assignObject,
   cloneDeep,
-  constGenerator,
   filterArray,
   forEach,
   jsonParse,
@@ -172,7 +173,8 @@ export function updatePackageJson(options: Schema): Rule {
     return rxPipe(
       merge(dependencies$, devDependencies$),
       ignoreElements(),
-      endWith(pkg)
+      endWith(pkg),
+      map(canonicalizeJson)
     );
   }
 

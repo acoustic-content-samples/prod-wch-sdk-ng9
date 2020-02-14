@@ -9,7 +9,7 @@ Adds source information
 <b>Signature:</b>
 
 ```typescript
-declare function _addSourceDebug<T>(aSource: string, aObject: T): T;
+declare function _addSourceDebug<T>(aSource: string, aObject: T | null | undefined): T;
 ```
 
 ## Parameters
@@ -17,7 +17,7 @@ declare function _addSourceDebug<T>(aSource: string, aObject: T): T;
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  aSource | <code>string</code> | source info |
-|  aObject | <code>T</code> | the object |
+|  aObject | <code>T &#124; null &#124; undefined</code> | the object |
 
 <b>Returns:</b>
 

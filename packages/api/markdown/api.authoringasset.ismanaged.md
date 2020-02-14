@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-readonly isManaged: any;
+readonly isManaged: boolean;
 ```

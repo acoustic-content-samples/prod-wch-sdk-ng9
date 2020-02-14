@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-selectMetadata: import("rxjs").UnaryFunction<DeliveryReferenceElement | DeliveryContentItem | DeliveryGroupElement | RenderingContextV2, import("@acoustic-content-sdk/api").DeliveryReferenceElementMetadata | import("@acoustic-content-sdk/api").DeliveryGroupElementMetadata | import("@acoustic-content-sdk/api").DeliveryContentMetadata>
+selectMetadata: import("rxjs").UnaryFunction<DeliveryReferenceElement | DeliveryContentItem | DeliveryGroupElement | RenderingContextV2, import("@acoustic-content-sdk/api").DeliveryGroupElementMetadata | import("@acoustic-content-sdk/api").DeliveryReferenceElementMetadata | import("@acoustic-content-sdk/api").DeliveryContentMetadata>
 ```
