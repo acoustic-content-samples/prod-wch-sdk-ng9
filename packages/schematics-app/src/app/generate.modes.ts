@@ -22,7 +22,7 @@ import { normalize } from '@angular-devkit/core';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join, parse } from 'path';
 import { merge, Observable, of, UnaryFunction } from 'rxjs';
-import { endWith, ignoreElements, map, mergeMap, tap } from 'rxjs/operators';
+import { endWith, ignoreElements, map, mergeMap } from 'rxjs/operators';
 import {
   isImportDeclaration,
   isImportSpecifier,
@@ -94,20 +94,7 @@ const BOOTSTRAP$ = rxPipe(
   map((dir) => join(dir, 'bootstrap'))
 );
 
-function transformMain(
-  aFile: string,
-  aCtx: Record<string, string>,
-  aTemplate: TemplateType
-): Observable<string> {
-  // nothing special to do
-  if (isNotEmpty(aFile)) {
-    return of(aFile);
-  }
-  // tranform
-  return rxPipe(of(aTemplate(aCtx)), tap(console.log));
-}
-
-function transformApp(
+function transformTemplate(
   aFile: string,
   aCtx: Record<string, string>,
   aTemplate: TemplateType
@@ -253,7 +240,7 @@ export function generateModeFiles(options: Schema): Rule {
       mergeMap((tmp) =>
         rxTransformTextFile(
           appBase,
-          (file) => transformApp(file, ctx, tmp),
+          (file) => transformTemplate(file, ctx, tmp),
           aHost
         )
       )
@@ -294,7 +281,7 @@ export function generateModeFiles(options: Schema): Rule {
       mergeMap((mainTemplate) =>
         rxTransformTextFile(
           mainMode,
-          (file) => transformMain(file, mainCtx, mainTemplate),
+          (file) => transformTemplate(file, mainCtx, mainTemplate),
           aHost
         )
       )
@@ -322,7 +309,7 @@ export function generateModeFiles(options: Schema): Rule {
       mergeMap((tmp) =>
         rxTransformTextFile(
           appMode,
-          (file) => transformApp(file, ctx, tmp),
+          (file) => transformTemplate(file, ctx, tmp),
           aHost
         )
       )

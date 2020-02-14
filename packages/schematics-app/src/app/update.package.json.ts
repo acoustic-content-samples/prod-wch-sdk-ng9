@@ -1,4 +1,9 @@
-import { rxTransformJsonFile } from '@acoustic-content-sdk/schematics-utils';
+import {
+  DEP_TYPE,
+  getFolderForType,
+  rxReadTextFile,
+  rxTransformJsonFile
+} from '@acoustic-content-sdk/schematics-utils';
 import { getOrganization } from '@acoustic-content-sdk/tooling';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import {
@@ -8,6 +13,7 @@ import {
   constGenerator,
   filterArray,
   forEach,
+  jsonParse,
   objectKeys,
   reduceToObject,
   rxPipe
@@ -15,7 +21,7 @@ import {
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join } from 'path';
 import { identity, Observable } from 'rxjs';
-import { endWith, ignoreElements, map, pluck } from 'rxjs/operators';
+import { endWith, ignoreElements, map, mergeMap, pluck } from 'rxjs/operators';
 
 import { PKG_DIR$ } from '../utilities/assets';
 import { MODULE, VERSION } from './../version';
@@ -51,7 +57,9 @@ function findSystemDependencies(): Observable<Record<string, string>> {
   return rxPipe(
     PKG_DIR$,
     map((dir) => join(dir, 'package.json')),
-    pluck('dependencies'),
+    mergeMap(rxReadTextFile),
+    map(jsonParse),
+    pluck(getFolderForType(DEP_TYPE.RUNTIME)),
     map((deps) =>
       reduceToObject(SYSTEM_DEPENDENCIES, identity, (key) => deps[key])
     )
