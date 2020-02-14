@@ -4,7 +4,7 @@ export interface AuthoringAssetMetadata {
   readonly width?: number;
   readonly heigth?: number;
   readonly camera?: any;
-  readonly coverage?;
+  readonly coverage?: any;
   readonly creator?: string;
   readonly description?: string;
   readonly publisher?: string;
@@ -39,7 +39,7 @@ export interface AuthoringAsset extends BaseAuthoringItem {
   readonly profileRenditions?: AuthoringAssetProfileRendition[];
   readonly altText?: string;
   readonly path: string;
-  readonly isManaged;
+  readonly isManaged: boolean;
 
   readonly caption?: string;
 }

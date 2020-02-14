@@ -144,7 +144,7 @@ export interface DeliveryGroupElement {
   /**
    * Properties of our content item
    */
-  [key: string]: DeliveryElement;
+  [key: string]: DeliveryElement | DeliveryGroupElementMetadata | undefined;
 }
 
 export interface DeliveryReferenceElementMetadata

@@ -1,5 +1,6 @@
 import { assertObject, KEY_DEBUG } from './../js/js.utils';
 import { isNotNil } from './../predicates/predicates';
+import { Maybe } from '../js/js.core';
 
 /* Copyright IBM Corp. 2017 */
 let COUNTER = 0;
@@ -49,7 +50,7 @@ function _addDebugInfo<T>(aCallback: AddDebugCallback, aObject: T): T {
  *
  * @returns the original object
  */
-function _addSourceDebug<T>(aSource: string, aObject: T): T {
+function _addSourceDebug<T>(aSource: string, aObject: T | null | undefined): T {
   return _addDebugInfo(_addSourceCallback(aSource), aObject);
 }
 

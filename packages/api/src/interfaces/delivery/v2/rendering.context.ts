@@ -4,7 +4,8 @@ import {
   DeliveryGroupElement,
   DeliveryReferenceElement,
   MultiDeliveryElements,
-  SingleDeliveryElements
+  SingleDeliveryElements,
+  DeliveryElement
 } from './content.item';
 
 export interface ExtendedContextV2 {
@@ -63,5 +64,5 @@ export interface RenderingContextV2 extends DeliveryContentItem {
   /**
    * Excess properties carry the actual data
    */
-  [key: string]: RenderingContextElements;
+  [key: string]: RenderingContextElements | ExtendedContextV2 | DeliveryElement;
 }
