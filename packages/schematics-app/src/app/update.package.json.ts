@@ -9,12 +9,15 @@ import {
   filterArray,
   forEach,
   objectKeys,
+  reduceToObject,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
-import { Observable, of } from 'rxjs';
-import { endWith, ignoreElements } from 'rxjs/operators';
+import { join } from 'path';
+import { identity, Observable } from 'rxjs';
+import { endWith, ignoreElements, map, pluck } from 'rxjs/operators';
 
+import { PKG_DIR$ } from '../utilities/assets';
 import { MODULE, VERSION } from './../version';
 import { Schema } from './schema';
 import { CONFIG_SOURCE_MAP } from './update.angular.json';
@@ -33,6 +36,26 @@ function fixVersions(aVersion: string, aDeps: Record<string, string>) {
   );
   // fix versions
   forEach(keys, (key) => (aDeps[key] = aVersion));
+}
+
+const SYSTEM_DEPENDENCIES = ['npm-run-all', 'react', 'react-dom'];
+
+/**
+ * Identifies the correct version of system level dependencies. We use the
+ * same versions that have been used when this schematic had been built
+ *
+ * @returns the dependencies
+ */
+function findSystemDependencies(): Observable<Record<string, string>> {
+  // locate our own package file
+  return rxPipe(
+    PKG_DIR$,
+    map((dir) => join(dir, 'package.json')),
+    pluck('dependencies'),
+    map((deps) =>
+      reduceToObject(SYSTEM_DEPENDENCIES, identity, (key) => deps[key])
+    )
+  );
 }
 
 export function updatePackageJson(options: Schema): Rule {
@@ -89,7 +112,15 @@ export function updatePackageJson(options: Schema): Rule {
       scripts
     });
 
-    return of(pkg);
+    /**
+     * Augments the dependencies with the service level dependencies
+     */
+    return rxPipe(
+      findSystemDependencies(),
+      map((deps) => assignObject(dependencies, deps)),
+      ignoreElements(),
+      endWith(pkg)
+    );
   }
 
   return (host: Tree) => {
