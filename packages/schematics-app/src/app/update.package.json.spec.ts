@@ -29,6 +29,7 @@ describe('update package json', () => {
         jsonParse<any>(host.get('/package.json').content.toString())
       ),
       map((pkg) => {
+        console.log(JSON.stringify(pkg, undefined, 2));
         expect(pkg.devDependencies[MODULE]).toBeDefined();
       })
     );

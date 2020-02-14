@@ -54,8 +54,7 @@
       }
     },
     "whitelistedNonPeerDependencies": [
-      "@acoustic-content-sdk/.*",
-      "ng2-logger"
+      "@acoustic-content-sdk/.*"
     ]
   },
   "tsdoc": {

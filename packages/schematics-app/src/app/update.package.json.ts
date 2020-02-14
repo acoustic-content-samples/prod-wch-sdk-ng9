@@ -20,7 +20,7 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join } from 'path';
-import { identity, Observable } from 'rxjs';
+import { identity, merge, Observable } from 'rxjs';
 import { endWith, ignoreElements, map, mergeMap, pluck } from 'rxjs/operators';
 
 import { PKG_DIR$ } from '../utilities/assets';
@@ -44,7 +44,25 @@ function fixVersions(aVersion: string, aDeps: Record<string, string>) {
   forEach(keys, (key) => (aDeps[key] = aVersion));
 }
 
-const SYSTEM_DEPENDENCIES = ['npm-run-all', 'react', 'react-dom', 'redux'];
+const SYSTEM_DEPENDENCIES = [
+  'react',
+  'react-dom',
+  'redux',
+  'ng2-logger',
+  'redux-observable',
+  'react-router',
+  'redux-actions',
+  'redux-devtools-extension',
+  'uuid'
+];
+const SYSTEM_DEV_DEPENDENCIES = [
+  'npm-run-all',
+  '@types/react',
+  '@types/redux-actions',
+  '@types/react-dom',
+  '@types/react-router',
+  '@types/redux-actions'
+];
 
 /**
  * Identifies the correct version of system level dependencies. We use the
@@ -62,6 +80,26 @@ function findSystemDependencies(): Observable<Record<string, string>> {
     pluck(getFolderForType(DEP_TYPE.RUNTIME)),
     map((deps) =>
       reduceToObject(SYSTEM_DEPENDENCIES, identity, (key) => deps[key])
+    )
+  );
+}
+
+/**
+ * Identifies the correct version of system level dependencies. We use the
+ * same versions that have been used when this schematic had been built
+ *
+ * @returns the dependencies
+ */
+function findSystemDevDependencies(): Observable<Record<string, string>> {
+  // locate our own package file
+  return rxPipe(
+    PKG_DIR$,
+    map((dir) => join(dir, 'package.json')),
+    mergeMap(rxReadTextFile),
+    map(jsonParse),
+    pluck(getFolderForType(DEP_TYPE.RUNTIME)),
+    map((deps) =>
+      reduceToObject(SYSTEM_DEV_DEPENDENCIES, identity, (key) => deps[key])
     )
   );
 }
@@ -96,8 +134,6 @@ export function updatePackageJson(options: Schema): Rule {
     dependencies[`${NAMESPACE}ng-app`] = sdkVersion;
     dependencies[`${NAMESPACE}ng-logger`] = sdkVersion;
     devDependencies[`${NAMESPACE}schematics`] = sdkVersion;
-    // add potentially missing dependencies
-    assertFromGenerator('npm-run-all', devDependencies, constGenerator('^4'));
     // scripts
     scripts[
       `build:prod:${ArtifactMode.PREVIEW}`
@@ -120,12 +156,21 @@ export function updatePackageJson(options: Schema): Rule {
       scripts
     });
 
+    // dependencies
+    const dependencies$ = rxPipe(
+      findSystemDependencies(),
+      map((deps) => assignObject(dependencies, deps))
+    );
+    const devDependencies$ = rxPipe(
+      findSystemDevDependencies(),
+      map((deps) => assignObject(devDependencies, deps))
+    );
+
     /**
      * Augments the dependencies with the service level dependencies
      */
     return rxPipe(
-      findSystemDependencies(),
-      map((deps) => assignObject(dependencies, deps)),
+      merge(dependencies$, devDependencies$),
       ignoreElements(),
       endWith(pkg)
     );
