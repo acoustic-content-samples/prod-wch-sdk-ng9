@@ -282,7 +282,6 @@ function transformVideoElement(
   // resolve renditions and compute resource url
   return {
     ...aVideo,
-    renditions: getRenditions(aVideo, assetItem, aApiUrl),
     url,
     asset: {
       id: assetItem.id,

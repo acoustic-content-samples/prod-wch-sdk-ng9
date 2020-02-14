@@ -13,7 +13,7 @@ import { getDeliveryIdFromAuthoringItem } from '@acoustic-content-sdk/redux-util
 import {
   SingleVideoElement,
   MultiImageElement
-} from '../../../api/src/interfaces/delivery/v1/rendering/context/rendering.context';
+} from '@acoustic-content-sdk/api';
 import {
   arrayPush,
   forEach,
