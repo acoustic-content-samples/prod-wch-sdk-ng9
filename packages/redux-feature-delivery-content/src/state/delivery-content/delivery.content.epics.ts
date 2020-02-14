@@ -8,6 +8,7 @@ import {
   ContentItemWithLayout,
   Element,
   Image,
+  Video,
   Layout,
   Logger,
   LoggerService,
@@ -73,7 +74,9 @@ import { map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import {
   hasAsset,
   isMultiImageElementInAuthoring,
-  isSingleImageElementInAuthoring
+  isSingleImageElementInAuthoring,
+  isMultiVideoElementInAuthoring,
+  isSingleVideoElementInAuthoring
 } from '../../utils/auth.content.utils';
 import { pluckTypeId } from '../../utils/auth.type.utils';
 import { removeStartingSlash } from '../../utils/fetch.text';
@@ -259,6 +262,41 @@ function transformImageElement(
   };
 }
 
+function transformVideoElement(
+  aVideo: Video,
+  assets: Record<string, AuthoringAsset>,
+  aApiUrl: URL
+): Partial<Video> {
+  // transform the asset
+  const { asset } = aVideo;
+  if (isNil(asset)) {
+    return aVideo;
+  }
+  // do we know the asset?
+  const assetItem = assets[asset.id];
+  if (isNil(assetItem)) {
+    return aVideo;
+  }
+  // insert the resource url
+  const url = getAuthoringResourceUrl(aVideo, assetItem, aApiUrl);
+  // resolve renditions and compute resource url
+  return {
+    ...aVideo,
+    renditions: getRenditions(aVideo, assetItem, aApiUrl),
+    url,
+    asset: {
+      id: assetItem.id,
+      fileSize: assetItem.fileSize,
+      resourceUri: `${getAuthoringResourceUrl(aVideo, assetItem, aApiUrl)}`,
+      fileName: assetItem.fileName,
+      mediaType: assetItem.mediaType,
+      width: getPath(assetItem, ['metadata', 'width']),
+      height: getPath(assetItem, ['metadata', 'height']),
+      altText: assetItem.altText
+    }
+  };
+}
+
 const HAS_DOCUMENT = typeof document !== UNDEFINED_TYPE;
 
 export function transformFormattedText(
@@ -328,6 +366,22 @@ function transformElement(
           }))
         }
       : aElement;
+  } else if (isSingleVideoElementInAuthoring(aElement)) {
+    return {
+      ...aElement,
+      ...transformVideoElement(aElement, assets, aApiUrl)
+    };
+  } else if (isMultiVideoElementInAuthoring(aElement)) {
+    const { values } = aElement;
+    return isNotEmpty(values)
+      ? {
+          ...aElement,
+          values: values.map((value) => ({
+            ...value,
+            ...transformVideoElement(value, assets, aApiUrl)
+          }))
+        }
+      : aElement;
   } else if (isSingleFormattedTextElement(aElement)) {
     return {
       ...aElement,
@@ -345,7 +399,7 @@ function transformElement(
     // in the general case, nothing to copy
     return aElement;
   }
-  // TODO add support for file and video
+  // TODO add support for file
 }
 
 const transformElements = (
