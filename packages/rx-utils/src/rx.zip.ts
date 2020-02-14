@@ -1,6 +1,6 @@
 /* Copyright IBM Corp. 2018 */
 import { mkdirp } from 'fs-extra';
-import { createWriteStream } from 'graceful-fs';
+import { createWriteStream } from 'fs-extra';
 import { join, normalize, resolve } from 'path';
 import { concat, Observable, Observer } from 'rxjs';
 import { ignoreElements, mergeMap, shareReplay } from 'rxjs/operators';
@@ -58,7 +58,7 @@ function _rxOpenZip(
         }
         if (zipFile) {
           // attach handlers
-          zipFile.once('error', err => aObserver.error(err));
+          zipFile.once('error', (err) => aObserver.error(err));
           // work on the entries
           zipFile.on('entry', (entry: Entry) => {
             // skip directories
@@ -73,7 +73,7 @@ function _rxOpenZip(
                 // find the parent directory and create it
                 const dstDirName = resolve(dstFileName, '..');
                 // make the directory
-                mkdirp(dstDirName, errMkdir => {
+                mkdirp(dstDirName, (errMkdir) => {
                   // handle error
                   if (errMkdir) {
                     aObserver.error(errMkdir);
@@ -89,7 +89,7 @@ function _rxOpenZip(
                           createWriteStream(dstFileName)
                         );
                         // handlers
-                        stream.once('error', err => aObserver.error(err));
+                        stream.once('error', (err) => aObserver.error(err));
                         stream.once('close', () => {
                           // communicate
                           aObserver.next(dstFileName);
@@ -130,18 +130,15 @@ export function rxUnzipFromUrl(
 ): Observable<string> {
   // download file
   const onZipFile = rxTmpFile.pipe(
-    mergeMap(tmp => rxDownloadFile(aSrcUrl, tmp)),
+    mergeMap((tmp) => rxDownloadFile(aSrcUrl, tmp)),
     shareReplay()
   );
   // unzip into the tree
   const onExtract = onZipFile.pipe(
-    mergeMap(tmp => _rxOpenZip(tmp, aDstDir, aSkip))
+    mergeMap((tmp) => _rxOpenZip(tmp, aDstDir, aSkip))
   );
   // make sure to delete the file at the end
-  const onDelete = onZipFile.pipe(
-    mergeMap(rxDeleteFile),
-    ignoreElements()
-  );
+  const onDelete = onZipFile.pipe(mergeMap(rxDeleteFile), ignoreElements());
   // execute
   return concat(onExtract, onDelete);
 }

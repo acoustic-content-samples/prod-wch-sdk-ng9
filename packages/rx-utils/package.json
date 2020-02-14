@@ -28,7 +28,6 @@
   },
   "peerDependencies": {
     "fs-extra": "^8",
-    "graceful-fs": "^4",
     "mime": "^2",
     "random-useragent": "^0",
     "request": "^2",
@@ -47,7 +46,6 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "fs-extra": "FsExtra",
-        "graceful-fs": "GracefulFs",
         "mime": "Mime",
         "random-useragent": "RandomUseragent",
         "request": "Request",

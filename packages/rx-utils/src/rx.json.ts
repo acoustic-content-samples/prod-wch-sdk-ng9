@@ -1,6 +1,6 @@
 /* Copyright IBM Corp. 2017 */
 import { createError } from '@acoustic-content-sdk/utils';
-import { readFile, writeFile } from 'graceful-fs';
+import { readFile, writeFile } from 'fs-extra';
 import { getType } from 'mime';
 import { Observable, Observer } from 'rxjs';
 

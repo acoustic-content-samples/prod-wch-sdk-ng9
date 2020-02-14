@@ -41,7 +41,6 @@
     "commander": "^4.1.1",
     "email-validator": "^2.0.4",
     "fs-extra": "^8.1.0",
-    "graceful-fs": "^4.2.3",
     "handlebars": "^4.7.3",
     "handlebars-helpers": "^0.10.0",
     "jsdom": "^16.1.0",
@@ -72,7 +71,6 @@
         "commander": "Commander",
         "email-validator": "EmailValidator",
         "fs-extra": "FsExtra",
-        "graceful-fs": "GracefulFs",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
         "jsdom": "Jsdom",
@@ -101,7 +99,6 @@
       "handlebars-helpers",
       "random-useragent",
       "mime",
-      "graceful-fs",
       "fs-extra"
     ]
   },

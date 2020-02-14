@@ -37,7 +37,6 @@
     "chalk": "^3.0.0",
     "email-validator": "^2.0.4",
     "fs-extra": "^8.1.0",
-    "graceful-fs": "^4.2.3",
     "handlebars": "^4.7.3",
     "handlebars-helpers": "^0.10.0",
     "js-string-escape": "^1.0.1",
@@ -71,7 +70,6 @@
         "chalk": "Chalk",
         "email-validator": "EmailValidator",
         "fs-extra": "FsExtra",
-        "graceful-fs": "GracefulFs",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
         "js-string-escape": "JsStringEscape",
@@ -111,7 +109,6 @@
       "toposort",
       "random-useragent",
       "mime",
-      "graceful-fs",
       "fs-extra"
     ]
   },

@@ -1,5 +1,5 @@
 /* Copyright IBM Corp. 2018 */
-import { createWriteStream } from 'graceful-fs';
+import { createWriteStream } from 'fs-extra';
 import { getRandom } from 'random-useragent';
 import { get, OptionsWithUrl } from 'request';
 import { Observable, Observer } from 'rxjs';

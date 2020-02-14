@@ -1,7 +1,6 @@
 /* Copyright IBM Corp. 2017 */
 import { createError } from '@acoustic-content-sdk/utils';
-import { copy, CopyOptions, stat } from 'fs-extra';
-import { mkdir, Stats } from 'graceful-fs';
+import { copy, CopyOptions, mkdir, stat, Stats } from 'fs-extra';
 import { join, parse } from 'path';
 import {
   bindNodeCallback,

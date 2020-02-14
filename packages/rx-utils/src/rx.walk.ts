@@ -1,16 +1,17 @@
 /* Copyright IBM Corp. 2017 */
 import { createError } from '@acoustic-content-sdk/utils';
-import { ensureDir, remove } from 'fs-extra';
 import {
   createReadStream,
   createWriteStream,
+  ensureDir,
   PathLike,
   readdir,
   readFile,
+  remove,
   stat,
   Stats,
   writeFile
-} from 'graceful-fs';
+} from 'fs-extra';
 import { join } from 'path';
 import {
   bindNodeCallback,

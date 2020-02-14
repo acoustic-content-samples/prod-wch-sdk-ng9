@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'graceful-fs';
+import { readFile, writeFile } from 'fs-extra';
 import { Observable, Observer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
