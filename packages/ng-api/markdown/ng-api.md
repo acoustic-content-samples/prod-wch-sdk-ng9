@@ -10,6 +10,7 @@ Collection of APIs and constants for the Angular SDK
 
 |  Interface | Description |
 |  --- | --- |
+|  [ComponentRegistry](./ng-api.componentregistry.md) | Service to register components and get information about registered components. |
 |  [ComponentResolver](./ng-api.componentresolver.md) |  |
 |  [ComponentTypeRef](./ng-api.componenttyperef.md) | Captures all information required to instantiate a component based on its type |
 |  [ComponentTypeRefResolver](./ng-api.componenttyperefresolver.md) | Service that resolves a component type ref given a layout. |
@@ -25,6 +26,7 @@ Collection of APIs and constants for the Angular SDK
 |  [WCH\_TOKEN\_API\_URL](./ng-api.wch_token_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
 |  [WCH\_TOKEN\_AUTH\_STATUS](./ng-api.wch_token_auth_status.md) | Injection token for the page service |
 |  [WCH\_TOKEN\_BASE\_URL](./ng-api.wch_token_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |
+|  [WCH\_TOKEN\_COMPONENT\_REGISTRY](./ng-api.wch_token_component_registry.md) | Injection token for the component registry |
 |  [WCH\_TOKEN\_COMPONENT\_TYPE\_REF\_RESOLVERS](./ng-api.wch_token_component_type_ref_resolvers.md) | A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./ng-api.componenttyperefresolver.md)<!-- -->s. |
 |  [WCH\_TOKEN\_DELIVERY\_CONTENT\_RESOLVER](./ng-api.wch_token_delivery_content_resolver.md) | Injection token for the page service |
 |  [WCH\_TOKEN\_DELIVERY\_CONTENT\_SEED](./ng-api.wch_token_delivery_content_seed.md) | Injection token for the page service |

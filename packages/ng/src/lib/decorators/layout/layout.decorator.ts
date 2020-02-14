@@ -7,12 +7,8 @@ import {
 import { Type } from '@angular/core';
 
 import {
-  mappingRegisterFromLayoutComponent,
-  mappingRegisterFromMappingDirective
-} from './../../utils/component.mapping.utils';
-import {
-  cmpAddAnnotation,
-  cmpRegisterComponent
+  registerComponent,
+  registerLayoutMapping
 } from './../../utils/component.utils';
 import {
   LayoutComponentDirective,
@@ -23,12 +19,8 @@ import {
  * Layout decorator and metadata.
  */
 export function LayoutComponent<T extends Type<any>>(
-  aDirective?: LayoutComponentDirective
+  aDirective: LayoutComponentDirective = {}
 ): (cls: T) => void {
-  /**
-   *  fix the directive
-   */
-  const directive = aDirective || {};
   /**
    *  export the decorator function
    */
@@ -36,15 +28,7 @@ export function LayoutComponent<T extends Type<any>>(
     /**
      *  register
      */
-    cmpAddAnnotation(directive, aClass);
-    /**
-     *  register this component
-     */
-    cmpRegisterComponent(directive, aClass);
-    /**
-     *  register a potential mapping
-     */
-    mappingRegisterFromLayoutComponent(directive, aClass);
+    registerComponent(aClass as any, aDirective);
   };
 }
 
@@ -91,10 +75,6 @@ export function LayoutMapping<T extends Type<any>>(
     /**
      *  register
      */
-    cmpAddAnnotation(directive, cls);
-    /**
-     *  dispatch
-     */
-    mappingRegisterFromMappingDirective(directive, cls);
+    registerLayoutMapping(cls as any, directive as any);
   };
 }

@@ -68,10 +68,5 @@ export const getDeliveryIdFromAuthoringItem: UnaryFunction<
   // decompose
   const { linkedDocId, id } = authoringItem;
   // sanity check
-  if (isNotNil(linkedDocId)) {
-    // return ready id from linked doc id property
-    return linkedDocId;
-  } else {
-    return getDeliveryId(id);
-  }
+  return isNotNil(linkedDocId) ? linkedDocId : getDeliveryId(id);
 };

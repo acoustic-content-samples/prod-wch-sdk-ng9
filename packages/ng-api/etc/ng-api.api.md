@@ -5,6 +5,7 @@
 ```ts
 
 import { AbstractComponentResolver } from '@acoustic-content-sdk/component-api';
+import { AbstractComponentsRegistry } from '@acoustic-content-sdk/component-api';
 import { AbstractComponentTypeRefResolver } from '@acoustic-content-sdk/component-api';
 import { ActivatedRoute } from '@angular/router';
 import { ActivePageV2 } from '@acoustic-content-sdk/api';
@@ -36,6 +37,12 @@ import { UrlConfig } from '@acoustic-content-sdk/api';
 import { UrlSegment } from '@angular/router';
 import { WchPageService } from '@acoustic-content-sdk/component-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
+
+// @public
+export interface ComponentRegistry extends AbstractComponentsRegistry<ComponentTypeRef<any>> {
+    registerType(aController: string | string[], aType: ComponentTypeRef<any>, aLayoutModes?: string | string[]): void;
+    registerType(aType: ComponentTypeRef<any>): void;
+}
 
 // @public (undocumented)
 export interface ComponentResolver extends AbstractComponentResolver<ComponentTypeRef<any>> {
@@ -78,6 +85,9 @@ export const WCH_TOKEN_AUTH_STATUS: InjectionToken<AuthStatus>;
 
 // @public
 export const WCH_TOKEN_BASE_URL: InjectionToken<HubInfoUrlProvider>;
+
+// @public
+export const WCH_TOKEN_COMPONENT_REGISTRY: InjectionToken<ComponentRegistry>;
 
 // @public
 export const WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS: InjectionToken<ComponentTypeRefResolver[]>;

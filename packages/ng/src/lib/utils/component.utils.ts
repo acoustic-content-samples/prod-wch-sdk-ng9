@@ -1,114 +1,57 @@
-import { Type } from '@angular/core';
 import {
-  arrayPush,
-  assertArray,
+  AbstractRegisteredComponent,
+  AbstractRegisteredLayoutMapping
+} from '@acoustic-content-sdk/component-utils';
+import { ComponentTypeRef } from '@acoustic-content-sdk/ng-api';
+import {
+  firstElement,
   isArray,
   isFunction,
-  isNotEmpty,
-  isString
+  isNotNil,
+  isString,
+  isStringArray
 } from '@acoustic-content-sdk/utils';
 import { Observable, ReplaySubject } from 'rxjs';
 
 import { LayoutComponentDirective } from './../decorators/layout/layout.directive';
-import { createSymbol } from './symbol';
 
-/* Copyright IBM Corp. 2017 */
+export type RegisteredComponent = AbstractRegisteredComponent<
+  ComponentTypeRef<any>,
+  LayoutComponentDirective
+>;
 
-const EMPTY_ARRAY: string[] = [];
-const REFLECT_ANNOTATIONS = '__annotations__';
+export type RegisteredLayoutMapping = AbstractRegisteredLayoutMapping<
+  ComponentTypeRef<any>
+>;
 
-const KEY_ANNOTATIONS = createSymbol();
+const KEY_COMPONENT = Symbol();
+const KEY_LAYOUT_MAPPING = Symbol();
 
-/**
- * Adds one of our own annotations to the host and returns the set of
- * annotations.
- *
- * @param aAnnotation - the annotation to add
- * @param aHost - the host to add the annotations to
- *
- * @returns the list of annotations
- */
-export function cmpAddAnnotation(aAnnotation: any, aHost: any): any[] {
-  return arrayPush(aAnnotation, assertArray(KEY_ANNOTATIONS, aHost));
-}
+const createRegisteredComponent = (
+  type: ComponentTypeRef<any>,
+  directive: LayoutComponentDirective
+): RegisteredComponent => ({ type, directive });
 
-/**
- * Returns our annotations for a function type
- *
- * @param aHost - the type to get the annotations from
- * @returns the list of annotations
- */
-function _getAnnotations(aHost: any): any[] {
-  return assertArray(KEY_ANNOTATIONS, aHost);
-}
+export const registerComponent = (
+  aType: ComponentTypeRef<any>,
+  aDirective: LayoutComponentDirective
+) => (aType[KEY_COMPONENT] = createRegisteredComponent(aType, aDirective));
 
-/**
- * Returns all known annotations, which are a combination of our own
- * annotations and the angular annotations.
- *
- * @param aHost - the type to get the annotations from
- * @returns the list of annotations
- */
-function _getAllAnnotations(aHost: any): any[] {
-  /**
-   *  get the differnt annotation
-   */
-  const ownAnnotations = _getAnnotations(aHost);
-  const ngAnnotations = aHost[REFLECT_ANNOTATIONS];
-  /**
-   *  check for existence
-   */
-  const hasOwnAnnotations = isNotEmpty(ownAnnotations);
-  const hasNgAnnotations = isNotEmpty(ngAnnotations);
-  /**
-   *  return
-   */
-  const result = hasOwnAnnotations
-    ? hasNgAnnotations
-      ? [...ownAnnotations, ...ngAnnotations]
-      : ownAnnotations
-    : hasNgAnnotations
-    ? ngAnnotations
-    : EMPTY_ARRAY;
-  /**
-   *  some logging
-   */
-  return result;
-}
+export const registerLayoutMapping = (
+  aType: ComponentTypeRef<any>,
+  aRegistration: RegisteredLayoutMapping
+) => (aType[KEY_LAYOUT_MAPPING] = aRegistration);
 
-export interface RegisteredComponent {
-  directive: LayoutComponentDirective;
-  type: Type<any>;
-}
+const getRegisteredComponent = (
+  aType: ComponentTypeRef<any>
+): RegisteredComponent => aType[KEY_COMPONENT];
 
 /**
  *  allows to attach for modifications of the components
  */
 const componentsSubject = new ReplaySubject<RegisteredComponent>();
 
-export const __REGISTERED_COMPONENTS: Observable<
-  RegisteredComponent
-> = componentsSubject;
-
-export function cmpRegisterComponent(
-  aDirective: LayoutComponentDirective,
-  aType: Type<any>
-): void {
-  /**
-   *  add the component
-   */
-  componentsSubject.next({ directive: aDirective, type: aType });
-}
-
-/**
- * Extracts the selector
- *
- * @param aMetadata -     metadata
- * @returns the selector
- */
-function _pluckSelector(aMetadata: any): any {
-  return aMetadata.selector;
-}
+export const __REGISTERED_COMPONENTS: Observable<RegisteredComponent> = componentsSubject;
 
 /**
  * Decodes the selector from the component
@@ -117,7 +60,7 @@ function _pluckSelector(aMetadata: any): any {
  * @returns the selectors for the component
  */
 export function cmpGetSelector(
-  aSelector: string | Type<any> | null | undefined
+  aSelector: string | string[] | ComponentTypeRef<any> | null | undefined
 ): string | undefined {
   /**
    *  decode the selector
@@ -128,16 +71,15 @@ export function cmpGetSelector(
      *  wrap into an array
      */
     result = aSelector;
+  } else if (isStringArray(aSelector)) {
+    // returns the first selector
+    return firstElement(aSelector);
   } else if (isFunction(aSelector)) {
     /**
      *  analyze the existing annotations
      */
-    const annotations: any[] = _getAllAnnotations(aSelector);
-    /**
-     *  filter the desired one
-     */
-    const selectors = annotations.map(_pluckSelector).filter(isString);
-    result = isNotEmpty(selectors) ? selectors[0] : undefined;
+    const cmp = getRegisteredComponent(aSelector as any);
+    return isNotNil(cmp) ? cmpGetSelector(cmp.directive.selector) : undefined;
   }
   /**
    *  ok
@@ -152,7 +94,7 @@ export function cmpGetSelector(
  * @returns the selectors for the component
  */
 export function cmpGetSelectors(
-  aSelector: string | string[] | Type<any> | null | undefined
+  aSelector: string | string[] | ComponentTypeRef<any> | null | undefined
 ): string[] {
   /**
    *  decode the selector
@@ -175,16 +117,13 @@ export function cmpGetSelectors(
     /**
      *  analyze the existing annotations
      */
-    const annotations: any[] = _getAllAnnotations(aSelector);
-    /**
-     *  filter the desired one
-     */
-    result = annotations.map(_pluckSelector).filter(isString);
+    const cmp = getRegisteredComponent(aSelector as any);
+    result = isNotNil(cmp) ? cmpGetSelectors(cmp.directive.selector) : [];
   } else {
     /**
      *  no selectors available
      */
-    result = EMPTY_ARRAY;
+    result = [];
   }
   /**
    *  ok

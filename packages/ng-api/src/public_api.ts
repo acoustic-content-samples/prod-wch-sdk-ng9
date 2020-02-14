@@ -5,6 +5,7 @@
  */
 
 export * from './auth-status/auth.status';
+export * from './component/component.registry';
 export * from './component/component.resolver';
 export * from './content/delivery.content.resolver';
 export * from './handlebars/handlebars.resolver';
