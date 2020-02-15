@@ -8,6 +8,7 @@ import {
   isArray,
   isFunction,
   isNotNil,
+  isPlainObject,
   isString,
   isStringArray
 } from '@acoustic-content-sdk/utils';
@@ -60,7 +61,13 @@ const getRegisteredComponent = (aType: Type<any>): RegisteredComponent =>
  * @returns the selectors for the component
  */
 export function cmpGetSelector(
-  aSelector: string | string[] | Type<any> | null | undefined
+  aSelector:
+    | string
+    | string[]
+    | Type<any>
+    | ComponentTypeRef<any>
+    | null
+    | undefined
 ): string | undefined {
   /**
    *  decode the selector
@@ -80,6 +87,9 @@ export function cmpGetSelector(
      */
     const cmp = getRegisteredComponent(aSelector);
     return isNotNil(cmp) ? cmpGetSelector(cmp.directive.selector) : undefined;
+  } else if (isPlainObject(aSelector)) {
+    // resolve from the type
+    return cmpGetSelector(aSelector.type);
   }
   /**
    *  ok
@@ -94,7 +104,13 @@ export function cmpGetSelector(
  * @returns the selectors for the component
  */
 export function cmpGetSelectors(
-  aSelector: string | string[] | Type<any> | null | undefined
+  aSelector:
+    | string
+    | string[]
+    | Type<any>
+    | ComponentTypeRef<any>
+    | null
+    | undefined
 ): string[] {
   /**
    *  decode the selector
@@ -117,8 +133,11 @@ export function cmpGetSelectors(
     /**
      *  analyze the existing annotations
      */
-    const cmp = getRegisteredComponent(aSelector as any);
+    const cmp = getRegisteredComponent(aSelector);
     result = isNotNil(cmp) ? cmpGetSelectors(cmp.directive.selector) : [];
+  } else if (isPlainObject(aSelector)) {
+    // dispatch
+    return cmpGetSelectors(aSelector.type);
   } else {
     /**
      *  no selectors available

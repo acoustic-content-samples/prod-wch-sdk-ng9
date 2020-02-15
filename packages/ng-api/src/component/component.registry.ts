@@ -1,5 +1,5 @@
 import { AbstractComponentsRegistry } from '@acoustic-content-sdk/component-api';
-import { InjectionToken } from '@angular/core';
+import { InjectionToken, Type } from '@angular/core';
 
 import { ComponentTypeRef } from './../type/type.ref';
 
@@ -21,6 +21,10 @@ export interface ComponentRegistry
    * Registers the type and assumes that a decorator has specified the controller
    */
   registerType(aType: ComponentTypeRef<any>): void;
+  /**
+   * Registers the type and assumes that a decorator has specified the controller
+   */
+  registerType(aType: Type<any>): void;
 }
 
 /**
