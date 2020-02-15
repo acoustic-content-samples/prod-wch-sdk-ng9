@@ -11,9 +11,11 @@ import {
   isString,
   isStringArray
 } from '@acoustic-content-sdk/utils';
+import { ComponentFactoryResolver, Type } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 
 import { LayoutComponentDirective } from './../decorators/layout/layout.directive';
+import { createSymbol } from './symbol';
 
 export type RegisteredComponent = AbstractRegisteredComponent<
   ComponentTypeRef<any>,
@@ -24,27 +26,33 @@ export type RegisteredLayoutMapping = AbstractRegisteredLayoutMapping<
   ComponentTypeRef<any>
 >;
 
-const KEY_COMPONENT = Symbol();
-const KEY_LAYOUT_MAPPING = Symbol();
+const KEY_COMPONENT = createSymbol();
+const KEY_LAYOUT_MAPPING = createSymbol();
 
 const createRegisteredComponent = (
-  type: ComponentTypeRef<any>,
-  directive: LayoutComponentDirective
-): RegisteredComponent => ({ type, directive });
+  type: Type<any>,
+  directive: LayoutComponentDirective,
+  resolver?: ComponentFactoryResolver
+): RegisteredComponent => ({ type: { type, resolver }, directive });
 
 export const registerComponent = (
-  aType: ComponentTypeRef<any>,
-  aDirective: LayoutComponentDirective
-) => (aType[KEY_COMPONENT] = createRegisteredComponent(aType, aDirective));
+  aType: Type<any>,
+  aDirective: LayoutComponentDirective,
+  resolver?: ComponentFactoryResolver
+) =>
+  (aType[KEY_COMPONENT] = createRegisteredComponent(
+    aType,
+    aDirective,
+    resolver
+  ));
 
 export const registerLayoutMapping = (
-  aType: ComponentTypeRef<any>,
+  aType: Type<any>,
   aRegistration: RegisteredLayoutMapping
 ) => (aType[KEY_LAYOUT_MAPPING] = aRegistration);
 
-const getRegisteredComponent = (
-  aType: ComponentTypeRef<any>
-): RegisteredComponent => aType[KEY_COMPONENT];
+const getRegisteredComponent = (aType: Type<any>): RegisteredComponent =>
+  aType[KEY_COMPONENT];
 
 /**
  *  allows to attach for modifications of the components
@@ -60,7 +68,7 @@ export const __REGISTERED_COMPONENTS: Observable<RegisteredComponent> = componen
  * @returns the selectors for the component
  */
 export function cmpGetSelector(
-  aSelector: string | string[] | ComponentTypeRef<any> | null | undefined
+  aSelector: string | string[] | Type<any> | null | undefined
 ): string | undefined {
   /**
    *  decode the selector
@@ -78,7 +86,7 @@ export function cmpGetSelector(
     /**
      *  analyze the existing annotations
      */
-    const cmp = getRegisteredComponent(aSelector as any);
+    const cmp = getRegisteredComponent(aSelector);
     return isNotNil(cmp) ? cmpGetSelector(cmp.directive.selector) : undefined;
   }
   /**
@@ -94,7 +102,7 @@ export function cmpGetSelector(
  * @returns the selectors for the component
  */
 export function cmpGetSelectors(
-  aSelector: string | string[] | ComponentTypeRef<any> | null | undefined
+  aSelector: string | string[] | Type<any> | null | undefined
 ): string[] {
   /**
    *  decode the selector
@@ -140,5 +148,5 @@ export function getSelectorsFromComponent(
   /**
    *  use common code to get the selector
    */
-  return cmpGetSelectors(aComponent.directive.selector || aComponent.type);
+  return cmpGetSelectors(aComponent.directive.selector || aComponent.type.type);
 }

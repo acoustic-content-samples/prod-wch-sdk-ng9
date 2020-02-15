@@ -28,7 +28,7 @@ export function LayoutComponent<T extends Type<any>>(
     /**
      *  register
      */
-    registerComponent(aClass as any, aDirective);
+    registerComponent(aClass, aDirective);
   };
 }
 

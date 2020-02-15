@@ -186,10 +186,7 @@ function _onRegisteredComponent(
      *  the layout modes
      */
     _registerByLayoutModesAndSelectors(
-      {
-        type: aComponent.type,
-        resolver: aComponent.directive.componentFactoryResolver
-      },
+      aComponent.type,
       _getLayoutModesFromComponent(aComponent),
       componentSelectors,
       aMap,
