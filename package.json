@@ -25,7 +25,7 @@
     "depcheck": "yarn workspaces run exitzero depcheck -o depcheck/depcheck.txt",
     "lint": "yarn workspaces run exitzero tslint -p . -o lint/lint.txt -t codeFrame",
     "publish": "yarn workspaces run publish dist --non-interactive",
-    "postpublish": "npm publish dist",
+    "postpublish": "cd dist && npm publish && cd ..",
     "pull": "wchtools pull -A --dir temp --verbose",
     "push": "wchtools push -A --dir data --verbose",
     "test": "wsrun test --passWithNoTests --json --outputFile test.result.json"

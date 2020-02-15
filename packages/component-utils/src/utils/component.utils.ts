@@ -1,4 +1,3 @@
-import { AbstractLayoutComponentDirective } from '@acoustic-content-sdk/component-api';
 import { isString, isStringArray } from '@acoustic-content-sdk/utils';
 
 const EMPTY_ARRAY: string[] = [];

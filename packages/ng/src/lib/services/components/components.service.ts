@@ -27,21 +27,13 @@ import {
   wchBoxLayoutMode
 } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional, Type } from '@angular/core';
-import {
-  EMPTY,
-  MonoTypeOperatorFunction,
-  Observable,
-  of,
-  Subject,
-  Subscription
-} from 'rxjs';
+import { EMPTY, MonoTypeOperatorFunction, Observable, of, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
 import { isEqualComponentTypeRef } from '../../utils/js.utils';
 import { MODULE, VERSION } from './../../../version';
 import { DefaultComponent } from './../../components/default/default.component';
 import {
-  __REGISTERED_COMPONENTS,
   cmpGetSelectors,
   getSelectorsFromComponent,
   RegisteredComponent
@@ -451,7 +443,6 @@ export class ComponentsService implements ComponentTypeRefResolver {
      *  our private methods
      */
     let componentMap: ByLayoutModeMapping;
-    let componentSubscription: Subscription;
 
     /** lazily initialize the component map */
     function _initComponentMap(): ByLayoutModeMapping {
@@ -481,13 +472,6 @@ export class ComponentsService implements ComponentTypeRefResolver {
          *  update the reference
          */
         componentMap = tmp;
-
-        /**
-         *  register for changes
-         */
-        componentSubscription = __REGISTERED_COMPONENTS.subscribe((component) =>
-          _onRegisteredComponent(component, tmp, logger)
-        );
       }
 
       /**

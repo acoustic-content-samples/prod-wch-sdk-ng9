@@ -12,7 +12,6 @@ import {
   isStringArray
 } from '@acoustic-content-sdk/utils';
 import { ComponentFactoryResolver, Type } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs';
 
 import { LayoutComponentDirective } from './../decorators/layout/layout.directive';
 import { createSymbol } from './symbol';
@@ -53,13 +52,6 @@ export const registerLayoutMapping = (
 
 const getRegisteredComponent = (aType: Type<any>): RegisteredComponent =>
   aType[KEY_COMPONENT];
-
-/**
- *  allows to attach for modifications of the components
- */
-const componentsSubject = new ReplaySubject<RegisteredComponent>();
-
-export const __REGISTERED_COMPONENTS: Observable<RegisteredComponent> = componentsSubject;
 
 /**
  * Decodes the selector from the component

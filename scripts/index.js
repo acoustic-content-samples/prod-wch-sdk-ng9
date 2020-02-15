@@ -11,8 +11,6 @@ const workDir = __dirname;
 const toWorkDir = () => chdir(workDir);
 const toCurrentDir = () => chdir(currentDir);
 
-console.log('Carsten', __dirname);
-
 const pkg = join(workDir, 'package.json');
 const pkg$ = readJson(pkg)
   .then((data) => ({ ...data, private: true }))

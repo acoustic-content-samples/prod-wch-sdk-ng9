@@ -49,6 +49,9 @@ export class ComponentRegistryService implements ComponentRegistry {
     // logger
     const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
     const logger = logSvc.get(LOGGER);
+    // delegate function
+    this.registerType = bindMember(aComponentsService, 'registerType');
+
     // delegate functions
     this.registerType = bindMember(aComponentsService, 'registerType');
     this.getTypeByLayout = bindMember(aComponentsService, 'getTypeByLayout');
