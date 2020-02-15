@@ -18,4 +18,5 @@ export interface ComponentRegistry extends AbstractComponentsRegistry<ComponentT
 |  --- | --- |
 |  [registerType(aController, aType, aLayoutModes)](./ng-api.componentregistry.registertype.md) | Registers the type given a full spec |
 |  [registerType(aType)](./ng-api.componentregistry.registertype_1.md) | Registers the type and assumes that a decorator has specified the controller |
+|  [registerType(aType)](./ng-api.componentregistry.registertype_2.md) | Registers the type and assumes that a decorator has specified the controller |
 

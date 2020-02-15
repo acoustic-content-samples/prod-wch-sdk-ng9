@@ -42,6 +42,7 @@ import { WindowType } from '@acoustic-content-sdk/component-api';
 export interface ComponentRegistry extends AbstractComponentsRegistry<ComponentTypeRef<any>> {
     registerType(aController: string | string[], aType: ComponentTypeRef<any>, aLayoutModes?: string | string[]): void;
     registerType(aType: ComponentTypeRef<any>): void;
+    registerType(aType: Type<any>): void;
 }
 
 // @public (undocumented)
