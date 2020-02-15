@@ -1,12 +1,11 @@
 nodeModulePipeline {
-  squad = "infra-boe"
   name = "prod-wch-sdk"
   version_minor = "0"
   version_major = "9"
   nodeversion = "10"
 
   preBuildScript = "echo 'Nothing to install'"
-  buildScript = "chmod a+x ./build_ibm.sh && sh ./build_ibm.sh"
+  buildScript = "chmod a+x ./build.sh && sh ./build.sh"
   deploymentScript = "echo 'Nothing to publish'"
 
   skipStaticResourceUpdate = true
