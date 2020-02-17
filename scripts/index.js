@@ -19,6 +19,6 @@ const pkg$ = readJson(pkg)
 const pub$ = pkg$
   .then(toWorkDir)
   .then(() =>
-    spawn('yarn', ['run', 'publish'], { stdio: 'inherit', cwd: workDir })
+    spawn('yarn', ['run', 'publish:global'], { stdio: 'inherit', cwd: workDir })
   )
   .then(toCurrentDir, toCurrentDir);
