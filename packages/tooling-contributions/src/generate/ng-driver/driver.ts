@@ -9,12 +9,10 @@ import {
   rxFindProjectName,
   rxGetWorkspace,
   selectOptionsForTarget,
-  WorkspaceProject,
-  WorkspaceSchema
+  WorkspaceProject
 } from '@acoustic-content-sdk/tooling';
 import {
   anyToString,
-  getPath,
   isNotEmpty,
   JSONObject,
   mapArray,
@@ -37,6 +35,7 @@ import {
   readFilesForConfig,
   splitArray
 } from '../artifacts';
+import { getProject } from './../../ng-utils/utils';
 import { ArtifactMode } from './../schema';
 import { CreateNgDriverArtifactsSchema } from './schema';
 
@@ -121,20 +120,6 @@ function getModeConfigs(
     createModeConfig(ArtifactMode.ALWAYS, getOptions(aProject, aConfigurations))
   ];
 }
-
-/**
- * Extracts the project from a workspace
- *
- * @param aName - the project name
- * @param aWorkspace - the workspace schema
- *
- * @returns the project
- */
-const getProject = (aName: string, aWorkspace: WorkspaceSchema) =>
-  getPath<WorkspaceProject<ProjectType.Application>>(aWorkspace, [
-    'projects',
-    aName
-  ]);
 
 /**
  * Decodes the modes from the schema

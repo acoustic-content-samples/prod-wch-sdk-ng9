@@ -54,6 +54,14 @@ export function updateMinVersion(
   return aPkg;
 }
 
+/**
+ * Loads the package JSON file relative to the directory
+ *
+ * @param aDir - the directory to start on
+ * @param aReadFile - the read file callback
+ *
+ * @returns an observable with the file
+ */
 export function rxFindPackageJson(
   aDir: string,
   aReadFile: ReadTextFile

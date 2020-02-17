@@ -15,6 +15,7 @@ export * from './utils/config';
 export * from './utils/guid';
 export { canonicalizeJson, serializeJson } from './utils/json';
 export * from './utils/names';
+export { rxFindPackageJson } from './utils/package';
 export * from './utils/types';
 export * from './utils/url.utils';
 export * from './utils/version';

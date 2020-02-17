@@ -27,6 +27,16 @@
     "tag": {
       "type": "string",
       "description": "A comma separated list of tags."
+    },
+    "package": {
+      "type": "boolean",
+      "description": "If set to true, generate an npm descriptor for the resources, defaults to false.",
+      "default": false
+    },
+    "license": {
+      "type": "string",
+      "description": "License information used to produce the NPM package, defaults to MIT.",
+      "default": "MIT"
     }
   },
   "required": [],

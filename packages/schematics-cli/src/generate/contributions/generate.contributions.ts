@@ -14,18 +14,30 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import {
   copyNgDriverFiles,
-  createNgDriverArtifacts
+  createNgDriverArtifacts,
+  createPackageArtifacts
 } from '@acoustic-content-sdk/tooling-contributions';
-import { rxPipe } from '@acoustic-content-sdk/utils';
+import { arrayPush, opShareLast, rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { merge } from 'rxjs';
-import { count, map, mapTo, mergeMap, tap } from 'rxjs/operators';
+import { EMPTY, merge } from 'rxjs';
+import {
+  endWith,
+  ignoreElements,
+  map,
+  mergeMap,
+  reduce,
+  share,
+  tap
+} from 'rxjs/operators';
 
 import { Schema } from './schema';
 
 const LOGGER = 'GenerateContributions';
 
 function generateArtifacts(options: Schema): Rule {
+  // decode flags
+  const bPackage = options.package || false;
+
   return (host: Tree, context: SchematicContext) => {
     // logger
     const logSvc = createLoggerService(context);
@@ -52,9 +64,9 @@ function generateArtifacts(options: Schema): Rule {
       logFile()
     );
     // all items
-    const all$ = merge(artifacts$, binary$);
+    const all$ = rxPipe(merge(artifacts$, binary$), share());
     // locate the data directory
-    const dataDir$ = rxFindDataDir(readFile, options);
+    const dataDir$ = rxPipe(rxFindDataDir(readFile, options), opShareLast);
     // compose so we have the correct filenames
     const files$ = rxPipe(
       dataDir$,
@@ -65,11 +77,30 @@ function generateArtifacts(options: Schema): Rule {
         )
       )
     );
+    // package options
+    const pkgOpt$ = rxPipe(
+      all$,
+      reduce(
+        (aDst: string[], [aName]: FileDescriptor<any>) =>
+          arrayPush(aName, aDst),
+        []
+      ),
+      map((files) => ({ ...options, files }))
+    );
+    // the package file
+    const pkg$ = bPackage
+      ? rxPipe(
+          pkgOpt$,
+          mergeMap((opt) => createPackageArtifacts(readFile, opt))
+        )
+      : EMPTY;
+    // all files
+    const allFiles$ = merge(files$, pkg$);
     // write these files
-    const written$ = rxPipe(files$, rxWriteFileDescriptor(writeFile));
+    const written$ = rxPipe(allFiles$, rxWriteFileDescriptor(writeFile));
 
     // done
-    return rxPipe(written$, count(), mapTo(host));
+    return rxPipe(written$, ignoreElements(), endWith(host));
   };
 }
 
