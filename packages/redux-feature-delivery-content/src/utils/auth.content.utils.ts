@@ -5,27 +5,34 @@ import {
   KEY_VALUES,
   Logger,
   MultiImageElement,
-  SingleImageElement
-} from "@acoustic-content-sdk/api";
-import { getDeliveryIdFromAuthoringItem } from "@acoustic-content-sdk/redux-utils";
+  SingleImageElement,
+  MultiVideoElement,
+  SingleVideoElement
+} from '@acoustic-content-sdk/api';
+import { getDeliveryIdFromAuthoringItem } from '@acoustic-content-sdk/redux-utils';
+import {
+  SingleVideoElement,
+  MultiImageElement
+} from '@acoustic-content-sdk/api';
 import {
   arrayPush,
   forEach,
   forIn,
   isArray,
   isImageElement,
+  isVideoElement,
   isMultiGroupElement,
   isNil,
   isNotNil,
   isSingleGroupElement
-} from "@acoustic-content-sdk/utils";
+} from '@acoustic-content-sdk/utils';
 
 function addReferencedGroupAsset(
   aDst: string[],
   aGroup: Group,
   aLogger: Logger
 ) {
-  forIn(aGroup, el => addReferencedAsset(aDst, el, aLogger));
+  forIn(aGroup, (el) => addReferencedAsset(aDst, el, aLogger));
 }
 
 function addReferencedAsset(
@@ -41,7 +48,7 @@ function addReferencedAsset(
     arrayPush(id, aDst);
   } else if (isMultiImageElementInAuthoring(aElement)) {
     const { values } = aElement;
-    forEach(values, value => {
+    forEach(values, (value) => {
       // the asset
       const { asset } = value;
       if (isNotNil(asset)) {
@@ -55,7 +62,7 @@ function addReferencedAsset(
     addReferencedGroupAsset(aDst, value, aLogger);
   } else if (isMultiGroupElement(aElement)) {
     const { values } = aElement;
-    forEach(values, value => addReferencedGroupAsset(aDst, value, aLogger));
+    forEach(values, (value) => addReferencedGroupAsset(aDst, value, aLogger));
   }
   // TODO add file and video support
 }
@@ -96,7 +103,7 @@ export function isSingleImageElementInAuthoring(
   return (
     isImageElement(value) &&
     isNil(value[KEY_VALUES]) &&
-    isNotNil(value["asset"])
+    isNotNil(value['asset'])
   );
 }
 
@@ -104,4 +111,20 @@ export function isMultiImageElementInAuthoring(
   value: any
 ): value is MultiImageElement {
   return isImageElement(value) && isArray(value[KEY_VALUES]);
+}
+
+export function isSingleVideoElementInAuthoring(
+  value: any
+): value is SingleVideoElement {
+  return (
+    isVideoElement(value) &&
+    isNil(value[KEY_VALUES]) &&
+    isNotNil(value['asset'])
+  );
+}
+
+export function isMultiVideoElementInAuthoring(
+  value: any
+): value is MultiVideoElement {
+  return isVideoElement(value) && isArray(value[KEY_VALUES]);
 }
