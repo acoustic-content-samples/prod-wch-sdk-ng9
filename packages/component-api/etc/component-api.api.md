@@ -4,6 +4,16 @@
 
 ```ts
 
+import { AuthoringAsset } from '@acoustic-content-sdk/api';
+import { AuthoringContentItem } from '@acoustic-content-sdk/api';
+import { AuthoringLayout } from '@acoustic-content-sdk/api';
+import { AuthoringLayoutMapping } from '@acoustic-content-sdk/api';
+import { AuthoringType } from '@acoustic-content-sdk/api';
+import { CLASSIFICATION_ASSET } from '@acoustic-content-sdk/api';
+import { CLASSIFICATION_CONTENT } from '@acoustic-content-sdk/api';
+import { CLASSIFICATION_CONTENT_TYPE } from '@acoustic-content-sdk/api';
+import { CLASSIFICATION_LAYOUT } from '@acoustic-content-sdk/api';
+import { CLASSIFICATION_LAYOUT_MAPPING } from '@acoustic-content-sdk/api';
 import { CONTENT_ITEM_KIND } from '@acoustic-content-sdk/api';
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import { DeliveryGroupElement } from '@acoustic-content-sdk/api';
@@ -119,6 +129,11 @@ export interface ReconciledDeliverySearchInput<T> {
 
 // @public
 export interface ReconciledDeliverySearchResolver {
+    getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringLayoutMapping>, aClassification: typeof CLASSIFICATION_LAYOUT_MAPPING): Observable<SearchResults<RESULT>>;
+    getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringLayout>, aClassification: typeof CLASSIFICATION_LAYOUT): Observable<SearchResults<RESULT>>;
+    getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringAsset>, aClassification: typeof CLASSIFICATION_ASSET): Observable<SearchResults<RESULT>>;
+    getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringContentItem>, aClassification: typeof CLASSIFICATION_CONTENT): Observable<SearchResults<RESULT>>;
+    getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringType>, aClassification: typeof CLASSIFICATION_CONTENT_TYPE): Observable<SearchResults<RESULT>>;
     getDeliverySearchResults<ITEM, RESULT>(aQuery: ReconciledDeliverySearchInput<ITEM>, aClassification: string): Observable<SearchResults<RESULT>>;
 }
 

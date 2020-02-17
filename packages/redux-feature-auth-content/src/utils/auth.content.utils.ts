@@ -2,6 +2,7 @@ import {
   AuthoringAsset,
   AuthoringContentItem,
   BaseAuthoringItem,
+  CLASSIFICATION_ASSET,
   CLASSIFICATION_CONTENT,
   ContentItem,
   Element,
@@ -12,14 +13,14 @@ import {
   MultiImageElement,
   SingleImageElement,
   User
-} from "@acoustic-content-sdk/api";
-import { AccessorType } from "@acoustic-content-sdk/edit-api";
-import { rxSelect } from "@acoustic-content-sdk/redux-store";
+} from '@acoustic-content-sdk/api';
+import { AccessorType } from '@acoustic-content-sdk/edit-api';
+import { rxSelect } from '@acoustic-content-sdk/redux-store';
 import {
   createUpdater,
   getDeliveryIdFromAuthoringItem,
   updateGenericProperties
-} from "@acoustic-content-sdk/redux-utils";
+} from '@acoustic-content-sdk/redux-utils';
 import {
   arrayPush,
   assertObject,
@@ -43,20 +44,20 @@ import {
   parsePath,
   reduceForIn,
   rxPipe
-} from "@acoustic-content-sdk/utils";
-import { combineLatest, Observable } from "rxjs";
-import { map } from "rxjs/operators";
+} from '@acoustic-content-sdk/utils';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { selectAuthoringContentItem } from "../state/auth-content/auth.content.selectors";
+import { selectAuthoringContentItem } from '../state/auth-content/auth.content.selectors';
 import {
   AuthContentFeatureState,
   selectAuthContentFeature
-} from "./../state/auth-content/auth.content.feature";
+} from './../state/auth-content/auth.content.feature';
 
 /**
  * Snapshot mode for image elements
  */
-export const IMAGE_ELEMENT_MODE_SNAPSHOT = "snapshot";
+export const IMAGE_ELEMENT_MODE_SNAPSHOT = 'snapshot';
 
 export interface Position {
   row: number;
@@ -64,7 +65,7 @@ export interface Position {
   item?: number;
 }
 
-const indicesRegex = new RegExp("\\[(\\d{1,})\\]", "g");
+const indicesRegex = new RegExp('\\[(\\d{1,})\\]', 'g');
 
 export const getRowPositionByAccessor = (
   aAccessor: AccessorType
@@ -232,13 +233,13 @@ export function updateImageElementByAccessor(
 
   // get the original item to make a copy
   const originalImage = getPath(aItem, path);
-  const mode = getProperty<any, "mode">(
+  const mode = getProperty<any, 'mode'>(
     originalImage,
-    "mode",
+    'mode',
     IMAGE_ELEMENT_MODE_SNAPSHOT
   );
-  const altText = getProperty<any, "altText">(originalImage, "altText");
-  const link = getProperty<any, "link">(originalImage, "link");
+  const altText = getProperty<any, 'altText'>(originalImage, 'altText');
+  const link = getProperty<any, 'link'>(originalImage, 'link');
 
   // image properties to copy
   const baseImage = { altText, link, mode };
@@ -279,10 +280,10 @@ function getAssetDetails(aMode: string, aAsset: AuthoringAsset) {
       id: getDeliveryIdFromAuthoringItem(aAsset),
       fileName: aAsset.fileName,
       fileSize: aAsset.fileSize,
-      width: getPath(aAsset, ["metadata", "width"], -1),
+      width: getPath(aAsset, ['metadata', 'width'], -1),
       mediaType: aAsset.mediaType,
-      resourceUri: getPath(aAsset, ["renditions", "default", "source"]),
-      height: getPath(aAsset, ["metadata", "height"], -1)
+      resourceUri: getPath(aAsset, ['renditions', 'default', 'source']),
+      height: getPath(aAsset, ['metadata', 'height'], -1)
     };
   } else {
     return { id: getDeliveryIdFromAuthoringItem(aAsset) };
@@ -303,7 +304,7 @@ function addReferencedContent(
     // add the references
     const { values } = aElement;
     if (isNotEmpty(values)) {
-      values.forEach(value => arrayPush(value.id, aDst));
+      values.forEach((value) => arrayPush(value.id, aDst));
     }
   } else if (isSingleReferenceElement(aElement, false)) {
     const { value } = aElement;
@@ -314,7 +315,7 @@ function addReferencedContent(
     // recurse
     const { values } = aElement;
     if (isNotEmpty(values)) {
-      values.forEach(value => addGroupContent(aDst, value, aLogger));
+      values.forEach((value) => addGroupContent(aDst, value, aLogger));
     }
   } else if (isSingleGroupElement(aElement, false)) {
     const { value } = aElement;
@@ -330,7 +331,7 @@ export function isSingleImageElementInAuthoring(
   return (
     isImageElement(value) &&
     isNil(value[KEY_VALUES]) &&
-    isNotNil(value["asset"])
+    isNotNil(value['asset'])
   );
 }
 
@@ -345,7 +346,7 @@ function addReferencedGroupAsset(
   aGroup: Group,
   aLogger: Logger
 ) {
-  forIn(aGroup, el => addReferencedAsset(aDst, el, aLogger));
+  forIn(aGroup, (el) => addReferencedAsset(aDst, el, aLogger));
 }
 
 function addReferencedAsset(
@@ -361,7 +362,7 @@ function addReferencedAsset(
     arrayPush(id, aDst);
   } else if (isMultiImageElementInAuthoring(aElement)) {
     const { values } = aElement;
-    forEach(values, value => {
+    forEach(values, (value) => {
       // the asset
       const { asset } = value;
       if (isNotNil(asset)) {
@@ -375,7 +376,7 @@ function addReferencedAsset(
     addReferencedGroupAsset(aDst, value, aLogger);
   } else if (isMultiGroupElement(aElement)) {
     const { values } = aElement;
-    forEach(values, value => addReferencedGroupAsset(aDst, value, aLogger));
+    forEach(values, (value) => addReferencedGroupAsset(aDst, value, aLogger));
   }
   // TODO add file and video support
 }
@@ -398,7 +399,7 @@ export function referencedContent(
     forIn(elements, (el: Element) => addReferencedContent(ids, el, aLogger));
   }
   // ok
-  return ids.filter(id => isNotNil(id) && id !== aContentItem.id);
+  return ids.filter((id) => isNotNil(id) && id !== aContentItem.id);
 }
 
 /**
@@ -446,7 +447,7 @@ export function contentItemsByAssets(
       // register
       forEach(
         assetIds,
-        assetId => (assertObject(assetId, aResult)[contentId] = aItem)
+        (assetId) => (assertObject(assetId, aResult)[contentId] = aItem)
       );
       // returns the map
       return aResult;
@@ -492,7 +493,7 @@ export function getUniqueIdentifierByIdAndAccessor(
 }
 
 export function isAuthoringAsset(aValue: any): aValue is AuthoringAsset {
-  return isBaseItem("asset", aValue);
+  return isBaseItem(CLASSIFICATION_ASSET, aValue);
 }
 
 // retrieves the authoring version of the content item by using the rendering context
@@ -504,7 +505,7 @@ export function getAuthoringContentItemFromContentItem(
   const contentItemId$ = rxPipe(
     renderingContext$,
     opFilterNotNil,
-    map(rc => rc.draftId || rc.id),
+    map((rc) => rc.draftId || rc.id),
     opFilterNotNil,
     opDistinctUntilChanged
   );

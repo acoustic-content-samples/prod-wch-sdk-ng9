@@ -252,7 +252,7 @@ function transformImageElement(
     asset: {
       id: assetItem.id,
       fileSize: assetItem.fileSize,
-      resourceUri: `${getAuthoringResourceUrl(aImage, assetItem, aApiUrl)}`,
+      resourceUri: url,
       fileName: assetItem.fileName,
       mediaType: assetItem.mediaType,
       width: getPath(assetItem, ['metadata', 'width']),
@@ -286,9 +286,12 @@ function transformVideoElement(
     asset: {
       id: assetItem.id,
       fileSize: assetItem.fileSize,
-      resourceUri: `${getAuthoringResourceUrl(aVideo, assetItem, aApiUrl)}`,
+      resourceUri: url,
       fileName: assetItem.fileName,
-      mediaType: assetItem.mediaType
+      mediaType: assetItem.mediaType,
+      // TODO review  this after clarification by Thomas Steinheber
+      width: getPath(assetItem, ['metadata', 'width']),
+      height: getPath(assetItem, ['metadata', 'height'])
     }
   };
 }

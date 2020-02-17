@@ -16,5 +16,10 @@ export interface ReconciledDeliverySearchResolver
 
 |  Method | Description |
 |  --- | --- |
-|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults.md) | Execute the search. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults.md) | Execute the search for layout mappings. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults_1.md) | Execute the search for layouts. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults_2.md) | Execute the search for assets. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults_3.md) | Execute the search for content items. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults_4.md) | Execute the search for content items. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
+|  [getDeliverySearchResults(aQuery, aClassification)](./component-api.reconcileddeliverysearchresolver.getdeliverysearchresults_5.md) | Execute the search. The implementation will add the classification to the <code>fq</code> part of the query, automatically, so there is no need to contain it in the query. |
 

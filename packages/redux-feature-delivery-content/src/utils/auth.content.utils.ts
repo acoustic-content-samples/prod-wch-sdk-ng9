@@ -5,26 +5,22 @@ import {
   KEY_VALUES,
   Logger,
   MultiImageElement,
-  SingleImageElement,
   MultiVideoElement,
+  SingleImageElement,
   SingleVideoElement
 } from '@acoustic-content-sdk/api';
 import { getDeliveryIdFromAuthoringItem } from '@acoustic-content-sdk/redux-utils';
-import {
-  SingleVideoElement,
-  MultiImageElement
-} from '@acoustic-content-sdk/api';
 import {
   arrayPush,
   forEach,
   forIn,
   isArray,
   isImageElement,
-  isVideoElement,
   isMultiGroupElement,
   isNil,
   isNotNil,
-  isSingleGroupElement
+  isSingleGroupElement,
+  isVideoElement
 } from '@acoustic-content-sdk/utils';
 
 function addReferencedGroupAsset(

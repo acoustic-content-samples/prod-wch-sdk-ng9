@@ -75,6 +75,6 @@ export function LayoutMapping<T extends Type<any>>(
     /**
      *  register
      */
-    registerLayoutMapping(cls as any, directive as any);
+    registerLayoutMapping(cls, directive as any);
   };
 }

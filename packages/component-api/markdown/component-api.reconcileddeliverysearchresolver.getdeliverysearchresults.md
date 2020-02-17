@@ -4,20 +4,20 @@
 
 ## ReconciledDeliverySearchResolver.getDeliverySearchResults() method
 
-Execute the search. The implementation will add the classification to the `fq` part of the query, automatically, so there is no need to contain it in the query.
+Execute the search for layout mappings. The implementation will add the classification to the `fq` part of the query, automatically, so there is no need to contain it in the query.
 
 <b>Signature:</b>
 
 ```typescript
-getDeliverySearchResults<ITEM, RESULT>(aQuery: ReconciledDeliverySearchInput<ITEM>, aClassification: string): Observable<SearchResults<RESULT>>;
+getDeliverySearchResults<RESULT>(aQuery: ReconciledDeliverySearchInput<AuthoringLayoutMapping>, aClassification: typeof CLASSIFICATION_LAYOUT_MAPPING): Observable<SearchResults<RESULT>>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aQuery | <code>ReconciledDeliverySearchInput&lt;ITEM&gt;</code> | the query input |
-|  aClassification | <code>string</code> | the classification |
+|  aQuery | <code>ReconciledDeliverySearchInput&lt;AuthoringLayoutMapping&gt;</code> | the query input |
+|  aClassification | <code>typeof CLASSIFICATION_LAYOUT_MAPPING</code> | the classification |
 
 <b>Returns:</b>
 

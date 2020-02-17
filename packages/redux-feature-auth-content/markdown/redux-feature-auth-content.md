@@ -6,6 +6,12 @@
 
 Implementation of a redux feature to manage authoring content.
 
+## Functions
+
+|  Function | Description |
+|  --- | --- |
+|  [isAuthoringContentItem(aValue)](./redux-feature-auth-content.isauthoringcontentitem.md) |  |
+
 ## Interfaces
 
 |  Interface | Description |

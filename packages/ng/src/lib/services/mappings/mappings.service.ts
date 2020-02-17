@@ -3,22 +3,21 @@ import { LayoutMappingResolver } from '@acoustic-content-sdk/component-api';
 import {
   assertObject,
   DEFAULT_LAYOUT_MODE,
-  isFunction,
   isNil,
   isNotEmpty,
   isNotNil,
+  isPlainObject,
   isString,
   isStringArray,
   wchBoxLayoutMode
 } from '@acoustic-content-sdk/utils';
 import { Injectable, Type } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 import {
-  REGISTERED_MAPPINGS,
-  RegisteredMapping
-} from './../../utils/component.mapping.utils';
-import { cmpGetSelector, cmpGetSelectors } from './../../utils/component.utils';
+  cmpGetSelector,
+  cmpGetSelectors,
+  RegisteredLayoutMapping
+} from './../../utils/component.utils';
 
 declare type Selector = string | Type<any>;
 
@@ -97,7 +96,7 @@ function _toStringArray(aValue: any, aDefault: string[]): string[] {
  * @param aMapping -  the mappings
  * @returns an array of the IDs
  */
-function _getIds(aMapping: RegisteredMapping): string[] {
+function _getIds(aMapping: RegisteredLayoutMapping): string[] {
   /**
    *  converts the IDs to an array
    */
@@ -110,7 +109,7 @@ function _getIds(aMapping: RegisteredMapping): string[] {
  * @param aMapping -  the mappings
  * @returns an array of the IDs
  */
-function _getKinds(aMapping: RegisteredMapping): string[] {
+function _getKinds(aMapping: RegisteredLayoutMapping): string[] {
   /**
    *  converts the IDs to an array
    */
@@ -123,7 +122,7 @@ function _getKinds(aMapping: RegisteredMapping): string[] {
  * @param aMapping -  the mappings
  * @returns an array of the layout IDs
  */
-function _getLayoutModes(aMapping: RegisteredMapping): string[] {
+function _getLayoutModes(aMapping: RegisteredLayoutMapping): string[] {
   /**
    *  converts the layout modes to an array
    */
@@ -136,15 +135,17 @@ function _getLayoutModes(aMapping: RegisteredMapping): string[] {
  * @param aMapping -  the mappings
  * @returns an array of the selectors
  */
-function _getSelectors(aMapping: RegisteredMapping): Selector[] {
+function _getSelectors(aMapping: RegisteredLayoutMapping): Selector[] {
   /**
    *  decodes the selectors
    */
   const sel = aMapping.selector;
   return isStringArray(sel)
     ? sel
-    : isString(sel) || isFunction(sel)
+    : isString(sel)
     ? [sel]
+    : isPlainObject(sel)
+    ? [sel.type]
     : EMPTY_ARRAY;
 }
 
@@ -196,8 +197,8 @@ function _registerAll(
  *
  * @param aMapping -  the mapping
  */
-function _onRegisteredMapping(
-  aMapping: RegisteredMapping,
+function _onRegisteredLayoutMapping(
+  aMapping: RegisteredLayoutMapping,
   aMap: Mappings
 ): void {
   /**
@@ -359,8 +360,6 @@ export class LayoutMappingService implements LayoutMappingResolver {
      */
     let mappingsMap: Mappings;
 
-    let mappingsSubscription: Subscription;
-
     /** lazily initialize the component map */
     function _initMappingsMap(): Mappings {
       if (isNil(mappingsMap)) {
@@ -373,13 +372,6 @@ export class LayoutMappingService implements LayoutMappingResolver {
          *  update the reference
          */
         mappingsMap = tmp;
-
-        /**
-         *  register for changes
-         */
-        mappingsSubscription = REGISTERED_MAPPINGS.subscribe((mapping) =>
-          _onRegisteredMapping(mapping, tmp)
-        );
       }
 
       /**

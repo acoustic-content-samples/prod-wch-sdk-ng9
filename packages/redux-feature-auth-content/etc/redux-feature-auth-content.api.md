@@ -128,6 +128,9 @@ export type GuaranteeAuthoringContentAction = PayloadAction<string>;
 export const guaranteeAuthoringContentAction: UnaryFunction<string, GuaranteeAuthoringContentAction>;
 
 // @public (undocumented)
+export function isAuthoringContentItem(aValue: any): aValue is AuthoringContentItem;
+
+// @public (undocumented)
 export type LoadAuthoringContentAction = PayloadAction<string>;
 
 // @public (undocumented)

@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.settings.json",
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "fullTemplateTypeCheck": true
   }
 }

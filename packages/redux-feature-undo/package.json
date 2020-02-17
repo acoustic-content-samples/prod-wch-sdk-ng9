@@ -1,0 +1,80 @@
+{
+  "name": "@acoustic-content-sdk/redux-feature-undo",
+  "version": "9.0.0",
+  "description": "Implementation of a redux feature to manage undo and redo.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "redux",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-redux-feature-undo.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-redux-feature-undo.js",
+  "typings": "dist/acoustic-content-sdk-redux-feature-undo.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-auth-asset": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-auth-content": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-inline-edit": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-save": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-user": "9.0.0",
+    "@acoustic-content-sdk/redux-store": "9.0.0",
+    "@acoustic-content-sdk/redux-utils": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "devDependencies": {
+    "@acoustic-content-sdk/rx-utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "redux": "^4",
+    "redux-actions": "^2",
+    "redux-observable": "^1",
+    "rxjs": "^6"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-redux-feature-undo.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-redux-feature-undo.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-redux-feature-undo.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-redux-feature-undo.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-redux-feature-undo.js",
+  "metadata": "dist/acoustic-content-sdk-redux-feature-undo.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/redux-feature-auth-asset": "acoustic-content-sdk.redux-feature-auth-asset",
+        "@acoustic-content-sdk/redux-feature-auth-content": "acoustic-content-sdk.redux-feature-auth-content",
+        "@acoustic-content-sdk/redux-feature-inline-edit": "acoustic-content-sdk.redux-feature-inline-edit",
+        "@acoustic-content-sdk/redux-feature-save": "acoustic-content-sdk.redux-feature-save",
+        "@acoustic-content-sdk/redux-feature-user": "acoustic-content-sdk.redux-feature-user",
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
+        "@acoustic-content-sdk/redux-utils": "acoustic-content-sdk.redux-utils",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "redux": "Redux",
+        "redux-actions": "ReduxActions",
+        "redux-observable": "ReduxObservable"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}
