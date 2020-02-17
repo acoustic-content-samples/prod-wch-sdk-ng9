@@ -7,18 +7,18 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function getDecoratorMetadata(source: ts.SourceFile, identifier: string, module: string): ts.Node[];
+export declare function getDecoratorMetadata(source: SourceFile, identifier: string, module: string): Node[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  identifier | <code>string</code> |  |
 |  module | <code>string</code> |  |
 
 <b>Returns:</b>
 
-`ts.Node[]`
+`Node[]`
 

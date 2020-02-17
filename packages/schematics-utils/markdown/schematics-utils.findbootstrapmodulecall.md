@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function findBootstrapModuleCall(host: Tree, mainPath: string): ts.CallExpression | null;
+export declare function findBootstrapModuleCall(host: Tree, mainPath: string): CallExpression | null;
 ```
 
 ## Parameters
@@ -19,5 +19,5 @@ export declare function findBootstrapModuleCall(host: Tree, mainPath: string): t
 
 <b>Returns:</b>
 
-`ts.CallExpression | null`
+`CallExpression | null`
 

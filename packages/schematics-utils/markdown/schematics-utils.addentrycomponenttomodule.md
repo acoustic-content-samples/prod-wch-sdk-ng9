@@ -4,19 +4,24 @@
 
 ## addEntryComponentToModule() function
 
+> Warning: This API is now obsolete.
+> 
+> - Since version 9.0.0 with Ivy, entryComponents is no longer necessary.
+> 
+
 Custom function to insert an entryComponent into NgModule. It also imports it.
 
 <b>Signature:</b>
 
 ```typescript
-export declare function addEntryComponentToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addEntryComponentToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  modulePath | <code>string</code> |  |
 |  classifiedName | <code>string</code> |  |
 |  importPath | <code>string</code> |  |

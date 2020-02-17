@@ -9,14 +9,14 @@ Given a source file with  class(es), find the name of the first  class.
 <b>Signature:</b>
 
 ```typescript
-export declare function getFirstNgModuleName(source: ts.SourceFile): string | undefined;
+export declare function getFirstNgModuleName(source: SourceFile): string | undefined;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> | source file containing one or more  |
+|  source | <code>SourceFile</code> | source file containing one or more  |
 
 <b>Returns:</b>
 

@@ -9,14 +9,14 @@ Custom function to insert an NgModule into NgModule imports. It also imports the
 <b>Signature:</b>
 
 ```typescript
-export declare function addImportToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addImportToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  modulePath | <code>string</code> |  |
 |  classifiedName | <code>string</code> |  |
 |  importPath | <code>string</code> |  |

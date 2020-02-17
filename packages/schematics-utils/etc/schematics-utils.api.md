@@ -5,8 +5,10 @@
 ```ts
 
 import { AjaxRequest } from 'rxjs/ajax';
+import { CallExpression } from 'typescript';
 import { Credentials } from '@acoustic-content-sdk/cli-credentials';
 import { experimental } from '@angular-devkit/core';
+import { Expression } from 'typescript';
 import { FileDescriptor } from '@acoustic-content-sdk/tooling';
 import { FileEntry } from '@angular-devkit/schematics';
 import { Generator } from '@acoustic-content-sdk/utils';
@@ -15,6 +17,8 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { NamedDeclaration } from 'typescript';
 import { Node } from 'typescript';
+import { ObjectLiteralElement } from 'typescript';
+import { ObjectLiteralExpression } from 'typescript';
 import { Observable } from 'rxjs';
 import { Path } from '@angular-devkit/core';
 import { PathLike } from 'fs';
@@ -28,7 +32,6 @@ import { SchematicsException } from '@angular-devkit/schematics';
 import { SourceFile } from 'typescript';
 import { SyntaxKind } from 'typescript';
 import { Tree } from '@angular-devkit/schematics';
-import * as ts from 'typescript';
 import { UnaryFunction } from 'rxjs';
 import { UpdateRecorder } from '@angular-devkit/schematics';
 import { workspaces } from '@angular-devkit/core';
@@ -36,16 +39,16 @@ import { WriteBuffer } from '@acoustic-content-sdk/tooling';
 import { WriteTextFile } from '@acoustic-content-sdk/tooling';
 
 // @public
-export function addBootstrapToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export function addBootstrapToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 
 // @public
-export function addDeclarationToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export function addDeclarationToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+
+// @public @deprecated
+export function addEntryComponentToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 
 // @public
-export function addEntryComponentToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
-
-// @public
-export function addExportToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export function addExportToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 
 // @public
 export function addImportsToModule(aFile: string, aModules: {
@@ -53,7 +56,7 @@ export function addImportsToModule(aFile: string, aModules: {
 }, aHost: Tree): void;
 
 // @public
-export function addImportToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export function addImportToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
 
 // @public (undocumented)
 export function addPackageJsonDependency(tree: Tree, dependency: NodeDependency): void;
@@ -62,10 +65,13 @@ export function addPackageJsonDependency(tree: Tree, dependency: NodeDependency)
 export function addProjectToWorkspace<TProjectType extends ProjectType = ProjectType.Application>(workspace: WorkspaceSchema, name: string, project: WorkspaceProject<TProjectType>): Rule;
 
 // @public
-export function addProviderToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export function addProviderToModule(source: SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+
+// @public
+export function addRouteDeclarationToModule(source: SourceFile, fileToAdd: string, routeLiteral: string): Change;
 
 // @public (undocumented)
-export function addSymbolToNgModuleMetadata(source: ts.SourceFile, ngModulePath: string, metadataField: string, symbolName: string, importPath?: string | null): Change[];
+export function addSymbolToNgModuleMetadata(source: SourceFile, ngModulePath: string, metadataField: string, symbolName: string, importPath?: string | null): Change[];
 
 // @public (undocumented)
 export function addToWchToolsDependencies(aDeps: string[], aPkg: any): void;
@@ -89,7 +95,7 @@ export interface AppConfig {
     baseHref?: string;
     // (undocumented)
     budgets?: {
-        type?: ('bundle' | 'initial' | 'allScript' | 'all' | 'anyScript' | 'any');
+        type?: ('bundle' | 'initial' | 'allScript' | 'all' | 'anyScript' | 'any' | 'anyComponentStyle');
         name?: string;
         baseline?: string;
         maximumWarning?: string;
@@ -163,7 +169,7 @@ export function assertParameter(aValue: any, aParameterName: string): void;
 // @public (undocumented)
 export interface BrowserBuilderBaseOptions {
     // (undocumented)
-    assets?: object[];
+    assets?: (object | string)[];
     // (undocumented)
     fileReplacements?: FileReplacements[];
     // (undocumented)
@@ -175,11 +181,11 @@ export interface BrowserBuilderBaseOptions {
     // (undocumented)
     polyfills: string;
     // (undocumented)
-    scripts?: string[];
+    scripts?: (object | string)[];
     // (undocumented)
     sourceMap?: boolean;
     // (undocumented)
-    styles?: string[];
+    styles?: (object | string)[];
     // (undocumented)
     tsConfig: string;
 }
@@ -209,13 +215,15 @@ export interface BrowserBuilderOptions extends BrowserBuilderBaseOptions {
     // (undocumented)
     optimization?: boolean;
     // (undocumented)
-    outputHashing?: 'all';
+    outputHashing?: OutputHashing;
     // (undocumented)
     resourcesOutputPath?: string;
     // (undocumented)
     serviceWorker?: boolean;
     // (undocumented)
     vendorChunk?: boolean;
+    // (undocumented)
+    webWorkerTsConfig?: string;
 }
 
 // @public (undocumented)
@@ -452,7 +460,7 @@ export interface FileReplacements {
 }
 
 // @public (undocumented)
-export function findBootstrapModuleCall(host: Tree, mainPath: string): ts.CallExpression | null;
+export function findBootstrapModuleCall(host: Tree, mainPath: string): CallExpression | null;
 
 // @public (undocumented)
 export function findBootstrapModulePath(host: Tree, mainPath: string): string;
@@ -469,10 +477,10 @@ export function findModule(host: Tree, generateDir: string, moduleExt?: string, 
 export function findModuleFromOptions(host: Tree, options: ModuleOptions): Path | undefined;
 
 // @public (undocumented)
-export function findNode(node: ts.Node, kind: ts.SyntaxKind, text: string): ts.Node | null;
+export function findNode(node: Node, kind: SyntaxKind, text: string): Node | null;
 
 // @public
-export function findNodes(node: ts.Node, kind: ts.SyntaxKind, max?: number): ts.Node[];
+export function findNodes(node: Node, kind: SyntaxKind, max?: number, recursive?: boolean): Node[];
 
 // @public (undocumented)
 export function findPackageJson(aDir: string): Observable<any>;
@@ -505,16 +513,22 @@ export function getAppModulePath(host: Tree, mainPath: string): string;
 export function getConfig(host: Tree): CliConfig;
 
 // @public (undocumented)
-export function getContentOfKeyLiteral(_source: ts.SourceFile, node: ts.Node): string | null;
+export function getContentOfKeyLiteral(_source: SourceFile, node: Node): string | null;
 
 // @public (undocumented)
-export function getDecoratorMetadata(source: ts.SourceFile, identifier: string, module: string): ts.Node[];
+export function getDecoratorMetadata(source: SourceFile, identifier: string, module: string): Node[];
 
 // @public
-export function getFirstNgModuleName(source: ts.SourceFile): string | undefined;
+export function getEnvironmentExportName(source: SourceFile): string | null;
+
+// @public
+export function getFirstNgModuleName(source: SourceFile): string | undefined;
 
 // @public (undocumented)
 export function getFolderForType(aType?: DEP_TYPE): string;
+
+// @public (undocumented)
+export function getMetadataField(node: ObjectLiteralExpression, metadataField: string): ObjectLiteralElement[];
 
 // @public (undocumented)
 export function getPackageJsonDependency(tree: Tree, name: string): NodeDependency | null;
@@ -528,6 +542,9 @@ export function getProjectTargets(project: WorkspaceProject): WorkspaceTargets;
 // @public (undocumented)
 export function getProjectTargets(workspaceOrHost: WorkspaceSchema | Tree, projectName: string): WorkspaceTargets;
 
+// @public
+export function getRouterModuleDeclaration(source: SourceFile): Expression | undefined;
+
 // @public (undocumented)
 export function getSourceFile(host: Tree, path: string): SourceFile;
 
@@ -535,7 +552,7 @@ export function getSourceFile(host: Tree, path: string): SourceFile;
 export function getSourceFileFromFileEntry(aEntry: FileEntry): SourceFile;
 
 // @public
-export function getSourceNodes(sourceFile: ts.SourceFile): ts.Node[];
+export function getSourceNodes(sourceFile: SourceFile): Node[];
 
 // @public (undocumented)
 export function getWorkspace(host: Tree): WorkspaceSchema;
@@ -558,7 +575,7 @@ export interface Host {
 export const htmlSelectorRe: RegExp;
 
 // @public
-export function insertAfterLastOccurrence(nodes: ts.Node[], toInsert: string, file: string, fallbackPos: number, syntaxKind?: ts.SyntaxKind): Change;
+export function insertAfterLastOccurrence(nodes: Node[], toInsert: string, file: string, fallbackPos: number, syntaxKind?: SyntaxKind): Change;
 
 // @public
 export class InsertChange implements Change {
@@ -580,13 +597,13 @@ export class InsertChange implements Change {
 export function insertChanges(aChanges: Change[], aRecorder: UpdateRecorder): void;
 
 // @public
-export function insertImport(source: ts.SourceFile, fileToEdit: string, symbolName: string, fileName: string, isDefault?: boolean): Change;
+export function insertImport(source: SourceFile, fileToEdit: string, symbolName: string, fileName: string, isDefault?: boolean): Change;
 
 // @public (undocumented)
 export function insertLines(aSource: string[] | undefined, aInsert: string[]): string[];
 
 // @public
-export function isImported(source: ts.SourceFile, classifiedName: string, importPath: string): boolean;
+export function isImported(source: SourceFile, classifiedName: string, importPath: string): boolean;
 
 // @public (undocumented)
 export function isValidEmail(aValue: any): aValue is string;
@@ -637,6 +654,9 @@ export interface Location {
 }
 
 // @public (undocumented)
+export const MODULE_EXT = ".module.ts";
+
+// @public (undocumented)
 export interface ModuleOptions {
     // (undocumented)
     flat?: boolean;
@@ -646,8 +666,6 @@ export interface ModuleOptions {
     moduleExt?: string;
     // (undocumented)
     name: string;
-    // (undocumented)
-    nameFormatter?: (str: string) => string;
     // (undocumented)
     path?: string;
     // (undocumented)
@@ -696,6 +714,9 @@ export class NoopChange implements Change {
 }
 
 // @public (undocumented)
+export type OutputHashing = 'all' | 'media' | 'none' | 'bundles';
+
+// @public (undocumented)
 export function parseLines(aSource?: string): string[];
 
 // @public (undocumented)
@@ -739,6 +760,9 @@ export class RemoveChange implements Change {
     path: string;
     }
 
+// @public (undocumented)
+export function removePackageJsonDependency(tree: Tree, name: string): void;
+
 // @public
 export class ReplaceChange implements Change {
     constructor(path: string, pos: number, oldText: string, newText: string);
@@ -751,6 +775,9 @@ export class ReplaceChange implements Change {
     // (undocumented)
     path: string;
     }
+
+// @public (undocumented)
+export const ROUTING_MODULE_EXT = "-routing.module.ts";
 
 // @public (undocumented)
 export const rxDeleteFile: <T extends PathLike>(path: T) => Observable<T>;

@@ -59,7 +59,7 @@ export function findPackageJson(aDir: string): Observable<any> {
 /**
  * Locates the name of the package.json starting with the current directory
  *
- * @param aDir
+ * @param aDir - root directory
  */
 export function locatePackageJson(aDir: string): Observable<string> {
   // name of the file

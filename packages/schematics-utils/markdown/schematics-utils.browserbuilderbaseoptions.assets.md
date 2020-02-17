@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-assets?: object[];
+assets?: (object | string)[];
 ```

@@ -9,18 +9,18 @@ Get all the nodes from a source.
 <b>Signature:</b>
 
 ```typescript
-export declare function getSourceNodes(sourceFile: ts.SourceFile): ts.Node[];
+export declare function getSourceNodes(sourceFile: SourceFile): Node[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  sourceFile | <code>ts.SourceFile</code> | The source file object. |
+|  sourceFile | <code>SourceFile</code> | The source file object. |
 
 <b>Returns:</b>
 
-`ts.Node[]`
+`Node[]`
 
 An observable of all the nodes in the source.
 

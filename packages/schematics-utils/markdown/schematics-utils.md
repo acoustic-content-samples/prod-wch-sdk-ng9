@@ -37,6 +37,7 @@ Helper library to implement schematics.
 |  [addPackageJsonDependency(tree, dependency)](./schematics-utils.addpackagejsondependency.md) |  |
 |  [addProjectToWorkspace(workspace, name, project)](./schematics-utils.addprojecttoworkspace.md) |  |
 |  [addProviderToModule(source, modulePath, classifiedName, importPath)](./schematics-utils.addprovidertomodule.md) | Custom function to insert a provider into NgModule. It also imports it. |
+|  [addRouteDeclarationToModule(source, fileToAdd, routeLiteral)](./schematics-utils.addroutedeclarationtomodule.md) | Adds a new route declaration to a router module (i.e. has a RouterModule declaration) |
 |  [addSymbolToNgModuleMetadata(source, ngModulePath, metadataField, symbolName, importPath)](./schematics-utils.addsymboltongmodulemetadata.md) |  |
 |  [addToWchToolsDependencies(aDeps, aPkg)](./schematics-utils.addtowchtoolsdependencies.md) |  |
 |  [assertHasTrailingSlash(aValue)](./schematics-utils.asserthastrailingslash.md) |  |
@@ -64,7 +65,7 @@ Helper library to implement schematics.
 |  [findModule(host, generateDir, moduleExt, routingModuleExt)](./schematics-utils.findmodule.md) | Function to find the "closest" module to a generated file's path. |
 |  [findModuleFromOptions(host, options)](./schematics-utils.findmodulefromoptions.md) | Find the module referred by a set of options passed to the schematics. |
 |  [findNode(node, kind, text)](./schematics-utils.findnode.md) |  |
-|  [findNodes(node, kind, max)](./schematics-utils.findnodes.md) | Find all nodes from the AST in the subtree of node of SyntaxKind kind. |
+|  [findNodes(node, kind, max, recursive)](./schematics-utils.findnodes.md) | Find all nodes from the AST in the subtree of node of SyntaxKind kind. |
 |  [findPackageJson(aDir)](./schematics-utils.findpackagejson.md) |  |
 |  [findProject(workspaceOrHost, options)](./schematics-utils.findproject.md) | Locates the workspace project, either from the configured project name, else falls back to the default project |
 |  [findProjectName(workspaceOrHost, options)](./schematics-utils.findprojectname.md) | Locates the workspace project, either from the configured project name, else falls back to the default project |
@@ -75,19 +76,22 @@ Helper library to implement schematics.
 |  [getConfig(host)](./schematics-utils.getconfig.md) |  |
 |  [getContentOfKeyLiteral(\_source, node)](./schematics-utils.getcontentofkeyliteral.md) |  |
 |  [getDecoratorMetadata(source, identifier, module)](./schematics-utils.getdecoratormetadata.md) |  |
+|  [getEnvironmentExportName(source)](./schematics-utils.getenvironmentexportname.md) | This function returns the name of the environment export whether this export is aliased or not. If the environment file is not imported, then it will return <code>null</code>. |
 |  [getFirstNgModuleName(source)](./schematics-utils.getfirstngmodulename.md) | Given a source file with  class(es), find the name of the first  class. |
 |  [getFolderForType(aType)](./schematics-utils.getfolderfortype.md) |  |
+|  [getMetadataField(node, metadataField)](./schematics-utils.getmetadatafield.md) |  |
 |  [getPackageJsonDependency(tree, name)](./schematics-utils.getpackagejsondependency.md) |  |
 |  [getProject(workspaceOrHost, projectName)](./schematics-utils.getproject.md) |  |
 |  [getProjectTargets(project)](./schematics-utils.getprojecttargets.md) |  |
 |  [getProjectTargets(workspaceOrHost, projectName)](./schematics-utils.getprojecttargets_1.md) |  |
+|  [getRouterModuleDeclaration(source)](./schematics-utils.getroutermoduledeclaration.md) | Returns the RouterModule declaration from NgModule metadata, if any. |
 |  [getSourceFile(host, path)](./schematics-utils.getsourcefile.md) |  |
 |  [getSourceFileFromFileEntry(aEntry)](./schematics-utils.getsourcefilefromfileentry.md) |  |
 |  [getSourceNodes(sourceFile)](./schematics-utils.getsourcenodes.md) | Get all the nodes from a source. |
 |  [getWorkspace(host)](./schematics-utils.getworkspace.md) |  |
 |  [getWorkspacePath(host)](./schematics-utils.getworkspacepath.md) |  |
 |  [hasTrailingSlash(aUrl)](./schematics-utils.hastrailingslash.md) |  |
-|  [insertAfterLastOccurrence(nodes, toInsert, file, fallbackPos, syntaxKind)](./schematics-utils.insertafterlastoccurrence.md) | Insert <code>toInsert</code> after the last occurence of <code>ts.SyntaxKind[nodes[i].kind]</code> or after the last of occurence of <code>syntaxKind</code> if the last occurence is a sub child of ts.SyntaxKind\[nodes\[i\].kind\] and save the changes in file. |
+|  [insertAfterLastOccurrence(nodes, toInsert, file, fallbackPos, syntaxKind)](./schematics-utils.insertafterlastoccurrence.md) | Insert <code>toInsert</code> after the last occurence of <code>ts.SyntaxKind[nodes[i].kind]</code> or after the last of occurence of <code>syntaxKind</code> if the last occurence is a sub child of SyntaxKind\[nodes\[i\].kind\] and save the changes in file. |
 |  [insertChanges(aChanges, aRecorder)](./schematics-utils.insertchanges.md) |  |
 |  [insertImport(source, fileToEdit, symbolName, fileName, isDefault)](./schematics-utils.insertimport.md) | Add Import <code>import { symbolName } from fileName</code> if the import doesn't exit already. Assumes fileToEdit can be resolved and accessed. |
 |  [insertLines(aSource, aInsert)](./schematics-utils.insertlines.md) |  |
@@ -105,6 +109,7 @@ Helper library to implement schematics.
 |  [readRelativeDirectoryOnTree(aHost, aRoot)](./schematics-utils.readrelativedirectoryontree.md) | Creates a function callback that reads files from a host |
 |  [readTextFileOnTree(aHost, aRoot)](./schematics-utils.readtextfileontree.md) | Constructs the ReadTextFile callback on top of a host |
 |  [readWorkspace(aRoot)](./schematics-utils.readworkspace.md) | Reads a workspace definition based on a root path |
+|  [removePackageJsonDependency(tree, name)](./schematics-utils.removepackagejsondependency.md) |  |
 |  [rxDownload(aUri, aDstFile)](./schematics-utils.rxdownload.md) |  |
 |  [rxFormPost(aUri, aData)](./schematics-utils.rxformpost.md) |  |
 |  [rxGet(aUri)](./schematics-utils.rxget.md) |  |
@@ -167,7 +172,9 @@ Helper library to implement schematics.
 |  [configPath](./schematics-utils.configpath.md) |  |
 |  [createXHR](./schematics-utils.createxhr.md) |  |
 |  [htmlSelectorRe](./schematics-utils.htmlselectorre.md) |  |
+|  [MODULE\_EXT](./schematics-utils.module_ext.md) |  |
 |  [NOOP\_LOGGER](./schematics-utils.noop_logger.md) |  |
+|  [ROUTING\_MODULE\_EXT](./schematics-utils.routing_module_ext.md) |  |
 |  [rxDeleteFile](./schematics-utils.rxdeletefile.md) |  |
 |  [rxReadTextFile](./schematics-utils.rxreadtextfile.md) |  |
 |  [rxReadZip](./schematics-utils.rxreadzip.md) | Export the function to extract a zip file |
@@ -189,6 +196,7 @@ Helper library to implement schematics.
 |  [ExtractI18nBuilderTarget](./schematics-utils.extracti18nbuildertarget.md) |  |
 |  [LibraryBuilderTarget](./schematics-utils.librarybuildertarget.md) |  |
 |  [LintBuilderTarget](./schematics-utils.lintbuildertarget.md) |  |
+|  [OutputHashing](./schematics-utils.outputhashing.md) |  |
 |  [ServeBuilderTarget](./schematics-utils.servebuildertarget.md) |  |
 |  [ServerBuilderTarget](./schematics-utils.serverbuildertarget.md) |  |
 |  [TestBuilderTarget](./schematics-utils.testbuildertarget.md) |  |

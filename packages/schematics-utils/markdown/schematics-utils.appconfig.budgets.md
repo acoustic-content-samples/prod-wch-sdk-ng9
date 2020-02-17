@@ -8,7 +8,7 @@
 
 ```typescript
 budgets?: {
-        type?: ('bundle' | 'initial' | 'allScript' | 'all' | 'anyScript' | 'any');
+        type?: ('bundle' | 'initial' | 'allScript' | 'all' | 'anyScript' | 'any' | 'anyComponentStyle');
         name?: string;
         baseline?: string;
         maximumWarning?: string;

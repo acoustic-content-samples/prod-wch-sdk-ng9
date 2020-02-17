@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-outputHashing?: 'all';
+outputHashing?: OutputHashing;
 ```

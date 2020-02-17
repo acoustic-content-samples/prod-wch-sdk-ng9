@@ -7,15 +7,15 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function getContentOfKeyLiteral(_source: ts.SourceFile, node: ts.Node): string | null;
+export declare function getContentOfKeyLiteral(_source: SourceFile, node: Node): string | null;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  \_source | <code>ts.SourceFile</code> |  |
-|  node | <code>ts.Node</code> |  |
+|  \_source | <code>SourceFile</code> |  |
+|  node | <code>Node</code> |  |
 
 <b>Returns:</b>
 

@@ -7,14 +7,14 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function addSymbolToNgModuleMetadata(source: ts.SourceFile, ngModulePath: string, metadataField: string, symbolName: string, importPath?: string | null): Change[];
+export declare function addSymbolToNgModuleMetadata(source: SourceFile, ngModulePath: string, metadataField: string, symbolName: string, importPath?: string | null): Change[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  ngModulePath | <code>string</code> |  |
 |  metadataField | <code>string</code> |  |
 |  symbolName | <code>string</code> |  |

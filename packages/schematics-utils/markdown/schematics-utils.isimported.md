@@ -9,14 +9,14 @@ Determine if an import already exists.
 <b>Signature:</b>
 
 ```typescript
-export declare function isImported(source: ts.SourceFile, classifiedName: string, importPath: string): boolean;
+export declare function isImported(source: SourceFile, classifiedName: string, importPath: string): boolean;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  classifiedName | <code>string</code> |  |
 |  importPath | <code>string</code> |  |
 

@@ -9,14 +9,14 @@ Add Import `import { symbolName } from fileName` if the import doesn't exit alre
 <b>Signature:</b>
 
 ```typescript
-export declare function insertImport(source: ts.SourceFile, fileToEdit: string, symbolName: string, fileName: string, isDefault?: boolean): Change;
+export declare function insertImport(source: SourceFile, fileToEdit: string, symbolName: string, fileName: string, isDefault?: boolean): Change;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  source | <code>ts.SourceFile</code> |  |
+|  source | <code>SourceFile</code> |  |
 |  fileToEdit | <code>string</code> | (file we want to add import to) |
 |  symbolName | <code>string</code> | (item to import) |
 |  fileName | <code>string</code> | (path to the file) |

@@ -4,23 +4,23 @@
 
 ## insertAfterLastOccurrence() function
 
-Insert `toInsert` after the last occurence of `ts.SyntaxKind[nodes[i].kind]` or after the last of occurence of `syntaxKind` if the last occurence is a sub child of ts.SyntaxKind\[nodes\[i\].kind\] and save the changes in file.
+Insert `toInsert` after the last occurence of `ts.SyntaxKind[nodes[i].kind]` or after the last of occurence of `syntaxKind` if the last occurence is a sub child of SyntaxKind\[nodes\[i\].kind\] and save the changes in file.
 
 <b>Signature:</b>
 
 ```typescript
-export declare function insertAfterLastOccurrence(nodes: ts.Node[], toInsert: string, file: string, fallbackPos: number, syntaxKind?: ts.SyntaxKind): Change;
+export declare function insertAfterLastOccurrence(nodes: Node[], toInsert: string, file: string, fallbackPos: number, syntaxKind?: SyntaxKind): Change;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  nodes | <code>ts.Node[]</code> | insert after the last occurence of nodes |
+|  nodes | <code>Node[]</code> | insert after the last occurence of nodes |
 |  toInsert | <code>string</code> | string to insert |
 |  file | <code>string</code> | file to insert changes into |
 |  fallbackPos | <code>number</code> | position to insert if toInsert happens to be the first occurence |
-|  syntaxKind | <code>ts.SyntaxKind</code> | the ts.SyntaxKind of the subchildren to insert after |
+|  syntaxKind | <code>SyntaxKind</code> | the SyntaxKind of the subchildren to insert after |
 
 <b>Returns:</b>
 

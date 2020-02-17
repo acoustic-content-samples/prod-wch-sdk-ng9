@@ -14,14 +14,14 @@ export interface BrowserBuilderBaseOptions
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [assets](./schematics-utils.browserbuilderbaseoptions.assets.md) | <code>object[]</code> |  |
+|  [assets](./schematics-utils.browserbuilderbaseoptions.assets.md) | <code>(object &#124; string)[]</code> |  |
 |  [fileReplacements](./schematics-utils.browserbuilderbaseoptions.filereplacements.md) | <code>FileReplacements[]</code> |  |
 |  [index](./schematics-utils.browserbuilderbaseoptions.index.md) | <code>string</code> |  |
 |  [main](./schematics-utils.browserbuilderbaseoptions.main.md) | <code>string</code> |  |
 |  [outputPath](./schematics-utils.browserbuilderbaseoptions.outputpath.md) | <code>string</code> |  |
 |  [polyfills](./schematics-utils.browserbuilderbaseoptions.polyfills.md) | <code>string</code> |  |
-|  [scripts](./schematics-utils.browserbuilderbaseoptions.scripts.md) | <code>string[]</code> |  |
+|  [scripts](./schematics-utils.browserbuilderbaseoptions.scripts.md) | <code>(object &#124; string)[]</code> |  |
 |  [sourceMap](./schematics-utils.browserbuilderbaseoptions.sourcemap.md) | <code>boolean</code> |  |
-|  [styles](./schematics-utils.browserbuilderbaseoptions.styles.md) | <code>string[]</code> |  |
+|  [styles](./schematics-utils.browserbuilderbaseoptions.styles.md) | <code>(object &#124; string)[]</code> |  |
 |  [tsConfig](./schematics-utils.browserbuilderbaseoptions.tsconfig.md) | <code>string</code> |  |
 

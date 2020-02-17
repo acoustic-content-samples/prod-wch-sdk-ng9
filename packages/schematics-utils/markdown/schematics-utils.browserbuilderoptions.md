@@ -23,8 +23,9 @@ export interface BrowserBuilderOptions extends BrowserBuilderBaseOptions
 |  [namedChunks](./schematics-utils.browserbuilderoptions.namedchunks.md) | <code>boolean</code> |  |
 |  [ngswConfigPath](./schematics-utils.browserbuilderoptions.ngswconfigpath.md) | <code>string</code> |  |
 |  [optimization](./schematics-utils.browserbuilderoptions.optimization.md) | <code>boolean</code> |  |
-|  [outputHashing](./schematics-utils.browserbuilderoptions.outputhashing.md) | <code>'all'</code> |  |
+|  [outputHashing](./schematics-utils.browserbuilderoptions.outputhashing.md) | <code>OutputHashing</code> |  |
 |  [resourcesOutputPath](./schematics-utils.browserbuilderoptions.resourcesoutputpath.md) | <code>string</code> |  |
 |  [serviceWorker](./schematics-utils.browserbuilderoptions.serviceworker.md) | <code>boolean</code> |  |
 |  [vendorChunk](./schematics-utils.browserbuilderoptions.vendorchunk.md) | <code>boolean</code> |  |
+|  [webWorkerTsConfig](./schematics-utils.browserbuilderoptions.webworkertsconfig.md) | <code>string</code> |  |
 

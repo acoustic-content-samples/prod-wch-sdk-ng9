@@ -9,20 +9,21 @@ Find all nodes from the AST in the subtree of node of SyntaxKind kind.
 <b>Signature:</b>
 
 ```typescript
-export declare function findNodes(node: ts.Node, kind: ts.SyntaxKind, max?: number): ts.Node[];
+export declare function findNodes(node: Node, kind: SyntaxKind, max?: number, recursive?: boolean): Node[];
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  node | <code>ts.Node</code> |  |
-|  kind | <code>ts.SyntaxKind</code> |  |
+|  node | <code>Node</code> |  |
+|  kind | <code>SyntaxKind</code> |  |
 |  max | <code>number</code> | The maximum number of items to return. |
+|  recursive | <code>boolean</code> | Continue looking for nodes of kind recursive until end the last child even when node of kind has been found. |
 
 <b>Returns:</b>
 
-`ts.Node[]`
+`Node[]`
 
 all nodes of kind, or \[\] if none is found
 

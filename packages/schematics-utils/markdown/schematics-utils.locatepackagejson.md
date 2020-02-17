@@ -16,7 +16,7 @@ export declare function locatePackageJson(aDir: string): Observable<string>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aDir | <code>string</code> |  |
+|  aDir | <code>string</code> | root directory |
 
 <b>Returns:</b>
 

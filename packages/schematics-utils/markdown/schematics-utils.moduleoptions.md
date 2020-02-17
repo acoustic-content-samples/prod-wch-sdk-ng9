@@ -18,7 +18,6 @@ export interface ModuleOptions
 |  [module](./schematics-utils.moduleoptions.module.md) | <code>string</code> |  |
 |  [moduleExt](./schematics-utils.moduleoptions.moduleext.md) | <code>string</code> |  |
 |  [name](./schematics-utils.moduleoptions.name.md) | <code>string</code> |  |
-|  [nameFormatter](./schematics-utils.moduleoptions.nameformatter.md) | <code>(str: string) =&gt; string</code> |  |
 |  [path](./schematics-utils.moduleoptions.path.md) | <code>string</code> |  |
 |  [routingModuleExt](./schematics-utils.moduleoptions.routingmoduleext.md) | <code>string</code> |  |
 |  [skipImport](./schematics-utils.moduleoptions.skipimport.md) | <code>boolean</code> |  |

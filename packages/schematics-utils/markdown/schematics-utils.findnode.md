@@ -7,18 +7,18 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function findNode(node: ts.Node, kind: ts.SyntaxKind, text: string): ts.Node | null;
+export declare function findNode(node: Node, kind: SyntaxKind, text: string): Node | null;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  node | <code>ts.Node</code> |  |
-|  kind | <code>ts.SyntaxKind</code> |  |
+|  node | <code>Node</code> |  |
+|  kind | <code>SyntaxKind</code> |  |
 |  text | <code>string</code> |  |
 
 <b>Returns:</b>
 
-`ts.Node | null`
+`Node | null`
 
