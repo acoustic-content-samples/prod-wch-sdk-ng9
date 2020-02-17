@@ -46,7 +46,7 @@
     "handlebars": "^4.7.3",
     "handlebars-helpers": "^0.10.0",
     "js-string-escape": "^1.0.1",
-    "jsdom": "^16.1.0",
+    "jsdom": "^16.2.0",
     "lodash": "^4.17.15",
     "mime": "^2.4.4",
     "ng2-logger": "^3.0.11",
