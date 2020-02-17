@@ -25,7 +25,7 @@ import {
   rxPipe,
   UNDEFINED$
 } from '@acoustic-content-sdk/utils';
-import { createElement, ReactNode } from 'react';
+import { createElement, Fragment, ReactNode } from 'react';
 import {
   combineLatest,
   MonoTypeOperatorFunction,
@@ -47,6 +47,9 @@ const DATA_CONTENT_ITEM_ID = 'data-content-item-id';
 const DATA_WCH_EDITABLE = 'data-wch-editable';
 
 declare type ReactAttr = Record<string, string | Record<string, string>>;
+
+// type that can be used to create an element
+declare type CreateElementRoot = Parameters<typeof createElement>[0];
 
 /**
  * Callback function to retrieve the element type from the content item given its ID and the accessor string
@@ -71,7 +74,7 @@ function isWhitespaceText(aValue: string): boolean {
 }
 
 function createReactElement(
-  aName: string,
+  aName: CreateElementRoot,
   aProps: ReactAttr,
   aChildren?: ReactNode[]
 ): ReactNode {
@@ -522,7 +525,7 @@ export function rxCreateReactRenderer(
     // augment
     return rxPipe(
       children$,
-      map((children) => createReactElement('div', rootProps, children))
+      map((children) => createReactElement(Fragment, rootProps, children))
     );
   };
 }
