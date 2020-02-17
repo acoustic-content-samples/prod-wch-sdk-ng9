@@ -81,6 +81,7 @@ Helper library to implement schematics.
 |  [getFolderForType(aType)](./schematics-utils.getfolderfortype.md) |  |
 |  [getMetadataField(node, metadataField)](./schematics-utils.getmetadatafield.md) |  |
 |  [getPackageJsonDependency(tree, name)](./schematics-utils.getpackagejsondependency.md) |  |
+|  [getPackageManager(aHost)](./schematics-utils.getpackagemanager.md) | Decodes the supported workspace from the host |
 |  [getProject(workspaceOrHost, projectName)](./schematics-utils.getproject.md) |  |
 |  [getProjectTargets(project)](./schematics-utils.getprojecttargets.md) |  |
 |  [getProjectTargets(workspaceOrHost, projectName)](./schematics-utils.getprojecttargets_1.md) |  |

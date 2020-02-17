@@ -44,7 +44,7 @@ export function rxSpawn(
     const onError = aObserver.error.bind(aObserver);
     // stdout options
     const opts: SpawnOptions = Object.assign(
-      { env: process.env, cwd: process.cwd },
+      { env: process.env, cwd: process.cwd() },
       aOpts
     );
     // handles

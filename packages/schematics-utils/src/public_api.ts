@@ -4,7 +4,7 @@
  * @packageDocumentation
  */
 
-export * from './package/package';
+export * from './package/index';
 export * from './text';
 export { createTransientTree } from './tree/tree';
 export * from './typescript';

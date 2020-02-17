@@ -3,7 +3,6 @@ import {
   addImportToModule,
   Change,
   createLoggerService,
-  findPackageJson,
   findProjectName,
   getAppModulePath,
   getSourceFile,
@@ -21,38 +20,24 @@ import {
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import {
+  chain,
   Rule,
   SchematicContext,
   SchematicsException,
   Tree
 } from '@angular-devkit/schematics';
-import { parse } from 'path';
-import { MonoTypeOperatorFunction, Observable, of } from 'rxjs';
-import { map, mapTo, tap } from 'rxjs/operators';
+import { MonoTypeOperatorFunction, of } from 'rxjs';
+import { endWith, ignoreElements, map } from 'rxjs/operators';
 import { SourceFile } from 'typescript';
 
 import { splitArray } from '../utils/split';
 import { findAllModules, isBaseModule } from './../typescript/modules';
 import { MODULE, VERSION } from './../version';
+import { addPeerDependencies } from './add.peer.dependencies';
 import { AddFeatureModuleToApplicationSchema } from './feature.module.schema';
+import { findPackageName } from './utils';
 
-const selectSchema = pluckPath<string>(['schematic', 'description', 'schema']);
-const selectPackageName = pluckPath<string>(['name']);
 const selectMain = pluckPath<string>(['architect', 'build', 'options', 'main']);
-
-/**
- * Locates the package name
- *
- * @param context - the schematic context
- * @returns the name of the package running the schematic
- */
-function findPackageName(context: SchematicContext): Observable<string> {
-  // find the schema
-  const schema = selectSchema(context);
-  const { dir } = parse(schema);
-  // locate the package
-  return rxPipe(findPackageJson(dir), map(selectPackageName));
-}
 
 const LOGGER = 'addFeatureModuleToApplication';
 
@@ -112,7 +97,7 @@ export function addFeatureModuleToApplication(
   // split the modules
   const modules = splitArray(module);
 
-  return (host: Tree, context: SchematicContext) => {
+  const addModule = (host: Tree, context: SchematicContext) => {
     // some logger
     const logSvc = createLoggerService(context);
     const logger = logSvc.get(LOGGER);
@@ -162,7 +147,14 @@ export function addFeatureModuleToApplication(
         host.commitUpdate(recorder);
       })
     );
+
     // returns the tree
-    return rxPipe(updates$, mapTo(host));
+    return rxPipe(updates$, ignoreElements(), endWith(host));
   };
+
+  // peer dependencies
+  const addPeers = addPeerDependencies(options);
+
+  return (host: Tree, context: SchematicContext) =>
+    chain([addModule, addPeers])(host, context);
 }

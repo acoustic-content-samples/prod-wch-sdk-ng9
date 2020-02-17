@@ -20,6 +20,7 @@ import { Node } from 'typescript';
 import { ObjectLiteralElement } from 'typescript';
 import { ObjectLiteralExpression } from 'typescript';
 import { Observable } from 'rxjs';
+import { PackageManager } from '@acoustic-content-sdk/tooling-pkg-mgr';
 import { Path } from '@angular-devkit/core';
 import { PathLike } from 'fs';
 import { Predicate } from '@acoustic-content-sdk/utils';
@@ -532,6 +533,9 @@ export function getMetadataField(node: ObjectLiteralExpression, metadataField: s
 
 // @public (undocumented)
 export function getPackageJsonDependency(tree: Tree, name: string): NodeDependency | null;
+
+// @public
+export function getPackageManager(aHost: Tree): Observable<PackageManager>;
 
 // @public (undocumented)
 export function getProject<TProjectType extends ProjectType = ProjectType.Application>(workspaceOrHost: WorkspaceSchema | Tree, projectName: string): WorkspaceProject<TProjectType>;
