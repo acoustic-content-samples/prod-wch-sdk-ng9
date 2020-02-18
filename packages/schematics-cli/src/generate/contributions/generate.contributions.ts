@@ -64,7 +64,7 @@ function generateArtifacts(options: Schema): Rule {
       logFile()
     );
     // all items
-    const all$ = rxPipe(merge(artifacts$, binary$), share());
+    const all$ = merge(artifacts$, binary$);
     // locate the data directory
     const dataDir$ = rxPipe(rxFindDataDir(readFile, options), opShareLast);
     // compose so we have the correct filenames
@@ -75,11 +75,12 @@ function generateArtifacts(options: Schema): Rule {
           all$,
           map(([path, data]) => createFileDescriptor(`${dataDir}${path}`, data))
         )
-      )
+      ),
+      share()
     );
     // package options
     const pkgOpt$ = rxPipe(
-      all$,
+      files$,
       reduce(
         (aDst: string[], [aName]: FileDescriptor<any>) =>
           arrayPush(aName, aDst),

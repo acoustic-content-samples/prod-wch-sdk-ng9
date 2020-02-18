@@ -1,10 +1,11 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { Logger, LoggerService } from '@acoustic-content-sdk/api';
 import {
   canonicalizeJson,
   createFileDescriptor,
   ensureDirPath,
   FileDescriptor,
   ReadTextFile,
+  relativePath,
   rxFindPackageJson
 } from '@acoustic-content-sdk/tooling';
 import {
@@ -34,45 +35,52 @@ const LOGGER = 'createPackageArtifacts';
  * @param aName  filename
  * @returns the fixed name
  */
-function fixFilename(aRoot: string, aName: string): string {
-  return `${aRoot}${ensureDirPath(aName)}`;
+function fixFilename(aSrcDir: string, aName: string): string {
+  return relativePath(aSrcDir, ensureDirPath(aName));
 }
 
 /**
  * Constructs the package json
  *
  * @param aPkg  - the package
+ * @param aDstDir - target directory of the package
+ * @param aDataDir - data directory
  * @param aSchema - the schema
  *
  * @returns the new package
  */
 function createPackage(
   aPkg: any,
-  aSchema: CreatePackageFromArtifactsSchema
+  aDstDir: string,
+  aDataDir: string,
+  aSchema: CreatePackageFromArtifactsSchema,
+  aLogger: Logger
 ): any {
   // extract relevant information
   const {
     name,
     repository,
     license = aSchema.license || DEFAULT_LICENSE,
-    author
+    author,
+    version
   } = aPkg;
-  // data dir
-  const data = `.${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
   // tags
   const tags = splitArray(aSchema.tag || '');
   // make copy
   const files = mapArray(aSchema.files, (fileName: string) =>
-    fixFilename(data, fileName)
+    fixFilename(aDstDir, fileName)
   );
   // create the package
   const dependencies = { [SITES_NEXT_API_MODULE]: '^9' };
+  // relative path from dst dir to data dir
+  const data = relativePath(aDstDir, aDataDir);
   // config
   const config = {
     data
   };
   // construct the package
   const pkg: Record<string, any> = {
+    version,
     name,
     license,
     dependencies,
@@ -95,13 +103,6 @@ function createPackage(
   return of(canonicalizeJson(pkg));
 }
 
-function createNpmIgnore(aSchema: CreatePackageFromArtifactsSchema): any {
-  // data dir
-  const data = `.${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
-  // construct the file
-  return `*\n${data}/**\n`;
-}
-
 /**
  * Generates the content items that describe a driver based on an Angular build output
  *
@@ -120,19 +121,15 @@ export function createPackageArtifacts(
   // data dir
   const dataDir = `${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
   // parse the base directory
-  const { dir: dstDir, base } = parse(dataDir);
+  const { dir: dstDir } = parse(dataDir);
   // log the target directory
   logger.info('dst directory', dstDir);
   // locate the package json
   const pkg$ = rxPipe(
     rxFindPackageJson('/', aHost),
-    mergeMap((pkg) => createPackage(pkg, aSchema)),
+    mergeMap((pkg) => createPackage(pkg, dstDir, dataDir, aSchema, logger)),
     map((pkg) => createFileDescriptor(`${dstDir}/package.json`, pkg))
   );
-  // create the .npmignore file
-  const npmIgnore$ = of(
-    createFileDescriptor(`${dstDir}/.npmignore`, createNpmIgnore(aSchema))
-  );
   // merge
-  return merge(pkg$, npmIgnore$);
+  return merge(pkg$);
 }
