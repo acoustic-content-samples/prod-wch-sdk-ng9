@@ -48,6 +48,7 @@ Implementation of utility methods used for tooling.
 |  [rxFindAuthoringLayouts(aRoot, aTree)](./tooling.rxfindauthoringlayouts.md) | Reads the authoring layouts from a directory |
 |  [rxFindAuthoringTypes(aRoot, aTree)](./tooling.rxfindauthoringtypes.md) | Reads the authoring types from a directory |
 |  [rxFindDataDir(host, options)](./tooling.rxfinddatadir.md) |  |
+|  [rxFindPackageJson(aDir, aReadFile)](./tooling.rxfindpackagejson.md) | Loads the package JSON file relative to the directory |
 |  [rxFindProject(workspaceOrHost, options)](./tooling.rxfindproject.md) | Locates the workspace project, either from the configured project name, else falls back to the default project |
 |  [rxFindProjectName(workspaceOrHost, options)](./tooling.rxfindprojectname.md) | Locates the workspace project, either from the configured project name, else falls back to the default project |
 |  [rxFindWchToolsOptions(host, options)](./tooling.rxfindwchtoolsoptions.md) |  |

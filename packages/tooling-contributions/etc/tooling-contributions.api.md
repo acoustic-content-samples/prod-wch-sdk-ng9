@@ -6,6 +6,7 @@
 
 import { AuthoringContentItem } from '@acoustic-content-sdk/api';
 import { FileDescriptor } from '@acoustic-content-sdk/tooling';
+import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
 import { ReadDirectory } from '@acoustic-content-sdk/tooling';
 import { ReadTextFile } from '@acoustic-content-sdk/tooling';
@@ -33,6 +34,17 @@ export interface CreateNgDriverArtifactsSchema {
     configuration?: string;
     mode?: string;
     project?: string;
+    tag?: string;
+}
+
+// @public
+export function createPackageArtifacts(aHost: ReadTextFile, aSchema?: CreatePackageFromArtifactsSchema, aLogSvc?: LoggerService): Observable<FileDescriptor<any>>;
+
+// @public (undocumented)
+export interface CreatePackageFromArtifactsSchema {
+    data?: string;
+    files?: string[];
+    license?: string;
     tag?: string;
 }
 

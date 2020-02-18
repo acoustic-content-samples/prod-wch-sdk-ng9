@@ -221,6 +221,9 @@ export function rxFindDataDir(host: ReadTextFile, options?: {
 }): Observable<string>;
 
 // @public
+export function rxFindPackageJson(aDir: string, aReadFile: ReadTextFile): Observable<any>;
+
+// @public
 export function rxFindProject<TProjectType extends ProjectType = ProjectType.Application>(workspaceOrHost: WorkspaceSchema | ReadTextFile, options: {
     project?: string;
 }): Observable<WorkspaceProject<TProjectType>>;
