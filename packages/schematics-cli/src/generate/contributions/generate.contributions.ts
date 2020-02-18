@@ -17,7 +17,7 @@ import {
   createNgDriverArtifacts,
   createPackageArtifacts
 } from '@acoustic-content-sdk/tooling-contributions';
-import { arrayPush, opShareLast, rxPipe } from '@acoustic-content-sdk/utils';
+import { opShareLast, rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 import { EMPTY, merge } from 'rxjs';
 import {
@@ -25,8 +25,7 @@ import {
   ignoreElements,
   map,
   mergeMap,
-  reduce,
-  share,
+  shareReplay,
   tap
 } from 'rxjs/operators';
 
@@ -76,24 +75,13 @@ function generateArtifacts(options: Schema): Rule {
           map(([path, data]) => createFileDescriptor(`${dataDir}${path}`, data))
         )
       ),
-      share()
+      shareReplay()
     );
     // package options
-    const pkgOpt$ = rxPipe(
-      files$,
-      reduce(
-        (aDst: string[], [aName]: FileDescriptor<any>) =>
-          arrayPush(aName, aDst),
-        []
-      ),
-      map((files) => ({ ...options, files }))
-    );
+    const pkgOpt = { ...options, files$ };
     // the package file
     const pkg$ = bPackage
-      ? rxPipe(
-          pkgOpt$,
-          mergeMap((opt) => createPackageArtifacts(readFile, opt, logSvc))
-        )
+      ? createPackageArtifacts(readFile, pkgOpt, logSvc)
       : EMPTY;
     // all files
     const allFiles$ = merge(files$, pkg$);

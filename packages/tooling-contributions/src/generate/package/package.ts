@@ -14,19 +14,20 @@ import {
   rxFindPackageJson
 } from '@acoustic-content-sdk/tooling';
 import {
+  arrayPush,
   isNotEmpty,
   isNotNil,
-  mapArray,
   NOOP_LOGGER_SERVICE,
   opShareLast,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { join, parse } from 'path';
-import { merge, Observable, of } from 'rxjs';
-import { map, mergeMap, shareReplay } from 'rxjs/operators';
+import { EMPTY, merge, Observable, of } from 'rxjs';
+import { map, mergeMap, reduce, shareReplay } from 'rxjs/operators';
 
 import { ASSET_ROOT$ } from '../../utils/assets';
 import { splitArray } from '../artifacts';
+import { aggregateContent } from './content';
 import { CreatePackageFromArtifactsSchema } from './schema';
 
 const SITES_NEXT_API_MODULE = '@sites-next-content/data-sites-next';
@@ -54,11 +55,13 @@ const RE_SCOPE = /^(?:@([^\/]+)\/)?(.*)$/;
  * @param aPkg - the package json
  * @returns the context
  */
-function createContext(aPkg: any): Record<string, any> {
+function createContext(
+  aPkg: any,
+  aFiles$: Observable<FileDescriptor<any>>
+): Observable<Record<string, any>> {
   // build date
   const BUILD_DATE = Date.now();
   const MODULE_NAME = aPkg.name;
-  const ACOUSTIC_CONTENT = {};
   // parse the version
   const version = aPkg.version;
   const [
@@ -72,17 +75,22 @@ function createContext(aPkg: any): Record<string, any> {
   // check for a scoped package
   const [, MODULE_SCOPE, MODULE_LOCAL] = RE_SCOPE.exec(MODULE_NAME);
   // returns the context
-  return {
+  const staticCtx = {
     fileName,
     BUILD_DATE,
     MODULE_NAME,
-    ACOUSTIC_CONTENT,
     MAJOR_VERSION,
     MINOR_VERSION,
     PATCH_LEVEL,
     MODULE_SCOPE,
     MODULE_LOCAL
   };
+  // aggregate
+  return rxPipe(
+    aFiles$,
+    aggregateContent(),
+    map((ACOUSTIC_CONTENT) => ({ ...staticCtx, ACOUSTIC_CONTENT }))
+  );
 }
 
 /**
@@ -99,9 +107,10 @@ function createPackage(
   aPkg: any,
   aDstDir: string,
   aDataDir: string,
+  aFiles$: Observable<FileDescriptor<any>>,
   aSchema: CreatePackageFromArtifactsSchema,
   aLogger: Logger
-): any {
+): Observable<any> {
   // extract relevant information
   const {
     name,
@@ -117,11 +126,20 @@ function createPackage(
   const typings = `typings/${fileName}.d.ts`;
   // tags
   const tags = splitArray(aSchema.tag || '');
-  // make copy
-  const files = mapArray(aSchema.files, (aName: string) =>
-    fixFilename(aDstDir, aName)
+  // files we know statically
+  const staticFile$ = of(main, module, typings);
+  // map the files
+  const contentFile$ = rxPipe(
+    aFiles$,
+    map(([aName]) => fixFilename(aDstDir, aName))
   );
-  files.push(main, module, typings);
+  // all files
+  const file$ = rxPipe(
+    merge(staticFile$, contentFile$),
+    reduce((aDst: string[], aSrc: string) => arrayPush(aSrc, aDst), []),
+    // tslint:disable-next-line: no-misleading-array-reverse
+    map((files) => files.sort())
+  );
   // create the package
   const dependencies = { [SITES_NEXT_API_MODULE]: '^9' };
   // relative path from dst dir to data dir
@@ -145,18 +163,18 @@ function createPackage(
   if (isNotEmpty(tags)) {
     pkg.keywords = tags;
   }
-  if (isNotEmpty(files)) {
-    files.sort();
-    pkg.files = files;
-  }
   if (isNotNil(repository)) {
     pkg.repository = repository;
   }
   if (isNotNil(author)) {
     pkg.author = author;
   }
-  // returns the package
-  return of(canonicalizeJson(pkg));
+  // go
+  return rxPipe(
+    file$,
+    map((files) => ({ ...pkg, files })),
+    map(canonicalizeJson)
+  );
 }
 
 /**
@@ -178,6 +196,8 @@ export function createPackageArtifacts(
   const dataDir = `${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
   // parse the base directory
   const { dir: dstDir } = parse(dataDir);
+  // files
+  const file$ = rxPipe(aSchema.files$ || EMPTY, shareReplay());
   // log the target directory
   logger.info('dst directory', dstDir);
   // source package
@@ -185,13 +205,15 @@ export function createPackageArtifacts(
   // locate the package json
   const pkg$ = rxPipe(
     srcPkg$,
-    mergeMap((pkg) => createPackage(pkg, dstDir, dataDir, aSchema, logger)),
+    mergeMap((pkg) =>
+      createPackage(pkg, dstDir, dataDir, file$, aSchema, logger)
+    ),
     map((pkg) => createFileDescriptor(`${dstDir}/package.json`, pkg))
   );
   // the context
   const hbsCtx$ = rxPipe(
     srcPkg$,
-    map((pkg) => createContext(pkg))
+    mergeMap((pkg) => createContext(pkg, file$))
   );
   // read the templates
   const templates$ = rxPipe(
