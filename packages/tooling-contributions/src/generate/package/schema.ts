@@ -12,7 +12,8 @@ export interface CreatePackageFromArtifactsSchema {
    */
   files?: string[];
   /**
-   * location of the data directory, defaults to 'data'
+   * Location of the data directory, defaults to 'data'. The
+   * package artifacts will be created in the parent folder of the data folder
    */
   data?: string;
 }

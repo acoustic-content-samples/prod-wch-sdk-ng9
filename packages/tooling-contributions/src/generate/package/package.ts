@@ -1,3 +1,4 @@
+import { LoggerService } from '@acoustic-content-sdk/api';
 import {
   canonicalizeJson,
   createFileDescriptor,
@@ -9,10 +10,11 @@ import {
 import {
   isNotEmpty,
   isNotNil,
-  jsonStringify,
   mapArray,
+  NOOP_LOGGER_SERVICE,
   rxPipe
 } from '@acoustic-content-sdk/utils';
+import { parse } from 'path';
 import { merge, Observable, of } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
@@ -23,6 +25,8 @@ const SITES_NEXT_API_MODULE = '@sites-next-content/data-sites-next';
 
 const DEFAULT_LICENSE = 'MIT';
 const DEFAULT_DATA = './data';
+
+const LOGGER = 'createPackageArtifacts';
 
 /**
  * Makes sure to remove the leading slash and to convert backslashes to slashes
@@ -88,7 +92,7 @@ function createPackage(
     pkg.author = author;
   }
   // returns the package
-  return canonicalizeJson(pkg);
+  return of(canonicalizeJson(pkg));
 }
 
 function createNpmIgnore(aSchema: CreatePackageFromArtifactsSchema): any {
@@ -108,17 +112,26 @@ function createNpmIgnore(aSchema: CreatePackageFromArtifactsSchema): any {
  */
 export function createPackageArtifacts(
   aHost: ReadTextFile,
-  aSchema: CreatePackageFromArtifactsSchema = {}
+  aSchema: CreatePackageFromArtifactsSchema = {},
+  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
 ): Observable<FileDescriptor<any>> {
+  // logger
+  const logger = aLogSvc.get(LOGGER);
+  // data dir
+  const dataDir = `${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
+  // parse the base directory
+  const { dir: dstDir, base } = parse(dataDir);
+  // log the target directory
+  logger.info('dst directory', dstDir);
   // locate the package json
   const pkg$ = rxPipe(
     rxFindPackageJson('/', aHost),
     mergeMap((pkg) => createPackage(pkg, aSchema)),
-    map((pkg) => createFileDescriptor('/package.json', jsonStringify(pkg)))
+    map((pkg) => createFileDescriptor(`${dstDir}/package.json`, pkg))
   );
   // create the .npmignore file
   const npmIgnore$ = of(
-    createFileDescriptor('/.npmignore', createNpmIgnore(aSchema))
+    createFileDescriptor(`${dstDir}/.npmignore`, createNpmIgnore(aSchema))
   );
   // merge
   return merge(pkg$, npmIgnore$);

@@ -91,7 +91,7 @@ function generateArtifacts(options: Schema): Rule {
     const pkg$ = bPackage
       ? rxPipe(
           pkgOpt$,
-          mergeMap((opt) => createPackageArtifacts(readFile, opt))
+          mergeMap((opt) => createPackageArtifacts(readFile, opt, logSvc))
         )
       : EMPTY;
     // all files
