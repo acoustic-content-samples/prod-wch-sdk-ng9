@@ -24,6 +24,7 @@
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
     "test": "jest"
   },
   "jest": {
