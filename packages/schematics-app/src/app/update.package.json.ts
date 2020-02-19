@@ -147,10 +147,10 @@ export function updatePackageJson(options: Schema): Rule {
     ] = `npm-run-all build:prod:${ArtifactMode.PREVIEW} build:prod:${ArtifactMode.LIVE}`;
     scripts[
       `build:dev:${ArtifactMode.PREVIEW}`
-    ] = `ng build --configuration=${CONFIG_SOURCE_MAP},${ArtifactMode.PREVIEW}`;
+    ] = `ng build --configuration=${ArtifactMode.PREVIEW}`;
     scripts[
       `build:dev:${ArtifactMode.LIVE}`
-    ] = `ng build --configuration=${CONFIG_SOURCE_MAP},${ArtifactMode.LIVE}`;
+    ] = `ng build --configuration=${ArtifactMode.LIVE}`;
     scripts[
       'build:dev'
     ] = `npm-run-all build:dev:${ArtifactMode.PREVIEW} build:dev:${ArtifactMode.LIVE}`;
