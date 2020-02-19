@@ -8,6 +8,7 @@ export {
   LayoutMappingDirective,
   RenderingContextDirective
 } from './lib/decorators/layout/layout.directive';
+export { WchSelectFirstRootPageGuard } from './lib/guards/root.page.guard';
 export { WchNgComponentsModule } from './lib/modules/components.module';
 export { WchNgProtectedContentModule } from './lib/modules/protected.content.module';
 export { WchNgRouterModule } from './lib/modules/router.module';

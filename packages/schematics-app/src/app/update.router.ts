@@ -25,6 +25,7 @@ import {
   SyntaxKind,
   VariableDeclaration
 } from 'typescript';
+
 import { Schema } from './schema';
 import { KEY_MAIN } from './update.angular.json';
 
@@ -36,14 +37,14 @@ const MATCH_ALL_ROUTE = `{
 const DEFAULT_ROUTE = `{
   path: '',
   pathMatch: 'full',
-  canActivate: [SelectFirstRootPageGuard],
+  canActivate: [WchSelectFirstRootPageGuard],
   component: PageComponent,
 }`;
 
 const DEFAULT_ROUTING_MODULE = `
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageComponent, SelectFirstRootPageGuard } from '@acoustic-content-sdk/ng';
+import { PageComponent, WchSelectFirstRootPageGuard } from '@acoustic-content-sdk/ng';
 
 const routes: Routes = [
   ${DEFAULT_ROUTE},
@@ -208,7 +209,7 @@ export function updateAppRoutingModule(options: Schema): Rule {
             insertImport(
               source,
               path,
-              'SelectFirstRootPageGuard',
+              'WchSelectFirstRootPageGuard',
               '@acoustic-content-sdk/ng'
             )
           ],
