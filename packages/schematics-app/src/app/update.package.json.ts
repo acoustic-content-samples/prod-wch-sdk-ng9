@@ -146,6 +146,15 @@ export function updatePackageJson(options: Schema): Rule {
       'build:prod'
     ] = `npm-run-all build:prod:${ArtifactMode.PREVIEW} build:prod:${ArtifactMode.LIVE}`;
     scripts[
+      `build:dev:${ArtifactMode.PREVIEW}`
+    ] = `ng build --configuration=${CONFIG_SOURCE_MAP},${ArtifactMode.PREVIEW}`;
+    scripts[
+      `build:dev:${ArtifactMode.LIVE}`
+    ] = `ng build --configuration=${CONFIG_SOURCE_MAP},${ArtifactMode.LIVE}`;
+    scripts[
+      'build:dev'
+    ] = `npm-run-all build:dev:${ArtifactMode.PREVIEW} build:dev:${ArtifactMode.LIVE}`;
+    scripts[
       'build:contributions'
     ] = `ng g ${NAMESPACE}/schematics:contributions --data dist/data --configuration=production --mode=${ArtifactMode.PREVIEW},${ArtifactMode.LIVE}`;
 
