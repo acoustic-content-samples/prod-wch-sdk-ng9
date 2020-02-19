@@ -19,7 +19,7 @@ import { WchConfig } from '@acoustic-content-sdk/edit-api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public (undocumented)
-export function createStore(msgService: MessageService, logSvc?: LoggerService): ReduxRootStore;
+export function createStore(msgService: MessageService, aLogSvc?: LoggerService): ReduxRootStore;
 
 // @public (undocumented)
 export function proxyCreateUrlConfig(aStore: Store<ReduxRootState>): Observable<UrlConfig>;

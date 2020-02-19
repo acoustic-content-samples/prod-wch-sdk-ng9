@@ -15,6 +15,7 @@
 |  [WchNgRouterModule](./ng.wchngroutermodule.md) |  |
 |  [WchNgSearchModule](./ng.wchngsearchmodule.md) |  |
 |  [WchNgServicesModule](./ng.wchngservicesmodule.md) |  |
+|  [WchSelectFirstRootPageGuard](./ng.wchselectfirstrootpageguard.md) |  |
 
 ## Functions
 

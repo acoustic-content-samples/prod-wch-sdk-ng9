@@ -15,7 +15,7 @@ export interface CreatePackageFromArtifactsSchema
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [data](./tooling-contributions.createpackagefromartifactsschema.data.md) | <code>string</code> | Location of the data directory, defaults to 'data'. The package artifacts will be created in the parent folder of the data folder |
-|  [files](./tooling-contributions.createpackagefromartifactsschema.files.md) | <code>string[]</code> | optionally the explicit list of files to include |
+|  [files$](./tooling-contributions.createpackagefromartifactsschema.files_.md) | <code>Observable&lt;FileDescriptor&lt;any&gt;&gt;</code> | optionally the explicit list of files to include |
 |  [license](./tooling-contributions.createpackagefromartifactsschema.license.md) | <code>string</code> | optinally the license, defaults to MIT |
 |  [tag](./tooling-contributions.createpackagefromartifactsschema.tag.md) | <code>string</code> | a comma separated list of tags |
 

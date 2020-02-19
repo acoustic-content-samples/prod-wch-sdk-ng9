@@ -20,7 +20,7 @@ Collection of utility methods to efficiently create react components and modules
 |  [getReactElementName(aElement)](./react-utils.getreactelementname.md) | Returns the react element name from the node or null if the node is invalid |
 |  [pureLoggingComponent(aName, aDelegate)](./react-utils.pureloggingcomponent.md) | Creates a higher order component for lifecycle logging purposes |
 |  [rxComponent(aStateFct, aDelegate)](./react-utils.rxcomponent.md) |  |
-|  [rxCreateReactRenderer(elementType, aDoc, aLoggerService, scheduler)](./react-utils.rxcreatereactrenderer.md) | Renderer that converts a markup string into a react DOM representation. The react representation might differ dependening on the content types |
+|  [rxCreateReactRenderer(elementType, aDoc, aLogSvc, scheduler)](./react-utils.rxcreatereactrenderer.md) | Renderer that converts a markup string into a react DOM representation. The react representation might differ dependening on the content types |
 |  [styleToReact(aStyle)](./react-utils.styletoreact.md) |  |
 
 ## Interfaces

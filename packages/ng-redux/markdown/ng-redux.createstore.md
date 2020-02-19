@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function createStore(msgService: MessageService, logSvc?: LoggerService): ReduxRootStore;
+export declare function createStore(msgService: MessageService, aLogSvc?: LoggerService): ReduxRootStore;
 ```
 
 ## Parameters
@@ -15,7 +15,7 @@ export declare function createStore(msgService: MessageService, logSvc?: LoggerS
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  msgService | <code>MessageService</code> |  |
-|  logSvc | <code>LoggerService</code> |  |
+|  aLogSvc | <code>LoggerService</code> |  |
 
 <b>Returns:</b>
 

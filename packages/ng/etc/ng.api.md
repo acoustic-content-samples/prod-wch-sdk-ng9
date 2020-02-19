@@ -6,9 +6,12 @@
 
 import { AbstractBaseComponent } from '@acoustic-content-sdk/ng-utils';
 import { ActivatedRoute } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { ComponentFactoryResolver } from '@angular/core';
 import { CONTENT_ITEM_KIND } from '@acoustic-content-sdk/api';
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
+import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import { DynamicLoggerFactory } from '@acoustic-content-sdk/api';
 import { Logger } from '@acoustic-content-sdk/api';
 import { LoggerFactory } from '@acoustic-content-sdk/api';
@@ -21,6 +24,8 @@ import { OnDestroy } from '@angular/core';
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { RenderingContextV2 } from '@acoustic-content-sdk/api';
 import { ReplaySubject } from 'rxjs';
+import { Router } from '@angular/router';
+import { RouterStateSnapshot } from '@angular/router';
 import { SchedulerLike } from 'rxjs';
 import { Subject } from 'rxjs';
 import { Title } from '@angular/platform-browser';
@@ -102,6 +107,13 @@ export class WchNgSearchModule {
 // @public (undocumented)
 export class WchNgServicesModule {
 }
+
+// @public (undocumented)
+export class WchSelectFirstRootPageGuard implements CanActivate {
+    constructor(aDeliveryPageResolver: DeliveryPageResolver, aRouter: Router, aLogSvc: LoggerService);
+    // (undocumented)
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>;
+    }
 
 
 // (No @packageDocumentation comment for this package)

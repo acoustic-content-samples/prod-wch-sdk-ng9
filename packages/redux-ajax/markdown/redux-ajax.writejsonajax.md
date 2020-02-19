@@ -9,7 +9,7 @@ Creates a callback function that writes content to API routes via PUST, POST or 
 <b>Signature:</b>
 
 ```typescript
-export declare function writeJsonAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService: LoggerService): WriteText;
+export declare function writeJsonAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService?: LoggerService): WriteText;
 ```
 
 ## Parameters

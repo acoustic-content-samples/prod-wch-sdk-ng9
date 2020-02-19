@@ -91,7 +91,7 @@ export interface PureLoggingComponentProps {
 export function rxComponent<P, S, DS = any>(aStateFct: StateFunction<P, S>, aDelegate: DelegateComponent<S, DS>): ComponentClass<P, S>;
 
 // @public
-export function rxCreateReactRenderer(elementType: ElementTypeCallback, aDoc?: Document, aLoggerService?: LoggerService, scheduler?: SchedulerLike): UnaryFunction<string, Observable<ReactNode>>;
+export function rxCreateReactRenderer(elementType: ElementTypeCallback, aDoc?: Document, aLogSvc?: LoggerService, scheduler?: SchedulerLike): UnaryFunction<string, Observable<ReactNode>>;
 
 // @public (undocumented)
 export type StateFunction<P, S> = (props$: ValueObservable<Readonly<PropsWithChildren<P>>>, init$: Observable<undefined>, done$: Observable<undefined>) => Observable<Readonly<S>>;

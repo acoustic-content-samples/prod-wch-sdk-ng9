@@ -29,7 +29,7 @@ Implementation of Angular providers based on Redux.
 
 |  Function | Description |
 |  --- | --- |
-|  [createStore(msgService, logSvc)](./ng-redux.createstore.md) |  |
+|  [createStore(msgService, aLogSvc)](./ng-redux.createstore.md) |  |
 |  [proxyCreateUrlConfig(aStore)](./ng-redux.proxycreateurlconfig.md) |  |
 |  [proxyCreateWchConfig(aStore)](./ng-redux.proxycreatewchconfig.md) |  |
 

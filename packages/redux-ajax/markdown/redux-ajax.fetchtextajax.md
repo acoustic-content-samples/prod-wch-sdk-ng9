@@ -9,7 +9,7 @@ Creates a callback function that loads content via HTTP GET from the API routes.
 <b>Signature:</b>
 
 ```typescript
-export declare function fetchTextAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService: LoggerService): FetchText;
+export declare function fetchTextAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService?: LoggerService): FetchText;
 ```
 
 ## Parameters

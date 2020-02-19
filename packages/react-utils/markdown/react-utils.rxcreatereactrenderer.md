@@ -9,7 +9,7 @@ Renderer that converts a markup string into a react DOM representation. The reac
 <b>Signature:</b>
 
 ```typescript
-export declare function rxCreateReactRenderer(elementType: ElementTypeCallback, aDoc?: Document, aLoggerService?: LoggerService, scheduler?: SchedulerLike): UnaryFunction<string, Observable<ReactNode>>;
+export declare function rxCreateReactRenderer(elementType: ElementTypeCallback, aDoc?: Document, aLogSvc?: LoggerService, scheduler?: SchedulerLike): UnaryFunction<string, Observable<ReactNode>>;
 ```
 
 ## Parameters
@@ -18,7 +18,7 @@ export declare function rxCreateReactRenderer(elementType: ElementTypeCallback, 
 |  --- | --- | --- |
 |  elementType | <code>ElementTypeCallback</code> |  |
 |  aDoc | <code>Document</code> |  |
-|  aLoggerService | <code>LoggerService</code> |  |
+|  aLogSvc | <code>LoggerService</code> |  |
 |  scheduler | <code>SchedulerLike</code> |  |
 
 <b>Returns:</b>

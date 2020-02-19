@@ -43,7 +43,7 @@ export function createPackageArtifacts(aHost: ReadTextFile, aSchema?: CreatePack
 // @public (undocumented)
 export interface CreatePackageFromArtifactsSchema {
     data?: string;
-    files?: string[];
+    files$?: Observable<FileDescriptor<any>>;
     license?: string;
     tag?: string;
 }

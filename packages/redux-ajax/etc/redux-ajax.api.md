@@ -10,7 +10,7 @@ import { StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { WriteText } from '@acoustic-content-sdk/rest-api';
 
 // @public
-export function fetchTextAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService: LoggerService): FetchText;
+export function fetchTextAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService?: LoggerService): FetchText;
 
 // @public
 export const VERSION: {
@@ -23,7 +23,7 @@ export const VERSION: {
 };
 
 // @public
-export function writeJsonAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService: LoggerService): WriteText;
+export function writeJsonAjax(apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>, aLoggerService?: LoggerService): WriteText;
 
 
 ```
