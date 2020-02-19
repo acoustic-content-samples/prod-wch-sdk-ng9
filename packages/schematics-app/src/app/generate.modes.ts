@@ -80,7 +80,7 @@ const SDK_CONTEXT = {
   }
 };
 
-const selectOptions = (aName: string) =>
+const selectBuildOptions = (aName: string) =>
   pluckPath<Record<string, any>>([
     'projects',
     aName,
@@ -338,7 +338,7 @@ export function generateModeFiles(options: Schema): Rule {
     // filename
     const angularJson = getWorkspace(host);
     // extract the options
-    const opts = selectOptions(projectName)(angularJson);
+    const opts = selectBuildOptions(projectName)(angularJson);
     // select the main file
     const main = opts[KEY_MAIN];
     const appModule = getAppModulePath(host, main);
