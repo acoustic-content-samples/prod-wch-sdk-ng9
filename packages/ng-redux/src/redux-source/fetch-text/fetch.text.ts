@@ -20,8 +20,10 @@ import { first, map } from 'rxjs/operators';
  */
 export function createFetchText(
   aUrlConfig$: Observable<UrlConfig>,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): FetchText {
+  // logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
   // provider the API URL
   const apiUrl$ = rxPipe(
     aUrlConfig$,
@@ -30,5 +32,5 @@ export function createFetchText(
     first()
   );
   // dispatch
-  return fetchTextAjax(apiUrl$.toPromise(), aLogSvc);
+  return fetchTextAjax(apiUrl$.toPromise(), logSvc);
 }

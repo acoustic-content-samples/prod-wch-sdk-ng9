@@ -13,6 +13,7 @@ import {
   isNotNil,
   isString,
   jsonStringify,
+  NOOP_LOGGER_SERVICE,
   pluckPath,
   rxPipe,
   typedPluck,
@@ -167,11 +168,13 @@ function internalFetchTextAjax(
  */
 export function fetchTextAjax(
   apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>,
-  aLoggerService: LoggerService
+  aLoggerService?: LoggerService
 ): FetchText {
+  // resolve the logger
+  const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
   // attach to the provider
   const fetchText$ = Promise.resolve(apiBase).then((url) =>
-    internalFetchTextAjax(url, aLoggerService)
+    internalFetchTextAjax(url, logSvc)
   );
 
   // dispatch
@@ -339,11 +342,13 @@ function internalWriteJsonAjax(
  */
 export function writeJsonAjax(
   apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>,
-  aLoggerService: LoggerService
+  aLoggerService?: LoggerService
 ): WriteText {
+  // resolve the logger
+  const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
   // attach to the provider
   const writeText$ = Promise.resolve(apiBase).then((url) =>
-    internalWriteJsonAjax(url, aLoggerService)
+    internalWriteJsonAjax(url, logSvc)
   );
 
   // dispatch

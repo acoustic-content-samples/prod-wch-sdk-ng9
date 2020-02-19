@@ -51,10 +51,11 @@ export class AbstractDeliveryPageResolverService
    */
   protected constructor(
     aSearch: DeliverySearchResolver,
-    aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
-    // some logging
-    const logger = aLogSvc.get(LOGGER);
+    // resolve the logger
+    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logger = logSvc.get(LOGGER);
     // base keys
     const query = {
       fl: SEARCH_FL_DOCUMENT,

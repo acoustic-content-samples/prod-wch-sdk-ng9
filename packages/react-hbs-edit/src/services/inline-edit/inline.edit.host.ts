@@ -204,10 +204,11 @@ export function createInlineEditHost(
   aDeliveryContent: DeliveryContentResolver,
   aEditService: WchInlineEditServiceV2,
   aExtendedContext$: Observable<ExtendedContextV2>,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): InlineEditHost {
-  // construct the logger
-  const logger = aLogSvc.get(LOGGER);
+  // resolve the logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logger = logSvc.get(LOGGER);
   // access the logger
   const log: <T>(...aArgs: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger

@@ -8,7 +8,6 @@ import {
   WCH_TOKEN_DELIVERY_SEARCH_RESOLVER,
   WCH_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 
 @Injectable()
@@ -19,7 +18,7 @@ export class DeliveryTypeResolverService
     @Inject(WCH_TOKEN_DELIVERY_SEARCH_RESOLVER) aSearch: DeliverySearchResolver,
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
-    aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
     super(aSearch, aLogSvc);
   }

@@ -495,11 +495,12 @@ function rxNodesToReact(
 export function rxCreateReactRenderer(
   elementType: ElementTypeCallback,
   aDoc: Document = document,
-  aLoggerService: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   scheduler: SchedulerLike = queueScheduler
 ): UnaryFunction<string, Observable<ReactNode>> {
-  // construct a logger
-  const logger = aLoggerService.get('rxCreateReactRenderer');
+  // resolve the logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logger = logSvc.get('rxCreateReactRenderer');
   // render context
   const ctx: RenderContext = {
     elementType,

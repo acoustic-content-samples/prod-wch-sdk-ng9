@@ -52,9 +52,11 @@ export function createHandlebarsComponent(
   aDeliveryContent: DeliveryContentResolver,
   aEditService: WchInlineEditServiceV2,
   aDoc: Document,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   aScheduler?: SchedulerLike
 ): ReactComponent<HandlebarsComponentProps> {
+  // resolve the logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
   // access the url config
   const store$ = rxStore(aStore);
   // context
@@ -67,20 +69,20 @@ export function createHandlebarsComponent(
     }))
   );
   // the renderer
-  const renderer = createReactRenderer(aStore, aDoc, aLogSvc, aScheduler);
+  const renderer = createReactRenderer(aStore, aDoc, logSvc, aScheduler);
   // the layout renderer
   const LayoutRenderer = createLayoutRendererComponent(
     renderer,
     aDeliveryContent,
     aEditService,
     $context$,
-    aLogSvc
+    logSvc
   );
   // finally the markup renderer
   return createMarkupRendererComponent(
     aStore,
     LayoutRenderer,
-    aLogSvc,
+    logSvc,
     aScheduler
   );
 }

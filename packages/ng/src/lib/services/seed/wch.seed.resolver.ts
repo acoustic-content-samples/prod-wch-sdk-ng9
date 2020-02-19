@@ -112,10 +112,11 @@ export class WchSeedResolver implements SeedResolver {
     aDocument: any,
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
-    aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
-    // construct the logger
-    const logger = aLogSvc.get(LOGGER);
+    // resolve the logger
+    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logger = logSvc.get(LOGGER);
     // our seed cache
     const cache: Record<string, Observable<string>> = {};
     addSeed(cache, aContentSeed, CLASSIFICATION_CONTENT, logger, aDocument);

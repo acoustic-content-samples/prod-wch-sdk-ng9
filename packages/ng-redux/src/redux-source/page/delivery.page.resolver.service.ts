@@ -10,7 +10,6 @@ import {
 } from '@acoustic-content-sdk/ng-api';
 import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -27,7 +26,7 @@ export class DeliveryPageResolverService
     aSearchResolver: DeliverySearchResolver,
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
-    aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
     super(aStore, aSearchResolver, aLogSvc);
   }

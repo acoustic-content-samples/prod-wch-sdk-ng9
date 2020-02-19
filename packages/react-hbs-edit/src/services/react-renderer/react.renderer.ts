@@ -57,11 +57,12 @@ const selectTypeId = pluckProperty<AuthoringContentItem, 'typeId'>('typeId');
 export function createReactRenderer(
   aStore: ReduxRootStore,
   aDoc: Document,
-  aLoggerService: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   aScheduler?: SchedulerLike
 ): UnaryFunction<string, Observable<ReactNode>> {
-  // construct a logger
-  const logger = aLoggerService.get('createReactRenderer');
+  // resolve the logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logger = logSvc.get('createReactRenderer');
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // store
@@ -97,10 +98,5 @@ export function createReactRenderer(
       log(aItemId, aAccessor, 'elementType')
     );
   // dispatch
-  return rxCreateReactRenderer(
-    elementTypeCallback,
-    aDoc,
-    aLoggerService,
-    aScheduler
-  );
+  return rxCreateReactRenderer(elementTypeCallback, aDoc, logSvc, aScheduler);
 }

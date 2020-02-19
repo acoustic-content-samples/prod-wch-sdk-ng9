@@ -64,11 +64,10 @@ export class PageSelectionService implements OnDestroy {
     activePage: ActivePageV2,
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
-    loggerService: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
-    // logger
-    const logSvc = loggerService || NOOP_LOGGER_SERVICE;
-    // construct a logger
+    // resolve the logger
+    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

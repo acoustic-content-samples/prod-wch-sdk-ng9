@@ -37,10 +37,11 @@ export class ReactComponentRegistryService
    */
   constructor(
     defaultComponent: ComponentTypeRef<ReactComponentProps> = DefaultComponent,
-    logSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
-    super(defaultComponent, isEqualComponentTypeRef, logSvc);
-    // logging support
+    super(defaultComponent, isEqualComponentTypeRef, aLogSvc);
+    // resolve the logger
+    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
     const logger = logSvc.get(LOGGER);
     // the old function
     const oldRegisterType = this.registerType.bind(this);

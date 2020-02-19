@@ -26,7 +26,6 @@ import {
 import { Inject, Injectable, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
 import { selectIdFromRenderingContext } from '../../utils/selectors';
 import { LayoutResolverService } from '../layout/layout.resolver.service';
 import { LayoutMappingService } from '../mappings/mappings.service';
@@ -154,10 +153,11 @@ export class ComponentResolverService implements ComponentResolver {
     aComponentTypeRefResolvers: ComponentTypeRefResolver[],
     @Optional()
     @Inject(WCH_TOKEN_LOGGER_SERVICE)
-    aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+    aLogSvc?: LoggerService
   ) {
-    // logger
-    const logger = aLogSvc.get(LOGGER);
+    // resolve the logger
+    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
     /**
@@ -178,7 +178,7 @@ export class ComponentResolverService implements ComponentResolver {
         aLayoutResolverService,
         aLayoutMappingService,
         componentTypeRefResolver,
-        aLogSvc
+        logSvc
       );
 
     this.resolveComponent = resolveComponent;

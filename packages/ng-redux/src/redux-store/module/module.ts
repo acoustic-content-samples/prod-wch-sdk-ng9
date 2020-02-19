@@ -17,8 +17,10 @@ import { ChildWindowMessageService } from '../service/child.message.service';
 
 export function createStore(
   msgService: MessageService,
-  logSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): ReduxRootStore {
+  // resolve the logger
+  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
   // our redux feature
   const storeFeature = createStoreFeature(msgService);
   const store = createReduxRootStore({ logSvc });
