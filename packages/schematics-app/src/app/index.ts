@@ -25,6 +25,7 @@ import { updateAngularJson } from './update.angular.json';
 import { updateAppComponentHtml } from './update.app.component.html';
 import { addToDevEnv, addToProdEnv } from './update.environment';
 import { updatePackageJson } from './update.package.json';
+import { updateAppRoutingModule } from './update.router';
 
 function updateEnvironment(
   options: Schema,
@@ -171,14 +172,14 @@ export function addToApplication(options: Schema): Rule {
       updateAngularJson(options),
       generateModeFiles(options),
       updatePackageJson(options),
-      updateAppComponentHtml(options)
+      updateAppComponentHtml(options),
+      updateAppRoutingModule(options)
 
       /*
       updateWchtoolsOptions(options, project),
       updateEnvironment(options, project),
       updateAppModule(options, project),
       updateAppConfig(options, project),
-      updateAppRoutingModule(options, project),
       updateGitIgnore(options, project, workspace),
       updateTypings(options, project)*/
     ])(host, context);

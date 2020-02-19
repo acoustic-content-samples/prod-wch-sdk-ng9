@@ -1,10 +1,3 @@
-import { Path } from '@angular-devkit/core';
-import {
-  MergeStrategy,
-  SchematicContext,
-  Tree,
-  HostTree
-} from '@angular-devkit/schematics';
 import {
   Builders,
   getSourceFile,
@@ -13,10 +6,16 @@ import {
   ProjectType,
   WorkspaceProject
 } from '@acoustic-content-sdk/schematics-utils';
+import { Path } from '@angular-devkit/core';
+import {
+  HostTree,
+  MergeStrategy,
+  SchematicContext,
+  Tree
+} from '@angular-devkit/schematics';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ObjectLiteralExpression, SourceFile } from 'typescript';
-
 import { Schema } from './schema';
 import {
   findRouteArrays,
@@ -89,8 +88,7 @@ export class AppRoutingModule { }
 
   const options: Schema = {
     url: 'xxx',
-    editable: true,
-    target: ''
+    editable: true
   };
 
   const context: SchematicContext = ({
