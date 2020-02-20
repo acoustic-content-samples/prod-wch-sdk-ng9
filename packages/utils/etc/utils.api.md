@@ -249,6 +249,9 @@ export interface BindMember {
 export const bindMember: BindMember;
 
 // @public
+export const boxLoggerService: import("rxjs").UnaryFunction<LoggerService, LoggerService>;
+
+// @public
 export const byProperty: <T, K extends keyof T>(aKey: K, aPredicate: Predicate<T[K]>) => Predicate<T>;
 
 // @public (undocumented)

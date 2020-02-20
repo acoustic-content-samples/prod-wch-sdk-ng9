@@ -19,7 +19,7 @@ import { AbstractLifeCycleComponent } from '@acoustic-content-sdk/ng-utils';
 import {
   createSetterOnSubject,
   createSingleSubject,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opShareLast,
   rxNext,
@@ -132,7 +132,7 @@ export class WchPlaceholderComponent extends AbstractLifeCycleComponent
 
     const that = this;
     // logger
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLoggerService);
 
     // some logging
     const logger = logSvc.get(LOGGER);

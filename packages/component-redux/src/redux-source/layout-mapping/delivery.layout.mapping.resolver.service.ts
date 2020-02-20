@@ -19,7 +19,7 @@ import { selectByDeliveryId } from '@acoustic-content-sdk/redux-utils';
 import {
   authoringLayoutMappingToDeliveryLayoutMapping,
   isNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   objectAssign,
   pluckPath,
   reduceForIn,
@@ -86,7 +86,7 @@ export class AbstractDeliveryLayoutMappingResolverService
 
   protected constructor(aStore: ReduxRootStore, aLogSvc?: LoggerService) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

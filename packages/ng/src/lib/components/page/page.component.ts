@@ -16,7 +16,7 @@ import {
   createSingleSubject,
   isNil,
   isString,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   rxNext,
   rxPipe
@@ -237,7 +237,7 @@ export class PageComponent extends AbstractBaseComponent
     const id = aProvider[KEY_DEBUG];
 
     // get the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(

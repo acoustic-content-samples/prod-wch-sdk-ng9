@@ -2,8 +2,11 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Image, LoggerService } from '@acoustic-content-sdk/api';
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
-import { getRendition, ScaledImage } from '@acoustic-content-sdk/rendition-utils';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import {
+  getRendition,
+  ScaledImage
+} from '@acoustic-content-sdk/rendition-utils';
+import { boxLoggerService } from '@acoustic-content-sdk/utils';
 
 const LOGGER = 'WchRenditionService';
 
@@ -19,7 +22,7 @@ export class WchRenditionService {
   ) {
     const that = this;
 
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     const internalGetRendition = (

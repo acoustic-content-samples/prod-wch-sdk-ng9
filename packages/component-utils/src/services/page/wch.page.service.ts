@@ -12,7 +12,7 @@ import {
 import {
   cloneUrlConfig,
   KEY_RENDERING_CONTEXT,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFilterNotNil,
   rxCachedFunction,
@@ -45,7 +45,7 @@ export class AbstractWchPageService implements WchPageService {
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // next logger

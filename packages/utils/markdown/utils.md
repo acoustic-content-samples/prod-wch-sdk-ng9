@@ -267,6 +267,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [bind](./utils.bind.md) | Our simple implementation |
 |  [bindKey](./utils.bindkey.md) | The bind member magic |
 |  [bindMember](./utils.bindmember.md) | The bind member magic |
+|  [boxLoggerService](./utils.boxloggerservice.md) | Function to return the NOOP\_LOGGER service in case the logger service passed in is nil |
 |  [byProperty](./utils.byproperty.md) | Generates a predicate that compares a named property of an object with another predicate |
 |  [cancelExecuteLater](./utils.cancelexecutelater.md) |  |
 |  [cloneURL](./utils.cloneurl.md) | Clones the URL object into a bean |

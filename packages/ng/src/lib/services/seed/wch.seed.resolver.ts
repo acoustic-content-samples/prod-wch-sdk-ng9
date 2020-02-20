@@ -18,10 +18,10 @@ import {
 } from '@acoustic-content-sdk/ng-api';
 import {
   assertFromGenerator,
+  boxLoggerService,
   hashRandomIdentifier,
   isNotNil,
-  lazyGenerator,
-  NOOP_LOGGER_SERVICE
+  lazyGenerator
 } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Optional } from '@angular/core';
@@ -115,7 +115,7 @@ export class WchSeedResolver implements SeedResolver {
     aLogSvc?: LoggerService
   ) {
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // our seed cache
     const cache: Record<string, Observable<string>> = {};

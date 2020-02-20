@@ -11,7 +11,7 @@ import {
   isNil,
   isNotNil,
   jsonParse,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   pluckProperty,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -77,7 +77,7 @@ const loadDefaultSiteEpic: Epic = (
   { fetchText, logSvc }: SiteDependencies
 ) => {
   // log this
-  const logService = logSvc || NOOP_LOGGER_SERVICE;
+  const logService = boxLoggerService(logSvc);
   const logger = logService.get(LOGGER);
   // clear action
   const clearAction: Action = actionClearDefaultSite();

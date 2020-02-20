@@ -7,7 +7,7 @@ import {
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import { AbstractWchPageService } from '@acoustic-content-sdk/component-utils';
 import { ReactWchPageService } from '@acoustic-content-sdk/react-api';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import { boxLoggerService } from '@acoustic-content-sdk/utils';
 import { RouteComponentProps } from 'react-router';
 import { Observable } from 'rxjs';
 
@@ -33,7 +33,7 @@ export class ReactPageService extends AbstractWchPageService
     // default
     super(aDeliveryPageResolver, aUrlConfig$, aLogSvc);
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // delegate

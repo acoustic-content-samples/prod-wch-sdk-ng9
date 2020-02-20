@@ -7,6 +7,7 @@ import {
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import {
   BiFunction,
+  boxLoggerService,
   createCache,
   getProperty,
   hashRandomIdentifier,
@@ -18,7 +19,6 @@ import {
   isUndefined,
   longHash,
   mapArray,
-  NOOP_LOGGER_SERVICE,
   opDistinctUntilChanged,
   reduceArray,
   rxNext,
@@ -499,7 +499,7 @@ export function rxCreateReactRenderer(
   scheduler: SchedulerLike = queueScheduler
 ): UnaryFunction<string, Observable<ReactNode>> {
   // resolve the logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get('rxCreateReactRenderer');
   // render context
   const ctx: RenderContext = {

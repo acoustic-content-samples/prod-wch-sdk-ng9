@@ -15,7 +15,7 @@ import {
 } from '@acoustic-content-sdk/redux-store';
 import {
   isNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   rxCachedFunction,
   rxNext,
@@ -36,7 +36,7 @@ export class AbstractHandlebarsResolverService implements HandlebarsResolver {
 
   protected constructor(aStore: ReduxRootStore, aLogSvc?: LoggerService) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

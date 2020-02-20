@@ -24,7 +24,7 @@ import {
   isEqual,
   isNotEmpty,
   jsonStringify,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { join } from 'path';
@@ -108,7 +108,7 @@ export function createFetchTextOnFolder(
   aLogSvc?: LoggerService
 ): FetchText {
   // logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // the read callback
   const readDir = createReadDirectory(aFolder);

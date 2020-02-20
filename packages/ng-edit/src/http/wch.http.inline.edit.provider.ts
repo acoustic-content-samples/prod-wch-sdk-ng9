@@ -18,7 +18,7 @@ import { DEFAULT_INLINE_EDIT_URL } from '@acoustic-content-sdk/ng-edit-api';
 import {
   assertFromFunction,
   isFunction,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFilterNotNil,
   rxNext,
@@ -90,7 +90,7 @@ export function createWchHttpInlineEditProviderV2(
   };
 
   // logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
 
   const logger = logSvc.get(LOGGER);
 

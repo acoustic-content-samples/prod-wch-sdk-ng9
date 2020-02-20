@@ -14,7 +14,7 @@ import {
   anyToString,
   escapeHtml,
   isNotNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxNext,
   rxPipe,
@@ -106,7 +106,7 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   ) {
     super();
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // log
     const log: <T>(value: string) => MonoTypeOperatorFunction<T> = rxNext(

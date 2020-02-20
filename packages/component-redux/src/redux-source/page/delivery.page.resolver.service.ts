@@ -27,7 +27,7 @@ import {
   isEqual,
   luceneEscapeKeyValueOr,
   mapArray,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   opFilterNever,
   pluckProperty,
@@ -123,7 +123,7 @@ export class AbstractDeliveryPageResolverService
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

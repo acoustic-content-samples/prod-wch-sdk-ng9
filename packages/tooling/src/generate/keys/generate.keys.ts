@@ -10,19 +10,18 @@ import {
   LoggerService
 } from '@acoustic-content-sdk/api';
 import {
+  boxLoggerService,
   getPath,
   isArray,
   isNil,
   isNotNil,
   mapArray,
-  NOOP_LOGGER_SERVICE,
-  opShareLast,
   reduceArray,
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { combineLatest, MonoTypeOperatorFunction } from 'rxjs';
-import { filter, map, tap, first, mergeMap } from 'rxjs/operators';
+import { MonoTypeOperatorFunction } from 'rxjs';
+import { filter, map, mergeMap } from 'rxjs/operators';
 import { v4 } from 'uuid';
 
 import { ReadDirectory } from '../../dir/dir';
@@ -178,11 +177,9 @@ export function generateKeys(options: Schema) {
     };
   }
 
-  return (
-    aReadDir: ReadDirectory,
-    logSvc: LoggerService = NOOP_LOGGER_SERVICE
-  ) => {
-    // logging
+  return (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => {
+    // logger
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
@@ -201,7 +198,10 @@ export function generateKeys(options: Schema) {
     return rxPipe(
       types$,
       mergeMap((types) =>
-        rxPipe(content$, map((content) => createKeys(content, types, logger)))
+        rxPipe(
+          content$,
+          map((content) => createKeys(content, types, logger))
+        )
       ),
       log('content'),
       map((artifact) => wchToolsFileDescriptor(normalizeArtifact(artifact))),

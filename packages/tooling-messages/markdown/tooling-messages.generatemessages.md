@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function generateMessages(options: Schema): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>;
+export declare function generateMessages(options: Schema): (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>;
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ export declare function generateMessages(options: Schema): (aReadDir: ReadDirect
 
 <b>Returns:</b>
 
-`(aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>`
+`(aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>`
 

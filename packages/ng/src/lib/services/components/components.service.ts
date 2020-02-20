@@ -20,7 +20,7 @@ import {
   isString,
   kebabCase,
   LAYOUT_TYPE_ANGULAR,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxNext,
   rxPipe,
   thisThenThat,
@@ -429,7 +429,7 @@ export class ComponentsService implements ComponentTypeRefResolver {
     aLogSvc: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     // next logger

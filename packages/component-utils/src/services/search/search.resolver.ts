@@ -19,7 +19,7 @@ import {
   isString,
   jsonParse,
   luceneEscapeKeyValue,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   parseQueryString,
   queryToCanonicalString,
   queryToString,
@@ -105,7 +105,7 @@ export class AbstractDeliverySearchResolverService
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // next logger

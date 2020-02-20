@@ -10,13 +10,13 @@ import {
   rxReadTextFile
 } from '@acoustic-content-sdk/rx-utils';
 import {
+  boxLoggerService,
   getPath,
   isEqual,
   isNil,
   isNotNil,
   isString,
   LAYOUT_TYPE_HANDLEBARS,
-  NOOP_LOGGER_SERVICE,
   objectAssign,
   opShareLast,
   Predicate,
@@ -279,9 +279,10 @@ export function generate(
   aCreateLayout: UnaryFunction<AuthoringType, AuthoringLayoutItem>,
   aCreateLayoutMapping: UnaryFunction<AuthoringType, AuthoringLayoutMapping>,
   aReadDir: ReadDirectory,
-  logSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ) {
-  // logging
+  // logger
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

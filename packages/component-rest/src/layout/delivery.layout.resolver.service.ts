@@ -11,7 +11,7 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import {
   luceneEscapeKeyValue,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxCachedFunction
 } from '@acoustic-content-sdk/utils';
 import { Observable } from 'rxjs';
@@ -39,7 +39,7 @@ export class AbstractDeliveryLayoutResolverService
     aLogSvc?: LoggerService
   ) {
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // base keys
     const query = {

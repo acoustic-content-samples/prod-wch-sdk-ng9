@@ -17,7 +17,7 @@ import {
   arrayPush,
   isNotEmpty,
   isNotNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opShareLast,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -188,10 +188,11 @@ function createPackage(
 export function createPackageArtifacts(
   aHost: ReadTextFile,
   aSchema: CreatePackageFromArtifactsSchema = {},
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Observable<FileDescriptor<any>> {
   // logger
-  const logger = aLogSvc.get(LOGGER);
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // data dir
   const dataDir = `${ensureDirPath(aSchema.data || DEFAULT_DATA)}`;
   // parse the base directory

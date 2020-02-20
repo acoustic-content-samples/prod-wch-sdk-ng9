@@ -21,7 +21,7 @@ import {
   hashRandomIdentifier,
   isFunction,
   isNotNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opShareLast,
   rxNext,
   rxPipe,
@@ -178,7 +178,7 @@ export class AbstractWchInlineEditService
     const that = this;
 
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
 
     const done$ = (this.done$ = new Subject());
 

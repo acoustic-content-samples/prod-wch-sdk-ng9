@@ -24,7 +24,7 @@ Implementation of utility functions that help working with redux state.
 |  [removeRecord()](./redux-utils.removerecord.md) | Creates a reducer that removes a key from a record |
 |  [rxElementType(aTypeResolver, aLogSvc, aScheduler)](./redux-utils.rxelementtype.md) | Resolves the element type, either directly from the element or from the authoring type |
 |  [rxLogDiff(aLogger)](./redux-utils.rxlogdiff.md) |  |
-|  [rxResolveAuthoringItems(idOrItem, resolveItem, resolveAsset, logSvc, scheduler)](./redux-utils.rxresolveauthoringitems.md) | Resolves the item and all referenced items and assets |
+|  [rxResolveAuthoringItems(idOrItem, resolveItem, resolveAsset, aLogSvc, scheduler)](./redux-utils.rxresolveauthoringitems.md) | Resolves the item and all referenced items and assets |
 |  [selectByDeliveryId(aId)](./redux-utils.selectbydeliveryid.md) | Constructs a selector that validates that the ID is a delivery ID (not a draft ID) and selects based on that ID from the state |
 |  [serializeDiff(aOld, aNew, aSameStyle, aNewStyle, aDeletedStyle)](./redux-utils.serializediff.md) | Serializes the differences between two JSON objects |
 |  [sortAuthoringItems(aResult)](./redux-utils.sortauthoringitems.md) | Performs a topological sort on a set of resolved items |

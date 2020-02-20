@@ -1,8 +1,8 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 import {
+  boxLoggerService,
   isEqual,
-  NOOP_LOGGER_SERVICE,
   pluckPath
 } from '@acoustic-content-sdk/utils';
 
@@ -33,7 +33,7 @@ export function assertSameOrigin(
     // test the origin
     if (!isEqual(leftOrigin, rightOrigin)) {
       // logging
-      const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+      const logSvc = boxLoggerService(aLogSvc);
       const logger = logSvc.get(LOGGER);
       // bail out
       logger.error(`Origin [${leftOrigin}] does not match [${rightOrigin}]`);

@@ -7,7 +7,7 @@ import {
 import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import {
   KEY_RENDERING_CONTEXT,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -31,7 +31,7 @@ export class WchActivePageService implements ActivePageV2 {
     aLogSvc: LoggerService
   ) {
     // get the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

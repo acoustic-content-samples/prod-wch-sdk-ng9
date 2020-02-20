@@ -13,7 +13,7 @@ import {
   WchNgPageService
 } from '@acoustic-content-sdk/ng-api';
 import {
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxPipe,
   safeSwitchMap
@@ -64,7 +64,7 @@ export class WchSitesPageService extends AbstractWchPageService
     // default
     super(aDeliveryPageResolver, aUrlConfig$, aLogSvc);
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // delegate

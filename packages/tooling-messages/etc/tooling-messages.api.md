@@ -12,7 +12,7 @@ import { ReadDirectory } from '@acoustic-content-sdk/tooling';
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //
 // @public (undocumented)
-export function generateMessages(options: Schema): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>;
+export function generateMessages(options: Schema): (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<FileDescriptor<string>>;
 
 // @public
 export const VERSION: {

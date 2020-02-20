@@ -1,5 +1,9 @@
 import { Logger, LoggerService } from '@acoustic-content-sdk/api';
-import { bindMember, mapArray, NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import {
+  bindMember,
+  mapArray,
+  NOOP_LOGGER_SERVICE
+} from '@acoustic-content-sdk/utils';
 import { addLayout, configure, getLogger } from 'log4js';
 import { join, normalize } from 'path';
 

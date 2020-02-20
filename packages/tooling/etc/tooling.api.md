@@ -121,7 +121,7 @@ export function generateDataOverlay(aOptions: DataOverlaySchema): (aReadText: Re
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //
 // @public (undocumented)
-export function generateKeys(options: Schema_2): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>;
+export function generateKeys(options: Schema_2): (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>;
 
 // Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
 //

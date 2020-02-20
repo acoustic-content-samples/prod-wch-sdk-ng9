@@ -11,9 +11,9 @@ import {
 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import {
+  boxLoggerService,
   isNotEmpty,
   isString,
-  NOOP_LOGGER_SERVICE,
   opDistinctUntilChanged,
   opFilterNotNil,
   pluckProperty,
@@ -157,14 +157,15 @@ function typeFromAuthoringType(
  */
 export function rxElementType(
   aTypeResolver: UnaryFunction<string, Observable<AuthoringType>>,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   aScheduler: SchedulerLike = queueScheduler
 ): UnaryFunction<
   AccessorType,
   OperatorFunction<RenderingContext, ELEMENT_TYPE>
 > {
   // create the logger
-  const logger = aLogSvc.get(LOGGER);
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // log wrapper
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger,

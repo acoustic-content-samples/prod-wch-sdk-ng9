@@ -27,7 +27,7 @@ import {
   jsonParse,
   luceneEscapeKeyValueOr,
   mapArray,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   queryToString,
   rxPipe,
   SEARCH_MAX_ROWS
@@ -102,7 +102,7 @@ const loadBootstrapEpic: Epic = (
   { fetchText, logSvc }: BootstrapDependencies
 ) => {
   // create the logger
-  const loggerService = logSvc || NOOP_LOGGER_SERVICE;
+  const loggerService = boxLoggerService(logSvc);
   const logger = loggerService.get(LOGGER);
   // loader
   const loader: LoaderType = (id: string) =>

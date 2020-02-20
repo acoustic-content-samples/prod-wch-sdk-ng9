@@ -8,12 +8,12 @@ import {
   WriteText
 } from '@acoustic-content-sdk/rest-api';
 import {
+  boxLoggerService,
   idleFrameScheduler,
   isNil,
   isNotNil,
   isString,
   jsonStringify,
-  NOOP_LOGGER_SERVICE,
   pluckPath,
   rxPipe,
   typedPluck,
@@ -171,7 +171,7 @@ export function fetchTextAjax(
   aLoggerService?: LoggerService
 ): FetchText {
   // resolve the logger
-  const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLoggerService);
   // attach to the provider
   const fetchText$ = Promise.resolve(apiBase).then((url) =>
     internalFetchTextAjax(url, logSvc)
@@ -345,7 +345,7 @@ export function writeJsonAjax(
   aLoggerService?: LoggerService
 ): WriteText {
   // resolve the logger
-  const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLoggerService);
   // attach to the provider
   const writeText$ = Promise.resolve(apiBase).then((url) =>
     internalWriteJsonAjax(url, logSvc)

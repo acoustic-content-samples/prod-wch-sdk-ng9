@@ -7,7 +7,7 @@
 <b>Signature:</b>
 
 ```typescript
-export declare function generateKeys(options: Schema): (aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>;
+export declare function generateKeys(options: Schema): (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>;
 ```
 
 ## Parameters
@@ -18,5 +18,5 @@ export declare function generateKeys(options: Schema): (aReadDir: ReadDirectory,
 
 <b>Returns:</b>
 
-`(aReadDir: ReadDirectory, logSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>`
+`(aReadDir: ReadDirectory, aLogSvc?: LoggerService) => import("rxjs").Observable<import("../../public_api").FileDescriptor<AuthoringContentItem>>`
 

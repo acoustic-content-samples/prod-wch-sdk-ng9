@@ -19,7 +19,7 @@ import {
   createSingleSubject,
   DEFAULT_LAYOUT_MODE,
   KEY_LAYOUT_MODE,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   opDistinctUntilChanged,
   rxNext,
@@ -130,7 +130,7 @@ export class ContentComponent implements RenderingContextProviderV2 {
     const parentId = aParentProvider[KEY_DEBUG];
     const id = aProvider[KEY_DEBUG];
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // next logger

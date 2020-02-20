@@ -13,7 +13,7 @@ import {
 import {
   isNotNil,
   LAYOUT_TYPE_ANGULAR,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   rxNext,
   rxPipe,
@@ -149,7 +149,7 @@ export class AbstractComponentResolverService<TYPE>
     aLogSvc?: LoggerService
   ) {
     // logger service
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     /**

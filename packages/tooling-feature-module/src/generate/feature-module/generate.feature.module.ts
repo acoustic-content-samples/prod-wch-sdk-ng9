@@ -14,7 +14,7 @@ import {
 import {
   cloneDeep,
   isNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opShareLast,
   rxPipe,
   rxSelectProperty
@@ -66,7 +66,7 @@ export function generateFeatureModule(options: GenerateFeatureModuleSchema) {
     aLogSvc?: LoggerService
   ): Observable<FileDescriptor<string>> => {
     // some logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // logging
     const logFile = () =>

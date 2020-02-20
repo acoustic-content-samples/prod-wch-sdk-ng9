@@ -5,11 +5,7 @@ import {
   rxSelect,
   rxStore
 } from '@acoustic-content-sdk/redux-store';
-import {
-  NOOP_LOGGER_SERVICE,
-  rxNext,
-  rxPipe
-} from '@acoustic-content-sdk/utils';
+import { boxLoggerService, rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 
 const LOGGER = 'AbstractAuthStatusService';
@@ -20,7 +16,7 @@ export class AbstractAuthStatusService implements AuthStatus {
 
   protected constructor(aStore: ReduxRootStore, aLogSvc?: LoggerService) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

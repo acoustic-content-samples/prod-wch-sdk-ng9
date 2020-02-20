@@ -1,19 +1,18 @@
-import { Logger, LoggerService } from "@acoustic-content-sdk/api";
+import { Logger, LoggerService } from '@acoustic-content-sdk/api';
 import {
   arrayPush,
   BiFunction,
+  boxLoggerService,
   forEach,
   Generator,
-  isNil,
-  isNotNil,
-  NOOP_LOGGER_SERVICE,
-  objectKeys,
-  parsePath,
   getPath,
   isEqual,
-  isUndefined
-} from "@acoustic-content-sdk/utils";
-import { UnaryFunction } from "rxjs";
+  isNil,
+  isNotNil,
+  objectKeys,
+  parsePath
+} from '@acoustic-content-sdk/utils';
+import { UnaryFunction } from 'rxjs';
 
 const createNew = (aIsArray: boolean) => (aIsArray ? [] : {});
 const createCopy = (aIsArray: boolean, aSrc: any) =>
@@ -61,12 +60,12 @@ export interface Updater<T> {
   get: Generator<T>;
 }
 
-const SEPARATOR = "/";
+const SEPARATOR = '/';
 
 const createPrefix = (aPath: string[], aIdx: number) =>
   aPath.slice(0, aIdx).join(SEPARATOR);
 
-const KEY_ROOT = "";
+const KEY_ROOT = '';
 
 // list of nodes that have already been cloned
 function getModifiable(
@@ -102,7 +101,7 @@ function getModifiable(
     aLogger
   );
   // log this
-  aLogger.info("Shallow clone of", aPath);
+  aLogger.info('Shallow clone of', aPath);
   // test for an existing key
   const existing = parent[key];
   const modified = isNotNil(existing)
@@ -124,7 +123,7 @@ function invalidate(aPath: string[], aIdx: number, aMod: Record<string, any>) {
   let prefix = createPrefix(aPath, aIdx);
   delete aMod[prefix];
   prefix += SEPARATOR;
-  forEach(objectKeys(aMod), modKey => {
+  forEach(objectKeys(aMod), (modKey) => {
     if (modKey.startsWith(prefix)) {
       delete aMod[modKey];
     }
@@ -162,7 +161,7 @@ function setValue<T>(
   aLogger: Logger
 ): T {
   // log
-  aLogger.info("setValue", aAccessor, aNewValue);
+  aLogger.info('setValue', aAccessor, aNewValue);
   // parse
   const path = parsePath(aAccessor);
   // check if we need to update
@@ -202,7 +201,7 @@ function addValue<T>(
   aLogger: Logger
 ): T {
   // log
-  aLogger.info("addValue", aAccessor, aNewValue);
+  aLogger.info('addValue', aAccessor, aNewValue);
   // dispatch for the delete case
   if (isNil(aNewValue)) {
     return setValue(aAccessor, aNewValue, aMod, aRoot, aLogger);
@@ -234,7 +233,7 @@ function addValue<T>(
   return aMod[KEY_ROOT];
 }
 
-const LOGGER = "JsonUpdater";
+const LOGGER = 'JsonUpdater';
 
 /**
  * Constructs a function that updates one or more values in a json object.
@@ -245,10 +244,11 @@ const LOGGER = "JsonUpdater";
  */
 export function createUpdater<T>(
   aValue: T,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Updater<T> {
   // logger
-  const logger = aLogSvc.get(LOGGER);
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // list of modifications
   const mod: Record<string, any> = {};
   // curry
@@ -257,7 +257,7 @@ export function createUpdater<T>(
   const set = (aAccessor, aNewValue) =>
     setValue<T>(aAccessor, aNewValue, mod, aValue, logger);
   const get = () => mod[KEY_ROOT] || aValue;
-  const del = aAccessor => set(aAccessor, undefined);
+  const del = (aAccessor) => set(aAccessor, undefined);
   // returns the new set
   return { add, set, get, del };
 }

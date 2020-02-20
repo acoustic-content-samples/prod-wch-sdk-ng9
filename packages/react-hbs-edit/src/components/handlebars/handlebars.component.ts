@@ -11,7 +11,7 @@ import {
 import {
   cloneUrlConfig,
   KEY_LAYOUT_MODE,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { Observable, SchedulerLike } from 'rxjs';
@@ -56,7 +56,7 @@ export function createHandlebarsComponent(
   aScheduler?: SchedulerLike
 ): ReactComponent<HandlebarsComponentProps> {
   // resolve the logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   // access the url config
   const store$ = rxStore(aStore);
   // context

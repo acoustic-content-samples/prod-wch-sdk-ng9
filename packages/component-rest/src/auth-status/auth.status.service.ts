@@ -10,7 +10,7 @@ import {
   FALSE$,
   isString,
   jsonParse,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opShareLast,
   rxNext,
@@ -61,7 +61,7 @@ export class AbstractAuthStatusService implements AuthStatus {
    */
   protected constructor(aFetchText: FetchText, aLogSvc?: LoggerService) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

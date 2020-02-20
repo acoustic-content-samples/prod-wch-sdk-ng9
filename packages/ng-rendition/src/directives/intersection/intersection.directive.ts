@@ -16,7 +16,7 @@ import {
   createConsumerOnSubject,
   createSetterOnSubject,
   identity,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxNext,
   rxPipe
@@ -68,7 +68,7 @@ export class IntersectionDirective extends AbstractLifeCycleComponent
     const setThreshold = createSetterOnSubject(thresholdSubject);
     // quick pointer
     const that = this;
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     // next logger
@@ -97,9 +97,7 @@ export class IntersectionDirective extends AbstractLifeCycleComponent
         log('options')
       );
       // construct the observer
-      const intersectionObserverEntry$: Observable<
-        IntersectionObserverEntry
-      > = rxPipe(
+      const intersectionObserverEntry$: Observable<IntersectionObserverEntry> = rxPipe(
         combineLatest([options$, onInit$]),
         // when the options change, reconnect
         switchMap<

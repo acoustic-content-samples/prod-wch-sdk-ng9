@@ -2,7 +2,7 @@ import { LoggerService, UrlConfig } from '@acoustic-content-sdk/api';
 import { fetchTextAjax } from '@acoustic-content-sdk/redux-ajax';
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 import {
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opFilterNotNil,
   rxPipe,
   selectApiUrl
@@ -23,7 +23,7 @@ export function createFetchText(
   aLogSvc?: LoggerService
 ): FetchText {
   // logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   // provider the API URL
   const apiUrl$ = rxPipe(
     aUrlConfig$,

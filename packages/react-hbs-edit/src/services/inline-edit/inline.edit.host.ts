@@ -17,7 +17,7 @@ import {
 import {
   forEach,
   isNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   parsePath,
   pluckPath,
   rxNext,
@@ -207,7 +207,7 @@ export function createInlineEditHost(
   aLogSvc?: LoggerService
 ): InlineEditHost {
   // resolve the logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // access the logger
   const log: <T>(...aArgs: any[]) => MonoTypeOperatorFunction<T> = rxNext(

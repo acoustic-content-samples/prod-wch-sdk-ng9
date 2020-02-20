@@ -7,9 +7,9 @@ import {
   SpawnLine
 } from '@acoustic-content-sdk/rx-utils';
 import {
+  boxLoggerService,
   createError,
   isNotNil,
-  NOOP_LOGGER_SERVICE,
   rxNext,
   UNDEFINED$
 } from '@acoustic-content-sdk/utils';
@@ -186,10 +186,16 @@ export function rxExecuteScript(
 export function rxExecuteNg(
   aPkgDir: string,
   aArgs: string[],
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Observable<SpawnLine> {
   // dispatch
-  return rxExecuteScript(aPkgDir, 'ng', '@angular/cli', aArgs, aLogSvc);
+  return rxExecuteScript(
+    aPkgDir,
+    'ng',
+    '@angular/cli',
+    aArgs,
+    boxLoggerService(aLogSvc)
+  );
 }
 
 /**
@@ -205,7 +211,7 @@ export function rxExecuteNg(
 export function rxExecuteCli(
   aPkgDir: string,
   aArgs: string[],
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Observable<SpawnLine> {
   // dispatch
   return rxExecuteScript(
@@ -213,6 +219,6 @@ export function rxExecuteCli(
     'acoustic-content-sdk-cli',
     '@acoustic-content-sdk/cli',
     aArgs,
-    aLogSvc
+    boxLoggerService(aLogSvc)
   );
 }

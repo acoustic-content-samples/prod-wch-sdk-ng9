@@ -1,7 +1,7 @@
 import { BaseAuthoringItem, LoggerService } from '@acoustic-content-sdk/api';
 import {
+  boxLoggerService,
   jsonParse,
-  NOOP_LOGGER_SERVICE,
   Predicate,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -39,9 +39,10 @@ function generate(
   aDataDir: string,
   aItemFilter: Predicate<BaseAuthoringItem>,
   aReadDir: ReadDirectory,
-  logSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Observable<FileDescriptor<BaseAuthoringItem>> {
-  // logging
+  // logger
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // make sure the data dir does not end with a slash
   const dataDir = ensureDirPath(aDataDir);

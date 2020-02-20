@@ -4,12 +4,8 @@ import {
   WCH_TOKEN_DELIVERY_PAGE_RESOLVER,
   WCH_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
-import {
-  NOOP_LOGGER_SERVICE,
-  rxNext,
-  TRUE$
-} from '@acoustic-content-sdk/utils';
-import { Inject, Injectable } from '@angular/core';
+import { boxLoggerService, rxNext, TRUE$ } from '@acoustic-content-sdk/utils';
+import { Inject, Injectable, Optional } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -30,10 +26,12 @@ export class WchSelectFirstRootPageGuard implements CanActivate {
     @Inject(WCH_TOKEN_DELIVERY_PAGE_RESOLVER)
     private aDeliveryPageResolver: DeliveryPageResolver,
     private aRouter: Router,
-    @Inject(WCH_TOKEN_LOGGER_SERVICE) aLogSvc: LoggerService
+    @Optional()
+    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    aLogSvc: LoggerService
   ) {
     // access the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     this.logger = logSvc.get(LOGGER);
   }
 

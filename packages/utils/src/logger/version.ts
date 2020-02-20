@@ -4,7 +4,7 @@ import {
   WchSdkVersion
 } from '@acoustic-content-sdk/api';
 
-import { NOOP_LOGGER_SERVICE } from './noop.logger.service';
+import { boxLoggerService } from './noop.logger.service';
 
 /**
  * Logs version information for a module
@@ -19,7 +19,7 @@ export function logModule(
   aLogSvc?: LoggerService
 ) {
   // logger service
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(aModule);
   // log the startup
   logger.info(createVersionString(aVersion));

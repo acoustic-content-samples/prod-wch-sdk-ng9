@@ -5,10 +5,10 @@ import {
   WCH_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
+  boxLoggerService,
   isEqual,
   isNotNil,
-  LAYOUT_TYPE_HANDLEBARS,
-  NOOP_LOGGER_SERVICE
+  LAYOUT_TYPE_HANDLEBARS
 } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
@@ -44,7 +44,7 @@ export class HandlebarsComponentResolver implements ComponentTypeRefResolver {
     aLogSvc: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     const getTypeByLayout = (

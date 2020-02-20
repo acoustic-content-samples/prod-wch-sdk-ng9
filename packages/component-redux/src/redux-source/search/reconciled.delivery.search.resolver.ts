@@ -37,7 +37,7 @@ import {
   isNotEmpty,
   isNotNil,
   mapArray,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   objectAssign,
   opDistinctUntilChanged,
   parseQueryString,
@@ -281,7 +281,7 @@ export class AbstractDeliverySearchResolverService
     aLoggerService?: LoggerService
   ) {
     // sanity check
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLoggerService);
     const logger = logSvc.get(LOGGER);
     // reactive logging
     const log: <T>(value: string) => MonoTypeOperatorFunction<T> = rxNext(

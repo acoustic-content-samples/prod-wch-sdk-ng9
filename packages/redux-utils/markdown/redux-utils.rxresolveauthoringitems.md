@@ -9,7 +9,7 @@ Resolves the item and all referenced items and assets
 <b>Signature:</b>
 
 ```typescript
-export declare function rxResolveAuthoringItems(idOrItem: IdOrItem, resolveItem: ResolveAuthoringContentItem, resolveAsset: ResolveAuthoringAsset, logSvc?: LoggerService, scheduler?: SchedulerLike): Observable<ResolutionResult>;
+export declare function rxResolveAuthoringItems(idOrItem: IdOrItem, resolveItem: ResolveAuthoringContentItem, resolveAsset: ResolveAuthoringAsset, aLogSvc?: LoggerService, scheduler?: SchedulerLike): Observable<ResolutionResult>;
 ```
 
 ## Parameters
@@ -19,7 +19,7 @@ export declare function rxResolveAuthoringItems(idOrItem: IdOrItem, resolveItem:
 |  idOrItem | <code>IdOrItem</code> |  |
 |  resolveItem | <code>ResolveAuthoringContentItem</code> | callback to resolve a content item |
 |  resolveAsset | <code>ResolveAuthoringAsset</code> | callback to resolve an asset |
-|  logSvc | <code>LoggerService</code> | logger service |
+|  aLogSvc | <code>LoggerService</code> |  |
 |  scheduler | <code>SchedulerLike</code> | scheduler for recursive calls |
 
 <b>Returns:</b>

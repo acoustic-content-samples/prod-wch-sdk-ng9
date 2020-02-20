@@ -21,7 +21,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { Maybe, partialFirst } from '../js/js.core';
 import { arrayFind } from '../js/js.utils';
 import { pluckProperty } from '../js/pluck';
-import { NOOP_LOGGER_SERVICE } from '../logger/noop.logger.service';
+import { boxLoggerService } from '../logger/noop.logger.service';
 import { rxNext } from '../logger/rx.logger';
 import { opDistinctUntilChanged } from '../operators/operators';
 import { pluckPath } from '../path/path';
@@ -134,11 +134,12 @@ export function rxLayoutIdFromRenderingContext(
     string,
     Observable<AuthoringLayoutMapping>
   >,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   aScheduler: SchedulerLike = queueScheduler
 ): Observable<string> {
   // logger
-  const logger = aLogSvc.get('rxLayoutIdFromRenderingContext');
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get('rxLayoutIdFromRenderingContext');
   // sanity check
   if (isNil(aRenderingContext)) {
     return UNDEFINED$;

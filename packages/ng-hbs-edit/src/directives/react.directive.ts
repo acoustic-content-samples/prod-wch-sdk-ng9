@@ -4,7 +4,7 @@ import { ReactModule } from '@acoustic-content-sdk/react-api';
 import {
   createSetterOnSubject,
   createSingleSubject,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -49,7 +49,7 @@ export class ReactDirective implements OnDestroy, AfterViewInit {
     aLogSvc: LoggerService
   ) {
     // initialize logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     this.logger = logSvc.get(LOGGER);
     // attach to the input
     const contentItemIdSubject = createSingleSubject<string>();

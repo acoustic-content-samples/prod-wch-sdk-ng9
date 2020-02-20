@@ -7,10 +7,10 @@ import {
   ReactComponentProps
 } from '@acoustic-content-sdk/react-api';
 import {
+  boxLoggerService,
   isNotNil,
   isString,
-  isStringArray,
-  NOOP_LOGGER_SERVICE
+  isStringArray
 } from '@acoustic-content-sdk/utils';
 
 import { DefaultComponent } from '../../components/default/default.component';
@@ -41,7 +41,7 @@ export class ReactComponentRegistryService
   ) {
     super(defaultComponent, isEqualComponentTypeRef, aLogSvc);
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // the old function
     const oldRegisterType = this.registerType.bind(this);

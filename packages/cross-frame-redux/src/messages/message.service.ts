@@ -3,7 +3,7 @@ import {
   Consumer,
   isNotNil,
   jsonParse,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxLogAll,
   rxPipe,
   UNDEFINED_TYPE
@@ -53,7 +53,7 @@ export class MessageService {
 
   constructor(aOther: Window, aLogSvc?: LoggerService) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxLogAll(

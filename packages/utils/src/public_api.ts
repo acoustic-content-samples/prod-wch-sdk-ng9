@@ -215,7 +215,10 @@ export {
   createEmptyLogger
 } from './logger/console.logger';
 export { createLoggerService } from './logger/logger.service';
-export { NOOP_LOGGER_SERVICE } from './logger/noop.logger.service';
+export {
+  boxLoggerService,
+  NOOP_LOGGER_SERVICE
+} from './logger/noop.logger.service';
 export {
   rxError,
   rxLog,

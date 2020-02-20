@@ -4,6 +4,7 @@ import {
   InlineEditSelectionProvider
 } from '@acoustic-content-sdk/edit-api';
 import {
+  boxLoggerService,
   createSingleSubject,
   filterTypeOf,
   forEach,
@@ -12,7 +13,6 @@ import {
   isNotEmpty,
   isNotNil,
   Maybe,
-  NOOP_LOGGER_SERVICE,
   opDistinctUntilChanged,
   opShareLast,
   partialSecond,
@@ -42,7 +42,7 @@ export function getInlineEditSelection(
   aLogSvc?: LoggerService
 ): Observable<string> {
   // logging
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // logging
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
@@ -146,7 +146,7 @@ export class AbstractInlineEditSelectionService implements Unsubscribable {
     aLogSvc?: LoggerService
   ) {
     // some logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // check if we have a doc
     if (isNotNil(aDocument) && isFunction(aDocument.querySelectorAll)) {

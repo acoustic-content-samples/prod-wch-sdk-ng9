@@ -16,7 +16,7 @@ import {
   isString,
   localizedText,
   Maybe,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFalse,
   opFilterNotNil,
@@ -118,7 +118,7 @@ export class WchPlaceholderImpl implements WchPlaceholder {
   ) {
     const that = this;
     // logger
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLoggerService);
 
     // check if inline edit is available
     const isPreviewMode$ = rxPipe(

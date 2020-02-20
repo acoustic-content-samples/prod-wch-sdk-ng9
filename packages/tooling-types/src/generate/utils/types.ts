@@ -8,7 +8,7 @@ import {
   rxFindAuthoringTypes
 } from '@acoustic-content-sdk/tooling';
 import {
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   objectAssign,
   opShareLast,
   Predicate,
@@ -51,12 +51,13 @@ export function generate(
   aReadDir: ReadDirectory,
   aReadText: ReadTextFile,
   aCompiler: UnaryFunction<string, TemplateType>,
-  logSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): Observable<FileDescriptor<string>> {
+  // logger
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // base folders
   const base$ = of(['/src']);
-  // logging
-  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // log the filename

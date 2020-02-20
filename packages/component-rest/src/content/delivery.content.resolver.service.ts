@@ -13,7 +13,7 @@ import {
 import {
   createDeliveryContentItem,
   luceneEscapeKeyValue,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxCachedFunction,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -43,7 +43,7 @@ export class AbstractDeliveryContentResolverService
     aLogSvc?: LoggerService
   ) {
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // base keys
     const query = {

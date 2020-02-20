@@ -25,7 +25,7 @@ import {
   isAbsoluteURL,
   isNotEmpty,
   isString,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFilterNotNil,
   rxNext,
@@ -184,7 +184,7 @@ export class RenditionDirective extends AbstractLifeCycleComponent
     // quick check
     const that = this;
 
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     // next logger

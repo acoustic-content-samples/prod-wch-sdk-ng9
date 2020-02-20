@@ -23,7 +23,7 @@ import {
   Generator,
   isString,
   localizedText,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFalse,
   opFilterNotNil,
@@ -194,7 +194,7 @@ export class WchEditablePlaceholderDirective
     );
 
     // logging
-    const logSvc = aLoggerService || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLoggerService);
     // check if inline edit is available
     const isPreviewMode$ = rxPipe(
       aUrlConfig$,

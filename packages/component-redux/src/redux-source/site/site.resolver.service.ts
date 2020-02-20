@@ -20,7 +20,7 @@ import {
 } from '@acoustic-content-sdk/redux-store';
 import {
   isNotNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   opFilterNotNil,
   rxNext,
@@ -53,7 +53,7 @@ export class AbstractSiteResolverService implements DeliverySiteResolver {
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // construct a logger
     const logger = logSvc.get(LOGGER);
     // next logger

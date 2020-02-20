@@ -5,7 +5,7 @@ import {
   ReduxRootStore
 } from '@acoustic-content-sdk/redux-store';
 import { FetchText } from '@acoustic-content-sdk/rest-api';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import { boxLoggerService } from '@acoustic-content-sdk/utils';
 import { createFetchTextOnFolder } from '../fetch-text/fetch.text';
 
 export function createReduxRootStoreOnFolder(
@@ -13,7 +13,7 @@ export function createReduxRootStoreOnFolder(
   aLogSvc?: LoggerService
 ): ReduxRootStore {
   // construct the services
-  const logSvc: LoggerService = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc: LoggerService = boxLoggerService(aLogSvc);
   const fetchText: FetchText = createFetchTextOnFolder(aFolder, logSvc);
   const templateCompiler = createCompiler();
   // create the store

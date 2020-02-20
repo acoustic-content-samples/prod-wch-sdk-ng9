@@ -25,7 +25,6 @@ import {
   deepEquals,
   getPath,
   mergeObjects,
-  NOOP_LOGGER_SERVICE,
   objectAssign,
   opShareLast,
   reduceForIn,
@@ -225,7 +224,10 @@ function writeSingleJsonFile<T>(
     catchError((error) => of(false))
   );
   // write
-  return rxPipe(equals$, mergeMap((eq) => (eq ? of(aEntry) : write())));
+  return rxPipe(
+    equals$,
+    mergeMap((eq) => (eq ? of(aEntry) : write()))
+  );
 }
 
 /**
@@ -432,7 +434,7 @@ export function rxWriteWchToolsOptions(
 export function rxExecuteWchTools(
   aPkgDir: string,
   aArgs: string[],
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc: LoggerService
 ): Observable<SpawnLine> {
   // dispatch to the more generic method
   return rxExecuteScript(aPkgDir, 'wchtools', 'wchtools-cli', aArgs, aLogSvc);

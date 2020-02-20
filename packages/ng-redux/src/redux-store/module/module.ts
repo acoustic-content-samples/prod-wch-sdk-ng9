@@ -6,7 +6,7 @@ import {
   createReduxRootStore,
   ReduxRootStore
 } from '@acoustic-content-sdk/redux-store';
-import { NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
+import { boxLoggerService } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional } from '@angular/core';
@@ -20,7 +20,7 @@ export function createStore(
   aLogSvc?: LoggerService
 ): ReduxRootStore {
   // resolve the logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   // our redux feature
   const storeFeature = createStoreFeature(msgService);
   const store = createReduxRootStore({ logSvc });

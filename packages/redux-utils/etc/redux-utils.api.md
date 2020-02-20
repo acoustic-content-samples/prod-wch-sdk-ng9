@@ -166,7 +166,7 @@ export function rxLogDiff<T>(aLogger: Logger): MonoTypeOperatorFunction<T>;
 // Warning: (ae-forgotten-export) The symbol "IdOrItem" needs to be exported by the entry point public_api.d.ts
 //
 // @public
-export function rxResolveAuthoringItems(idOrItem: IdOrItem, resolveItem: ResolveAuthoringContentItem, resolveAsset: ResolveAuthoringAsset, logSvc?: LoggerService, scheduler?: SchedulerLike): Observable<ResolutionResult>;
+export function rxResolveAuthoringItems(idOrItem: IdOrItem, resolveItem: ResolveAuthoringContentItem, resolveAsset: ResolveAuthoringAsset, aLogSvc?: LoggerService, scheduler?: SchedulerLike): Observable<ResolutionResult>;
 
 // @public
 export function selectByDeliveryId<T>(aId?: string): UnaryFunction<Record<string, T>, T>;

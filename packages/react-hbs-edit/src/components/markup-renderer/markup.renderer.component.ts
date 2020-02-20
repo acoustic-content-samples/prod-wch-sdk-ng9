@@ -6,7 +6,7 @@ import { ReduxRootStore, rxDispatch } from '@acoustic-content-sdk/redux-store';
 import {
   isNotEmpty,
   KEY_LAYOUT_MODE,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxNext,
   rxPipe,
@@ -49,7 +49,7 @@ export function createMarkupRendererComponent(
   aScheduler?: SchedulerLike
 ): ReactComponent<MarkupRendererComponentProps> {
   // logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

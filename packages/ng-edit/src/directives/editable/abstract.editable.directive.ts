@@ -23,7 +23,7 @@ import {
   identity,
   isString,
   Maybe,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFalse,
   opFilterNotNil,
@@ -169,7 +169,7 @@ export abstract class AbstractWchEditableDirective
     aLogSvc?: LoggerService
   ) {
     // logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
 
     const inlineEditService =
       aInlineEditService || EMPTY_WCH_INLINE_EDIT_SERVICE;

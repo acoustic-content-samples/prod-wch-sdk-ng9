@@ -6,7 +6,7 @@ import {
 import { ProtectedContent } from '@acoustic-content-sdk/component-api';
 import {
   isNotNil,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opShareLast,
   rxNext,
@@ -29,7 +29,7 @@ export class AbstractProtectedContentService implements ProtectedContent {
     aLogSvc?: LoggerService
   ) {
     // logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

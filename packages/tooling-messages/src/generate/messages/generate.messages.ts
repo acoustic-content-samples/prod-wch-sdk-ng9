@@ -10,12 +10,12 @@ import {
   ReadDirectoryEntry
 } from '@acoustic-content-sdk/tooling';
 import {
+  boxLoggerService,
   forEach,
   forIn,
   isNotNil,
   jsonParse,
   jsonStringify,
-  NOOP_LOGGER_SERVICE,
   objectAssign,
   objectKeys,
   reduceForIn,
@@ -25,6 +25,7 @@ import {
 import { parse } from 'path';
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { map, reduce } from 'rxjs/operators';
+
 import { Schema } from './schema';
 
 const LOGGER = 'generate.messages';
@@ -302,11 +303,9 @@ export function generateMessages(options: Schema) {
     return dst.join('\n');
   }
 
-  return (
-    aReadDir: ReadDirectory,
-    logSvc: LoggerService = NOOP_LOGGER_SERVICE
-  ) => {
-    // logging
+  return (aReadDir: ReadDirectory, aLogSvc?: LoggerService) => {
+    // logger
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

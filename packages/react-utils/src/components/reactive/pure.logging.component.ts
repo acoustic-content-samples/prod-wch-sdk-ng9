@@ -1,6 +1,9 @@
 import { Logger, LoggerService } from '@acoustic-content-sdk/api';
-import { hashRandomIdentifier, NOOP_LOGGER_SERVICE } from '@acoustic-content-sdk/utils';
-import { ComponentClass, createElement, ErrorInfo, PureComponent } from 'react';
+import {
+  boxLoggerService,
+  hashRandomIdentifier
+} from '@acoustic-content-sdk/utils';
+import { ErrorInfo, PureComponent } from 'react';
 import { createPatch } from 'rfc6902';
 
 import { isDevelopment } from '../../utils/env';
@@ -31,7 +34,7 @@ export abstract class PureLoggingComponent<
   ) {
     super(aProps);
     // access props
-    const logSvc = aProps.logSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aProps.logSvc);
     const logger = logSvc.get(aName);
     // create an instance id
     const id = hashRandomIdentifier();

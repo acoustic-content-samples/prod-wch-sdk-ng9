@@ -1,7 +1,13 @@
-import { createVersionString, Layout, Logger, LoggerService } from '@acoustic-content-sdk/api';
+import {
+  createVersionString,
+  Layout,
+  Logger,
+  LoggerService
+} from '@acoustic-content-sdk/api';
 import { AbstractComponentsRegistry } from '@acoustic-content-sdk/component-api';
 import {
   assertObject,
+  boxLoggerService,
   createSingleSubject,
   DEFAULT_LAYOUT_MODE,
   EqualsPredicate,
@@ -11,15 +17,13 @@ import {
   isString,
   kebabCase,
   LAYOUT_TYPE_ANGULAR,
-  NOOP_LOGGER_SERVICE,
   rxNext,
   rxPipe,
   thisThenThat,
-  wchBoxLayoutMode,
+  wchBoxLayoutMode
 } from '@acoustic-content-sdk/utils';
 import { EMPTY, MonoTypeOperatorFunction, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
-
 import { cmpGetSelectors } from '../../utils/component.utils';
 import { MODULE, VERSION } from './../../version';
 
@@ -373,7 +377,7 @@ export class AbstractComponentsService<TYPE>
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     // next logger

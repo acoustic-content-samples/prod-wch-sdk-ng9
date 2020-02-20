@@ -13,7 +13,7 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import {
   bindMember,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   rxLayoutIdFromRenderingContext,
   rxNext,
@@ -37,7 +37,7 @@ export class AbstractLayoutResolverService implements LayoutResolver {
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
     // next logger

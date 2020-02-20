@@ -9,11 +9,7 @@ import {
   rxSelect,
   rxStore
 } from '@acoustic-content-sdk/redux-store';
-import {
-  NOOP_LOGGER_SERVICE,
-  rxNext,
-  rxPipe
-} from '@acoustic-content-sdk/utils';
+import { boxLoggerService, rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 
 const LOGGER = 'AbstractInlineEditSelectionProvider';
@@ -24,7 +20,7 @@ export class AbstractInlineEditSelectionProvider
 
   protected constructor(aStore: ReduxRootStore, aLogSvc?: LoggerService) {
     // some logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
     // attach to the store

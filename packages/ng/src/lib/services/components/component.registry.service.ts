@@ -10,11 +10,11 @@ import {
 } from '@acoustic-content-sdk/ng-api';
 import {
   bindMember,
+  boxLoggerService,
   isFunction,
   isPlainObject,
   isString,
-  isStringArray,
-  NOOP_LOGGER_SERVICE
+  isStringArray
 } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional, Type } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -55,7 +55,7 @@ export class ComponentRegistryService implements ComponentRegistry {
     aLogSvc: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // delegate function
     const delegateRegisterType: (

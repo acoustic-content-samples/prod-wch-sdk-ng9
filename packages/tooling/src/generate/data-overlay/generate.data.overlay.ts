@@ -1,6 +1,6 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import {
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   rxNext,
   rxPipe,
   unary
@@ -39,7 +39,7 @@ export function generateDataOverlay(aOptions: DataOverlaySchema) {
     aLogSvc?: LoggerService
   ): Observable<FileDescriptor<Buffer>> => {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

@@ -1,11 +1,11 @@
 import { Logger, LoggerService } from '@acoustic-content-sdk/api';
 import {
+  boxLoggerService,
   getProperty,
   hashRandomIdentifier,
   isNil,
   isNotNil,
   mapArray,
-  NOOP_LOGGER_SERVICE,
   opDeepDistinctUntilChanged,
   opDistinctUntilChanged,
   opReplayLast,
@@ -111,10 +111,11 @@ const boxId = (aId?: string) => (isNotNil(aId) ? aId : ROOT_ID);
  */
 export function getNavSelectors(
   aJson$: Observable<NavigationJson>,
-  aLogSvc: LoggerService = NOOP_LOGGER_SERVICE
+  aLogSvc?: LoggerService
 ): NavSelectors {
   // logging
-  const logger = aLogSvc.get(LOGGER);
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
 

@@ -9,7 +9,7 @@ import { getSourceSet } from '@acoustic-content-sdk/rendition-utils';
 import {
   createSetterOnSubject,
   createSingleSubject,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   opFilterNotNil,
   rxNext,
@@ -53,7 +53,7 @@ export class SrcSetDirective extends AbstractLifeCycleComponent
     // quick check
     const that = this;
 
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     // next logger

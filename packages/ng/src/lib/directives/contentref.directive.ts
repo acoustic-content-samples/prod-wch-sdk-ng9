@@ -16,7 +16,7 @@ import {
   isNotNil,
   KEY_LAYOUT_MODE,
   KEY_RENDERING_CONTEXT,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opFilterNotNil,
   pluckPath,
   rxPipe,
@@ -296,7 +296,7 @@ export class ContentRefDirective implements OnDestroy {
     aLogSvc: LoggerService
   ) {
     // logging
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
 
     const that = this;

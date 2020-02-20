@@ -10,11 +10,11 @@ import {
   WCH_TOKEN_INLINE_EDIT_PROVIDER
 } from '@acoustic-content-sdk/ng-edit-api';
 import {
+  boxLoggerService,
   createError,
   createObservableAdaptor,
   isNil,
-  logModule,
-  NOOP_LOGGER_SERVICE
+  logModule
 } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
@@ -72,7 +72,7 @@ export function getInlineEditProvider(
   aLogSvc: LoggerService
 ): Observable<WchInlineEditProviderV2> {
   // setup some logging
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // dispatch
   return defer(() => internalGetInlineEditProvider(aHostWindow, logger));

@@ -8,12 +8,12 @@ import {
   arrayPush,
   assignObject,
   BiFunction,
+  boxLoggerService,
   isEmpty,
   isNotNil,
   isString,
   mapArray,
   Maybe,
-  NOOP_LOGGER_SERVICE,
   objectAssign,
   objectKeys,
   opFilterNotNil,
@@ -34,16 +34,16 @@ import {
 } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 
+import {
+  getDeliveryId,
+  getDeliveryIdFromAuthoringItem
+} from '../draft/draft.utils';
 import { AuthoringItem, cloneItems as oldCloneItems } from './auth.clone';
 import {
   isAuthoringContentItem,
   referencedAssets,
   referencedContent
 } from './auth.content.utils';
-import {
-  getDeliveryIdFromAuthoringItem,
-  getDeliveryId
-} from '../draft/draft.utils';
 
 export type ResolveAuthoringContentItem = UnaryFunction<
   string,
@@ -67,7 +67,7 @@ declare type Cycles = Record<string, string>;
 const LOGGER = 'RxClone';
 
 function safeCombineLatest<T>(
-  aInput: Array<Observable<T>>,
+  aInput: Observable<T>[],
   aScheduler: SchedulerLike
 ): Observable<T[]> {
   return isEmpty(aInput)
@@ -254,10 +254,11 @@ export function rxResolveAuthoringItems(
   idOrItem: IdOrItem,
   resolveItem: ResolveAuthoringContentItem,
   resolveAsset: ResolveAuthoringAsset,
-  logSvc: LoggerService = NOOP_LOGGER_SERVICE,
+  aLogSvc?: LoggerService,
   scheduler: SchedulerLike = queueScheduler
 ): Observable<ResolutionResult> {
   // construct our logger
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
   // just dispatch
   return rxResolveContentItems(

@@ -23,7 +23,7 @@ import {
   rxStore
 } from '@acoustic-content-sdk/redux-store';
 import {
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   pluckProperty,
   rxNext,
   rxPipe,
@@ -61,7 +61,7 @@ export function createReactRenderer(
   aScheduler?: SchedulerLike
 ): UnaryFunction<string, Observable<ReactNode>> {
   // resolve the logger
-  const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+  const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get('createReactRenderer');
   // next logger
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

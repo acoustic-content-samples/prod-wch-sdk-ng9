@@ -171,7 +171,10 @@ describe('renderer.spec', () => {
     // produce some markup
     const markup$ = renderer('c0b6c620-de3a-4e26-bc77-ec8a08df073a');
 
-    return rxPipe(markup$, tap((m) => console.log(m))).toPromise();
+    return rxPipe(
+      markup$,
+      tap((m) => console.log(m))
+    ).toPromise();
   });
 
   it('should include $metadata in the rendering context', () => {
@@ -189,7 +192,10 @@ describe('renderer.spec', () => {
     // produce some markup
     const markup$ = renderer('816ad3ab-db34-4a76-8743-9328f841540b');
 
-    return rxPipe(markup$, tap((m) => console.log(m))).toPromise();
+    return rxPipe(
+      markup$,
+      tap((m) => console.log(m))
+    ).toPromise();
   });
 
   it('should render an email content item', () => {
@@ -209,7 +215,10 @@ describe('renderer.spec', () => {
     let count = 0;
 
     // parse the markup
-    const dom$ = rxPipe(markup$, tap((markup) => console.log(count++, markup)));
+    const dom$ = rxPipe(
+      markup$,
+      tap((markup) => console.log(count++, markup))
+    );
 
     return dom$.toPromise();
   });

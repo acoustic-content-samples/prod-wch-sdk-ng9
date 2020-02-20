@@ -17,7 +17,7 @@ import {
 import {
   isNotNil,
   LAYOUT_TYPE_ANGULAR,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opCacheLast,
   rxNext,
   rxPipe,
@@ -156,7 +156,7 @@ export class ComponentResolverService implements ComponentResolver {
     aLogSvc?: LoggerService
   ) {
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

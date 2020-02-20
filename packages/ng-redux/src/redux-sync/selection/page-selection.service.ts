@@ -28,7 +28,7 @@ import { isAuthoringSiteNavigationPage } from '@acoustic-content-sdk/sites-api';
 import {
   filterTypeOf,
   isEqual,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opShareLast,
   rxNext,
   rxPipe
@@ -67,7 +67,7 @@ export class PageSelectionService implements OnDestroy {
     aLogSvc?: LoggerService
   ) {
     // resolve the logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     const logger = logSvc.get(LOGGER);
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);

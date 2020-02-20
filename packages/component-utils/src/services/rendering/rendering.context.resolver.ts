@@ -22,7 +22,7 @@ import {
   isNotNil,
   isString,
   KEY_RENDERING_CONTEXT,
-  NOOP_LOGGER_SERVICE,
+  boxLoggerService,
   opDistinctUntilChanged,
   pluckProperty,
   rxNext,
@@ -271,7 +271,7 @@ export class AbstractRenderingContextResolverService
     aLogSvc?: LoggerService
   ) {
     // logger
-    const logSvc = aLogSvc || NOOP_LOGGER_SERVICE;
+    const logSvc = boxLoggerService(aLogSvc);
     // logger
     const logger = logSvc.get(LOGGER);
 
