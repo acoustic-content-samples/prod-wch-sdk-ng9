@@ -1,0 +1,12 @@
+{
+  "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "factory": "./../bundles/acoustic-content-sdk-bootstrap.umd.min#addBootstrap",
+      "description": "Add bootstrap to an application.",
+      "schema": "./bootstrap/schema.json",
+      "private": true,
+      "hidden": true
+    }
+  }
+}
