@@ -1,7 +1,7 @@
 import {
   findProjectName,
   getWorkspace,
-  rxTransformHtmlFragment
+  rxTransformHtmlFile
 } from '@acoustic-content-sdk/schematics-utils';
 import { forEach, isNil, pluckPath, rxPipe } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
@@ -36,9 +36,7 @@ const BOOTSTRAP_SCRIPT = `
  * @param aFragment - the fragment to modify
  * @returns the modified document
  */
-function transformIndex(
-  aFragment: DocumentFragment
-): Observable<DocumentFragment> {
+function transformIndex(aFragment: Document): Observable<Document> {
   // do not create a file
   if (isNil(aFragment)) {
     return of(aFragment);
@@ -47,14 +45,15 @@ function transformIndex(
   const head = aFragment.querySelector('head');
   const body = aFragment.querySelector('body');
   // some helper magic
-  const tmp = aFragment.ownerDocument.createElement('div');
+  const tmp = aFragment.createElement('template');
+  const content = tmp.content;
   // add link
   tmp.innerHTML = BOOSTRAP_CSS;
-  const links = tmp.querySelectorAll('link');
+  const links = content.querySelectorAll('link');
   forEach(links, (link) => head.appendChild(link));
   // scripts
   tmp.innerHTML = BOOTSTRAP_SCRIPT;
-  const scripts = tmp.querySelectorAll('script');
+  const scripts = content.querySelectorAll('script');
   forEach(scripts, (script) => body.appendChild(script));
   // returns the new fragment
   return of(aFragment);
@@ -77,7 +76,7 @@ export function addBootstrap(options: AddBootstrapSchema): Rule {
     const indexFile = selectIndexFile(projectName)(angularJson);
     // transform
     return rxPipe(
-      rxTransformHtmlFragment(indexFile, transformIndex, host),
+      rxTransformHtmlFile(indexFile, transformIndex, host),
       ignoreElements(),
       endWith(host)
     );
