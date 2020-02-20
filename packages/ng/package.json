@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng",
-  "description": "Services and components for Angular based Acoustic Content SPAs.",
   "version": "9.0.0",
+  "description": "Services and components for Angular based Acoustic Content SPAs.",
   "keywords": [
     "acoustic",
     "acoustic-content",
