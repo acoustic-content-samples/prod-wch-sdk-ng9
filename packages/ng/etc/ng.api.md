@@ -12,9 +12,6 @@ import { ComponentFactoryResolver } from '@angular/core';
 import { CONTENT_ITEM_KIND } from '@acoustic-content-sdk/api';
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
-import { DynamicLoggerFactory } from '@acoustic-content-sdk/api';
-import { Logger } from '@acoustic-content-sdk/api';
-import { LoggerFactory } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Meta } from '@angular/platform-browser';
 import { MonoTypeOperatorFunction } from 'rxjs';
@@ -80,16 +77,11 @@ export const VERSION: {
 };
 
 // @public (undocumented)
-export class WchLoggerService implements LoggerService, OnDestroy {
-    constructor(aFactory: LoggerFactory, aDynamicFactory: DynamicLoggerFactory);
-    // (undocumented)
-    get: (name: string) => Logger;
-    // (undocumented)
-    ngOnDestroy(): void;
+export class WchNgComponentsModule {
 }
 
-// @public (undocumented)
-export class WchNgComponentsModule {
+// @public
+export class WchNgLoggerModule {
 }
 
 // @public (undocumented)
@@ -115,7 +107,5 @@ export class WchSelectFirstRootPageGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean>;
     }
 
-
-// (No @packageDocumentation comment for this package)
 
 ```

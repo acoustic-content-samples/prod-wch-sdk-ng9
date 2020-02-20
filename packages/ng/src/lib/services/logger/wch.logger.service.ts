@@ -29,7 +29,7 @@ const getDefaultLoggerFactory = () => ({
   create: isDevModeOn() ? createConsoleLogger : createEmptyLogger
 });
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class WchLoggerService implements LoggerService, OnDestroy {
   /**
    * Done trigger

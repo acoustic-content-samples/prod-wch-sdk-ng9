@@ -1,5 +1,6 @@
 import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
+  WchNgLoggerModule,
   WchNgRouterModule,
   WchNgServicesModule
 } from '@acoustic-content-sdk/ng';
@@ -14,7 +15,12 @@ import { MODULE, VERSION } from '../version';
  * Imports the modules required for basic functionality
  */
 @NgModule({
-  imports: [WchNgBrowserWindowModule, WchNgServicesModule, WchNgRouterModule]
+  imports: [
+    WchNgBrowserWindowModule,
+    WchNgServicesModule,
+    WchNgRouterModule,
+    WchNgLoggerModule
+  ]
 })
 export class WchNgAppBaseModule {
   /**

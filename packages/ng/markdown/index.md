@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng](./ng.md) |  |
+|  [@acoustic-content-sdk/ng](./ng.md) | Services and components for Angular based Acoustic Content SPAs. |
 
