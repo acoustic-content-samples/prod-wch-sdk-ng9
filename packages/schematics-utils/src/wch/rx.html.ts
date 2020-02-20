@@ -1,4 +1,10 @@
-import { isNil, rxPipe, UNDEFINED$ } from '@acoustic-content-sdk/utils';
+import {
+  isEqual,
+  isNil,
+  isNotNil,
+  rxPipe,
+  UNDEFINED$
+} from '@acoustic-content-sdk/utils';
 import { Tree } from '@angular-devkit/schematics';
 import { JSDOM } from 'jsdom';
 import { Observable, of } from 'rxjs';
@@ -10,13 +16,30 @@ import {
   TransformWithPath
 } from './rx.tree';
 
+const KEY_JSDOM = Symbol();
+
 function parseHtml(aString?: string): Observable<Document> {
-  const { window } = new JSDOM(aString);
-  return of(window.document);
+  // parse the string and return an object
+  const jsdom = new JSDOM(aString);
+  const doc = jsdom.window.document;
+  doc[KEY_JSDOM] = jsdom;
+  // return the document
+  return of(doc);
 }
 
 function serializeHtml(aHtml: Document): Observable<string> {
-  return of(aHtml.documentElement.outerHTML);
+  // sanity check
+  if (isNil(aHtml)) {
+    return UNDEFINED$;
+  }
+  // check of we can use the serializer
+  const jsdom: JSDOM = aHtml[KEY_JSDOM] as any;
+  // returns the serialized document
+  return of(
+    isNotNil(jsdom) && isEqual(jsdom.window.document, aHtml)
+      ? jsdom.serialize()
+      : aHtml.documentElement.outerHTML
+  );
 }
 
 function parseHtmlFragment(aString?: string): Observable<DocumentFragment> {
