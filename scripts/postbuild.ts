@@ -431,7 +431,7 @@ function createDistPackage(): Promise<string> {
   );
   // script section
   const scripts = {
-    'publish:global': 'yarn workspaces run publish --non-interactive'
+    'publish:global': 'yarn workspaces publish --non-interactive'
   };
   // produce
   return cpy$
