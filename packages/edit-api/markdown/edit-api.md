@@ -41,6 +41,11 @@ The edit API defines interfaces for consumers and providers of inline edit funct
 |  [INLINE\_EDIT\_PROVIDER\_ID](./edit-api.inline_edit_provider_id.md) | Identifier used to identify an [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) instance on a context, e.g. the window |
 |  [TRANSFER\_FORMAT](./edit-api.transfer_format.md) | Transfer format for our custom dnd components |
 |  [VERSION](./edit-api.version.md) | Version and build number of the package |
+|  [WCH\_ACTIVE\_PAGE\_MODULE](./edit-api.wch_active_page_module.md) |  |
+|  [WCH\_CONFIG\_MODULE](./edit-api.wch_config_module.md) |  |
+|  [WCH\_HTTP\_MODULE](./edit-api.wch_http_module.md) |  |
+|  [WCH\_INFO\_MODULE](./edit-api.wch_info_module.md) |  |
+|  [WCH\_LOGGER\_MODULE](./edit-api.wch_logger_module.md) |  |
 
 ## Type Aliases
 

@@ -88,6 +88,21 @@ export const VERSION: {
     build: Date;
 };
 
+// @public @deprecated (undocumented)
+export const WCH_ACTIVE_PAGE_MODULE = "wch-active-page";
+
+// @public @deprecated (undocumented)
+export const WCH_CONFIG_MODULE = "wch-config";
+
+// @public @deprecated (undocumented)
+export const WCH_HTTP_MODULE = "wch-http";
+
+// @public @deprecated (undocumented)
+export const WCH_INFO_MODULE = "wch-info";
+
+// @public @deprecated (undocumented)
+export const WCH_LOGGER_MODULE = "wch-logger";
+
 // @public
 export interface WchConfig {
     readonly apiUrl: URL;
