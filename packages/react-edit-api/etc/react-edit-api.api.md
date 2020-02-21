@@ -19,6 +19,33 @@ import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
+export const ACOUSTIC_CONTEXT_ACOUSTIC_CONFIG: Required<import("react").Context<Observable<WchConfig>>>;
+
+// @public
+export const ACOUSTIC_CONTEXT_DEBUG_PLACEHOLDERS: Required<import("react").Context<boolean>>;
+
+// @public
+export const ACOUSTIC_CONTEXT_DEFAULT_PLACEHOLDER_TEXT: Required<import("react").Context<import("@acoustic-content-sdk/utils").ObservableOrT<string | import("@acoustic-content-sdk/api").LocalizedText>>>;
+
+// @public
+export const ACOUSTIC_CONTEXT_EDIT_HOST_WINDOW: Required<import("react").Context<WindowType>>;
+
+// @public
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER: Required<import("react").Context<Observable<WchInlineEditProviderV2>>>;
+
+// @public
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_SELECTION_PROVIDER: Required<import("react").Context<InlineEditSelectionProvider>>;
+
+// @public (undocumented)
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_SERVICE: Required<import("react").Context<WchInlineEditServiceV2>>;
+
+// @public (undocumented)
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_URL: Required<import("react").Context<StaticHubInfoUrlProvider>>;
+
+// @public (undocumented)
+export const ACOUSTIC_CONTEXT_PLACEHOLDER_PROVIDER: Required<import("react").Context<WchPlaceholderProvider>>;
+
+// @public
 export const DEFAULT_DEBUG_PLACEHOLDERS = false;
 
 // @public
@@ -70,33 +97,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_CONTEXT_DEBUG_PLACEHOLDERS: Required<import("react").Context<boolean>>;
-
-// @public
-export const WCH_CONTEXT_DEFAULT_PLACEHOLDER_TEXT: Required<import("react").Context<import("@acoustic-content-sdk/utils").ObservableOrT<string | import("@acoustic-content-sdk/api").LocalizedText>>>;
-
-// @public
-export const WCH_CONTEXT_EDIT_HOST_WINDOW: Required<import("react").Context<WindowType>>;
-
-// @public
-export const WCH_CONTEXT_INLINE_EDIT_PROVIDER: Required<import("react").Context<Observable<WchInlineEditProviderV2>>>;
-
-// @public
-export const WCH_CONTEXT_INLINE_EDIT_SELECTION_PROVIDER: Required<import("react").Context<InlineEditSelectionProvider>>;
-
-// @public (undocumented)
-export const WCH_CONTEXT_INLINE_EDIT_SERVICE: Required<import("react").Context<WchInlineEditServiceV2>>;
-
-// @public (undocumented)
-export const WCH_CONTEXT_INLINE_EDIT_URL: Required<import("react").Context<StaticHubInfoUrlProvider>>;
-
-// @public (undocumented)
-export const WCH_CONTEXT_PLACEHOLDER_PROVIDER: Required<import("react").Context<WchPlaceholderProvider>>;
-
-// @public
-export const WCH_CONTEXT_WCH_CONFIG: Required<import("react").Context<Observable<WchConfig>>>;
 
 // @public
 export type WchDefaultPlaceholder = ObservableOrT<string | LocalizedText>;

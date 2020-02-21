@@ -4,7 +4,7 @@
 
 ## WchNgRestFetchTextModule class
 
-[Angular Module](https://angular.io/guide/ngmodules) that provides an implementation of `WCH_TOKEN_FETCH_TEXT`
+[Angular Module](https://angular.io/guide/ngmodules) that provides an implementation of `ACOUSTIC_TOKEN_FETCH_TEXT`
 
 <b>Signature:</b>
 

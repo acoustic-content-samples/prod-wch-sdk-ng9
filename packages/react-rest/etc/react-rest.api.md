@@ -8,6 +8,30 @@ import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
 // @public
+export const ACOUSTIC_PROVIDER_REST_AUTH_STATUS: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_CONTENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_LAYOUT_MAPPING_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_PAGE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_TYPE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REST_URL_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<Observable<UrlConfig>>;
+
+// @public
+export const ACOUSTIC_PROVIDERS_REST: (import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>)[];
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -16,30 +40,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_PROVIDER_REST_AUTH_STATUS: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus>;
-
-// @public
-export const WCH_PROVIDER_REST_DELIVERY_CONTENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver>;
-
-// @public
-export const WCH_PROVIDER_REST_DELIVERY_LAYOUT_MAPPING_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver>;
-
-// @public
-export const WCH_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver>;
-
-// @public
-export const WCH_PROVIDER_REST_DELIVERY_PAGE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver>;
-
-// @public
-export const WCH_PROVIDER_REST_DELIVERY_TYPE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>;
-
-// @public
-export const WCH_PROVIDER_REST_URL_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<Observable<UrlConfig>>;
-
-// @public
-export const WCH_PROVIDERS_REST: (import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver> | import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>)[];
 
 
 ```

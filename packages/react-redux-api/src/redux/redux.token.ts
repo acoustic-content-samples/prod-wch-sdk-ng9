@@ -4,6 +4,6 @@ import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 /**
  * Injection token for the redux store
  */
-export const WCH_CONTEXT_REDUX_STORE = createReactContext<ReduxRootStore>(
-  'WCH_CONTEXT_REDUX_STORE'
+export const ACOUSTIC_CONTEXT_REDUX_STORE = createReactContext<ReduxRootStore>(
+  'ACOUSTIC_CONTEXT_REDUX_STORE'
 );

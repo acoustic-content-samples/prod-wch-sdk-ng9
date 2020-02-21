@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the rendering context provider
  */
-export const WCH_TOKEN_RENDERING_CONTEXT_PROVIDER = new InjectionToken<
+export const ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER = new InjectionToken<
   RenderingContextProviderV2
->('WCH_TOKEN_RENDERING_CONTEXT_PROVIDER');
+>('ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER');

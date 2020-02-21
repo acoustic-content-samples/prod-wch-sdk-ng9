@@ -1,4 +1,4 @@
-import { WCH_TOKEN_DELIVERY_SEARCH_RESOLVER } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { DeliverySearchResolverService } from '../services/search/search.resolve
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_DELIVERY_SEARCH_RESOLVER,
+      provide: ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER,
       useClass: DeliverySearchResolverService
     }
   ]

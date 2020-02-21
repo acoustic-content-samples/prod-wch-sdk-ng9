@@ -4,9 +4,9 @@ import {
   RenderingContextProviderV2
 } from '@acoustic-content-sdk/api';
 import { AccessorType, WchEditableEvent } from '@acoustic-content-sdk/edit-api';
-import { WCH_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE,
+  ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE,
   WchEditableDirectiveInput,
   WchEditableDirectiveOutput,
   WchEditableDirectiveService
@@ -127,9 +127,9 @@ export class EditableDirective
 
   constructor(
     aElementRef: ElementRef,
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
-    @Inject(WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE)
     aService: WchEditableDirectiveService
   ) {
     // life cycle hooks

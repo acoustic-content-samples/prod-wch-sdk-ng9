@@ -10,6 +10,6 @@ Interfaces and DI tokens for the Angular binding to Redux for the Acoustic Conte
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_TOKEN\_REDUX\_STORE](./ng-redux-api.acoustic_token_redux_store.md) | Injection token for the redux store |
 |  [VERSION](./ng-redux-api.version.md) | Version and build number of the package |
-|  [WCH\_TOKEN\_REDUX\_STORE](./ng-redux-api.wch_token_redux_store.md) | Injection token for the redux store |
 

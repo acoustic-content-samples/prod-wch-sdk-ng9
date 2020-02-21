@@ -55,6 +55,9 @@ export interface AbstractLayoutComponentDirective {
     selector?: string | string[];
 }
 
+// @public (undocumented)
+export const ACOUSTIC_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
+
 // @public
 export interface DeliveryContentResolver {
     getDeliveryContentItem(aID: string): Observable<DeliveryContentItem>;
@@ -159,9 +162,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public (undocumented)
-export const WCH_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
 
 // @public
 export interface WchPageService {

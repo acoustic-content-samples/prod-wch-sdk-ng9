@@ -26,6 +26,6 @@ export interface ComponentTypeRefResolver
 /**
  * A multi-provider token used for dependency injection of the ComponentTypeRefResolvers.
  */
-export const WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS = createReactContext<
+export const ACOUSTIC_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS = createReactContext<
   ComponentTypeRefResolver[]
->('WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS');
+>('ACOUSTIC_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS');

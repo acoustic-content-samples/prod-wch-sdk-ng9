@@ -53,7 +53,7 @@ import {
   ACTION_REQUEST_AUTHORING_TYPE,
   ACTION_REQUEST_DELIVERY_CONTENT,
   ACTION_REQUEST_URL_CONFIG,
-  ACTION_REQUEST_WCH_CONFIG
+  ACTION_REQUEST_ACOUSTIC_CONFIG
 } from "../actions";
 import { ACTION_REQUEST_AUTHORING_CONTENT } from "../actions/auth.content";
 import {
@@ -197,7 +197,7 @@ function createParentFrameEpic(aMessageService: MessageService): Epic {
 
   const requestWchConfig = createRequestEpicForItem(
     selectWchConfigFeature,
-    ACTION_REQUEST_WCH_CONFIG,
+    ACTION_REQUEST_ACOUSTIC_CONFIG,
     setWchConfigAction,
     sendMessage
   );

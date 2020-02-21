@@ -9,20 +9,20 @@ Implementation of services and UI components for the [React](https://reactjs.org
 
 ### How to access the `ComponentRegistry` service?
 
-- Create a React component and use the provider of the[WCH_CONTEXT_COMPONENT_REGISTRY](https://www.npmjs.com/package/@acoustic-content-sdk/react-api) context.
+- Create a React component and use the provider of the[ACOUSTIC_CONTEXT_COMPONENT_REGISTRY](https://www.npmjs.com/package/@acoustic-content-sdk/react-api) context.
 
 Example:
 
 ```tsx
 export const LayoutsModule: FC = ({ children }) => (
-  <WCH_CONTEXT_COMPONENT_REGISTRY.Consumer>
+  <ACOUSTIC_CONTEXT_COMPONENT_REGISTRY.Consumer>
     {(aReg) => {
       // do something sensible with the service
 
       // include the children
       return <>{children}</>;
     }}
-  </WCH_CONTEXT_COMPONENT_REGISTRY.Consumer>
+  </ACOUSTIC_CONTEXT_COMPONENT_REGISTRY.Consumer>
 );
 ```
 

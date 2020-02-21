@@ -4,7 +4,7 @@
 
 ## WchNgRestLayoutMappingModule class
 
-[Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of `WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER`<!-- -->.
+[Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of `ACOUSTIC_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER`<!-- -->.
 
 <b>Signature:</b>
 

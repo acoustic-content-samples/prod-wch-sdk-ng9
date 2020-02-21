@@ -4,13 +4,13 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_DELIVERY_TYPE_RESOLVER = new InjectionToken<
+export const ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER = new InjectionToken<
   DeliveryTypeResolver
->('WCH_TOKEN_DELIVERY_TYPE_RESOLVER');
+>('ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER');
 
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_DELIVERY_TYPE_SEED = new InjectionToken<string>(
-  'WCH_TOKEN_DELIVERY_TYPE_SEED'
+export const ACOUSTIC_TOKEN_DELIVERY_TYPE_SEED = new InjectionToken<string>(
+  'ACOUSTIC_TOKEN_DELIVERY_TYPE_SEED'
 );

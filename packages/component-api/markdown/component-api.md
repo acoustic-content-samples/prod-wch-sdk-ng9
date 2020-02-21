@@ -36,8 +36,8 @@ Framework independent collection of APIs and constants
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_RC\_INTERCEPTOR\_TOKEN](./component-api.acoustic_rc_interceptor_token.md) |  |
 |  [VERSION](./component-api.version.md) | Version and build number of the package |
-|  [WCH\_RC\_INTERCEPTOR\_TOKEN](./component-api.wch_rc_interceptor_token.md) |  |
 
 ## Type Aliases
 

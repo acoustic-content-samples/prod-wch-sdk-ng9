@@ -10,7 +10,7 @@ API constants for React contexts.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_CONTEXT\_REACT\_REDUX](./react-redux-hooks.acoustic_context_react_redux.md) | Injection token for the [react redux](https://react-redux.js.org/) store |
+|  [ACOUSTIC\_PROVIDER\_REACT\_REDUX](./react-redux-hooks.acoustic_provider_react_redux.md) | Declares the provider |
 |  [VERSION](./react-redux-hooks.version.md) | Version and build number of the package |
-|  [WCH\_CONTEXT\_REACT\_REDUX](./react-redux-hooks.wch_context_react_redux.md) | Injection token for the [react redux](https://react-redux.js.org/) store |
-|  [WCH\_PROVIDER\_REACT\_REDUX](./react-redux-hooks.wch_provider_react_redux.md) | Declares the provider |
 

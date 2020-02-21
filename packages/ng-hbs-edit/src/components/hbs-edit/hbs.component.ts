@@ -6,7 +6,7 @@ import {
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { AbstractRenderingComponent } from '@acoustic-content-sdk/ng-utils';
 import { rxSelect } from '@acoustic-content-sdk/redux-store';
 import {
@@ -69,7 +69,7 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super();

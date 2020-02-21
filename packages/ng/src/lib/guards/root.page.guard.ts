@@ -1,8 +1,8 @@
 import { Logger, LoggerService } from '@acoustic-content-sdk/api';
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import {
-  WCH_TOKEN_DELIVERY_PAGE_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import { boxLoggerService, rxNext, TRUE$ } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
@@ -23,11 +23,11 @@ export class WchSelectFirstRootPageGuard implements CanActivate {
   private readonly logger: Logger;
 
   constructor(
-    @Inject(WCH_TOKEN_DELIVERY_PAGE_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER)
     private aDeliveryPageResolver: DeliveryPageResolver,
     private aRouter: Router,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // access the logger

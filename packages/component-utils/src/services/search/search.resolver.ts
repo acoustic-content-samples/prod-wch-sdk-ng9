@@ -1,5 +1,5 @@
 import {
-  KEY_WCH_SEED,
+  KEY_ACOUSTIC_SEED,
   LoggerService,
   Query,
   QueryInput,
@@ -136,7 +136,7 @@ export class AbstractDeliverySearchResolverService
         switchMap(([isProtected, seed]) =>
           sendRequest<T>(
             isProtected,
-            { ...origQuery, fq, [KEY_WCH_SEED]: seed },
+            { ...origQuery, fq, [KEY_ACOUSTIC_SEED]: seed },
             aFetchText
           )
         ),

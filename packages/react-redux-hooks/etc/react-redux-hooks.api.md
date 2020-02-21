@@ -5,6 +5,12 @@
 ```ts
 
 // @public
+export const ACOUSTIC_CONTEXT_REACT_REDUX: import("react").Context<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -13,12 +19,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_CONTEXT_REACT_REDUX: import("react").Context<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
-
-// @public
-export const WCH_PROVIDER_REACT_REDUX: import("@acoustic-content-sdk/react-api").ReactProvider<import("react-redux").ReactReduxContextValue<any, import("redux").AnyAction>>;
 
 
 ```

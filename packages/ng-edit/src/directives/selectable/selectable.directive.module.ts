@@ -1,4 +1,4 @@
-import { WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { WchSelectableDirectiveServiceImpl } from './selectable.directive.servic
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
+      provide: ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
       useClass: WchSelectableDirectiveServiceImpl
     }
   ]

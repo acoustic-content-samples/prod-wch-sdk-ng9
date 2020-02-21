@@ -8,6 +8,9 @@ import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { InjectionToken } from '@angular/core';
 
 // @public
+export const ACOUSTIC_TOKEN_FETCH_TEXT: InjectionToken<FetchText>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -16,9 +19,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_TOKEN_FETCH_TEXT: InjectionToken<FetchText>;
 
 
 ```

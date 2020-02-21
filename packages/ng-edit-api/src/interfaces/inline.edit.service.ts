@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Token used to inject the `WchInlineEditServiceV2` service.
  */
-export const WCH_TOKEN_INLINE_EDIT_SERVICE = new InjectionToken<
+export const ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE = new InjectionToken<
   WchInlineEditServiceV2
->('WCH_TOKEN_INLINE_EDIT_SERVICE');
+>('ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE');

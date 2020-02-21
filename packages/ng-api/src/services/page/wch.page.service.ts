@@ -34,6 +34,6 @@ export interface WchNgPageService extends WchPageService {
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_PAGE_SERVICE = new InjectionToken<WchNgPageService>(
-  'WCH_TOKEN_PAGE_SERVICE'
+export const ACOUSTIC_TOKEN_PAGE_SERVICE = new InjectionToken<WchNgPageService>(
+  'ACOUSTIC_TOKEN_PAGE_SERVICE'
 );

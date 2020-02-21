@@ -2,10 +2,10 @@ import { LoggerService, UrlConfig } from '@acoustic-content-sdk/api';
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import {
   createInjectableReactProvider,
-  WCH_CONTEXT_DELIVERY_PAGE_RESOLVER,
-  WCH_CONTEXT_LOGGER_SERVICE,
-  WCH_CONTEXT_PAGE_SERVICE,
-  WCH_CONTEXT_URL_CONFIG
+  ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE,
+  ACOUSTIC_CONTEXT_PAGE_SERVICE,
+  ACOUSTIC_CONTEXT_URL_CONFIG
 } from '@acoustic-content-sdk/react-api';
 import { Observable } from 'rxjs';
 
@@ -22,9 +22,9 @@ const createPageService = (
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_PAGE_SERVICE = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_PAGE_SERVICE = createInjectableReactProvider(
   createPageService,
-  WCH_CONTEXT_PAGE_SERVICE,
-  [WCH_CONTEXT_DELIVERY_PAGE_RESOLVER, WCH_CONTEXT_URL_CONFIG],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_PAGE_SERVICE,
+  [ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER, ACOUSTIC_CONTEXT_URL_CONFIG],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

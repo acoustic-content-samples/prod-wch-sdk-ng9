@@ -6,14 +6,14 @@ import {
 import { DeliveryTypeResolver } from '@acoustic-content-sdk/component-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import {
-  WCH_TOKEN_DELIVERY_TYPE_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG
+  ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_DEBUG_PLACEHOLDERS,
-  WCH_TOKEN_DEFAULT_PLACEHOLDER_TEXT,
-  WCH_TOKEN_INLINE_EDIT_SERVICE,
+  ACOUSTIC_TOKEN_DEBUG_PLACEHOLDERS,
+  ACOUSTIC_TOKEN_DEFAULT_PLACEHOLDER_TEXT,
+  ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE,
   WchEditablePlaceholderDirectiveInput,
   WchEditablePlaceholderDirectiveOutput,
   WchEditablePlaceholderDirectiveService
@@ -60,22 +60,22 @@ export class WchEditablePlaceholderDirectiveServiceImpl
 
   constructor(
     aInternal: WchInternalEditService,
-    @Inject(WCH_TOKEN_DELIVERY_TYPE_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER)
     aTypeResolver: DeliveryTypeResolver,
     @Optional()
-    @Inject(WCH_TOKEN_DEBUG_PLACEHOLDERS)
+    @Inject(ACOUSTIC_TOKEN_DEBUG_PLACEHOLDERS)
     aDebugPlaceholders: boolean,
     @Optional()
-    @Inject(WCH_TOKEN_DEFAULT_PLACEHOLDER_TEXT)
+    @Inject(ACOUSTIC_TOKEN_DEFAULT_PLACEHOLDER_TEXT)
     aDefaultPlaceholderText: WchDefaultPlaceholderText,
     @Inject(LOCALE_ID) aDefaultLocale: string,
-    @Inject(WCH_TOKEN_URL_CONFIG)
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig$: Observable<UrlConfig>,
     @Optional()
-    @Inject(WCH_TOKEN_INLINE_EDIT_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE)
     aInlineEditService: WchInlineEditServiceV2,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // attach the directive creator

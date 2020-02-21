@@ -11,7 +11,7 @@ import {
   UrlConfig
 } from '@acoustic-content-sdk/api';
 import { DeliveryTypeResolver } from '@acoustic-content-sdk/component-api';
-import { EMPTY_WCH_INLINE_EDIT_SERVICE } from '@acoustic-content-sdk/component-edit';
+import { EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE } from '@acoustic-content-sdk/component-edit';
 import {
   AccessorType,
   WchEditableEvent,
@@ -172,7 +172,7 @@ export abstract class AbstractWchEditableDirective
     const logSvc = boxLoggerService(aLogSvc);
 
     const inlineEditService =
-      aInlineEditService || EMPTY_WCH_INLINE_EDIT_SERVICE;
+      aInlineEditService || EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE;
 
     // check if inline edit is available
     const isPreviewMode$ = rxPipe(

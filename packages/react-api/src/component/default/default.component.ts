@@ -4,6 +4,6 @@ import { createReactContext } from '../../utils/context';
 /**
  * Injection token for the default component
  */
-export const WCH_CONTEXT_DEFAULT_COMPONENT = createReactContext<
+export const ACOUSTIC_CONTEXT_DEFAULT_COMPONENT = createReactContext<
   ComponentTypeRef<ReactComponentProps>
->('WCH_CONTEXT_DEFAULT_COMPONENT');
+>('ACOUSTIC_CONTEXT_DEFAULT_COMPONENT');

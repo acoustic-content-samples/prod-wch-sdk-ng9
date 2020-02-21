@@ -1,5 +1,5 @@
 import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { WchNgRestModule } from '@acoustic-content-sdk/ng-rest';
 import { WchNgEditDirectivesModule } from '@acoustic-content-sdk/ng-view';
 import { logModule } from '@acoustic-content-sdk/utils';
@@ -21,7 +21,7 @@ export class WchNgAppLiveModule {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log this module

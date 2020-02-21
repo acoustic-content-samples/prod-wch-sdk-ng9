@@ -44,7 +44,7 @@ const WHITESPACE = /^[\s\r\n]*$/;
 const UNDEFINED = undefined;
 
 const DATA_CONTENT_ITEM_ID = 'data-content-item-id';
-const DATA_WCH_EDITABLE = 'data-wch-editable';
+const DATA_ACOUSTIC_EDITABLE = 'data-wch-editable';
 
 declare type ReactAttr = Record<string, string | Record<string, string>>;
 
@@ -340,7 +340,7 @@ function rxNodeToReactFormatted(
     const { scheduler } = aCtx;
     const { innerHTML } = aElement;
     const id = getAttribute(aElement, DATA_CONTENT_ITEM_ID);
-    const accessor = getAttribute(aElement, DATA_WCH_EDITABLE);
+    const accessor = getAttribute(aElement, DATA_ACOUSTIC_EDITABLE);
     // use the dangerous flag
     const attr = {
       ...aAttr,
@@ -398,7 +398,7 @@ function rxNodeToReact(
     const attr = attrToReact(aNode);
     // check if this is an annotated element
     const id = getProperty(attr, DATA_CONTENT_ITEM_ID);
-    const accessor = getProperty(attr, DATA_WCH_EDITABLE);
+    const accessor = getProperty(attr, DATA_ACOUSTIC_EDITABLE);
     /**
      * If we have information about the item, decide based on the authoring type
      */

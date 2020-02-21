@@ -1,6 +1,6 @@
 import {
-  WCH_TOKEN_RENDERING_CONTEXT_RESOLVER,
-  WCH_TOKEN_SEED_RESOLVER
+  ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER,
+  ACOUSTIC_TOKEN_SEED_RESOLVER
 } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -33,11 +33,11 @@ import { ContentRefDirective } from './../directives/contentref.directive';
   entryComponents: [DefaultComponent, ContentComponent],
   providers: [
     {
-      provide: WCH_TOKEN_RENDERING_CONTEXT_RESOLVER,
+      provide: ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER,
       useClass: RenderingContextResolverService
     },
     {
-      provide: WCH_TOKEN_SEED_RESOLVER,
+      provide: ACOUSTIC_TOKEN_SEED_RESOLVER,
       useClass: WchSeedResolver
     }
   ]

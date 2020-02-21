@@ -8,7 +8,7 @@ Imports the modules required for inline edit functionality. This module makes th
 
 - Inline edit functionality is accessed from the controlling parent window - Data access is implemented by accessing the redux store - The redux store is accessed from the controlling parent window
 
-This module assumes that the controlling parent window runs in the same origin than the application window. If this is not the case for your application, select different providers for `WCH_TOKEN_INLINE_EDIT_PROVIDER` and `WCH_TOKEN_REDUX_STORE`
+This module assumes that the controlling parent window runs in the same origin than the application window. If this is not the case for your application, select different providers for `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER` and `ACOUSTIC_TOKEN_REDUX_STORE`
 
 <b>Signature:</b>
 

@@ -4,9 +4,9 @@
 
 ## WchNgEditHostWindowModule class
 
-Exposes the edit host as the `WCH_TOKEN_EDIT_HOST_WINDOW` token.
+Exposes the edit host as the `ACOUSTIC_TOKEN_EDIT_HOST_WINDOW` token.
 
-Depends on: `WCH_TOKEN_WINDOW`
+Depends on: `ACOUSTIC_TOKEN_WINDOW`
 
 <b>Signature:</b>
 

@@ -1,7 +1,7 @@
 import {
   ReactComponent,
   createInjectableReactProvider,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
 
 import { LoggerService } from '@acoustic-content-sdk/api';
@@ -14,7 +14,7 @@ import {
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { map, switchMap, startWith } from 'rxjs/operators';
 import { ReduxRootStore, rxStore, rxSelect, rxDispatch } from '@acoustic-content-sdk/redux-store';
-import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
+import { ACOUSTIC_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 
 import { FC } from 'react';
 import * as React from 'react';
@@ -84,8 +84,8 @@ export const PROVIDER_CARSTEN_COMPONENT = createInjectableReactProvider(
   createComponent,
   CONTEXT_CARSTEN_COMPONENT,
   [
-    WCH_CONTEXT_REDUX_STORE,
+    ACOUSTIC_CONTEXT_REDUX_STORE,
     // required dependencies come here
   ],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

@@ -5,20 +5,20 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_DELIVERY_PAGE_RESOLVER = new InjectionToken<
+export const ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER = new InjectionToken<
   DeliveryPageResolver
->('WCH_TOKEN_DELIVERY_PAGE_RESOLVER');
+>('ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER');
 
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_DELIVERY_PAGE_SEED = new InjectionToken<string>(
-  'WCH_TOKEN_DELIVERY_PAGE_SEED'
+export const ACOUSTIC_TOKEN_DELIVERY_PAGE_SEED = new InjectionToken<string>(
+  'ACOUSTIC_TOKEN_DELIVERY_PAGE_SEED'
 );
 
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_ACTIVE_PAGE = new InjectionToken<ActivePageV2>(
-  'WCH_TOKEN_ACTIVE_PAGE'
+export const ACOUSTIC_TOKEN_ACTIVE_PAGE = new InjectionToken<ActivePageV2>(
+  'ACOUSTIC_TOKEN_ACTIVE_PAGE'
 );

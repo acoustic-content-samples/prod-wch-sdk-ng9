@@ -30,7 +30,7 @@ export interface ComponentTypeRefResolver
  * ```typescript
  * providers: [
  *   {
- *      provide: WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
+ *      provide: ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
  *      useClass: MyResolver,
  *      multi: true
  *   }
@@ -38,6 +38,6 @@ export interface ComponentTypeRefResolver
  * ```
  *
  */
-export const WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS = new InjectionToken<
+export const ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS = new InjectionToken<
   ComponentTypeRefResolver[]
->('WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS');
+>('ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS');

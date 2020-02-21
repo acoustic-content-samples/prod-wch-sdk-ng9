@@ -11,11 +11,11 @@ export {
   WchInlineEditService
 } from './interfaces/inline.edit.service';
 export {
-  WCH_ACTIVE_PAGE_MODULE,
-  WCH_CONFIG_MODULE,
-  WCH_HTTP_MODULE,
-  WCH_INFO_MODULE,
-  WCH_LOGGER_MODULE
+  ACOUSTIC_ACTIVE_PAGE_MODULE,
+  ACOUSTIC_CONFIG_MODULE,
+  ACOUSTIC_HTTP_MODULE,
+  ACOUSTIC_INFO_MODULE,
+  ACOUSTIC_LOGGER_MODULE
 } from './modules/modules';
 export {
   WchInlineEditRequire,

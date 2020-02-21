@@ -65,7 +65,7 @@ import {
   UserState
 } from '@acoustic-content-sdk/redux-feature-user';
 import {
-  WCH_CONFIG_FEATURE,
+  ACOUSTIC_CONFIG_FEATURE,
   WchConfigFeatureState,
   wchConfigReducer,
   WchConfigState
@@ -112,7 +112,7 @@ const urlConfigFeature = createReduxFeatureModule<
 const wchConfigFeature = createReduxFeatureModule<
   WchConfigState,
   WchConfigFeatureState
->(WCH_CONFIG_FEATURE, wchConfigReducer);
+>(ACOUSTIC_CONFIG_FEATURE, wchConfigReducer);
 
 const authContentFeature = createReduxFeatureModule<
   AuthoringContentState,

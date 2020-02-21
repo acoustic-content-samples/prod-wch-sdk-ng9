@@ -13,8 +13,8 @@ Implementation of a utility methods and classes for Angular based projects
 |  [AbstractBaseComponent](./ng-utils.abstractbasecomponent.md) | Implementation of a base component for Angular Components that expose the <code>renderingContext</code> and <code>layoutMode</code> output observables. |
 |  [AbstractLifeCycleComponent](./ng-utils.abstractlifecyclecomponent.md) | tslint:disable:no-conflicting-lifecycle |
 |  [AbstractRenderingComponent](./ng-utils.abstractrenderingcomponent.md) | Convenience base class for components that work with a <code>RenderingContextV2</code>. |
-|  [WchNgBrowserWindowModule](./ng-utils.wchngbrowserwindowmodule.md) | Exposes the window as the <code>WCH_TOKEN_WINDOW</code> token for the case that the application runs in the browser (as opposed to running on the server via Angular Universal) |
-|  [WchNgEditHostWindowModule](./ng-utils.wchngedithostwindowmodule.md) | Exposes the edit host as the <code>WCH_TOKEN_EDIT_HOST_WINDOW</code> token.<!-- -->Depends on: <code>WCH_TOKEN_WINDOW</code> |
+|  [WchNgBrowserWindowModule](./ng-utils.wchngbrowserwindowmodule.md) | Exposes the window as the <code>ACOUSTIC_TOKEN_WINDOW</code> token for the case that the application runs in the browser (as opposed to running on the server via Angular Universal) |
+|  [WchNgEditHostWindowModule](./ng-utils.wchngedithostwindowmodule.md) | Exposes the edit host as the <code>ACOUSTIC_TOKEN_EDIT_HOST_WINDOW</code> token.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_WINDOW</code> |
 
 ## Functions
 

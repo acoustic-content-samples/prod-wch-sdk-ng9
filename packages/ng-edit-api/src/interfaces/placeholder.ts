@@ -66,6 +66,6 @@ export interface WchPlaceholderProvider {
   ) => WchPlaceholder;
 }
 
-export const WCH_TOKEN_PLACEHOLDER_PROVIDER = new InjectionToken<
+export const ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER = new InjectionToken<
   WchPlaceholderProvider
->('WCH_TOKEN_PLACEHOLDER_PROVIDER');
+>('ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER');

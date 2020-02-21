@@ -4,7 +4,7 @@ import {
   LoggerService,
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import {
   KEY_RENDERING_CONTEXT,
   boxLoggerService,
@@ -15,7 +15,7 @@ import { Inject, Injectable, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable, Subject } from 'rxjs';
 
 import { MODULE, VERSION } from './../../../version';
-import { WCH_TOKEN_INTERNAL_ACTIVE_PAGE } from './internal.active.page.service';
+import { ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE } from './internal.active.page.service';
 
 const LOGGER = 'WchActivePageService';
 
@@ -24,10 +24,10 @@ export class WchActivePageService implements ActivePageV2 {
   readonly renderingContext$: Observable<RenderingContextV2>;
 
   constructor(
-    @Inject(WCH_TOKEN_INTERNAL_ACTIVE_PAGE)
+    @Inject(ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE)
     aActivePage: Subject<RenderingContextV2>,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // get the logger

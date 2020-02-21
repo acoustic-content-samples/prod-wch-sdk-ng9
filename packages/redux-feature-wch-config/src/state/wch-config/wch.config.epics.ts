@@ -19,12 +19,12 @@ import { combineEpics, Epic, ofType } from 'redux-observable';
 import { map, mapTo } from 'rxjs/operators';
 
 import {
-  ACTION_LOAD_WCH_CONFIG,
+  ACTION_LOAD_ACOUSTIC_CONFIG,
   LoadWchConfigAction,
   loadWchConfigAction,
   setWchConfigAction
 } from './wch.config.actions';
-import { WCH_CONFIG_FEATURE } from './wch.config.id';
+import { ACOUSTIC_CONFIG_FEATURE } from './wch.config.id';
 
 export interface ConfigDependencies {
   fetchText: FetchText;
@@ -93,7 +93,7 @@ const loadConfigEpic: Epic = (
   return rxPipe(
     actions$,
     // load
-    ofType<LoadWchConfigAction>(ACTION_LOAD_WCH_CONFIG),
+    ofType<LoadWchConfigAction>(ACTION_LOAD_ACOUSTIC_CONFIG),
     // map to the config
     mapTo(RENDERING_CONFIG_URL),
     // load
@@ -111,7 +111,7 @@ const initConfigEpic: Epic = (actions$) =>
  * Initializes the configuration as a feature epic
  */
 const initFeatureConfigEpic: Epic = (actions$) =>
-  rxPipe(actions$, ofInitFeature(WCH_CONFIG_FEATURE), map(loadWchConfigAction));
+  rxPipe(actions$, ofInitFeature(ACOUSTIC_CONFIG_FEATURE), map(loadWchConfigAction));
 
 export const wchConfigEpic: Epic = combineEpics(
   initConfigEpic,

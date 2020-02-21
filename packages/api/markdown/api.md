@@ -223,6 +223,10 @@ Interfaces and constants to support the Acoustic sites SDK and related modules.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_CONFIG\_API\_URL](./api.acoustic_config_api_url.md) | Name of the 'rel' attribute of a link element used to configure the API URL |
+|  [ACOUSTIC\_CONFIG\_BASE\_URL](./api.acoustic_config_base_url.md) | Name of the 'rel' attribute of a link element used to configure the base URL |
+|  [ACOUSTIC\_CONFIG\_RESOURCE\_URL](./api.acoustic_config_resource_url.md) | Name of the 'rel' attribute of a link element used to configure the delivery URL |
+|  [ACOUSTIC\_SDK\_MODULE\_NAME](./api.acoustic_sdk_module_name.md) |  |
 |  [CLASSIFICATION\_ASSET](./api.classification_asset.md) |  |
 |  [CLASSIFICATION\_CONTENT\_TYPE](./api.classification_content_type.md) |  |
 |  [CLASSIFICATION\_CONTENT](./api.classification_content.md) |  |
@@ -248,6 +252,7 @@ Interfaces and constants to support the Acoustic sites SDK and related modules.
 |  [HEADER\_BASICAUTH\_TENANT\_ID](./api.header_basicauth_tenant_id.md) |  |
 |  [KEY\_ACCEPT\_PRIVACY\_NOTICE](./api.key_accept_privacy_notice.md) |  |
 |  [KEY\_ACCESSOR](./api.key_accessor.md) |  |
+|  [KEY\_ACOUSTIC\_SEED](./api.key_acoustic_seed.md) |  |
 |  [KEY\_BASICAUTH\_LOGIN\_PASSWORD](./api.key_basicauth_login_password.md) |  |
 |  [KEY\_BASICAUTH\_LOGIN\_USERNAME](./api.key_basicauth_login_username.md) |  |
 |  [KEY\_CREATOR\_ID](./api.key_creator_id.md) |  |
@@ -260,7 +265,6 @@ Interfaces and constants to support the Acoustic sites SDK and related modules.
 |  [KEY\_TYPE\_REF](./api.key_type_ref.md) |  |
 |  [KEY\_VALUE](./api.key_value.md) |  |
 |  [KEY\_VALUES](./api.key_values.md) |  |
-|  [KEY\_WCH\_SEED](./api.key_wch_seed.md) |  |
 |  [MODULE](./api.module.md) | Module name |
 |  [PARAM\_REDIRECT\_LOGIN\_TARGET\_TENANT](./api.param_redirect_login_target_tenant.md) |  |
 |  [PARAM\_REDIRECT\_LOGIN\_TARGET\_URL](./api.param_redirect_login_target_url.md) |  |
@@ -284,10 +288,6 @@ Interfaces and constants to support the Acoustic sites SDK and related modules.
 |  [SEARCH\_FL\_DOCUMENT](./api.search_fl_document.md) | Constant to get the full document from the search result |
 |  [VALUE\_ACCEPT\_PRIVACY\_NOTICE](./api.value_accept_privacy_notice.md) |  |
 |  [VERSION](./api.version.md) | Version and build number of the package |
-|  [WCH\_CONFIG\_API\_URL](./api.wch_config_api_url.md) | Name of the 'rel' attribute of a link element used to configure the API URL |
-|  [WCH\_CONFIG\_BASE\_URL](./api.wch_config_base_url.md) | Name of the 'rel' attribute of a link element used to configure the base URL |
-|  [WCH\_CONFIG\_RESOURCE\_URL](./api.wch_config_resource_url.md) | Name of the 'rel' attribute of a link element used to configure the delivery URL |
-|  [WCH\_SDK\_MODULE\_NAME](./api.wch_sdk_module_name.md) |  |
 
 ## Type Aliases
 

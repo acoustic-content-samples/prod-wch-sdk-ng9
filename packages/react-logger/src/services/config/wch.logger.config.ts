@@ -34,6 +34,6 @@ export class ReactLoggerConfigService implements ReactLoggerConfig {
   readonly pollTime?: number;
 }
 
-export const WCH_CONTEXT_REACT_LOGGER_CONFIG = createReactContext<
+export const ACOUSTIC_CONTEXT_REACT_LOGGER_CONFIG = createReactContext<
   ReactLoggerConfigService
->('WCH_CONTEXT_REACT_LOGGER_CONFIG');
+>('ACOUSTIC_CONTEXT_REACT_LOGGER_CONFIG');

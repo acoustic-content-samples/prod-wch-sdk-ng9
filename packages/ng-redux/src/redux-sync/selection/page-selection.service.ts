@@ -6,10 +6,10 @@ import {
   LoggerService
 } from '@acoustic-content-sdk/api';
 import {
-  WCH_TOKEN_ACTIVE_PAGE,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_ACTIVE_PAGE,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
+import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import {
   selectAuthContentFeature,
   selectAuthoringContentItem
@@ -58,12 +58,12 @@ export class PageSelectionService implements OnDestroy {
   constructor(
     zone: NgZone,
     router: Router,
-    @Inject(WCH_TOKEN_REDUX_STORE)
+    @Inject(ACOUSTIC_TOKEN_REDUX_STORE)
     store: ReduxRootStore,
-    @Inject(WCH_TOKEN_ACTIVE_PAGE)
+    @Inject(ACOUSTIC_TOKEN_ACTIVE_PAGE)
     activePage: ActivePageV2,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
   ) {
     // resolve the logger

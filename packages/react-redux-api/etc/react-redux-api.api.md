@@ -7,6 +7,9 @@
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 
 // @public
+export const ACOUSTIC_CONTEXT_REDUX_STORE: Required<import("react").Context<ReduxRootStore<Record<string, any>, import("redux").AnyAction>>>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -15,9 +18,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_CONTEXT_REDUX_STORE: Required<import("react").Context<ReduxRootStore<Record<string, any>, import("redux").AnyAction>>>;
 
 
 ```

@@ -1,5 +1,5 @@
 /* Copyright IBM Corp. 2017 */
-import { WCH_TOKEN_HANDLEBARS_RESOLVER } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { HandlebarsResolverService } from '../handlebars/handlebars.resolver.ser
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_HANDLEBARS_RESOLVER,
+      provide: ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER,
       useClass: HandlebarsResolverService
     }
   ]

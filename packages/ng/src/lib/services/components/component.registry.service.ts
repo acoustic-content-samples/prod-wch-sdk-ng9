@@ -6,7 +6,7 @@ import {
 import {
   ComponentRegistry,
   ComponentTypeRef,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   bindMember,
@@ -51,7 +51,7 @@ export class ComponentRegistryService implements ComponentRegistry {
   constructor(
     aComponentsService: ComponentsService,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // logger

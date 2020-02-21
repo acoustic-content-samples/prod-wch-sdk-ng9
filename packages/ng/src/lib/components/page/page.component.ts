@@ -6,10 +6,10 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   WchNgPageService,
-  WCH_TOKEN_LAYOUT_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_PAGE_SERVICE,
-  WCH_TOKEN_RENDERING_CONTEXT_PROVIDER
+  ACOUSTIC_TOKEN_LAYOUT_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_PAGE_SERVICE,
+  ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER
 } from '@acoustic-content-sdk/ng-api';
 import { AbstractBaseComponent } from '@acoustic-content-sdk/ng-utils';
 import {
@@ -42,7 +42,7 @@ import {
 } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 
-import { WCH_TOKEN_INTERNAL_ACTIVE_PAGE } from '../../services/page/internal.active.page.service';
+import { ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE } from '../../services/page/internal.active.page.service';
 import { selectId, selectMetadata } from '../../utils/selectors';
 import {
   createRenderingContextProviderV2Proxy,
@@ -176,11 +176,11 @@ const LOGGER = 'PageComponent';
   preserveWhitespaces: false,
   providers: [
     {
-      provide: WCH_TOKEN_RENDERING_CONTEXT_PROVIDER,
+      provide: ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER,
       useFactory: createRenderingContextProviderV2Proxy
     },
     {
-      provide: WCH_TOKEN_LAYOUT_RESOLVER,
+      provide: ACOUSTIC_TOKEN_LAYOUT_RESOLVER,
       useExisting: LayoutResolverService
     }
   ],
@@ -216,17 +216,17 @@ export class PageComponent extends AbstractBaseComponent
   constructor(
     aZoneService: ZoneService,
     aRoute: ActivatedRoute,
-    @Inject(WCH_TOKEN_PAGE_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_PAGE_SERVICE)
     aPageService: WchNgPageService,
-    @Inject(WCH_TOKEN_INTERNAL_ACTIVE_PAGE)
+    @Inject(ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE)
     aActivePage: Subject<RenderingContextV2>,
     aTitleService: Title,
     aMetaService: Meta,
     @Host()
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     /**

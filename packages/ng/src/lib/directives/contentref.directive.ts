@@ -5,7 +5,7 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   ComponentTypeRef,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   assignObject,
@@ -292,7 +292,7 @@ export class ContentRefDirective implements OnDestroy {
     activatedRoute: ActivatedRoute,
     changeDetectorRef: ChangeDetectorRef,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // logging

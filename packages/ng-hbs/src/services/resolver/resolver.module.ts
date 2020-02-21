@@ -1,4 +1,4 @@
-import { WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { HandlebarsComponentResolver } from './component.resolver';
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
+      provide: ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
       useClass: HandlebarsComponentResolver,
       multi: true
     }

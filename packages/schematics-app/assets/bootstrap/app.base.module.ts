@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { {{{WCH_APP_MODULE}}} as WchAppModule } from '{{{WCH_APP_MODULE_PATH}}}';
+import { {{{ACOUSTIC_APP_MODULE}}} as WchAppModule } from '{{{ACOUSTIC_APP_MODULE_PATH}}}';
 import { WchNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
 import { {{{ORIGINAL_APP_MODULE}}} as OriginalAppModule } from '{{{ORIGINAL_APP_MODULE_PATH}}}';
 

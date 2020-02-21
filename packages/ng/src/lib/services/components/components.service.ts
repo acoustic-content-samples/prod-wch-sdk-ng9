@@ -7,7 +7,7 @@ import {
 import {
   ComponentTypeRef,
   ComponentTypeRefResolver,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   assertObject,
@@ -425,7 +425,7 @@ export class ComponentsService implements ComponentTypeRefResolver {
   constructor(
     markupService: MarkupService,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // logger

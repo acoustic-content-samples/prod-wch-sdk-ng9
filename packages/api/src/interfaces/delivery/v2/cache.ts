@@ -1,1 +1,1 @@
-export const KEY_WCH_SEED = '-wch-seed';
+export const KEY_ACOUSTIC_SEED = '-wch-seed';

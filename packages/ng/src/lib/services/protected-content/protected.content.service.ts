@@ -6,9 +6,9 @@ import {
 import { ProtectedContent } from '@acoustic-content-sdk/component-api';
 import { AbstractProtectedContentService } from '@acoustic-content-sdk/component-utils';
 import {
-  WCH_TOKEN_AUTH_STATUS,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG
+  ACOUSTIC_TOKEN_AUTH_STATUS,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -20,12 +20,12 @@ import { Observable } from 'rxjs';
 export class ProtectedContentService extends AbstractProtectedContentService
   implements ProtectedContent {
   constructor(
-    @Inject(WCH_TOKEN_URL_CONFIG)
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig: Observable<UrlConfig>,
-    @Inject(WCH_TOKEN_AUTH_STATUS)
+    @Inject(ACOUSTIC_TOKEN_AUTH_STATUS)
     aAuthStatus: AuthStatus,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super(aUrlConfig, aAuthStatus, aLogSvc);

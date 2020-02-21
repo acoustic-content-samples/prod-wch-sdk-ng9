@@ -3,9 +3,9 @@ import {
   ComponentTypeRef,
   createInjectableReactProvider,
   ReactComponentProps,
-  WCH_CONTEXT_COMPONENT_REGISTRY,
-  WCH_CONTEXT_DEFAULT_COMPONENT,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_COMPONENT_REGISTRY,
+  ACOUSTIC_CONTEXT_DEFAULT_COMPONENT,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
 
 import { ReactComponentRegistryService } from './component.registry.service';
@@ -21,9 +21,9 @@ const createComponentRegistry = (
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_COMPONENT_REGISTRY = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_COMPONENT_REGISTRY = createInjectableReactProvider(
   createComponentRegistry,
-  WCH_CONTEXT_COMPONENT_REGISTRY,
+  ACOUSTIC_CONTEXT_COMPONENT_REGISTRY,
   undefined,
-  [WCH_CONTEXT_DEFAULT_COMPONENT, WCH_CONTEXT_LOGGER_SERVICE]
+  [ACOUSTIC_CONTEXT_DEFAULT_COMPONENT, ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

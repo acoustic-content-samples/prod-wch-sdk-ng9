@@ -39,7 +39,7 @@ export class AbstractWchInlineEditService implements WchInlineEditServiceV2, Uns
 }
 
 // @public (undocumented)
-export const EMPTY_WCH_INLINE_EDIT_SERVICE: WchInlineEditServiceV2;
+export const EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE: WchInlineEditServiceV2;
 
 // @public (undocumented)
 export function getInlineEditSelection(aDocument: Document, aLogSvc?: LoggerService): Observable<string>;

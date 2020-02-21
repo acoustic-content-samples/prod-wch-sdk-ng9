@@ -45,7 +45,7 @@ export const deliveryContentFeature: import("@acoustic-content-sdk/redux-store")
 
 // @public (undocumented)
 export const deliveryContentFeatureReducer: {
-    [DELIVERY_CONTENT_FEATURE]: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").ContentItemWithLayout>, import("redux").AnyAction>;
+    deliveryContent: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").ContentItemWithLayout>, import("redux").AnyAction>;
 };
 
 // @public (undocumented)

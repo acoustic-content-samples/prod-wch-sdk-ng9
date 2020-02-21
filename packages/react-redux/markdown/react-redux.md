@@ -10,20 +10,20 @@ Redux based implementation of [React](https://reactjs.org/) providers
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_PROVIDER\_PARENT\_FRAME\_REDUX\_STORE](./react-redux.acoustic_provider_parent_frame_redux_store.md) | Provides <code>ACOUSTIC_CONTEXT_REDUX_STORE</code> by reading the store from the parent frame. |
+|  [ACOUSTIC\_PROVIDER\_RECONCILED\_DELIVERY\_SEARCH\_RESOLVER](./react-redux.acoustic_provider_reconciled_delivery_search_resolver.md) | Provider for the <code>ACOUSTIC_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER</code> injection token |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_ACOUSTIC\_CONFIG](./react-redux.acoustic_provider_redux_acoustic_config.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_AUTH\_STATUS](./react-redux.acoustic_provider_redux_auth_status.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_CONTENT\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_content_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_layout_mapping_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_LAYOUT\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_layout_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_PAGE\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_page_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_SITE\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_site_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_DELIVERY\_TYPE\_RESOLVER](./react-redux.acoustic_provider_redux_delivery_type_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_FETCH\_TEXT](./react-redux.acoustic_provider_redux_fetch_text.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_HANDLEBARS\_RESOLVER](./react-redux.acoustic_provider_redux_handlebars_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_INLINE\_EDIT\_SELECTION\_PROVIDER](./react-redux.acoustic_provider_redux_inline_edit_selection_provider.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_REDUX\_URL\_CONFIG](./react-redux.acoustic_provider_redux_url_config.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDERS\_REDUX](./react-redux.acoustic_providers_redux.md) | Exposes all providers for the redux feature |
 |  [VERSION](./react-redux.version.md) | Version and build number of the package |
-|  [WCH\_PROVIDER\_PARENT\_FRAME\_REDUX\_STORE](./react-redux.wch_provider_parent_frame_redux_store.md) | Provides <code>WCH_CONTEXT_REDUX_STORE</code> by reading the store from the parent frame. |
-|  [WCH\_PROVIDER\_RECONCILED\_DELIVERY\_SEARCH\_RESOLVER](./react-redux.wch_provider_reconciled_delivery_search_resolver.md) | Provider for the <code>WCH_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER</code> injection token |
-|  [WCH\_PROVIDER\_REDUX\_AUTH\_STATUS](./react-redux.wch_provider_redux_auth_status.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_CONTENT\_RESOLVER](./react-redux.wch_provider_redux_delivery_content_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-redux.wch_provider_redux_delivery_layout_mapping_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_LAYOUT\_RESOLVER](./react-redux.wch_provider_redux_delivery_layout_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_PAGE\_RESOLVER](./react-redux.wch_provider_redux_delivery_page_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_SITE\_RESOLVER](./react-redux.wch_provider_redux_delivery_site_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_DELIVERY\_TYPE\_RESOLVER](./react-redux.wch_provider_redux_delivery_type_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_FETCH\_TEXT](./react-redux.wch_provider_redux_fetch_text.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_HANDLEBARS\_RESOLVER](./react-redux.wch_provider_redux_handlebars_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_INLINE\_EDIT\_SELECTION\_PROVIDER](./react-redux.wch_provider_redux_inline_edit_selection_provider.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_URL\_CONFIG](./react-redux.wch_provider_redux_url_config.md) | Declares the provider |
-|  [WCH\_PROVIDER\_REDUX\_WCH\_CONFIG](./react-redux.wch_provider_redux_wch_config.md) | Declares the provider |
-|  [WCH\_PROVIDERS\_REDUX](./react-redux.wch_providers_redux.md) | Exposes all providers for the redux feature |
 

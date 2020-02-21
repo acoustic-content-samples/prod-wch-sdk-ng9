@@ -6,7 +6,7 @@
 
 Module that provides the SDK services based on a redux store implementation.
 
-Depends on: `WCH_TOKEN_REDUX_STORE`
+Depends on: `ACOUSTIC_TOKEN_REDUX_STORE`
 
 <b>Signature:</b>
 

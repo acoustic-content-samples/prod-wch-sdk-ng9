@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_SEED_RESOLVER = new InjectionToken<SeedResolver>(
-  'WCH_TOKEN_SEED_RESOLVER'
+export const ACOUSTIC_TOKEN_SEED_RESOLVER = new InjectionToken<SeedResolver>(
+  'ACOUSTIC_TOKEN_SEED_RESOLVER'
 );

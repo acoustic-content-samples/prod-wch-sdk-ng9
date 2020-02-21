@@ -147,97 +147,97 @@ export const VERSION: {
 };
 
 // @public
-export const WCH_CONTEXT_API_URL: Required<import("react").Context<HubInfoUrlProvider>>;
+export const ACOUSTIC_CONTEXT_API_URL: Required<import("react").Context<HubInfoUrlProvider>>;
 
 // @public
-export const WCH_CONTEXT_BASE_URL: Required<import("react").Context<HubInfoUrlProvider>>;
+export const ACOUSTIC_CONTEXT_BASE_URL: Required<import("react").Context<HubInfoUrlProvider>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_COMPONENT_REGISTRY: Required<import("react").Context<ComponentRegistry>>;
+export const ACOUSTIC_CONTEXT_COMPONENT_REGISTRY: Required<import("react").Context<ComponentRegistry>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_COMPONENT_RESOLVER: Required<import("react").Context<ComponentResolver>>;
+export const ACOUSTIC_CONTEXT_COMPONENT_RESOLVER: Required<import("react").Context<ComponentResolver>>;
 
 // @public
-export const WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS: Required<import("react").Context<ComponentTypeRefResolver[]>>;
+export const ACOUSTIC_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS: Required<import("react").Context<ComponentTypeRefResolver[]>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER: Required<import("react").Context<DeliveryContentResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_CONTENT_RESOLVER: Required<import("react").Context<DeliveryContentResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_CONTENT_SEED: Required<import("react").Context<string>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_CONTENT_SEED: Required<import("react").Context<string>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<DeliveryLayoutMappingResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<DeliveryLayoutMappingResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_SEED: Required<import("react").Context<string>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_MAPPING_SEED: Required<import("react").Context<string>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER: Required<import("react").Context<DeliveryLayoutResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_RESOLVER: Required<import("react").Context<DeliveryLayoutResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_LAYOUT_SEED: Required<import("react").Context<string>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_SEED: Required<import("react").Context<string>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_PAGE_RESOLVER: Required<import("react").Context<DeliveryPageResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER: Required<import("react").Context<DeliveryPageResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_PAGE_SEED: Required<import("react").Context<string>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_PAGE_SEED: Required<import("react").Context<string>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER: Required<import("react").Context<DeliverySearchResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER: Required<import("react").Context<DeliverySearchResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_SITE_RESOLVER: Required<import("react").Context<DeliverySiteResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_SITE_RESOLVER: Required<import("react").Context<DeliverySiteResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_TYPE_RESOLVER: Required<import("react").Context<DeliveryTypeResolver>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_TYPE_RESOLVER: Required<import("react").Context<DeliveryTypeResolver>>;
 
 // @public
-export const WCH_CONTEXT_DELIVERY_TYPE_SEED: Required<import("react").Context<string>>;
+export const ACOUSTIC_CONTEXT_DELIVERY_TYPE_SEED: Required<import("react").Context<string>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_DYNAMIC_LOGGER_FACTORY: Required<import("react").Context<DynamicLoggerFactory>>;
+export const ACOUSTIC_CONTEXT_DYNAMIC_LOGGER_FACTORY: Required<import("react").Context<DynamicLoggerFactory>>;
 
 // @public
-export const WCH_CONTEXT_HANDLEBARS_RESOLVER: Required<import("react").Context<HandlebarsResolver>>;
+export const ACOUSTIC_CONTEXT_HANDLEBARS_RESOLVER: Required<import("react").Context<HandlebarsResolver>>;
 
 // @public
-export const WCH_CONTEXT_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<LayoutMappingResolver>>;
+export const ACOUSTIC_CONTEXT_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<LayoutMappingResolver>>;
 
 // @public
-export const WCH_CONTEXT_LAYOUT_RESOLVER: Required<import("react").Context<LayoutResolver>>;
+export const ACOUSTIC_CONTEXT_LAYOUT_RESOLVER: Required<import("react").Context<LayoutResolver>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_LOGGER_FACTORY: Required<import("react").Context<LoggerFactory>>;
+export const ACOUSTIC_CONTEXT_LOGGER_FACTORY: Required<import("react").Context<LoggerFactory>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_LOGGER_SERVICE: Required<import("react").Context<LoggerService>>;
+export const ACOUSTIC_CONTEXT_LOGGER_SERVICE: Required<import("react").Context<LoggerService>>;
 
 // @public
-export const WCH_CONTEXT_PAGE_SERVICE: Required<import("react").Context<ReactWchPageService>>;
+export const ACOUSTIC_CONTEXT_PAGE_SERVICE: Required<import("react").Context<ReactWchPageService>>;
 
 // @public
-export const WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER: Required<import("react").Context<RenderingContextProviderV2>>;
+export const ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER: Required<import("react").Context<RenderingContextProviderV2>>;
 
 // @public
-export const WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER: Required<import("react").Context<RenderingContextResolver>>;
+export const ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER: Required<import("react").Context<RenderingContextResolver>>;
 
 // @public
-export const WCH_CONTEXT_RESOURCE_URL: Required<import("react").Context<HubInfoUrlProvider>>;
+export const ACOUSTIC_CONTEXT_RESOURCE_URL: Required<import("react").Context<HubInfoUrlProvider>>;
 
 // @public
-export const WCH_CONTEXT_SEED_RESOLVER: Required<import("react").Context<SeedResolver>>;
+export const ACOUSTIC_CONTEXT_SEED_RESOLVER: Required<import("react").Context<SeedResolver>>;
 
 // @public
-export const WCH_CONTEXT_URL_CONFIG: Required<import("react").Context<Observable<UrlConfig>>>;
+export const ACOUSTIC_CONTEXT_URL_CONFIG: Required<import("react").Context<Observable<UrlConfig>>>;
 
 // @public (undocumented)
-export const WCH_CONTEXT_WINDOW: Required<import("react").Context<WindowType>>;
+export const ACOUSTIC_CONTEXT_WINDOW: Required<import("react").Context<WindowType>>;
 
 // @public (undocumented)
-export const WCH_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
+export const ACOUSTIC_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
 
 
 // (No @packageDocumentation comment for this package)

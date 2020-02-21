@@ -47,7 +47,7 @@ import {
   phFormat,
   phFormattedText,
   phPlainText,
-  WCH_EDITABLE_TEXT_FORMAT,
+  ACOUSTIC_EDITABLE_TEXT_FORMAT,
   WchDefaultPlaceholderText
 } from './../../utils/placeholder';
 import { AbstractWchEditableDirective } from './abstract.editable.directive';
@@ -348,7 +348,7 @@ export class WchEditablePlaceholderDirective
       opDistinctUntilChanged,
       log('format'),
       switchMap((format) =>
-        format === WCH_EDITABLE_TEXT_FORMAT
+        format === ACOUSTIC_EDITABLE_TEXT_FORMAT
           ? combineLatest([this.plainText$, plainTextSetter$])
           : combineLatest([this.formattedText$, htmlSetter$])
       ),

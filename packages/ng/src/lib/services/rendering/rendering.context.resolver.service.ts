@@ -5,8 +5,8 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import { AbstractRenderingContextResolverService } from '@acoustic-content-sdk/component-utils';
 import {
-  WCH_TOKEN_DELIVERY_CONTENT_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import { Inject, Injectable, Optional } from '@angular/core';
 
@@ -18,10 +18,10 @@ export class RenderingContextResolverService
   extends AbstractRenderingContextResolverService
   implements RenderingContextResolver {
   constructor(
-    @Inject(WCH_TOKEN_DELIVERY_CONTENT_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER)
     aDeliveryContentResolver: DeliveryContentResolver,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super(aDeliveryContentResolver, aLogSvc);

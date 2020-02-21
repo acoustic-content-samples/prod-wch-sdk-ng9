@@ -58,25 +58,25 @@ const KEY_ORIGINAL_COMPONENT_PATH = 'ORIGINAL_COMPONENT_PATH';
 const KEY_ORIGINAL_APP_MODULE_PATH = 'ORIGINAL_APP_MODULE_PATH';
 const KEY_ORIGINAL_APP_MODULE = 'ORIGINAL_APP_MODULE';
 const KEY_ORIGINAL_COMPONENT = 'ORIGINAL_COMPONENT';
-const KEY_WCH_APP_MODULE = 'WCH_APP_MODULE';
-const KEY_WCH_APP_MODULE_PATH = 'WCH_APP_MODULE_PATH';
-const KEY_WCH_APP_BASE_PATH = 'KEY_WCH_APP_BASE_PATH';
+const KEY_ACOUSTIC_APP_MODULE = 'ACOUSTIC_APP_MODULE';
+const KEY_ACOUSTIC_APP_MODULE_PATH = 'ACOUSTIC_APP_MODULE_PATH';
+const KEY_ACOUSTIC_APP_BASE_PATH = 'KEY_ACOUSTIC_APP_BASE_PATH';
 const KEY_ORIGINAL_CONFIG_PATH = 'ORIGINAL_CONFIG_PATH';
 const KEY_MAIN_FILE = 'MAIN_FILE';
 const KEY_POLYFILLS_FILE = 'POLYFILLS_FILE';
 
 const SDK_CONTEXT = {
   [ArtifactMode.ALWAYS]: {
-    [KEY_WCH_APP_MODULE]: 'WchNgAppBaseModule',
-    [KEY_WCH_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-base'
+    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppBaseModule',
+    [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-base'
   },
   [ArtifactMode.LIVE]: {
-    [KEY_WCH_APP_MODULE]: 'WchNgAppLiveModule',
-    [KEY_WCH_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-live'
+    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppLiveModule',
+    [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-live'
   },
   [ArtifactMode.PREVIEW]: {
-    [KEY_WCH_APP_MODULE]: 'WchNgAppPreviewModule',
-    [KEY_WCH_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-preview'
+    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppPreviewModule',
+    [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-preview'
   }
 };
 
@@ -301,7 +301,7 @@ export function generateModeFiles(options: Schema): Rule {
         appMode,
         aCtx[KEY_ORIGINAL_COMPONENT_PATH]
       ),
-      [KEY_WCH_APP_BASE_PATH]: importFromFileToFile(appMode, appBase)
+      [KEY_ACOUSTIC_APP_BASE_PATH]: importFromFileToFile(appMode, appBase)
     };
     // app file
     const app$ = rxPipe(

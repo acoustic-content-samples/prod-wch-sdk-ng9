@@ -418,7 +418,9 @@ function createDistPackage(): Promise<string> {
       workspaces,
       dependencies: {
         'cross-env': devDependencies['cross-env'],
-        'fs-extra': devDependencies['fs-extra']
+        'fs-extra': devDependencies['fs-extra'],
+        // tslint:disable-next-line: no-string-literal
+        ['wsrun']: devDependencies['wsrun']
       },
       bin: './index.js'
     })
@@ -431,7 +433,8 @@ function createDistPackage(): Promise<string> {
   );
   // script section
   const scripts = {
-    'publish:global': 'yarn workspaces publish --non-interactive'
+    'publish:global':
+      'wsrun --concurrency 8 --collect-logs -c publish --non-interactive'
   };
   // produce
   return cpy$

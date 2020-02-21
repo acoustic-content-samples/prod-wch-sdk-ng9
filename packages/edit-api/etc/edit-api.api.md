@@ -19,6 +19,21 @@ import { WchHttp } from '@acoustic-content-sdk/api';
 // @public
 export type AccessorType = string | null;
 
+// @public
+export const ACOUSTIC_ACTIVE_PAGE_MODULE = "wch-active-page";
+
+// @public
+export const ACOUSTIC_CONFIG_MODULE = "wch-config";
+
+// @public
+export const ACOUSTIC_HTTP_MODULE = "wch-http";
+
+// @public
+export const ACOUSTIC_INFO_MODULE = "wch-info";
+
+// @public
+export const ACOUSTIC_LOGGER_MODULE = "wch-logger";
+
 // @public (undocumented)
 export const ATTR_DATA_SELECTABLE = "data-wch-selectable";
 
@@ -74,21 +89,6 @@ export const VERSION: {
 };
 
 // @public
-export const WCH_ACTIVE_PAGE_MODULE = "wch-active-page";
-
-// @public
-export const WCH_CONFIG_MODULE = "wch-config";
-
-// @public
-export const WCH_HTTP_MODULE = "wch-http";
-
-// @public
-export const WCH_INFO_MODULE = "wch-info";
-
-// @public
-export const WCH_LOGGER_MODULE = "wch-logger";
-
-// @public
 export interface WchConfig {
     readonly apiUrl: URL;
     readonly authoringUIBaseUrl: URL;
@@ -141,27 +141,27 @@ export type WchInlineEditRequire = (<T extends keyof WchInlineEditRequireMap>(aM
 // @public
 export interface WchInlineEditRequireMap {
     // (undocumented)
-    [WCH_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePage>;
+    [ACOUSTIC_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePage>;
     // (undocumented)
-    [WCH_CONFIG_MODULE]: PromiseLike<WchConfig>;
+    [ACOUSTIC_CONFIG_MODULE]: PromiseLike<WchConfig>;
     // (undocumented)
-    [WCH_HTTP_MODULE]: PromiseLike<WchHttp>;
+    [ACOUSTIC_HTTP_MODULE]: PromiseLike<WchHttp>;
     // (undocumented)
-    [WCH_INFO_MODULE]: PromiseLike<UrlConfig>;
+    [ACOUSTIC_INFO_MODULE]: PromiseLike<UrlConfig>;
     // (undocumented)
-    [WCH_LOGGER_MODULE]: PromiseLike<LoggerService>;
+    [ACOUSTIC_LOGGER_MODULE]: PromiseLike<LoggerService>;
 }
 
 // @public
 export interface WchInlineEditRequireMapV2 {
     // (undocumented)
-    [WCH_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePageV2>;
+    [ACOUSTIC_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePageV2>;
     // (undocumented)
-    [WCH_CONFIG_MODULE]: PromiseLike<WchConfig>;
+    [ACOUSTIC_CONFIG_MODULE]: PromiseLike<WchConfig>;
     // (undocumented)
-    [WCH_INFO_MODULE]: PromiseLike<UrlConfig>;
+    [ACOUSTIC_INFO_MODULE]: PromiseLike<UrlConfig>;
     // (undocumented)
-    [WCH_LOGGER_MODULE]: PromiseLike<LoggerService>;
+    [ACOUSTIC_LOGGER_MODULE]: PromiseLike<LoggerService>;
 }
 
 // @public

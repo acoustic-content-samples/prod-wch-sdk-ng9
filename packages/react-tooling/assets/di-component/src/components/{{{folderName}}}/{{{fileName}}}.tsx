@@ -1,7 +1,7 @@
 import {
   ReactComponent,
   createInjectableReactProvider,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
 
 import { LoggerService } from '@acoustic-content-sdk/api';
@@ -18,7 +18,7 @@ import { settings } from 'carbon-components';
 {{/if}}
 {{#if useStore}}
 import { ReduxRootStore, rxStore, rxSelect, rxDispatch } from '@acoustic-content-sdk/redux-store';
-import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
+import { ACOUSTIC_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 {{/if}}
 
 import { FC } from 'react';
@@ -98,8 +98,8 @@ export const PROVIDER_{{{constantName}}} = createInjectableReactProvider(
   createComponent,
   CONTEXT_{{{constantName}}},
   [
-    {{#if useStore}}WCH_CONTEXT_REDUX_STORE,{{/if}}
+    {{#if useStore}}ACOUSTIC_CONTEXT_REDUX_STORE,{{/if}}
     // required dependencies come here
   ],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

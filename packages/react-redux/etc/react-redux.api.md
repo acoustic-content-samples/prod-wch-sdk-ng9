@@ -8,6 +8,51 @@ import { InlineEditSelectionProvider } from '@acoustic-content-sdk/edit-api';
 import { ReactProvider } from '@acoustic-content-sdk/react-api';
 
 // @public
+export const ACOUSTIC_PROVIDER_PARENT_FRAME_REDUX_STORE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/redux-store").ReduxRootStore<Record<string, any>, import("redux").AnyAction>>;
+
+// @public
+export const ACOUSTIC_PROVIDER_RECONCILED_DELIVERY_SEARCH_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").ReconciledDeliverySearchResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_ACOUSTIC_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<import("rxjs").Observable<import("@acoustic-content-sdk/edit-api").WchConfig>>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_AUTH_STATUS: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_CONTENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_LAYOUT_MAPPING_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_LAYOUT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_SITE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliverySiteResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_TYPE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_FETCH_TEXT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/rest-api").FetchText>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_HANDLEBARS_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").HandlebarsResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_INLINE_EDIT_SELECTION_PROVIDER: import("@acoustic-content-sdk/react-api").ReactProvider<InlineEditSelectionProvider>;
+
+// @public
+export const ACOUSTIC_PROVIDER_REDUX_URL_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<import("rxjs").Observable<import("@acoustic-content-sdk/api").UrlConfig>>;
+
+// @public
+export const ACOUSTIC_PROVIDERS_REDUX: Array<ReactProvider<any>>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -16,51 +61,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_PROVIDER_PARENT_FRAME_REDUX_STORE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/redux-store").ReduxRootStore<Record<string, any>, import("redux").AnyAction>>;
-
-// @public
-export const WCH_PROVIDER_RECONCILED_DELIVERY_SEARCH_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").ReconciledDeliverySearchResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_AUTH_STATUS: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").AuthStatus>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_CONTENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryContentResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_MAPPING_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_LAYOUT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryPageResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_SITE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliverySiteResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_DELIVERY_TYPE_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_FETCH_TEXT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/rest-api").FetchText>;
-
-// @public
-export const WCH_PROVIDER_REDUX_HANDLEBARS_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").HandlebarsResolver>;
-
-// @public
-export const WCH_PROVIDER_REDUX_INLINE_EDIT_SELECTION_PROVIDER: import("@acoustic-content-sdk/react-api").ReactProvider<InlineEditSelectionProvider>;
-
-// @public
-export const WCH_PROVIDER_REDUX_URL_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<import("rxjs").Observable<import("@acoustic-content-sdk/api").UrlConfig>>;
-
-// @public
-export const WCH_PROVIDER_REDUX_WCH_CONFIG: import("@acoustic-content-sdk/react-api").ReactProvider<import("rxjs").Observable<import("@acoustic-content-sdk/edit-api").WchConfig>>;
-
-// @public
-export const WCH_PROVIDERS_REDUX: Array<ReactProvider<any>>;
 
 
 ```

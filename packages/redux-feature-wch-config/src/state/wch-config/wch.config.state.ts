@@ -5,8 +5,8 @@ import { Reducer } from 'redux';
 import { handleActions } from 'redux-actions';
 
 import {
-  ACTION_CLEAR_WCH_CONFIG,
-  ACTION_SET_WCH_CONFIG,
+  ACTION_CLEAR_ACOUSTIC_CONFIG,
+  ACTION_SET_ACOUSTIC_CONFIG,
   ClearWchConfigAction,
   SetWchConfigAction
 } from './wch.config.actions';
@@ -47,11 +47,11 @@ function normalizeWchConfig(aConfig: WchConfig): WchConfig {
  */
 export const wchConfigReducer: Reducer<WchConfigState> = handleActions(
   {
-    [ACTION_SET_WCH_CONFIG]: (
+    [ACTION_SET_ACOUSTIC_CONFIG]: (
       state: WchConfigState,
       action: SetWchConfigAction
     ) => normalizeWchConfig(selectPayload(action)),
-    [ACTION_CLEAR_WCH_CONFIG]: (
+    [ACTION_CLEAR_ACOUSTIC_CONFIG]: (
       state: WchConfigState,
       action: ClearWchConfigAction
     ) => DEFAULT_CONFIG

@@ -9,9 +9,9 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import {
   ComponentTypeRef,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_RENDERING_CONTEXT_PROVIDER,
-  WCH_TOKEN_RENDERING_CONTEXT_RESOLVER
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER,
+  ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER
 } from '@acoustic-content-sdk/ng-api';
 import {
   cacheLast,
@@ -67,7 +67,7 @@ const LOGGER = 'ContentComponent';
   preserveWhitespaces: false,
   providers: [
     {
-      provide: WCH_TOKEN_RENDERING_CONTEXT_PROVIDER,
+      provide: ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER,
       useFactory: createRenderingContextProviderV2Proxy
     }
   ],
@@ -114,16 +114,16 @@ export class ContentComponent implements RenderingContextProviderV2 {
   readonly state$: Observable<ComponentState>;
 
   constructor(
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER)
     aRenderingContextResolver: RenderingContextResolver,
     aComponentResolverService: ComponentResolverService,
     @SkipSelf()
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aParentProvider: RenderingContextProviderV2,
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // access the magic keys

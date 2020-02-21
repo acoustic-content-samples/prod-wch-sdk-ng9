@@ -2,7 +2,7 @@
 export {
   ReactLoggerConfig,
   ReactLoggerConfigService,
-  WCH_CONTEXT_REACT_LOGGER_CONFIG
+  ACOUSTIC_CONTEXT_REACT_LOGGER_CONFIG
 } from './services/config/wch.logger.config';
 export * from './services/config/wch.logger.config.module';
 export * from './services/factory/wch.logger.factory.module';

@@ -14,11 +14,11 @@ import {
   ComponentTypeRef,
   ContentComponentProps,
   createReactProvider,
-  WCH_CONTEXT_COMPONENT_RESOLVER,
-  WCH_CONTEXT_CONTENT_COMPONENT,
-  WCH_CONTEXT_LOGGER_SERVICE,
-  WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER,
-  WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER
+  ACOUSTIC_CONTEXT_COMPONENT_RESOLVER,
+  ACOUSTIC_CONTEXT_CONTENT_COMPONENT,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE,
+  ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER,
+  ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER
 } from '@acoustic-content-sdk/react-api';
 import {
   DelegateComponent,
@@ -124,9 +124,9 @@ const InternalContentComponent = rxComponent<
  * @returns the component
  */
 export const WchContentComponent: FC<ContentComponentProps> = (props) => (
-  <WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER.Consumer>
+  <ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER.Consumer>
     {(renderingContextResolver) => (
-      <WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Consumer>
+      <ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Consumer>
         {(renderingContextProvider) => {
           // input
           const ctx = props[KEY_ID] || props.ctx;
@@ -135,52 +135,52 @@ export const WchContentComponent: FC<ContentComponentProps> = (props) => (
             ctx,
             assertProvider(
               renderingContextResolver,
-              WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER
+              ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER
             ),
             assertProvider(
               renderingContextProvider,
-              WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER
+              ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER
             )
           );
           return (
-            <WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider value={provider}>
-              <WCH_CONTEXT_COMPONENT_RESOLVER.Consumer>
+            <ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider value={provider}>
+              <ACOUSTIC_CONTEXT_COMPONENT_RESOLVER.Consumer>
                 {(componentResolver) => (
-                  <WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+                  <ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
                     {(loggerService) => (
                       <InternalContentComponent
                         layoutMode={props[KEY_LAYOUT_MODE]}
                         componentResolver={assertProvider(
                           componentResolver,
-                          WCH_CONTEXT_COMPONENT_RESOLVER
+                          ACOUSTIC_CONTEXT_COMPONENT_RESOLVER
                         )}
                         loggerService={loggerService}
                         renderingContextProvider={provider}
                       />
                     )}
-                  </WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+                  </ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
                 )}
-              </WCH_CONTEXT_COMPONENT_RESOLVER.Consumer>
-            </WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider>
+              </ACOUSTIC_CONTEXT_COMPONENT_RESOLVER.Consumer>
+            </ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider>
           );
         }}
-      </WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Consumer>
+      </ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Consumer>
     )}
-  </WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER.Consumer>
+  </ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER.Consumer>
 );
 
 const WchContentComponentProvider: FC = ({ children }) => (
-  <WCH_CONTEXT_CONTENT_COMPONENT.Provider value={WchContentComponent}>
+  <ACOUSTIC_CONTEXT_CONTENT_COMPONENT.Provider value={WchContentComponent}>
     {children}
-  </WCH_CONTEXT_CONTENT_COMPONENT.Provider>
+  </ACOUSTIC_CONTEXT_CONTENT_COMPONENT.Provider>
 );
 
 /**
  * Provides the rendering context component
  */
-export const WCH_PROVIDER_CONTENT_COMPONENT = createReactProvider(
+export const ACOUSTIC_PROVIDER_CONTENT_COMPONENT = createReactProvider(
   WchContentComponentProvider,
-  WCH_CONTEXT_CONTENT_COMPONENT,
-  [WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER, WCH_CONTEXT_COMPONENT_RESOLVER],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_CONTENT_COMPONENT,
+  [ACOUSTIC_CONTEXT_RENDERING_CONTEXT_RESOLVER, ACOUSTIC_CONTEXT_COMPONENT_RESOLVER],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

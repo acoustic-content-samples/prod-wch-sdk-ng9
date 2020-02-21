@@ -14,6 +14,18 @@ export interface AbstractElement {
     readonly elementType: ELEMENT_TYPE;
 }
 
+// @public
+export const ACOUSTIC_CONFIG_API_URL = "wch-config-api-url";
+
+// @public
+export const ACOUSTIC_CONFIG_BASE_URL = "wch-config-base-url";
+
+// @public
+export const ACOUSTIC_CONFIG_RESOURCE_URL = "wch-config-resource-url";
+
+// @public (undocumented)
+export const ACOUSTIC_SDK_MODULE_NAME = "WchSdk";
+
 // @public (undocumented)
 export interface ActivePage extends RenderingContextProvider {
     onRenderingContext: Observable<RenderingContext>;
@@ -1277,6 +1289,9 @@ export const KEY_ACCEPT_PRIVACY_NOTICE = "accept-privacy-notice";
 export const KEY_ACCESSOR = "accessor";
 
 // @public (undocumented)
+export const KEY_ACOUSTIC_SEED = "-wch-seed";
+
+// @public (undocumented)
 export const KEY_BASICAUTH_LOGIN_PASSWORD = "j_password";
 
 // @public (undocumented)
@@ -1311,9 +1326,6 @@ export const KEY_VALUE = "value";
 
 // @public (undocumented)
 export const KEY_VALUES = "values";
-
-// @public (undocumented)
-export const KEY_WCH_SEED = "-wch-seed";
 
 // @public
 export interface Layout {
@@ -2170,18 +2182,6 @@ export interface VideoElement extends AbstractElement {
     // (undocumented)
     readonly elementType: 'video';
 }
-
-// @public
-export const WCH_CONFIG_API_URL = "wch-config-api-url";
-
-// @public
-export const WCH_CONFIG_BASE_URL = "wch-config-base-url";
-
-// @public
-export const WCH_CONFIG_RESOURCE_URL = "wch-config-resource-url";
-
-// @public (undocumented)
-export const WCH_SDK_MODULE_NAME = "WchSdk";
 
 // @public (undocumented)
 export interface WchHttp {

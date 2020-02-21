@@ -2,7 +2,7 @@ import { Layout, LoggerService } from '@acoustic-content-sdk/api';
 import {
   ComponentTypeRef,
   ComponentTypeRefResolver,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   boxLoggerService,
@@ -40,7 +40,7 @@ export class HandlebarsComponentResolver implements ComponentTypeRefResolver {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // logger

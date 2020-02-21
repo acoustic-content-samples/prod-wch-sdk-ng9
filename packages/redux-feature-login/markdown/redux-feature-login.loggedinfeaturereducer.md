@@ -8,6 +8,6 @@
 
 ```typescript
 loggedInFeatureReducer: {
-    [LOGIN_FEATURE]: import("redux").Reducer<boolean, import("redux").AnyAction>;
+    loggedIn: import("redux").Reducer<boolean, import("redux").AnyAction>;
 }
 ```

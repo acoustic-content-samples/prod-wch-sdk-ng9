@@ -5,8 +5,8 @@ import {
   LoggerService
 } from '@acoustic-content-sdk/api';
 import {
-  WCH_TOKEN_DYNAMIC_LOGGER_FACTORY,
-  WCH_TOKEN_LOGGER_FACTORY
+  ACOUSTIC_TOKEN_DYNAMIC_LOGGER_FACTORY,
+  ACOUSTIC_TOKEN_LOGGER_FACTORY
 } from '@acoustic-content-sdk/ng-api';
 import {
   assertFromFunction,
@@ -39,9 +39,9 @@ export class WchLoggerService implements LoggerService, OnDestroy {
   get: (name: string) => Logger;
 
   constructor(
-    @Optional() @Inject(WCH_TOKEN_LOGGER_FACTORY) aFactory: LoggerFactory,
+    @Optional() @Inject(ACOUSTIC_TOKEN_LOGGER_FACTORY) aFactory: LoggerFactory,
     @Optional()
-    @Inject(WCH_TOKEN_DYNAMIC_LOGGER_FACTORY)
+    @Inject(ACOUSTIC_TOKEN_DYNAMIC_LOGGER_FACTORY)
     aDynamicFactory: DynamicLoggerFactory
   ) {
     const that = this;

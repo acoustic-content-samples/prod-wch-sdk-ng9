@@ -7,9 +7,9 @@ import {
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import { AbstractWchPageService } from '@acoustic-content-sdk/component-utils';
 import {
-  WCH_TOKEN_DELIVERY_PAGE_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG,
+  ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG,
   WchNgPageService
 } from '@acoustic-content-sdk/ng-api';
 import {
@@ -54,11 +54,11 @@ export class WchSitesPageService extends AbstractWchPageService
   ) => Observable<RenderingContextV2 | null | undefined>;
 
   constructor(
-    @Inject(WCH_TOKEN_DELIVERY_PAGE_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER)
     aDeliveryPageResolver: DeliveryPageResolver,
-    @Inject(WCH_TOKEN_URL_CONFIG) aUrlConfig$: Observable<UrlConfig>,
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG) aUrlConfig$: Observable<UrlConfig>,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // default

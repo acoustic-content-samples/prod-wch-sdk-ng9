@@ -4,7 +4,7 @@
 
 ## WchNgInlineEditServiceModule class
 
-Provides token `WCH_TOKEN_INLINE_EDIT_SERVICE` requires a `WCH_TOKEN_INLINE_EDIT_PROVIDER` for the backend
+Provides token `ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE` requires a `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER` for the backend
 
 <b>Signature:</b>
 

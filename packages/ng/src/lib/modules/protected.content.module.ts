@@ -1,4 +1,4 @@
-import { WCH_TOKEN_PROTECTED_CONTENT } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_PROTECTED_CONTENT } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { ProtectedContentService } from '../services/protected-content/protected
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_PROTECTED_CONTENT,
+      provide: ACOUSTIC_TOKEN_PROTECTED_CONTENT,
       useClass: ProtectedContentService
     }
   ]

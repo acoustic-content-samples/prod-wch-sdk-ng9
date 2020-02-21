@@ -48,11 +48,12 @@ export const loggedInFeature: import("@acoustic-content-sdk/redux-store").ReduxF
 
 // @public (undocumented)
 export const loggedInFeatureReducer: {
-    [LOGIN_FEATURE]: import("redux").Reducer<boolean, import("redux").AnyAction>;
+    loggedIn: import("redux").Reducer<boolean, import("redux").AnyAction>;
 };
 
 // @public (undocumented)
 export interface LoggedInFeatureState {
+    // Warning: (ae-forgotten-export) The symbol "LOGIN_FEATURE" needs to be exported by the entry point public_api.d.ts
     // Warning: (ae-forgotten-export) The symbol "LoggedInState" needs to be exported by the entry point public_api.d.ts
     //
     // (undocumented)
@@ -97,9 +98,5 @@ export const VERSION: {
     build: Date;
 };
 
-
-// Warnings were encountered during analysis:
-//
-// dist/state/login/login.feature.d.ts:11:5 - (ae-forgotten-export) The symbol "LOGIN_FEATURE" needs to be exported by the entry point public_api.d.ts
 
 ```

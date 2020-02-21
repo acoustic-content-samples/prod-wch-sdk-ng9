@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
-  WCH_TOKEN_API_URL,
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG
+  ACOUSTIC_TOKEN_API_URL,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import { WchNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
 import { WchNgRestModule } from '@acoustic-content-sdk/ng-rest';
@@ -29,11 +29,11 @@ import { PageLayoutModule } from './layouts/page.layout.module';
   ],
   providers: [
     {
-      provide: WCH_TOKEN_LOGGER_SERVICE,
+      provide: ACOUSTIC_TOKEN_LOGGER_SERVICE,
       useClass: WchLoggerService
     },
     {
-      provide: WCH_TOKEN_URL_CONFIG,
+      provide: ACOUSTIC_TOKEN_URL_CONFIG,
       useClass: WchInfoService
     }
   ],

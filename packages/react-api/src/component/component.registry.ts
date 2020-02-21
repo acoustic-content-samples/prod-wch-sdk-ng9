@@ -19,6 +19,6 @@ export interface ComponentRegistry
   registerType(aType: ComponentTypeRef): void;
 }
 
-export const WCH_CONTEXT_COMPONENT_REGISTRY = createReactContext<
+export const ACOUSTIC_CONTEXT_COMPONENT_REGISTRY = createReactContext<
   ComponentRegistry
->('WCH_CONTEXT_COMPONENT_REGISTRY');
+>('ACOUSTIC_CONTEXT_COMPONENT_REGISTRY');

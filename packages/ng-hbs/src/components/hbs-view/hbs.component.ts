@@ -5,9 +5,9 @@ import {
   LayoutResolver
 } from '@acoustic-content-sdk/component-api';
 import {
-  WCH_TOKEN_HANDLEBARS_RESOLVER,
-  WCH_TOKEN_LAYOUT_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER,
+  ACOUSTIC_TOKEN_LAYOUT_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import { AbstractRenderingComponent } from '@acoustic-content-sdk/ng-utils';
 import {
@@ -96,12 +96,12 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   templateId$: Observable<string>;
 
   constructor(
-    @Inject(WCH_TOKEN_HANDLEBARS_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER)
     aHandlebarsResolver: HandlebarsResolver,
-    @Inject(WCH_TOKEN_LAYOUT_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_LAYOUT_RESOLVER)
     aLayoutResolver: LayoutResolver,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super();

@@ -11,6 +11,6 @@ export const EVENT_INLINE_EDIT_END = 'wchInlineEditEnd';
 /*
  * Token used for dependency injection of the logger.
  */
-export const WCH_CONTEXT_INLINE_EDIT_SERVICE = createReactContext<
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_SERVICE = createReactContext<
   WchInlineEditServiceV2
->('WCH_CONTEXT_INLINE_EDIT_SERVICE');
+>('ACOUSTIC_CONTEXT_INLINE_EDIT_SERVICE');

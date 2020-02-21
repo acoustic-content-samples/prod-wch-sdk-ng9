@@ -10,9 +10,9 @@ import {
   SEARCH_FL_DOCUMENT,
   StaticHubInfoUrlProvider,
   UrlConfig,
-  WCH_CONFIG_API_URL,
-  WCH_CONFIG_BASE_URL,
-  WCH_CONFIG_RESOURCE_URL
+  ACOUSTIC_CONFIG_API_URL,
+  ACOUSTIC_CONFIG_BASE_URL,
+  ACOUSTIC_CONFIG_RESOURCE_URL
 } from '@acoustic-content-sdk/api';
 import { combineLatest, from, Observable, of, UnaryFunction } from 'rxjs';
 import {
@@ -227,11 +227,11 @@ function _getHubInfoFromLinks(aDocument?: Document, aWindow?: Window): HubInfo {
   const doc = getDocument(aDocument, aWindow);
   // decode
   const apiUrl = pluckHref(
-    elementById<HTMLAnchorElement | HTMLLinkElement>(WCH_CONFIG_API_URL, doc)
+    elementById<HTMLAnchorElement | HTMLLinkElement>(ACOUSTIC_CONFIG_API_URL, doc)
   );
   const resourceUrl = pluckHref(
     elementById<HTMLAnchorElement | HTMLLinkElement>(
-      WCH_CONFIG_RESOURCE_URL,
+      ACOUSTIC_CONFIG_RESOURCE_URL,
       doc
     )
   );
@@ -1087,7 +1087,7 @@ function _getBaseUrlFromWindow(
     const doc = getDocument(aDocument, aWindow);
     // check if we have a configuration link in the document
     const baseUrlLink = pluckHref(
-      elementById<HTMLAnchorElement | HTMLLinkElement>(WCH_CONFIG_BASE_URL, doc)
+      elementById<HTMLAnchorElement | HTMLLinkElement>(ACOUSTIC_CONFIG_BASE_URL, doc)
     );
     if (isNotNil(baseUrlLink) && isString(baseUrlLink)) {
       // resolve the URL

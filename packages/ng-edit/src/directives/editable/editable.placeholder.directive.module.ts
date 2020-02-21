@@ -1,4 +1,4 @@
-import { WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { WchEditablePlaceholderDirectiveServiceImpl } from './editable.placeholder.directive.service';
@@ -10,7 +10,7 @@ import { WchEditablePlaceholderDirectiveServiceImpl } from './editable.placehold
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE,
+      provide: ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE,
       useClass: WchEditablePlaceholderDirectiveServiceImpl
     }
   ]

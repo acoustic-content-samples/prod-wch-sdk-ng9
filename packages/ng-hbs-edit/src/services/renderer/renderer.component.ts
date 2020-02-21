@@ -2,11 +2,11 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import {
-  WCH_TOKEN_DELIVERY_CONTENT_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_INLINE_EDIT_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
-import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
+import { ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import { ReactComponent, ReactModule } from '@acoustic-content-sdk/react-api';
 import {
   createHandlebarsComponent,
@@ -52,16 +52,16 @@ export class HandlebarsRendererComponent {
   createRenderer: UnaryFunction<Observable<string>, ReactModule>;
 
   constructor(
-    @Inject(WCH_TOKEN_REDUX_STORE)
+    @Inject(ACOUSTIC_TOKEN_REDUX_STORE)
     aStore: ReduxRootStore,
-    @Inject(WCH_TOKEN_DELIVERY_CONTENT_RESOLVER)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER)
     aDeliveryContentResolver: DeliveryContentResolver,
-    @Inject(WCH_TOKEN_INLINE_EDIT_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE)
     aInlineEditService: WchInlineEditServiceV2,
     @Inject(DOCUMENT)
     aDocument: any,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // construct the component

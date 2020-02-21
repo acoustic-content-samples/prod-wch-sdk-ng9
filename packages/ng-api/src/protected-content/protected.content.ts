@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the protected content status
  */
-export const WCH_TOKEN_PROTECTED_CONTENT = new InjectionToken<ProtectedContent>(
-  'WCH_TOKEN_PROTECTED_CONTENT'
+export const ACOUSTIC_TOKEN_PROTECTED_CONTENT = new InjectionToken<ProtectedContent>(
+  'ACOUSTIC_TOKEN_PROTECTED_CONTENT'
 );

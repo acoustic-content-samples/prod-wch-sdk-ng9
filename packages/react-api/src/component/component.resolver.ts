@@ -13,6 +13,6 @@ export interface ComponentResolver
   ): Observable<ComponentTypeRef>;
 }
 
-export const WCH_CONTEXT_COMPONENT_RESOLVER = createReactContext<
+export const ACOUSTIC_CONTEXT_COMPONENT_RESOLVER = createReactContext<
   ComponentResolver
->('WCH_CONTEXT_COMPONENT_RESOLVER');
+>('ACOUSTIC_CONTEXT_COMPONENT_RESOLVER');

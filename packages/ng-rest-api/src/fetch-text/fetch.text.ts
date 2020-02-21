@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the remote text access
  */
-export const WCH_TOKEN_FETCH_TEXT = new InjectionToken<FetchText>(
-  'WCH_TOKEN_FETCH_TEXT'
+export const ACOUSTIC_TOKEN_FETCH_TEXT = new InjectionToken<FetchText>(
+  'ACOUSTIC_TOKEN_FETCH_TEXT'
 );

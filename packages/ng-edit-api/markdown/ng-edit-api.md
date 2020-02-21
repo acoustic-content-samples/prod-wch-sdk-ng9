@@ -35,19 +35,19 @@ Collection of APIs and constants for the Angular SDK in edit mode
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_TOKEN\_ACOUSTIC\_CONFIG](./ng-edit-api.acoustic_token_acoustic_config.md) | Injection token for the wch config |
+|  [ACOUSTIC\_TOKEN\_DEBUG\_PLACEHOLDERS](./ng-edit-api.acoustic_token_debug_placeholders.md) | Injection token for placeholder debugging |
+|  [ACOUSTIC\_TOKEN\_DEFAULT\_PLACEHOLDER\_TEXT](./ng-edit-api.acoustic_token_default_placeholder_text.md) | Injection token for default placeholder text |
+|  [ACOUSTIC\_TOKEN\_EDIT\_HOST\_WINDOW](./ng-edit-api.acoustic_token_edit_host_window.md) | Injects the window that acts as the edit host for an application. This is typically the parent window or the opener window. |
+|  [ACOUSTIC\_TOKEN\_INLINE\_EDIT\_PROVIDER](./ng-edit-api.acoustic_token_inline_edit_provider.md) | Injection token for the inline edit provider |
+|  [ACOUSTIC\_TOKEN\_INLINE\_EDIT\_SELECTED\_CELL\_CONSUMER](./ng-edit-api.acoustic_token_inline_edit_selected_cell_consumer.md) | Consumer for inline edit selections |
+|  [ACOUSTIC\_TOKEN\_INLINE\_EDIT\_SELECTION\_PROVIDER](./ng-edit-api.acoustic_token_inline_edit_selection_provider.md) | Provides information about the inline edit selection |
+|  [ACOUSTIC\_TOKEN\_INLINE\_EDIT\_SERVICE](./ng-edit-api.acoustic_token_inline_edit_service.md) | Token used to inject the <code>WchInlineEditServiceV2</code> service. |
+|  [ACOUSTIC\_TOKEN\_INLINE\_EDIT\_URL](./ng-edit-api.acoustic_token_inline_edit_url.md) | Injection token for the inline edit URL |
+|  [ACOUSTIC\_TOKEN\_PLACEHOLDER\_PROVIDER](./ng-edit-api.acoustic_token_placeholder_provider.md) |  |
 |  [DEFAULT\_DEBUG\_PLACEHOLDERS](./ng-edit-api.default_debug_placeholders.md) | per default do not debug |
 |  [DEFAULT\_INLINE\_EDIT\_URL](./ng-edit-api.default_inline_edit_url.md) | default value for the inline edit URL |
 |  [VERSION](./ng-edit-api.version.md) | Version and build number of the package |
-|  [WCH\_TOKEN\_DEBUG\_PLACEHOLDERS](./ng-edit-api.wch_token_debug_placeholders.md) | Injection token for placeholder debugging |
-|  [WCH\_TOKEN\_DEFAULT\_PLACEHOLDER\_TEXT](./ng-edit-api.wch_token_default_placeholder_text.md) | Injection token for default placeholder text |
-|  [WCH\_TOKEN\_EDIT\_HOST\_WINDOW](./ng-edit-api.wch_token_edit_host_window.md) | Injects the window that acts as the edit host for an application. This is typically the parent window or the opener window. |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_PROVIDER](./ng-edit-api.wch_token_inline_edit_provider.md) | Injection token for the inline edit provider |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_SELECTED\_CELL\_CONSUMER](./ng-edit-api.wch_token_inline_edit_selected_cell_consumer.md) | Consumer for inline edit selections |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_SELECTION\_PROVIDER](./ng-edit-api.wch_token_inline_edit_selection_provider.md) | Provides information about the inline edit selection |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_SERVICE](./ng-edit-api.wch_token_inline_edit_service.md) | Token used to inject the <code>WchInlineEditServiceV2</code> service. |
-|  [WCH\_TOKEN\_INLINE\_EDIT\_URL](./ng-edit-api.wch_token_inline_edit_url.md) | Injection token for the inline edit URL |
-|  [WCH\_TOKEN\_PLACEHOLDER\_PROVIDER](./ng-edit-api.wch_token_placeholder_provider.md) |  |
-|  [WCH\_TOKEN\_WCH\_CONFIG](./ng-edit-api.wch_token_wch_config.md) | Injection token for the wch config |
 
 ## Type Aliases
 

@@ -8,6 +8,6 @@
 
 ```typescript
 authContentFeatureReducer: {
-    [AUTH_CONTENT_FEATURE]: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringContentItem>, import("./auth.content.actions").AuthoringContentActions>;
+    authContent: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringContentItem>, import("./auth.content.actions").AuthoringContentActions>;
 }
 ```

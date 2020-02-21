@@ -1,7 +1,7 @@
 import { WindowType } from '@acoustic-content-sdk/component-api';
 import { getEditHostWindow } from '@acoustic-content-sdk/component-utils';
-import { WCH_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -16,17 +16,17 @@ export function proxyGetEditHostWindow(aCurrentWindow: WindowType): WindowType {
 }
 
 /**
- * Exposes the edit host as the `WCH_TOKEN_EDIT_HOST_WINDOW` token.
+ * Exposes the edit host as the `ACOUSTIC_TOKEN_EDIT_HOST_WINDOW` token.
  *
- * Depends on: `WCH_TOKEN_WINDOW`
+ * Depends on: `ACOUSTIC_TOKEN_WINDOW`
  */
 @NgModule({
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_EDIT_HOST_WINDOW,
+      provide: ACOUSTIC_TOKEN_EDIT_HOST_WINDOW,
       useFactory: proxyGetEditHostWindow,
-      deps: [WCH_TOKEN_WINDOW]
+      deps: [ACOUSTIC_TOKEN_WINDOW]
     }
   ]
 })

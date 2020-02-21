@@ -14,22 +14,22 @@
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_PROVIDER\_BROWSER\_WINDOW](./react-components.acoustic_provider_browser_window.md) | Provides the <code>ACOUSTIC_CONTEXT_WINDOW</code> token for browser based applications. |
+|  [ACOUSTIC\_PROVIDER\_COMPONENT\_REGISTRY](./react-components.acoustic_provider_component_registry.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_COMPONENT\_RESOLVER](./react-components.acoustic_provider_component_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_CONTENT\_COMPONENT](./react-components.acoustic_provider_content_component.md) | Provides the rendering context component |
+|  [ACOUSTIC\_PROVIDER\_DELIVERY\_SEARCH\_RESOLVER](./react-components.acoustic_provider_delivery_search_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_EDIT\_HOST\_WINDOW](./react-components.acoustic_provider_edit_host_window.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_LOGGER\_SERVICE](./react-components.acoustic_provider_logger_service.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_PAGE\_COMPONENT](./react-components.acoustic_provider_page_component.md) | Provides the rendering context component |
+|  [ACOUSTIC\_PROVIDER\_PAGE\_SERVICE](./react-components.acoustic_provider_page_service.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_PROTECTED\_CONTENT](./react-components.acoustic_provider_protected_content.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDER\_RENDERING\_CONTEXT\_RESOLVER](./react-components.acoustic_provider_rendering_context_resolver.md) | Declares the provider |
+|  [ACOUSTIC\_PROVIDERS\_COMPONENTS](./react-components.acoustic_providers_components.md) | Exports the providers of this module |
 |  [LayoutComponent](./react-components.layoutcomponent.md) | The layout component directive |
 |  [LayoutMapping](./react-components.layoutmapping.md) | The layout mapping directive |
 |  [LayoutRegistration](./react-components.layoutregistration.md) | Component that registers layouts |
 |  [VERSION](./react-components.version.md) | Version and build number of the package |
-|  [WCH\_PROVIDER\_BROWSER\_WINDOW](./react-components.wch_provider_browser_window.md) | Provides the <code>WCH_CONTEXT_WINDOW</code> token for browser based applications. |
-|  [WCH\_PROVIDER\_COMPONENT\_REGISTRY](./react-components.wch_provider_component_registry.md) | Declares the provider |
-|  [WCH\_PROVIDER\_COMPONENT\_RESOLVER](./react-components.wch_provider_component_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_CONTENT\_COMPONENT](./react-components.wch_provider_content_component.md) | Provides the rendering context component |
-|  [WCH\_PROVIDER\_DELIVERY\_SEARCH\_RESOLVER](./react-components.wch_provider_delivery_search_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDER\_EDIT\_HOST\_WINDOW](./react-components.wch_provider_edit_host_window.md) | Declares the provider |
-|  [WCH\_PROVIDER\_LOGGER\_SERVICE](./react-components.wch_provider_logger_service.md) | Declares the provider |
-|  [WCH\_PROVIDER\_PAGE\_COMPONENT](./react-components.wch_provider_page_component.md) | Provides the rendering context component |
-|  [WCH\_PROVIDER\_PAGE\_SERVICE](./react-components.wch_provider_page_service.md) | Declares the provider |
-|  [WCH\_PROVIDER\_PROTECTED\_CONTENT](./react-components.wch_provider_protected_content.md) | Declares the provider |
-|  [WCH\_PROVIDER\_RENDERING\_CONTEXT\_RESOLVER](./react-components.wch_provider_rendering_context_resolver.md) | Declares the provider |
-|  [WCH\_PROVIDERS\_COMPONENTS](./react-components.wch_providers_components.md) | Exports the providers of this module |
 |  [WchContentComponent](./react-components.wchcontentcomponent.md) | Implementation of the component that performs the actual rendering of content |
 |  [WchPageComponent](./react-components.wchpagecomponent.md) | Implementation of the top level component that resolves the page |
 
