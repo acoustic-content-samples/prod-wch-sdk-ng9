@@ -2,6 +2,7 @@ import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { WchNgMarkupRegistryModule } from '../services/markup/markup.registry.module';
 import { WchNgHbsResolverViewModule } from '../services/resolver/resolver.module';
 import { VERSION } from './../version';
 import { WchNgHbsComponentsViewModule } from './components.module';
@@ -10,7 +11,8 @@ import { WchNgHbsComponentsViewModule } from './components.module';
   imports: [
     CommonModule,
     WchNgHbsComponentsViewModule,
-    WchNgHbsResolverViewModule
+    WchNgHbsResolverViewModule,
+    WchNgMarkupRegistryModule
   ]
 })
 export class WchNgHbsViewModule {

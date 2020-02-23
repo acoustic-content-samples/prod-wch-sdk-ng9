@@ -47,7 +47,7 @@ const nextCleanup = () => ((Math.random() + 1) * CLEANUP_DELTA) / 2;
  * @returns timestamp of next cleanup
  */
 function cleanup<T>(
-  aCache: Array<CacheValue<T>>,
+  aCache: CacheValue<T>[],
   aDict: Record<string, CacheValue<T>>,
   aMaxTime: number,
   aLogger: Logger
