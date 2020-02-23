@@ -19,14 +19,21 @@ import {
   UNDEFINED$
 } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 import {
   MonoTypeOperatorFunction,
   Observable,
   Subject,
   Unsubscribable
 } from 'rxjs';
-import { catchError, finalize, first, map, switchMap } from 'rxjs/operators';
+import {
+  catchError,
+  finalize,
+  first,
+  map,
+  switchMap,
+  takeUntil
+} from 'rxjs/operators';
 
 const LOGGER = 'WchNgMarkupRegistryService';
 
@@ -77,10 +84,12 @@ function sendRequest<T>(
 }
 
 @Injectable()
-export class WchNgMarkupRegistryService {
+export class WchNgMarkupRegistryService implements OnDestroy {
+  // destroy callback
+  private readonly done$ = createSingleSubject<void>();
   // manage markup fragments
   add: (aNode?: ParentNode) => void;
-  get: (aSelector: string) => Observable<Element>;
+  get: (aSelector: string) => Observable<string>;
 
   constructor(
     @Inject(DOCUMENT)
@@ -103,7 +112,7 @@ export class WchNgMarkupRegistryService {
     // template node
     const template = doc.createElement('template');
     // the cache
-    const cache = createLruCache<Subject<Element>>(
+    const cache = createLruCache<Subject<string>>(
       DEFAULT_TIMEOUT,
       DEFAULT_MAXCOUNT,
       logger
@@ -114,7 +123,7 @@ export class WchNgMarkupRegistryService {
     // adds an element
     const addElement = (aElement: Element) =>
       getSubject(aElement.getAttribute(DATA_ACOUSTIC_MARKUP_FRAGMENT)).next(
-        aElement
+        aElement.outerHTML
       );
     // register a new fragment
     const add = (aNode?: ParentNode) =>
@@ -148,7 +157,9 @@ export class WchNgMarkupRegistryService {
           // just get the first value
           first(),
           // unregister
-          finalize(() => delete loading[aId])
+          finalize(() => delete loading[aId]),
+          // cancel callback
+          takeUntil(this.done$)
         ).subscribe();
       }
     };
@@ -164,5 +175,9 @@ export class WchNgMarkupRegistryService {
     };
     // attach
     assignObject(this, { add, get });
+  }
+
+  ngOnDestroy() {
+    this.done$.next();
   }
 }

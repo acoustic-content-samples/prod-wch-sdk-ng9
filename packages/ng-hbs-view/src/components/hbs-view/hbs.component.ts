@@ -1,24 +1,11 @@
 import { LoggerService, RenderingContextV2 } from '@acoustic-content-sdk/api';
-import {
-  HandlebarsProcessor,
-  HandlebarsResolver,
-  LayoutResolver
-} from '@acoustic-content-sdk/component-api';
-import {
-  ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER,
-  ACOUSTIC_TOKEN_LAYOUT_RESOLVER,
-  ACOUSTIC_TOKEN_LOGGER_SERVICE
-} from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { AbstractRenderingComponent } from '@acoustic-content-sdk/ng-utils';
 import {
-  anyToString,
-  escapeHtml,
-  isNotNil,
   boxLoggerService,
   opDistinctUntilChanged,
   rxNext,
-  rxPipe,
-  rxSelectProperty
+  rxPipe
 } from '@acoustic-content-sdk/utils';
 import {
   ChangeDetectionStrategy,
@@ -28,40 +15,15 @@ import {
   Optional,
   Output
 } from '@angular/core';
-import { combineLatest, MonoTypeOperatorFunction, Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
+
+import { WchNgMarkupRegistryService } from '../../services/markup/markup.registry.service';
 
 const LOGGER = 'HandlebarsComponent';
 
-interface Processor {
-  id: string;
-  processor: HandlebarsProcessor;
-}
-
-/**
- * Apply the handlebars template to a context
- *
- * @param processor - the processor to invoke
- * @param aContext - the context
- *
- * @returns the resulting markup string
- */
-function safeApplyTemplate(
-  { id, processor }: Processor,
-  aContext: RenderingContextV2
-): string {
-  try {
-    return processor(aContext);
-  } catch (error) {
-    // error string
-    const message = `${id}: ${anyToString(error)}`;
-    // error markup
-    return `<div>${escapeHtml(message)}</div>`;
-  }
-}
-
-const emptyProcessor = (aId: string): HandlebarsProcessor => () =>
-  `<div>${escapeHtml(aId)}</div>`;
+const getSelector = (ctx: RenderingContextV2) =>
+  `${ctx.$metadata.id}#${ctx.$metadata.accessor}`;
 
 @Component({
   selector: 'wch-hbs-content',
@@ -91,15 +53,8 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   @Output()
   markup$: Observable<string>;
 
-  /** ID of the handlebars template */
-  @Output()
-  templateId$: Observable<string>;
-
   constructor(
-    @Inject(ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER)
-    aHandlebarsResolver: HandlebarsResolver,
-    @Inject(ACOUSTIC_TOKEN_LAYOUT_RESOLVER)
-    aLayoutResolver: LayoutResolver,
+    markupRegistry: WchNgMarkupRegistryService,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
@@ -112,53 +67,15 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
     const log: <T>(value: string) => MonoTypeOperatorFunction<T> = rxNext(
       logger
     );
-    // resolution callbacks
-    const resolveLayout = (
-      aLayoutMode: string,
-      aRenderingContext: RenderingContextV2
-    ) => aLayoutResolver.resolveLayout(aLayoutMode, aRenderingContext);
-    const getHandlebarsProcessor = (aId: string) =>
-      isNotNil(aId)
-        ? aHandlebarsResolver.getHandlebarsProcessor(aId)
-        : of(emptyProcessor(aId));
-
-    // access some props
-    const { layoutMode$, renderingContext$ } = this;
-    // resolve the layout
-    const layout$ = rxPipe(
-      combineLatest([layoutMode$, renderingContext$]),
-      switchMap(([layoutMode, renderingContext]) =>
-        resolveLayout(layoutMode, renderingContext)
-      ),
+    // the selector
+    this.markup$ = rxPipe(
+      this.renderingContext$,
+      map(getSelector),
       opDistinctUntilChanged,
-      log('layout')
-    );
-    // template ID
-    const templateId$ = rxPipe(
-      layout$,
-      rxSelectProperty('template'),
-      log('templateId')
-    );
-    // resolve the processor
-    const processor$ = rxPipe(
-      templateId$,
-      switchMap((id) =>
-        rxPipe(
-          getHandlebarsProcessor(id),
-          map((processor) => ({ id, processor }))
-        )
-      )
-    );
-    // generate the markup
-    const markup$ = rxPipe(
-      combineLatest([processor$, renderingContext$]),
-      map(([processor, renderingContext]) =>
-        safeApplyTemplate(processor, renderingContext)
-      ),
+      log('selector'),
+      switchMap((selector) => markupRegistry.get(selector)),
       opDistinctUntilChanged,
-      log('markup')
+      takeUntil(this.onDestroy$)
     );
-    // attach the markup observable
-    this.markup$ = markup$;
   }
 }
