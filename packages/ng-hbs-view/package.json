@@ -1,5 +1,5 @@
 {
-  "name": "@acoustic-content-sdk/ng-hbs",
+  "name": "@acoustic-content-sdk/ng-hbs-view",
   "version": "9.0.0",
   "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
   "keywords": [
@@ -19,9 +19,9 @@
   "license": "MIT",
   "author": "Carsten Leue <carsten.leue@de.ibm.com>",
   "sideEffects": false,
-  "main": "dist/bundles/acoustic-content-sdk-ng-hbs.umd.js",
-  "module": "dist/fesm5/acoustic-content-sdk-ng-hbs.js",
-  "typings": "dist/acoustic-content-sdk-ng-hbs.d.ts",
+  "main": "dist/bundles/acoustic-content-sdk-ng-hbs-view.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-ng-hbs-view.js",
+  "typings": "dist/acoustic-content-sdk-ng-hbs-view.d.ts",
   "scripts": {
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
@@ -38,12 +38,12 @@
     "@angular/core": "^9",
     "rxjs": "^6"
   },
-  "es2015": "dist/fesm2015/acoustic-content-sdk-ng-hbs.js",
-  "esm2015": "dist/esm2015/acoustic-content-sdk-ng-hbs.js",
-  "esm5": "dist/esm5/acoustic-content-sdk-ng-hbs.js",
-  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng-hbs.js",
-  "fesm5": "dist/fesm5/acoustic-content-sdk-ng-hbs.js",
-  "metadata": "dist/acoustic-content-sdk-ng-hbs.metadata.json",
+  "es2015": "dist/fesm2015/acoustic-content-sdk-ng-hbs-view.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-ng-hbs-view.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-ng-hbs-view.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng-hbs-view.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-ng-hbs-view.js",
+  "metadata": "dist/acoustic-content-sdk-ng-hbs-view.metadata.json",
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
