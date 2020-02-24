@@ -12,6 +12,7 @@ import {
   createGuid,
   createRevision,
   FileDescriptor,
+  kebabCase,
   ReadDirectory,
   ReadTextFile
 } from '@acoustic-content-sdk/tooling';
@@ -19,6 +20,7 @@ import {
   arrayPush,
   assertArray,
   filterArray,
+  isAbsoluteURL,
   isNotEmpty,
   mapArray,
   opShareLast,
@@ -36,6 +38,7 @@ import {
   shareReplay,
   toArray as rxToArray
 } from 'rxjs/operators';
+
 import { ArtifactMode } from './schema';
 
 export type Artifact = AuthoringContentItem;
@@ -76,10 +79,116 @@ const PAGE_CONTRIBUTIONS_ID = 'aab86460-0018-44c2-9f52-3a326e58f7f7';
 const PAGE_CONTRIBUTION_ID = '354743b2-f89a-482b-b447-2b5a2367c8bd';
 const STYLE_CONTRIBUTION_ID = '3a3726b8-e0b2-4f10-98ed-b1c82e851b99';
 const SCRIPT_CONTRIBUTION_ID = '5c473463-db07-4132-b8a1-bd40cbdf4b18';
+const EMBED_CONTRIBUTION_ID = 'eedce4a0-9647-4301-9247-6793e08652ea';
+const MARKUP_CONTRIBUTION_ID = '2b0cd235-16ad-42ec-aea7-a05df105604c';
+
+const ATTR_HREF = 'href';
+const ATTR_SRC = 'src';
 
 function createName(aLink: string, aBaseName: string): string {
   const baseName = createBaseName(aLink);
   return `${aBaseName} - ${baseName}`;
+}
+
+const isAbsoluteLink = (aLink: HTMLLinkElement) =>
+  isAbsoluteURL(aLink.getAttribute(ATTR_HREF));
+const isAbsoluteScript = (aScript: HTMLScriptElement) =>
+  isAbsoluteURL(aScript.getAttribute(ATTR_SRC));
+
+function createEmbedStyleItem(
+  aLink: HTMLLinkElement,
+  tags: string[]
+): AuthoringContentItem {
+  // url
+  const href = aLink.getAttribute(ATTR_HREF);
+  const name = kebabCase(href);
+  const id = createGuid(name);
+  const key = id;
+  // construct the item
+  const item = {
+    id,
+    name,
+    tags,
+    classification: CLASSIFICATION_CONTENT,
+    typeId: EMBED_CONTRIBUTION_ID,
+    elements: {
+      embed: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: aLink.outerHTML
+      },
+      key: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: key
+      }
+    },
+    status: Status.READY
+  };
+  // ok
+  return item as any;
+}
+
+function createEmbedScriptItem(
+  aScript: HTMLScriptElement,
+  tags: string[]
+): AuthoringContentItem {
+  // url
+  const src = aScript.getAttribute(ATTR_SRC);
+  const name = kebabCase(src);
+  const id = createGuid(name);
+  const key = id;
+  // construct the item
+  const item = {
+    id,
+    name,
+    tags,
+    classification: CLASSIFICATION_CONTENT,
+    typeId: EMBED_CONTRIBUTION_ID,
+    elements: {
+      embed: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: aScript.outerHTML
+      },
+      key: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: key
+      }
+    },
+    status: Status.READY
+  };
+  // ok
+  return item as any;
+}
+
+function createMarkupScriptItem(
+  aScript: HTMLScriptElement,
+  tags: string[]
+): AuthoringContentItem {
+  // url
+  const src = aScript.getAttribute(ATTR_SRC);
+  const name = kebabCase(src);
+  const id = createGuid(name);
+  const key = id;
+  // construct the item
+  const item = {
+    id,
+    name,
+    tags,
+    classification: CLASSIFICATION_CONTENT,
+    typeId: MARKUP_CONTRIBUTION_ID,
+    elements: {
+      markup: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: aScript.outerHTML
+      },
+      key: {
+        elementType: ELEMENT_TYPE_TEXT,
+        value: key
+      }
+    },
+    status: Status.READY
+  };
+  // ok
+  return item as any;
 }
 
 /**
@@ -93,7 +202,7 @@ function createStyleItem(
   tags: string[]
 ): AuthoringContentItem {
   // url
-  const href = aStyle.href;
+  const href = aStyle.getAttribute(ATTR_HREF);
   const name = createName(href, aBaseName);
   const id = createGuid(name);
   const path = `${aBasePath}/${href}`;
@@ -132,7 +241,7 @@ function createScriptItem(
   tags: string[]
 ): AuthoringContentItem {
   // url
-  const src = aScript.src;
+  const src = aScript.getAttribute(ATTR_SRC);
   const name = createName(src, aBaseName);
   const id = createGuid(name);
   const path = `${aBasePath}/${src}`;
@@ -179,12 +288,20 @@ function createHeadArtifacts(
   // head links
   const style$ = rxPipe(
     selectStyleLinks(aHead),
-    map((link) => createStyleItem(link, aBaseName, aBasePath, tags))
+    map((link) =>
+      isAbsoluteLink(link)
+        ? createEmbedStyleItem(link, tags)
+        : createStyleItem(link, aBaseName, aBasePath, tags)
+    )
   );
   // head scripts
   const script$ = rxPipe(
     selectScripts(aHead),
-    map((script) => createScriptItem(script, aBaseName, aBasePath, tags))
+    map((script) =>
+      isAbsoluteScript(script)
+        ? createEmbedScriptItem(script, tags)
+        : createScriptItem(script, aBaseName, aBasePath, tags)
+    )
   );
   // merge
   return merge(style$, script$);
@@ -199,7 +316,11 @@ function createBodyArtifacts(
   // body scripts
   return rxPipe(
     selectScripts(aBody),
-    map((script) => createScriptItem(script, aBaseName, aBasePath, tags))
+    map((script) =>
+      isAbsoluteScript(script)
+        ? createMarkupScriptItem(script, tags)
+        : createScriptItem(script, aBaseName, aBasePath, tags)
+    )
   );
 }
 
@@ -414,6 +535,15 @@ interface Artifacts {
 }
 
 /**
+ * Trims the leading slash from a path
+ *
+ * @param aPath - the path that might contain a leading slash
+ * @returns the path without leading slash
+ */
+const removeLeadingSlash = (aPath: string) =>
+  aPath.startsWith('/') ? aPath.substr(1) : aPath;
+
+/**
  * Constructs the artifacts for a particular root
  *
  * @param aConfig - the config
@@ -437,6 +567,8 @@ export function createArtifacts(
   const baseName = `${aProjectName} - ${mode}`;
   // index
   const indexPath = `${aRootDir}${outputPath}/index.html`;
+  // rel root path
+  const relOutputPath = removeLeadingSlash(outputPath);
   // parse the index
   const dom$ = rxPipe(
     aReadTextFile(indexPath),
@@ -448,14 +580,14 @@ export function createArtifacts(
   const head$ = rxPipe(
     dom$,
     pluck('head'),
-    mergeMap((el) => createHeadArtifacts(el, baseName, outputPath, aTags)),
+    mergeMap((el) => createHeadArtifacts(el, baseName, relOutputPath, aTags)),
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
   const body$ = rxPipe(
     dom$,
     pluck('body'),
-    mergeMap((el) => createBodyArtifacts(el, baseName, outputPath, aTags)),
+    mergeMap((el) => createBodyArtifacts(el, baseName, relOutputPath, aTags)),
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
