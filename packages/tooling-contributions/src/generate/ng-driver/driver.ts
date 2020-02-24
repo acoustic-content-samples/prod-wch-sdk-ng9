@@ -51,6 +51,15 @@ const selectRootPath = pluckProperty<
 const selectOutputPath = pluckProperty<JSONObject, 'outputPath'>('outputPath');
 
 /**
+ * Trims the leading slash from a path
+ *
+ * @param aPath - the path that might contain a leading slash
+ * @returns the path without leading slash
+ */
+const removeLeadingSlash = (aPath: string) =>
+  aPath.startsWith('/') ? aPath.substr(1) : aPath;
+
+/**
  * Constructs a config object
  *
  * @param aMode - the mode
@@ -59,7 +68,9 @@ const selectOutputPath = pluckProperty<JSONObject, 'outputPath'>('outputPath');
  */
 const createModeConfig = (aMode: string, aOptions: JSONObject): ModeConfig => ({
   mode: aMode as ArtifactMode,
-  outputPath: ensureDirPath(anyToString(selectOutputPath(aOptions)))
+  outputPath: removeLeadingSlash(
+    ensureDirPath(anyToString(selectOutputPath(aOptions)))
+  )
 });
 
 /**
