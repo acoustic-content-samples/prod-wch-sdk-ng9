@@ -58,6 +58,7 @@
       "@acoustic-content-sdk/.*"
     ]
   },
+  "schematics": "./assets/collection.json",
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
   }
