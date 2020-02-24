@@ -15,9 +15,9 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import {
   arrayPush,
+  boxLoggerService,
   isNotEmpty,
   isNotNil,
-  boxLoggerService,
   opShareLast,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -31,6 +31,7 @@ import { aggregateContent } from './content';
 import { CreatePackageFromArtifactsSchema } from './schema';
 
 const SITES_NEXT_API_MODULE = '@sites-next-content/data-sites-next';
+const CROSS_SPAWN_MODULE = 'cross-spawn';
 
 const DEFAULT_LICENSE = 'MIT';
 const DEFAULT_DATA = './data';
@@ -141,12 +142,19 @@ function createPackage(
     map((files) => files.sort())
   );
   // create the package
-  const dependencies = { [SITES_NEXT_API_MODULE]: '^9' };
+  const dependencies = {
+    [SITES_NEXT_API_MODULE]: '^9',
+    [CROSS_SPAWN_MODULE]: '^7'
+  };
   // relative path from dst dir to data dir
   const data = relativePath(aDstDir, aDataDir);
   // config
   const config = {
     data
+  };
+  // bin entry
+  const bin = {
+    push: './bundles/push.js'
   };
   // construct the package
   const pkg: Record<string, any> = {
@@ -157,7 +165,8 @@ function createPackage(
     config,
     main,
     module,
-    typings
+    typings,
+    bin
   };
   // optional fields
   if (isNotEmpty(tags)) {
