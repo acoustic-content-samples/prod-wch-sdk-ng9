@@ -2,17 +2,36 @@
 
 const { normalize, join } = require('path');
 const { argv } = require('process');
-const spawn = require('cross-spawn');
+const { tmpdir } = require('os');
+const { sync } = require('cross-spawn');
 
-const workDir = normalize(join(__dirname, '..', 'data'));
+const dataDir = normalize(join(tmpdir(), `acoustic-content-${Date.now()}`));
+const srcDir = normalize(join(__dirname, '..'));
 
-const args = [
+const cliArgs = [
+  '@acoustic-content-sdk/cli',
+  'generate-data-overlay',
+  '--dir',
+  dataDir,
+  '--src',
+  srcDir
+];
+
+const toolsArgs = [
   'wchtools-cli',
   'push',
   '-AfI',
   '--dir',
-  workDir,
+  dataDir,
   ...argv.splice(2)
 ];
 
-spawn('npx', args, { stdio: 'inherit' });
+const rmArgs = ['rimraf', dataDir];
+
+const opts = {
+  stdio: 'inherit'
+};
+
+sync('npx', cliArgs, opts);
+sync('npx', toolsArgs, opts);
+sync('npx', rmArgs, opts);

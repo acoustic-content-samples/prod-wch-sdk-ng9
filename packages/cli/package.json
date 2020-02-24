@@ -55,6 +55,7 @@
     "semver": "^7.1.3",
     "tmp": "^0.1.0",
     "uuid": "^3.4.0",
+    "email-validator": "^2.0.4",
     "yauzl": "^2.10.0"
   },
   "peerDependencies": {},
@@ -107,6 +108,7 @@
       "mime",
       "fs-extra",
       "yauzl",
+      "email-validator",
       "tmp"
     ]
   },
