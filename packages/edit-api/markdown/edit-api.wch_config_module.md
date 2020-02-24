@@ -4,9 +4,10 @@
 
 ## WCH\_CONFIG\_MODULE variable
 
-Token used to require the \[\[WchConfig\]\] service
-
- PromiseLike<WchConfig>
+> Warning: This API is now obsolete.
+> 
+> use [ACOUSTIC\_CONFIG\_MODULE](./edit-api.acoustic_config_module.md) instead
+> 
 
 <b>Signature:</b>
 

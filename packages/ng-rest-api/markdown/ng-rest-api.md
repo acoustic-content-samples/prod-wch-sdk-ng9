@@ -10,6 +10,6 @@ Definition of contexts and interfaces for the Angular SDK based on REST.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_TOKEN\_FETCH\_TEXT](./ng-rest-api.acoustic_token_fetch_text.md) | Injection token for the remote text access |
 |  [VERSION](./ng-rest-api.version.md) | Version and build number of the package |
-|  [WCH\_TOKEN\_FETCH\_TEXT](./ng-rest-api.wch_token_fetch_text.md) | Injection token for the remote text access |
 

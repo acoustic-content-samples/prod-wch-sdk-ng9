@@ -11,8 +11,8 @@ import {
   ComponentResolver,
   ComponentTypeRef,
   ComponentTypeRefResolver,
-  WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   isNotNil,
@@ -149,10 +149,10 @@ export class ComponentResolverService implements ComponentResolver {
     aLayoutResolverService: LayoutResolverService,
     aLayoutMappingService: LayoutMappingService,
     @Optional()
-    @Inject(WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS)
+    @Inject(ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS)
     aComponentTypeRefResolvers: ComponentTypeRefResolver[],
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
   ) {
     // resolve the logger

@@ -1,5 +1,5 @@
 import { Logger, LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { ReactModule } from '@acoustic-content-sdk/react-api';
 import {
   createSetterOnSubject,
@@ -45,7 +45,7 @@ export class ReactDirective implements OnDestroy, AfterViewInit {
     private host: ElementRef,
     renderer: HandlebarsRendererComponent,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // initialize logging

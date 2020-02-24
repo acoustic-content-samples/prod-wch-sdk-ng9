@@ -2,8 +2,8 @@ import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 import { assertSameOrigin } from '@acoustic-content-sdk/component-utils';
 import {
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_WINDOW
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_WINDOW
 } from '@acoustic-content-sdk/ng-api';
 import {
   WchNgEditDirectivesModule,
@@ -11,7 +11,7 @@ import {
   WchNgInlineEditServiceModule,
   WchNgParentInlineEditProviderModule
 } from '@acoustic-content-sdk/ng-edit';
-import { WCH_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
 import { WchNgHbsEditModule } from '@acoustic-content-sdk/ng-hbs-edit';
 import {
   WchNgParentFrameReduxStoreModule,
@@ -31,7 +31,7 @@ import { MODULE, VERSION } from '../version';
  * - The redux store is accessed from the controlling parent window
  *
  * This module assumes that the controlling parent window runs in the same origin than the application window.
- * If this is not the case for your application, select different providers for `WCH_TOKEN_INLINE_EDIT_PROVIDER` and `WCH_TOKEN_REDUX_STORE`
+ * If this is not the case for your application, select different providers for `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER` and `ACOUSTIC_TOKEN_REDUX_STORE`
  */
 @NgModule({
   imports: [
@@ -53,12 +53,12 @@ export class WchNgAppPreviewModule {
   VERSION: WchSdkVersion = VERSION;
 
   constructor(
-    @Inject(WCH_TOKEN_WINDOW)
+    @Inject(ACOUSTIC_TOKEN_WINDOW)
     aCurrentWindow: WindowType,
-    @Inject(WCH_TOKEN_EDIT_HOST_WINDOW)
+    @Inject(ACOUSTIC_TOKEN_EDIT_HOST_WINDOW)
     aHostWindow: WindowType,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log this module

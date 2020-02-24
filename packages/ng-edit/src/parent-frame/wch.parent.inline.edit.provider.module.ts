@@ -4,10 +4,10 @@ import {
   INLINE_EDIT_PROVIDER_ID,
   WchInlineEditProviderV2
 } from '@acoustic-content-sdk/edit-api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_EDIT_HOST_WINDOW,
-  WCH_TOKEN_INLINE_EDIT_PROVIDER
+  ACOUSTIC_TOKEN_EDIT_HOST_WINDOW,
+  ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER
 } from '@acoustic-content-sdk/ng-edit-api';
 import {
   boxLoggerService,
@@ -79,20 +79,20 @@ export function getInlineEditProvider(
 }
 
 /**
- * Exposes the inline edit provider `WCH_TOKEN_INLINE_EDIT_PROVIDER` from the parent frame. The provider
+ * Exposes the inline edit provider `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER` from the parent frame. The provider
  * must have been exposed via the `INLINE_EDIT_PROVIDER_ID` constant on that window.
  *
- * Depends on: `WCH_TOKEN_EDIT_HOST_WINDOW`, `WCH_TOKEN_LOGGER_SERVICE`
+ * Depends on: `ACOUSTIC_TOKEN_EDIT_HOST_WINDOW`, `ACOUSTIC_TOKEN_LOGGER_SERVICE`
  */
 @NgModule({
   imports: [CommonModule],
   providers: [
     {
       deps: [
-        WCH_TOKEN_EDIT_HOST_WINDOW,
-        [new Optional(), WCH_TOKEN_LOGGER_SERVICE]
+        ACOUSTIC_TOKEN_EDIT_HOST_WINDOW,
+        [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
       ],
-      provide: WCH_TOKEN_INLINE_EDIT_PROVIDER,
+      provide: ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER,
       useFactory: getInlineEditProvider
     }
   ]
@@ -100,7 +100,7 @@ export function getInlineEditProvider(
 export class WchNgParentInlineEditProviderModule {
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log the existence of this service

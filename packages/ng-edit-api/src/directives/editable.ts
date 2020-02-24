@@ -93,6 +93,6 @@ export interface WchEditableDirectiveService {
  *
  * @internal
  */
-export const WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE = new InjectionToken<
+export const ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE = new InjectionToken<
   WchEditableDirectiveService
->('WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE');
+>('ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE');

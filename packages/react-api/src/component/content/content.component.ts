@@ -25,6 +25,6 @@ export interface ContentComponentProps {
 /**
  * Injection token for the content component
  */
-export const WCH_CONTEXT_CONTENT_COMPONENT = createReactContext<
+export const ACOUSTIC_CONTEXT_CONTENT_COMPONENT = createReactContext<
   ComponentTypeRef<ContentComponentProps>
->('WCH_CONTEXT_CONTENT_COMPONENT');
+>('ACOUSTIC_CONTEXT_CONTENT_COMPONENT');

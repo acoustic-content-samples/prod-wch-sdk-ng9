@@ -29,19 +29,15 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [createInjectableReactProvider](./react-api.createinjectablereactprovider.md) | Creates a <code>ReactProvider</code> that resolves its mandatory and optional elements and delegates the creation of the provided value to a callback function with these dependencies. |
-|  [createModuleFromProvider](./react-api.createmodulefromprovider.md) | Constructs a module component that includes the referenced providers in topological order |
-|  [selectDisplayName](./react-api.selectdisplayname.md) | Returns the display name of a context |
-|  [VERSION](./react-api.version.md) |  |
-|  [WCH\_CONTEXT\_API\_URL](./react-api.wch_context_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
-|  [WCH\_CONTEXT\_BASE\_URL](./react-api.wch_context_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |
-|  [WCH\_CONTEXT\_COMPONENT\_REGISTRY](./react-api.wch_context_component_registry.md) |  |
-|  [WCH\_CONTEXT\_COMPONENT\_RESOLVER](./react-api.wch_context_component_resolver.md) |  |
-|  [WCH\_CONTEXT\_COMPONENT\_TYPE\_REF\_RESOLVERS](./react-api.wch_context_component_type_ref_resolvers.md) | A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./react-api.componenttyperefresolver.md)<!-- -->s.
+|  [ACOUSTIC\_CONTEXT\_API\_URL](./react-api.acoustic_context_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
+|  [ACOUSTIC\_CONTEXT\_BASE\_URL](./react-api.acoustic_context_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |
+|  [ACOUSTIC\_CONTEXT\_COMPONENT\_REGISTRY](./react-api.acoustic_context_component_registry.md) |  |
+|  [ACOUSTIC\_CONTEXT\_COMPONENT\_RESOLVER](./react-api.acoustic_context_component_resolver.md) |  |
+|  [ACOUSTIC\_CONTEXT\_COMPONENT\_TYPE\_REF\_RESOLVERS](./react-api.acoustic_context_component_type_ref_resolvers.md) | A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./react-api.componenttyperefresolver.md)<!-- -->s.
 ```typescript
 providers: [
   {
-     provide: WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS,
+     provide: ACOUSTIC_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS,
      useClass: MyResolver,
      multi: true
   }
@@ -49,32 +45,36 @@ providers: [
 
 ```
  |
-|  [WCH\_CONTEXT\_DELIVERY\_CONTENT\_RESOLVER](./react-api.wch_context_delivery_content_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_CONTENT\_SEED](./react-api.wch_context_delivery_content_seed.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-api.wch_context_delivery_layout_mapping_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_LAYOUT\_MAPPING\_SEED](./react-api.wch_context_delivery_layout_mapping_seed.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_LAYOUT\_RESOLVER](./react-api.wch_context_delivery_layout_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_LAYOUT\_SEED](./react-api.wch_context_delivery_layout_seed.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_PAGE\_RESOLVER](./react-api.wch_context_delivery_page_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_PAGE\_SEED](./react-api.wch_context_delivery_page_seed.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_SEARCH\_RESOLVER](./react-api.wch_context_delivery_search_resolver.md) | Injection token for the navigation service |
-|  [WCH\_CONTEXT\_DELIVERY\_SITE\_RESOLVER](./react-api.wch_context_delivery_site_resolver.md) | Injection token for the navigation service |
-|  [WCH\_CONTEXT\_DELIVERY\_TYPE\_RESOLVER](./react-api.wch_context_delivery_type_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DELIVERY\_TYPE\_SEED](./react-api.wch_context_delivery_type_seed.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_DYNAMIC\_LOGGER\_FACTORY](./react-api.wch_context_dynamic_logger_factory.md) |  |
-|  [WCH\_CONTEXT\_HANDLEBARS\_RESOLVER](./react-api.wch_context_handlebars_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_LAYOUT\_MAPPING\_RESOLVER](./react-api.wch_context_layout_mapping_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_LAYOUT\_RESOLVER](./react-api.wch_context_layout_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_LOGGER\_FACTORY](./react-api.wch_context_logger_factory.md) |  |
-|  [WCH\_CONTEXT\_LOGGER\_SERVICE](./react-api.wch_context_logger_service.md) |  |
-|  [WCH\_CONTEXT\_PAGE\_SERVICE](./react-api.wch_context_page_service.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_RENDERING\_CONTEXT\_PROVIDER](./react-api.wch_context_rendering_context_provider.md) | Injection token for the rendering context provider |
-|  [WCH\_CONTEXT\_RENDERING\_CONTEXT\_RESOLVER](./react-api.wch_context_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |
-|  [WCH\_CONTEXT\_RESOURCE\_URL](./react-api.wch_context_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
-|  [WCH\_CONTEXT\_SEED\_RESOLVER](./react-api.wch_context_seed_resolver.md) | Injection token for the page service |
-|  [WCH\_CONTEXT\_URL\_CONFIG](./react-api.wch_context_url_config.md) | Injection token for the url config |
-|  [WCH\_CONTEXT\_WINDOW](./react-api.wch_context_window.md) |  |
-|  [WCH\_RC\_INTERCEPTOR\_TOKEN](./react-api.wch_rc_interceptor_token.md) |  |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_CONTENT\_RESOLVER](./react-api.acoustic_context_delivery_content_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_CONTENT\_SEED](./react-api.acoustic_context_delivery_content_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-api.acoustic_context_delivery_layout_mapping_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_LAYOUT\_MAPPING\_SEED](./react-api.acoustic_context_delivery_layout_mapping_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_LAYOUT\_RESOLVER](./react-api.acoustic_context_delivery_layout_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_LAYOUT\_SEED](./react-api.acoustic_context_delivery_layout_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_PAGE\_RESOLVER](./react-api.acoustic_context_delivery_page_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_PAGE\_SEED](./react-api.acoustic_context_delivery_page_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_SEARCH\_RESOLVER](./react-api.acoustic_context_delivery_search_resolver.md) | Injection token for the navigation service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_SITE\_RESOLVER](./react-api.acoustic_context_delivery_site_resolver.md) | Injection token for the navigation service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_TYPE\_RESOLVER](./react-api.acoustic_context_delivery_type_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DELIVERY\_TYPE\_SEED](./react-api.acoustic_context_delivery_type_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_DYNAMIC\_LOGGER\_FACTORY](./react-api.acoustic_context_dynamic_logger_factory.md) |  |
+|  [ACOUSTIC\_CONTEXT\_HANDLEBARS\_RESOLVER](./react-api.acoustic_context_handlebars_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_LAYOUT\_MAPPING\_RESOLVER](./react-api.acoustic_context_layout_mapping_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_LAYOUT\_RESOLVER](./react-api.acoustic_context_layout_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_LOGGER\_FACTORY](./react-api.acoustic_context_logger_factory.md) |  |
+|  [ACOUSTIC\_CONTEXT\_LOGGER\_SERVICE](./react-api.acoustic_context_logger_service.md) |  |
+|  [ACOUSTIC\_CONTEXT\_PAGE\_SERVICE](./react-api.acoustic_context_page_service.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_RENDERING\_CONTEXT\_PROVIDER](./react-api.acoustic_context_rendering_context_provider.md) | Injection token for the rendering context provider |
+|  [ACOUSTIC\_CONTEXT\_RENDERING\_CONTEXT\_RESOLVER](./react-api.acoustic_context_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |
+|  [ACOUSTIC\_CONTEXT\_RESOURCE\_URL](./react-api.acoustic_context_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
+|  [ACOUSTIC\_CONTEXT\_SEED\_RESOLVER](./react-api.acoustic_context_seed_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_CONTEXT\_URL\_CONFIG](./react-api.acoustic_context_url_config.md) | Injection token for the url config |
+|  [ACOUSTIC\_CONTEXT\_WINDOW](./react-api.acoustic_context_window.md) |  |
+|  [ACOUSTIC\_RC\_INTERCEPTOR\_TOKEN](./react-api.acoustic_rc_interceptor_token.md) |  |
+|  [createInjectableReactProvider](./react-api.createinjectablereactprovider.md) | Creates a <code>ReactProvider</code> that resolves its mandatory and optional elements and delegates the creation of the provided value to a callback function with these dependencies. |
+|  [createModuleFromProvider](./react-api.createmodulefromprovider.md) | Constructs a module component that includes the referenced providers in topological order |
+|  [selectDisplayName](./react-api.selectdisplayname.md) | Returns the display name of a context |
+|  [VERSION](./react-api.version.md) |  |
 
 ## Type Aliases
 

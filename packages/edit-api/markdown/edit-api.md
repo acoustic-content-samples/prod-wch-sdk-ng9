@@ -27,6 +27,11 @@ The edit API defines interfaces for consumers and providers of inline edit funct
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_ACTIVE\_PAGE\_MODULE](./edit-api.acoustic_active_page_module.md) | Token used to require the active page service PromiseLike<ActivePage> |
+|  [ACOUSTIC\_CONFIG\_MODULE](./edit-api.acoustic_config_module.md) | Token used to require the \[\[WchConfig\]\] service PromiseLike<WchConfig> |
+|  [ACOUSTIC\_HTTP\_MODULE](./edit-api.acoustic_http_module.md) | Token used to access the http service PromiseLike<HttpService> |
+|  [ACOUSTIC\_INFO\_MODULE](./edit-api.acoustic_info_module.md) | Token used to require the \[\[WchInfo\]\] service PromiseLike<UrlConfig> |
+|  [ACOUSTIC\_LOGGER\_MODULE](./edit-api.acoustic_logger_module.md) | Token used to require the \[\[LoggerService\]\] PromiseLike<LoggerService> |
 |  [ATTR\_DATA\_SELECTABLE](./edit-api.attr_data_selectable.md) |  |
 |  [EVENT\_EDIT\_END](./edit-api.event_edit_end.md) |  |
 |  [EVENT\_EDIT\_START](./edit-api.event_edit_start.md) |  |
@@ -36,11 +41,11 @@ The edit API defines interfaces for consumers and providers of inline edit funct
 |  [INLINE\_EDIT\_PROVIDER\_ID](./edit-api.inline_edit_provider_id.md) | Identifier used to identify an [WchInlineEditProviderV2](./edit-api.wchinlineeditproviderv2.md) instance on a context, e.g. the window |
 |  [TRANSFER\_FORMAT](./edit-api.transfer_format.md) | Transfer format for our custom dnd components |
 |  [VERSION](./edit-api.version.md) | Version and build number of the package |
-|  [WCH\_ACTIVE\_PAGE\_MODULE](./edit-api.wch_active_page_module.md) | Token used to require the active page service PromiseLike<ActivePage> |
-|  [WCH\_CONFIG\_MODULE](./edit-api.wch_config_module.md) | Token used to require the \[\[WchConfig\]\] service PromiseLike<WchConfig> |
-|  [WCH\_HTTP\_MODULE](./edit-api.wch_http_module.md) | Token used to access the http service PromiseLike<HttpService> |
-|  [WCH\_INFO\_MODULE](./edit-api.wch_info_module.md) | Token used to require the \[\[WchInfo\]\] service PromiseLike<UrlConfig> |
-|  [WCH\_LOGGER\_MODULE](./edit-api.wch_logger_module.md) | Token used to require the \[\[LoggerService\]\] PromiseLike<LoggerService> |
+|  [WCH\_ACTIVE\_PAGE\_MODULE](./edit-api.wch_active_page_module.md) |  |
+|  [WCH\_CONFIG\_MODULE](./edit-api.wch_config_module.md) |  |
+|  [WCH\_HTTP\_MODULE](./edit-api.wch_http_module.md) |  |
+|  [WCH\_INFO\_MODULE](./edit-api.wch_info_module.md) |  |
+|  [WCH\_LOGGER\_MODULE](./edit-api.wch_logger_module.md) |  |
 
 ## Type Aliases
 

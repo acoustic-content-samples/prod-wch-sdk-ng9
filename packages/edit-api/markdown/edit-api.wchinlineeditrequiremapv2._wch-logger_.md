@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-[WCH_LOGGER_MODULE]: PromiseLike<LoggerService>;
+[ACOUSTIC_LOGGER_MODULE]: PromiseLike<LoggerService>;
 ```

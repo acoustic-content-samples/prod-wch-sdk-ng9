@@ -10,7 +10,7 @@ import {
   Output
 } from '@angular/core';
 import { LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { AbstractLifeCycleComponent } from '@acoustic-content-sdk/ng-utils';
 import {
   createConsumerOnSubject,
@@ -54,7 +54,7 @@ export class IntersectionDirective extends AbstractLifeCycleComponent
   constructor(
     aElement: ElementRef,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super();

@@ -5,10 +5,10 @@ import {
   WchInlineEditServiceV2
 } from '@acoustic-content-sdk/edit-api';
 import {
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_INLINE_EDIT_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -24,15 +24,15 @@ export class WchInlineEditService extends AbstractWchInlineEditService
   implements WchInlineEditServiceV2, OnDestroy {
   constructor(
     aInternal: WchInternalEditService,
-    @Inject(WCH_TOKEN_INLINE_EDIT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER)
     aProvider$: Observable<WchInlineEditProviderV2>,
-    @Inject(WCH_TOKEN_URL_CONFIG)
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig$: Observable<UrlConfig>,
     @Optional()
     @Inject(DOCUMENT)
     aDocument?: any,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
   ) {
     // default handling

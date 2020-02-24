@@ -23,6 +23,6 @@ Framework independent collection of utilities to implement inline edit.
 
 |  Variable | Description |
 |  --- | --- |
-|  [EMPTY\_WCH\_INLINE\_EDIT\_SERVICE](./component-edit.empty_wch_inline_edit_service.md) |  |
+|  [EMPTY\_ACOUSTIC\_INLINE\_EDIT\_SERVICE](./component-edit.empty_acoustic_inline_edit_service.md) |  |
 |  [VERSION](./component-edit.version.md) | Version and build number of the package |
 

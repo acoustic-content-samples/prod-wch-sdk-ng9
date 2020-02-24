@@ -8,6 +8,9 @@ import { InjectionToken } from '@angular/core';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 
 // @public
+export const ACOUSTIC_TOKEN_REDUX_STORE: InjectionToken<ReduxRootStore<Record<string, any>, import("redux").AnyAction>>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -16,9 +19,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_TOKEN_REDUX_STORE: InjectionToken<ReduxRootStore<Record<string, any>, import("redux").AnyAction>>;
 
 
 ```

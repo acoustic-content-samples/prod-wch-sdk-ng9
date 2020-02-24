@@ -4,7 +4,7 @@ import {
   WchNgRouterModule,
   WchNgServicesModule
 } from '@acoustic-content-sdk/ng';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { WchNgBrowserWindowModule } from '@acoustic-content-sdk/ng-utils';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { Inject, NgModule, Optional } from '@angular/core';
@@ -30,7 +30,7 @@ export class WchNgAppBaseModule {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log this module

@@ -6,8 +6,8 @@ import { createReactContext } from '../utils/context';
 /**
  * Injection token for the UrlConfig
  */
-export const WCH_CONTEXT_URL_CONFIG = createReactContext<Observable<UrlConfig>>(
-  'WCH_CONTEXT_URL_CONFIG'
+export const ACOUSTIC_CONTEXT_URL_CONFIG = createReactContext<Observable<UrlConfig>>(
+  'ACOUSTIC_CONTEXT_URL_CONFIG'
 );
 
 /**
@@ -18,8 +18,8 @@ export const WCH_CONTEXT_URL_CONFIG = createReactContext<Observable<UrlConfig>>(
  * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
  * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  */
-export const WCH_CONTEXT_API_URL = createReactContext<HubInfoUrlProvider>(
-  'WCH_CONTEXT_API_URL'
+export const ACOUSTIC_CONTEXT_API_URL = createReactContext<HubInfoUrlProvider>(
+  'ACOUSTIC_CONTEXT_API_URL'
 );
 
 /**
@@ -30,8 +30,8 @@ export const WCH_CONTEXT_API_URL = createReactContext<HubInfoUrlProvider>(
  * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
  * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  */
-export const WCH_CONTEXT_RESOURCE_URL = createReactContext<HubInfoUrlProvider>(
-  'WCH_CONTEXT_RESOURCE_URL'
+export const ACOUSTIC_CONTEXT_RESOURCE_URL = createReactContext<HubInfoUrlProvider>(
+  'ACOUSTIC_CONTEXT_RESOURCE_URL'
 );
 
 /**
@@ -43,6 +43,6 @@ export const WCH_CONTEXT_RESOURCE_URL = createReactContext<HubInfoUrlProvider>(
  * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  * @example 'https://my.external.example.com/'
  */
-export const WCH_CONTEXT_BASE_URL = createReactContext<HubInfoUrlProvider>(
-  'WCH_CONTEXT_BASE_URL'
+export const ACOUSTIC_CONTEXT_BASE_URL = createReactContext<HubInfoUrlProvider>(
+  'ACOUSTIC_CONTEXT_BASE_URL'
 );

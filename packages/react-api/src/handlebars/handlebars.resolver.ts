@@ -5,6 +5,6 @@ import { createReactContext } from '../utils/context';
 /**
  * Injection token for the HandlebarsResolver
  */
-export const WCH_CONTEXT_HANDLEBARS_RESOLVER = createReactContext<
+export const ACOUSTIC_CONTEXT_HANDLEBARS_RESOLVER = createReactContext<
   HandlebarsResolver
->('WCH_CONTEXT_HANDLEBARS_RESOLVER');
+>('ACOUSTIC_CONTEXT_HANDLEBARS_RESOLVER');

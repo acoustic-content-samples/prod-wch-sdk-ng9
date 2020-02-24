@@ -5,6 +5,6 @@ import { createReactContext } from '../utils/context';
 /**
  * Injection token for the LayoutMappingResolver
  */
-export const WCH_CONTEXT_LAYOUT_MAPPING_RESOLVER = createReactContext<
+export const ACOUSTIC_CONTEXT_LAYOUT_MAPPING_RESOLVER = createReactContext<
   LayoutMappingResolver
->('WCH_CONTEXT_LAYOUT_MAPPING_RESOLVER');
+>('ACOUSTIC_CONTEXT_LAYOUT_MAPPING_RESOLVER');

@@ -52,6 +52,6 @@ export interface WchSelectableDirectiveService {
  *
  * @internal
  */
-export const WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE = new InjectionToken<
+export const ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE = new InjectionToken<
   WchSelectableDirectiveService
->('WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE');
+>('ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE');

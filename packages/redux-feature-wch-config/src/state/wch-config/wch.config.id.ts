@@ -1,1 +1,1 @@
-export const WCH_CONFIG_FEATURE = 'wchConfig';
+export const ACOUSTIC_CONFIG_FEATURE = 'wchConfig';

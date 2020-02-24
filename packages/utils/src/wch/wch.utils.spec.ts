@@ -1,4 +1,4 @@
-import { WCH_CONFIG_BASE_URL, WCH_CONFIG_RESOURCE_URL } from '@acoustic-content-sdk/api';
+import { ACOUSTIC_CONFIG_BASE_URL, ACOUSTIC_CONFIG_RESOURCE_URL } from '@acoustic-content-sdk/api';
 import { JSDOM } from 'jsdom';
 import { parse } from 'lucene';
 import { join } from 'path';
@@ -125,7 +125,7 @@ describe('wch.utils', () => {
       `<!DOCTYPE html>
       <html>
       <head>
-      <link rel="alternate" id="${WCH_CONFIG_RESOURCE_URL}" href=".">
+      <link rel="alternate" id="${ACOUSTIC_CONFIG_RESOURCE_URL}" href=".">
       </head>
       <body>
       </body>
@@ -154,7 +154,7 @@ describe('wch.utils', () => {
       `<!DOCTYPE html>
       <html>
       <head>
-      <link rel="alternate" id="${WCH_CONFIG_RESOURCE_URL}" href=".">
+      <link rel="alternate" id="${ACOUSTIC_CONFIG_RESOURCE_URL}" href=".">
       </head>
       <body>
       </body>
@@ -181,7 +181,7 @@ describe('wch.utils', () => {
       <html>
       <head>
       <base href="http://www.base.org/baseURL/">
-      <link rel="alternate" id="${WCH_CONFIG_RESOURCE_URL}" href="https://my10.digitalexperience.ibm.com/6f0ce0ff-8a25-4fac-b66a-5d42516247eb">
+      <link rel="alternate" id="${ACOUSTIC_CONFIG_RESOURCE_URL}" href="https://my10.digitalexperience.ibm.com/6f0ce0ff-8a25-4fac-b66a-5d42516247eb">
       </head>
       <body>
       </body>
@@ -230,7 +230,7 @@ describe('wch.utils', () => {
       `<!DOCTYPE html>
       <html>
       <head>
-      <link rel="alternate" id="${WCH_CONFIG_BASE_URL}" href="http://www.base.from.link.org/baseURL/">
+      <link rel="alternate" id="${ACOUSTIC_CONFIG_BASE_URL}" href="http://www.base.from.link.org/baseURL/">
       <base href="http://www.base.org/baseURL/">
       </head>
       <body>

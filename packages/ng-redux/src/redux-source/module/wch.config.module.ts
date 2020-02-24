@@ -1,8 +1,8 @@
 /* Copyright IBM Corp. 2017 */
 import { createWchConfig } from '@acoustic-content-sdk/component-redux';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
-import { WCH_TOKEN_WCH_CONFIG } from '@acoustic-content-sdk/ng-edit-api';
-import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
+import { ACOUSTIC_TOKEN_ACOUSTIC_CONFIG } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import { ReduxRootState } from '@acoustic-content-sdk/redux-store';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -19,9 +19,9 @@ export function proxyCreateWchConfig(
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_WCH_CONFIG,
+      provide: ACOUSTIC_TOKEN_ACOUSTIC_CONFIG,
       useFactory: createWchConfig,
-      deps: [WCH_TOKEN_REDUX_STORE]
+      deps: [ACOUSTIC_TOKEN_REDUX_STORE]
     }
   ]
 })

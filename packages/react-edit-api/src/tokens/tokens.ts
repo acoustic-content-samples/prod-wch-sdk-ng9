@@ -11,35 +11,35 @@ import { WchDefaultPlaceholder } from '../interfaces/placeholder';
 /**
  * Injection token for the wch config
  */
-export const WCH_CONTEXT_WCH_CONFIG = createReactContext<Observable<WchConfig>>(
-  'WCH_CONTEXT_WCH_CONFIG'
+export const ACOUSTIC_CONTEXT_ACOUSTIC_CONFIG = createReactContext<Observable<WchConfig>>(
+  'ACOUSTIC_CONTEXT_ACOUSTIC_CONFIG'
 );
 
 /**
  * Injection token for the inline edit provider
  */
-export const WCH_CONTEXT_INLINE_EDIT_PROVIDER = createReactContext<
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER = createReactContext<
   Observable<WchInlineEditProviderV2>
->('WCH_CONTEXT_INLINE_EDIT_PROVIDER');
+>('ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER');
 
 /**
  * Injection token for default placeholder text
  */
-export const WCH_CONTEXT_DEFAULT_PLACEHOLDER_TEXT = createReactContext<
+export const ACOUSTIC_CONTEXT_DEFAULT_PLACEHOLDER_TEXT = createReactContext<
   WchDefaultPlaceholder
->('WCH_CONTEXT_DEFAULT_PLACEHOLDER_TEXT');
+>('ACOUSTIC_CONTEXT_DEFAULT_PLACEHOLDER_TEXT');
 
 /**
  * Injection token for placeholder debugging
  */
-export const WCH_CONTEXT_DEBUG_PLACEHOLDERS = createReactContext<boolean>(
-  'WCH_CONTEXT_DEBUG_PLACEHOLDERS'
+export const ACOUSTIC_CONTEXT_DEBUG_PLACEHOLDERS = createReactContext<boolean>(
+  'ACOUSTIC_CONTEXT_DEBUG_PLACEHOLDERS'
 );
 
 /**
  * Injects the window that acts as the edit host for an application. This
  * is typically the parent window or the opener window.
  */
-export const WCH_CONTEXT_EDIT_HOST_WINDOW = createReactContext<WindowType>(
-  'WCH_CONTEXT_EDIT_HOST_WINDOW'
+export const ACOUSTIC_CONTEXT_EDIT_HOST_WINDOW = createReactContext<WindowType>(
+  'ACOUSTIC_CONTEXT_EDIT_HOST_WINDOW'
 );

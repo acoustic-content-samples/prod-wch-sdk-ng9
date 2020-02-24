@@ -30,6 +30,6 @@ export interface ComponentRegistry
 /**
  * Injection token for the component registry
  */
-export const WCH_TOKEN_COMPONENT_REGISTRY = new InjectionToken<
+export const ACOUSTIC_TOKEN_COMPONENT_REGISTRY = new InjectionToken<
   ComponentRegistry
->('WCH_TOKEN_COMPONENT_REGISTRY');
+>('ACOUSTIC_TOKEN_COMPONENT_REGISTRY');

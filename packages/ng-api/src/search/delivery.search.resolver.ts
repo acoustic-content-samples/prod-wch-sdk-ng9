@@ -4,6 +4,6 @@ import { InjectionToken } from '@angular/core';
 /**
  * Injection token for the navigation service
  */
-export const WCH_TOKEN_DELIVERY_SEARCH_RESOLVER = new InjectionToken<
+export const ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER = new InjectionToken<
   DeliverySearchResolver
->('WCH_TOKEN_DELIVERY_SEARCH_RESOLVER');
+>('ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER');

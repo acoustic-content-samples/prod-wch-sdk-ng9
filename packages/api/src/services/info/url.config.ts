@@ -4,17 +4,17 @@ import { HubInfo } from './../hub-info/hub-info';
 /**
  * Name of the 'rel' attribute of a link element used to configure the API URL
  */
-export const WCH_CONFIG_API_URL = 'wch-config-api-url';
+export const ACOUSTIC_CONFIG_API_URL = 'wch-config-api-url';
 
 /**
  * Name of the 'rel' attribute of a link element used to configure the delivery URL
  */
-export const WCH_CONFIG_RESOURCE_URL = 'wch-config-resource-url';
+export const ACOUSTIC_CONFIG_RESOURCE_URL = 'wch-config-resource-url';
 
 /**
  * Name of the 'rel' attribute of a link element used to configure the base URL
  */
-export const WCH_CONFIG_BASE_URL = 'wch-config-base-url';
+export const ACOUSTIC_CONFIG_BASE_URL = 'wch-config-base-url';
 
 /**
  * Exposes the URL configuration to the client.

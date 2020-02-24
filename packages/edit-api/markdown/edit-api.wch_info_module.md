@@ -4,9 +4,10 @@
 
 ## WCH\_INFO\_MODULE variable
 
-Token used to require the \[\[WchInfo\]\] service
-
- PromiseLike<UrlConfig>
+> Warning: This API is now obsolete.
+> 
+> use [ACOUSTIC\_INFO\_MODULE](./edit-api.acoustic_info_module.md) instead
+> 
 
 <b>Signature:</b>
 

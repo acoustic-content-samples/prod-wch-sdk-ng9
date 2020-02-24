@@ -5,10 +5,10 @@ import {
   UrlConfig
 } from '@acoustic-content-sdk/api';
 import {
-  WCH_ACTIVE_PAGE_MODULE,
-  WCH_CONFIG_MODULE,
-  WCH_INFO_MODULE,
-  WCH_LOGGER_MODULE,
+  ACOUSTIC_ACTIVE_PAGE_MODULE,
+  ACOUSTIC_CONFIG_MODULE,
+  ACOUSTIC_INFO_MODULE,
+  ACOUSTIC_LOGGER_MODULE,
   WchConfig,
   WchInlineEditProviderV2,
   WchInlineEditRequireMapV2,
@@ -151,10 +151,10 @@ export function createWchHttpInlineEditProviderV2(
 
   // the available modules
   const modules: WchInlineEditRequireMapV2 = {
-    [WCH_LOGGER_MODULE]: Promise.resolve(logSvc),
-    [WCH_INFO_MODULE]: urlConfigPromise$,
-    [WCH_ACTIVE_PAGE_MODULE]: Promise.resolve(aActivePage),
-    [WCH_CONFIG_MODULE]: wchConfigPromise$
+    [ACOUSTIC_LOGGER_MODULE]: Promise.resolve(logSvc),
+    [ACOUSTIC_INFO_MODULE]: urlConfigPromise$,
+    [ACOUSTIC_ACTIVE_PAGE_MODULE]: Promise.resolve(aActivePage),
+    [ACOUSTIC_CONFIG_MODULE]: wchConfigPromise$
   };
 
   /**

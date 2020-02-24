@@ -5,7 +5,7 @@ import { createReduxFeatureModule } from '@acoustic-content-sdk/redux-store';
 
 import { wchConfigEpic } from './wch.config.epics';
 import { WchConfigFeatureState } from './wch.config.feature';
-import { WCH_CONFIG_FEATURE } from './wch.config.id';
+import { ACOUSTIC_CONFIG_FEATURE } from './wch.config.id';
 import { wchConfigReducer, WchConfigState } from './wch.config.state';
 
 /**
@@ -14,7 +14,7 @@ import { wchConfigReducer, WchConfigState } from './wch.config.state';
 export const wchConfigFeature = createReduxFeatureModule<
   WchConfigState,
   WchConfigFeatureState
->(WCH_CONFIG_FEATURE, wchConfigReducer, wchConfigEpic, [
+>(ACOUSTIC_CONFIG_FEATURE, wchConfigReducer, wchConfigEpic, [
   loadingFeature,
   loggedInFeature,
   urlConfigFeature

@@ -1,5 +1,5 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
@@ -23,7 +23,7 @@ import { MODULE, VERSION } from '../version';
 export class WchNgEditDirectivesModule {
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log bootstrapping of this module

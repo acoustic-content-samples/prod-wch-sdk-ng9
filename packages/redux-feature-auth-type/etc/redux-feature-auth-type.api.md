@@ -57,7 +57,7 @@ export type AuthoringTypeState = Record<string, AuthoringType>;
 
 // @public (undocumented)
 export const authTypeFeatureReducer: {
-    [AUTH_TYPE_FEATURE]: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringType>, import("./auth.type.actions").AddAuthoringContentTypeAction | import("./auth.type.actions").SetAuthoringContentTypeAction>;
+    authType: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringType>, import("./auth.type.actions").AddAuthoringContentTypeAction | import("./auth.type.actions").SetAuthoringContentTypeAction>;
 };
 
 // @public (undocumented)

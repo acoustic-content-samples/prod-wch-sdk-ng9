@@ -3,55 +3,55 @@ import {
   assertProvider,
   createReactProvider,
   ReactModule,
-  WCH_CONTEXT_DELIVERY_PAGE_RESOLVER,
-  WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER,
+  ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
-import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
+import { ACOUSTIC_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 import * as React from 'react';
 
 import { DeliveryPageResolverService } from '../page/delivery.page.resolver.service';
 
 /**
- * Module that exposes the `WCH_CONTEXT_DELIVERY_PAGE_RESOLVER` token.
+ * Module that exposes the `ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER` token.
  *
- * Requires `WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER`, `WCH_CONTEXT_REDUX_STORE` and `WCH_CONTEXT_LOGGER_SERVICE`
+ * Requires `ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER`, `ACOUSTIC_CONTEXT_REDUX_STORE` and `ACOUSTIC_CONTEXT_LOGGER_SERVICE`
  */
 const WchReactReduxPageModule: ReactModule = ({ children }) => (
-  <WCH_CONTEXT_REDUX_STORE.Consumer>
+  <ACOUSTIC_CONTEXT_REDUX_STORE.Consumer>
     {(store) => (
-      <WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER.Consumer>
+      <ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER.Consumer>
         {(search) => (
-          <WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+          <ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
             {(logSvc) => (
-              <WCH_CONTEXT_DELIVERY_PAGE_RESOLVER.Provider
+              <ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER.Provider
                 value={
                   new DeliveryPageResolverService(
-                    assertProvider(store, WCH_CONTEXT_REDUX_STORE),
+                    assertProvider(store, ACOUSTIC_CONTEXT_REDUX_STORE),
                     assertProvider(
                       search,
-                      WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER
+                      ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER
                     ),
                     logSvc
                   )
                 }
               >
                 {children}
-              </WCH_CONTEXT_DELIVERY_PAGE_RESOLVER.Provider>
+              </ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER.Provider>
             )}
-          </WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+          </ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
         )}
-      </WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER.Consumer>
+      </ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER.Consumer>
     )}
-  </WCH_CONTEXT_REDUX_STORE.Consumer>
+  </ACOUSTIC_CONTEXT_REDUX_STORE.Consumer>
 );
 
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER = createReactProvider(
+export const ACOUSTIC_PROVIDER_REDUX_DELIVERY_PAGE_RESOLVER = createReactProvider(
   WchReactReduxPageModule,
-  WCH_CONTEXT_DELIVERY_PAGE_RESOLVER,
-  [WCH_CONTEXT_REDUX_STORE, WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER,
+  [ACOUSTIC_CONTEXT_REDUX_STORE, ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

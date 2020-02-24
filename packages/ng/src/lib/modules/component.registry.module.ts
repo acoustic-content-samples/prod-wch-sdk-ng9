@@ -1,4 +1,4 @@
-import { WCH_TOKEN_COMPONENT_REGISTRY } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_COMPONENT_REGISTRY } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { ComponentRegistryService } from '../services/components/component.regis
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_COMPONENT_REGISTRY,
+      provide: ACOUSTIC_TOKEN_COMPONENT_REGISTRY,
       useClass: ComponentRegistryService
     }
   ]

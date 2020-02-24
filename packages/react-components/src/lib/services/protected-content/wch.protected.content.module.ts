@@ -5,10 +5,10 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   createInjectableReactProvider,
-  WCH_CONTEXT_AUTH_STATUS,
-  WCH_CONTEXT_LOGGER_SERVICE,
-  WCH_CONTEXT_PROTECTED_CONTENT,
-  WCH_CONTEXT_URL_CONFIG
+  ACOUSTIC_CONTEXT_AUTH_STATUS,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE,
+  ACOUSTIC_CONTEXT_PROTECTED_CONTENT,
+  ACOUSTIC_CONTEXT_URL_CONFIG
 } from '@acoustic-content-sdk/react-api';
 import { Observable } from 'rxjs';
 import { ReactProtectedContentService } from './protected.content.service';
@@ -21,9 +21,9 @@ const createProtectedContent = (
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_PROTECTED_CONTENT = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_PROTECTED_CONTENT = createInjectableReactProvider(
   createProtectedContent,
-  WCH_CONTEXT_PROTECTED_CONTENT,
-  [WCH_CONTEXT_URL_CONFIG, WCH_CONTEXT_AUTH_STATUS],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_PROTECTED_CONTENT,
+  [ACOUSTIC_CONTEXT_URL_CONFIG, ACOUSTIC_CONTEXT_AUTH_STATUS],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

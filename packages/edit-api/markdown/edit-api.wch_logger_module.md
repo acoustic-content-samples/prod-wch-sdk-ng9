@@ -4,9 +4,10 @@
 
 ## WCH\_LOGGER\_MODULE variable
 
-Token used to require the \[\[LoggerService\]\]
-
- PromiseLike<LoggerService>
+> Warning: This API is now obsolete.
+> 
+> use [ACOUSTIC\_LOGGER\_MODULE](./edit-api.acoustic_logger_module.md) instead
+> 
 
 <b>Signature:</b>
 

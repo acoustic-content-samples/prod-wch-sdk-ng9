@@ -30,6 +30,7 @@
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
+    "@acoustic-content-sdk/ng-hbs-view": "9.0.0",
     "@acoustic-content-sdk/ng-rest": "9.0.0",
     "@acoustic-content-sdk/ng-view": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
@@ -48,6 +49,7 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
+        "@acoustic-content-sdk/ng-hbs-view": "acoustic-content-sdk.ng-hbs-view",
         "@acoustic-content-sdk/ng-rest": "acoustic-content-sdk.ng-rest",
         "@acoustic-content-sdk/ng-view": "acoustic-content-sdk.ng-view",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"

@@ -1,6 +1,6 @@
 import {
   ComponentRegistry,
-  WCH_CONTEXT_COMPONENT_REGISTRY
+  ACOUSTIC_CONTEXT_COMPONENT_REGISTRY
 } from '@acoustic-content-sdk/react-api';
 import { Consumer } from '@acoustic-content-sdk/utils';
 import { FC } from 'react';
@@ -19,12 +19,12 @@ export const LayoutRegistration: FC<LayoutRegistrationProps> = ({
   register,
   children
 }) => (
-  <WCH_CONTEXT_COMPONENT_REGISTRY.Consumer>
+  <ACOUSTIC_CONTEXT_COMPONENT_REGISTRY.Consumer>
     {(aReg) => {
       // register
       register(aReg);
       // include the children
       return <>{children}</>;
     }}
-  </WCH_CONTEXT_COMPONENT_REGISTRY.Consumer>
+  </ACOUSTIC_CONTEXT_COMPONENT_REGISTRY.Consumer>
 );

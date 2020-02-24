@@ -1,6 +1,6 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_PLACEHOLDER_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
@@ -15,7 +15,7 @@ const LOGGER = 'WchPlaceholderProviderModule';
   imports: [CommonModule],
   providers: [
     {
-      provide: WCH_TOKEN_PLACEHOLDER_PROVIDER,
+      provide: ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER,
       useClass: WchPlaceholderService
     }
   ]
@@ -23,7 +23,7 @@ const LOGGER = 'WchPlaceholderProviderModule';
 export class WchPlaceholderProviderModule {
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     // log module startup

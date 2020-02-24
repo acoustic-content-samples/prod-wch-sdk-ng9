@@ -44,9 +44,9 @@ export declare type WchDefaultPlaceholderText = ObservableOrT<
   string | LocalizedText
 >;
 
-export const WCH_EDITABLE_TEXT_FORMAT = 'text';
-export const WCH_EDITABLE_AUTO_FORMAT = 'auto';
-export const WCH_EDITABLE_HTML_FORMAT = 'html';
+export const ACOUSTIC_EDITABLE_TEXT_FORMAT = 'text';
+export const ACOUSTIC_EDITABLE_AUTO_FORMAT = 'auto';
+export const ACOUSTIC_EDITABLE_HTML_FORMAT = 'html';
 
 const UNDEFINED = undefined;
 
@@ -351,9 +351,9 @@ export const phTypeFromAccessor: BiFunction<
 function _formatFromType(aElementType: string): WchEditableFormat {
   // map from the element type to a data type
   return aElementType === ELEMENT_TYPE_FORMATTED_TEXT
-    ? WCH_EDITABLE_HTML_FORMAT
+    ? ACOUSTIC_EDITABLE_HTML_FORMAT
     : isString(aElementType)
-    ? WCH_EDITABLE_TEXT_FORMAT
+    ? ACOUSTIC_EDITABLE_TEXT_FORMAT
     : aElementType;
 }
 
@@ -373,7 +373,7 @@ export const phFormat: (
   rxPipe(
     combineLatest(onFmt, onPlc),
     switchMap(([fmt, plc]) =>
-      fmt === WCH_EDITABLE_AUTO_FORMAT || isNotNil(plc)
+      fmt === ACOUSTIC_EDITABLE_AUTO_FORMAT || isNotNil(plc)
         ? rxPipe(onType, map(_formatFromType))
         : of(fmt)
     )

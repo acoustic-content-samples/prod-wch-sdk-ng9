@@ -9,9 +9,9 @@ import { createReactContext } from '@acoustic-content-sdk/react-api';
 export const DEFAULT_INLINE_EDIT_URL =
   '${authoringUIBaseUrl.protocol}//${authoringUIBaseUrl.host}/authoring-sites-ui/inline-edit/inline-edit.js';
 
-export const WCH_CONTEXT_INLINE_EDIT_URL = createReactContext<
+export const ACOUSTIC_CONTEXT_INLINE_EDIT_URL = createReactContext<
   StaticHubInfoUrlProvider
->('WCH_CONTEXT_INLINE_EDIT_URL');
+>('ACOUSTIC_CONTEXT_INLINE_EDIT_URL');
 
 /**
  * per default do not debug

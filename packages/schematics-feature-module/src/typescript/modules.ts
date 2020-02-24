@@ -57,7 +57,7 @@ function getNgModuleDecorator(aDecl: ClassDeclaration): Decorator {
   return firstElement(aDecl.decorators.filter(isNgModuleDecorator));
 }
 
-export const WCH_NG_APP_BASE_MODULE = 'WchNgAppBaseModule';
+export const ACOUSTIC_NG_APP_BASE_MODULE = 'WchNgAppBaseModule';
 
 function hasLiteralBaseImport(aExpr: ObjectLiteralExpression): boolean {
   return isNotEmpty(
@@ -67,7 +67,7 @@ function hasLiteralBaseImport(aExpr: ObjectLiteralExpression): boolean {
       .map((prop) => prop.initializer)
       .filter(isArrayLiteralExpression)
       .map((prop) => prop.elements)
-      .map((el) => el.filter(byText(WCH_NG_APP_BASE_MODULE)))
+      .map((el) => el.filter(byText(ACOUSTIC_NG_APP_BASE_MODULE)))
       .filter(isNotEmpty)
   );
 }

@@ -85,6 +85,6 @@ export interface WchEditablePlaceholderDirectiveService {
  *
  * @internal
  */
-export const WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE = new InjectionToken<
+export const ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE = new InjectionToken<
   WchEditablePlaceholderDirectiveService
->('WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE');
+>('ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE');

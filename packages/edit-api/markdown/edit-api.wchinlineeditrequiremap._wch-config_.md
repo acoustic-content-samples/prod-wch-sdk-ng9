@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-[WCH_CONFIG_MODULE]: PromiseLike<WchConfig>;
+[ACOUSTIC_CONFIG_MODULE]: PromiseLike<WchConfig>;
 ```

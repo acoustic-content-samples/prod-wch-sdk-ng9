@@ -10,13 +10,13 @@ Implementation of services for the React SDK based on a REST backend.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_PROVIDER\_REST\_AUTH\_STATUS](./react-rest.acoustic_provider_rest_auth_status.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_AUTH_STATUS</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.acoustic_provider_rest_delivery_content_resolver.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_DELIVERY_CONTENT_RESOLVER</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.acoustic_provider_rest_delivery_layout_mapping_resolver.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.acoustic_provider_rest_delivery_layout_resolver.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_RESOLVER</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_DELIVERY\_PAGE\_RESOLVER](./react-rest.acoustic_provider_rest_delivery_page_resolver.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_DELIVERY_PAGE_RESOLVER</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_DELIVERY\_TYPE\_RESOLVER](./react-rest.acoustic_provider_rest_delivery_type_resolver.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_DELIVERY_TYPE_RESOLVER</code>. |
+|  [ACOUSTIC\_PROVIDER\_REST\_URL\_CONFIG](./react-rest.acoustic_provider_rest_url_config.md) | Provider implementation for the <code>ACOUSTIC_CONTEXT_URL_CONFIG</code>. |
+|  [ACOUSTIC\_PROVIDERS\_REST](./react-rest.acoustic_providers_rest.md) | List of provider implementations that implement common services via REST |
 |  [VERSION](./react-rest.version.md) | Version and build number of the package |
-|  [WCH\_PROVIDER\_REST\_AUTH\_STATUS](./react-rest.wch_provider_rest_auth_status.md) | Provider implementation for the <code>WCH_CONTEXT_AUTH_STATUS</code>. |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_CONTENT\_RESOLVER](./react-rest.wch_provider_rest_delivery_content_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER</code>. |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_mapping_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER</code>. |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_LAYOUT\_RESOLVER](./react-rest.wch_provider_rest_delivery_layout_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER</code>. |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_PAGE\_RESOLVER](./react-rest.wch_provider_rest_delivery_page_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_PAGE_RESOLVER</code>. |
-|  [WCH\_PROVIDER\_REST\_DELIVERY\_TYPE\_RESOLVER](./react-rest.wch_provider_rest_delivery_type_resolver.md) | Provider implementation for the <code>WCH_CONTEXT_DELIVERY_TYPE_RESOLVER</code>. |
-|  [WCH\_PROVIDER\_REST\_URL\_CONFIG](./react-rest.wch_provider_rest_url_config.md) | Provider implementation for the <code>WCH_CONTEXT_URL_CONFIG</code>. |
-|  [WCH\_PROVIDERS\_REST](./react-rest.wch_providers_rest.md) | List of provider implementations that implement common services via REST |
 

@@ -28,6 +28,15 @@ Collection of APIs and constants for the React SDK in edit mode.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_CONTEXT\_ACOUSTIC\_CONFIG](./react-edit-api.acoustic_context_acoustic_config.md) | Injection token for the wch config |
+|  [ACOUSTIC\_CONTEXT\_DEBUG\_PLACEHOLDERS](./react-edit-api.acoustic_context_debug_placeholders.md) | Injection token for placeholder debugging |
+|  [ACOUSTIC\_CONTEXT\_DEFAULT\_PLACEHOLDER\_TEXT](./react-edit-api.acoustic_context_default_placeholder_text.md) | Injection token for default placeholder text |
+|  [ACOUSTIC\_CONTEXT\_EDIT\_HOST\_WINDOW](./react-edit-api.acoustic_context_edit_host_window.md) | Injects the window that acts as the edit host for an application. This is typically the parent window or the opener window. |
+|  [ACOUSTIC\_CONTEXT\_INLINE\_EDIT\_PROVIDER](./react-edit-api.acoustic_context_inline_edit_provider.md) | Injection token for the inline edit provider |
+|  [ACOUSTIC\_CONTEXT\_INLINE\_EDIT\_SELECTION\_PROVIDER](./react-edit-api.acoustic_context_inline_edit_selection_provider.md) | Provides information about the inline edit selection |
+|  [ACOUSTIC\_CONTEXT\_INLINE\_EDIT\_SERVICE](./react-edit-api.acoustic_context_inline_edit_service.md) |  |
+|  [ACOUSTIC\_CONTEXT\_INLINE\_EDIT\_URL](./react-edit-api.acoustic_context_inline_edit_url.md) |  |
+|  [ACOUSTIC\_CONTEXT\_PLACEHOLDER\_PROVIDER](./react-edit-api.acoustic_context_placeholder_provider.md) |  |
 |  [DEFAULT\_DEBUG\_PLACEHOLDERS](./react-edit-api.default_debug_placeholders.md) | per default do not debug |
 |  [DEFAULT\_INLINE\_EDIT\_URL](./react-edit-api.default_inline_edit_url.md) | default value for the inline edit URL |
 |  [EVENT\_EDIT\_END](./react-edit-api.event_edit_end.md) |  |
@@ -35,15 +44,6 @@ Collection of APIs and constants for the React SDK in edit mode.
 |  [EVENT\_INLINE\_EDIT\_END](./react-edit-api.event_inline_edit_end.md) |  |
 |  [EVENT\_INLINE\_EDIT\_START](./react-edit-api.event_inline_edit_start.md) |  |
 |  [VERSION](./react-edit-api.version.md) | Version and build number of the package |
-|  [WCH\_CONTEXT\_DEBUG\_PLACEHOLDERS](./react-edit-api.wch_context_debug_placeholders.md) | Injection token for placeholder debugging |
-|  [WCH\_CONTEXT\_DEFAULT\_PLACEHOLDER\_TEXT](./react-edit-api.wch_context_default_placeholder_text.md) | Injection token for default placeholder text |
-|  [WCH\_CONTEXT\_EDIT\_HOST\_WINDOW](./react-edit-api.wch_context_edit_host_window.md) | Injects the window that acts as the edit host for an application. This is typically the parent window or the opener window. |
-|  [WCH\_CONTEXT\_INLINE\_EDIT\_PROVIDER](./react-edit-api.wch_context_inline_edit_provider.md) | Injection token for the inline edit provider |
-|  [WCH\_CONTEXT\_INLINE\_EDIT\_SELECTION\_PROVIDER](./react-edit-api.wch_context_inline_edit_selection_provider.md) | Provides information about the inline edit selection |
-|  [WCH\_CONTEXT\_INLINE\_EDIT\_SERVICE](./react-edit-api.wch_context_inline_edit_service.md) |  |
-|  [WCH\_CONTEXT\_INLINE\_EDIT\_URL](./react-edit-api.wch_context_inline_edit_url.md) |  |
-|  [WCH\_CONTEXT\_PLACEHOLDER\_PROVIDER](./react-edit-api.wch_context_placeholder_provider.md) |  |
-|  [WCH\_CONTEXT\_WCH\_CONFIG](./react-edit-api.wch_context_wch_config.md) | Injection token for the wch config |
 
 ## Type Aliases
 

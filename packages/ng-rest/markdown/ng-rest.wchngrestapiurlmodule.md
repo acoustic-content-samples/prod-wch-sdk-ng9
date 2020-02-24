@@ -4,7 +4,7 @@
 
 ## WchNgRestApiUrlModule class
 
-Module that provides the `WCH_TOKEN_API_URL`<!-- -->. Use this to explicitly override the API URL, e.g. in case the application is hosted externally or in case the system is configured for local development. In the typical production case when the application is hosted from Acoustic Content there is no need to configure the API URL explicitly.
+Module that provides the `ACOUSTIC_TOKEN_API_URL`<!-- -->. Use this to explicitly override the API URL, e.g. in case the application is hosted externally or in case the system is configured for local development. In the typical production case when the application is hosted from Acoustic Content there is no need to configure the API URL explicitly.
 
 <b>Signature:</b>
 

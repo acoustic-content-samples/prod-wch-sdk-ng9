@@ -10,6 +10,6 @@ Collection of APIs and constants for the React SDK for redux.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_CONTEXT\_REDUX\_STORE](./react-redux-api.acoustic_context_redux_store.md) | Injection token for the redux store |
 |  [VERSION](./react-redux-api.version.md) | Version and build number of the package |
-|  [WCH\_CONTEXT\_REDUX\_STORE](./react-redux-api.wch_context_redux_store.md) | Injection token for the redux store |
 

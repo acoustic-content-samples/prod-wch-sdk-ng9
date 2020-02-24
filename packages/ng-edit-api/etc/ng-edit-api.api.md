@@ -23,6 +23,51 @@ import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
+export const ACOUSTIC_TOKEN_ACOUSTIC_CONFIG: InjectionToken<Observable<WchConfig>>;
+
+// @public
+export const ACOUSTIC_TOKEN_DEBUG_PLACEHOLDERS: InjectionToken<boolean>;
+
+// @public
+export const ACOUSTIC_TOKEN_DEFAULT_PLACEHOLDER_TEXT: InjectionToken<import("@acoustic-content-sdk/utils").ObservableOrT<string | import("@acoustic-content-sdk/api").LocalizedText>>;
+
+// @public
+export const ACOUSTIC_TOKEN_EDIT_HOST_WINDOW: InjectionToken<WindowType>;
+
+// Warning: (ae-internal-missing-underscore) The name "ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
+export const ACOUSTIC_TOKEN_EDITABLE_DIRECTIVE_SERVICE: InjectionToken<WchEditableDirectiveService>;
+
+// Warning: (ae-internal-missing-underscore) The name "ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
+export const ACOUSTIC_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE: InjectionToken<WchEditablePlaceholderDirectiveService>;
+
+// @public
+export const ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER: InjectionToken<Observable<WchInlineEditProviderV2>>;
+
+// @public
+export const ACOUSTIC_TOKEN_INLINE_EDIT_SELECTED_CELL_CONSUMER: InjectionToken<string>;
+
+// @public
+export const ACOUSTIC_TOKEN_INLINE_EDIT_SELECTION_PROVIDER: InjectionToken<InlineEditSelectionProvider>;
+
+// @public
+export const ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE: InjectionToken<WchInlineEditServiceV2>;
+
+// @public
+export const ACOUSTIC_TOKEN_INLINE_EDIT_URL: InjectionToken<StaticHubInfoUrlProvider>;
+
+// @public (undocumented)
+export const ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER: InjectionToken<WchPlaceholderProvider>;
+
+// Warning: (ae-internal-missing-underscore) The name "ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
+export const ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE: InjectionToken<WchSelectableDirectiveService>;
+
+// @public
 export const DEFAULT_DEBUG_PLACEHOLDERS = false;
 
 // @public
@@ -62,51 +107,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_TOKEN_DEBUG_PLACEHOLDERS: InjectionToken<boolean>;
-
-// @public
-export const WCH_TOKEN_DEFAULT_PLACEHOLDER_TEXT: InjectionToken<import("@acoustic-content-sdk/utils").ObservableOrT<string | import("@acoustic-content-sdk/api").LocalizedText>>;
-
-// @public
-export const WCH_TOKEN_EDIT_HOST_WINDOW: InjectionToken<WindowType>;
-
-// Warning: (ae-internal-missing-underscore) The name "WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export const WCH_TOKEN_EDITABLE_DIRECTIVE_SERVICE: InjectionToken<WchEditableDirectiveService>;
-
-// Warning: (ae-internal-missing-underscore) The name "WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export const WCH_TOKEN_EDITABLE_PLACEHOLDER_DIRECTIVE_SERVICE: InjectionToken<WchEditablePlaceholderDirectiveService>;
-
-// @public
-export const WCH_TOKEN_INLINE_EDIT_PROVIDER: InjectionToken<Observable<WchInlineEditProviderV2>>;
-
-// @public
-export const WCH_TOKEN_INLINE_EDIT_SELECTED_CELL_CONSUMER: InjectionToken<string>;
-
-// @public
-export const WCH_TOKEN_INLINE_EDIT_SELECTION_PROVIDER: InjectionToken<InlineEditSelectionProvider>;
-
-// @public
-export const WCH_TOKEN_INLINE_EDIT_SERVICE: InjectionToken<WchInlineEditServiceV2>;
-
-// @public
-export const WCH_TOKEN_INLINE_EDIT_URL: InjectionToken<StaticHubInfoUrlProvider>;
-
-// @public (undocumented)
-export const WCH_TOKEN_PLACEHOLDER_PROVIDER: InjectionToken<WchPlaceholderProvider>;
-
-// Warning: (ae-internal-missing-underscore) The name "WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export const WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE: InjectionToken<WchSelectableDirectiveService>;
-
-// @public
-export const WCH_TOKEN_WCH_CONFIG: InjectionToken<Observable<WchConfig>>;
 
 // @public
 export type WchDefaultPlaceholder = ObservableOrT<string | LocalizedText>;

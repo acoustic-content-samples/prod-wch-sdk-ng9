@@ -1,10 +1,10 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import {
   createInjectableReactProvider,
-  WCH_CONTEXT_AUTH_STATUS,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_AUTH_STATUS,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
-import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
+import { ACOUSTIC_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 
 import { ReactAuthStatusService } from '../auth-status/auth.status.service';
@@ -17,9 +17,9 @@ const createAuthStatus = (
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_REDUX_AUTH_STATUS = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_REDUX_AUTH_STATUS = createInjectableReactProvider(
   createAuthStatus,
-  WCH_CONTEXT_AUTH_STATUS,
-  [WCH_CONTEXT_REDUX_STORE],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_AUTH_STATUS,
+  [ACOUSTIC_CONTEXT_REDUX_STORE],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

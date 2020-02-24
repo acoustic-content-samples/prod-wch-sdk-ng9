@@ -20,37 +20,37 @@ Collection of APIs and constants for the Angular SDK
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_RC\_INTERCEPTOR\_TOKEN](./ng-api.acoustic_rc_interceptor_token.md) |  |
+|  [ACOUSTIC\_TOKEN\_ACTIVE\_PAGE](./ng-api.acoustic_token_active_page.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_API\_URL](./ng-api.acoustic_token_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
+|  [ACOUSTIC\_TOKEN\_AUTH\_STATUS](./ng-api.acoustic_token_auth_status.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_BASE\_URL](./ng-api.acoustic_token_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |
+|  [ACOUSTIC\_TOKEN\_COMPONENT\_REGISTRY](./ng-api.acoustic_token_component_registry.md) | Injection token for the component registry |
+|  [ACOUSTIC\_TOKEN\_COMPONENT\_TYPE\_REF\_RESOLVERS](./ng-api.acoustic_token_component_type_ref_resolvers.md) | A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./ng-api.componenttyperefresolver.md)<!-- -->s. |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_CONTENT\_RESOLVER](./ng-api.acoustic_token_delivery_content_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_CONTENT\_SEED](./ng-api.acoustic_token_delivery_content_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./ng-api.acoustic_token_delivery_layout_mapping_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_LAYOUT\_MAPPING\_SEED](./ng-api.acoustic_token_delivery_layout_mapping_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_LAYOUT\_RESOLVER](./ng-api.acoustic_token_delivery_layout_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_LAYOUT\_SEED](./ng-api.acoustic_token_delivery_layout_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_PAGE\_RESOLVER](./ng-api.acoustic_token_delivery_page_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_PAGE\_SEED](./ng-api.acoustic_token_delivery_page_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_SEARCH\_RESOLVER](./ng-api.acoustic_token_delivery_search_resolver.md) | Injection token for the navigation service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_SITE\_RESOLVER](./ng-api.acoustic_token_delivery_site_resolver.md) | Injection token for the navigation service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_TYPE\_RESOLVER](./ng-api.acoustic_token_delivery_type_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DELIVERY\_TYPE\_SEED](./ng-api.acoustic_token_delivery_type_seed.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_DYNAMIC\_LOGGER\_FACTORY](./ng-api.acoustic_token_dynamic_logger_factory.md) |  |
+|  [ACOUSTIC\_TOKEN\_HANDLEBARS\_RESOLVER](./ng-api.acoustic_token_handlebars_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_LAYOUT\_RESOLVER](./ng-api.acoustic_token_layout_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_LOGGER\_FACTORY](./ng-api.acoustic_token_logger_factory.md) |  |
+|  [ACOUSTIC\_TOKEN\_LOGGER\_SERVICE](./ng-api.acoustic_token_logger_service.md) |  |
+|  [ACOUSTIC\_TOKEN\_PAGE\_SERVICE](./ng-api.acoustic_token_page_service.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_PROTECTED\_CONTENT](./ng-api.acoustic_token_protected_content.md) | Injection token for the protected content status |
+|  [ACOUSTIC\_TOKEN\_RENDERING\_CONTEXT\_PROVIDER](./ng-api.acoustic_token_rendering_context_provider.md) | Injection token for the rendering context provider |
+|  [ACOUSTIC\_TOKEN\_RENDERING\_CONTEXT\_RESOLVER](./ng-api.acoustic_token_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |
+|  [ACOUSTIC\_TOKEN\_RESOURCE\_URL](./ng-api.acoustic_token_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
+|  [ACOUSTIC\_TOKEN\_SEED\_RESOLVER](./ng-api.acoustic_token_seed_resolver.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_URL\_CONFIG](./ng-api.acoustic_token_url_config.md) | Injection token for the url config |
+|  [ACOUSTIC\_TOKEN\_WINDOW](./ng-api.acoustic_token_window.md) | Create a new injection token for injecting the window into a component. |
 |  [VERSION](./ng-api.version.md) | Version and build number of the package |
-|  [WCH\_RC\_INTERCEPTOR\_TOKEN](./ng-api.wch_rc_interceptor_token.md) |  |
-|  [WCH\_TOKEN\_ACTIVE\_PAGE](./ng-api.wch_token_active_page.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_API\_URL](./ng-api.wch_token_api_url.md) | URL to access the API layer<!-- -->Naming of this field according to the field in the rendering context |
-|  [WCH\_TOKEN\_AUTH\_STATUS](./ng-api.wch_token_auth_status.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_BASE\_URL](./ng-api.wch_token_base_url.md) | URL that represents the base URL of the path based routing of the application. This prefix will be preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded from the window location. |
-|  [WCH\_TOKEN\_COMPONENT\_REGISTRY](./ng-api.wch_token_component_registry.md) | Injection token for the component registry |
-|  [WCH\_TOKEN\_COMPONENT\_TYPE\_REF\_RESOLVERS](./ng-api.wch_token_component_type_ref_resolvers.md) | A multi-provider token used for dependency injection of the [ComponentTypeRefResolver](./ng-api.componenttyperefresolver.md)<!-- -->s. |
-|  [WCH\_TOKEN\_DELIVERY\_CONTENT\_RESOLVER](./ng-api.wch_token_delivery_content_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_CONTENT\_SEED](./ng-api.wch_token_delivery_content_seed.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_LAYOUT\_MAPPING\_RESOLVER](./ng-api.wch_token_delivery_layout_mapping_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_LAYOUT\_MAPPING\_SEED](./ng-api.wch_token_delivery_layout_mapping_seed.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_LAYOUT\_RESOLVER](./ng-api.wch_token_delivery_layout_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_LAYOUT\_SEED](./ng-api.wch_token_delivery_layout_seed.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_PAGE\_RESOLVER](./ng-api.wch_token_delivery_page_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_PAGE\_SEED](./ng-api.wch_token_delivery_page_seed.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_SEARCH\_RESOLVER](./ng-api.wch_token_delivery_search_resolver.md) | Injection token for the navigation service |
-|  [WCH\_TOKEN\_DELIVERY\_SITE\_RESOLVER](./ng-api.wch_token_delivery_site_resolver.md) | Injection token for the navigation service |
-|  [WCH\_TOKEN\_DELIVERY\_TYPE\_RESOLVER](./ng-api.wch_token_delivery_type_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DELIVERY\_TYPE\_SEED](./ng-api.wch_token_delivery_type_seed.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_DYNAMIC\_LOGGER\_FACTORY](./ng-api.wch_token_dynamic_logger_factory.md) |  |
-|  [WCH\_TOKEN\_HANDLEBARS\_RESOLVER](./ng-api.wch_token_handlebars_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_LAYOUT\_RESOLVER](./ng-api.wch_token_layout_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_LOGGER\_FACTORY](./ng-api.wch_token_logger_factory.md) |  |
-|  [WCH\_TOKEN\_LOGGER\_SERVICE](./ng-api.wch_token_logger_service.md) |  |
-|  [WCH\_TOKEN\_PAGE\_SERVICE](./ng-api.wch_token_page_service.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_PROTECTED\_CONTENT](./ng-api.wch_token_protected_content.md) | Injection token for the protected content status |
-|  [WCH\_TOKEN\_RENDERING\_CONTEXT\_PROVIDER](./ng-api.wch_token_rendering_context_provider.md) | Injection token for the rendering context provider |
-|  [WCH\_TOKEN\_RENDERING\_CONTEXT\_RESOLVER](./ng-api.wch_token_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |
-|  [WCH\_TOKEN\_RESOURCE\_URL](./ng-api.wch_token_resource_url.md) | URL to access the delivery<!-- -->Naming of this field according to the field in the rendering context |
-|  [WCH\_TOKEN\_SEED\_RESOLVER](./ng-api.wch_token_seed_resolver.md) | Injection token for the page service |
-|  [WCH\_TOKEN\_URL\_CONFIG](./ng-api.wch_token_url_config.md) | Injection token for the url config |
-|  [WCH\_TOKEN\_WINDOW](./ng-api.wch_token_window.md) | Create a new injection token for injecting the window into a component. |
 

@@ -4,9 +4,10 @@
 
 ## WCH\_HTTP\_MODULE variable
 
-Token used to access the http service
-
- PromiseLike<HttpService>
+> Warning: This API is now obsolete.
+> 
+> use [ACOUSTIC\_HTTP\_MODULE](./edit-api.acoustic_http_module.md) instead
+> 
 
 <b>Signature:</b>
 

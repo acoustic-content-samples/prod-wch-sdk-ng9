@@ -1,5 +1,5 @@
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { WCH_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
 import { isPlatformBrowser } from '@angular/common';
 import { ClassProvider, FactoryProvider, PLATFORM_ID } from '@angular/core';
 
@@ -31,7 +31,7 @@ const browserWindowProvider: ClassProvider = {
  * Create an injectable provider that uses the windowFactory function for returning the native window object.
  */
 const windowProvider: FactoryProvider = {
-  provide: WCH_TOKEN_WINDOW,
+  provide: ACOUSTIC_TOKEN_WINDOW,
   useFactory: windowFactory,
   deps: [WindowRef, PLATFORM_ID]
 };

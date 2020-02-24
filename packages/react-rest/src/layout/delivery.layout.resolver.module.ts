@@ -3,9 +3,9 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
 import {
   createInjectableReactProvider,
-  WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER,
-  WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_RESOLVER,
+  ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER,
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
 
 import { DeliveryLayoutResolverService } from './delivery.layout.resolver.service';
@@ -16,11 +16,11 @@ const createDeliveryLayoutResolver = (
 ) => new DeliveryLayoutResolverService(aSearch, aLogSvc);
 
 /**
- * Provider implementation for the `WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER`.
+ * Provider implementation for the `ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_RESOLVER`.
  */
-export const WCH_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_REST_DELIVERY_LAYOUT_RESOLVER = createInjectableReactProvider(
   createDeliveryLayoutResolver,
-  WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER,
-  [WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_DELIVERY_LAYOUT_RESOLVER,
+  [ACOUSTIC_CONTEXT_DELIVERY_SEARCH_RESOLVER],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

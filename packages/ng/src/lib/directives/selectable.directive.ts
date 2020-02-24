@@ -1,8 +1,8 @@
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
-import { WCH_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
+  ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE,
   WchSelectableDirectiveInput,
   WchSelectableDirectiveOutput,
   WchSelectableDirectiveService
@@ -59,9 +59,9 @@ export class SelectableDirective
   constructor(
     aElementRef: ElementRef,
     aRenderer: Renderer2,
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
-    @Inject(WCH_TOKEN_SELECTABLE_DIRECTIVE_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_SELECTABLE_DIRECTIVE_SERVICE)
     aService: WchSelectableDirectiveService
   ) {
     // life cycle hooks

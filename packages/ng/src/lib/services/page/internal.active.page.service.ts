@@ -6,9 +6,9 @@ import { Subject } from 'rxjs';
 /**
  * Injection token for the page service
  */
-export const WCH_TOKEN_INTERNAL_ACTIVE_PAGE = new InjectionToken<
+export const ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE = new InjectionToken<
   Subject<RenderingContextV2>
->('WCH_TOKEN_INTERNAL_ACTIVE_PAGE');
+>('ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE');
 
 /**
  * Subject that carries the currently selected page

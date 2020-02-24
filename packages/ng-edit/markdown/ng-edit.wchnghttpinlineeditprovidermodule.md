@@ -4,7 +4,7 @@
 
 ## WchNgHttpInlineEditProviderModule class
 
-Provides token `WCH_TOKEN_INLINE_EDIT_PROVIDER`
+Provides token `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER`
 
 <b>Signature:</b>
 

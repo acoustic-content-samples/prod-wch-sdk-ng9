@@ -47,7 +47,7 @@ import {
   tap
 } from 'rxjs/operators';
 
-import { EMPTY_WCH_INLINE_EDIT_SERVICE } from './empty.inlint.edit.service';
+import { EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE } from './empty.inlint.edit.service';
 import { getInlineEditSelection } from './inline.edit.selection';
 
 // need this as a workaround
@@ -145,8 +145,8 @@ function createRegistration(
   });
 }
 
-const FALLBACK_REGISTRATION = EMPTY_WCH_INLINE_EDIT_SERVICE.registerComponent;
-const FALLBACK_FROM_EVENT = EMPTY_WCH_INLINE_EDIT_SERVICE.fromEvent;
+const FALLBACK_REGISTRATION = EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE.registerComponent;
+const FALLBACK_FROM_EVENT = EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE.fromEvent;
 
 const createSelectionEvent = (data: string): WchInlineEditEvent =>
   createWchInlineEditEvent(EVENT_INLINE_EDIT_SET_SELECTED_CELL, data);

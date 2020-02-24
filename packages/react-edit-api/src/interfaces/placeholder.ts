@@ -66,6 +66,6 @@ export interface WchPlaceholderProvider {
   ) => WchPlaceholder;
 }
 
-export const WCH_CONTEXT_PLACEHOLDER_PROVIDER = createReactContext<
+export const ACOUSTIC_CONTEXT_PLACEHOLDER_PROVIDER = createReactContext<
   WchPlaceholderProvider
->('WCH_CONTEXT_PLACEHOLDER_PROVIDER');
+>('ACOUSTIC_CONTEXT_PLACEHOLDER_PROVIDER');

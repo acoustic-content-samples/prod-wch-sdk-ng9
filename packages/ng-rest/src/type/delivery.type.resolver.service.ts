@@ -5,8 +5,8 @@ import {
 } from '@acoustic-content-sdk/component-api';
 import { AbstractDeliveryTypeResolverService } from '@acoustic-content-sdk/component-rest';
 import {
-  WCH_TOKEN_DELIVERY_SEARCH_RESOLVER,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import { Inject, Injectable, Optional } from '@angular/core';
 
@@ -15,9 +15,9 @@ export class DeliveryTypeResolverService
   extends AbstractDeliveryTypeResolverService
   implements DeliveryTypeResolver {
   constructor(
-    @Inject(WCH_TOKEN_DELIVERY_SEARCH_RESOLVER) aSearch: DeliverySearchResolver,
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER) aSearch: DeliverySearchResolver,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
   ) {
     super(aSearch, aLogSvc);

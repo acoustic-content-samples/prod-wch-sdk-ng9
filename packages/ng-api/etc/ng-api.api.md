@@ -38,6 +38,102 @@ import { UrlSegment } from '@angular/router';
 import { WchPageService } from '@acoustic-content-sdk/component-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
+// @public (undocumented)
+export const ACOUSTIC_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
+
+// @public
+export const ACOUSTIC_TOKEN_ACTIVE_PAGE: InjectionToken<ActivePageV2>;
+
+// @public
+export const ACOUSTIC_TOKEN_API_URL: InjectionToken<HubInfoUrlProvider>;
+
+// @public
+export const ACOUSTIC_TOKEN_AUTH_STATUS: InjectionToken<AuthStatus>;
+
+// @public
+export const ACOUSTIC_TOKEN_BASE_URL: InjectionToken<HubInfoUrlProvider>;
+
+// @public
+export const ACOUSTIC_TOKEN_COMPONENT_REGISTRY: InjectionToken<ComponentRegistry>;
+
+// @public
+export const ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS: InjectionToken<ComponentTypeRefResolver[]>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER: InjectionToken<DeliveryContentResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_CONTENT_SEED: InjectionToken<string>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER: InjectionToken<DeliveryLayoutMappingResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED: InjectionToken<string>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_LAYOUT_RESOLVER: InjectionToken<DeliveryLayoutResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_LAYOUT_SEED: InjectionToken<string>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER: InjectionToken<DeliveryPageResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_PAGE_SEED: InjectionToken<string>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER: InjectionToken<DeliverySearchResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER: InjectionToken<DeliverySiteResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER: InjectionToken<DeliveryTypeResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_DELIVERY_TYPE_SEED: InjectionToken<string>;
+
+// @public (undocumented)
+export const ACOUSTIC_TOKEN_DYNAMIC_LOGGER_FACTORY: InjectionToken<DynamicLoggerFactory>;
+
+// @public
+export const ACOUSTIC_TOKEN_HANDLEBARS_RESOLVER: InjectionToken<HandlebarsResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_LAYOUT_RESOLVER: InjectionToken<LayoutResolver>;
+
+// @public (undocumented)
+export const ACOUSTIC_TOKEN_LOGGER_FACTORY: InjectionToken<LoggerFactory>;
+
+// @public (undocumented)
+export const ACOUSTIC_TOKEN_LOGGER_SERVICE: InjectionToken<LoggerService>;
+
+// @public
+export const ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<WchNgPageService>;
+
+// @public
+export const ACOUSTIC_TOKEN_PROTECTED_CONTENT: InjectionToken<ProtectedContent>;
+
+// @public
+export const ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER: InjectionToken<RenderingContextProviderV2>;
+
+// @public
+export const ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER: InjectionToken<RenderingContextResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_RESOURCE_URL: InjectionToken<HubInfoUrlProvider>;
+
+// @public
+export const ACOUSTIC_TOKEN_SEED_RESOLVER: InjectionToken<SeedResolver>;
+
+// @public
+export const ACOUSTIC_TOKEN_URL_CONFIG: InjectionToken<Observable<UrlConfig>>;
+
+// @public
+export const ACOUSTIC_TOKEN_WINDOW: InjectionToken<WindowType>;
+
 // @public
 export interface ComponentRegistry extends AbstractComponentsRegistry<ComponentTypeRef<any>> {
     registerType(aController: string | string[], aType: ComponentTypeRef<any>, aLayoutModes?: string | string[]): void;
@@ -71,102 +167,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public (undocumented)
-export const WCH_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
-
-// @public
-export const WCH_TOKEN_ACTIVE_PAGE: InjectionToken<ActivePageV2>;
-
-// @public
-export const WCH_TOKEN_API_URL: InjectionToken<HubInfoUrlProvider>;
-
-// @public
-export const WCH_TOKEN_AUTH_STATUS: InjectionToken<AuthStatus>;
-
-// @public
-export const WCH_TOKEN_BASE_URL: InjectionToken<HubInfoUrlProvider>;
-
-// @public
-export const WCH_TOKEN_COMPONENT_REGISTRY: InjectionToken<ComponentRegistry>;
-
-// @public
-export const WCH_TOKEN_COMPONENT_TYPE_REF_RESOLVERS: InjectionToken<ComponentTypeRefResolver[]>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_CONTENT_RESOLVER: InjectionToken<DeliveryContentResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_CONTENT_SEED: InjectionToken<string>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_RESOLVER: InjectionToken<DeliveryLayoutMappingResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED: InjectionToken<string>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_LAYOUT_RESOLVER: InjectionToken<DeliveryLayoutResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_LAYOUT_SEED: InjectionToken<string>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_PAGE_RESOLVER: InjectionToken<DeliveryPageResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_PAGE_SEED: InjectionToken<string>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_SEARCH_RESOLVER: InjectionToken<DeliverySearchResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_SITE_RESOLVER: InjectionToken<DeliverySiteResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_TYPE_RESOLVER: InjectionToken<DeliveryTypeResolver>;
-
-// @public
-export const WCH_TOKEN_DELIVERY_TYPE_SEED: InjectionToken<string>;
-
-// @public (undocumented)
-export const WCH_TOKEN_DYNAMIC_LOGGER_FACTORY: InjectionToken<DynamicLoggerFactory>;
-
-// @public
-export const WCH_TOKEN_HANDLEBARS_RESOLVER: InjectionToken<HandlebarsResolver>;
-
-// @public
-export const WCH_TOKEN_LAYOUT_RESOLVER: InjectionToken<LayoutResolver>;
-
-// @public (undocumented)
-export const WCH_TOKEN_LOGGER_FACTORY: InjectionToken<LoggerFactory>;
-
-// @public (undocumented)
-export const WCH_TOKEN_LOGGER_SERVICE: InjectionToken<LoggerService>;
-
-// @public
-export const WCH_TOKEN_PAGE_SERVICE: InjectionToken<WchNgPageService>;
-
-// @public
-export const WCH_TOKEN_PROTECTED_CONTENT: InjectionToken<ProtectedContent>;
-
-// @public
-export const WCH_TOKEN_RENDERING_CONTEXT_PROVIDER: InjectionToken<RenderingContextProviderV2>;
-
-// @public
-export const WCH_TOKEN_RENDERING_CONTEXT_RESOLVER: InjectionToken<RenderingContextResolver>;
-
-// @public
-export const WCH_TOKEN_RESOURCE_URL: InjectionToken<HubInfoUrlProvider>;
-
-// @public
-export const WCH_TOKEN_SEED_RESOLVER: InjectionToken<SeedResolver>;
-
-// @public
-export const WCH_TOKEN_URL_CONFIG: InjectionToken<Observable<UrlConfig>>;
-
-// @public
-export const WCH_TOKEN_WINDOW: InjectionToken<WindowType>;
 
 // @public
 export interface WchNgPageService extends WchPageService {

@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-[WCH_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePage>;
+[ACOUSTIC_ACTIVE_PAGE_MODULE]: PromiseLike<ActivePage>;
 ```

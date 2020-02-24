@@ -8,6 +8,6 @@
 
 ```typescript
 handlebarsFeatureReducer: {
-    [HANDLEBARS_FEATURE]: import("redux").Reducer<Record<string, import("./handlebars.state").HandlebarsTemplateState>, import("./handlebars.actions").HandlebarsSetErrorAction | import("./handlebars.actions").HandlebarsSetTemplateAction>;
+    handlebars: import("redux").Reducer<Record<string, import("./handlebars.state").HandlebarsTemplateState>, import("./handlebars.actions").HandlebarsSetErrorAction | import("./handlebars.actions").HandlebarsSetTemplateAction>;
 }
 ```

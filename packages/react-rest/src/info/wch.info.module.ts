@@ -2,10 +2,10 @@
 import { HubInfoUrlProvider, UrlConfig } from '@acoustic-content-sdk/api';
 import {
   createInjectableReactProvider,
-  WCH_CONTEXT_API_URL,
-  WCH_CONTEXT_BASE_URL,
-  WCH_CONTEXT_RESOURCE_URL,
-  WCH_CONTEXT_URL_CONFIG
+  ACOUSTIC_CONTEXT_API_URL,
+  ACOUSTIC_CONTEXT_BASE_URL,
+  ACOUSTIC_CONTEXT_RESOURCE_URL,
+  ACOUSTIC_CONTEXT_URL_CONFIG
 } from '@acoustic-content-sdk/react-api';
 import { Observable } from 'rxjs';
 
@@ -23,11 +23,11 @@ function proxyCreateUrlConfig(
 }
 
 /**
- * Provider implementation for the `WCH_CONTEXT_URL_CONFIG`.
+ * Provider implementation for the `ACOUSTIC_CONTEXT_URL_CONFIG`.
  */
-export const WCH_PROVIDER_REST_URL_CONFIG = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_REST_URL_CONFIG = createInjectableReactProvider(
   proxyCreateUrlConfig,
-  WCH_CONTEXT_URL_CONFIG,
+  ACOUSTIC_CONTEXT_URL_CONFIG,
   [],
-  [WCH_CONTEXT_BASE_URL, WCH_CONTEXT_API_URL, WCH_CONTEXT_RESOURCE_URL]
+  [ACOUSTIC_CONTEXT_BASE_URL, ACOUSTIC_CONTEXT_API_URL, ACOUSTIC_CONTEXT_RESOURCE_URL]
 );

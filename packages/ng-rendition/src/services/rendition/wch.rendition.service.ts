@@ -1,7 +1,7 @@
 /* Copyright IBM Corp. 2017 */
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Image, LoggerService } from '@acoustic-content-sdk/api';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
 import {
   getRendition,
   ScaledImage
@@ -17,7 +17,7 @@ export class WchRenditionService {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     const that = this;

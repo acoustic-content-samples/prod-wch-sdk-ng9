@@ -9,12 +9,12 @@ import {
 } from '@acoustic-content-sdk/api';
 import { SeedResolver } from '@acoustic-content-sdk/component-api';
 import {
-  WCH_TOKEN_DELIVERY_CONTENT_SEED,
-  WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED,
-  WCH_TOKEN_DELIVERY_LAYOUT_SEED,
-  WCH_TOKEN_DELIVERY_PAGE_SEED,
-  WCH_TOKEN_DELIVERY_TYPE_SEED,
-  WCH_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_DELIVERY_CONTENT_SEED,
+  ACOUSTIC_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED,
+  ACOUSTIC_TOKEN_DELIVERY_LAYOUT_SEED,
+  ACOUSTIC_TOKEN_DELIVERY_PAGE_SEED,
+  ACOUSTIC_TOKEN_DELIVERY_TYPE_SEED,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE
 } from '@acoustic-content-sdk/ng-api';
 import {
   assertFromGenerator,
@@ -93,25 +93,25 @@ export class WchSeedResolver implements SeedResolver {
 
   constructor(
     @Optional()
-    @Inject(WCH_TOKEN_DELIVERY_CONTENT_SEED)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_CONTENT_SEED)
     aContentSeed: string,
     @Optional()
-    @Inject(WCH_TOKEN_DELIVERY_TYPE_SEED)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_TYPE_SEED)
     aTypeSeed: string,
     @Optional()
-    @Inject(WCH_TOKEN_DELIVERY_LAYOUT_SEED)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_LAYOUT_SEED)
     aLayoutSeed: string,
     @Optional()
-    @Inject(WCH_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_LAYOUT_MAPPING_SEED)
     aLayoutMappingSeed: string,
     @Optional()
-    @Inject(WCH_TOKEN_DELIVERY_PAGE_SEED)
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_PAGE_SEED)
     aPageSeed: string,
     @Optional()
     @Inject(DOCUMENT)
     aDocument: any,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
   ) {
     // resolve the logger

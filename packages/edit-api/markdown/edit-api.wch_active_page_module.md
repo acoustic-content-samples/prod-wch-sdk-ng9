@@ -4,9 +4,10 @@
 
 ## WCH\_ACTIVE\_PAGE\_MODULE variable
 
-Token used to require the active page service
-
- PromiseLike<ActivePage>
+> Warning: This API is now obsolete.
+> 
+> use [ACOUSTIC\_ACTIVE\_PAGE\_MODULE](./edit-api.acoustic_active_page_module.md) instead
+> 
 
 <b>Signature:</b>
 

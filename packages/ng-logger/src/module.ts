@@ -1,5 +1,5 @@
 /* Copyright IBM Corp. 2017 */
-import { WCH_TOKEN_LOGGER_FACTORY } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_FACTORY } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {
@@ -35,7 +35,7 @@ export class WchNgLoggingModule {
       ngModule: WchNgLoggingModule,
       providers: [
         { provide: Ng2LoggerConfigService, useValue: aConfig },
-        { provide: WCH_TOKEN_LOGGER_FACTORY, useClass: Ng2LoggerFactory }
+        { provide: ACOUSTIC_TOKEN_LOGGER_FACTORY, useClass: Ng2LoggerFactory }
       ]
     };
   }

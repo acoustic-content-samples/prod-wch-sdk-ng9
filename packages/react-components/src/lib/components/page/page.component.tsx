@@ -6,10 +6,10 @@ import {
   assertProvider,
   ContentComponentProps,
   createReactProvider,
-  WCH_CONTEXT_LOGGER_SERVICE,
-  WCH_CONTEXT_PAGE_COMPONENT,
-  WCH_CONTEXT_PAGE_SERVICE,
-  WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE,
+  ACOUSTIC_CONTEXT_PAGE_COMPONENT,
+  ACOUSTIC_CONTEXT_PAGE_SERVICE,
+  ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER
 } from '@acoustic-content-sdk/react-api';
 import { rxComponent, StateFunction } from '@acoustic-content-sdk/react-utils';
 import {
@@ -83,17 +83,17 @@ const InternalPageComponent = rxComponent<
  * @returns the component
  */
 export const WchPageComponent: FC<RouteComponentProps> = (props) => (
-  <WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+  <ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
     {(logSvc) => (
-      <WCH_CONTEXT_PAGE_SERVICE.Consumer>
+      <ACOUSTIC_CONTEXT_PAGE_SERVICE.Consumer>
         {(pageService) => {
           // construct the context
           const renderingContextProvider = createRenderingContextProvider(
             props,
-            assertProvider(pageService, WCH_CONTEXT_PAGE_SERVICE)
+            assertProvider(pageService, ACOUSTIC_CONTEXT_PAGE_SERVICE)
           );
           return (
-            <WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider
+            <ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider
               value={renderingContextProvider}
             >
               <InternalPageComponent
@@ -101,26 +101,26 @@ export const WchPageComponent: FC<RouteComponentProps> = (props) => (
                 layoutMode={DEFAULT_LAYOUT_MODE}
                 loggerService={logSvc}
               />
-            </WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider>
+            </ACOUSTIC_CONTEXT_RENDERING_CONTEXT_PROVIDER.Provider>
           );
         }}
-      </WCH_CONTEXT_PAGE_SERVICE.Consumer>
+      </ACOUSTIC_CONTEXT_PAGE_SERVICE.Consumer>
     )}
-  </WCH_CONTEXT_LOGGER_SERVICE.Consumer>
+  </ACOUSTIC_CONTEXT_LOGGER_SERVICE.Consumer>
 );
 
 const WchPageComponentProvider: FC = ({ children }) => (
-  <WCH_CONTEXT_PAGE_COMPONENT.Provider value={WchPageComponent}>
+  <ACOUSTIC_CONTEXT_PAGE_COMPONENT.Provider value={WchPageComponent}>
     {children}
-  </WCH_CONTEXT_PAGE_COMPONENT.Provider>
+  </ACOUSTIC_CONTEXT_PAGE_COMPONENT.Provider>
 );
 
 /**
  * Provides the rendering context component
  */
-export const WCH_PROVIDER_PAGE_COMPONENT = createReactProvider(
+export const ACOUSTIC_PROVIDER_PAGE_COMPONENT = createReactProvider(
   WchPageComponentProvider,
-  WCH_CONTEXT_PAGE_COMPONENT,
-  [WCH_CONTEXT_PAGE_SERVICE],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_PAGE_COMPONENT,
+  [ACOUSTIC_CONTEXT_PAGE_SERVICE],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

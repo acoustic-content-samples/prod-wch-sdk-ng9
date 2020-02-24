@@ -1,9 +1,9 @@
 import { createReactProvider } from '@acoustic-content-sdk/react-api';
-import { WCH_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
+import { ACOUSTIC_CONTEXT_REDUX_STORE } from '@acoustic-content-sdk/react-redux-api';
 import { createElement, FC, useContext } from 'react';
 import { Provider } from 'react-redux';
 
-import { WCH_CONTEXT_REACT_REDUX } from './react.redux.token';
+import { ACOUSTIC_CONTEXT_REACT_REDUX } from './react.redux.token';
 
 /**
  * Implementation of a JSX component that provides the redux store to `react-redux`
@@ -15,7 +15,7 @@ import { WCH_CONTEXT_REACT_REDUX } from './react.redux.token';
  */
 const ReactReduxProvider: FC = ({ children }) => {
   // access the SDK store
-  const store = useContext(WCH_CONTEXT_REDUX_STORE);
+  const store = useContext(ACOUSTIC_CONTEXT_REDUX_STORE);
   // provide to react-redux
   return createElement(Provider, { store }, children);
 };
@@ -23,8 +23,8 @@ const ReactReduxProvider: FC = ({ children }) => {
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_REACT_REDUX = createReactProvider(
+export const ACOUSTIC_PROVIDER_REACT_REDUX = createReactProvider(
   ReactReduxProvider,
-  WCH_CONTEXT_REACT_REDUX,
-  [WCH_CONTEXT_REDUX_STORE]
+  ACOUSTIC_CONTEXT_REACT_REDUX,
+  [ACOUSTIC_CONTEXT_REDUX_STORE]
 );

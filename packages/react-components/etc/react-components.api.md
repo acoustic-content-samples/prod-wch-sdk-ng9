@@ -15,6 +15,42 @@ import { RouteComponentProps } from 'react-router';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
+export const ACOUSTIC_PROVIDER_BROWSER_WINDOW: import("@acoustic-content-sdk/react-api").ReactProvider<WindowType>;
+
+// @public
+export const ACOUSTIC_PROVIDER_COMPONENT_REGISTRY: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ComponentRegistry>;
+
+// @public
+export const ACOUSTIC_PROVIDER_COMPONENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ComponentResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_CONTENT_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<ContentComponentProps, any>>;
+
+// @public
+export const ACOUSTIC_PROVIDER_DELIVERY_SEARCH_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliverySearchResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDER_EDIT_HOST_WINDOW: import("@acoustic-content-sdk/react-api").ReactProvider<WindowType>;
+
+// @public
+export const ACOUSTIC_PROVIDER_LOGGER_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").LoggerService>;
+
+// @public
+export const ACOUSTIC_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>;
+
+// @public
+export const ACOUSTIC_PROVIDER_PAGE_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactWchPageService>;
+
+// @public
+export const ACOUSTIC_PROVIDER_PROTECTED_CONTENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").ProtectedContent>;
+
+// @public
+export const ACOUSTIC_PROVIDER_RENDERING_CONTEXT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").RenderingContextResolver>;
+
+// @public
+export const ACOUSTIC_PROVIDERS_COMPONENTS: Array<ReactProvider<any>>;
+
+// @public
 export const LayoutComponent: <T extends import("@acoustic-content-sdk/react-api").ReactComponent<import("@acoustic-content-sdk/react-api").ReactComponentProps, any>>(aDirective?: import("@acoustic-content-sdk/component-api").AbstractLayoutComponentDirective) => (cls: T) => void;
 
 // @public
@@ -43,42 +79,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_PROVIDER_BROWSER_WINDOW: import("@acoustic-content-sdk/react-api").ReactProvider<WindowType>;
-
-// @public
-export const WCH_PROVIDER_COMPONENT_REGISTRY: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ComponentRegistry>;
-
-// @public
-export const WCH_PROVIDER_COMPONENT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ComponentResolver>;
-
-// @public
-export const WCH_PROVIDER_CONTENT_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<ContentComponentProps, any>>;
-
-// @public
-export const WCH_PROVIDER_DELIVERY_SEARCH_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").DeliverySearchResolver>;
-
-// @public
-export const WCH_PROVIDER_EDIT_HOST_WINDOW: import("@acoustic-content-sdk/react-api").ReactProvider<WindowType>;
-
-// @public
-export const WCH_PROVIDER_LOGGER_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/api").LoggerService>;
-
-// @public
-export const WCH_PROVIDER_PAGE_COMPONENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactComponent<RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>;
-
-// @public
-export const WCH_PROVIDER_PAGE_SERVICE: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/react-api").ReactWchPageService>;
-
-// @public
-export const WCH_PROVIDER_PROTECTED_CONTENT: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").ProtectedContent>;
-
-// @public
-export const WCH_PROVIDER_RENDERING_CONTEXT_RESOLVER: import("@acoustic-content-sdk/react-api").ReactProvider<import("@acoustic-content-sdk/component-api").RenderingContextResolver>;
-
-// @public
-export const WCH_PROVIDERS_COMPONENTS: Array<ReactProvider<any>>;
 
 // @public
 export const WchContentComponent: FC<ContentComponentProps>;

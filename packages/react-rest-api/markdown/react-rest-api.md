@@ -10,6 +10,6 @@ Definition of contexts and interfaces for the React SDK based on REST.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_CONTEXT\_FETCH\_TEXT](./react-rest-api.acoustic_context_fetch_text.md) | Injection token for the remote text access |
 |  [VERSION](./react-rest-api.version.md) | Version and build number of the package |
-|  [WCH\_CONTEXT\_FETCH\_TEXT](./react-rest-api.wch_context_fetch_text.md) | Injection token for the remote text access |
 

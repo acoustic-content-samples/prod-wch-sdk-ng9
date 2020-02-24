@@ -41,7 +41,7 @@ export const AUTH_LAYOUT_FEATURE = "authLayout";
 
 // @public (undocumented)
 export const authLayoutFeatureReducer: {
-    [AUTH_LAYOUT_FEATURE]: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringLayoutItem>, import("./auth.layout.actions").AddAuthoringLayoutAction | import("./auth.layout.actions").SetAuthoringLayoutAction>;
+    authLayout: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").AuthoringLayoutItem>, import("./auth.layout.actions").AddAuthoringLayoutAction | import("./auth.layout.actions").SetAuthoringLayoutAction>;
 };
 
 // @public (undocumented)

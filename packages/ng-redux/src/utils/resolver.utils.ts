@@ -1,5 +1,5 @@
 import {
-  KEY_WCH_SEED,
+  KEY_ACOUSTIC_SEED,
   LoggerService,
   Query,
   SearchResult,
@@ -103,7 +103,7 @@ export function createResolverFromSearch<T>(
   return (id) =>
     rxPipe(
       aSeed(id),
-      map((key) => `&${KEY_WCH_SEED}=${encodeURIComponent(key)}`),
+      map((key) => `&${KEY_ACOUSTIC_SEED}=${encodeURIComponent(key)}`),
       mergeMap((suffix) => sendRequest(id, suffix)),
       log('documents', id),
       mergeMap(extractDocuments)

@@ -7,6 +7,9 @@
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 
 // @public
+export const ACOUSTIC_CONTEXT_FETCH_TEXT: Required<import("react").Context<FetchText>>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -15,9 +18,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export const WCH_CONTEXT_FETCH_TEXT: Required<import("react").Context<FetchText>>;
 
 
 ```

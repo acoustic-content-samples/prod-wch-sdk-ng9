@@ -7,11 +7,11 @@ import {
 } from '@acoustic-content-sdk/api';
 import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import {
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_RENDERING_CONTEXT_PROVIDER
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER
 } from '@acoustic-content-sdk/ng-api';
 import {
-  WCH_TOKEN_PLACEHOLDER_PROVIDER,
+  ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER,
   WchPlaceholder,
   WchPlaceholderProvider
 } from '@acoustic-content-sdk/ng-edit-api';
@@ -120,12 +120,12 @@ export class WchPlaceholderComponent extends AbstractLifeCycleComponent
   typeId$: Observable<string>;
 
   constructor(
-    @Inject(WCH_TOKEN_RENDERING_CONTEXT_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_RENDERING_CONTEXT_PROVIDER)
     aProvider: RenderingContextProviderV2,
-    @Inject(WCH_TOKEN_PLACEHOLDER_PROVIDER)
+    @Inject(ACOUSTIC_TOKEN_PLACEHOLDER_PROVIDER)
     aPhProvider: WchPlaceholderProvider,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLoggerService: LoggerService
   ) {
     super();

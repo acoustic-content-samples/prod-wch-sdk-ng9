@@ -1,8 +1,8 @@
 /* Copyright IBM Corp. 2017 */
 import { Image, LoggerService, UrlConfig } from '@acoustic-content-sdk/api';
 import {
-  WCH_TOKEN_LOGGER_SERVICE,
-  WCH_TOKEN_URL_CONFIG
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import { AbstractLifeCycleComponent } from '@acoustic-content-sdk/ng-utils';
 import { getSourceSet } from '@acoustic-content-sdk/rendition-utils';
@@ -43,10 +43,10 @@ export class SrcSetDirective extends AbstractLifeCycleComponent
   constructor(
     parentRef: ElementRef,
     renderer: Renderer2,
-    @Inject(WCH_TOKEN_URL_CONFIG)
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig: Observable<UrlConfig>,
     @Optional()
-    @Inject(WCH_TOKEN_LOGGER_SERVICE)
+    @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     super();

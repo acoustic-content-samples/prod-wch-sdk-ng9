@@ -12,9 +12,9 @@ export const DEFAULT_INLINE_EDIT_URL =
 /**
  * Injection token for the inline edit URL
  */
-export const WCH_TOKEN_INLINE_EDIT_URL = new InjectionToken<
+export const ACOUSTIC_TOKEN_INLINE_EDIT_URL = new InjectionToken<
   StaticHubInfoUrlProvider
->('WCH_TOKEN_INLINE_EDIT_URL');
+>('ACOUSTIC_TOKEN_INLINE_EDIT_URL');
 
 /**
  * per default do not debug

@@ -7,11 +7,11 @@ import {
 import {
   createInjectableReactProvider,
   selectDisplayName,
-  WCH_CONTEXT_LOGGER_SERVICE
+  ACOUSTIC_CONTEXT_LOGGER_SERVICE
 } from '@acoustic-content-sdk/react-api';
 import {
-  WCH_CONTEXT_EDIT_HOST_WINDOW,
-  WCH_CONTEXT_INLINE_EDIT_PROVIDER
+  ACOUSTIC_CONTEXT_EDIT_HOST_WINDOW,
+  ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER
 } from '@acoustic-content-sdk/react-edit-api';
 import {
   createObservableAdaptor,
@@ -20,7 +20,7 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { defer, from, Observable, Subscribable, throwError } from 'rxjs';
 
-const LOGGER = selectDisplayName(WCH_CONTEXT_INLINE_EDIT_PROVIDER);
+const LOGGER = selectDisplayName(ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER);
 
 function internalGetInlineEditProvider(
   aHostWindow: WindowType,
@@ -62,9 +62,9 @@ function createInlineEditProvider(
 /**
  * Declares the provider
  */
-export const WCH_PROVIDER_INLINE_EDIT_PROVIDER = createInjectableReactProvider(
+export const ACOUSTIC_PROVIDER_INLINE_EDIT_PROVIDER = createInjectableReactProvider(
   createInlineEditProvider,
-  WCH_CONTEXT_INLINE_EDIT_PROVIDER,
-  [WCH_CONTEXT_EDIT_HOST_WINDOW],
-  [WCH_CONTEXT_LOGGER_SERVICE]
+  ACOUSTIC_CONTEXT_INLINE_EDIT_PROVIDER,
+  [ACOUSTIC_CONTEXT_EDIT_HOST_WINDOW],
+  [ACOUSTIC_CONTEXT_LOGGER_SERVICE]
 );

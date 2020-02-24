@@ -1,7 +1,7 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { MessageService } from '@acoustic-content-sdk/cross-frame-redux';
-import { WCH_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
-import { WCH_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import {
   createReduxRootStore,
   ReduxRootStore
@@ -36,9 +36,9 @@ export function createStore(
     {
       deps: [
         ChildWindowMessageService,
-        [new Optional(), WCH_TOKEN_LOGGER_SERVICE]
+        [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
       ],
-      provide: WCH_TOKEN_REDUX_STORE,
+      provide: ACOUSTIC_TOKEN_REDUX_STORE,
       useFactory: createStore
     },
     PageSelectionService

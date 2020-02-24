@@ -8,6 +8,6 @@
 
 ```typescript
 deliveryContentFeatureReducer: {
-    [DELIVERY_CONTENT_FEATURE]: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").ContentItemWithLayout>, import("redux").AnyAction>;
+    deliveryContent: import("redux").Reducer<Record<string, import("@acoustic-content-sdk/api").ContentItemWithLayout>, import("redux").AnyAction>;
 }
 ```

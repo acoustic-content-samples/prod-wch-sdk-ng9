@@ -4,7 +4,7 @@
 
 ## WchNgLoggerModule class
 
-Modules that exposes the `WCH_TOKEN_LOGGER_SERVICE` token
+Modules that exposes the `ACOUSTIC_TOKEN_LOGGER_SERVICE` token
 
 <b>Signature:</b>
 

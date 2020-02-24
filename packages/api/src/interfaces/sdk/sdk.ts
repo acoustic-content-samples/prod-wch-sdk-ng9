@@ -4,7 +4,7 @@ import { WchSdkRouter } from './router/router';
 import { WchSdkSearch } from './search/search';
 import { WchSdkVersion } from './version/version';
 
-export const WCH_SDK_MODULE_NAME = 'WchSdk';
+export const ACOUSTIC_SDK_MODULE_NAME = 'WchSdk';
 
 export interface WchSdk {
 
