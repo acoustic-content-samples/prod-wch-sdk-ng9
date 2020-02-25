@@ -125,10 +125,11 @@ function createPackage(
   const main = `bundles/${fileName}.umd.js`;
   const module = `fesm5/${fileName}.js`;
   const typings = `typings/${fileName}.d.ts`;
+  const push = `bundles/push.js`;
   // tags
   const tags = splitArray(aSchema.tag || '');
   // files we know statically
-  const staticFile$ = of(main, module, typings);
+  const staticFile$ = of(main, module, typings, push);
   // map the files
   const contentFile$ = rxPipe(
     aFiles$,
