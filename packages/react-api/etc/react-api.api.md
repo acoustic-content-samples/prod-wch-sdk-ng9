@@ -337,5 +337,113 @@ export const VERSION: {
     build: Date;
 };
 
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_API_URL: Required<import("react").Context<import("@acoustic-content-sdk/api").HubInfoUrlProvider>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_AUTH_STATUS: Required<import("react").Context<import("@acoustic-content-sdk/api").AuthStatus>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_BASE_URL: Required<import("react").Context<import("@acoustic-content-sdk/api").HubInfoUrlProvider>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_COMPONENT_REGISTRY: Required<import("react").Context<import("./component/component.registry").ComponentRegistry>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_COMPONENT_RESOLVER: Required<import("react").Context<import("./component/component.resolver").ComponentResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_COMPONENT_TYPE_REF_RESOLVERS: Required<import("react").Context<import("./type/type.ref.resolver").ComponentTypeRefResolver[]>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_CONTENT_COMPONENT: Required<import("react").Context<import("./public_api").ReactComponent<import("./component/content/content.component").ContentComponentProps, any>>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DEFAULT_COMPONENT: Required<import("react").Context<import("./public_api").ReactComponent<import("./public_api").ReactComponentProps, any>>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_CONTENT_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliveryContentResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_CONTENT_SEED: Required<import("react").Context<string>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliveryLayoutMappingResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_LAYOUT_MAPPING_SEED: Required<import("react").Context<string>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_LAYOUT_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliveryLayoutResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_LAYOUT_SEED: Required<import("react").Context<string>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_PAGE_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliveryPageResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_PAGE_SEED: Required<import("react").Context<string>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_SEARCH_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliverySearchResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_SITE_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliverySiteResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_TYPE_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").DeliveryTypeResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DELIVERY_TYPE_SEED: Required<import("react").Context<string>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_DYNAMIC_LOGGER_FACTORY: Required<import("react").Context<import("@acoustic-content-sdk/api").DynamicLoggerFactory>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_HANDLEBARS_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").HandlebarsResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_LAYOUT_MAPPING_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").LayoutMappingResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_LAYOUT_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").LayoutResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_LOGGER_FACTORY: Required<import("react").Context<import("@acoustic-content-sdk/api").LoggerFactory>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_LOGGER_SERVICE: Required<import("react").Context<import("@acoustic-content-sdk/api").LoggerService>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_PAGE_COMPONENT: Required<import("react").Context<import("./public_api").ReactComponent<import("react-router").RouteComponentProps<{}, import("react-router").StaticContext, {}>, any>>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_PAGE_SERVICE: Required<import("react").Context<import("./services/page/wch.page.service").ReactWchPageService>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_PROTECTED_CONTENT: Required<import("react").Context<import("@acoustic-content-sdk/component-api").ProtectedContent>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_RECONCILED_DELIVERY_SEARCH_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").ReconciledDeliverySearchResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_RENDERING_CONTEXT_PROVIDER: Required<import("react").Context<import("@acoustic-content-sdk/api").RenderingContextProviderV2>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_RENDERING_CONTEXT_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").RenderingContextResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_RESOURCE_URL: Required<import("react").Context<import("@acoustic-content-sdk/api").HubInfoUrlProvider>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_SEED_RESOLVER: Required<import("react").Context<import("@acoustic-content-sdk/component-api").SeedResolver>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_URL_CONFIG: Required<import("react").Context<import("rxjs").Observable<import("@acoustic-content-sdk/api").UrlConfig>>>;
+
+// @public @deprecated (undocumented)
+export const WCH_CONTEXT_WINDOW: Required<import("react").Context<import("@acoustic-content-sdk/component-api").WindowType>>;
+
 
 ```

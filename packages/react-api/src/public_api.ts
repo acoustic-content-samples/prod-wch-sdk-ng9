@@ -11,6 +11,7 @@ export * from './component/content/content.component';
 export * from './component/default/default.component';
 export * from './component/page/page.component';
 export * from './content/delivery.content.resolver';
+export * from './deprecated';
 export * from './handlebars/handlebars.resolver';
 export * from './info/wch.info';
 export * from './layout-mapping/delivery.layout.mapping.resolver';
