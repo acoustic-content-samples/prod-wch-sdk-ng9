@@ -198,7 +198,7 @@ export const createModuleFromProvider: (aProviders: ReactProvider<any>[]) => imp
 export function createReactContext<T>(aName: string, aDefault?: T): Required<Context<T>>;
 
 // @public
-export function createReactProvider<T>(module: ReactModuleType, provides: Context<T>, dependencies?: Array<Context<any>>, optionalDependencies?: Array<Context<any>>): ReactProvider<T>;
+export function createReactProvider<T>(module: ReactModuleType, provides: Context<T>, dependencies?: Context<any>[], optionalDependencies?: Context<any>[]): ReactProvider<T>;
 
 // @public (undocumented)
 export interface DynamicReactProviderFactory {
@@ -313,9 +313,9 @@ export type ReactModuleType = ReactModule;
 
 // @public
 export interface ReactProvider<T> {
-    dependencies?: Array<Context<any>>;
+    dependencies?: Context<any>[];
     module: ReactModuleType;
-    optionalDependencies?: Array<Context<any>>;
+    optionalDependencies?: Context<any>[];
     provides: Context<T>;
 }
 

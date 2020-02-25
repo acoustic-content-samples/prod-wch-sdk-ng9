@@ -9,5 +9,5 @@ optional contexts
 <b>Signature:</b>
 
 ```typescript
-optionalDependencies?: Array<Context<any>>;
+optionalDependencies?: Context<any>[];
 ```

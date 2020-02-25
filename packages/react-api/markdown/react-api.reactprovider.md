@@ -18,8 +18,8 @@ export interface ReactProvider<T>
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [dependencies](./react-api.reactprovider.dependencies.md) | <code>Array&lt;Context&lt;any&gt;&gt;</code> | Required contexts, will be consumed when the module gets instantiated |
+|  [dependencies](./react-api.reactprovider.dependencies.md) | <code>Context&lt;any&gt;[]</code> | Required contexts, will be consumed when the module gets instantiated |
 |  [module](./react-api.reactprovider.module.md) | <code>ReactModuleType</code> | React component that implements the provider. The component consumes the dependencies and the optional dependencies and provides the specified context. |
-|  [optionalDependencies](./react-api.reactprovider.optionaldependencies.md) | <code>Array&lt;Context&lt;any&gt;&gt;</code> | optional contexts |
+|  [optionalDependencies](./react-api.reactprovider.optionaldependencies.md) | <code>Context&lt;any&gt;[]</code> | optional contexts |
 |  [provides](./react-api.reactprovider.provides.md) | <code>Context&lt;T&gt;</code> | Provided context |
 

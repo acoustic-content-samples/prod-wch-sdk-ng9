@@ -9,7 +9,7 @@ Constructs an instance of a provider
 <b>Signature:</b>
 
 ```typescript
-export declare function createReactProvider<T>(module: ReactModuleType, provides: Context<T>, dependencies?: Array<Context<any>>, optionalDependencies?: Array<Context<any>>): ReactProvider<T>;
+export declare function createReactProvider<T>(module: ReactModuleType, provides: Context<T>, dependencies?: Context<any>[], optionalDependencies?: Context<any>[]): ReactProvider<T>;
 ```
 
 ## Parameters
@@ -18,8 +18,8 @@ export declare function createReactProvider<T>(module: ReactModuleType, provides
 |  --- | --- | --- |
 |  module | <code>ReactModuleType</code> | the module |
 |  provides | <code>Context&lt;T&gt;</code> | the context the module provides |
-|  dependencies | <code>Array&lt;Context&lt;any&gt;&gt;</code> | dependencies |
-|  optionalDependencies | <code>Array&lt;Context&lt;any&gt;&gt;</code> | optional dependencies |
+|  dependencies | <code>Context&lt;any&gt;[]</code> | dependencies |
+|  optionalDependencies | <code>Context&lt;any&gt;[]</code> | optional dependencies |
 
 <b>Returns:</b>
 

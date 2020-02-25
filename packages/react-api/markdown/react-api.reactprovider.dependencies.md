@@ -9,5 +9,5 @@ Required contexts, will be consumed when the module gets instantiated
 <b>Signature:</b>
 
 ```typescript
-dependencies?: Array<Context<any>>;
+dependencies?: Context<any>[];
 ```
