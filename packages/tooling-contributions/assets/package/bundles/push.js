@@ -4,7 +4,8 @@ const { copyFile, readdir, mkdir, readFile } = require('fs').promises;
 const { tmpdir } = require('os');
 const { sync: spawn } = require('cross-spawn');
 
-const dataDir = normalize(join(tmpdir(), `acoustic-content-test`)); // normalize(join(tmpdir(), `acoustic-content-${Date.now()}`));
+// use some unique folder name
+const dataDir = normalize(join(tmpdir(), `acoustic-content-${Date.now()}`));
 
 const toolsArgs = [
   'wchtools-cli',
@@ -26,24 +27,21 @@ const DIRS = {};
 const mkdirp = (aName) =>
   DIRS[aName] || (DIRS[aName] = mkdir(aName, { recursive: true }));
 
-function copyRec(aRel, aSrc, aDst) {
-  const dst = join(aDst, aRel);
-  const src = join(aSrc, aRel);
-  // entries
-  return mkdirp(dst)
-    .then(() =>
-      readdir(src, { withFileTypes: true }).then((list) =>
-        list.map((list) =>
-          list.isFile()
-            ? copyFile(join(src, list.name), join(dst, list.name))
-            : list.isDirectory()
-            ? copyRec(join(aRel, list.name), aSrc, aDst)
-            : undefined
-        )
+const copyRec = (aRel, aSrc, aDst) =>
+  Promise.all([
+    readdir(join(aSrc, aRel), { withFileTypes: true }),
+    mkdirp(join(aDst, aRel))
+  ]).then(([list]) =>
+    Promise.all(
+      list.map((list) =>
+        list.isFile()
+          ? copyFile(join(aSrc, aRel, list.name), join(aDst, aRel, list.name))
+          : list.isDirectory()
+          ? copyRec(join(aRel, list.name), aSrc, aDst)
+          : undefined
       )
     )
-    .then((result) => Promise.all(result));
-}
+  );
 
 const readPkg = (aPath) =>
   readFile(join(aPath, 'package.json'), 'utf8').then((data) =>
