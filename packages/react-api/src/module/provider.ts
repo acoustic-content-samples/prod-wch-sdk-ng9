@@ -10,7 +10,6 @@ import {
   reduceArray
 } from '@acoustic-content-sdk/utils';
 import { Context, createElement, FC, ReactElement } from 'react';
-
 import { selectDisplayName } from '../utils/context';
 import { ReactModule, ReactModuleProps } from './module';
 
