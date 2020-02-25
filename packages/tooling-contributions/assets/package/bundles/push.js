@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { argv } = require('process');
 const { normalize, parse, join } = require('path');
 const { copyFile, readdir, mkdir, readFile } = require('fs').promises;
