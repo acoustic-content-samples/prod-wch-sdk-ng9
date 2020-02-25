@@ -155,7 +155,7 @@ function createPackage(
   };
   // bin entry
   const bin = {
-    push: './bundles/push.js'
+    [fileName]: './bundles/push.js'
   };
   // construct the package
   const pkg: Record<string, any> = {
