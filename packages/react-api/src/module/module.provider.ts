@@ -129,8 +129,8 @@ const resolveRequiredDependency = (
 const createStaticProvider = <T>(
   aFct: BiFunction<any[], any[], T>,
   aCtx: Context<T>,
-  aReq?: Array<Context<any>>,
-  aOpt?: Array<Context<any>>
+  aReq?: Context<any>[],
+  aOpt?: Context<any>[]
 ): FC => ({ children }) => {
   // construct the value using hooks
   const value = aFct(
@@ -156,8 +156,8 @@ const createStaticProvider = <T>(
 const createDynamicProvider = <T>(
   aFct: BiFunction<any[], any[], ObservableInput<T>>,
   aCtx: Context<T>,
-  aReq?: Array<Context<any>>,
-  aOpt?: Array<Context<any>>
+  aReq?: Context<any>[],
+  aOpt?: Context<any>[]
 ): FC => ({ children }) => {
   // construct the value using hooks
   const value$ = from(
@@ -190,8 +190,8 @@ const createDynamicProvider = <T>(
 const internalCreateInjectableReactProvider = <T>(
   fct: BiFunction<any[], any[], T>,
   ctx: Context<T>,
-  req: Array<Context<any>>,
-  opt: Array<Context<any>>
+  req: Context<any>[],
+  opt: Context<any>[]
 ): ReactProvider<T> =>
   createReactProvider(createStaticProvider(fct, ctx, req, opt), ctx, req, opt);
 
@@ -201,8 +201,8 @@ const internalCreateInjectableReactProvider = <T>(
 const internalCreateDynamicReactProvider = <T>(
   fct: BiFunction<any[], any[], ObservableInput<T>>,
   ctx: Context<T>,
-  req: Array<Context<any>>,
-  opt: Array<Context<any>>
+  req: Context<any>[],
+  opt: Context<any>[]
 ): ReactProvider<T> =>
   createReactProvider(createDynamicProvider(fct, ctx, req, opt), ctx, req, opt);
 

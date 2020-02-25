@@ -1,7 +1,9 @@
 import {
   arrayPush,
   cmpStrings,
+  filterArray,
   forEach,
+  isNil,
   isNotEmpty,
   isNotNil,
   mapArray,
@@ -37,11 +39,11 @@ export interface ReactProvider<T> {
   /**
    * Required contexts, will be consumed when the module gets instantiated
    */
-  dependencies?: Array<Context<any>>;
+  dependencies?: Context<any>[];
   /**
    * optional contexts
    */
-  optionalDependencies?: Array<Context<any>>;
+  optionalDependencies?: Context<any>[];
 }
 
 /**
@@ -57,8 +59,8 @@ export interface ReactProvider<T> {
 export function createReactProvider<T>(
   module: ReactModuleType,
   provides: Context<T>,
-  dependencies?: Array<Context<any>>,
-  optionalDependencies?: Array<Context<any>>
+  dependencies?: Context<any>[],
+  optionalDependencies?: Context<any>[]
 ): ReactProvider<T> {
   return { module, provides, dependencies, optionalDependencies };
 }
@@ -117,7 +119,7 @@ const createModule = (
  * @returns the component
  */
 function createProviderModule(
-  aProviders: Array<ReactProvider<any>>
+  aProviders: ReactProvider<any>[]
 ): FC<ReactModuleProps> {
   // do not mutate
   const providers = [...aProviders];
@@ -162,7 +164,7 @@ const compareByProvider = (
  */
 const createLexicalSort = (
   aProviders: Iterable<ReactProvider<any>>
-): Array<ReactProvider<any>> => [...aProviders].sort(compareByProvider);
+): ReactProvider<any>[] => [...aProviders].sort(compareByProvider);
 
 /**
  * Returns the outbound dependencies of a provider. The result
@@ -174,7 +176,7 @@ const createLexicalSort = (
 function getEdges({
   dependencies = [],
   optionalDependencies = []
-}: ReactProvider<any>): Array<Context<any>> {
+}: ReactProvider<any>): Context<any>[] {
   // merge
   return [...dependencies, ...optionalDependencies].sort(compareByContext);
 }
@@ -187,7 +189,7 @@ function getEdges({
  */
 function createTopologicalOrder(
   aProviders: ArrayLike<ReactProvider<any>>
-): Array<ReactProvider<any>> {
+): ReactProvider<any>[] {
   // organize the providers as a map
   const registry = reduceArray<
     ReactProvider<any>,
@@ -202,11 +204,80 @@ function createTopologicalOrder(
   // callback to get the provider from a key
   const getProvider = (aCtx: Context<any>) => registry.get(aCtx);
   // result
-  const result: Array<ReactProvider<any>> = [];
+  const result: ReactProvider<any>[] = [];
   topoSort(result, nodes, getProvider, getEdges, new Set());
   // ok
   return result.reverse();
 }
+
+const reduceContext = (aRes: boolean, aCtx: Context<any>): boolean =>
+  aRes && isNotNil(aCtx);
+
+/**
+ * Checks if the dependency array is value
+ *
+ * @param aDeps - the array
+ * @returns true if the array is null or valid
+ */
+const isValidDependencies = (aDeps?: Context<any>[]) =>
+  reduceArray(aDeps, reduceContext, true);
+
+/**
+ * Tests if a provider is value
+ *
+ * @param aProvider - the provider to test
+ * @returns true if the provider is valid, else false
+ */
+const isValidProvider = (aProvider: ReactProvider<any>): boolean => {
+  // check the provider itself
+  if (isNil(aProvider)) {
+    // tslint:disable-next-line: no-console
+    console.warn('Provider is nil.');
+    return false;
+  }
+  // decompose
+  const { module, provides, dependencies, optionalDependencies } = aProvider;
+  if (isNil(module)) {
+    // tslint:disable-next-line: no-console
+    console.warn('Module is nil.', aProvider);
+    return false;
+  }
+  if (isNil(provides)) {
+    // tslint:disable-next-line: no-console
+    console.warn('Provided context is nil.', aProvider);
+    return false;
+  }
+  if (!isValidDependencies(dependencies)) {
+    // tslint:disable-next-line: no-console
+    console.warn(
+      'Dependencies array is invalid.',
+      selectDisplayName(provides),
+      dependencies
+    );
+    return false;
+  }
+  if (!isValidDependencies(optionalDependencies)) {
+    // tslint:disable-next-line: no-console
+    console.warn(
+      'Optional dependencies array is invalid.',
+      selectDisplayName(provides),
+      optionalDependencies
+    );
+    return false;
+  }
+  // ok
+  return true;
+};
+
+/**
+ * Validate that the providers are valid
+ *
+ * @param aProviders - the react providers
+ *
+ * @returns the valid providers
+ */
+const validProviders = (aProviders: ReactProvider<any>[]) =>
+  filterArray(aProviders, isValidProvider);
 
 /**
  * Constructs a module component that includes the referenced
@@ -216,8 +287,10 @@ function createTopologicalOrder(
  * @returns the component
  */
 export const createModuleFromProvider = (
-  aProviders: Array<ReactProvider<any>>
+  aProviders: ReactProvider<any>[]
 ): ReactModule =>
   createProviderModule(
-    createTopologicalOrder(createLexicalSort(new Set(aProviders)))
+    createTopologicalOrder(
+      createLexicalSort(new Set(validProviders(aProviders)))
+    )
   );
