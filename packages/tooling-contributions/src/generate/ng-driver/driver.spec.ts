@@ -26,8 +26,13 @@ describe('driver', () => {
     const test$ = rxPipe(
       artifact$,
       tap(([name]) => console.log('filename', name)),
+      tap(
+        ([name, data]) =>
+          name.indexOf('/assets/dxconfig/manifests/') === 0 &&
+          console.log('Carsten', name, JSON.stringify(data, undefined, 2))
+      ),
       count(),
-      tap((c) => expect(c).toEqual(50))
+      tap((c) => expect(c).toEqual(51))
     );
 
     await test$.toPromise();

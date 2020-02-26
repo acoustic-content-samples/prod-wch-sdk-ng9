@@ -19,6 +19,8 @@ import {
   anyToString,
   isNotEmpty,
   JSONObject,
+  jsonParse,
+  kebabCase,
   mapArray,
   opShareLast,
   pluckProperty,
@@ -238,6 +240,20 @@ function copyNgDriverFiles(
 }
 
 /**
+ * Read the version information
+ *
+ * @param aHost - the host
+ */
+function rxReadVersion(aHost: ReadTextFile): Observable<string> {
+  // load the package json
+  return rxPipe(
+    aHost('/package.json'),
+    map(jsonParse),
+    map(({ version }) => version)
+  );
+}
+
+/**
  * Generates the content items that describe a driver based on an Angular build output
  *
  * @param aHost  - callback to read a text file
@@ -256,40 +272,58 @@ export function createNgDriverArtifacts(
   const projectName$ = rxCacheSingle(
     rxPipe(
       ws$,
-      mergeMap((ws) => rxFindProjectName(ws, aSchema))
+      mergeMap((ws) => rxFindProjectName(ws, aSchema)),
+      opShareLast
     )
   );
   const prj$ = rxPipe(
     combineLatest([projectName$, ws$]),
     map(([name, ws]) => getProject(name, ws))
   );
+  const version$ = rxReadVersion(aHost);
   // the modes
   const modes = getModes(aSchema);
   // the configurations
   const config = getConfig(aSchema);
-  // dispatch
-  const artifacts$ = rxPipe(
-    combineLatest([projectName$, prj$]),
-    mergeMap(([name, prj]) =>
-      createArtifactsForProject(
-        prj,
-        name,
-        modes,
-        config,
-        getTags(aSchema, name),
-        aHost
-      )
-    ),
-    map(wchToolsFileDescriptor),
-    share()
+  // sync
+  return rxPipe(
+    combineLatest([projectName$, prj$, version$]),
+    mergeMap(([name, prj, version]) => {
+      // dispatch
+      const artifacts$ = rxPipe(
+        createArtifactsForProject(
+          prj,
+          name,
+          modes,
+          config,
+          getTags(aSchema, name),
+          aHost
+        ),
+        map(wchToolsFileDescriptor),
+        share()
+      );
+      // the raw files
+      const files$ = rxPipe(
+        copyNgDriverFiles(aHost, aReadDir, aSchema),
+        share()
+      );
+      // versioned manifest name
+      const versionedManifest = kebabCase(`${name}-${version}`);
+      // manifest for the raw files
+      const versionedManifest$ = rxPipe(
+        files$,
+        rxWchToolsManifest(versionedManifest)
+      );
+      // all
+      const all$ = rxPipe(
+        merge(artifacts$, files$, versionedManifest$),
+        share()
+      );
+      // all manifest name
+      const allManifest = kebabCase(name);
+      const allManifest$ = rxPipe(all$, rxWchToolsManifest(allManifest));
+      // all artifacts
+      return merge(all$, allManifest$);
+    })
   );
-  // the raw files
-  const files$ = rxPipe(copyNgDriverFiles(aHost, aReadDir, aSchema), share());
-  // manifest for the raw files
-  const filesManifest$ = rxPipe(
-    projectName$,
-    mergeMap((projectName) => rxPipe(files$, rxWchToolsManifest(projectName)))
-  );
-  // all artifacts
-  return merge(artifacts$, files$, filesManifest$);
 }

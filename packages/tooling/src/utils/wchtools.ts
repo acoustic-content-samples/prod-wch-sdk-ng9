@@ -121,11 +121,11 @@ function reduceManifest(aDst: Manifest, aSrc: FileDescriptor<any>): Manifest {
   const bucket = assertObject<Record<string, any>>(prefix, aDst);
   // for assets use the path
   if (prefix === WCHTOOLS_FOLDER_ASSET) {
+    // extract the rel path
+    const relPath = path.substr(endIdx);
     // add the path
-    bucket[path] = { path: path.substr(endIdx) };
+    bucket[relPath] = { path: relPath };
   } else {
-    // log the data
-    console.log('data', data);
     // decode the payload as json
     const { id, name } = Buffer.isBuffer(data)
       ? jsonParse(data.toString())
@@ -133,7 +133,9 @@ function reduceManifest(aDst: Manifest, aSrc: FileDescriptor<any>): Manifest {
       ? jsonParse(data)
       : data;
     // register
-    bucket[id] = { id, name };
+    if (isString(id) && isString(name)) {
+      bucket[id] = { id, name };
+    }
   }
   // the target record
   return aDst;
@@ -153,7 +155,7 @@ export function rxWchToolsManifest(
   const name = `/${WCHTOOLS_FOLDER_ASSET}/dxconfig/manifests/${aName}.json`;
   // assemble the files
   return pipe(
-    reduce(reduceManifest),
+    reduce(reduceManifest, {}),
     map((data) => createFileDescriptor(name, data))
   );
 }
