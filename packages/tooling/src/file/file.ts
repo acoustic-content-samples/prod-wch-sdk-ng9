@@ -8,6 +8,7 @@ import {
 import {
   BiFunction,
   FALSE$,
+  isArray,
   isNotNil,
   isString,
   jsonParse,
@@ -40,6 +41,21 @@ function _stringify(aData: any): string {
  * File descriptor, first element is path, second is content
  */
 export type FileDescriptor<T> = [string, T];
+
+/**
+ * Tests if an item is a file descriptor
+ *
+ * @param aValue - the value to test
+ * @returns true if it is a descriptor
+ */
+export function isFileDescriptor<T>(aValue: any): aValue is FileDescriptor<T> {
+  return (
+    isArray(aValue) &&
+    aValue.length === 2 &&
+    isString(aValue[0]) &&
+    isNotNil(aValue[1])
+  );
+}
 
 export function createFileDescriptor<T>(
   aName: string,

@@ -1,6 +1,7 @@
 import { rxCacheSingle } from '@acoustic-content-sdk/rx-utils';
 import {
   canonicalizeJson,
+  createFileDescriptor,
   ensureDirPath,
   FileDescriptor,
   ProjectType,
@@ -8,7 +9,10 @@ import {
   ReadTextFile,
   rxFindProjectName,
   rxGetWorkspace,
+  rxWchToolsManifest,
   selectOptionsForTarget,
+  WCHTOOLS_FOLDER_ASSET,
+  wchToolsFileDescriptor,
   WorkspaceProject
 } from '@acoustic-content-sdk/tooling';
 import {
@@ -21,7 +25,7 @@ import {
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { combineLatest, from, merge, Observable } from 'rxjs';
-import { first, map, mergeMap } from 'rxjs/operators';
+import { first, map, mergeMap, share } from 'rxjs/operators';
 
 import {
   addRevision,
@@ -190,7 +194,7 @@ function createArtifactsForProject(
  *
  * @returns the sequence of file descriptors
  */
-export function copyNgDriverFiles(
+function copyNgDriverFiles(
   aReadFile: ReadTextFile,
   aReadDir: ReadDirectory,
   aSchema: CreateNgDriverArtifactsSchema = {}
@@ -226,7 +230,10 @@ export function copyNgDriverFiles(
         from(configs),
         mergeMap((config) => readFilesForConfig(root, config, aReadDir))
       );
-    })
+    }),
+    map(([path, data]) =>
+      createFileDescriptor(`/${WCHTOOLS_FOLDER_ASSET}${path}`, data)
+    )
   );
 }
 
@@ -240,8 +247,9 @@ export function copyNgDriverFiles(
  */
 export function createNgDriverArtifacts(
   aHost: ReadTextFile,
+  aReadDir: ReadDirectory,
   aSchema: CreateNgDriverArtifactsSchema = {}
-): Observable<Artifact> {
+): Observable<FileDescriptor<Artifact | Buffer>> {
   // read the descriptor
   const ws$ = rxCacheSingle(rxGetWorkspace(aHost));
   // get the project information
@@ -260,7 +268,7 @@ export function createNgDriverArtifacts(
   // the configurations
   const config = getConfig(aSchema);
   // dispatch
-  return rxPipe(
+  const artifacts$ = rxPipe(
     combineLatest([projectName$, prj$]),
     mergeMap(([name, prj]) =>
       createArtifactsForProject(
@@ -271,6 +279,17 @@ export function createNgDriverArtifacts(
         getTags(aSchema, name),
         aHost
       )
-    )
+    ),
+    map(wchToolsFileDescriptor),
+    share()
   );
+  // the raw files
+  const files$ = rxPipe(copyNgDriverFiles(aHost, aReadDir, aSchema), share());
+  // manifest for the raw files
+  const filesManifest$ = rxPipe(
+    projectName$,
+    mergeMap((projectName) => rxPipe(files$, rxWchToolsManifest(projectName)))
+  );
+  // all artifacts
+  return merge(artifacts$, files$, filesManifest$);
 }

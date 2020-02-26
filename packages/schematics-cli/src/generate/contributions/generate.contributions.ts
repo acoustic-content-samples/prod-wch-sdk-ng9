@@ -8,12 +8,9 @@ import {
   createFileDescriptor,
   FileDescriptor,
   rxFindDataDir,
-  rxWriteFileDescriptor,
-  WCHTOOLS_FOLDER_ASSET,
-  wchToolsFileDescriptor
+  rxWriteFileDescriptor
 } from '@acoustic-content-sdk/tooling';
 import {
-  copyNgDriverFiles,
   createNgDriverArtifacts,
   createPackageArtifacts
 } from '@acoustic-content-sdk/tooling-contributions';
@@ -49,21 +46,10 @@ function generateArtifacts(options: Schema): Rule {
     const readDir = readRelativeDirectoryOnTree(host);
     const writeFile = writeBufferOnTree(host);
     // the artifacts
-    const artifacts$ = rxPipe(
-      createNgDriverArtifacts(readFile, options),
-      map(wchToolsFileDescriptor),
+    const all$ = rxPipe(
+      createNgDriverArtifacts(readFile, readDir, options),
       logFile()
     );
-    // the binary files
-    const binary$ = rxPipe(
-      copyNgDriverFiles(readFile, readDir, options),
-      map(([path, data]) =>
-        createFileDescriptor(`/${WCHTOOLS_FOLDER_ASSET}${path}`, data)
-      ),
-      logFile()
-    );
-    // all items
-    const all$ = merge(artifacts$, binary$);
     // locate the data directory
     const dataDir$ = rxPipe(rxFindDataDir(readFile, options), opShareLast);
     // compose so we have the correct filenames
