@@ -156,7 +156,7 @@ export function updatePackageJson(options: Schema): Rule {
     ] = `npm-run-all build:dev:${ArtifactMode.PREVIEW} build:dev:${ArtifactMode.LIVE}`;
     scripts[
       'build:contributions'
-    ] = `ng g ${NAMESPACE}/schematics:contributions --data dist/data --configuration=production --mode=${ArtifactMode.PREVIEW},${ArtifactMode.LIVE}`;
+    ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --configuration=production --mode=${ArtifactMode.PREVIEW},${ArtifactMode.LIVE}`;
 
     // override the records
     assignObject(pkg, {
