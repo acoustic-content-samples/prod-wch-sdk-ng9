@@ -2,6 +2,7 @@ import { rxCacheSingle } from '@acoustic-content-sdk/rx-utils';
 import {
   canonicalizeJson,
   createFileDescriptor,
+  dotCase,
   ensureDirPath,
   FileDescriptor,
   ProjectType,
@@ -20,7 +21,6 @@ import {
   isNotEmpty,
   JSONObject,
   jsonParse,
-  kebabCase,
   mapArray,
   opShareLast,
   pluckProperty,
@@ -308,7 +308,7 @@ export function createNgDriverArtifacts(
         share()
       );
       // versioned manifest name
-      const versionedManifest = kebabCase(`${name}-${version}`);
+      const versionedManifest = dotCase(`${name}-${version}`);
       // manifest for the raw files
       const versionedManifest$ = rxPipe(
         files$,
@@ -320,7 +320,7 @@ export function createNgDriverArtifacts(
         share()
       );
       // all manifest name
-      const allManifest = kebabCase(name);
+      const allManifest = dotCase(name);
       const allManifest$ = rxPipe(all$, rxWchToolsManifest(allManifest));
       // all artifacts
       return merge(all$, allManifest$);
