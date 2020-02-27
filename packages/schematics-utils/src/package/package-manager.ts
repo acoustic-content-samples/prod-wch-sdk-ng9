@@ -5,7 +5,7 @@ import {
   rxSupportsYarn
 } from '@acoustic-content-sdk/tooling-pkg-mgr';
 import { getPath, isNotNil, rxPipe } from '@acoustic-content-sdk/utils';
-import { join, normalize } from '@angular-devkit/core';
+import { dirname, join, normalize } from '@angular-devkit/core';
 import { Tree } from '@angular-devkit/schematics';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,7 +20,7 @@ import { getWorkspace, getWorkspacePath } from '../utility/config';
  */
 export function getPackageManager(aHost: Tree): Observable<PackageManager> {
   // read the workspace path
-  const root = normalize(getWorkspacePath(aHost));
+  const root = dirname(normalize(getWorkspacePath(aHost)));
   // check for the package
   const ws = getWorkspace(aHost);
   // pluck the manager from the host
