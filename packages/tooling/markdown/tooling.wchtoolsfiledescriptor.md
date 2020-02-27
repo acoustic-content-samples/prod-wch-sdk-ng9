@@ -9,14 +9,14 @@ Constructs a file descriptor from the item
 <b>Signature:</b>
 
 ```typescript
-export declare function wchToolsFileDescriptor<T extends AuthoringContentItem | AuthoringType | AuthoringLayoutItem | AuthoringLayoutMapping>(aItem: T): FileDescriptor<T>;
+export declare function wchToolsFileDescriptor<T extends AuthoringItem>(aItem: T | FileDescriptor<T>): FileDescriptor<T>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aItem | <code>T</code> | the authoring item |
+|  aItem | <code>T &#124; FileDescriptor&lt;T&gt;</code> | the authoring item |
 
 <b>Returns:</b>
 

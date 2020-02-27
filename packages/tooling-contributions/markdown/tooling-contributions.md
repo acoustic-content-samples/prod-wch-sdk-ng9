@@ -16,8 +16,7 @@ Tooling functions to implement support for feature modules.
 
 |  Function | Description |
 |  --- | --- |
-|  [copyNgDriverFiles(aReadFile, aReadDir, aSchema)](./tooling-contributions.copyngdriverfiles.md) | Generates the binary artifacts that make up the Angular driver |
-|  [createNgDriverArtifacts(aHost, aSchema)](./tooling-contributions.createngdriverartifacts.md) | Generates the content items that describe a driver based on an Angular build output |
+|  [createNgDriverArtifacts(aHost, aReadDir, aSchema)](./tooling-contributions.createngdriverartifacts.md) | Generates the content items that describe a driver based on an Angular build output |
 |  [createPackageArtifacts(aHost, aSchema, aLogSvc)](./tooling-contributions.createpackageartifacts.md) | Generates the content items that describe a driver based on an Angular build output |
 
 ## Interfaces

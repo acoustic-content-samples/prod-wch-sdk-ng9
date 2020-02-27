@@ -40,6 +40,7 @@ Implementation of utility methods used for tooling.
 |  [generateLayouts(options)](./tooling.generatelayouts.md) |  |
 |  [getOrganization(aPackageName)](./tooling.getorganization.md) | Extracts the organization from a package name |
 |  [hasTrailingSlash(aUrl)](./tooling.hastrailingslash.md) |  |
+|  [isFileDescriptor(aValue)](./tooling.isfiledescriptor.md) | Tests if an item is a file descriptor |
 |  [logFileDescriptor()](./tooling.logfiledescriptor.md) |  |
 |  [relativePath(aSrc, aDst)](./tooling.relativepath.md) |  |
 |  [rxFindAuthoringAssets(aRoot, aTree)](./tooling.rxfindauthoringassets.md) | Reads the authoring assets from a directory |
@@ -63,6 +64,7 @@ Implementation of utility methods used for tooling.
 |  [rxReadBuffer(aFile, aHost)](./tooling.rxreadbuffer.md) | Reads a JSON file on top of a text callback |
 |  [rxReadDir(aBaseDir, aAccept)](./tooling.rxreaddir.md) | Reads all files in the directory and all of its (accepted) subdirectories |
 |  [rxReadJsonFile(aFile, aHost)](./tooling.rxreadjsonfile.md) | Reads a JSON file on top of a text callback |
+|  [rxWchToolsManifest(aName)](./tooling.rxwchtoolsmanifest.md) | Creates an operator that converts a sequence of files into a manifest |
 |  [rxWriteJsonFile(aName, aValue, aHost)](./tooling.rxwritejsonfile.md) | Persist a JSON file |
 |  [selectOptionsForTarget(aTarget, aConfiguration)](./tooling.selectoptionsfortarget.md) | Returns a selector function that selects the configuration options for a target |
 |  [serializeJson(aData)](./tooling.serializejson.md) |  |
@@ -113,6 +115,7 @@ Implementation of utility methods used for tooling.
 
 |  Type Alias | Description |
 |  --- | --- |
+|  [AuthoringItem](./tooling.authoringitem.md) |  |
 |  [FileDescriptor](./tooling.filedescriptor.md) | File descriptor, first element is path, second is content |
 |  [JsonEntryMap](./tooling.jsonentrymap.md) |  |
 |  [PackageJson](./tooling.packagejson.md) |  |

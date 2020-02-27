@@ -31,6 +31,9 @@ export function addToWchToolsDependencies(aDeps: string[], aPkg: any): void;
 export const anyToBuffer: (aValue: any) => Buffer;
 
 // @public (undocumented)
+export type AuthoringItem = AuthoringContentItem | AuthoringType | AuthoringLayoutItem | AuthoringLayoutMapping | AuthoringAsset;
+
+// @public (undocumented)
 export function blackWhiteList(aInclude?: string[], aExclude?: string[]): Predicate<string>;
 
 // @public
@@ -138,6 +141,9 @@ export function getOrganization(aPackageName: string): string;
 
 // @public (undocumented)
 export function hasTrailingSlash(aUrl: string): boolean;
+
+// @public
+export function isFileDescriptor<T>(aValue: any): aValue is FileDescriptor<T>;
 
 // @public (undocumented)
 export interface JsonEntry<T> {
@@ -272,6 +278,9 @@ export function rxReadDir(aBaseDir: string, aAccept?: Predicate<ReadDirectoryEnt
 export function rxReadJsonFile<T>(aFile: string, aHost: ReadTextFile): Observable<T>;
 
 // @public
+export function rxWchToolsManifest(aName: string): OperatorFunction<FileDescriptor<any>, FileDescriptor<any>>;
+
+// @public
 export const rxWriteFileDescriptor: <T>(aWriteBuffer: BiFunction<string, Buffer, Observable<string>>) => MonoTypeOperatorFunction<FileDescriptor<T>>;
 
 // @public
@@ -311,7 +320,7 @@ export const WCHTOOLS_FOLDER_LAYOUT_MAPPING = "layout-mappings";
 export function wchToolsCleanup<T>(aItem: FileDescriptor<T>): FileDescriptor<T>;
 
 // @public
-export function wchToolsFileDescriptor<T extends AuthoringContentItem | AuthoringType | AuthoringLayoutItem | AuthoringLayoutMapping>(aItem: T): FileDescriptor<T>;
+export function wchToolsFileDescriptor<T extends AuthoringItem>(aItem: T | FileDescriptor<T>): FileDescriptor<T>;
 
 // @public (undocumented)
 export const wchToolsGetCredentials: (aApiUrl: string) => Observable<Credentials>;

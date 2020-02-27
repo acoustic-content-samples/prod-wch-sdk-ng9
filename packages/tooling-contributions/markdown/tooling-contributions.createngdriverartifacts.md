@@ -9,7 +9,7 @@ Generates the content items that describe a driver based on an Angular build out
 <b>Signature:</b>
 
 ```typescript
-export declare function createNgDriverArtifacts(aHost: ReadTextFile, aSchema?: CreateNgDriverArtifactsSchema): Observable<Artifact>;
+export declare function createNgDriverArtifacts(aHost: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateNgDriverArtifactsSchema): Observable<FileDescriptor<Artifact | Buffer>>;
 ```
 
 ## Parameters
@@ -17,11 +17,12 @@ export declare function createNgDriverArtifacts(aHost: ReadTextFile, aSchema?: C
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  aHost | <code>ReadTextFile</code> | callback to read a text file |
+|  aReadDir | <code>ReadDirectory</code> |  |
 |  aSchema | <code>CreateNgDriverArtifactsSchema</code> | configuration |
 
 <b>Returns:</b>
 
-`Observable<Artifact>`
+`Observable<FileDescriptor<Artifact | Buffer>>`
 
 the sequence of artifacts
 

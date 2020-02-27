@@ -21,13 +21,10 @@ export enum ArtifactMode {
     PREVIEW = "preview"
 }
 
-// @public
-export function copyNgDriverFiles(aReadFile: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateNgDriverArtifactsSchema): Observable<FileDescriptor<Buffer>>;
-
 // Warning: (ae-forgotten-export) The symbol "Artifact" needs to be exported by the entry point public_api.d.ts
 //
 // @public
-export function createNgDriverArtifacts(aHost: ReadTextFile, aSchema?: CreateNgDriverArtifactsSchema): Observable<Artifact>;
+export function createNgDriverArtifacts(aHost: ReadTextFile, aReadDir: ReadDirectory, aSchema?: CreateNgDriverArtifactsSchema): Observable<FileDescriptor<Artifact | Buffer>>;
 
 // @public (undocumented)
 export interface CreateNgDriverArtifactsSchema {
