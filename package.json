@@ -24,7 +24,7 @@
     "clean:logs": "rimraf logs",
     "depcheck": "yarn workspaces run exitzero depcheck -o depcheck/depcheck.txt",
     "lint": "yarn workspaces run exitzero tslint -p . -o lint/lint.txt -t codeFrame",
-    "publish": "yarn workspaces publish dist --non-interactive",
+    "publish": "yarn workspaces run yarn publish dist --non-interactive",
     "postpublish": "cd dist && npm publish && cd ..",
     "pull": "wchtools pull -A --dir temp --verbose",
     "push": "wchtools push -A --dir data --verbose",
