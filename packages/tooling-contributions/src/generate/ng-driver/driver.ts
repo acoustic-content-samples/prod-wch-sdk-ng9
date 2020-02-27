@@ -307,8 +307,10 @@ export function createNgDriverArtifacts(
         copyNgDriverFiles(aHost, aReadDir, aSchema),
         share()
       );
+      // dot name
+      const manifestBase = dotCase(name);
       // versioned manifest name
-      const versionedManifest = dotCase(`${name}-${version}`);
+      const versionedManifest = `${manifestBase}-${version}`;
       // manifest for the raw files
       const versionedManifest$ = rxPipe(
         files$,
@@ -320,7 +322,7 @@ export function createNgDriverArtifacts(
         share()
       );
       // all manifest name
-      const allManifest = dotCase(name);
+      const allManifest = manifestBase;
       const allManifest$ = rxPipe(all$, rxWchToolsManifest(allManifest));
       // all artifacts
       return merge(all$, allManifest$);
