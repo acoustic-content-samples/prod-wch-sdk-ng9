@@ -38,7 +38,7 @@
   "peerDependencies": {
     "redux-observable": "^1",
     "rxjs": "^6",
-    "uuid": "^3"
+    "uuid": "^7"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-redux-utils.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-redux-utils.js",

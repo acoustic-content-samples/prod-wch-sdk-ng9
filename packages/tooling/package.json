@@ -42,7 +42,7 @@
     "lodash": "^4",
     "rxjs": "^6",
     "semver": "^7",
-    "uuid": "^3"
+    "uuid": "^7"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-tooling.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-tooling.js",
