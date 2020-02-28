@@ -417,7 +417,7 @@ function createDistPackage(): Promise<string> {
       author,
       workspaces,
       dependencies: {
-        'cross-env': devDependencies['cross-env'],
+        'cross-spawn': devDependencies['cross-spawn'],
         'fs-extra': devDependencies['fs-extra'],
         // tslint:disable-next-line: no-string-literal
         ['wsrun']: devDependencies['wsrun']
