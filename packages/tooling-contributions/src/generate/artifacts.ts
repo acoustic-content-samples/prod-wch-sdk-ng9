@@ -2,6 +2,7 @@ import {
   AuthoringContentItem,
   CLASSIFICATION_CONTENT,
   ELEMENT_TYPE_GROUP,
+  ELEMENT_TYPE_IMAGE,
   ELEMENT_TYPE_OPTION_SELECTION,
   ELEMENT_TYPE_REFERENCE,
   ELEMENT_TYPE_TEXT,
@@ -407,6 +408,9 @@ function referenceContributions(selection: string, values: string[]) {
     key: {
       elementType: ELEMENT_TYPE_TEXT,
       value: key
+    },
+    embed: {
+      elementType: ELEMENT_TYPE_TEXT
     }
   };
 }
@@ -487,6 +491,9 @@ export function createPageContributions(
       key: {
         elementType: ELEMENT_TYPE_TEXT,
         value: key
+      },
+      preview: {
+        elementType: ELEMENT_TYPE_IMAGE
       }
     },
     name,
