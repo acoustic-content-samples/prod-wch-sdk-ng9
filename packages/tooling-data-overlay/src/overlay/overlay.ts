@@ -55,7 +55,9 @@ const findData = (aDir: string): Promise<string[]> =>
   readPkg(aDir)
     .then(({ dependencies = {}, config = {} }) =>
       Promise.all(
-        Object.keys(dependencies).map((dep) => readDep(dep).then(findData))
+        Object.keys(dependencies).map((dep) =>
+          readDep(dep).then(findData, () => [])
+        )
       ).then(flatten([config.data && join(aDir, config.data)]))
     )
     .then((all) => all.filter(Boolean));
@@ -137,16 +139,18 @@ export function generateDataOverlay(
       readdir(join(aSrc, aRel), { withFileTypes: true }),
       mkdirp(join(aDst, aRel))
     ])
-      .then(([list]) =>
-        Promise.all(
-          list.map((entry) =>
-            entry.isFile()
-              ? copySingle(join(aRel, entry.name), aSrc, aDst)
-              : entry.isDirectory()
-              ? copyRec(join(aRel, entry.name), aSrc, aDst)
-              : EMPTY_RESULT
-          )
-        )
+      .then(
+        ([list]) =>
+          Promise.all(
+            list.map((entry) =>
+              entry.isFile()
+                ? copySingle(join(aRel, entry.name), aSrc, aDst)
+                : entry.isDirectory()
+                ? copyRec(join(aRel, entry.name), aSrc, aDst)
+                : EMPTY_RESULT
+            )
+          ),
+        () => []
       )
       .then(flatten());
 
