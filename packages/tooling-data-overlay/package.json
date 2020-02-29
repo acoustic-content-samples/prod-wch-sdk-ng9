@@ -1,0 +1,51 @@
+{
+  "name": "@acoustic-content-sdk/tooling-data-overlay",
+  "version": "9.0.0",
+  "description": "Tooling functions to implement support for feature modules.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-tooling-data-overlay.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-tooling-data-overlay.js",
+  "typings": "dist/acoustic-content-sdk-tooling-data-overlay.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "es2015": "dist/fesm2015/acoustic-content-sdk-tooling-data-overlay.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-tooling-data-overlay.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-tooling-data-overlay.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-tooling-data-overlay.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-tooling-data-overlay.js",
+  "metadata": "dist/acoustic-content-sdk-tooling-data-overlay.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {}
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}
