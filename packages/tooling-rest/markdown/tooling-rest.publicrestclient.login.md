@@ -4,6 +4,8 @@
 
 ## PublicRestClient.login property
 
+Login against acoustic content.
+
 <b>Signature:</b>
 
 ```typescript

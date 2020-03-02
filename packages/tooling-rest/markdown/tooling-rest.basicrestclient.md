@@ -14,5 +14,5 @@ export interface BasicRestClient
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [get](./tooling-rest.basicrestclient.get.md) | <code>&lt;T&gt;(aRelPath: string, aQuery?: any) =&gt; Promise&lt;T&gt;</code> | Performs a GET operation |
+|  [get](./tooling-rest.basicrestclient.get.md) | <code>&lt;T&gt;(aRelPath: string, aQuery?: any) =&gt; Promise&lt;T&gt;</code> | Performs a GET operation for JSON |
 

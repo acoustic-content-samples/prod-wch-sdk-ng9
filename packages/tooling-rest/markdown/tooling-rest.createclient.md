@@ -4,6 +4,8 @@
 
 ## createClient() function
 
+Constructs a REST client that allows to login against acoustic content and that allows to send requests
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,9 +16,11 @@ export declare function createClient(aApiUrl: string): PublicRestClient;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aApiUrl | <code>string</code> |  |
+|  aApiUrl | <code>string</code> | the API URL |
 
 <b>Returns:</b>
 
 `PublicRestClient`
+
+a REST client
 

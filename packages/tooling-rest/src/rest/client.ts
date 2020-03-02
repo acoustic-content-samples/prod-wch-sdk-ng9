@@ -9,6 +9,7 @@ import {
   wchGetCredentials,
   WchToolsOptions
 } from '@acoustic-content-sdk/cli-credentials';
+import { ParsedUrlQueryInput } from 'querystring';
 import { get, post } from 'request-promise-native';
 
 const ensureTrailingSlash = (aUrl: string): string =>
@@ -16,9 +17,14 @@ const ensureTrailingSlash = (aUrl: string): string =>
 
 export interface BasicRestClient {
   /**
-   * Performs a GET operation
+   * Performs a GET operation for JSON
+   *
+   * @param aRelPath - path relative to the api URL. This path should NOT start with a slash
+   * @param aQuery - optionally an object for the query string
+   *
+   * @returns the JSON object of the response
    */
-  get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
+  get: <T>(aRelPath: string, aQuery?: ParsedUrlQueryInput) => Promise<T>;
 }
 
 /**
@@ -27,7 +33,20 @@ export interface BasicRestClient {
 const NO_CREDENTIALS: Credentials = { username: null, password: null };
 
 export interface PublicRestClient extends BasicRestClient {
-  login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
+  /**
+   * Login against acoustic content.
+   *
+   * @param aCredentials - optionally the credentials. If missing locate the credentials using the credential management approach
+   * @returns a REST client that makes authenticated requests
+   */
+  login: (aCredentials?: Credentials) => Promise<ProtectedRestClient>;
+}
+
+export interface ProtectedRestClient extends BasicRestClient {
+  /**
+   * Execute a logout
+   */
+  logout: () => Promise<PublicRestClient>;
 }
 
 /**
@@ -48,6 +67,14 @@ const getWchToolsOptions = (
         }))
   );
 
+/**
+ * Constructs a REST client that allows to login against acoustic content
+ * and that allows to send requests
+ *
+ * @param aApiUrl - the API URL
+ *
+ * @returns a REST client
+ */
 export function createClient(aApiUrl: string): PublicRestClient {
   // normalize
   const baseUrl = ensureTrailingSlash(aApiUrl);
@@ -55,7 +82,7 @@ export function createClient(aApiUrl: string): PublicRestClient {
   // login method
   const login = (
     aCredentials: Credentials = NO_CREDENTIALS
-  ): Promise<BasicRestClient> =>
+  ): Promise<ProtectedRestClient> =>
     getWchToolsOptions({ baseUrl, ...aCredentials })
       .then(({ username, password }) =>
         post(`${baseUrl}${REL_PATH_BASICAUTH_LOGIN}`, {
@@ -70,7 +97,12 @@ export function createClient(aApiUrl: string): PublicRestClient {
           jar: true
         })
       )
-      .then((resp) => (Array.isArray(resp) ? client : Promise.reject(resp)));
+      .then((resp) =>
+        Array.isArray(resp) ? protectedClient : Promise.reject(resp)
+      );
+
+  // logout
+  const logout = () => Promise.resolve(publicClient);
 
   // protected get
   const protectedGet = (aRelPath: string, qs?: any) =>
@@ -80,7 +112,8 @@ export function createClient(aApiUrl: string): PublicRestClient {
   const publicGet = (aRelPath: string, qs?: any) =>
     get(`${baseUrl}${aRelPath}`, { qs, json: true });
 
-  const client: BasicRestClient = { get: protectedGet };
+  const publicClient: PublicRestClient = { login, get: publicGet };
+  const protectedClient: ProtectedRestClient = { logout, get: protectedGet };
 
-  return { login, get: publicGet };
+  return publicClient;
 }

@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/tooling-rest",
   "version": "9.0.0",
-  "description": "Tooling functions to implement support for feature modules.",
+  "description": "Simple HTTP client to connect to Acoustic Content for tooling purposes.",
   "keywords": [
     "acoustic",
     "acoustic-content",

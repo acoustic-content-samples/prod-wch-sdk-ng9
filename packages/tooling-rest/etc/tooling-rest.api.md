@@ -11,12 +11,23 @@ export interface BasicRestClient {
     get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
 }
 
-// @public (undocumented)
+// @public
 export function createClient(aApiUrl: string): PublicRestClient;
+
+// @public
+export function luceneEscapeKeyValue(aKey: string, aTerm: string | null | undefined): string;
+
+// @public
+export function luceneEscapeKeyValueAnd(aKey: string, ...aTerms: string[]): string;
+
+// @public
+export function luceneEscapeKeyValueOr(aKey: string, ...aTerms: string[]): string;
+
+// @public
+export function luceneEscapeTerm(aTerm: string): string;
 
 // @public (undocumented)
 export interface PublicRestClient extends BasicRestClient {
-    // (undocumented)
     login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
 }
 

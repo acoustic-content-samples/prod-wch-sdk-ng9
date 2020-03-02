@@ -4,7 +4,7 @@
 
 ## BasicRestClient.get property
 
-Performs a GET operation
+Performs a GET operation for JSON
 
 <b>Signature:</b>
 

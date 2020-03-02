@@ -1,0 +1,55 @@
+{
+  "name": "@acoustic-content-sdk/tooling-dependencies",
+  "version": "9.0.0",
+  "description": "Utility functions to detect dependencies in packages.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-tooling-dependencies.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-tooling-dependencies.js",
+  "typings": "dist/acoustic-content-sdk-tooling-dependencies.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "typescript": "^3"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-tooling-dependencies.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-tooling-dependencies.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-tooling-dependencies.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-tooling-dependencies.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-tooling-dependencies.js",
+  "metadata": "dist/acoustic-content-sdk-tooling-dependencies.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "typescript": "Typescript"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

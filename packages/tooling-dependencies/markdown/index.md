@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/tooling-rest](./tooling-rest.md) | Simple HTTP client to connect to Acoustic Content for tooling purposes. |
+|  [@acoustic-content-sdk/tooling-dependencies](./tooling-dependencies.md) | Utility functions to detect dependencies in packages |
 

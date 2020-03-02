@@ -1,4 +1,7 @@
 import { createClient } from './client';
+import { ContentItemWithLayout } from '@acoustic-content-sdk/api';
+import { authoringContent } from './content';
+import { site } from './sites';
 
 describe('client', () => {
   it('should login', () => {
@@ -7,7 +10,14 @@ describe('client', () => {
     );
     // login
     return login()
-      .then((c) => c.get('mydelivery/v2/sites/@current'))
+      .then((c) => {
+        // content
+        const getSite = site(c);
+        const getContent = authoringContent(c);
+        // current site
+        const siteId$ = getSite().then(({ id }) => id);
+        return siteId$.then(getContent);
+      })
       .then(console.log);
   });
 });

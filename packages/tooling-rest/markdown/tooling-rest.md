@@ -4,13 +4,17 @@
 
 ## tooling-rest package
 
-Helper function to generate a data overlay
+Simple HTTP client to connect to Acoustic Content for tooling purposes.
 
 ## Functions
 
 |  Function | Description |
 |  --- | --- |
-|  [createClient(aApiUrl)](./tooling-rest.createclient.md) |  |
+|  [createClient(aApiUrl)](./tooling-rest.createclient.md) | Constructs a REST client that allows to login against acoustic content and that allows to send requests |
+|  [luceneEscapeKeyValue(aKey, aTerm)](./tooling-rest.luceneescapekeyvalue.md) | Generates a search selector and escapes the value. If the value is missing the method generates an expression that searches for missing values. |
+|  [luceneEscapeKeyValueAnd(aKey, aTerms)](./tooling-rest.luceneescapekeyvalueand.md) | Generates a selector and joins with 'AND' |
+|  [luceneEscapeKeyValueOr(aKey, aTerms)](./tooling-rest.luceneescapekeyvalueor.md) | Generates a selector and joins with 'OR' |
+|  [luceneEscapeTerm(aTerm)](./tooling-rest.luceneescapeterm.md) | Escapes a term according to lucence syntax |
 
 ## Interfaces
 
