@@ -1,9 +1,10 @@
+import * as _byLine from 'byline';
 import { fromEvent, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 function _readLines(aStream: NodeJS.ReadableStream): Observable<string> {
   // stream
-  const byLine = require('byline');
+  const byLine = _byLine;
   const stream = byLine(aStream);
   // done
   const done = fromEvent(stream, 'end');

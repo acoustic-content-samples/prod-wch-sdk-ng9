@@ -9,5 +9,5 @@ Performs a GET operation for JSON
 <b>Signature:</b>
 
 ```typescript
-get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
+get: <T>(aRelPath: string, aQuery?: ParsedUrlQueryInput) => Promise<T>;
 ```

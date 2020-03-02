@@ -4,15 +4,31 @@
 
 ```ts
 
+import { AuthoringContentItem } from '@acoustic-content-sdk/api';
+import { ContentItemWithLayout } from '@acoustic-content-sdk/api';
 import { Credentials } from '@acoustic-content-sdk/cli-credentials';
+import { ParsedUrlQueryInput } from 'querystring';
+import { SearchResults } from '@acoustic-content-sdk/api';
+
+// @public
+export const authoringContent: (aClient: ProtectedRestClient) => (aId: string) => Promise<AuthoringContentItem>;
+
+// @public
+export const authoringSearch: (aClient: ProtectedRestClient) => <T>(aQuery: ParsedUrlQueryInput) => Promise<SearchResults<T>>;
 
 // @public (undocumented)
 export interface BasicRestClient {
-    get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
+    get: <T>(aRelPath: string, aQuery?: ParsedUrlQueryInput) => Promise<T>;
 }
 
 // @public
 export function createClient(aApiUrl: string): PublicRestClient;
+
+// @public
+export const deliveryContent: (aClient: ProtectedRestClient) => (aId: string) => Promise<ContentItemWithLayout>;
+
+// @public
+export const deliverySearch: (aClient: ProtectedRestClient) => <T>(aQuery: ParsedUrlQueryInput) => Promise<SearchResults<T>>;
 
 // @public
 export function luceneEscapeKeyValue(aKey: string, aTerm: string | null | undefined): string;
@@ -27,9 +43,17 @@ export function luceneEscapeKeyValueOr(aKey: string, ...aTerms: string[]): strin
 export function luceneEscapeTerm(aTerm: string): string;
 
 // @public (undocumented)
-export interface PublicRestClient extends BasicRestClient {
-    login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
+export interface ProtectedRestClient extends BasicRestClient {
+    logout: () => Promise<PublicRestClient>;
 }
+
+// @public (undocumented)
+export interface PublicRestClient extends BasicRestClient {
+    login: (aCredentials?: Credentials) => Promise<ProtectedRestClient>;
+}
+
+// @public
+export const site: (aClient: ProtectedRestClient) => () => Promise<ContentItemWithLayout>;
 
 // @public
 export const VERSION: {

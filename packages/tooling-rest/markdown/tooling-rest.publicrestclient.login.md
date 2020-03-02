@@ -9,5 +9,5 @@ Login against acoustic content.
 <b>Signature:</b>
 
 ```typescript
-login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
+login: (aCredentials?: Credentials) => Promise<ProtectedRestClient>;
 ```

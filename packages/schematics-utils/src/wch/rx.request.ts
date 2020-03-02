@@ -3,12 +3,13 @@ import { get } from 'request';
 import { Observable } from 'rxjs';
 import { ajax, AjaxRequest } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
+import XMLHttpRequestPolyfill from 'xhr2';
+
 import { createFromCallback } from './rx.node';
 
 /* Copyright IBM Corp. 2017 */
 export const createXHR = () => {
-  const XMLHttpRequest = require('xhr2');
-  return new XMLHttpRequest();
+  return new XMLHttpRequestPolyfill();
 };
 
 export const ajaxRequest = (req: AjaxRequest) =>

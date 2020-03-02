@@ -338,6 +338,7 @@ Some functions are very general purpose helper functions. We use them instead of
 |  [isStringArray](./utils.isstringarray.md) | Tests if all elements of the array are of type string |
 |  [isUndefined](./utils.isundefined.md) | Checks for undefined |
 |  [jsonParse](./utils.jsonparse.md) |  |
+|  [jsonStringEscape](./utils.jsonstringescape.md) |  |
 |  [jsonStringify](./utils.jsonstringify.md) |  |
 |  [KEY\_CYCLE](./utils.key_cycle.md) |  |
 |  [KEY\_LAYOUT\_MODE](./utils.key_layout_mode.md) |  |

@@ -1,5 +1,7 @@
 import { createError } from '@acoustic-content-sdk/utils';
+import * as _byLine from 'byline';
 import { ChildProcess, SpawnOptions } from 'child_process';
+import { spawn } from 'cross-spawn';
 import { Observable, Observer } from 'rxjs';
 
 export enum SPAWN_OUTPUT_TYPE {
@@ -35,9 +37,6 @@ export function rxSpawn(
   aArgs: string[],
   aOpts?: SpawnOptions
 ): Observable<SpawnLine> {
-  // load byline
-  const byLine = require('byline');
-  const spawn = require('cross-spawn');
   // create the observable
   return Observable.create((aObserver: Observer<SpawnLine>) => {
     // shortcuts
@@ -52,6 +51,7 @@ export function rxSpawn(
     // execute
     const proc: ChildProcess = spawn(aCmd, aArgs, opts);
     // stdout
+    const byLine = _byLine;
     const stdout = byLine(proc.stdout);
     // pipe stdout to the target
     stdout.on('data', (line) =>

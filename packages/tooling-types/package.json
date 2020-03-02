@@ -40,7 +40,7 @@
   "peerDependencies": {
     "emoji-regex": "^8",
     "handlebars": "^4",
-    "js-string-escape": "^1",
+    "handlebars-helpers": "^0",
     "number-to-words": "^1",
     "rxjs": "^6"
   },
@@ -60,7 +60,7 @@
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
         "emoji-regex": "EmojiRegex",
         "handlebars": "Handlebars",
-        "js-string-escape": "JsStringEscape",
+        "handlebars-helpers": "HandlebarsHelpers",
         "number-to-words": "NumberToWords"
       }
     },

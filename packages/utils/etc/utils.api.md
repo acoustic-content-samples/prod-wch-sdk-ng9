@@ -916,6 +916,9 @@ export interface JSONObject {
 export const jsonParse: <T>(aValue: string) => T;
 
 // @public (undocumented)
+export const jsonStringEscape: (aValue: string) => string;
+
+// @public (undocumented)
 export const jsonStringify: UnaryFunction<any, string>;
 
 // @public (undocumented)

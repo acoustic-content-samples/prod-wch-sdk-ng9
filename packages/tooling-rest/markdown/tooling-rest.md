@@ -21,11 +21,17 @@ Simple HTTP client to connect to Acoustic Content for tooling purposes.
 |  Interface | Description |
 |  --- | --- |
 |  [BasicRestClient](./tooling-rest.basicrestclient.md) |  |
+|  [ProtectedRestClient](./tooling-rest.protectedrestclient.md) |  |
 |  [PublicRestClient](./tooling-rest.publicrestclient.md) |  |
 
 ## Variables
 
 |  Variable | Description |
 |  --- | --- |
+|  [authoringContent](./tooling-rest.authoringcontent.md) | Read authoring content |
+|  [authoringSearch](./tooling-rest.authoringsearch.md) | Performs an authoring search |
+|  [deliveryContent](./tooling-rest.deliverycontent.md) | Read delivery content |
+|  [deliverySearch](./tooling-rest.deliverysearch.md) | Performs a delivery search |
+|  [site](./tooling-rest.site.md) | Callback to return the current site |
 |  [VERSION](./tooling-rest.version.md) | Version and build number of the package |
 

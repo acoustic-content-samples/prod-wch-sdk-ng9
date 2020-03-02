@@ -43,6 +43,7 @@
     "tmp": "^0",
     "typescript": "^3",
     "valid-url": "^1",
+    "xhr2": "^0",
     "yauzl": "^2"
   },
   "engines": {
@@ -71,6 +72,7 @@
         "tmp": "Tmp",
         "typescript": "Typescript",
         "valid-url": "ValidUrl",
+        "xhr2": "Xhr2",
         "yauzl": "Yauzl"
       }
     },

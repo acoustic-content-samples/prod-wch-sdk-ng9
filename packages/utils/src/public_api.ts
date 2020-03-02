@@ -198,6 +198,7 @@ export {
   JSONArray,
   JSONObject,
   jsonParse,
+  jsonStringEscape,
   jsonStringify,
   JSONValue
 } from './json/json.utils';

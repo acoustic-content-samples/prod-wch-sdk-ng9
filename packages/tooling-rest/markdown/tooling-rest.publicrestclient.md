@@ -14,5 +14,5 @@ export interface PublicRestClient extends BasicRestClient
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [login](./tooling-rest.publicrestclient.login.md) | <code>(aCredentials?: Credentials) =&gt; Promise&lt;BasicRestClient&gt;</code> | Login against acoustic content. |
+|  [login](./tooling-rest.publicrestclient.login.md) | <code>(aCredentials?: Credentials) =&gt; Promise&lt;ProtectedRestClient&gt;</code> | Login against acoustic content. |
 

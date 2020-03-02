@@ -1,8 +1,8 @@
 import { TemplateType } from '@acoustic-content-sdk/hbs-tooling';
 import { rxCacheSingle, rxReadTextFile } from '@acoustic-content-sdk/rx-utils';
-import { rxPipe } from '@acoustic-content-sdk/utils';
+import { jsonStringEscape, rxPipe } from '@acoustic-content-sdk/utils';
 import { create } from 'handlebars';
-import jsStringEscape from 'js-string-escape';
+import hbsHelpers from 'handlebars-helpers';
 import { Observable, UnaryFunction } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
@@ -14,14 +14,14 @@ import { ASSET_ROOT$ } from '../../utils/assets';
  * @returns the handlebars instance
  */
 export function createHandlebars() {
-  // load the helpers
-  const helpers = require('handlebars-helpers');
+  // strange workaround
+  const helpers = hbsHelpers;
   // the instance
-  const hbs = create();
-  helpers(hbs);
-  hbs.registerHelper('jsEscape', jsStringEscape);
+  const handlebars = create();
+  helpers({ handlebars });
+  handlebars.registerHelper('jsEscape', jsonStringEscape);
   // ok
-  return hbs;
+  return handlebars;
 }
 
 /**

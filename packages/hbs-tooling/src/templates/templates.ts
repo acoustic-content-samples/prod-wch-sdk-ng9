@@ -5,6 +5,7 @@ import {
 } from '@acoustic-content-sdk/tooling';
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { compile, create } from 'handlebars';
+import hbsHelpers from 'handlebars-helpers';
 import { Observable, UnaryFunction } from 'rxjs';
 import { map, mergeMap, shareReplay } from 'rxjs/operators';
 
@@ -29,8 +30,8 @@ export type TemplateDescriptor = [TemplateType, TemplateType];
  * @returns the handlebars instance
  */
 function createHandlebars(): HandlebarsType {
-  // load the helpers
-  const helpers = require('handlebars-helpers');
+  // strange workaround
+  const helpers = hbsHelpers;
   // the instance
   const handlebars = create();
   helpers({ handlebars });

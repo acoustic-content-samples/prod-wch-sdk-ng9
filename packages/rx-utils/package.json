@@ -27,6 +27,8 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
+    "byline": "^5",
+    "cross-spawn": "^7",
     "fs-extra": "^8",
     "mime": "^2",
     "random-useragent": "^0",
@@ -45,6 +47,8 @@
     "lib": {
       "umdModuleIds": {
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "byline": "Byline",
+        "cross-spawn": "CrossSpawn",
         "fs-extra": "FsExtra",
         "mime": "Mime",
         "random-useragent": "RandomUseragent",

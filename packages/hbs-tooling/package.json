@@ -35,6 +35,7 @@
   },
   "peerDependencies": {
     "handlebars": "^4",
+    "handlebars-helpers": "^0",
     "rxjs": "^6"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-hbs-tooling.js",
@@ -48,7 +49,8 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "handlebars": "Handlebars"
+        "handlebars": "Handlebars",
+        "handlebars-helpers": "HandlebarsHelpers"
       }
     },
     "whitelistedNonPeerDependencies": [
