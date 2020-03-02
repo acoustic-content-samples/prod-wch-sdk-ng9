@@ -72,20 +72,25 @@
         "@acoustic-content-sdk/react-tooling": "acoustic-content-sdk.react-tooling",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "byline": "Byline",
         "chalk": "Chalk",
         "commander": "Commander",
+        "cross-spawn": "CrossSpawn",
         "email-validator": "EmailValidator",
         "fs-extra": "FsExtra",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
-        "jsdom": "Jsdom",
         "lodash": "Lodash",
         "mime": "Mime",
         "random-useragent": "RandomUseragent",
+        "request": "Request",
+        "request-promise-native": "RequestPromiseNative",
         "semver": "Semver",
         "sshpk": "Sshpk",
+        "tmp": "Tmp",
         "uuid": "Uuid",
-        "valid-url": "ValidUrl"
+        "valid-url": "ValidUrl",
+        "yauzl": "Yauzl"
       }
     },
     "whitelistedNonPeerDependencies": [

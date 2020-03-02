@@ -61,8 +61,7 @@ const SYSTEM_DEV_DEPENDENCIES = [
   '@types/react',
   '@types/redux-actions',
   '@types/react-dom',
-  '@types/react-router',
-  '@types/redux-actions'
+  '@types/react-router'
 ];
 
 /**
