@@ -245,5 +245,5 @@ export function findPeerDependencies(aDeps: string[]): Promise<string[]> {
       new Set([].concat(...dep)),
       new Set([].concat(...peer))
     ])
-    .then(([dep, peer]) => Array.from(peer).filter((p) => !dep.has(p)));
+    .then(([dep, peer]) => Array.from(peer));
 }

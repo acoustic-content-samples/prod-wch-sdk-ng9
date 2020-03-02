@@ -5,12 +5,22 @@ import { detectDependencies, findPeerDependencies } from './dependencies';
 describe('dependencies', () => {
   it('should find dependencies', () => {
     // root
-    const ROOT = join(PACKAGES, 'cli', 'dist');
+    const ROOT = join(PACKAGES, 'react-cli', 'dist');
     // read the direct dependencies
-    const deps$ = detectDependencies(ROOT)
-      .then(findPeerDependencies)
-      .then((deps) => console.log(deps));
+    const deps$ = detectDependencies(ROOT);
+    const peer$ = deps$.then(findPeerDependencies);
 
-    return deps$;
+    const all$ = Promise.all([deps$, peer$]).then(([deps, peer]) =>
+      Array.from(new Set([...deps, ...peer])).sort()
+    );
+
+    const lib$ = all$.then((res) =>
+      console.log(JSON.stringify(res, undefined, 2))
+    );
+    const dep$ = all$
+      .then((res) => res.reduce((aDst, r) => ({ ...aDst, [r]: '*' }), {}))
+      .then((res) => console.log(JSON.stringify(res, undefined, 2)));
+
+    return Promise.all([lib$, all$]);
   });
 });
