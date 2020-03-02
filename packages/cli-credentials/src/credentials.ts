@@ -6,7 +6,7 @@ import {
   RsaPrivateKey,
   RsaPublicKey
 } from 'crypto';
-import { readFile, stat, writeFile } from 'fs';
+import { mkdir, readFile, stat, writeFile } from 'fs';
 import { homedir, platform } from 'os';
 import { join, normalize } from 'path';
 import { env } from 'process';
@@ -25,11 +25,9 @@ import { ensureTrailingSlash, removeTrailingSlash } from './url.utils';
 import { isFunction, isString } from './utils';
 import { isValidCredentials } from './validation';
 
-const mkdirp = require('mkdirp');
-
 const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
-const mkdirpAsync = promisify(mkdirp);
+const mkdirpAsync = promisify(mkdir);
 const statAsync = promisify(stat);
 const execFileAsync = promisify(execFile);
 
@@ -266,7 +264,7 @@ function _writeStoredCredentials(
   const folder = CRED_FOLDER;
   const filename = join(folder, CRED_FILE);
   // create the directory
-  const folder$ = mkdirpAsync(folder);
+  const folder$ = mkdirpAsync(folder, { recursive: true });
   // write
   return folder$
     .then(() => writeFileAsync(filename, JSON.stringify(aCred), UTF8))
@@ -736,7 +734,7 @@ export function wchGetCredentials(
   // url fallback
   const apiUrl = aApiUrl || env[ENV_API_URL] || env[OLD_ENV_API_URL];
   assertNotNull(apiUrl, 'apiUrl');
-  // return
+  // returns the credentials
   return _getStoredCredentials(apiUrl, opts)
     .then((cred) =>
       _mergeCredentials(_getCredentialsFromEnvironment(opts), cred)

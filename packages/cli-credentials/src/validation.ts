@@ -5,15 +5,12 @@ import {
   REL_PATH_CURRENT_USER
 } from '@acoustic-content-sdk/api';
 import { validate as validateEmail } from 'email-validator';
+import { get, post } from 'request-promise-native';
 import { isWebUri } from 'valid-url';
 
 import { Credentials, WchToolsOptions } from './types';
 import { ensureTrailingSlash } from './url.utils';
 import { isArray, isString } from './utils';
-
-const rp = require('request-promise-native');
-
-// const rp = require('request-promise-native');
 
 /**
  * Checks if a username is valid, i.e. either an email or the term 'apikey'
@@ -54,7 +51,7 @@ function _getCurrentUser(aApiUrl: string): Promise<any> {
   // the URL
   const currentUserUrl = `${aApiUrl}${REL_PATH_CURRENT_USER}`;
   // make a get request
-  return Promise.resolve(rp(currentUserUrl, { json: true }));
+  return get(currentUserUrl, { json: true });
 }
 
 export function isValidEmail(aValue: any): aValue is string {
@@ -129,12 +126,17 @@ export function isValidWchToolsOptions(
   const normUrl = ensureTrailingSlash(aCredentials.baseUrl);
   // test if we can login
   const loginUrl = `${normUrl}${REL_PATH_BASICAUTH_LOGIN}`;
-  const body = {
+  const form = {
     [KEY_BASICAUTH_LOGIN_USERNAME]: aCredentials.username,
     [KEY_BASICAUTH_LOGIN_PASSWORD]: aCredentials.password
   };
+  const qs = {
+    'accept-privacy-notice': true
+  };
   // form POST to do the login
-  return rp({ method: 'POST', uri: loginUrl, form: body, json: true }).then(
-    isArray
-  );
+  return post(loginUrl, {
+    qs,
+    form,
+    json: true
+  }).then(isArray);
 }

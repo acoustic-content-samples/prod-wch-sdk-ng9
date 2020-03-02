@@ -13,5 +13,7 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
+  println(this.env)
+
   triggerDownstream = "squad-infra-boe/proto-sites-next-app, squad-infra-boe/sites-next-spa-dev, squad-infra-boe/sites-next-spa"
 }

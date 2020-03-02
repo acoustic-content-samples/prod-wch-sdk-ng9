@@ -32,6 +32,7 @@
   },
   "peerDependencies": {
     "email-validator": "^2",
+    "request-promise-native": "^1",
     "sshpk": "^1",
     "valid-url": "^1"
   },
@@ -46,6 +47,7 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "email-validator": "EmailValidator",
+        "request-promise-native": "RequestPromiseNative",
         "sshpk": "Sshpk",
         "valid-url": "ValidUrl"
       }
