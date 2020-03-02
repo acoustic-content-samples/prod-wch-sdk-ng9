@@ -1,6 +1,6 @@
 nodeModulePipeline {
   name = "prod-wch-sdk"
-  version_minor = "0"
+  version_minor = "1"
   version_major = "9"
   nodeversion = "10"
 
@@ -13,5 +13,5 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
-  triggerDownstream = "squad-infra-boe/proto-sites-next-app, squad-infra-boe/sites-next-spa-dev, squad-infra-boe/sites-next-spa"
+  triggerDownstream = "squad-poland/proto-sites-next-app, squad-poland/sites-next-spa-dev, squad-poland/sites-next-spa"
 }
