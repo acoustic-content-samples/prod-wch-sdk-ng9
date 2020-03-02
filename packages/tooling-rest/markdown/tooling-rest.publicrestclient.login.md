@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-login: (aUserName: string, aPassword: string) => Promise<BasicRestClient>;
+login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
 ```

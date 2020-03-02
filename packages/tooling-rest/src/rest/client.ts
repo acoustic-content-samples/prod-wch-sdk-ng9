@@ -9,7 +9,7 @@ import {
   wchGetCredentials,
   WchToolsOptions
 } from '@acoustic-content-sdk/cli-credentials';
-import { post } from 'request-promise-native';
+import { get, post } from 'request-promise-native';
 
 const ensureTrailingSlash = (aUrl: string): string =>
   aUrl.endsWith('/') ? aUrl : aUrl + '/';
@@ -18,7 +18,7 @@ export interface BasicRestClient {
   /**
    * Performs a GET operation
    */
-  get: <T>(aRelPath: string) => Promise<T>;
+  get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
 }
 
 /**
@@ -72,7 +72,15 @@ export function createClient(aApiUrl: string): PublicRestClient {
       )
       .then((resp) => (Array.isArray(resp) ? client : Promise.reject(resp)));
 
-  const client: BasicRestClient = { get: undefined };
+  // protected get
+  const protectedGet = (aRelPath: string, qs?: any) =>
+    get(`${baseUrl}${aRelPath}`, { qs, jar: true, json: true });
 
-  return { login, get: undefined };
+  // public get
+  const publicGet = (aRelPath: string, qs?: any) =>
+    get(`${baseUrl}${aRelPath}`, { qs, json: true });
+
+  const client: BasicRestClient = { get: protectedGet };
+
+  return { login, get: publicGet };
 }

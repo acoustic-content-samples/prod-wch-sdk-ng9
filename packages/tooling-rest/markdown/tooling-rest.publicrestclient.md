@@ -14,5 +14,5 @@ export interface PublicRestClient extends BasicRestClient
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [login](./tooling-rest.publicrestclient.login.md) | <code>(aUserName: string, aPassword: string) =&gt; Promise&lt;BasicRestClient&gt;</code> |  |
+|  [login](./tooling-rest.publicrestclient.login.md) | <code>(aCredentials?: Credentials) =&gt; Promise&lt;BasicRestClient&gt;</code> |  |
 

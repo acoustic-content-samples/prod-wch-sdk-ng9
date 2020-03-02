@@ -9,5 +9,5 @@ Performs a GET operation
 <b>Signature:</b>
 
 ```typescript
-get: <T>(aRelPath: string) => Promise<T>;
+get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
 ```

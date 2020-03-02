@@ -30,9 +30,12 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@acoustic-content-sdk/api": "9.0.0"
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/cli-credentials": "9.0.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "request-promise-native": "^1"
+  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-tooling-rest.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-tooling-rest.js",
   "esm5": "dist/esm5/acoustic-content-sdk-tooling-rest.js",
@@ -42,7 +45,9 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api"
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/cli-credentials": "acoustic-content-sdk.cli-credentials",
+        "request-promise-native": "RequestPromiseNative"
       }
     },
     "whitelistedNonPeerDependencies": [

@@ -4,9 +4,11 @@
 
 ```ts
 
+import { Credentials } from '@acoustic-content-sdk/cli-credentials';
+
 // @public (undocumented)
 export interface BasicRestClient {
-    get: <T>(aRelPath: string) => Promise<T>;
+    get: <T>(aRelPath: string, aQuery?: any) => Promise<T>;
 }
 
 // @public (undocumented)
@@ -15,7 +17,7 @@ export function createClient(aApiUrl: string): PublicRestClient;
 // @public (undocumented)
 export interface PublicRestClient extends BasicRestClient {
     // (undocumented)
-    login: (aUserName: string, aPassword: string) => Promise<BasicRestClient>;
+    login: (aCredentials?: Credentials) => Promise<BasicRestClient>;
 }
 
 // @public
