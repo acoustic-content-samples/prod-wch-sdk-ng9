@@ -1,5 +1,8 @@
 nodeModulePipeline {
+  squad = "poland"
   name = "prod-wch-sdk"
+  channel = "#cms-bn-ui-sdk"
+
   version_minor = "1"
   version_major = "9"
   nodeversion = "10"
