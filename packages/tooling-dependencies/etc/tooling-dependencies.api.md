@@ -8,6 +8,9 @@
 export function detectDependencies(aDir: string): Promise<string[]>;
 
 // @public
+export function findPeerDependencies(aDeps: string[]): Promise<string[]>;
+
+// @public
 export const VERSION: {
     version: {
         major: string;

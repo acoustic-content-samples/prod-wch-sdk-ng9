@@ -4,7 +4,7 @@
 
 ## detectDependencies() function
 
-Detects dependencies from the build output by scanning the CJS file and by following the dependencies in the typings
+Detects direct dependencies from the build output by scanning the CJS file and by following the dependencies in the typings. The implementation will not resolve these dependencies transitively.
 
 <b>Signature:</b>
 

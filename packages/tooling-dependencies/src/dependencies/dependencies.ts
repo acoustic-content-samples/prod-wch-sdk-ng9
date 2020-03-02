@@ -13,6 +13,56 @@ const { stat, readFile } = promises;
 const isRelative = (aName: string) => aName.startsWith('.');
 const isAbsolute = (aName: string) => !isRelative(aName);
 
+/**
+ * Reads the package file
+ *
+ * @param aPath - path of the package file
+ * @returns the resolved package
+ */
+const readPkg = (aPath: string): Promise<any> =>
+  readFile(join(aPath, 'package.json'), 'utf8').then((data) =>
+    JSON.parse(data)
+  );
+
+/**
+ * Locates the directory for a package
+ *
+ * @param aDir - the directory to start searching in
+ * @returns the resolved directory
+ */
+const findPkg = (aDir: string): Promise<string> =>
+  readPkg(aDir).then(
+    () => aDir,
+    () => {
+      // parent
+      const { dir } = parse(aDir);
+      return dir !== aDir ? findPkg(dir) : undefined;
+    }
+  );
+
+/**
+ * Locates the directory that contains a particular dependency
+ *
+ * @param aDep - name of the dependency
+ * @return the directory with the dependency
+ */
+const readDep = (aDep: string): Promise<string> => {
+  try {
+    // resolve
+    const resolved = require.resolve(aDep);
+    // check if the file exists
+    return stat(resolved).then(
+      (s) => (s.isFile() ? findPkg(parse(resolved).dir) : undefined),
+      () => undefined
+    );
+  } catch (error) {
+    // warn
+    console.warn('Cannot find dependency', aDep);
+    // nothing special
+    return Promise.resolve(undefined);
+  }
+};
+
 function resolveRelReference(aDir: string, aName: string): Promise<string> {
   // try a relative ref vs barrel import
   const relImport = normalize(join(aDir, aName + '.d.ts'));
@@ -131,10 +181,69 @@ function getDependencies(aDir: string, aPkg: any): Promise<string[]> {
  * @returns the list of dependencies
  */
 export function detectDependencies(aDir: string): Promise<string[]> {
-  // load the package
-  const pkgName = join(aDir, 'package.json');
   // read  the package
-  return readFile(pkgName, 'utf-8')
-    .then((data) => JSON.parse(data))
-    .then((pkg) => getDependencies(aDir, pkg));
+  return readPkg(aDir).then((pkg) => getDependencies(aDir, pkg));
+}
+
+const reduceDependencies = (
+  [depDst, peerDst]: [string[], string[]],
+  [depSrc, peerSrc]: [string[], string[]]
+): [string[], string[]] => [depDst.concat(depSrc), peerDst.concat(peerSrc)];
+
+function internalFindDependenciesFromPkg(
+  aPkg: any,
+  aRegistry: Record<string, Promise<[string[], string[]]>>
+): Promise<[string[], string[]]> {
+  // decode the dependencies and the peer dependencies
+  const { dependencies = {}, peerDependencies = {} } = aPkg;
+  // get all keys
+  const depKeys = Object.keys(dependencies);
+  const peerKeys = Object.keys(peerDependencies);
+  // recurse into all
+  const all = [...depKeys, ...peerKeys];
+  return Promise.all(
+    all.map((dep) => internalFindDependencies(dep, aRegistry))
+  ).then((res) => res.reduce(reduceDependencies, [depKeys, peerKeys]));
+}
+
+function internalFindDependencies(
+  aDep: string,
+  aRegistry: Record<string, Promise<[string[], string[]]>>
+): Promise<[string[], string[]]> {
+  // test for recursion
+  const oldDep$ = aRegistry[aDep];
+  if (oldDep$) {
+    return oldDep$;
+  }
+  // resolve
+  const newDep$: Promise<[string[], string[]]> = readDep(aDep).then((path) =>
+    path
+      ? readPkg(path).then((pkg) =>
+          internalFindDependenciesFromPkg(pkg, aRegistry)
+        )
+      : [[], []]
+  );
+  // register
+  aRegistry[aDep] = newDep$;
+  return newDep$;
+}
+
+/**
+ * Finds all peer dependencies of the given packages together will all peer dependencies
+ *
+ * @param aDeps - a list of all dependencies
+ *
+ * @returns the list of all peer dependencies of these dependencies
+ */
+export function findPeerDependencies(aDeps: string[]): Promise<string[]> {
+  // registry
+  const reg: Record<string, Promise<[string[], string[]]>> = {};
+  // resolve
+  return Promise.all(aDeps.map((dep) => internalFindDependencies(dep, reg)))
+    .then((res) => res.reduce(reduceDependencies, [[], []]))
+    .then(([dep, peer]) => [
+      new Set([].concat(...dep)),
+      new Set([].concat(...peer))
+    ])
+    .then(([dep, peer]) => Array.from(peer).filter((p) => !dep.has(p)));
 }

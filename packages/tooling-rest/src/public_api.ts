@@ -6,6 +6,6 @@
 export * from './rest/client';
 export * from './rest/content';
 export * from './rest/search';
-export * from './rest/site';
+export * from './rest/sites';
 export * from './utils/search.utils';
 export { VERSION } from './version';

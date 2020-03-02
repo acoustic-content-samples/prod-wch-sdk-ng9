@@ -10,7 +10,8 @@ Utility functions to detect dependencies in packages
 
 |  Function | Description |
 |  --- | --- |
-|  [detectDependencies(aDir)](./tooling-dependencies.detectdependencies.md) | Detects dependencies from the build output by scanning the CJS file and by following the dependencies in the typings |
+|  [detectDependencies(aDir)](./tooling-dependencies.detectdependencies.md) | Detects direct dependencies from the build output by scanning the CJS file and by following the dependencies in the typings. The implementation will not resolve these dependencies transitively. |
+|  [findPeerDependencies(aDeps)](./tooling-dependencies.findpeerdependencies.md) | Finds all peer dependencies of the given packages together will all peer dependencies |
 
 ## Variables
 
