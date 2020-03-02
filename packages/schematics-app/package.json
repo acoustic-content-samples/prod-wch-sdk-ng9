@@ -82,7 +82,6 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
         "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
@@ -92,18 +91,18 @@
         "@types/react-dom": "TypesReactDom",
         "@types/react-router": "TypesReactRouter",
         "@types/redux-actions": "TypesReduxActions",
+        "byline": "Byline",
         "chalk": "Chalk",
+        "cross-spawn": "CrossSpawn",
         "email-validator": "EmailValidator",
         "fs-extra": "FsExtra",
         "handlebars": "Handlebars",
         "handlebars-helpers": "HandlebarsHelpers",
-        "js-string-escape": "JsStringEscape",
         "jsdom": "Jsdom",
         "lodash": "Lodash",
         "mime": "Mime",
         "ng2-logger": "Ng2Logger",
         "npm-run-all": "NpmRunAll",
-        "number-to-words": "NumberToWords",
         "random-useragent": "RandomUseragent",
         "react": "React",
         "react-dom": "ReactDom",
@@ -113,12 +112,14 @@
         "redux-devtools-extension": "ReduxDevtoolsExtension",
         "redux-observable": "ReduxObservable",
         "request": "Request",
+        "request-promise-native": "RequestPromiseNative",
         "semver": "Semver",
         "sshpk": "Sshpk",
         "tmp": "Tmp",
         "typescript": "Typescript",
         "uuid": "Uuid",
         "valid-url": "ValidUrl",
+        "xhr2": "Xhr2",
         "yauzl": "Yauzl"
       }
     },

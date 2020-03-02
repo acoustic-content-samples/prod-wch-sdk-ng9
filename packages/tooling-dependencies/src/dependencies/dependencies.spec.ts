@@ -5,7 +5,7 @@ import { detectDependencies, findPeerDependencies } from './dependencies';
 describe('dependencies', () => {
   it('should find dependencies', () => {
     // root
-    const ROOT = join(PACKAGES, 'schematics-app', 'dist');
+    const ROOT = join(PACKAGES, 'schematics-feature-module', 'dist');
     // read the direct dependencies
     const deps$ = detectDependencies(ROOT);
     const peer$ = deps$.then(findPeerDependencies);
