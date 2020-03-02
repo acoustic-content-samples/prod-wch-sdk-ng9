@@ -1,5 +1,7 @@
 import {
+  ContentItemWithLayout,
   createVersionString,
+  KEY_METADATA,
   LoggerService,
   SiteDeliveryContentItem
 } from '@acoustic-content-sdk/api';
@@ -11,6 +13,9 @@ import { FetchText } from '@acoustic-content-sdk/rest-api';
 import {
   boxLoggerService,
   constGenerator,
+  createDeliveryContentItem,
+  filterTypeOf,
+  isNotNil,
   jsonParse,
   opCacheLast,
   rxNext,
@@ -26,6 +31,16 @@ const LOGGER = 'AbstractSiteResolverService';
 const REL_PUBLIC_PATH_SITE = 'delivery/v2/sites/@current';
 const REL_PROTECTED_PATH_SITE = 'mydelivery/v2/sites/@current';
 
+function isSiteDeliveryContentItem(
+  aItem: any
+): aItem is SiteDeliveryContentItem {
+  return (
+    isNotNil(aItem) &&
+    isNotNil(aItem[KEY_METADATA]) &&
+    isNotNil(aItem.navigation)
+  );
+}
+
 /**
  * Actually send a request
  *
@@ -38,13 +53,13 @@ const REL_PROTECTED_PATH_SITE = 'mydelivery/v2/sites/@current';
 function sendRequest<T>(
   aIsProtected: boolean,
   aFetchText: FetchText
-): Observable<SiteDeliveryContentItem> {
+): Observable<ContentItemWithLayout> {
   // the path
   const path = aIsProtected ? REL_PROTECTED_PATH_SITE : REL_PUBLIC_PATH_SITE;
   // make the request
   return rxPipe(
     aFetchText(path),
-    map<string, SiteDeliveryContentItem>(jsonParse)
+    map<string, ContentItemWithLayout>(jsonParse)
   );
 }
 
@@ -66,6 +81,8 @@ export class AbstractSiteResolverService implements DeliverySiteResolver {
     const site$ = rxPipe(
       aProtected.protected$,
       switchMap((bIsProtected) => sendRequest(bIsProtected, aFetchText)),
+      map(createDeliveryContentItem),
+      filterTypeOf(isSiteDeliveryContentItem),
       log('siteItem'),
       opCacheLast
     );
