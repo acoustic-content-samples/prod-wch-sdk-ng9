@@ -10,6 +10,7 @@ import { WchNgRestUrlConfigModule } from '../info/wch.info.module';
 import { WchNgRestLayoutMappingModule } from '../layout-mapping/delivery.layout.mapping.resolver.module';
 import { WchNgRestLayoutModule } from '../layout/delivery.layout.resolver.module';
 import { WchNgRestPageModule } from '../page/delivery.page.resolver.module';
+import { WchNgRestSiteModule } from '../site/site.module';
 import { WchNgRestTypeModule } from '../type/delivery.type.resolver.module';
 import { VERSION } from './../version';
 
@@ -26,7 +27,8 @@ import { VERSION } from './../version';
     WchNgRestTypeModule,
     WchNgRestPageModule,
     WchNgRestFetchTextModule,
-    WchNgRestAuthStatusModule
+    WchNgRestAuthStatusModule,
+    WchNgRestSiteModule
   ]
 })
 export class WchNgRestModule {

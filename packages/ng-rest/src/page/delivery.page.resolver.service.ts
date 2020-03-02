@@ -15,7 +15,8 @@ export class DeliveryPageResolverService
   extends AbstractDeliveryPageResolverService
   implements DeliveryPageResolver {
   constructor(
-    @Inject(ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER) aSearch: DeliverySearchResolver,
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER)
+    aSearch: DeliverySearchResolver,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService

@@ -18,7 +18,10 @@ import { createFetchText } from './/fetch.text';
     {
       provide: ACOUSTIC_TOKEN_FETCH_TEXT,
       useFactory: createFetchText,
-      deps: [ACOUSTIC_TOKEN_URL_CONFIG, [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]]
+      deps: [
+        ACOUSTIC_TOKEN_URL_CONFIG,
+        [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
+      ]
     }
   ]
 })

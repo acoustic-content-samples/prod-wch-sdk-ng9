@@ -12,5 +12,6 @@ export * from './layout-mapping/delivery.layout.mapping.resolver.module';
 export * from './layout/delivery.layout.resolver.module';
 export * from './module/module';
 export * from './page/delivery.page.resolver.module';
+export * from './site/site.module';
 export * from './type/delivery.type.resolver.module';
 export { VERSION } from './version';
