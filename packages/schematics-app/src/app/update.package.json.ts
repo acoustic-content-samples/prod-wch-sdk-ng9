@@ -151,6 +151,12 @@ export function updatePackageJson(options: Schema): Rule {
       `build:dev:${ArtifactMode.LIVE}`
     ] = `ng build --configuration=${ArtifactMode.LIVE}`;
     scripts[
+      `start:${ArtifactMode.PREVIEW}`
+    ] = `ng start --configuration=${ArtifactMode.PREVIEW}`;
+    scripts[
+      `start:${ArtifactMode.LIVE}`
+    ] = `ng start --configuration=${ArtifactMode.LIVE}`;
+    scripts[
       'build:dev'
     ] = `npm-run-all build:dev:${ArtifactMode.PREVIEW} build:dev:${ArtifactMode.LIVE}`;
     scripts[
