@@ -8,6 +8,7 @@ import { addFeatureModuleToApplication } from '@acoustic-content-sdk/schematics-
 import { AddFeatureModuleToApplicationSchema } from '@acoustic-content-sdk/schematics-feature-module';
 import { CreateNgDriverArtifactsSchema } from '@acoustic-content-sdk/tooling-contributions';
 import { CreatePackageFromArtifactsSchema } from '@acoustic-content-sdk/tooling-contributions';
+import { GenerateVersionSchema } from '@acoustic-content-sdk/schematics-version';
 import { Rule } from '@angular-devkit/schematics';
 
 export { addFeatureModuleToApplication }
@@ -33,6 +34,11 @@ export function generateLayout(options: Schema_3): Rule;
 //
 // @public (undocumented)
 export function generateLayouts(options: Schema_4): Rule;
+
+// Warning: (ae-forgotten-export) The symbol "Schema" needs to be exported by the entry point public_api.d.ts
+//
+// @public
+export function generateVersion(options: Schema_5): Rule;
 
 // @public
 export const VERSION: {

@@ -164,11 +164,11 @@ export function updatePackageJson(options: Schema): Rule {
       // add the script
       scripts[`${KEY_BUILD}:${build}`] = `npm-run-all ${commands.join(' ')}`;
     });
-    scripts[KEY_BUILD] = `npm-run-all ${KEY_BUILD}:${BUILD_DEV}`;
+    scripts[KEY_BUILD] = `npm run ${KEY_BUILD}:${BUILD_DEV} --`;
     // build the configurations
     scripts[
       `${KEY_BUILD}:${BUILD_CONTRIBUTIONS}`
-    ] = `npm-run-all ${KEY_BUILD}:${BUILD_PROD}:${BUILD_CONTRIBUTIONS}`;
+    ] = `npm run ${KEY_BUILD}:${BUILD_PROD}:${BUILD_CONTRIBUTIONS} --`;
 
     scripts[
       `${KEY_BUILD}:${BUILD_PROD}:${BUILD_CONTRIBUTIONS}`
