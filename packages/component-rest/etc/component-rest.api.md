@@ -13,12 +13,15 @@ import { DeliveryLayoutMappingResolver } from '@acoustic-content-sdk/component-a
 import { DeliveryLayoutResolver } from '@acoustic-content-sdk/component-api';
 import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
 import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
+import { DeliverySiteResolver } from '@acoustic-content-sdk/component-api';
 import { DeliveryType } from '@acoustic-content-sdk/api';
 import { DeliveryTypeResolver } from '@acoustic-content-sdk/component-api';
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 import { HubInfoUrlProvider } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
+import { ProtectedContent } from '@acoustic-content-sdk/component-api';
+import { SiteDeliveryContentItem } from '@acoustic-content-sdk/api';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 
 // @public
@@ -61,6 +64,13 @@ export class AbstractDeliveryTypeResolverService implements DeliveryTypeResolver
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
     // (undocumented)
     getDeliveryType: (aId: string) => Observable<DeliveryType>;
+}
+
+// @public (undocumented)
+export class AbstractSiteResolverService implements DeliverySiteResolver {
+    protected constructor(aFetchText: FetchText, aProtected: ProtectedContent, aLogSvc?: LoggerService);
+    // (undocumented)
+    getSiteDeliveryContentItem: () => Observable<SiteDeliveryContentItem>;
 }
 
 // @public

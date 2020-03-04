@@ -58,6 +58,10 @@ export class WchNgRestPageModule {
 }
 
 // @public
+export class WchNgRestSiteModule {
+}
+
+// @public
 export class WchNgRestTypeModule {
 }
 

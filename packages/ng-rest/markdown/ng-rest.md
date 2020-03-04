@@ -18,6 +18,7 @@ Implementation of services for the React SDK based on a REST backend.
 |  [WchNgRestLayoutModule](./ng-rest.wchngrestlayoutmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>ACOUSTIC_TOKEN_DELIVERY_LAYOUT_RESOLVER</code>. |
 |  [WchNgRestModule](./ng-rest.wchngrestmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes common services. |
 |  [WchNgRestPageModule](./ng-rest.wchngrestpagemodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER</code>. |
+|  [WchNgRestSiteModule](./ng-rest.wchngrestsitemodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER</code>. |
 |  [WchNgRestTypeModule](./ng-rest.wchngresttypemodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>ACOUSTIC_TOKEN_DELIVERY_TYPE_RESOLVER</code>. |
 |  [WchNgRestUrlConfigModule](./ng-rest.wchngresturlconfigmodule.md) | [Angular Module](https://angular.io/guide/ngmodules) that exposes an implementation of <code>ACOUSTIC_TOKEN_URL_CONFIG</code>. |
 

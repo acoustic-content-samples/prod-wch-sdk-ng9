@@ -16,6 +16,7 @@ Implementation of base classes to implement SDK services based on REST.
 |  [AbstractDeliveryLayoutResolverService](./component-rest.abstractdeliverylayoutresolverservice.md) | Base class to implement <code>DeliveryLayoutResolver</code> |
 |  [AbstractDeliveryPageResolverService](./component-rest.abstractdeliverypageresolverservice.md) | Base class to implement <code>DeliveryPageResolver</code> |
 |  [AbstractDeliveryTypeResolverService](./component-rest.abstractdeliverytyperesolverservice.md) | Base class to implement <code>DeliveryTypeResolver</code> |
+|  [AbstractSiteResolverService](./component-rest.abstractsiteresolverservice.md) |  |
 
 ## Functions
 
