@@ -79,6 +79,38 @@ function findAppModule(
 }
 
 /**
+ * Adds an import classifier
+ *
+ * @param aSrcFile - source file
+ * @param aModule - module name, may contain a '#' to discriminate between import path and module name
+ * @param aPath - fallback import path
+ *
+ * @returns the list of changes
+ */
+function addImport(
+  aSrcFile: SourceFile,
+  aModule: string,
+  aPath: string
+): Change[] {
+  // module name and import path
+  let moduleName = aModule;
+  let importPath = aPath;
+  // check if this is full reference
+  const idx = aModule.indexOf('#');
+  if (idx >= 0) {
+    // split
+    const path = aModule.substr(0, idx);
+    moduleName = aModule.substr(idx + 1);
+    // check the path
+    if (isNotEmpty(path)) {
+      importPath = path;
+    }
+  }
+  // actually add the import
+  return addImportToModule(aSrcFile, aSrcFile.fileName, moduleName, importPath);
+}
+
+/**
  * Adds a feature module to an application. The feature module is defined as part of the input options.
  * The schematics fill locate the correct application module and then imports the feature module into the
  * application module.
@@ -130,7 +162,7 @@ export function addFeatureModuleToApplication(
       map((path) =>
         modules.reduce(
           (dst: Change[], mod: string) =>
-            dst.concat(addImportToModule(srcFile, srcFile.fileName, mod, path)),
+            dst.concat(addImport(srcFile, mod, path)),
           []
         )
       ),
