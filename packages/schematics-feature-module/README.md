@@ -28,6 +28,14 @@ The result of this command is the registration of an [ng-add](https://angular.io
 ng add YOUR_NPM_PACKAGE_NAME
 ```
 
+### Advanced Usecase
+
+In case your module requires the inclusion of top level modules from external libraries you can add these modules using the syntax `importPath#moduleName` where the import path points to the external module. Make sure to also add the imported module to the `peerDependencies` of your module.
+
+Example:
+
+If your module contains animations you might want to add the `BrowserAnimationsModule` module to the app, using this specifier: `@angular/platform-browser/animations#BrowserAnimationsModule`.
+
 ## Documentation
 
 [API Documentation](./markdown/schematics-feature-module.md)

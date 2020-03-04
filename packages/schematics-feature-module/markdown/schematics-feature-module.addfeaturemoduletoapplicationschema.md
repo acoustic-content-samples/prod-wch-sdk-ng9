@@ -17,6 +17,6 @@ export interface AddFeatureModuleToApplicationSchema
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [importPath](./schematics-feature-module.addfeaturemoduletoapplicationschema.importpath.md) | <code>string</code> | Optionally the import path of the module. If missing defaults to the project running the initial schematic. |
-|  [module](./schematics-feature-module.addfeaturemoduletoapplicationschema.module.md) | <code>string</code> | Name of the module, may be a comma separated list |
+|  [module](./schematics-feature-module.addfeaturemoduletoapplicationschema.module.md) | <code>string</code> | Name of the module, may be a comma separated list. Module identifiers have the following syntax: <code>[path#]name[.forRoot()]</code>. If <code>path</code> is missing it falls back to the import path given by this schema (or its default). |
 |  [project](./schematics-feature-module.addfeaturemoduletoapplicationschema.project.md) | <code>string</code> | The project name, falls back to the default project |
 

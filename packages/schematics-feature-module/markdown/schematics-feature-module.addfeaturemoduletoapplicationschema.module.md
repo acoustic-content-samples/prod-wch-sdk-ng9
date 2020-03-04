@@ -4,7 +4,7 @@
 
 ## AddFeatureModuleToApplicationSchema.module property
 
-Name of the module, may be a comma separated list
+Name of the module, may be a comma separated list. Module identifiers have the following syntax: `[path#]name[.forRoot()]`<!-- -->. If `path` is missing it falls back to the import path given by this schema (or its default).
 
 <b>Signature:</b>
 
