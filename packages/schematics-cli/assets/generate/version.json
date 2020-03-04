@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsIbmWchSdkGenerateVersion",
+  "title": "IbmWchSdk Generate Version Schema",
+  "description": "Updates version specific files.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Name of the project. If missing the command uses the default project."
+    },
+    "version": {
+      "type": "string",
+      "description": "New version number, will use the environment variable `npm_package_version` or the package version if missing."
+    }
+  },
+  "additionalProperties": false
+}

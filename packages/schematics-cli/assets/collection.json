@@ -20,6 +20,11 @@
       "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateComponents",
       "schema": "./generate/components.json",
       "description": "Generates code components for registered layouts."
+    },
+    "version": {
+      "factory": "./../bundles/acoustic-content-sdk-schematics.umd.min#generateVersion",
+      "schema": "./generate/version.json",
+      "description": "Updates version specific files."
     }
   }
 }
