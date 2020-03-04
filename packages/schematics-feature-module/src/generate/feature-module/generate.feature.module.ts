@@ -9,7 +9,7 @@ import { generateFeatureModule } from '@acoustic-content-sdk/tooling-feature-mod
 import { rxPipe } from '@acoustic-content-sdk/utils';
 import { normalize } from '@angular-devkit/core';
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { count, mapTo } from 'rxjs/operators';
+import { endWith, ignoreElements } from 'rxjs/operators';
 
 import { GenerateFeatureModuleSchema } from './generate.feature.module.schema';
 
@@ -47,8 +47,8 @@ export function generateFeatureModuleSchematic(
     return rxPipe(
       generate(readFile, logSvc),
       writeFilesOnTree(host, rootFolder),
-      count(),
-      mapTo(host)
+      ignoreElements(),
+      endWith(host)
     );
   };
 }

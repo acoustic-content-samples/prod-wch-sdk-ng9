@@ -26,19 +26,17 @@
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "postbuild:packagr": "sync-files --no-delete ./assets ./dist/assets",
     "test": "jest"
   },
   "dependencies": {
-    "@acoustic-content-sdk/api": "9.0.0",
-    "@acoustic-content-sdk/rx-utils": "9.0.0",
+    "@acoustic-content-sdk/hbs-tooling": "9.0.0",
     "@acoustic-content-sdk/schematics-utils": "9.0.0",
-    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
-    "@acoustic-content-sdk/tooling-pkg-mgr": "9.0.0",
+    "@acoustic-content-sdk/tooling": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "rxjs": "^6",
-    "typescript": "^3"
+    "rxjs": "^6"
   },
   "engines": {
     "node": ">= 8.9.0",
@@ -53,20 +51,16 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
+        "@acoustic-content-sdk/hbs-tooling": "acoustic-content-sdk.hbs-tooling",
         "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
-        "@acoustic-content-sdk/tooling-feature-module": "acoustic-content-sdk.tooling-feature-module",
-        "@acoustic-content-sdk/tooling-pkg-mgr": "acoustic-content-sdk.tooling-pkg-mgr",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
-        "typescript": "Typescript"
+        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/*"
     ]
   },
-  "schematics": "./assets/collection.json",
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
   }
