@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 import { {{{ACOUSTIC_APP_MODULE}}} as WchAppModule } from '{{{ACOUSTIC_APP_MODULE_PATH}}}';
-import { WchNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
 import { {{{ORIGINAL_APP_MODULE}}} as OriginalAppModule } from '{{{ORIGINAL_APP_MODULE_PATH}}}';
 
 /**
@@ -12,10 +11,7 @@ import { {{{ORIGINAL_APP_MODULE}}} as OriginalAppModule } from '{{{ORIGINAL_APP_
 @NgModule({
   imports: [
     WchAppModule,
-    OriginalAppModule,
-    WchNgLoggingModule.forRoot({
-      // TODO optionally add logging config here
-    }),
+    OriginalAppModule
   ]
 })
 export class AppModule {}

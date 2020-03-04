@@ -40,6 +40,8 @@ const NAMESPACE = `@${getOrganization(MODULE)}/`;
 const KEY_BUILD = 'build';
 const KEY_START = 'start';
 
+const KEY_VERSION_HOOK = 'postversion';
+
 const BUILD_PROD = 'prod';
 const BUILD_DEV = 'dev';
 
@@ -143,7 +145,6 @@ export function updatePackageJson(options: Schema): Rule {
     fixVersions(sdkVersion, peerDependencies);
     // add crutial imports
     dependencies[`${NAMESPACE}ng-app`] = sdkVersion;
-    dependencies[`${NAMESPACE}ng-logger`] = sdkVersion;
     devDependencies[`${NAMESPACE}schematics`] = sdkVersion;
     // scripts
     forEach(ARTIFACT_MODES, (mode: ArtifactMode) => {
@@ -177,6 +178,9 @@ export function updatePackageJson(options: Schema): Rule {
     scripts[
       `${KEY_BUILD}:${BUILD_DEV}:${BUILD_CONTRIBUTIONS}`
     ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --mode=${ARTIFACT_MODES.join()}`;
+
+    // version hook
+    scripts[KEY_VERSION_HOOK] = `ng g ${NAMESPACE}schematics:version`;
 
     // override the records
     assignObject(pkg, {
