@@ -25,6 +25,7 @@ import { identity, merge, Observable } from 'rxjs';
 import { endWith, ignoreElements, map, mergeMap, pluck } from 'rxjs/operators';
 
 import { PKG_DIR$ } from '../utilities/assets';
+import { ARTIFACT_MODES } from './../utilities/modes';
 import { MODULE, VERSION } from './../version';
 import { Schema } from './schema';
 import { CONFIG_SOURCE_MAP } from './update.angular.json';
@@ -35,6 +36,16 @@ const {
 } = VERSION;
 
 const NAMESPACE = `@${getOrganization(MODULE)}/`;
+
+const KEY_BUILD = 'build';
+const KEY_START = 'start';
+
+const BUILD_PROD = 'prod';
+const BUILD_DEV = 'dev';
+
+const BUILD_CONTRIBUTIONS = 'contributions';
+
+const BUILD_MODES = [BUILD_PROD, BUILD_DEV];
 
 function fixVersions(aVersion: string, aDeps: Record<string, string>) {
   // just get the keys
@@ -135,33 +146,36 @@ export function updatePackageJson(options: Schema): Rule {
     dependencies[`${NAMESPACE}ng-logger`] = sdkVersion;
     devDependencies[`${NAMESPACE}schematics`] = sdkVersion;
     // scripts
+    forEach(ARTIFACT_MODES, (mode: ArtifactMode) => {
+      scripts[
+        `${KEY_BUILD}:${BUILD_PROD}:${mode}`
+      ] = `ng build --configuration=production,${CONFIG_SOURCE_MAP},${mode}`;
+      scripts[
+        `${KEY_BUILD}:${BUILD_DEV}:${mode}`
+      ] = `ng build --configuration=${mode}`;
+      scripts[`${KEY_START}:${mode}`] = `ng start --configuration=${mode}`;
+    });
+    // across modes
+    forEach(BUILD_MODES, (build: string) => {
+      // the suffix
+      const commands = ARTIFACT_MODES.map(
+        (mode) => `${KEY_BUILD}:${build}:${mode}`
+      );
+      // add the script
+      scripts[`${KEY_BUILD}:${build}`] = `npm-run-all ${commands.join(' ')}`;
+    });
+    scripts[KEY_BUILD] = `npm-run-all ${KEY_BUILD}:${BUILD_DEV}`;
+    // build the configurations
     scripts[
-      `build:prod:${ArtifactMode.PREVIEW}`
-    ] = `ng build --configuration=production,${CONFIG_SOURCE_MAP},${ArtifactMode.PREVIEW}`;
+      `${KEY_BUILD}:${BUILD_CONTRIBUTIONS}`
+    ] = `npm-run-all ${KEY_BUILD}:${BUILD_PROD}:${BUILD_CONTRIBUTIONS}`;
+
     scripts[
-      `build:prod:${ArtifactMode.LIVE}`
-    ] = `ng build --configuration=production,${CONFIG_SOURCE_MAP},${ArtifactMode.LIVE}`;
+      `${KEY_BUILD}:${BUILD_PROD}:${BUILD_CONTRIBUTIONS}`
+    ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --configuration=production --mode=${ARTIFACT_MODES.join()}`;
     scripts[
-      'build:prod'
-    ] = `npm-run-all build:prod:${ArtifactMode.PREVIEW} build:prod:${ArtifactMode.LIVE}`;
-    scripts[
-      `build:dev:${ArtifactMode.PREVIEW}`
-    ] = `ng build --configuration=${ArtifactMode.PREVIEW}`;
-    scripts[
-      `build:dev:${ArtifactMode.LIVE}`
-    ] = `ng build --configuration=${ArtifactMode.LIVE}`;
-    scripts[
-      `start:${ArtifactMode.PREVIEW}`
-    ] = `ng start --configuration=${ArtifactMode.PREVIEW}`;
-    scripts[
-      `start:${ArtifactMode.LIVE}`
-    ] = `ng start --configuration=${ArtifactMode.LIVE}`;
-    scripts[
-      'build:dev'
-    ] = `npm-run-all build:dev:${ArtifactMode.PREVIEW} build:dev:${ArtifactMode.LIVE}`;
-    scripts[
-      'build:contributions'
-    ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --configuration=production --mode=${ArtifactMode.PREVIEW},${ArtifactMode.LIVE}`;
+      `${KEY_BUILD}:${BUILD_DEV}:${BUILD_CONTRIBUTIONS}`
+    ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --mode=${ARTIFACT_MODES.join()}`;
 
     // override the records
     assignObject(pkg, {
