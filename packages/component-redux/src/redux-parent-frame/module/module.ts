@@ -26,9 +26,9 @@ export function getStoreFromParent(
   // warn if not there
   if (isNil(rootStore)) {
     // error message
-    const msg = `Unable to access [${STORE_ID}] from parent [${aHostWindow}].`;
+    const msg = `Unable to access [${STORE_ID}] from parent.`;
     // log this
-    logger.warn(msg);
+    logger.error(msg, aHostWindow);
   }
   // always return the store
   return rootStore;

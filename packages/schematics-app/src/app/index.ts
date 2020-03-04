@@ -26,6 +26,7 @@ import { updateAppComponentHtml } from './update.app.component.html';
 import { addToDevEnv, addToProdEnv } from './update.environment';
 import { updatePackageJson } from './update.package.json';
 import { updateAppRoutingModule } from './update.router';
+import { updateVersion } from './update.version';
 
 function updateEnvironment(
   options: Schema,
@@ -173,7 +174,8 @@ export function addToApplication(options: Schema): Rule {
       generateModeFiles(options),
       updatePackageJson(options),
       updateAppComponentHtml(options),
-      updateAppRoutingModule(options)
+      updateAppRoutingModule(options),
+      updateVersion(options)
 
       /*
       updateWchtoolsOptions(options, project),
