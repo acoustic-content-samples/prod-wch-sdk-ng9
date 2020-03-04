@@ -1,0 +1,73 @@
+{
+  "name": "@acoustic-content-sdk/schematics-version",
+  "version": "9.0.0",
+  "description": "Schematic to add a feature module to an application.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "schematics",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-schematics-version.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-schematics-version.js",
+  "typings": "dist/acoustic-content-sdk-schematics-version.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/rx-utils": "9.0.0",
+    "@acoustic-content-sdk/schematics-utils": "9.0.0",
+    "@acoustic-content-sdk/tooling-feature-module": "9.0.0",
+    "@acoustic-content-sdk/tooling-pkg-mgr": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^6",
+    "typescript": "^3"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.0"
+  },
+  "es2015": "dist/fesm2015/acoustic-content-sdk-schematics-version.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-schematics-version.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-schematics-version.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-schematics-version.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-schematics-version.js",
+  "metadata": "dist/acoustic-content-sdk-schematics-version.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/rx-utils": "acoustic-content-sdk.rx-utils",
+        "@acoustic-content-sdk/schematics-utils": "acoustic-content-sdk.schematics-utils",
+        "@acoustic-content-sdk/tooling-feature-module": "acoustic-content-sdk.tooling-feature-module",
+        "@acoustic-content-sdk/tooling-pkg-mgr": "acoustic-content-sdk.tooling-pkg-mgr",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "typescript": "Typescript"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/*"
+    ]
+  },
+  "schematics": "./assets/collection.json",
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}
