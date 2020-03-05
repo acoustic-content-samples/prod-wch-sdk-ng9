@@ -141,10 +141,16 @@ const getModes = (aSchema: CreateNgDriverArtifactsSchema) =>
  */
 const getTags = (
   aSchema: CreateNgDriverArtifactsSchema,
-  aProjectName: string
+  aProjectName: string,
+  aVersion: string
 ) =>
   Array.from(
-    new Set([...splitArray(aSchema.tag || ''), aProjectName, 'sites-next'])
+    new Set([
+      ...splitArray(aSchema.tag || ''),
+      aProjectName,
+      aVersion,
+      'sites-next'
+    ])
   );
 
 function createArtifactsForProject(
@@ -296,7 +302,7 @@ export function createNgDriverArtifacts(
           name,
           modes,
           config,
-          getTags(aSchema, name),
+          getTags(aSchema, name, version),
           aHost
         ),
         map(wchToolsFileDescriptor),
