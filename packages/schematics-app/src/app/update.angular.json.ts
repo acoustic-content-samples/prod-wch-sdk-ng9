@@ -8,6 +8,7 @@ import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import {
   cloneDeep,
   isNil,
+  jsonParse,
   pluckPath,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -17,6 +18,7 @@ import { Observable, of } from 'rxjs';
 import { endWith, ignoreElements } from 'rxjs/operators';
 
 import { addModeToName, addModeToPath } from '../utilities/names';
+import { getVersion } from '../utilities/version';
 import { Schema } from './schema';
 
 const selectBuild = (aName: string) =>
@@ -46,9 +48,22 @@ function createModeConfigServe(aMode: ArtifactMode, aProjectName: string): any {
   };
 }
 
-function createModeConfigBuild(aMode: ArtifactMode, aOptions: any): any {
+/**
+ * Adds the configuration for the mode
+ *
+ * @param aMode - the mode
+ * @param aVersion - the current version string
+ * @param aOptions - the options object
+ *
+ * @returns the resulting filename
+ */
+function createModeConfigBuild(
+  aMode: ArtifactMode,
+  aVersion: string,
+  aOptions: any
+): any {
   // names
-  const outputPath = addModeToPath(aOptions[KEY_OUTPUT_PATH], aMode);
+  const outputPath = addModeToPath(aOptions[KEY_OUTPUT_PATH], aVersion, aMode);
   const main = addModeToName(aOptions[KEY_MAIN], aMode);
   const { dir } = parse(main);
   const tsconfig = `${dir}/${NAME_TSCONFIG}`;
@@ -63,6 +78,7 @@ function createModeConfigBuild(aMode: ArtifactMode, aOptions: any): any {
 
 function updateModeConfigBuild(
   aMode: ArtifactMode,
+  aVersion: string,
   aOptions: any,
   aConfigurations: Record<string, any>
 ): any {
@@ -70,7 +86,7 @@ function updateModeConfigBuild(
   const existingConfig = aConfigurations[aMode];
   if (isNil(existingConfig)) {
     // update
-    aConfigurations[aMode] = createModeConfigBuild(aMode, aOptions);
+    aConfigurations[aMode] = createModeConfigBuild(aMode, aVersion, aOptions);
   }
   return aConfigurations;
 }
@@ -102,7 +118,8 @@ function updateSourceMap(aConfigurations: Record<string, any>): any {
 
 function transformAngularJson(
   aWorkspace: WorkspaceSchema,
-  aProjectName: string
+  aProjectName: string,
+  aVersion: string
 ): Observable<WorkspaceSchema> {
   // be on the safe side
   const ws: WorkspaceSchema = cloneDeep(aWorkspace);
@@ -114,8 +131,8 @@ function transformAngularJson(
   const buildConfig = selectConfigurations(build);
   const serveConfig = selectConfigurations(serve);
   // add build config for modes
-  updateModeConfigBuild(ArtifactMode.LIVE, options, buildConfig);
-  updateModeConfigBuild(ArtifactMode.PREVIEW, options, buildConfig);
+  updateModeConfigBuild(ArtifactMode.LIVE, aVersion, options, buildConfig);
+  updateModeConfigBuild(ArtifactMode.PREVIEW, aVersion, options, buildConfig);
   updateSourceMap(buildConfig);
   // add serve config for modes
   updateModeConfigServe(ArtifactMode.LIVE, aProjectName, serveConfig);
@@ -130,6 +147,10 @@ function transformAngularJson(
 export function updateAngularJson(options: Schema): Rule {
   // the transform callback
   return (host: Tree) => {
+    // actual version
+    const version = getVersion(
+      jsonParse(host.read('/package.json').toString())
+    );
     // get the project name
     const projectName = findProjectName(host, options);
     // filename
@@ -138,7 +159,8 @@ export function updateAngularJson(options: Schema): Rule {
     return rxPipe(
       rxTransformJsonFile(
         angularJson,
-        (aWorkspace) => transformAngularJson(aWorkspace, projectName),
+        (aWorkspace: WorkspaceSchema) =>
+          transformAngularJson(aWorkspace, projectName, version),
         host
       ),
       ignoreElements(),

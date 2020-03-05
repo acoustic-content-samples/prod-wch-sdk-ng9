@@ -26,11 +26,18 @@ export function addModeToName(aName: string, aMode: ArtifactMode): string {
  * Inserts the mode into a path
  *
  * @param aName - the original path
+ * @param aVersion - the version string
  * @param aMode - the mode
  *
  * @returns the resulting filename
  */
-export function addModeToPath(aName: string, aMode: ArtifactMode): string {
+export function addModeToPath(
+  aName: string,
+  aVersion: string,
+  aMode: ArtifactMode
+): string {
   // split the extension
-  return ensureTrailingSlash(`${ensureTrailingSlash(aName)}${aMode}`);
+  return ensureTrailingSlash(
+    `${ensureTrailingSlash(aName)}v${aVersion}/${aMode}`
+  );
 }
