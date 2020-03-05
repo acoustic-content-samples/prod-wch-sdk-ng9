@@ -1,13 +1,5 @@
-import {
-  DEP_TYPE,
-  getFolderForType,
-  rxReadTextFile,
-  rxTransformJsonFile
-} from '@acoustic-content-sdk/schematics-utils';
-import {
-  canonicalizeJson,
-  getOrganization
-} from '@acoustic-content-sdk/tooling';
+import { DEP_TYPE, getFolderForType, rxReadTextFile, rxTransformJsonFile } from '@acoustic-content-sdk/schematics-utils';
+import { canonicalizeJson, getOrganization } from '@acoustic-content-sdk/tooling';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import {
   assignObject,
@@ -17,7 +9,7 @@ import {
   jsonParse,
   objectKeys,
   reduceToObject,
-  rxPipe
+  rxPipe,
 } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join } from 'path';
@@ -38,7 +30,9 @@ const {
 const NAMESPACE = `@${getOrganization(MODULE)}/`;
 
 const KEY_BUILD = 'build';
+const VALUE_BUILD = 'build';
 const KEY_START = 'start';
+const VALUE_START = 'serve';
 
 const KEY_VERSION_HOOK = 'postversion';
 
@@ -150,11 +144,13 @@ export function updatePackageJson(options: Schema): Rule {
     forEach(ARTIFACT_MODES, (mode: ArtifactMode) => {
       scripts[
         `${KEY_BUILD}:${BUILD_PROD}:${mode}`
-      ] = `ng build --configuration=production,${CONFIG_SOURCE_MAP},${mode}`;
+      ] = `ng ${VALUE_BUILD} --configuration=production,${CONFIG_SOURCE_MAP},${mode}`;
       scripts[
         `${KEY_BUILD}:${BUILD_DEV}:${mode}`
-      ] = `ng build --configuration=${mode}`;
-      scripts[`${KEY_START}:${mode}`] = `ng start --configuration=${mode}`;
+      ] = `ng ${VALUE_BUILD} --configuration=${mode}`;
+      scripts[
+        `${KEY_START}:${mode}`
+      ] = `ng ${VALUE_START} --configuration=${mode}`;
     });
     // across modes
     forEach(BUILD_MODES, (build: string) => {
