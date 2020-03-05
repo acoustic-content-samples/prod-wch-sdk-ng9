@@ -15,6 +15,7 @@ import {
   Optional,
   Output
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 
@@ -51,13 +52,14 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
    * The markup string to be rendered
    */
   @Output()
-  markup$: Observable<string>;
+  markup$: Observable<SafeHtml>;
 
   constructor(
-    markupRegistry: WchNgMarkupRegistryService,
+    aMarkupRegistry: WchNgMarkupRegistryService,
+    aDomSanitizer: DomSanitizer,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
-    aLogSvc: LoggerService
+    aLogSvc?: LoggerService
   ) {
     super();
     // logger
@@ -73,8 +75,10 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
       map(getSelector),
       opDistinctUntilChanged,
       log('selector'),
-      switchMap((selector) => markupRegistry.get(selector)),
+      switchMap((selector) => aMarkupRegistry.get(selector)),
+      log('markup'),
       opDistinctUntilChanged,
+      map((markup) => aDomSanitizer.bypassSecurityTrustHtml(markup)),
       takeUntil(this.onDestroy$)
     );
   }

@@ -22,5 +22,6 @@ Schematic to add a feature module to an application.
 
 |  Variable | Description |
 |  --- | --- |
+|  [ARTIFACT\_MODES](./schematics-version.artifact_modes.md) |  |
 |  [VERSION](./schematics-version.version.md) | Version and build number of the package |
 

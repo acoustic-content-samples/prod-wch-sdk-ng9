@@ -4,7 +4,11 @@
 
 ```ts
 
+import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import { Rule } from '@angular-devkit/schematics';
+
+// @public (undocumented)
+export const ARTIFACT_MODES: ArtifactMode[];
 
 // @public (undocumented)
 export interface GenerateVersionSchema {
