@@ -6,11 +6,6 @@
 
 import { LoggerService } from '@acoustic-content-sdk/api';
 
-// @public (undocumented)
-export class ThemeStylesModule {
-    constructor(aLoggerService?: LoggerService);
-}
-
 // @public
 export const VERSION: {
     version: {
@@ -20,6 +15,11 @@ export const VERSION: {
     };
     build: Date;
 };
+
+// @public (undocumented)
+export class WchNgThemeStylesModule {
+    constructor(aLoggerService?: LoggerService);
+}
 
 
 ```

@@ -1977,6 +1977,7 @@ export interface SiteContext {
 export interface SiteDeliveryContentItem {
     $metadata: DeliveryContentMetadata;
     navigation: DeliveryReferenceElement;
+    styles?: DeliveryReferenceElement;
     title?: string;
 }
 

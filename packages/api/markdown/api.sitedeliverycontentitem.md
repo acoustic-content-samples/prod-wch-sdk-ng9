@@ -16,5 +16,6 @@ export interface SiteDeliveryContentItem
 |  --- | --- | --- |
 |  [$metadata](./api.sitedeliverycontentitem._metadata.md) | <code>DeliveryContentMetadata</code> | Metadata record |
 |  [navigation](./api.sitedeliverycontentitem.navigation.md) | <code>DeliveryReferenceElement</code> | Navigation reference |
+|  [styles](./api.sitedeliverycontentitem.styles.md) | <code>DeliveryReferenceElement</code> | Styles reference |
 |  [title](./api.sitedeliverycontentitem.title.md) | <code>string</code> | Title |
 
