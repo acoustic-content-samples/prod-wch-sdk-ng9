@@ -13,6 +13,10 @@ export interface SiteDeliveryContentItem {
    */
   navigation: DeliveryReferenceElement;
   /**
+   * Styles reference
+   */
+  styles?: DeliveryReferenceElement;
+  /**
    * Title
    */
   title?: string;

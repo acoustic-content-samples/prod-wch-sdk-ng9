@@ -1,0 +1,32 @@
+{
+  "success": {
+    "colorCode": "green",
+    "$metadata": { "accessor": "elements.success.value" }
+  },
+  "secondary": {
+    "colorCode": "green",
+    "$metadata": { "accessor": "elements.secondary.value" }
+  },
+  "bodyBg": {
+    "colorCode": "yellow",
+    "$metadata": { "accessor": "elements.bodyBg.value" }
+  },
+  "primary": {
+    "colorCode": "red",
+    "$metadata": { "accessor": "elements.primary.value" }
+  },
+  "$metadata": {
+    "accessor": "elements",
+    "rev": "2-3b3d2d8198063e832c79c626888fb41e",
+    "created": "2020-03-05T14:28:58.405Z",
+    "libraryId": "default",
+    "classification": "content",
+    "type": "Sites Theme",
+    "locale": "en",
+    "name": "New Sites Theme",
+    "typeId": "1772170a-46d8-4af1-b967-dee816749c78",
+    "id": "32fd8607-2d33-4c12-ba91-e7bb682b3fd0",
+    "lastModified": "2020-03-05T14:58:16.033Z",
+    "systemModified": "2020-03-05T14:58:16.033Z"
+  }
+}
