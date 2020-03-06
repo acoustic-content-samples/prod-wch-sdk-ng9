@@ -50,7 +50,7 @@ export function createThemeStyles(
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // colorspace conversion
   const converter = colorToHSL(aDocument, aLogSvc);
-  const cache = createLruCache<Record<string, number>>();
+  const cache = createLruCache<number[]>();
   // the cached function
   const toHsl = (aValue: string) => cache(aValue, converter);
   // the site

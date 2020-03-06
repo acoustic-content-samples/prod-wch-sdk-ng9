@@ -138,7 +138,9 @@ export function generateMessages(options: Schema) {
     // generate the locale overhead
     const dst: string[] = [];
     dst.push(`
-    const ${getCreatorName(aLocale)}: () => FormatFunction[] = () => [`);
+    const ${getCreatorName(
+      aLocale
+    )}: () => Array<FormatFunction | undefined> = () => [`);
     // iterate over the required keys
     forEach(aKeys, (aKey: string) => {
       // check if we have a value
@@ -178,7 +180,7 @@ export function generateMessages(options: Schema) {
     dst.push(`
     const ${getCreatorName(
       aLocale
-    )}: () => FormatFunction[] = () => Object.assign([], ${getGeneratorName(
+    )}: () => Array<FormatFunction | undefined> = () => Object.assign([], ${getGeneratorName(
       aDefaultLocale
     )}(), [`);
     // iterate over the required keys
@@ -241,7 +243,7 @@ export function generateMessages(options: Schema) {
 
     const genFormatMessage = (
       aLocale: string
-    ): UnaryFunction<string, FormatFunction> | undefined => (aValue: string) => {
+    ): UnaryFunction<string | undefined, FormatFunction | undefined> => (aValue: string | undefined) => {
         if (aValue) {
           const cached = memoize(() => new IntlMessageFormat(aValue, aLocale, undefined, OPTIONS()));
           return (aData?: FormatInput) => cached().format(aData);
@@ -275,7 +277,7 @@ export function generateMessages(options: Schema) {
     );
 
     dst.push(
-      `const NLS_MAP: Record<NLS_LOCALE | string, () => FormatFunction[]> = {`
+      `const NLS_MAP: Record<NLS_LOCALE | string, () => Array<FormatFunction | undefined>> = {`
     );
     // iterate ove the locale indexes
     localeList.forEach((aLocale, idx) =>
@@ -289,14 +291,14 @@ export function generateMessages(options: Schema) {
 
     // export
     dst.push(
-      `export const NLS: UnaryFunction<NLS_LOCALE | string, FormatFunction[]> = (aKey) => (NLS_MAP[aKey] || ${getGeneratorName(
+      `export const NLS: UnaryFunction<NLS_LOCALE | string, Array<FormatFunction | undefined>> = (aKey) => (NLS_MAP[aKey] || ${getGeneratorName(
         defaultLocale
       )})();`
     );
 
     dst.push(
       `export const TRANSLATE: UnaryFunction<NLS_LOCALE | string, (aKey: NLS_KEY, aInput?: FormatInput) => FormatResult> = (aLocale: NLS_LOCALE | string) => {
-        const nls = NLS(aLocale); return (aKey: NLS_KEY, aInput?: FormatInput) => nls[aKey](aInput);
+        const nls = NLS(aLocale); return (aKey: NLS_KEY, aInput?: FormatInput) => nls[aKey]!(aInput);
       };`
     );
 

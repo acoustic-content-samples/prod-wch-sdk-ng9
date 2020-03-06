@@ -9,11 +9,12 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { UnaryFunction } from 'rxjs';
 
-function RGBToHSL(r: number, g: number, b: number): Record<string, number> {
+function RGBToHSL(r: number, g: number, b: number, a: number): number[] {
   // Make r, g, and b fractions of 1
   r /= 255;
   g /= 255;
   b /= 255;
+  a /= 255;
 
   // Find greatest and smallest channel values
   let cmin = Math.min(r, g, b),
@@ -48,7 +49,7 @@ function RGBToHSL(r: number, g: number, b: number): Record<string, number> {
   s = s * 100;
   l = l * 100;
 
-  return { h, s, l };
+  return [h, s, l, a];
 }
 
 function getDocument(aDocument?: Document): Maybe<Document> {
@@ -59,14 +60,14 @@ function getDocument(aDocument?: Document): Maybe<Document> {
     : undefined;
 }
 
-const DEFAULT_HSL = { h: 0, s: 0, l: 0 };
+const DEFAULT_HSL = [0, 0, 0, 0];
 
 const LOGGER = 'colorToHSL';
 
 export function colorToHSL(
   aDocument?: Document,
   aLogSvc?: LoggerService
-): UnaryFunction<string, Record<string, number>> {
+): UnaryFunction<string, number[]> {
   // the logger
   const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
@@ -92,10 +93,10 @@ export function colorToHSL(
     ctx.fillRect(0, 0, size, size);
     // get the pixel from the center
     const {
-      data: [r, g, b]
+      data: [r, g, b, a]
     } = ctx.getImageData(center, center, 1, 1);
     // perform the actual conversion
-    const result = RGBToHSL(r, g, b);
+    const result = RGBToHSL(r, g, b, a);
     logger.info('Converting', aValue, result);
     // ok
     return result;

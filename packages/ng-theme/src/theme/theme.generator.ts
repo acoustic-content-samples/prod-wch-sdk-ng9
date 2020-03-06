@@ -1,6 +1,6 @@
 import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import {
-  forIn,
+  isEqual,
   isNotEmpty,
   isNotNil,
   isNumber,
@@ -14,10 +14,11 @@ import { UnaryFunction } from 'rxjs';
 import { Styles } from './theme.styles';
 
 // ignore hidden keys
-const isValidKey = (aKey: string) => !aKey.startsWith('$');
+const isValidKey = (aKey: string) =>
+  !aKey.startsWith('$') && !isEqual(aKey, 'key');
 
 function reduceStyles(
-  aConverter: UnaryFunction<string, Record<string, number>>,
+  aConverter: UnaryFunction<string, number[]>,
   aPrefix: string,
   aDst: Styles,
   aValue: any,
@@ -34,12 +35,12 @@ function reduceStyles(
       // string case
       if (isString(aValue) && isNotEmpty(aValue)) {
         // assume a color for now
-        const hsl = aConverter(aValue);
+        const [h, s, l, a] = aConverter(aValue);
         // set the decomposed keys
-        forIn(
-          hsl,
-          (aValue: number, aKey: string) => (aDst[`${key}-${aKey}`] = aValue)
-        );
+        aDst[`${key}-h`] = h;
+        aDst[`${key}-s`] = `${s}%`;
+        aDst[`${key}-l`] = `${l}%`;
+        aDst[`${key}-a`] = a;
       }
       // attach the value
       aDst[key] = aValue;
@@ -69,7 +70,7 @@ function reduceStyles(
  */
 export function createStylesFromTheme(
   aTheme: DeliveryContentItem,
-  aConverter: UnaryFunction<string, Record<string, number>>
+  aConverter: UnaryFunction<string, number[]>
 ): Styles {
   // prefix using the type
   const {
