@@ -7,10 +7,13 @@ export interface PreRenderingResolver {
   /**
    * Generate a pre-rendering of the referenced content item
    *
-   * @param aID - the ID of the item
+   * @param aSelector - the markup selector. This is either the ID of a content item or `ID#accessor` to address a markup fragment
    * @param aLayoutMode - optionally the layout mode
    *
    * @returns an observable of the result
    */
-  getPreRenderedMarkup(aID: string, aLayoutMode?: string): Observable<string>;
+  getPreRenderedMarkup(
+    aSelector: string,
+    aLayoutMode?: string
+  ): Observable<string>;
 }
