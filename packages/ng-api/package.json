@@ -1,7 +1,7 @@
 {
   "name": "@acoustic-content-sdk/ng-api",
   "version": "9.0.0",
-  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "description": "Angular specific APIs and injection tokens for the Acoustic Content Services.",
   "keywords": [
     "acoustic",
     "acoustic-content",

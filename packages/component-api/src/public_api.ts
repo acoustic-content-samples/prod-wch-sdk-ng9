@@ -14,6 +14,7 @@ export * from './layout/delivery.layout.resolver';
 export * from './layout/layout.resolver';
 export * from './mapping/layout.mapping.resolver';
 export * from './page/delivery.page.resolver';
+export * from './pre-rendering/pre.rendering.resolver';
 export * from './protected-content/protected.content.service';
 export * from './rendering/rendering.context.interceptor';
 export * from './rendering/rendering.context.resolver';

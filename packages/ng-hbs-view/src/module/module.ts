@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { WchNgMarkupRegistryModule } from '../services/markup/markup.registry.module';
+import { WchNgPreRenderingModule } from '../services/pre-rendering/pre.rendering.module';
 import { WchNgHbsResolverViewModule } from '../services/resolver/resolver.module';
 import { VERSION } from './../version';
 import { WchNgHbsComponentsViewModule } from './components.module';
@@ -12,7 +13,8 @@ import { WchNgHbsComponentsViewModule } from './components.module';
     CommonModule,
     WchNgHbsComponentsViewModule,
     WchNgHbsResolverViewModule,
-    WchNgMarkupRegistryModule
+    WchNgMarkupRegistryModule,
+    WchNgPreRenderingModule
   ]
 })
 export class WchNgHbsViewModule {
