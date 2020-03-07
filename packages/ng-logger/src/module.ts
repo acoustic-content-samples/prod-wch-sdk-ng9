@@ -1,4 +1,5 @@
 /* Copyright IBM Corp. 2017 */
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { ACOUSTIC_TOKEN_LOGGER_FACTORY } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
@@ -7,6 +8,7 @@ import {
   Ng2LoggerConfigService
 } from './services/config/wch.logger.config';
 import { Ng2LoggerFactory } from './services/logger.factory';
+import { VERSION } from './version';
 
 /**
  * Module that provides the a logger factory based on {@link https://www.npmjs.com/package/ng2-logger | ng2-logger}.
@@ -23,6 +25,11 @@ import { Ng2LoggerFactory } from './services/logger.factory';
   imports: [CommonModule]
 })
 export class WchNgLoggingModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+
   /**
    * Provides the module with default configuration
    *

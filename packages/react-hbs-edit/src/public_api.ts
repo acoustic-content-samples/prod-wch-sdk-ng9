@@ -9,4 +9,5 @@ export {
   createHandlebarsComponent,
   HandlebarsComponentProps
 } from './components/handlebars/handlebars.component';
+export { createMarkupRenderer } from './services/markup-renderer/markup.renderer';
 export { VERSION } from './version';
