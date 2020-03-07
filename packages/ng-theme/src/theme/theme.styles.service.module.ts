@@ -1,4 +1,4 @@
-import { LoggerService } from '@acoustic-content-sdk/api';
+import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
   ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER,
   ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
@@ -16,7 +16,7 @@ import { createThemeStyles } from './theme.styles.service';
 const LOGGER = 'ThemeStylesModule';
 
 /**
- *
+ * Implementation of a module that exposes the `themeStyles` directive.
  */
 @NgModule({
   imports: [CommonModule],
@@ -36,6 +36,11 @@ const LOGGER = 'ThemeStylesModule';
   ]
 })
 export class WchNgThemeStylesModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+
   constructor(
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)

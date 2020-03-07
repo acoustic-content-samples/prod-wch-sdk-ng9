@@ -1,4 +1,3 @@
-import { DeliveryContentItem } from '@acoustic-content-sdk/api';
 import {
   isEqual,
   isNotEmpty,
@@ -17,6 +16,10 @@ import { Styles } from './theme.styles';
 const isValidKey = (aKey: string) =>
   !aKey.startsWith('$') && !isEqual(aKey, 'key');
 
+// check for a color
+const isColorKey = (aKey: string) =>
+  aKey.indexOf('color') >= 0 || aKey.indexOf('colour') >= 0;
+
 function reduceStyles(
   aConverter: UnaryFunction<string, number[]>,
   aPrefix: string,
@@ -33,7 +36,7 @@ function reduceStyles(
       // make it a nice key
       const key = `--${kebabCase(fullName)}`;
       // string case
-      if (isString(aValue) && isNotEmpty(aValue)) {
+      if (isString(aValue) && isNotEmpty(aValue) && isColorKey(key)) {
         // assume a color for now
         const [h, s, l, a] = aConverter(aValue);
         // set the decomposed keys
@@ -50,8 +53,8 @@ function reduceStyles(
       // recurse
       reduceForIn(
         aValue,
-        (aDst, aValue, aKey) =>
-          reduceStyles(aConverter, fullName, aDst, aValue, aKey),
+        (dst: Styles, value: any, key: string) =>
+          reduceStyles(aConverter, fullName, dst, value, key),
         aDst
       );
     }
@@ -69,17 +72,13 @@ function reduceStyles(
  * @returns the decoded styles
  */
 export function createStylesFromTheme(
-  aTheme: DeliveryContentItem,
+  aTheme: Styles,
   aConverter: UnaryFunction<string, number[]>
 ): Styles {
-  // prefix using the type
-  const {
-    $metadata: { type = '' }
-  } = aTheme;
   // iterate
   return reduceForIn(
     aTheme,
-    (aDst, aValue, aKey) => reduceStyles(aConverter, type, aDst, aValue, aKey),
+    (aDst, aValue, aKey) => reduceStyles(aConverter, '', aDst, aValue, aKey),
     {}
   );
 }

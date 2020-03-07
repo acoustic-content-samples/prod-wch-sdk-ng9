@@ -1,3 +1,4 @@
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
   ACOUSTIC_TOKEN_RENDERING_CONTEXT_RESOLVER,
   ACOUSTIC_TOKEN_SEED_RESOLVER
@@ -11,6 +12,7 @@ import { EditablePlaceholderDirective } from '../directives/editable.placeholder
 import { SelectableDirective } from '../directives/selectable.directive';
 import { RenderingContextResolverService } from '../services/rendering/rendering.context.resolver.service';
 import { WchSeedResolver } from '../services/seed/wch.seed.resolver';
+import { VERSION } from './../../version';
 import { DefaultComponent } from './../components/default/default.component';
 import { ContentRefDirective } from './../directives/contentref.directive';
 
@@ -42,4 +44,9 @@ import { ContentRefDirective } from './../directives/contentref.directive';
     }
   ]
 })
-export class WchNgComponentsModule {}
+export class WchNgComponentsModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+}

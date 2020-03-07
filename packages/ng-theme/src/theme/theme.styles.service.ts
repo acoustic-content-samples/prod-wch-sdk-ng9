@@ -1,13 +1,19 @@
-import { KEY_ID, KEY_METADATA, LoggerService } from '@acoustic-content-sdk/api';
 import {
-  DeliveryContentResolver,
-  DeliverySiteResolver
+  KEY_ID,
+  KEY_METADATA,
+  Logger,
+  LoggerService
+} from '@acoustic-content-sdk/api';
+import {
+  DeliverySiteResolver,
+  PreRenderingResolver
 } from '@acoustic-content-sdk/component-api';
 import {
   boxLoggerService,
   createLruCache,
   filterTypeOf,
   isNotNil,
+  jsonParse,
   opDeepDistinctUntilChanged,
   rxNext,
   rxPipe,
@@ -34,12 +40,32 @@ const DEFAULT_STYLES: Styles = {};
 const DEFAULT_STYLES$ = of(DEFAULT_STYLES);
 
 /**
+ * Parses the markup string into a JSON record
+ *
+ * @param aMarkup - the markup string
+ * @param aLogger - the logger
+ *
+ * @returns the parsed markup
+ */
+function safeParseMarkup(aMarkup: string, aLogger: Logger): Styles {
+  try {
+    // strip data
+    return jsonParse<Styles>(aMarkup.trim());
+  } catch (error) {
+    // log the error
+    aLogger.error('Invalid pre-rendering format.', aMarkup, error);
+    // fallback
+    return DEFAULT_STYLES;
+  }
+}
+
+/**
  * Service to create the theme contributions from
  * the current site.
  */
 export function createThemeStyles(
   aSiteResolver: DeliverySiteResolver,
-  aContentResolver: DeliveryContentResolver,
+  aPreRenderer: PreRenderingResolver,
   aDocument?: Document,
   aLogSvc?: LoggerService
 ): Observable<Styles> {
@@ -65,10 +91,16 @@ export function createThemeStyles(
     rxSelectPath(THEME_ID_PATH, DEFAULT_ID),
     log('themeId')
   );
-  // construct the styles from the theme ID
+  // construct the markup from the theme ID
   const fromThemeId = (aId: string) =>
     rxPipe(
-      aContentResolver.getDeliveryContentItem(aId),
+      // execute pre-rendering
+      aPreRenderer.getPreRenderedMarkup(aId),
+      // the pre-rendered markup
+      log('pre-rendered'),
+      // convert to styles
+      map((markup) => safeParseMarkup(markup, logger)),
+      // convert the styles to valid css variables
       map((theme) =>
         isNotNil(theme) ? createStylesFromTheme(theme, toHsl) : DEFAULT_STYLES
       )
