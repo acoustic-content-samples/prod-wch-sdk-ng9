@@ -129,7 +129,9 @@ export class WchNgMarkupRegistryService implements OnDestroy {
     const add = (aNode?: ParentNode) =>
       forEach((aNode || doc).querySelectorAll(FRAGMENT_SELECTOR), addElement);
     // add markup
-    const addMarkup = (aMarkup: string) => {
+    const addMarkup = (aId: string, aMarkup: string) => {
+      // register the full fragment
+      getSubject(aId).next(aMarkup);
       // parse the node
       template.innerHTML = aMarkup;
       // add all content
@@ -153,7 +155,9 @@ export class WchNgMarkupRegistryService implements OnDestroy {
           // markup
           log(aId),
           // if have markup, register it
-          map((markup) => (isNotNil(markup) ? addMarkup(markup) : undefined)),
+          map((markup) =>
+            isNotNil(markup) ? addMarkup(aId, markup) : undefined
+          ),
           // just get the first value
           first(),
           // unregister
