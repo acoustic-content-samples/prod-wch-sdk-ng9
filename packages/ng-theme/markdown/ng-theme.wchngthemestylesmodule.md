@@ -4,6 +4,8 @@
 
 ## WchNgThemeStylesModule class
 
+Implementation of a module that exposes the `themeStyles` directive.
+
 <b>Signature:</b>
 
 ```typescript
@@ -15,4 +17,10 @@ export declare class WchNgThemeStylesModule
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
 |  [(constructor)(aLoggerService)](./ng-theme.wchngthemestylesmodule._constructor_.md) |  | Constructs a new instance of the <code>WchNgThemeStylesModule</code> class |
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-theme.wchngthemestylesmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
 

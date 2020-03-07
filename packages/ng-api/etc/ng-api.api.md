@@ -27,6 +27,7 @@ import { LayoutResolver } from '@acoustic-content-sdk/component-api';
 import { LoggerFactory } from '@acoustic-content-sdk/api';
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { Observable } from 'rxjs';
+import { PreRenderingResolver } from '@acoustic-content-sdk/component-api';
 import { ProtectedContent } from '@acoustic-content-sdk/component-api';
 import { RenderingContextProviderV2 } from '@acoustic-content-sdk/api';
 import { RenderingContextResolver } from '@acoustic-content-sdk/component-api';
@@ -112,6 +113,9 @@ export const ACOUSTIC_TOKEN_LOGGER_SERVICE: InjectionToken<LoggerService>;
 
 // @public
 export const ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<WchNgPageService>;
+
+// @public
+export const ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER: InjectionToken<PreRenderingResolver>;
 
 // @public
 export const ACOUSTIC_TOKEN_PROTECTED_CONTENT: InjectionToken<ProtectedContent>;

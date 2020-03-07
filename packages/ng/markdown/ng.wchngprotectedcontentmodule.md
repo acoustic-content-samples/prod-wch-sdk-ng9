@@ -9,3 +9,10 @@
 ```typescript
 export declare class WchNgProtectedContentModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.wchngprotectedcontentmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

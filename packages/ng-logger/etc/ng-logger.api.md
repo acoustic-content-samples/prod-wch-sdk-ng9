@@ -6,6 +6,7 @@
 
 import { ModuleWithProviders } from '@angular/core';
 import { ObservableOrT } from '@acoustic-content-sdk/utils';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public (undocumented)
 export interface Ng2LoggerConfig {
@@ -26,6 +27,7 @@ export const VERSION: {
 // @public
 export class WchNgLoggingModule {
     static forRoot(aConfig?: Ng2LoggerConfig): ModuleWithProviders;
+    VERSION: WchSdkVersion;
 }
 
 

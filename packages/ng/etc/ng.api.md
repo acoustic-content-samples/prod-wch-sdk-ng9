@@ -28,6 +28,7 @@ import { Subject } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { Type } from '@angular/core';
 import { WchNgPageService } from '@acoustic-content-sdk/ng-api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
 export function LayoutComponent<T extends Type<any>>(aDirective?: LayoutComponentDirective): (cls: T) => void;
@@ -78,14 +79,17 @@ export const VERSION: {
 
 // @public (undocumented)
 export class WchNgComponentsModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public
 export class WchNgLoggerModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public (undocumented)
 export class WchNgProtectedContentModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public (undocumented)

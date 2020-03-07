@@ -45,6 +45,7 @@ Collection of APIs and constants for the Angular SDK
 |  [ACOUSTIC\_TOKEN\_LOGGER\_FACTORY](./ng-api.acoustic_token_logger_factory.md) |  |
 |  [ACOUSTIC\_TOKEN\_LOGGER\_SERVICE](./ng-api.acoustic_token_logger_service.md) |  |
 |  [ACOUSTIC\_TOKEN\_PAGE\_SERVICE](./ng-api.acoustic_token_page_service.md) | Injection token for the page service |
+|  [ACOUSTIC\_TOKEN\_PRE\_RENDERING\_RESOLVER](./ng-api.acoustic_token_pre_rendering_resolver.md) | Injection token for the pre rendering service |
 |  [ACOUSTIC\_TOKEN\_PROTECTED\_CONTENT](./ng-api.acoustic_token_protected_content.md) | Injection token for the protected content status |
 |  [ACOUSTIC\_TOKEN\_RENDERING\_CONTEXT\_PROVIDER](./ng-api.acoustic_token_rendering_context_provider.md) | Injection token for the rendering context provider |
 |  [ACOUSTIC\_TOKEN\_RENDERING\_CONTEXT\_RESOLVER](./ng-api.acoustic_token_rendering_context_resolver.md) | Injection token for the RenderingContextResolver |

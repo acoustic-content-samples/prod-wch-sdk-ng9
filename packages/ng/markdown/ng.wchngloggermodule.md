@@ -11,3 +11,10 @@ Modules that exposes the `ACOUSTIC_TOKEN_LOGGER_SERVICE` token
 ```typescript
 export declare class WchNgLoggerModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.wchngloggermodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

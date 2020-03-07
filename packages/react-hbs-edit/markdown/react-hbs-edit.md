@@ -22,5 +22,6 @@ Implementation of utility functions and react components that render the compone
 
 |  Variable | Description |
 |  --- | --- |
+|  [createMarkupRenderer](./react-hbs-edit.createmarkuprenderer.md) |  |
 |  [VERSION](./react-hbs-edit.version.md) | Version and build number of the package |
 

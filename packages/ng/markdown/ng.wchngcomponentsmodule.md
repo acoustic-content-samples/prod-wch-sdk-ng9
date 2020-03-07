@@ -9,3 +9,10 @@
 ```typescript
 export declare class WchNgComponentsModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.wchngcomponentsmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

@@ -20,6 +20,12 @@ For modules use `Ng2LoggerFactory.onlyModules` as the key. The value array lists
 
 For levels use `Ng2LoggerFactory.onlyLevel` as the key. The value array lists the logging levels, e.g `DATA`<!-- -->, `INFO`<!-- -->, `WARN` or `ERROR`<!-- -->. See the documentation for [ng2-logger](https://www.npmjs.com/package/ng2-logger) for more details.
 
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng-logger.wchngloggingmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+
 ## Methods
 
 |  Method | Modifiers | Description |

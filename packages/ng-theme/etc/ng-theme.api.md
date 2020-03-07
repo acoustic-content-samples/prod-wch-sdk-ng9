@@ -5,6 +5,7 @@
 ```ts
 
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
 export const VERSION: {
@@ -16,9 +17,10 @@ export const VERSION: {
     build: Date;
 };
 
-// @public (undocumented)
+// @public
 export class WchNgThemeStylesModule {
     constructor(aLoggerService?: LoggerService);
+    VERSION: WchSdkVersion;
 }
 
 

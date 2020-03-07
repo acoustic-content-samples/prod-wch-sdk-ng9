@@ -119,6 +119,11 @@ export interface LayoutResolver {
     resolveLayout: (aLayoutMode: string, aRenderingContext: RenderingContextV2) => Observable<Layout>;
 }
 
+// @public
+export interface PreRenderingResolver {
+    getPreRenderedMarkup(aID: string, aLayoutMode?: string): Observable<string>;
+}
+
 // @public (undocumented)
 export interface ProtectedContent {
     protected$: Observable<boolean>;

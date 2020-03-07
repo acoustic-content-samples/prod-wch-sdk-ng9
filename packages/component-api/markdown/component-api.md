@@ -25,6 +25,7 @@ Framework independent collection of APIs and constants
 |  [LayoutMappingDirective](./component-api.layoutmappingdirective.md) | Type of the LayoutMapping metadata. |
 |  [LayoutMappingResolver](./component-api.layoutmappingresolver.md) |  |
 |  [LayoutResolver](./component-api.layoutresolver.md) | Callback that finds the layout assigned to the object in the current rendering context. |
+|  [PreRenderingResolver](./component-api.prerenderingresolver.md) | Service interface that returns the pre-rendered content by id |
 |  [ProtectedContent](./component-api.protectedcontent.md) |  |
 |  [ReconciledDeliverySearchInput](./component-api.reconcileddeliverysearchinput.md) | Input to the reconciled search operation |
 |  [ReconciledDeliverySearchResolver](./component-api.reconcileddeliverysearchresolver.md) | Service that performs a search query against delivery search for artifacts of a particular classification. |

@@ -7,6 +7,7 @@
 import { DeliveryContentResolver } from '@acoustic-content-sdk/component-api';
 import { KEY_LAYOUT_MODE } from '@acoustic-content-sdk/utils';
 import { LoggerService } from '@acoustic-content-sdk/api';
+import { Observable } from 'rxjs';
 import { ReactComponent } from '@acoustic-content-sdk/react-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import { SchedulerLike } from 'rxjs';
@@ -14,6 +15,11 @@ import { WchInlineEditServiceV2 } from '@acoustic-content-sdk/edit-api';
 
 // @public
 export function createHandlebarsComponent(aStore: ReduxRootStore, aDeliveryContent: DeliveryContentResolver, aEditService: WchInlineEditServiceV2, aDoc: Document, aLogSvc?: LoggerService, aScheduler?: SchedulerLike): ReactComponent<HandlebarsComponentProps>;
+
+// Warning: (ae-forgotten-export) The symbol "createRendererV2" needs to be exported by the entry point public_api.d.ts
+//
+// @public (undocumented)
+export const createMarkupRenderer: typeof createRendererV2;
 
 // @public
 export interface HandlebarsComponentProps {

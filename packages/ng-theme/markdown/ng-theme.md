@@ -10,7 +10,7 @@ Implementation of the `themeStyles` directive to include theme level CSS variabl
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgThemeStylesModule](./ng-theme.wchngthemestylesmodule.md) |  |
+|  [WchNgThemeStylesModule](./ng-theme.wchngthemestylesmodule.md) | Implementation of a module that exposes the <code>themeStyles</code> directive. |
 
 ## Variables
 
