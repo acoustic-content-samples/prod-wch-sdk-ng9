@@ -1,8 +1,8 @@
 import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
-  ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER,
   ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
-  ACOUSTIC_TOKEN_LOGGER_SERVICE
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER
 } from '@acoustic-content-sdk/ng-api';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule, DOCUMENT } from '@angular/common';
@@ -28,7 +28,7 @@ const LOGGER = 'ThemeStylesModule';
       useFactory: createThemeStyles,
       deps: [
         ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
-        ACOUSTIC_TOKEN_DELIVERY_CONTENT_RESOLVER,
+        ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER,
         [new Optional(), DOCUMENT],
         [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
       ]
