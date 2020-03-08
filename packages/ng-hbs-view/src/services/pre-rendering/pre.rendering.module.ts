@@ -1,7 +1,9 @@
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { VERSION } from './../../version';
 import { WchNgPreRenderingService } from './pre.rendering.service';
 
 /**
@@ -16,4 +18,9 @@ import { WchNgPreRenderingService } from './pre.rendering.service';
     }
   ]
 })
-export class WchNgPreRenderingModule {}
+export class WchNgPreRenderingModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+}

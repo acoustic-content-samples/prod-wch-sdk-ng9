@@ -1,7 +1,9 @@
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS } from '@acoustic-content-sdk/ng-api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { VERSION } from './../../version';
 import { HandlebarsComponentResolver } from './component.resolver';
 
 /**
@@ -17,4 +19,9 @@ import { HandlebarsComponentResolver } from './component.resolver';
     }
   ]
 })
-export class WchNgHbsResolverViewModule {}
+export class WchNgHbsResolverViewModule {
+  /**
+   * Exposes the version information of this module
+   */
+  VERSION: WchSdkVersion = VERSION;
+}
