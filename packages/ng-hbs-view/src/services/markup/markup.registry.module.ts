@@ -21,10 +21,13 @@ export function initializeMarkup(
   // log
   const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
-  // log this
-  logger.info('Initializing ...');
-  // add
-  aRegistryService.add();
+  // returns the initializer
+  return () => {
+    // log this
+    logger.info('Initializing ...');
+    // add
+    aRegistryService.add();
+  };
 }
 
 /**
