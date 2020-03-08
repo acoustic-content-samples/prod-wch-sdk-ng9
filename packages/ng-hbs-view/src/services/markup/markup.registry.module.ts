@@ -1,8 +1,11 @@
 import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
-import { ExtractInjectionTokenType } from '@acoustic-content-sdk/ng-api';
+import {
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ExtractInjectionTokenType
+} from '@acoustic-content-sdk/ng-api';
 import { boxLoggerService } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, Optional } from '@angular/core';
 
 import { VERSION } from './../../version';
 import { WchNgMarkupRegistryService } from './markup.registry.service';
@@ -47,7 +50,10 @@ export function initializeMarkup(
     {
       provide: APP_INITIALIZER,
       useFactory: initializeMarkup,
-      deps: [WchNgMarkupRegistryService],
+      deps: [
+        WchNgMarkupRegistryService,
+        [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
+      ],
       multi: true
     }
   ]
