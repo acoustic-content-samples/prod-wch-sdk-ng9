@@ -12,4 +12,4 @@ import { SrcSetDirective } from './../directives/rendition/srcset.directive';
   exports: [RenditionDirective, SrcSetDirective],
   entryComponents: []
 })
-export class WchNgRenditionComponentsModule {}
+export class AcNgRenditionComponentsModule {}

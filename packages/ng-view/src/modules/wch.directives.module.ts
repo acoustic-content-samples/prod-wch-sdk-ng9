@@ -4,9 +4,9 @@ import { logModule } from '@acoustic-content-sdk/utils';
 import { CommonModule } from '@angular/common';
 import { Inject, NgModule, Optional } from '@angular/core';
 
-import { WchNgEditableDirectiveModule } from '../directives/editable/editable.directive.module';
-import { WchNgEditablePlaceholderDirectiveModule } from '../directives/editable/editable.placeholder.directive.module';
-import { WchNgSelectableDirectiveModule } from '../directives/selectable/selectable.directive.module';
+import { AcNgEditableDirectiveModule } from '../directives/editable/editable.directive.module';
+import { AcNgEditablePlaceholderDirectiveModule } from '../directives/editable/editable.placeholder.directive.module';
+import { AcNgSelectableDirectiveModule } from '../directives/selectable/selectable.directive.module';
 import { MODULE, VERSION } from '../version';
 
 /**
@@ -15,12 +15,12 @@ import { MODULE, VERSION } from '../version';
 @NgModule({
   imports: [
     CommonModule,
-    WchNgEditableDirectiveModule,
-    WchNgEditablePlaceholderDirectiveModule,
-    WchNgSelectableDirectiveModule
+    AcNgEditableDirectiveModule,
+    AcNgEditablePlaceholderDirectiveModule,
+    AcNgSelectableDirectiveModule
   ]
 })
-export class WchNgEditDirectivesModule {
+export class AcNgEditDirectivesModule {
   constructor(
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)

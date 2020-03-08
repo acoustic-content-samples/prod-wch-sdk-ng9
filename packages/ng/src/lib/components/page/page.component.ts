@@ -5,7 +5,7 @@ import {
   RenderingContextV2
 } from '@acoustic-content-sdk/api';
 import {
-  WchNgPageService,
+  AcNgPageService,
   ACOUSTIC_TOKEN_LAYOUT_RESOLVER,
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_PAGE_SERVICE,
@@ -217,7 +217,7 @@ export class PageComponent extends AbstractBaseComponent
     aZoneService: ZoneService,
     aRoute: ActivatedRoute,
     @Inject(ACOUSTIC_TOKEN_PAGE_SERVICE)
-    aPageService: WchNgPageService,
+    aPageService: AcNgPageService,
     @Inject(ACOUSTIC_TOKEN_INTERNAL_ACTIVE_PAGE)
     aActivePage: Subject<RenderingContextV2>,
     aTitleService: Title,

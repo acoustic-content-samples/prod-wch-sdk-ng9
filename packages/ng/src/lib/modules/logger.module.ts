@@ -18,7 +18,7 @@ import { VERSION } from './../../version';
     }
   ]
 })
-export class WchNgLoggerModule {
+export class AcNgLoggerModule {
   /**
    * Exposes the version information of this module
    */

@@ -1,16 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { WchNgComponentRegistryModule } from './component.registry.module';
-import { WchNgProtectedContentModule } from './protected.content.module';
-import { WchNgSearchModule } from './search.module';
+import { AcNgComponentRegistryModule } from './component.registry.module';
+import { AcNgProtectedContentModule } from './protected.content.module';
+import { AcNgSearchModule } from './search.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    WchNgSearchModule,
-    WchNgProtectedContentModule,
-    WchNgComponentRegistryModule
+    AcNgSearchModule,
+    AcNgProtectedContentModule,
+    AcNgComponentRegistryModule
   ]
 })
-export class WchNgServicesModule {}
+export class AcNgServicesModule {}

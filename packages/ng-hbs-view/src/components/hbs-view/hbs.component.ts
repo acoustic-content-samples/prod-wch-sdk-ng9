@@ -19,7 +19,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 
-import { WchNgMarkupRegistryService } from '../../services/markup/markup.registry.service';
+import { AcNgMarkupRegistryService } from '../../services/markup/markup.registry.service';
 
 const LOGGER = 'HandlebarsComponent';
 
@@ -55,7 +55,7 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   markup$: Observable<SafeHtml>;
 
   constructor(
-    aMarkupRegistry: WchNgMarkupRegistryService,
+    aMarkupRegistry: AcNgMarkupRegistryService,
     aDomSanitizer: DomSanitizer,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)

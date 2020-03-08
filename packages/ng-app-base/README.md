@@ -5,7 +5,7 @@ Convenience module to pull in generic application dependencies that are required
 **Example**:
 
 ```typescript
-import { WchNgAppBaseModule } from '@acoustic-content-sdk/ng-app-base';
+import { AcNgAppBaseModule } from '@acoustic-content-sdk/ng-app-base';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,7 @@ import { WchNgAppBaseModule } from '@acoustic-content-sdk/ng-app-base';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: false }),
-    WchNgAppBaseModule,
+    AcNgAppBaseModule,
     ...MODULES
   ]
 })

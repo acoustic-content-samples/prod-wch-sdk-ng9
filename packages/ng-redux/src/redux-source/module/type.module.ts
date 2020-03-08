@@ -14,4 +14,4 @@ import { DeliveryTypeResolverService } from '../type/delivery.type.resolver.serv
     }
   ]
 })
-export class WchNgReduxTypeModule {}
+export class AcNgReduxTypeModule {}

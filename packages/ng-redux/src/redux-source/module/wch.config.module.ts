@@ -25,4 +25,4 @@ export function proxyCreateWchConfig(
     }
   ]
 })
-export class WchNgReduxWchConfigModule {}
+export class AcNgReduxWchConfigModule {}

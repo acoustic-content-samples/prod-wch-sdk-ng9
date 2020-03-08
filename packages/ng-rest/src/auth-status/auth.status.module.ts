@@ -17,4 +17,4 @@ import { AuthStatusService } from './auth.status.service';
     }
   ]
 })
-export class WchNgRestAuthStatusModule {}
+export class AcNgRestAuthStatusModule {}

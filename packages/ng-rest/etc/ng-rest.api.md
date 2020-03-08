@@ -10,6 +10,52 @@ import { Observable } from 'rxjs';
 import { UrlConfig } from '@acoustic-content-sdk/api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
+// @public
+export class AcNgRestApiUrlModule {
+    static forRoot(aApiUrl?: HubInfoUrlProvider): ModuleWithProviders;
+}
+
+// @public
+export class AcNgRestAuthStatusModule {
+}
+
+// @public
+export class AcNgRestContentModule {
+}
+
+// @public
+export class AcNgRestFetchTextModule {
+}
+
+// @public
+export class AcNgRestLayoutMappingModule {
+}
+
+// @public
+export class AcNgRestLayoutModule {
+}
+
+// @public
+export class AcNgRestModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public
+export class AcNgRestPageModule {
+}
+
+// @public
+export class AcNgRestSiteModule {
+}
+
+// @public
+export class AcNgRestTypeModule {
+}
+
+// @public
+export class AcNgRestUrlConfigModule {
+}
+
 // @public (undocumented)
 export function proxyCreateUrlConfig(aBaseUrl?: HubInfoUrlProvider, aApiUrl?: HubInfoUrlProvider, aResourceUrl?: HubInfoUrlProvider, aDocument?: any): Observable<UrlConfig>;
 
@@ -22,52 +68,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgRestApiUrlModule {
-    static forRoot(aApiUrl?: HubInfoUrlProvider): ModuleWithProviders;
-}
-
-// @public
-export class WchNgRestAuthStatusModule {
-}
-
-// @public
-export class WchNgRestContentModule {
-}
-
-// @public
-export class WchNgRestFetchTextModule {
-}
-
-// @public
-export class WchNgRestLayoutMappingModule {
-}
-
-// @public
-export class WchNgRestLayoutModule {
-}
-
-// @public
-export class WchNgRestModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public
-export class WchNgRestPageModule {
-}
-
-// @public
-export class WchNgRestSiteModule {
-}
-
-// @public
-export class WchNgRestTypeModule {
-}
-
-// @public
-export class WchNgRestUrlConfigModule {
-}
 
 
 ```

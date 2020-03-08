@@ -13,4 +13,4 @@ import { DeliverySearchResolverService } from '../services/search/search.resolve
     }
   ]
 })
-export class WchNgSearchModule {}
+export class AcNgSearchModule {}

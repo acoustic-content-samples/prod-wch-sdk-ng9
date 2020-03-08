@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
 import { APP_INITIALIZER, NgModule, Optional } from '@angular/core';
 
 import { VERSION } from './../../version';
-import { WchNgMarkupRegistryService } from './markup.registry.service';
+import { AcNgMarkupRegistryService } from './markup.registry.service';
 
-const LOGGER = 'WchNgMarkupRegistryModule';
+const LOGGER = 'AcNgMarkupRegistryModule';
 
 declare type AppInitializerType = ExtractInjectionTokenType<
   typeof APP_INITIALIZER
@@ -23,7 +23,7 @@ declare type AppInitializerType = ExtractInjectionTokenType<
  * @param aLogSvc - optional logger
  */
 export function initializeMarkup(
-  aRegistryService: WchNgMarkupRegistryService,
+  aRegistryService: AcNgMarkupRegistryService,
   aLogSvc?: LoggerService
 ): AppInitializerType {
   // log
@@ -45,20 +45,20 @@ export function initializeMarkup(
   imports: [CommonModule],
   providers: [
     {
-      provide: WchNgMarkupRegistryService
+      provide: AcNgMarkupRegistryService
     },
     {
       provide: APP_INITIALIZER,
       useFactory: initializeMarkup,
       deps: [
-        WchNgMarkupRegistryService,
+        AcNgMarkupRegistryService,
         [new Optional(), ACOUSTIC_TOKEN_LOGGER_SERVICE]
       ],
       multi: true
     }
   ]
 })
-export class WchNgMarkupRegistryModule {
+export class AcNgMarkupRegistryModule {
   /**
    * Exposes the version information of this module
    */

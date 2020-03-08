@@ -14,4 +14,4 @@ import { HandlebarsResolverService } from '../handlebars/handlebars.resolver.ser
     }
   ]
 })
-export class WchNgReduxHbsModule {}
+export class AcNgReduxHbsModule {}

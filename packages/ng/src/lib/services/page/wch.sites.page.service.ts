@@ -10,7 +10,7 @@ import {
   ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER,
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_URL_CONFIG,
-  WchNgPageService
+  AcNgPageService
 } from '@acoustic-content-sdk/ng-api';
 import {
   boxLoggerService,
@@ -30,7 +30,7 @@ const LOGGER = 'WchSitesPageService';
 
 @Injectable({ providedIn: 'root' })
 export class WchSitesPageService extends AbstractWchPageService
-  implements WchNgPageService {
+  implements AcNgPageService {
   /**
    * Resolves the rendering context given the url segments
    *

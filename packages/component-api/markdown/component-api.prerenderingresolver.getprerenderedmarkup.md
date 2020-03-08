@@ -9,14 +9,14 @@ Generate a pre-rendering of the referenced content item
 <b>Signature:</b>
 
 ```typescript
-getPreRenderedMarkup(aID: string, aLayoutMode?: string): Observable<string>;
+getPreRenderedMarkup(aSelector: string, aLayoutMode?: string): Observable<string>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aID | <code>string</code> | the ID of the item |
+|  aSelector | <code>string</code> | the markup selector. This is either the ID of a content item or <code>ID#accessor</code> to address a markup fragment |
 |  aLayoutMode | <code>string</code> | optionally the layout mode |
 
 <b>Returns:</b>

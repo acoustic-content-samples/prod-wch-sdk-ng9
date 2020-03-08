@@ -17,6 +17,49 @@ import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
+export class AcNgEditableDirectiveModule {
+}
+
+// @public
+export class AcNgEditablePlaceholderDirectiveModule {
+}
+
+// @public
+export class AcNgEditComponentsModule {
+    constructor(aLoggerService: LoggerService);
+    VERSION: WchSdkVersion;
+}
+
+// @public
+export class AcNgEditDirectivesModule {
+    constructor(aLoggerService: LoggerService);
+}
+
+// @public
+export class AcNgHttpInlineEditProviderModule {
+}
+
+// @public (undocumented)
+export class AcNgInlineEditSelectionModule {
+    // Warning: (ae-forgotten-export) The symbol "WchInlineEditSelectionService" needs to be exported by the entry point public_api.d.ts
+    constructor(aSelService: WchInlineEditSelectionService);
+    }
+
+// @public
+export class AcNgInlineEditServiceModule {
+    constructor(aInlineEditService: WchInlineEditServiceV2, aSelectedCellConsumer?: Consumer<string>, aLoggerService?: LoggerService);
+}
+
+// @public
+export class AcNgParentInlineEditProviderModule {
+    constructor(aLoggerService: LoggerService);
+}
+
+// @public
+export class AcNgSelectableDirectiveModule {
+}
+
+// @public
 export function getInlineEditProvider(aHostWindow: WindowType, aLogSvc: LoggerService): Observable<WchInlineEditProviderV2>;
 
 // @public
@@ -31,49 +74,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgEditableDirectiveModule {
-}
-
-// @public
-export class WchNgEditablePlaceholderDirectiveModule {
-}
-
-// @public
-export class WchNgEditComponentsModule {
-    constructor(aLoggerService: LoggerService);
-    VERSION: WchSdkVersion;
-}
-
-// @public
-export class WchNgEditDirectivesModule {
-    constructor(aLoggerService: LoggerService);
-}
-
-// @public
-export class WchNgHttpInlineEditProviderModule {
-}
-
-// @public (undocumented)
-export class WchNgInlineEditSelectionModule {
-    // Warning: (ae-forgotten-export) The symbol "WchInlineEditSelectionService" needs to be exported by the entry point public_api.d.ts
-    constructor(aSelService: WchInlineEditSelectionService);
-    }
-
-// @public
-export class WchNgInlineEditServiceModule {
-    constructor(aInlineEditService: WchInlineEditServiceV2, aSelectedCellConsumer?: Consumer<string>, aLoggerService?: LoggerService);
-}
-
-// @public
-export class WchNgParentInlineEditProviderModule {
-    constructor(aLoggerService: LoggerService);
-}
-
-// @public
-export class WchNgSelectableDirectiveModule {
-}
 
 
 ```

@@ -10,8 +10,8 @@ Implementation of UI components to provide a handlebars based rendering in edit 
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgHbsComponentsEditModule](./ng-hbs-edit.wchnghbscomponentseditmodule.md) | Module to expose the handlebars rendering component. |
-|  [WchNgHbsEditModule](./ng-hbs-edit.wchnghbseditmodule.md) | Module that provides handlebars based rendering functionality in edit mode. This will register a resolver that resolves to the edit mode component if no other layout override could be located.<!-- -->Pull in this module at root level for your application in edit mode |
+|  [AcNgHbsComponentsEditModule](./ng-hbs-edit.acnghbscomponentseditmodule.md) | Module to expose the handlebars rendering component. |
+|  [AcNgHbsEditModule](./ng-hbs-edit.acnghbseditmodule.md) | Module that provides handlebars based rendering functionality in edit mode. This will register a resolver that resolves to the edit mode component if no other layout override could be located.<!-- -->Pull in this module at root level for your application in edit mode |
 
 ## Variables
 

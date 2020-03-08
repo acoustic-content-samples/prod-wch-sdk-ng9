@@ -1,11 +1,11 @@
 import { LoggerService, WchSdkVersion } from '@acoustic-content-sdk/api';
 import {
-  WchNgLoggerModule,
-  WchNgRouterModule,
-  WchNgServicesModule
+  AcNgLoggerModule,
+  AcNgRouterModule,
+  AcNgServicesModule
 } from '@acoustic-content-sdk/ng';
 import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
-import { WchNgBrowserWindowModule } from '@acoustic-content-sdk/ng-utils';
+import { AcNgBrowserWindowModule } from '@acoustic-content-sdk/ng-utils';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { Inject, NgModule, Optional } from '@angular/core';
 
@@ -16,13 +16,13 @@ import { MODULE, VERSION } from '../version';
  */
 @NgModule({
   imports: [
-    WchNgBrowserWindowModule,
-    WchNgServicesModule,
-    WchNgRouterModule,
-    WchNgLoggerModule
+    AcNgBrowserWindowModule,
+    AcNgServicesModule,
+    AcNgRouterModule,
+    AcNgLoggerModule
   ]
 })
-export class WchNgAppBaseModule {
+export class AcNgAppBaseModule {
   /**
    * Exposes the version information of this module
    */

@@ -15,7 +15,7 @@ import { VERSION } from './../../version';
     }
   ]
 })
-export class WchNgProtectedContentModule {
+export class AcNgProtectedContentModule {
   /**
    * Exposes the version information of this module
    */

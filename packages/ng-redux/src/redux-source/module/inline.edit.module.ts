@@ -23,4 +23,4 @@ import { InlineEditSelectionProviderService } from '../inline-edit/inline.edit.s
     }
   ]
 })
-export class WchNgReduxInlineEditModule {}
+export class AcNgReduxInlineEditModule {}

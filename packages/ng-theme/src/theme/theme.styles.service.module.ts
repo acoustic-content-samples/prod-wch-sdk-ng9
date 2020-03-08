@@ -35,7 +35,7 @@ const LOGGER = 'ThemeStylesModule';
     }
   ]
 })
-export class WchNgThemeStylesModule {
+export class AcNgThemeStylesModule {
   /**
    * Exposes the version information of this module
    */

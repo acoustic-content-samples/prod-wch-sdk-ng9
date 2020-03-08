@@ -18,6 +18,66 @@ import { UrlConfig } from '@acoustic-content-sdk/api';
 import { WchConfig } from '@acoustic-content-sdk/edit-api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
+// @public
+export class AcNgParentFrameReduxStoreModule {
+    // Warning: (ae-forgotten-export) The symbol "PageSelectionService" needs to be exported by the entry point public_api.d.ts
+    constructor(pageSelectionService: PageSelectionService, aLogSvc: LoggerService);
+    }
+
+// @public (undocumented)
+export class AcNgReduxAuthStatusModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxContentModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxFetchTextModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxHbsModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxLayoutMappingModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxLayoutModule {
+}
+
+// @public
+export class AcNgReduxModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public (undocumented)
+export class AcNgReduxPageModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxSiteModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxStoreModule {
+    constructor(pageSelectionService: PageSelectionService);
+    }
+
+// @public (undocumented)
+export class AcNgReduxTypeModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxUrlConfigModule {
+}
+
+// @public (undocumented)
+export class AcNgReduxWchConfigModule {
+}
+
 // @public (undocumented)
 export function createStore(msgService: MessageService, aLogSvc?: LoggerService): ReduxRootStore;
 
@@ -36,66 +96,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgParentFrameReduxStoreModule {
-    // Warning: (ae-forgotten-export) The symbol "PageSelectionService" needs to be exported by the entry point public_api.d.ts
-    constructor(pageSelectionService: PageSelectionService, aLogSvc: LoggerService);
-    }
-
-// @public (undocumented)
-export class WchNgReduxAuthStatusModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxContentModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxFetchTextModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxHbsModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxLayoutMappingModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxLayoutModule {
-}
-
-// @public
-export class WchNgReduxModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public (undocumented)
-export class WchNgReduxPageModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxSiteModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxStoreModule {
-    constructor(pageSelectionService: PageSelectionService);
-    }
-
-// @public (undocumented)
-export class WchNgReduxTypeModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxUrlConfigModule {
-}
-
-// @public (undocumented)
-export class WchNgReduxWchConfigModule {
-}
 
 
 ```

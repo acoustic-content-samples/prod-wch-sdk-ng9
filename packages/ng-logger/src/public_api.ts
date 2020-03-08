@@ -6,6 +6,6 @@
  * @packageDocumentation
  */
 
-export { WchNgLoggingModule } from './module';
+export { AcNgLoggingModule } from './module';
 export { Ng2LoggerConfig } from './services/config/wch.logger.config';
 export { VERSION } from './version';

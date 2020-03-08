@@ -25,4 +25,4 @@ export function proxyCreateUrlConfig(
     }
   ]
 })
-export class WchNgReduxUrlConfigModule {}
+export class AcNgReduxUrlConfigModule {}

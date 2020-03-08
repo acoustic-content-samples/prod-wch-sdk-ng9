@@ -14,4 +14,4 @@ import { DeliveryPageResolverService } from '../page/delivery.page.resolver.serv
     }
   ]
 })
-export class WchNgReduxPageModule {}
+export class AcNgReduxPageModule {}

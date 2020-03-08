@@ -3,5 +3,5 @@
  *
  * @packageDocumentation
  */
-export { WchNgThemeStylesModule } from './theme/theme.styles.service.module';
+export { AcNgThemeStylesModule } from './theme/theme.styles.service.module';
 export { VERSION } from './version';

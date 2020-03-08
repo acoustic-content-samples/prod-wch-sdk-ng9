@@ -25,4 +25,4 @@ import { createFetchText } from './/fetch.text';
     }
   ]
 })
-export class WchNgRestFetchTextModule {}
+export class AcNgRestFetchTextModule {}

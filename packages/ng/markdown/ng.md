@@ -10,13 +10,13 @@ Services and components for Angular based Acoustic Content SPAs.
 
 |  Class | Description |
 |  --- | --- |
+|  [AcNgComponentsModule](./ng.acngcomponentsmodule.md) |  |
+|  [AcNgLoggerModule](./ng.acngloggermodule.md) | Modules that exposes the <code>ACOUSTIC_TOKEN_LOGGER_SERVICE</code> token |
+|  [AcNgProtectedContentModule](./ng.acngprotectedcontentmodule.md) |  |
+|  [AcNgRouterModule](./ng.acngroutermodule.md) |  |
+|  [AcNgSearchModule](./ng.acngsearchmodule.md) |  |
+|  [AcNgServicesModule](./ng.acngservicesmodule.md) |  |
 |  [PageComponent](./ng.pagecomponent.md) | The page component monitors |
-|  [WchNgComponentsModule](./ng.wchngcomponentsmodule.md) |  |
-|  [WchNgLoggerModule](./ng.wchngloggermodule.md) | Modules that exposes the <code>ACOUSTIC_TOKEN_LOGGER_SERVICE</code> token |
-|  [WchNgProtectedContentModule](./ng.wchngprotectedcontentmodule.md) |  |
-|  [WchNgRouterModule](./ng.wchngroutermodule.md) |  |
-|  [WchNgSearchModule](./ng.wchngsearchmodule.md) |  |
-|  [WchNgServicesModule](./ng.wchngservicesmodule.md) |  |
 |  [WchSelectFirstRootPageGuard](./ng.wchselectfirstrootpageguard.md) |  |
 
 ## Functions

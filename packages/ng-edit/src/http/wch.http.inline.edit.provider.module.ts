@@ -35,4 +35,4 @@ import { createWchHttpInlineEditProviderV2 } from './wch.http.inline.edit.provid
     }
   ]
 })
-export class WchNgHttpInlineEditProviderModule {}
+export class AcNgHttpInlineEditProviderModule {}

@@ -17,4 +17,4 @@ import { DeliveryTypeResolverService } from './delivery.type.resolver.service';
     }
   ]
 })
-export class WchNgRestTypeModule {}
+export class AcNgRestTypeModule {}

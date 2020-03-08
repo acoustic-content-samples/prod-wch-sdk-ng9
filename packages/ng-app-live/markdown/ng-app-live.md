@@ -10,7 +10,7 @@ Module that contains a default configuration to run an [Angular](https://angular
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgAppLiveModule](./ng-app-live.wchngapplivemodule.md) | Imports the modules required for live functionality |
+|  [AcNgAppLiveModule](./ng-app-live.acngapplivemodule.md) | Imports the modules required for live functionality |
 
 ## Variables
 

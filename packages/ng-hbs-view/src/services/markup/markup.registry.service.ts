@@ -35,7 +35,7 @@ import {
   takeUntil
 } from 'rxjs/operators';
 
-const LOGGER = 'WchNgMarkupRegistryService';
+const LOGGER = 'AcNgMarkupRegistryService';
 
 const DATA_ACOUSTIC_MARKUP_FRAGMENT = 'data-acoustic-markup-fragment';
 
@@ -84,7 +84,7 @@ function sendRequest<T>(
 }
 
 @Injectable()
-export class WchNgMarkupRegistryService implements OnDestroy {
+export class AcNgMarkupRegistryService implements OnDestroy {
   // destroy callback
   private readonly done$ = createSingleSubject<void>();
   // manage markup fragments

@@ -101,14 +101,14 @@ function updateAppModule(
       const mainPath = appProject.architect!.build!.options.main;
       const modulePath = getAppModulePath(host, mainPath);
 
-      // import WchNgModule
+      // import AcNgModule
       changeSourceFile(
         modulePath,
         (path, source) =>
           addImportToModule(
             source,
             path,
-            'WchNgModule.forRoot(environment)',
+            'AcNgModule.forRoot(environment)',
             '@acoustic-content-sdk/ng'
           ),
         host
@@ -141,7 +141,7 @@ function updateAppModule(
         host
       );
 
-      // import WchNgEditModule
+      // import AcNgEditModule
       if (!!options.editable) {
         changeSourceFile(
           modulePath,
@@ -149,7 +149,7 @@ function updateAppModule(
             addImportToModule(
               source,
               path,
-              'WchNgEditModule.forRoot()',
+              'AcNgEditModule.forRoot()',
               '@acoustic-content-sdk/ng-edit'
             ),
           host

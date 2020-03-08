@@ -9,5 +9,5 @@ Injection token for the page service
 <b>Signature:</b>
 
 ```typescript
-ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<WchNgPageService>
+ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<AcNgPageService>
 ```

@@ -1,10 +1,10 @@
 /* Copyright IBM Corp. 2017 */
 import { NgModule } from '@angular/core';
 
-import { WchNgRenditionComponentsModule } from './modules/components.module';
-import { WchNgRenditionServicesModule } from './modules/services.module';
+import { AcNgRenditionComponentsModule } from './modules/components.module';
+import { AcNgRenditionServicesModule } from './modules/services.module';
 
 @NgModule({
-  exports: [WchNgRenditionComponentsModule, WchNgRenditionServicesModule]
+  exports: [AcNgRenditionComponentsModule, AcNgRenditionServicesModule]
 })
-export class WchNgRenditionModule {}
+export class AcNgRenditionModule {}

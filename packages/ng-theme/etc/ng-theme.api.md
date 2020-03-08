@@ -8,6 +8,12 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
+export class AcNgThemeStylesModule {
+    constructor(aLoggerService?: LoggerService);
+    VERSION: WchSdkVersion;
+}
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -16,12 +22,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgThemeStylesModule {
-    constructor(aLoggerService?: LoggerService);
-    VERSION: WchSdkVersion;
-}
 
 
 ```

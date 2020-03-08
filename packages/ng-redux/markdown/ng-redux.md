@@ -10,20 +10,20 @@ Implementation of Angular providers based on Redux.
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgParentFrameReduxStoreModule](./ng-redux.wchngparentframereduxstoremodule.md) | Module that exposes an implementation of <code>ACOUSTIC_TOKEN_REDUX_STORE</code>. The implementation accesses the store from the parent iframe. Prerequisite is that the parent (the shell) and the application that uses this module run on the same origin.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_EDIT_HOST_WINDOW</code> |
-|  [WchNgReduxAuthStatusModule](./ng-redux.wchngreduxauthstatusmodule.md) |  |
-|  [WchNgReduxContentModule](./ng-redux.wchngreduxcontentmodule.md) |  |
-|  [WchNgReduxFetchTextModule](./ng-redux.wchngreduxfetchtextmodule.md) |  |
-|  [WchNgReduxHbsModule](./ng-redux.wchngreduxhbsmodule.md) |  |
-|  [WchNgReduxLayoutMappingModule](./ng-redux.wchngreduxlayoutmappingmodule.md) |  |
-|  [WchNgReduxLayoutModule](./ng-redux.wchngreduxlayoutmodule.md) |  |
-|  [WchNgReduxModule](./ng-redux.wchngreduxmodule.md) | Module that provides the SDK services based on a redux store implementation.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_REDUX_STORE</code> |
-|  [WchNgReduxPageModule](./ng-redux.wchngreduxpagemodule.md) |  |
-|  [WchNgReduxSiteModule](./ng-redux.wchngreduxsitemodule.md) |  |
-|  [WchNgReduxStoreModule](./ng-redux.wchngreduxstoremodule.md) |  |
-|  [WchNgReduxTypeModule](./ng-redux.wchngreduxtypemodule.md) |  |
-|  [WchNgReduxUrlConfigModule](./ng-redux.wchngreduxurlconfigmodule.md) |  |
-|  [WchNgReduxWchConfigModule](./ng-redux.wchngreduxwchconfigmodule.md) |  |
+|  [AcNgParentFrameReduxStoreModule](./ng-redux.acngparentframereduxstoremodule.md) | Module that exposes an implementation of <code>ACOUSTIC_TOKEN_REDUX_STORE</code>. The implementation accesses the store from the parent iframe. Prerequisite is that the parent (the shell) and the application that uses this module run on the same origin.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_EDIT_HOST_WINDOW</code> |
+|  [AcNgReduxAuthStatusModule](./ng-redux.acngreduxauthstatusmodule.md) |  |
+|  [AcNgReduxContentModule](./ng-redux.acngreduxcontentmodule.md) |  |
+|  [AcNgReduxFetchTextModule](./ng-redux.acngreduxfetchtextmodule.md) |  |
+|  [AcNgReduxHbsModule](./ng-redux.acngreduxhbsmodule.md) |  |
+|  [AcNgReduxLayoutMappingModule](./ng-redux.acngreduxlayoutmappingmodule.md) |  |
+|  [AcNgReduxLayoutModule](./ng-redux.acngreduxlayoutmodule.md) |  |
+|  [AcNgReduxModule](./ng-redux.acngreduxmodule.md) | Module that provides the SDK services based on a redux store implementation.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_REDUX_STORE</code> |
+|  [AcNgReduxPageModule](./ng-redux.acngreduxpagemodule.md) |  |
+|  [AcNgReduxSiteModule](./ng-redux.acngreduxsitemodule.md) |  |
+|  [AcNgReduxStoreModule](./ng-redux.acngreduxstoremodule.md) |  |
+|  [AcNgReduxTypeModule](./ng-redux.acngreduxtypemodule.md) |  |
+|  [AcNgReduxUrlConfigModule](./ng-redux.acngreduxurlconfigmodule.md) |  |
+|  [AcNgReduxWchConfigModule](./ng-redux.acngreduxwchconfigmodule.md) |  |
 
 ## Functions
 

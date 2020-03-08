@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { WchNgComponentsModule } from '@acoustic-content-sdk/ng';
+import { AcNgComponentsModule } from '@acoustic-content-sdk/ng';
 
 import { HeroImageLayoutComponent } from './heroImageLayout';
 
@@ -10,7 +10,7 @@ import { HeroImageLayoutComponent } from './heroImageLayout';
     */
     imports: [
         CommonModule,
-        WchNgComponentsModule
+        AcNgComponentsModule
     ],
     declarations: [HeroImageLayoutComponent],
     exports: [HeroImageLayoutComponent],

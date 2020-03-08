@@ -16,4 +16,4 @@ import { WchEditablePlaceholderDirectiveServiceImpl } from './editable.placehold
     }
   ]
 })
-export class WchNgEditablePlaceholderDirectiveModule {}
+export class AcNgEditablePlaceholderDirectiveModule {}

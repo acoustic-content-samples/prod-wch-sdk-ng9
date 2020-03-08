@@ -5,12 +5,12 @@ import { boxLoggerService, rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 
-import { WchNgMarkupRegistryService } from '../markup/markup.registry.service';
+import { AcNgMarkupRegistryService } from '../markup/markup.registry.service';
 
-const LOGGER = 'WchNgPreRenderingService';
+const LOGGER = 'AcNgPreRenderingService';
 
 @Injectable()
-export class WchNgPreRenderingService implements PreRenderingResolver {
+export class AcNgPreRenderingService implements PreRenderingResolver {
   /**
    * Generate a pre-rendering of the referenced content item
    *
@@ -25,7 +25,7 @@ export class WchNgPreRenderingService implements PreRenderingResolver {
   ) => Observable<string>;
 
   constructor(
-    aMarkupService: WchNgMarkupRegistryService,
+    aMarkupService: AcNgMarkupRegistryService,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService

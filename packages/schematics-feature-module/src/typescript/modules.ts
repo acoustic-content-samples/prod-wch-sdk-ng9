@@ -57,7 +57,7 @@ function getNgModuleDecorator(aDecl: ClassDeclaration): Decorator {
   return firstElement(aDecl.decorators.filter(isNgModuleDecorator));
 }
 
-export const ACOUSTIC_NG_APP_BASE_MODULE = 'WchNgAppBaseModule';
+export const ACOUSTIC_NG_APP_BASE_MODULE = 'AcNgAppBaseModule';
 
 function hasLiteralBaseImport(aExpr: ObjectLiteralExpression): boolean {
   return isNotEmpty(

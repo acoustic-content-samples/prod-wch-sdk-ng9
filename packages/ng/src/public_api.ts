@@ -15,10 +15,10 @@ export {
   RenderingContextDirective
 } from './lib/decorators/layout/layout.directive';
 export { WchSelectFirstRootPageGuard } from './lib/guards/root.page.guard';
-export { WchNgComponentsModule } from './lib/modules/components.module';
-export { WchNgLoggerModule } from './lib/modules/logger.module';
-export { WchNgProtectedContentModule } from './lib/modules/protected.content.module';
-export { WchNgRouterModule } from './lib/modules/router.module';
-export { WchNgSearchModule } from './lib/modules/search.module';
-export { WchNgServicesModule } from './lib/modules/services.module';
+export { AcNgComponentsModule } from './lib/modules/components.module';
+export { AcNgLoggerModule } from './lib/modules/logger.module';
+export { AcNgProtectedContentModule } from './lib/modules/protected.content.module';
+export { AcNgRouterModule } from './lib/modules/router.module';
+export { AcNgSearchModule } from './lib/modules/search.module';
+export { AcNgServicesModule } from './lib/modules/services.module';
 export { VERSION } from './version';

@@ -17,4 +17,4 @@ import { DeliveryPageResolverService } from './delivery.page.resolver.service';
     }
   ]
 })
-export class WchNgRestPageModule {}
+export class AcNgRestPageModule {}

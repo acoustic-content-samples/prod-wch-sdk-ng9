@@ -13,4 +13,4 @@ import { ComponentRegistryService } from '../services/components/component.regis
     }
   ]
 })
-export class WchNgComponentRegistryModule {}
+export class AcNgComponentRegistryModule {}

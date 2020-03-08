@@ -11,4 +11,4 @@ import { HandlebarsRendererComponent } from './renderer.component';
   imports: [CommonModule],
   providers: [HandlebarsRendererComponent]
 })
-export class WchNgHbsRendererModule {}
+export class AcNgHbsRendererModule {}

@@ -17,4 +17,4 @@ import { DeliveryLayoutMappingResolverService } from './delivery.layout.mapping.
     }
   ]
 })
-export class WchNgRestLayoutMappingModule {}
+export class AcNgRestLayoutMappingModule {}

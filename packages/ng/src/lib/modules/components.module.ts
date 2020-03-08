@@ -44,7 +44,7 @@ import { ContentRefDirective } from './../directives/contentref.directive';
     }
   ]
 })
-export class WchNgComponentsModule {
+export class AcNgComponentsModule {
   /**
    * Exposes the version information of this module
    */

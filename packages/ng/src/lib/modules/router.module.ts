@@ -13,10 +13,10 @@ import {
 } from '../services/page/internal.active.page.service';
 import { WchActivePageService } from '../services/page/wch.active.page.service';
 import { WchSitesPageService } from '../services/page/wch.sites.page.service';
-import { WchNgComponentsModule } from './components.module';
+import { AcNgComponentsModule } from './components.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, WchNgComponentsModule],
+  imports: [CommonModule, RouterModule, AcNgComponentsModule],
   declarations: [PageComponent],
   exports: [PageComponent],
   entryComponents: [PageComponent],
@@ -35,4 +35,4 @@ import { WchNgComponentsModule } from './components.module';
     }
   ]
 })
-export class WchNgRouterModule {}
+export class AcNgRouterModule {}

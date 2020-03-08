@@ -6,8 +6,8 @@
   "properties": {
     "module": {
       "type": "string",
-      "description": "Name of the main module to import. Use a comma separated list for more than one module, defaults to 'WchNgLoggingModule'.",
-      "default": "WchNgLoggingModule.forRoot({})"
+      "description": "Name of the main module to import. Use a comma separated list for more than one module, defaults to 'AcNgLoggingModule'.",
+      "default": "AcNgLoggingModule.forRoot({})"
     }
   },
   "required": [],

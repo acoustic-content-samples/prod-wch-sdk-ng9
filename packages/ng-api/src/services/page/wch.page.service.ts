@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
  * Service interface that allows to resolve a rendering context
  * given the page.
  */
-export interface WchNgPageService extends WchPageService {
+export interface AcNgPageService extends WchPageService {
   /**
    * Resolves the rendering context given the url segments
    *
@@ -34,6 +34,6 @@ export interface WchNgPageService extends WchPageService {
 /**
  * Injection token for the page service
  */
-export const ACOUSTIC_TOKEN_PAGE_SERVICE = new InjectionToken<WchNgPageService>(
+export const ACOUSTIC_TOKEN_PAGE_SERVICE = new InjectionToken<AcNgPageService>(
   'ACOUSTIC_TOKEN_PAGE_SERVICE'
 );

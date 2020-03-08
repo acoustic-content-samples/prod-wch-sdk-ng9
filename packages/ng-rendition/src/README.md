@@ -1,4 +1,4 @@
-# WchNgRenditionModule
+# AcNgRenditionModule
 
 Module that allows to attach inline edit functionality to a [WCH](https://www.npmjs.com/package/acoustic-content-sdk-ng) based [Angular](https://angular.io/) application.
 
@@ -10,17 +10,17 @@ Install the module
 npm install --save acoustic-content-sdk-ng-edit
 ```
 
-Import the module into your application. Use the environment variable to configure the module, this is the same configuration as for the main `WchNgModule` module.
+Import the module into your application. Use the environment variable to configure the module, this is the same configuration as for the main `AcNgModule` module.
 
 ```typescript
-import {WchNgEditModule} from 'acoustic-content-sdk-ng-edit';
+import {AcNgEditModule} from 'acoustic-content-sdk-ng-edit';
 
 ...
 
 @NgModule({
   ...
   imports: [
-    WchNgEditModule.forRoot(environment)
+    AcNgEditModule.forRoot(environment)
     ...
   ]
 

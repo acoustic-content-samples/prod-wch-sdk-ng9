@@ -22,7 +22,7 @@ import { defer, from, Observable, Subscribable, throwError } from 'rxjs';
 
 import { MODULE, VERSION } from './../version';
 
-const LOGGER = 'WchNgParentInlineEditProviderModule';
+const LOGGER = 'AcNgParentInlineEditProviderModule';
 
 /**
  * Accesses the `WchInlineEditProviderV2` from another window. This other window
@@ -97,7 +97,7 @@ export function getInlineEditProvider(
     }
   ]
 })
-export class WchNgParentInlineEditProviderModule {
+export class AcNgParentInlineEditProviderModule {
   constructor(
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)

@@ -19,7 +19,7 @@ import { HandlebarsComponentResolver } from './component.resolver';
     }
   ]
 })
-export class WchNgHbsResolverViewModule {
+export class AcNgHbsResolverViewModule {
   /**
    * Exposes the version information of this module
    */

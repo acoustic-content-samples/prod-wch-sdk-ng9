@@ -30,4 +30,4 @@ export function proxyGetEditHostWindow(aCurrentWindow: WindowType): WindowType {
     }
   ]
 })
-export class WchNgEditHostWindowModule {}
+export class AcNgEditHostWindowModule {}

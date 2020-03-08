@@ -15,7 +15,7 @@ import { VERSION } from './../version';
   exports: [HandlebarsComponent],
   entryComponents: [HandlebarsComponent]
 })
-export class WchNgHbsComponentsEditModule {
+export class AcNgHbsComponentsEditModule {
   /**
    * Exposes the version information of this module
    */

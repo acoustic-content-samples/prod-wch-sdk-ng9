@@ -15,7 +15,7 @@ import { Inject, NgModule, Optional } from '@angular/core';
 import { MODULE, VERSION } from './../version';
 import { WchInlineEditService } from './wch.inline.edit.service';
 
-const LOGGER = 'WchNgInlineEditServiceModule';
+const LOGGER = 'AcNgInlineEditServiceModule';
 
 /**
  * Provides token `ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE` requires a `ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER`
@@ -30,7 +30,7 @@ const LOGGER = 'WchNgInlineEditServiceModule';
     }
   ]
 })
-export class WchNgInlineEditServiceModule {
+export class AcNgInlineEditServiceModule {
   constructor(
     @Inject(ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE)
     aInlineEditService: WchInlineEditServiceV2,

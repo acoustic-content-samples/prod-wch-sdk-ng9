@@ -4,18 +4,18 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { VERSION } from './../../version';
-import { WchNgReduxAuthStatusModule } from './auth.status.module';
-import { WchNgReduxContentModule } from './content.module';
-import { WchNgReduxFetchTextModule } from './fetch.text.module';
-import { WchNgReduxHbsModule } from './handlebars.module';
-import { WchNgReduxInlineEditModule } from './inline.edit.module';
-import { WchNgReduxLayoutMappingModule } from './layout.mapping.module';
-import { WchNgReduxLayoutModule } from './layout.module';
-import { WchNgReduxPageModule } from './page.module';
-import { WchNgReduxSiteModule } from './site.module';
-import { WchNgReduxTypeModule } from './type.module';
-import { WchNgReduxUrlConfigModule } from './url.config.module';
-import { WchNgReduxWchConfigModule } from './wch.config.module';
+import { AcNgReduxAuthStatusModule } from './auth.status.module';
+import { AcNgReduxContentModule } from './content.module';
+import { AcNgReduxFetchTextModule } from './fetch.text.module';
+import { AcNgReduxHbsModule } from './handlebars.module';
+import { AcNgReduxInlineEditModule } from './inline.edit.module';
+import { AcNgReduxLayoutMappingModule } from './layout.mapping.module';
+import { AcNgReduxLayoutModule } from './layout.module';
+import { AcNgReduxPageModule } from './page.module';
+import { AcNgReduxSiteModule } from './site.module';
+import { AcNgReduxTypeModule } from './type.module';
+import { AcNgReduxUrlConfigModule } from './url.config.module';
+import { AcNgReduxWchConfigModule } from './wch.config.module';
 
 /**
  * Module that provides the SDK services based on a redux store implementation.
@@ -25,21 +25,21 @@ import { WchNgReduxWchConfigModule } from './wch.config.module';
 @NgModule({
   imports: [
     CommonModule,
-    WchNgReduxUrlConfigModule,
-    WchNgReduxWchConfigModule,
-    WchNgReduxContentModule,
-    WchNgReduxLayoutModule,
-    WchNgReduxLayoutMappingModule,
-    WchNgReduxTypeModule,
-    WchNgReduxPageModule,
-    WchNgReduxSiteModule,
-    WchNgReduxHbsModule,
-    WchNgReduxAuthStatusModule,
-    WchNgReduxFetchTextModule,
-    WchNgReduxInlineEditModule
+    AcNgReduxUrlConfigModule,
+    AcNgReduxWchConfigModule,
+    AcNgReduxContentModule,
+    AcNgReduxLayoutModule,
+    AcNgReduxLayoutMappingModule,
+    AcNgReduxTypeModule,
+    AcNgReduxPageModule,
+    AcNgReduxSiteModule,
+    AcNgReduxHbsModule,
+    AcNgReduxAuthStatusModule,
+    AcNgReduxFetchTextModule,
+    AcNgReduxInlineEditModule
   ]
 })
-export class WchNgReduxModule {
+export class AcNgReduxModule {
   /**
    * Exposes the version information of this module
    */

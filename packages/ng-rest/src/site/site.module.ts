@@ -17,4 +17,4 @@ import { SiteResolverService } from './site.resolver.service';
     }
   ]
 })
-export class WchNgRestSiteModule {}
+export class AcNgRestSiteModule {}

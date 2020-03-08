@@ -39,6 +39,12 @@ import { UrlSegment } from '@angular/router';
 import { WchPageService } from '@acoustic-content-sdk/component-api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
+// @public
+export interface AcNgPageService extends WchPageService {
+    getRenderingContextByActivatedRoute(aRoute: ActivatedRoute): Observable<RenderingContextV2 | null | undefined>;
+    getRenderingContextByUrlSegments(aSegments: UrlSegment[]): Observable<RenderingContextV2 | null | undefined>;
+}
+
 // @public (undocumented)
 export const ACOUSTIC_RC_INTERCEPTOR_TOKEN = "8453750A-4519-4184-840B-D490E909D23E";
 
@@ -112,7 +118,7 @@ export const ACOUSTIC_TOKEN_LOGGER_FACTORY: InjectionToken<LoggerFactory>;
 export const ACOUSTIC_TOKEN_LOGGER_SERVICE: InjectionToken<LoggerService>;
 
 // @public
-export const ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<WchNgPageService>;
+export const ACOUSTIC_TOKEN_PAGE_SERVICE: InjectionToken<AcNgPageService>;
 
 // @public
 export const ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER: InjectionToken<PreRenderingResolver>;
@@ -163,6 +169,9 @@ export interface ComponentTypeRefResolver extends AbstractComponentTypeRefResolv
 }
 
 // @public
+export type ExtractInjectionTokenType<T extends InjectionToken<any>> = T extends InjectionToken<infer F> ? F : never;
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -171,12 +180,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export interface WchNgPageService extends WchPageService {
-    getRenderingContextByActivatedRoute(aRoute: ActivatedRoute): Observable<RenderingContextV2 | null | undefined>;
-    getRenderingContextByUrlSegments(aSegments: UrlSegment[]): Observable<RenderingContextV2 | null | undefined>;
-}
 
 
 ```

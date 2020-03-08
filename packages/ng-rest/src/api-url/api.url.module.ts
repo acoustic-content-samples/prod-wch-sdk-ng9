@@ -10,7 +10,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
  * the API URL explicitly.
  */
 @NgModule()
-export class WchNgRestApiUrlModule {
+export class AcNgRestApiUrlModule {
   /**
    * Provides the API URL
    *
@@ -20,7 +20,7 @@ export class WchNgRestApiUrlModule {
    */
   static forRoot(aApiUrl?: HubInfoUrlProvider): ModuleWithProviders {
     return {
-      ngModule: WchNgRestApiUrlModule,
+      ngModule: AcNgRestApiUrlModule,
       providers: [{ provide: ACOUSTIC_TOKEN_API_URL, useValue: aApiUrl }]
     };
   }

@@ -5,11 +5,11 @@ import {
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
-import { WchNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
-import { WchNgRestModule } from '@acoustic-content-sdk/ng-rest';
+import { AcNgLoggingModule } from '@acoustic-content-sdk/ng-logger';
+import { AcNgRestModule } from '@acoustic-content-sdk/ng-rest';
 
-import { WchNgComponentsModule } from '../lib/modules/components.module';
-import { WchNgRouterModule } from '../lib/modules/router.module';
+import { AcNgComponentsModule } from '../lib/modules/components.module';
+import { AcNgRouterModule } from '../lib/modules/router.module';
 import { WchInfoService } from '../lib/services/info/wch.info.service';
 import { WchLoggerService } from '../lib/services/logger/wch.logger.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,10 +21,10 @@ import { PageLayoutModule } from './layouts/page.layout.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WchNgLoggingModule.forRoot(),
-    WchNgRestModule,
-    WchNgRouterModule,
-    WchNgComponentsModule,
+    AcNgLoggingModule.forRoot(),
+    AcNgRestModule,
+    AcNgRouterModule,
+    AcNgComponentsModule,
     PageLayoutModule
   ],
   providers: [

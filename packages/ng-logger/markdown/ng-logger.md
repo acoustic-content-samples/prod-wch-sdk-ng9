@@ -10,7 +10,7 @@ Implementation of a logger service based on [ng2-logger](https://www.npmjs.com/p
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgLoggingModule](./ng-logger.wchngloggingmodule.md) | Module that provides the a logger factory based on [ng2-logger](https://www.npmjs.com/package/ng2-logger)<!-- -->. |
+|  [AcNgLoggingModule](./ng-logger.acngloggingmodule.md) | Module that provides the a logger factory based on [ng2-logger](https://www.npmjs.com/package/ng2-logger)<!-- -->. |
 
 ## Interfaces
 

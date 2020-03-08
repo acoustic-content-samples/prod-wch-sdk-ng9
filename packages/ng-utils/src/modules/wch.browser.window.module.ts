@@ -12,4 +12,4 @@ import { BROWSER_WINDOW_PROVIDERS } from '../services/window/window.service';
   imports: [CommonModule],
   providers: [...BROWSER_WINDOW_PROVIDERS]
 })
-export class WchNgBrowserWindowModule {}
+export class AcNgBrowserWindowModule {}

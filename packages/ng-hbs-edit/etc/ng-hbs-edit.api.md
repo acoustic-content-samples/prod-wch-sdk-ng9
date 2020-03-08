@@ -7,6 +7,16 @@
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
+export class AcNgHbsComponentsEditModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public
+export class AcNgHbsEditModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public
 export const VERSION: {
     version: {
         major: string;
@@ -15,16 +25,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgHbsComponentsEditModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public
-export class WchNgHbsEditModule {
-    VERSION: WchSdkVersion;
-}
 
 
 ```

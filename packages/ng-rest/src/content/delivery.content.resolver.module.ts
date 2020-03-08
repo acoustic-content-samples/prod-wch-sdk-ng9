@@ -17,4 +17,4 @@ import { DeliveryContentResolverService } from './delivery.content.resolver.serv
     }
   ]
 })
-export class WchNgRestContentModule {}
+export class AcNgRestContentModule {}

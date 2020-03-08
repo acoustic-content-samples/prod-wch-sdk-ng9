@@ -56,6 +56,14 @@ export abstract class AbstractRenderingComponent extends AbstractBaseComponent i
 }
 
 // @public
+export class AcNgBrowserWindowModule {
+}
+
+// @public
+export class AcNgEditHostWindowModule {
+}
+
+// @public
 export function proxyGetEditHostWindow(aCurrentWindow: WindowType): WindowType;
 
 // @public
@@ -67,14 +75,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgBrowserWindowModule {
-}
-
-// @public
-export class WchNgEditHostWindowModule {
-}
 
 
 ```

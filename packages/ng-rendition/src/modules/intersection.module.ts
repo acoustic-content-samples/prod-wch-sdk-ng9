@@ -9,4 +9,4 @@ import { IntersectionDirective } from './../directives/intersection/intersection
   declarations: [IntersectionDirective],
   exports: [IntersectionDirective]
 })
-export class WchNgIntersectionModule {}
+export class AcNgIntersectionModule {}

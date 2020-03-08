@@ -10,11 +10,11 @@ Collection of APIs and constants for the Angular SDK
 
 |  Interface | Description |
 |  --- | --- |
+|  [AcNgPageService](./ng-api.acngpageservice.md) | Service interface that allows to resolve a rendering context given the page. |
 |  [ComponentRegistry](./ng-api.componentregistry.md) | Service to register components and get information about registered components. |
 |  [ComponentResolver](./ng-api.componentresolver.md) |  |
 |  [ComponentTypeRef](./ng-api.componenttyperef.md) | Captures all information required to instantiate a component based on its type |
 |  [ComponentTypeRefResolver](./ng-api.componenttyperefresolver.md) | Service that resolves a component type ref given a layout. |
-|  [WchNgPageService](./ng-api.wchngpageservice.md) | Service interface that allows to resolve a rendering context given the page. |
 
 ## Variables
 
@@ -54,4 +54,10 @@ Collection of APIs and constants for the Angular SDK
 |  [ACOUSTIC\_TOKEN\_URL\_CONFIG](./ng-api.acoustic_token_url_config.md) | Injection token for the url config |
 |  [ACOUSTIC\_TOKEN\_WINDOW](./ng-api.acoustic_token_window.md) | Create a new injection token for injecting the window into a component. |
 |  [VERSION](./ng-api.version.md) | Version and build number of the package |
+
+## Type Aliases
+
+|  Type Alias | Description |
+|  --- | --- |
+|  [ExtractInjectionTokenType](./ng-api.extractinjectiontokentype.md) | Type that extracts the type of an injection token |
 

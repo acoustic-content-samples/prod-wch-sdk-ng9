@@ -2,11 +2,11 @@ import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { WchNgPreRenderingModule } from '../services/pre-rendering/pre.rendering.module';
-import { WchNgHbsRendererModule } from '../services/renderer/renderer.module';
-import { WchNgHbsResolverEditModule } from '../services/resolver/resolver.module';
+import { AcNgPreRenderingModule } from '../services/pre-rendering/pre.rendering.module';
+import { AcNgHbsRendererModule } from '../services/renderer/renderer.module';
+import { AcNgHbsResolverEditModule } from '../services/resolver/resolver.module';
 import { VERSION } from './../version';
-import { WchNgHbsComponentsEditModule } from './components.module';
+import { AcNgHbsComponentsEditModule } from './components.module';
 
 /**
  * Module that provides handlebars based rendering functionality in edit mode. This will
@@ -18,13 +18,13 @@ import { WchNgHbsComponentsEditModule } from './components.module';
 @NgModule({
   imports: [
     CommonModule,
-    WchNgHbsComponentsEditModule,
-    WchNgHbsResolverEditModule,
-    WchNgHbsRendererModule,
-    WchNgPreRenderingModule
+    AcNgHbsComponentsEditModule,
+    AcNgHbsResolverEditModule,
+    AcNgHbsRendererModule,
+    AcNgPreRenderingModule
   ]
 })
-export class WchNgHbsEditModule {
+export class AcNgHbsEditModule {
   /**
    * Exposes the version information of this module
    */

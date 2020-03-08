@@ -9,7 +9,7 @@ Constructs a new instance of the `PageComponent` class
 <b>Signature:</b>
 
 ```typescript
-constructor(aZoneService: ZoneService, aRoute: ActivatedRoute, aPageService: WchNgPageService, aActivePage: Subject<RenderingContextV2>, aTitleService: Title, aMetaService: Meta, aProvider: RenderingContextProviderV2, aLogSvc: LoggerService);
+constructor(aZoneService: ZoneService, aRoute: ActivatedRoute, aPageService: AcNgPageService, aActivePage: Subject<RenderingContextV2>, aTitleService: Title, aMetaService: Meta, aProvider: RenderingContextProviderV2, aLogSvc: LoggerService);
 ```
 
 ## Parameters
@@ -18,7 +18,7 @@ constructor(aZoneService: ZoneService, aRoute: ActivatedRoute, aPageService: Wch
 |  --- | --- | --- |
 |  aZoneService | <code>ZoneService</code> |  |
 |  aRoute | <code>ActivatedRoute</code> |  |
-|  aPageService | <code>WchNgPageService</code> |  |
+|  aPageService | <code>AcNgPageService</code> |  |
 |  aActivePage | <code>Subject&lt;RenderingContextV2&gt;</code> |  |
 |  aTitleService | <code>Title</code> |  |
 |  aMetaService | <code>Meta</code> |  |

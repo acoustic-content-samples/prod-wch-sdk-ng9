@@ -6,18 +6,18 @@ import {
   ACOUSTIC_TOKEN_WINDOW
 } from '@acoustic-content-sdk/ng-api';
 import {
-  WchNgEditDirectivesModule,
-  WchNgInlineEditSelectionModule,
-  WchNgInlineEditServiceModule,
-  WchNgParentInlineEditProviderModule
+  AcNgEditDirectivesModule,
+  AcNgInlineEditSelectionModule,
+  AcNgInlineEditServiceModule,
+  AcNgParentInlineEditProviderModule
 } from '@acoustic-content-sdk/ng-edit';
 import { ACOUSTIC_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
-import { WchNgHbsEditModule } from '@acoustic-content-sdk/ng-hbs-edit';
+import { AcNgHbsEditModule } from '@acoustic-content-sdk/ng-hbs-edit';
 import {
-  WchNgParentFrameReduxStoreModule,
-  WchNgReduxModule
+  AcNgParentFrameReduxStoreModule,
+  AcNgReduxModule
 } from '@acoustic-content-sdk/ng-redux';
-import { WchNgEditHostWindowModule } from '@acoustic-content-sdk/ng-utils';
+import { AcNgEditHostWindowModule } from '@acoustic-content-sdk/ng-utils';
 import { logModule } from '@acoustic-content-sdk/utils';
 import { Inject, NgModule, Optional } from '@angular/core';
 
@@ -35,18 +35,18 @@ import { MODULE, VERSION } from '../version';
  */
 @NgModule({
   imports: [
-    WchNgEditHostWindowModule,
-    WchNgParentInlineEditProviderModule,
-    WchNgInlineEditServiceModule,
-    WchNgParentFrameReduxStoreModule,
-    WchNgReduxModule,
+    AcNgEditHostWindowModule,
+    AcNgParentInlineEditProviderModule,
+    AcNgInlineEditServiceModule,
+    AcNgParentFrameReduxStoreModule,
+    AcNgReduxModule,
     // TODO this is just a workaround
-    WchNgHbsEditModule,
-    WchNgInlineEditSelectionModule,
-    WchNgEditDirectivesModule
+    AcNgHbsEditModule,
+    AcNgInlineEditSelectionModule,
+    AcNgEditDirectivesModule
   ]
 })
-export class WchNgAppPreviewModule {
+export class AcNgAppPreviewModule {
   /**
    * Exposes the version information of this module
    */

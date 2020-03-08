@@ -16,5 +16,5 @@ export interface PreRenderingResolver
 
 |  Method | Description |
 |  --- | --- |
-|  [getPreRenderedMarkup(aID, aLayoutMode)](./component-api.prerenderingresolver.getprerenderedmarkup.md) | Generate a pre-rendering of the referenced content item |
+|  [getPreRenderedMarkup(aSelector, aLayoutMode)](./component-api.prerenderingresolver.getprerenderedmarkup.md) | Generate a pre-rendering of the referenced content item |
 

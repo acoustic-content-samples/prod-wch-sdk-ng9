@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { WchInlineEditSelectionService } from '../services/inline-edit/inline.edit.selection.service';
 
-const LOGGER = 'WchNgInlineEditServiceModule';
+const LOGGER = 'AcNgInlineEditServiceModule';
 
 @NgModule({
   imports: [CommonModule],
   providers: [WchInlineEditSelectionService]
 })
-export class WchNgInlineEditSelectionModule {
+export class AcNgInlineEditSelectionModule {
   constructor(private aSelService: WchInlineEditSelectionService) {}
 }

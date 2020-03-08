@@ -8,7 +8,7 @@ import { WchPlaceholderComponent } from '../components/placeholder/placeholder.c
 import { EditItemPipe } from './../pipes/edit.item.pipe';
 import { MODULE, VERSION } from './../version';
 
-const LOGGER = 'WchNgEditComponentsModule';
+const LOGGER = 'AcNgEditComponentsModule';
 
 /**
  * Exports the components and directives used to attach inline edit to code level
@@ -20,7 +20,7 @@ const LOGGER = 'WchNgEditComponentsModule';
   providers: [],
   exports: [WchPlaceholderComponent, EditItemPipe]
 })
-export class WchNgEditComponentsModule {
+export class AcNgEditComponentsModule {
   constructor(
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)

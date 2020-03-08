@@ -16,4 +16,4 @@ import { WchSelectableDirectiveServiceImpl } from './selectable.directive.servic
     }
   ]
 })
-export class WchNgSelectableDirectiveModule {}
+export class AcNgSelectableDirectiveModule {}

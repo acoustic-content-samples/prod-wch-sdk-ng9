@@ -8,4 +8,4 @@ import { WchRenditionService } from './../services/rendition/wch.rendition.servi
   imports: [CommonModule],
   providers: [WchRenditionService]
 })
-export class WchNgRenditionServicesModule {}
+export class AcNgRenditionServicesModule {}

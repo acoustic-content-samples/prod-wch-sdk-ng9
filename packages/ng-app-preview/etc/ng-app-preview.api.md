@@ -9,6 +9,12 @@ import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
+export class AcNgAppPreviewModule {
+    constructor(aCurrentWindow: WindowType, aHostWindow: WindowType, aLoggerService: LoggerService);
+    VERSION: WchSdkVersion;
+}
+
+// @public
 export const MODULE = "@acoustic-content-sdk/ng-app-preview";
 
 // @public
@@ -20,12 +26,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgAppPreviewModule {
-    constructor(aCurrentWindow: WindowType, aHostWindow: WindowType, aLoggerService: LoggerService);
-    VERSION: WchSdkVersion;
-}
 
 
 ```

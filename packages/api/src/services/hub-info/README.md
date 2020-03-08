@@ -24,7 +24,7 @@ Note that the URLs may end with a slash, however this is not required.
 ## Usage
 
 ```typescript
-    WchNgModule.forRoot({ apiUrl: new URL(apiUrl), resourceUrl: new URL(resourceUrl) })
+    AcNgModule.forRoot({ apiUrl: new URL(apiUrl), resourceUrl: new URL(resourceUrl) })
 ```
 
 alternative
@@ -32,7 +32,7 @@ alternative
 ```typescript
     import { environment } from '../environments/environment';
 
-    WchNgModule.forRoot(environment)
+    AcNgModule.forRoot(environment)
 ```
 
 Assuming that the required settings are part of the `environment` settings and the build uses the [Angular CLI environment](https://github.com/angular/angular-cli/wiki/stories-application-environments) concepts.

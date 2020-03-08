@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { VERSION } from './../../version';
-import { WchNgPreRenderingService } from './pre.rendering.service';
+import { AcNgPreRenderingService } from './pre.rendering.service';
 
 /**
  * Module that exposes the pre-rendering service
@@ -14,11 +14,11 @@ import { WchNgPreRenderingService } from './pre.rendering.service';
   providers: [
     {
       provide: ACOUSTIC_TOKEN_PRE_RENDERING_RESOLVER,
-      useClass: WchNgPreRenderingService
+      useClass: AcNgPreRenderingService
     }
   ]
 })
-export class WchNgPreRenderingModule {
+export class AcNgPreRenderingModule {
   /**
    * Exposes the version information of this module
    */

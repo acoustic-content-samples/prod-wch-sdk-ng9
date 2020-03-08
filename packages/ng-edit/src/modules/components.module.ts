@@ -7,10 +7,10 @@ import { Inject, NgModule, Optional } from '@angular/core';
 import { WchPlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { EditItemPipe } from './../pipes/edit.item.pipe';
 import { MODULE, VERSION } from './../version';
-import { WchNgInlineEditServiceModule } from './wch.inline.edit.module';
+import { AcNgInlineEditServiceModule } from './wch.inline.edit.module';
 import { WchPlaceholderProviderModule } from './wch.placeholder.provider.module';
 
-const LOGGER = 'WchNgEditComponentsModule';
+const LOGGER = 'AcNgEditComponentsModule';
 
 /**
  * Exports the components and directives used to attach inline edit to code level
@@ -20,13 +20,13 @@ const LOGGER = 'WchNgEditComponentsModule';
   imports: [
     CommonModule,
     WchPlaceholderProviderModule,
-    WchNgInlineEditServiceModule
+    AcNgInlineEditServiceModule
   ],
   declarations: [WchPlaceholderComponent, EditItemPipe],
   providers: [],
   exports: [WchPlaceholderComponent, EditItemPipe]
 })
-export class WchNgEditComponentsModule {
+export class AcNgEditComponentsModule {
   /**
    * Exposes the version information of this module
    */

@@ -5,6 +5,7 @@
 ```ts
 
 import { AbstractBaseComponent } from '@acoustic-content-sdk/ng-utils';
+import { AcNgPageService } from '@acoustic-content-sdk/ng-api';
 import { ActivatedRoute } from '@angular/router';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { CanActivate } from '@angular/router';
@@ -27,8 +28,34 @@ import { SchedulerLike } from 'rxjs';
 import { Subject } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { Type } from '@angular/core';
-import { WchNgPageService } from '@acoustic-content-sdk/ng-api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
+
+// @public (undocumented)
+export class AcNgComponentsModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public
+export class AcNgLoggerModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public (undocumented)
+export class AcNgProtectedContentModule {
+    VERSION: WchSdkVersion;
+}
+
+// @public (undocumented)
+export class AcNgRouterModule {
+}
+
+// @public (undocumented)
+export class AcNgSearchModule {
+}
+
+// @public (undocumented)
+export class AcNgServicesModule {
+}
 
 // @public
 export function LayoutComponent<T extends Type<any>>(aDirective?: LayoutComponentDirective): (cls: T) => void;
@@ -55,7 +82,7 @@ export interface LayoutMappingDirective {
 // @public
 export class PageComponent extends AbstractBaseComponent implements OnDestroy, RenderingContextProviderV2 {
     // Warning: (ae-forgotten-export) The symbol "ZoneService" needs to be exported by the entry point public_api.d.ts
-    constructor(aZoneService: ZoneService, aRoute: ActivatedRoute, aPageService: WchNgPageService, aActivePage: Subject<RenderingContextV2>, aTitleService: Title, aMetaService: Meta, aProvider: RenderingContextProviderV2, aLogSvc: LoggerService);
+    constructor(aZoneService: ZoneService, aRoute: ActivatedRoute, aPageService: AcNgPageService, aActivePage: Subject<RenderingContextV2>, aTitleService: Title, aMetaService: Meta, aProvider: RenderingContextProviderV2, aLogSvc: LoggerService);
     readonly component$: ReplaySubject<any>;
     readonly layoutMode$: Observable<string>;
     ngOnDestroy(): void;
@@ -76,33 +103,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public (undocumented)
-export class WchNgComponentsModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public
-export class WchNgLoggerModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public (undocumented)
-export class WchNgProtectedContentModule {
-    VERSION: WchSdkVersion;
-}
-
-// @public (undocumented)
-export class WchNgRouterModule {
-}
-
-// @public (undocumented)
-export class WchNgSearchModule {
-}
-
-// @public (undocumented)
-export class WchNgServicesModule {
-}
 
 // @public (undocumented)
 export class WchSelectFirstRootPageGuard implements CanActivate {

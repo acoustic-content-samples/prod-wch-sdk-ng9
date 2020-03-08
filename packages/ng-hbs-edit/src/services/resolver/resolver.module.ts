@@ -17,4 +17,4 @@ import { HandlebarsComponentResolver } from './component.resolver';
     }
   ]
 })
-export class WchNgHbsResolverEditModule {}
+export class AcNgHbsResolverEditModule {}

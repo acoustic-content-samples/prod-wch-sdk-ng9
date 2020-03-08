@@ -19,4 +19,4 @@ import { createFetchText } from './../fetch-text/fetch.text';
     }
   ]
 })
-export class WchNgReduxFetchTextModule {}
+export class AcNgReduxFetchTextModule {}

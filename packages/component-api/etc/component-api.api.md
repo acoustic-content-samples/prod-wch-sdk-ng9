@@ -121,7 +121,7 @@ export interface LayoutResolver {
 
 // @public
 export interface PreRenderingResolver {
-    getPreRenderedMarkup(aID: string, aLayoutMode?: string): Observable<string>;
+    getPreRenderedMarkup(aSelector: string, aLayoutMode?: string): Observable<string>;
 }
 
 // @public (undocumented)

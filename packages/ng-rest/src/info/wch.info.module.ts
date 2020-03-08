@@ -38,4 +38,4 @@ export function proxyCreateUrlConfig(
     }
   ]
 })
-export class WchNgRestUrlConfigModule {}
+export class AcNgRestUrlConfigModule {}

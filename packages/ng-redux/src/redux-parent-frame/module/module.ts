@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { PageSelectionService } from '../../redux-sync/selection/page-selection.service';
 import { MODULE, VERSION } from './../../version';
 
-const LOGGER = 'WchNgParentFrameReduxStoreModule';
+const LOGGER = 'AcNgParentFrameReduxStoreModule';
 
 /**
  * Module that exposes an implementation of `ACOUSTIC_TOKEN_REDUX_STORE`. The implementation
@@ -34,7 +34,7 @@ const LOGGER = 'WchNgParentFrameReduxStoreModule';
     PageSelectionService
   ]
 })
-export class WchNgParentFrameReduxStoreModule {
+export class AcNgParentFrameReduxStoreModule {
   constructor(
     private pageSelectionService: PageSelectionService,
     @Optional() @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE) aLogSvc: LoggerService

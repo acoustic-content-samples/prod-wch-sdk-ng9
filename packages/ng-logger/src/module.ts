@@ -24,7 +24,7 @@ import { VERSION } from './version';
 @NgModule({
   imports: [CommonModule]
 })
-export class WchNgLoggingModule {
+export class AcNgLoggingModule {
   /**
    * Exposes the version information of this module
    */
@@ -39,7 +39,7 @@ export class WchNgLoggingModule {
    */
   static forRoot(aConfig?: Ng2LoggerConfig): ModuleWithProviders {
     return {
-      ngModule: WchNgLoggingModule,
+      ngModule: AcNgLoggingModule,
       providers: [
         { provide: Ng2LoggerConfigService, useValue: aConfig },
         { provide: ACOUSTIC_TOKEN_LOGGER_FACTORY, useClass: Ng2LoggerFactory }

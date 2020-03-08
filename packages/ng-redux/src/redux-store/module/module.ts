@@ -44,6 +44,6 @@ export function createStore(
     PageSelectionService
   ]
 })
-export class WchNgReduxStoreModule {
+export class AcNgReduxStoreModule {
   constructor(private pageSelectionService: PageSelectionService) {}
 }

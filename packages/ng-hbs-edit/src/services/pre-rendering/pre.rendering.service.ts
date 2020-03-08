@@ -8,10 +8,10 @@ import { boxLoggerService, rxNext, rxPipe } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 
-const LOGGER = 'WchNgPreRenderingService';
+const LOGGER = 'AcNgPreRenderingService';
 
 @Injectable()
-export class WchNgPreRenderingService implements PreRenderingResolver {
+export class AcNgPreRenderingService implements PreRenderingResolver {
   /**
    * Generate a pre-rendering of the referenced content item
    *

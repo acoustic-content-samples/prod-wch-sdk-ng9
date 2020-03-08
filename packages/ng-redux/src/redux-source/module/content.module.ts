@@ -14,4 +14,4 @@ import { DeliveryContentResolverService } from '../content/delivery.content.reso
     }
   ]
 })
-export class WchNgReduxContentModule {}
+export class AcNgReduxContentModule {}

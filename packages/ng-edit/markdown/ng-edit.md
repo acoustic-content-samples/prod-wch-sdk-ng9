@@ -10,15 +10,15 @@ Module to attach inline-edit functionality to an WCH based Angular application.
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgEditableDirectiveModule](./ng-edit.wchngeditabledirectivemodule.md) | Module implementing the <code>WchEditableDirectiveService</code> for the edit case |
-|  [WchNgEditablePlaceholderDirectiveModule](./ng-edit.wchngeditableplaceholderdirectivemodule.md) | Module implementing the <code>WchEditableDirectiveService</code> for the edit case |
-|  [WchNgEditComponentsModule](./ng-edit.wchngeditcomponentsmodule.md) | Exports the components and directives used to attach inline edit to code level angular components. |
-|  [WchNgEditDirectivesModule](./ng-edit.wchngeditdirectivesmodule.md) | Exports the services required to implement the editable directives |
-|  [WchNgHttpInlineEditProviderModule](./ng-edit.wchnghttpinlineeditprovidermodule.md) | Provides token <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> |
-|  [WchNgInlineEditSelectionModule](./ng-edit.wchnginlineeditselectionmodule.md) |  |
-|  [WchNgInlineEditServiceModule](./ng-edit.wchnginlineeditservicemodule.md) | Provides token <code>ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE</code> requires a <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> for the backend |
-|  [WchNgParentInlineEditProviderModule](./ng-edit.wchngparentinlineeditprovidermodule.md) | Exposes the inline edit provider <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> from the parent frame. The provider must have been exposed via the <code>INLINE_EDIT_PROVIDER_ID</code> constant on that window.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_EDIT_HOST_WINDOW</code>, <code>ACOUSTIC_TOKEN_LOGGER_SERVICE</code> |
-|  [WchNgSelectableDirectiveModule](./ng-edit.wchngselectabledirectivemodule.md) | Module implementing the <code>WchSelectableDirectiveService</code> for the edit case |
+|  [AcNgEditableDirectiveModule](./ng-edit.acngeditabledirectivemodule.md) | Module implementing the <code>WchEditableDirectiveService</code> for the edit case |
+|  [AcNgEditablePlaceholderDirectiveModule](./ng-edit.acngeditableplaceholderdirectivemodule.md) | Module implementing the <code>WchEditableDirectiveService</code> for the edit case |
+|  [AcNgEditComponentsModule](./ng-edit.acngeditcomponentsmodule.md) | Exports the components and directives used to attach inline edit to code level angular components. |
+|  [AcNgEditDirectivesModule](./ng-edit.acngeditdirectivesmodule.md) | Exports the services required to implement the editable directives |
+|  [AcNgHttpInlineEditProviderModule](./ng-edit.acnghttpinlineeditprovidermodule.md) | Provides token <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> |
+|  [AcNgInlineEditSelectionModule](./ng-edit.acnginlineeditselectionmodule.md) |  |
+|  [AcNgInlineEditServiceModule](./ng-edit.acnginlineeditservicemodule.md) | Provides token <code>ACOUSTIC_TOKEN_INLINE_EDIT_SERVICE</code> requires a <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> for the backend |
+|  [AcNgParentInlineEditProviderModule](./ng-edit.acngparentinlineeditprovidermodule.md) | Exposes the inline edit provider <code>ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER</code> from the parent frame. The provider must have been exposed via the <code>INLINE_EDIT_PROVIDER_ID</code> constant on that window.<!-- -->Depends on: <code>ACOUSTIC_TOKEN_EDIT_HOST_WINDOW</code>, <code>ACOUSTIC_TOKEN_LOGGER_SERVICE</code> |
+|  [AcNgSelectableDirectiveModule](./ng-edit.acngselectabledirectivemodule.md) | Module implementing the <code>WchSelectableDirectiveService</code> for the edit case |
 
 ## Functions
 

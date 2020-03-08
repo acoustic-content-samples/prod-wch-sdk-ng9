@@ -14,4 +14,4 @@ import { DeliveryLayoutResolverService } from '../layout/delivery.layout.resolve
     }
   ]
 })
-export class WchNgReduxLayoutModule {}
+export class AcNgReduxLayoutModule {}

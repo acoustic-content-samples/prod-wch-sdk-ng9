@@ -10,7 +10,7 @@ Module that contains a default configuration to run an [Angular](https://angular
 
 |  Class | Description |
 |  --- | --- |
-|  [WchNgAppBaseModule](./ng-app-base.wchngappbasemodule.md) | Imports the modules required for basic functionality |
+|  [AcNgAppBaseModule](./ng-app-base.acngappbasemodule.md) | Imports the modules required for basic functionality |
 
 ## Variables
 

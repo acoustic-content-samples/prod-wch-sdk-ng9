@@ -67,15 +67,15 @@ const KEY_POLYFILLS_FILE = 'POLYFILLS_FILE';
 
 const SDK_CONTEXT = {
   [ArtifactMode.ALWAYS]: {
-    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppBaseModule',
+    [KEY_ACOUSTIC_APP_MODULE]: 'AcNgAppBaseModule',
     [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-base'
   },
   [ArtifactMode.LIVE]: {
-    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppLiveModule',
+    [KEY_ACOUSTIC_APP_MODULE]: 'AcNgAppLiveModule',
     [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-live'
   },
   [ArtifactMode.PREVIEW]: {
-    [KEY_ACOUSTIC_APP_MODULE]: 'WchNgAppPreviewModule',
+    [KEY_ACOUSTIC_APP_MODULE]: 'AcNgAppPreviewModule',
     [KEY_ACOUSTIC_APP_MODULE_PATH]: '@acoustic-content-sdk/ng-app-preview'
   }
 };

@@ -8,6 +8,12 @@ import { LoggerService } from '@acoustic-content-sdk/api';
 import { WchSdkVersion } from '@acoustic-content-sdk/api';
 
 // @public
+export class AcNgAppLiveModule {
+    constructor(aLoggerService: LoggerService);
+    VERSION: WchSdkVersion;
+}
+
+// @public
 export const MODULE = "@acoustic-content-sdk/ng-app-live";
 
 // @public
@@ -19,12 +25,6 @@ export const VERSION: {
     };
     build: Date;
 };
-
-// @public
-export class WchNgAppLiveModule {
-    constructor(aLoggerService: LoggerService);
-    VERSION: WchSdkVersion;
-}
 
 
 ```

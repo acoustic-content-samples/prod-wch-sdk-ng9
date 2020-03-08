@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WchNgModule } from '@acoustic-content-sdk/ng';
+import { AcNgModule } from '@acoustic-content-sdk/ng';
 import { environment } from '../environments/environment';
-import { WchNgEditModule } from '@acoustic-content-sdk/ng-edit';
+import { AcNgEditModule } from '@acoustic-content-sdk/ng-edit';
 
 @NgModule({
   declarations: [
@@ -14,8 +14,8 @@ import { WchNgEditModule } from '@acoustic-content-sdk/ng-edit';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WchNgModule.forRoot(environment),
-    WchNgEditModule.forRoot()
+    AcNgModule.forRoot(environment),
+    AcNgEditModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

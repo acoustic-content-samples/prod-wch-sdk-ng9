@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { SiteResolverService } from '../site/site.resolver.service';
-import { WchNgReduxContentModule } from './content.module';
+import { AcNgReduxContentModule } from './content.module';
 
 @NgModule({
-  imports: [CommonModule, WchNgReduxContentModule],
+  imports: [CommonModule, AcNgReduxContentModule],
   providers: [
     {
       provide: ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
@@ -15,4 +15,4 @@ import { WchNgReduxContentModule } from './content.module';
     }
   ]
 })
-export class WchNgReduxSiteModule {}
+export class AcNgReduxSiteModule {}

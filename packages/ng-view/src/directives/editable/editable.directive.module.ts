@@ -16,4 +16,4 @@ import { WchEditableDirectiveServiceImpl } from './editable.directive.service';
     }
   ]
 })
-export class WchNgEditableDirectiveModule {}
+export class AcNgEditableDirectiveModule {}
