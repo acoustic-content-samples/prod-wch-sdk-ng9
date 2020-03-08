@@ -1,4 +1,4 @@
-import { WchNgComponentsModule } from '@acoustic-content-sdk/ng';
+import { AcNgComponentsModule } from '@acoustic-content-sdk/ng';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SitesBreadcrumbNavigationLayoutViewModule } from '../sites-breadcrumb-navigation-layout-view/sites-breadcrumb-navigation-layout-view.module';
@@ -10,7 +10,7 @@ import { SitesBreadcrumbNavigationLayoutComponent } from './sites.breadcrumb.nav
    */
   imports: [
     CommonModule,
-    WchNgComponentsModule,
+    AcNgComponentsModule,
     SitesBreadcrumbNavigationLayoutViewModule
   ],
   declarations: [SitesBreadcrumbNavigationLayoutComponent],

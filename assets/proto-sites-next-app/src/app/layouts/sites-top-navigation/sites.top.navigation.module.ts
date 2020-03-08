@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { WchNgComponentsModule } from '@acoustic-content-sdk/ng';
+import { AcNgComponentsModule } from '@acoustic-content-sdk/ng';
 
 import { SitesTopNavigationLayoutComponent } from './sites.top.navigation.layout';
 import { SitesTopNavigationLayoutViewModule } from '../sites-top-navigation-layout-view/sites-top-navigation-layout-view.module';
@@ -11,7 +11,7 @@ import { SitesTopNavigationLayoutViewModule } from '../sites-top-navigation-layo
      */
     imports: [
         CommonModule,
-        WchNgComponentsModule,
+        AcNgComponentsModule,
         SitesTopNavigationLayoutViewModule
     ],
     declarations: [SitesTopNavigationLayoutComponent],

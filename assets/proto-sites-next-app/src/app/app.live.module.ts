@@ -1,15 +1,15 @@
-import { WchNgAppLiveModule } from '@acoustic-content-sdk/ng-app-live';
+import { AcNgAppLiveModule } from '@acoustic-content-sdk/ng-app-live';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
-import { WchNgRestApiUrlModule } from '@acoustic-content-sdk/ng-rest';
+import { AcNgRestApiUrlModule } from '@acoustic-content-sdk/ng-rest';
 
 @NgModule({
   imports: [
     AppModule,
-    WchNgAppLiveModule,
+    AcNgAppLiveModule,
     // configure the API URL
-    WchNgRestApiUrlModule.forRoot(
+    AcNgRestApiUrlModule.forRoot(
       'https://my4.digitalexperience.ibm.com/api/ab3cbc2c-b5e8-4b15-b68b-64fa31070f8b/'
     )
   ],
