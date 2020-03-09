@@ -42,7 +42,7 @@ const DATA_ACOUSTIC_MARKUP_FRAGMENT = 'data-acoustic-markup-fragment';
 const FRAGMENT_SELECTOR = `[${DATA_ACOUSTIC_MARKUP_FRAGMENT}]`;
 
 /** Default timeout */
-const DEFAULT_TIMEOUT = 60 * 1000;
+const DEFAULT_TIMEOUT = 10 * 60 * 1000;
 
 /** Default count */
 const DEFAULT_MAXCOUNT = 1000;
@@ -120,9 +120,17 @@ export class AcNgMarkupRegistryService implements OnDestroy {
     // getter
     const getSubject = (aSelector: string) =>
       cache(aSelector, createSingleSubject);
+    // register
+    const registerHtmlFragment = (aSelector: string, aMarkup: string) => {
+      // log this
+      logger.info('Registering', aSelector, aMarkup);
+      // add
+      getSubject(aSelector).next(aMarkup);
+    };
     // adds an element
     const addElement = (aElement: Element) =>
-      getSubject(aElement.getAttribute(DATA_ACOUSTIC_MARKUP_FRAGMENT)).next(
+      registerHtmlFragment(
+        aElement.getAttribute(DATA_ACOUSTIC_MARKUP_FRAGMENT),
         aElement.outerHTML
       );
     // register a new fragment
@@ -131,7 +139,7 @@ export class AcNgMarkupRegistryService implements OnDestroy {
     // add markup
     const addMarkup = (aId: string, aMarkup: string) => {
       // register the full fragment
-      getSubject(aId).next(aMarkup);
+      registerHtmlFragment(aId, aMarkup);
       // parse the node
       template.innerHTML = aMarkup;
       // add all content
