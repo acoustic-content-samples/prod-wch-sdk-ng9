@@ -1,5 +1,13 @@
-import { DEP_TYPE, getFolderForType, rxReadTextFile, rxTransformJsonFile } from '@acoustic-content-sdk/schematics-utils';
-import { canonicalizeJson, getOrganization } from '@acoustic-content-sdk/tooling';
+import {
+  DEP_TYPE,
+  getFolderForType,
+  rxReadTextFile,
+  rxTransformJsonFile
+} from '@acoustic-content-sdk/schematics-utils';
+import {
+  canonicalizeJson,
+  getOrganization
+} from '@acoustic-content-sdk/tooling';
 import { ArtifactMode } from '@acoustic-content-sdk/tooling-contributions';
 import {
   assignObject,
@@ -9,7 +17,7 @@ import {
   jsonParse,
   objectKeys,
   reduceToObject,
-  rxPipe,
+  rxPipe
 } from '@acoustic-content-sdk/utils';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { join } from 'path';
@@ -176,7 +184,7 @@ export function updatePackageJson(options: Schema): Rule {
     ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --mode=${ARTIFACT_MODES.join()}`;
 
     // version hook
-    scripts[KEY_VERSION_HOOK] = `ng g ${NAMESPACE}schematics:version`;
+    scripts[KEY_VERSION_HOOK] = `npx ng g ${NAMESPACE}schematics:version`;
 
     // override the records
     assignObject(pkg, {
