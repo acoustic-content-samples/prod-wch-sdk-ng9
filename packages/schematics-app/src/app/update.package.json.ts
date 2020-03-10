@@ -184,7 +184,7 @@ export function updatePackageJson(options: Schema): Rule {
     ] = `ng g ${NAMESPACE}schematics:contributions --data dist/data --mode=${ARTIFACT_MODES.join()}`;
 
     // version hook
-    scripts[KEY_VERSION_HOOK] = `npx ng g ${NAMESPACE}schematics:version`;
+    scripts[KEY_VERSION_HOOK] = `ng g ${NAMESPACE}schematics:version`;
 
     // override the records
     assignObject(pkg, {
