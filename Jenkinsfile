@@ -13,7 +13,7 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
-  squad = this.env.JENKINS_URL.contains('acoustic') ? 'squad-poland' : 'squad-infra-boe';
+  squad = this.env.JENKINS_URL.contains('acoustic') ? 'squad-poland' : 'squad-infra-boe'
 
   triggerDownstream = "${squad}/sites-next-spa-dev, ${squad}/sites-next-spa"
 }
