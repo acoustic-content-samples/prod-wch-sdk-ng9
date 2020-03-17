@@ -32,7 +32,8 @@
   "devDependencies": {},
   "peerDependencies": {
     "redux": "^4",
-    "redux-actions": "^2"
+    "redux-actions": "^2",
+    "rxjs": "^6"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-redux-feature-locale.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-redux-feature-locale.js",
