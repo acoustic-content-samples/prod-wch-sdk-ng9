@@ -1,0 +1,50 @@
+{
+  "name": "@acoustic-content-sdk/ng-web-component",
+  "version": "9.0.0",
+  "description": "Module to attach inline-edit functionality to an WCH based Angular application.",
+  "keywords": [
+    "acoustic",
+    "acoustic-content",
+    "angular",
+    "react",
+    "sdk"
+  ],
+  "bugs": {
+    "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aipoweredmarketer/prod-wch-sdk-ng9.git"
+  },
+  "license": "MIT",
+  "author": "Carsten Leue <carsten.leue@de.ibm.com>",
+  "sideEffects": false,
+  "main": "dist/bundles/acoustic-content-sdk-ng-web-component.umd.js",
+  "module": "dist/fesm5/acoustic-content-sdk-ng-web-component.js",
+  "typings": "dist/acoustic-content-sdk-ng-web-component.d.ts",
+  "scripts": {
+    "build:api": "api-extractor run --local",
+    "build:doc": "api-documenter markdown -i temp",
+    "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "es2015": "dist/fesm2015/acoustic-content-sdk-ng-web-component.js",
+  "esm2015": "dist/esm2015/acoustic-content-sdk-ng-web-component.js",
+  "esm5": "dist/esm5/acoustic-content-sdk-ng-web-component.js",
+  "fesm2015": "dist/fesm2015/acoustic-content-sdk-ng-web-component.js",
+  "fesm5": "dist/fesm5/acoustic-content-sdk-ng-web-component.js",
+  "metadata": "dist/acoustic-content-sdk-ng-web-component.metadata.json",
+  "ngPackage": {
+    "lib": {
+      "umdModuleIds": {}
+    },
+    "whitelistedNonPeerDependencies": [
+      "@acoustic-content-sdk/.*"
+    ]
+  },
+  "tsdoc": {
+    "tsdocFlavor": "AEDoc"
+  }
+}

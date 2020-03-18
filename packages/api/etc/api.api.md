@@ -1331,6 +1331,7 @@ export const KEY_VALUES = "values";
 export interface Layout {
     id: string;
     name: string;
+    tags?: string[];
     template: string;
     templateType: string;
 }

@@ -1,15 +1,11 @@
 import { Layout, LoggerService } from '@acoustic-content-sdk/api';
+import { isHandlebarsLayout } from '@acoustic-content-sdk/component-hbs';
 import {
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ComponentTypeRef,
-  ComponentTypeRefResolver,
-  ACOUSTIC_TOKEN_LOGGER_SERVICE
+  ComponentTypeRefResolver
 } from '@acoustic-content-sdk/ng-api';
-import {
-  boxLoggerService,
-  isEqual,
-  isNotNil,
-  LAYOUT_TYPE_HANDLEBARS
-} from '@acoustic-content-sdk/utils';
+import { boxLoggerService, isNotNil } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 
@@ -20,9 +16,6 @@ const LOGGER = 'HandlebarsComponentResolver';
 const HBS_TYPE_REF: ComponentTypeRef<HandlebarsComponent> = {
   type: HandlebarsComponent
 };
-
-const isHandlebarsLayout = ({ templateType, template }: Layout) =>
-  isEqual(templateType, LAYOUT_TYPE_HANDLEBARS) && isNotNil(template);
 
 /**
  * Implementation of a `ComponentTypeRefResolver` that will resolve to the

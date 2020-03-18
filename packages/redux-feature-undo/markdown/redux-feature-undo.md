@@ -16,8 +16,33 @@ Implementation of a redux feature to manage undo and redo..
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACTION\_REDO\_AUTH\_CONTENT\_INTERNAL](./redux-feature-undo.action_redo_auth_content_internal.md) |  |
+|  [ACTION\_REDO\_AUTH\_CONTENT](./redux-feature-undo.action_redo_auth_content.md) |  |
+|  [ACTION\_UNDO\_AUTH\_CONTENT\_INTERNAL](./redux-feature-undo.action_undo_auth_content_internal.md) |  |
+|  [ACTION\_UNDO\_AUTH\_CONTENT](./redux-feature-undo.action_undo_auth_content.md) |  |
+|  [ACTION\_UNDO\_SET\_AUTH\_CONTENT\_INTERNAL](./redux-feature-undo.action_undo_set_auth_content_internal.md) |  |
 |  [MODULE](./redux-feature-undo.module.md) | Module name |
+|  [redoAuthoringContentAction](./redux-feature-undo.redoauthoringcontentaction.md) |  |
+|  [redoAuthoringContentInternalAction](./redux-feature-undo.redoauthoringcontentinternalaction.md) | The parameter is the current version of the content item |
+|  [selectNextUndoItem](./redux-feature-undo.selectnextundoitem.md) | Selects the next item from the redo history if it exists |
+|  [selectPreviousUndoItem](./redux-feature-undo.selectpreviousundoitem.md) | Selects the last item from the undo history if it exists |
+|  [selectRedoEnabled](./redux-feature-undo.selectredoenabled.md) | Tests if we have redo actions |
+|  [selectUndoEnabled](./redux-feature-undo.selectundoenabled.md) | Tests if we have undo actions |
 |  [selectUndoFeature](./redux-feature-undo.selectundofeature.md) | Select the URL config feature |
+|  [selectUndoScope](./redux-feature-undo.selectundoscope.md) |  |
+|  [undoAuthoringContentAction](./redux-feature-undo.undoauthoringcontentaction.md) |  |
+|  [undoAuthoringContentInternalAction](./redux-feature-undo.undoauthoringcontentinternalaction.md) | The parameter is the current version of the content item |
 |  [undoFeature](./redux-feature-undo.undofeature.md) | Exposes the feature module selector |
+|  [undoSetAuthoringContentInternalAction](./redux-feature-undo.undosetauthoringcontentinternalaction.md) | The parameter is the current version of the content item |
 |  [VERSION](./redux-feature-undo.version.md) | Version and build number of the package |
+
+## Type Aliases
+
+|  Type Alias | Description |
+|  --- | --- |
+|  [RedoAuthoringContentAction](./redux-feature-undo.redoauthoringcontentaction.md) |  |
+|  [RedoAuthoringContentInternalAction](./redux-feature-undo.redoauthoringcontentinternalaction.md) |  |
+|  [UndoAuthoringContentAction](./redux-feature-undo.undoauthoringcontentaction.md) |  |
+|  [UndoAuthoringContentInternalAction](./redux-feature-undo.undoauthoringcontentinternalaction.md) |  |
+|  [UndoSetAuthoringContentInternalAction](./redux-feature-undo.undosetauthoringcontentinternalaction.md) |  |
 

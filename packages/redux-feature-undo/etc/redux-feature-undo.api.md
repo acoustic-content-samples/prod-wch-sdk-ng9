@@ -4,13 +4,78 @@
 
 ```ts
 
+import { Action } from 'redux';
 import { AuthoringSaveBatchItems } from '@acoustic-content-sdk/redux-feature-save';
+import { Generator } from '@acoustic-content-sdk/utils';
+import { PayloadAction } from '@acoustic-content-sdk/redux-store';
+import { UnaryFunction } from 'rxjs';
+
+// @public (undocumented)
+export const ACTION_REDO_AUTH_CONTENT = "ACTION_REDO_AUTH_CONTENT";
+
+// @public (undocumented)
+export const ACTION_REDO_AUTH_CONTENT_INTERNAL = "ACTION_REDO_AUTH_CONTENT_INTERNAL";
+
+// @public (undocumented)
+export const ACTION_UNDO_AUTH_CONTENT = "ACTION_UNDO_AUTH_CONTENT";
+
+// @public (undocumented)
+export const ACTION_UNDO_AUTH_CONTENT_INTERNAL = "ACTION_UNDO_AUTH_CONTENT_INTERNAL";
+
+// @public (undocumented)
+export const ACTION_UNDO_SET_AUTH_CONTENT_INTERNAL = "ACTION_UNDO_SET_AUTH_CONTENT_INTERNAL";
 
 // @public
 export const MODULE = "@acoustic-content-sdk/redux-feature-undo";
 
+// @public (undocumented)
+export type RedoAuthoringContentAction = Action;
+
+// @public (undocumented)
+export const redoAuthoringContentAction: Generator<RedoAuthoringContentAction>;
+
+// Warning: (ae-forgotten-export) The symbol "ScopedUndoItems" needs to be exported by the entry point public_api.d.ts
+//
+// @public (undocumented)
+export type RedoAuthoringContentInternalAction = PayloadAction<ScopedUndoItems>;
+
+// @public
+export const redoAuthoringContentInternalAction: UnaryFunction<ScopedUndoItems, RedoAuthoringContentInternalAction>;
+
+// Warning: (ae-forgotten-export) The symbol "ScopedUndoState" needs to be exported by the entry point public_api.d.ts
+// Warning: (ae-forgotten-export) The symbol "UndoItems" needs to be exported by the entry point public_api.d.ts
+//
+// @public
+export const selectNextUndoItem: UnaryFunction<ScopedUndoState, UndoItems>;
+
+// @public
+export const selectPreviousUndoItem: UnaryFunction<ScopedUndoState, UndoItems>;
+
+// @public
+export const selectRedoEnabled: UnaryFunction<ScopedUndoState, boolean>;
+
+// @public
+export const selectUndoEnabled: UnaryFunction<ScopedUndoState, boolean>;
+
 // @public
 export const selectUndoFeature: import("rxjs").UnaryFunction<Record<string, any>, Record<string, import("./undo.state").ScopedUndoState>>;
+
+// Warning: (ae-forgotten-export) The symbol "UndoState" needs to be exported by the entry point public_api.d.ts
+//
+// @public (undocumented)
+export const selectUndoScope: UnaryFunction<string, UnaryFunction<UndoState, ScopedUndoState>>;
+
+// @public (undocumented)
+export type UndoAuthoringContentAction = Action;
+
+// @public (undocumented)
+export const undoAuthoringContentAction: Generator<UndoAuthoringContentAction>;
+
+// @public (undocumented)
+export type UndoAuthoringContentInternalAction = PayloadAction<ScopedUndoItems>;
+
+// @public
+export const undoAuthoringContentInternalAction: UnaryFunction<ScopedUndoItems, UndoAuthoringContentInternalAction>;
 
 // @public
 export const undoFeature: import("@acoustic-content-sdk/redux-store").ReduxFeatureModule<Record<string, import("./undo.state").ScopedUndoState>, UndoFeatureState, import("redux").AnyAction, import("redux").AnyAction, any>;
@@ -18,11 +83,16 @@ export const undoFeature: import("@acoustic-content-sdk/redux-store").ReduxFeatu
 // @public (undocumented)
 export interface UndoFeatureState {
     // Warning: (ae-forgotten-export) The symbol "UNDO_FEATURE" needs to be exported by the entry point public_api.d.ts
-    // Warning: (ae-forgotten-export) The symbol "UndoState" needs to be exported by the entry point public_api.d.ts
     //
     // (undocumented)
     [UNDO_FEATURE]: UndoState;
 }
+
+// @public (undocumented)
+export type UndoSetAuthoringContentInternalAction = PayloadAction<ScopedUndoItems>;
+
+// @public
+export const undoSetAuthoringContentInternalAction: UnaryFunction<ScopedUndoItems, UndoSetAuthoringContentInternalAction>;
 
 // @public
 export const VERSION: {

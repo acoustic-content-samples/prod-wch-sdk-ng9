@@ -20,6 +20,10 @@ export interface Layout {
    * The template description, will be a selector for angular and a filename for handlebars
    */
   template: string;
+  /**
+   * Optional list of tags
+   */
+  tags?: string[];
 }
 
 /**

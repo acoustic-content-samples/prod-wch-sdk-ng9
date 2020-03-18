@@ -18,6 +18,7 @@ export interface Layout
 |  --- | --- | --- |
 |  [id](./api.layout.id.md) | <code>string</code> | ID of the layout |
 |  [name](./api.layout.name.md) | <code>string</code> | Name of the layout |
+|  [tags](./api.layout.tags.md) | <code>string[]</code> | Optional list of tags |
 |  [template](./api.layout.template.md) | <code>string</code> | The template description, will be a selector for angular and a filename for handlebars |
 |  [templateType](./api.layout.templatetype.md) | <code>string</code> | The template type, either 'handlebars' or 'angular' |
 
