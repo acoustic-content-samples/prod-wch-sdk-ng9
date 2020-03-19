@@ -7,6 +7,7 @@
     "acoustic-content",
     "angular",
     "react",
+    "schematics",
     "sdk"
   ],
   "bugs": {
