@@ -166,10 +166,25 @@ export interface ComponentTypeRef<T> {
 // @public
 export interface ComponentTypeRefResolver extends AbstractComponentTypeRefResolver<ComponentTypeRef<any>> {
     getTypeByLayout: (aLayout: Layout, aLayoutMode?: string) => Observable<ComponentTypeRef<any>>;
+    weight?: number;
 }
 
 // @public
 export type ExtractInjectionTokenType<T extends InjectionToken<any>> = T extends InjectionToken<infer F> ? F : never;
+
+// @public (undocumented)
+export enum PROVIDER_WEIGHT {
+    // (undocumented)
+    HEIGH = 3000,
+    // (undocumented)
+    LOW = 1000,
+    // (undocumented)
+    MAX,
+    // (undocumented)
+    MEDIUM = 2000,
+    // (undocumented)
+    MIN
+}
 
 // @public
 export const VERSION: {

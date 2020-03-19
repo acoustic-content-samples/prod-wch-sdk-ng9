@@ -17,4 +17,5 @@ export interface ComponentTypeRefResolver extends AbstractComponentTypeRefResolv
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [getTypeByLayout](./ng-api.componenttyperefresolver.gettypebylayout.md) | <code>(aLayout: Layout, aLayoutMode?: string) =&gt; Observable&lt;ComponentTypeRef&lt;any&gt;&gt;</code> | Returns the type object based on the layout configuration |
+|  [weight](./ng-api.componenttyperefresolver.weight.md) | <code>number</code> | Optionally a weight for the resolver |
 

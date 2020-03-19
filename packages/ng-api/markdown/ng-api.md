@@ -6,6 +6,12 @@
 
 Collection of APIs and constants for the Angular SDK
 
+## Enumerations
+
+|  Enumeration | Description |
+|  --- | --- |
+|  [PROVIDER\_WEIGHT](./ng-api.provider_weight.md) |  |
+
 ## Interfaces
 
 |  Interface | Description |

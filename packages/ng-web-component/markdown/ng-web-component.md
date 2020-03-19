@@ -4,6 +4,12 @@
 
 ## ng-web-component package
 
+## Classes
+
+|  Class | Description |
+|  --- | --- |
+|  [AcNgWebComponentModule](./ng-web-component.acngwebcomponentmodule.md) |  |
+
 ## Variables
 
 |  Variable | Description |

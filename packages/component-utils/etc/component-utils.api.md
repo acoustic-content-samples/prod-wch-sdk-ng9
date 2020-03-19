@@ -42,7 +42,7 @@ import { WindowType } from '@acoustic-content-sdk/component-api';
 
 // @public
 export class AbstractComponentResolverService<TYPE> implements AbstractComponentResolver<TYPE> {
-    protected constructor(aComponentsService: AbstractComponentsService<TYPE>, aLayoutResolverService: LayoutResolver, aLayoutMappingService: LayoutMappingResolver, aComponentTypeRefResolvers?: Array<AbstractComponentTypeRefResolver<TYPE>>, aLogSvc?: LoggerService);
+    protected constructor(aComponentsService: AbstractComponentsService<TYPE>, aLayoutResolverService: LayoutResolver, aLayoutMappingService: LayoutMappingResolver, aComponentTypeRefResolvers?: AbstractComponentTypeRefResolver<TYPE>[], aLogSvc?: LoggerService);
     // (undocumented)
     resolveComponent: (aRenderingContext: RenderingContextV2, aLayoutMode?: string) => Observable<TYPE>;
 }

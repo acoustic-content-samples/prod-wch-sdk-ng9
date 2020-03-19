@@ -9,7 +9,7 @@ Constructs a new instance of the `AbstractComponentResolverService` class
 <b>Signature:</b>
 
 ```typescript
-protected constructor(aComponentsService: AbstractComponentsService<TYPE>, aLayoutResolverService: LayoutResolver, aLayoutMappingService: LayoutMappingResolver, aComponentTypeRefResolvers?: Array<AbstractComponentTypeRefResolver<TYPE>>, aLogSvc?: LoggerService);
+protected constructor(aComponentsService: AbstractComponentsService<TYPE>, aLayoutResolverService: LayoutResolver, aLayoutMappingService: LayoutMappingResolver, aComponentTypeRefResolvers?: AbstractComponentTypeRefResolver<TYPE>[], aLogSvc?: LoggerService);
 ```
 
 ## Parameters
@@ -19,6 +19,6 @@ protected constructor(aComponentsService: AbstractComponentsService<TYPE>, aLayo
 |  aComponentsService | <code>AbstractComponentsService&lt;TYPE&gt;</code> |  |
 |  aLayoutResolverService | <code>LayoutResolver</code> |  |
 |  aLayoutMappingService | <code>LayoutMappingResolver</code> |  |
-|  aComponentTypeRefResolvers | <code>Array&lt;AbstractComponentTypeRefResolver&lt;TYPE&gt;&gt;</code> |  |
+|  aComponentTypeRefResolvers | <code>AbstractComponentTypeRefResolver&lt;TYPE&gt;[]</code> |  |
 |  aLogSvc | <code>LoggerService</code> |  |
 

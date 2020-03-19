@@ -39,7 +39,7 @@
     "@acoustic-content-sdk/utils": "9.0.0",
     "byline": "^5.0.0",
     "chalk": "^3.0.0",
-    "commander": "^4.1.1",
+    "commander": "^5.0.0",
     "cross-spawn": "^7.0.1",
     "email-validator": "^2.0.4",
     "fs-extra": "^8.1.0",

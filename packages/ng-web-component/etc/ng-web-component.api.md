@@ -4,6 +4,13 @@
 
 ```ts
 
+import { WchSdkVersion } from '@acoustic-content-sdk/api';
+
+// @public (undocumented)
+export class AcNgWebComponentModule {
+    VERSION: WchSdkVersion;
+}
+
 // @public
 export const VERSION: {
     version: {

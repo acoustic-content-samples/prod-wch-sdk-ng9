@@ -10,6 +10,7 @@ Framework independent collection of APIs and constants
 
 |  Variable | Description |
 |  --- | --- |
+|  [HBS\_COMPONENT\_RESOLVER\_WEIGHT](./component-hbs.hbs_component_resolver_weight.md) | Weight of the handlebars component resolver |
 |  [isHandlebarsLayout](./component-hbs.ishandlebarslayout.md) |  |
 |  [VERSION](./component-hbs.version.md) | Version and build number of the package |
 

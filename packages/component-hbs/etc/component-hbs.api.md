@@ -6,6 +6,9 @@
 
 import { Layout } from '@acoustic-content-sdk/api';
 
+// @public
+export const HBS_COMPONENT_RESOLVER_WEIGHT = 2000;
+
 // @public (undocumented)
 export const isHandlebarsLayout: ({ templateType, template }: Layout) => boolean;
 

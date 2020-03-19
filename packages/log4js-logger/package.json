@@ -33,7 +33,7 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "log4js": "^4"
+    "log4js": "^6"
   },
   "es2015": "dist/fesm2015/acoustic-content-sdk-log4js-logger.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-log4js-logger.js",
