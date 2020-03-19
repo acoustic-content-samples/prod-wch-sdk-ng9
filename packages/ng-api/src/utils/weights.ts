@@ -1,0 +1,5 @@
+export enum PROVIDER_WEIGHT {
+  LOW = 1000,
+  MIDDLE = 2000,
+  HEIGH = 3000
+}

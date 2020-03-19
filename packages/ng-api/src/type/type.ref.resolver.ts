@@ -2,7 +2,6 @@ import { Layout } from '@acoustic-content-sdk/api';
 import { AbstractComponentTypeRefResolver } from '@acoustic-content-sdk/component-api';
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { ComponentTypeRef } from './type.ref';
 
 /**
@@ -21,6 +20,11 @@ export interface ComponentTypeRefResolver
     aLayout: Layout,
     aLayoutMode?: string
   ) => Observable<ComponentTypeRef<any>>;
+
+  /**
+   * Optionally a weight for the resolver
+   */
+  weigth?: number;
 }
 
 /**

@@ -29,4 +29,5 @@ export * from './type/delivery.type.resolver';
 export * from './type/type.ref';
 export * from './type/type.ref.resolver';
 export * from './utils/type';
+export * from './utils/weights';
 export { VERSION } from './version';
