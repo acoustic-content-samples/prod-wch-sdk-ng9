@@ -8,16 +8,16 @@ import {
   LayoutResolver
 } from '@acoustic-content-sdk/component-api';
 import {
+  ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ComponentResolver,
   ComponentTypeRef,
-  ComponentTypeRefResolver,
-  ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS,
-  ACOUSTIC_TOKEN_LOGGER_SERVICE
+  ComponentTypeRefResolver
 } from '@acoustic-content-sdk/ng-api';
 import {
+  boxLoggerService,
   isNotNil,
   LAYOUT_TYPE_ANGULAR,
-  boxLoggerService,
   opCacheLast,
   rxNext,
   rxPipe,
@@ -26,6 +26,7 @@ import {
 import { Inject, Injectable, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
 import { selectIdFromRenderingContext } from '../../utils/selectors';
 import { LayoutResolverService } from '../layout/layout.resolver.service';
 import { LayoutMappingService } from '../mappings/mappings.service';
@@ -150,7 +151,7 @@ export class ComponentResolverService implements ComponentResolver {
     aLayoutMappingService: LayoutMappingService,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_COMPONENT_TYPE_REF_RESOLVERS)
-    aComponentTypeRefResolvers: ComponentTypeRefResolver[],
+    aComponentTypeRefResolvers?: ComponentTypeRefResolver[],
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc?: LoggerService
@@ -164,7 +165,8 @@ export class ComponentResolverService implements ComponentResolver {
      * Compose
      */
     const componentTypeRefResolver = createComponentTypeRefResolver(
-      aComponentTypeRefResolvers
+      aComponentTypeRefResolvers,
+      logSvc
     );
 
     const resolveComponent = (

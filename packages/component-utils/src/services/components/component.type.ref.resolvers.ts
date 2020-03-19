@@ -13,10 +13,12 @@ import { EMPTY, Observable, race } from 'rxjs';
  * @returns the resolution result or empty
  */
 function _getTypeByLayout<T>(
-  aResolvers: Array<AbstractComponentTypeRefResolver<T>>,
+  aResolvers: AbstractComponentTypeRefResolver<T>[],
   aLayout: Layout,
   aLayoutMode?: string
 ): Observable<T> {
+  // order resolvers
+
   // use the first to resolve
   return race(
     aResolvers.map((resolver) => resolver.getTypeByLayout(aLayout, aLayoutMode))
@@ -30,7 +32,7 @@ function _getTypeByLayout<T>(
  * @returns the combined resolver
  */
 export function createComponentTypeRefResolver<T>(
-  aResolvers: Array<AbstractComponentTypeRefResolver<T>>
+  aResolvers: AbstractComponentTypeRefResolver<T>[]
 ): AbstractComponentTypeRefResolver<T> {
   // the function
   const getTypeByLayout = isNilOrEmpty(aResolvers)

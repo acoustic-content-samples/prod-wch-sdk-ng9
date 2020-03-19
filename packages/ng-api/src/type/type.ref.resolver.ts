@@ -24,7 +24,7 @@ export interface ComponentTypeRefResolver
   /**
    * Optionally a weight for the resolver
    */
-  weigth?: number;
+  weight?: number;
 }
 
 /**

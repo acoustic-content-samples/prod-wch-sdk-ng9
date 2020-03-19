@@ -1,5 +1,7 @@
 export enum PROVIDER_WEIGHT {
+  MIN = Number.MIN_SAFE_INTEGER,
   LOW = 1000,
-  MIDDLE = 2000,
-  HEIGH = 3000
+  MEDIUM = 2000,
+  HEIGH = 3000,
+  MAX = Number.MAX_SAFE_INTEGER
 }

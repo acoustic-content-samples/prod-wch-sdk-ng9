@@ -1,5 +1,8 @@
 import { Layout, LoggerService } from '@acoustic-content-sdk/api';
-import { isHandlebarsLayout } from '@acoustic-content-sdk/component-hbs';
+import {
+  HBS_COMPONENT_RESOLVER_WEIGHT,
+  isHandlebarsLayout
+} from '@acoustic-content-sdk/component-hbs';
 import {
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ComponentTypeRef,
@@ -23,6 +26,10 @@ const HBS_TYPE_REF: ComponentTypeRef<HandlebarsComponent> = {
  */
 @Injectable()
 export class HandlebarsComponentResolver implements ComponentTypeRefResolver {
+  /**
+   * Weight of this resolver, somewhere in the middle
+   */
+  readonly weight = HBS_COMPONENT_RESOLVER_WEIGHT;
   /**
    * Method to resolve a handlebars component to the generic rendering component
    */

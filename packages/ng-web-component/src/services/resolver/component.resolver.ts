@@ -1,4 +1,5 @@
 import { Layout, LoggerService } from '@acoustic-content-sdk/api';
+import { HBS_COMPONENT_RESOLVER_WEIGHT } from '@acoustic-content-sdk/component-hbs';
 import {
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ComponentTypeRef,
@@ -57,12 +58,18 @@ function isWebComponentLayout(aLayout: Layout): boolean {
   return hasBundleTag(aLayout.tags);
 }
 
+const WC_COMPONENT_RESOLVER_WEIGHT = HBS_COMPONENT_RESOLVER_WEIGHT - 1;
+
 /**
  * Implementation of a `ComponentTypeRefResolver` that will resolve to the
  * web component if the layout is a web component layout.
  */
 @Injectable()
 export class WebComponentResolver implements ComponentTypeRefResolver {
+  /**
+   * Make sure this resolver resolves earlier than the handlebars resolver
+   */
+  readonly weight = WC_COMPONENT_RESOLVER_WEIGHT;
   /**
    * Method to resolve a handlebars component to the generic rendering component
    */

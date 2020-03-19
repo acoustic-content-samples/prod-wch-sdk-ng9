@@ -1,14 +1,33 @@
-import { Layout } from '@acoustic-content-sdk/api';
+import { Layout, Logger, LoggerService } from '@acoustic-content-sdk/api';
 import {
   ComponentTypeRef,
-  ComponentTypeRefResolver
+  ComponentTypeRefResolver,
+  PROVIDER_WEIGHT
 } from '@acoustic-content-sdk/ng-api';
 import {
+  boxLoggerService,
+  cmpNumbers,
   constGenerator,
+  isNil,
   isNilOrEmpty,
-  isNotNil
+  isNotNil,
+  mapArray,
+  opFilterNotNil,
+  pluckProperty,
+  rxNext,
+  rxPipe,
+  UNDEFINED$
 } from '@acoustic-content-sdk/utils';
-import { EMPTY, Observable, race } from 'rxjs';
+import {
+  combineLatest,
+  concat,
+  EMPTY,
+  MonoTypeOperatorFunction,
+  Observable
+} from 'rxjs';
+import { map } from 'rxjs/operators';
+
+const LOGGER = 'createComponentTypeRefResolver';
 
 /**
  * Resolves the components given a set of resolvers
@@ -22,16 +41,58 @@ import { EMPTY, Observable, race } from 'rxjs';
 function _getTypeByLayout(
   aResolvers: ComponentTypeRefResolver[],
   aLayout: Layout,
+  aLogger: Logger,
   aLayoutMode?: string
 ): Observable<ComponentTypeRef<any>> {
-  // use the first to resolve
-  return isNotNil(aLayout)
-    ? race(
-        aResolvers.map((resolver) =>
-          resolver.getTypeByLayout(aLayout, aLayoutMode)
-        )
+  // logging
+  const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(aLogger);
+  // sanity check on the layout
+  if (isNil(aLayout)) {
+    return EMPTY;
+  }
+  // map the resolvers
+  return rxPipe(
+    combineLatest(
+      mapArray(aResolvers, (resolver) =>
+        concat(UNDEFINED$, resolver.getTypeByLayout(aLayout, aLayoutMode))
       )
-    : EMPTY;
+    ),
+    log('layouts'),
+    map((layouts) => layouts.find(isNotNil)),
+    opFilterNotNil
+  );
+}
+
+const KEY_WEIGHT = 'weight';
+
+const selectWeight = pluckProperty<ComponentTypeRefResolver, typeof KEY_WEIGHT>(
+  KEY_WEIGHT,
+  PROVIDER_WEIGHT.MAX
+);
+
+/**
+ * Compares resolvers by weigth
+ *
+ * @param aLeft  - left resolver
+ * @param aRight - right resolver
+ *
+ * @return the result
+ */
+const cmpComponentTypeRefResolver = (
+  aLeft: ComponentTypeRefResolver,
+  aRight: ComponentTypeRefResolver
+) => cmpNumbers(selectWeight(aLeft), selectWeight(aRight));
+
+function _createComponentTypeRefResolver(
+  aResolvers: ComponentTypeRefResolver[],
+  aLogger: Logger
+) {
+  // sorted set of resolvers
+  const sortedResolvers: ComponentTypeRefResolver[] = [...aResolvers];
+  sortedResolvers.sort(cmpComponentTypeRefResolver);
+  // returns the resolution function
+  return (aLayout: Layout, aLayoutMode?: string) =>
+    _getTypeByLayout(sortedResolvers, aLayout, aLogger, aLayoutMode);
 }
 
 /**
@@ -41,13 +102,16 @@ function _getTypeByLayout(
  * @returns the combined resolver
  */
 export function createComponentTypeRefResolver(
-  aResolvers: ComponentTypeRefResolver[]
+  aResolvers?: ComponentTypeRefResolver[],
+  aLogSvc?: LoggerService
 ): ComponentTypeRefResolver {
+  // logging
+  const logSvc = boxLoggerService(aLogSvc);
+  const logger = logSvc.get(LOGGER);
   // the function
   const getTypeByLayout = isNilOrEmpty(aResolvers)
     ? constGenerator(EMPTY)
-    : (aLayout: Layout, aLayoutMode?: string) =>
-        _getTypeByLayout(aResolvers, aLayout, aLayoutMode);
+    : _createComponentTypeRefResolver(aResolvers, logger);
   // returns the resolver
   return { getTypeByLayout };
 }

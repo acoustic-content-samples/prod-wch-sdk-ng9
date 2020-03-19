@@ -31,6 +31,7 @@
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/component-api": "9.0.0",
+    "@acoustic-content-sdk/component-hbs": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-utils": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
@@ -51,6 +52,7 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
+        "@acoustic-content-sdk/component-hbs": "acoustic-content-sdk.component-hbs",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"

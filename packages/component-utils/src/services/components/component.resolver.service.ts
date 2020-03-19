@@ -145,7 +145,7 @@ export class AbstractComponentResolverService<TYPE>
     aComponentsService: AbstractComponentsService<TYPE>,
     aLayoutResolverService: LayoutResolver,
     aLayoutMappingService: LayoutMappingResolver,
-    aComponentTypeRefResolvers?: Array<AbstractComponentTypeRefResolver<TYPE>>,
+    aComponentTypeRefResolvers?: AbstractComponentTypeRefResolver<TYPE>[],
     aLogSvc?: LoggerService
   ) {
     // logger service
