@@ -1,4 +1,5 @@
 import {
+  createVersionString,
   Layout,
   LoggerService,
   RenderingContextV2
@@ -30,6 +31,7 @@ import { switchMap } from 'rxjs/operators';
 import { selectIdFromRenderingContext } from '../../utils/selectors';
 import { LayoutResolverService } from '../layout/layout.resolver.service';
 import { LayoutMappingService } from '../mappings/mappings.service';
+import { MODULE, VERSION } from './../../../version';
 import { createComponentTypeRefResolver } from './component.type.ref.resolvers';
 import {
   ComponentsService,
@@ -184,5 +186,8 @@ export class ComponentResolverService implements ComponentResolver {
       );
 
     this.resolveComponent = resolveComponent;
+
+    // log this service
+    logger.info(MODULE, createVersionString(VERSION));
   }
 }

@@ -5,40 +5,18 @@ import {
   ComponentTypeRef,
   ComponentTypeRefResolver
 } from '@acoustic-content-sdk/ng-api';
-import {
-  boxLoggerService,
-  isAbsoluteURL,
-  reduceArray
-} from '@acoustic-content-sdk/utils';
+import { boxLoggerService, reduceArray } from '@acoustic-content-sdk/utils';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 
 import { WebComponent } from '../../components/web-view/web.component';
+import { isBundleTag } from '../../utils/utils';
 
 const LOGGER = 'WebComponentsComponentResolver';
 
 const WEB_TYPE_REF: ComponentTypeRef<WebComponent> = {
   type: WebComponent
 };
-
-const BUNDLE_PREFIX = 'bundle:';
-
-/**
- * Tests if we have a bundle tag
- *
- * @param aTag - the tag to check
- * @returns true if this is a bundle index, else false
- */
-function isBundleTag(aTag: string): boolean {
-  const leftIdx = aTag.indexOf(BUNDLE_PREFIX);
-  const rightIdx = aTag.indexOf('#', leftIdx + BUNDLE_PREFIX.length);
-  // check the URL
-  return (
-    leftIdx >= 0 &&
-    rightIdx >= 0 &&
-    isAbsoluteURL(aTag.substring(leftIdx + BUNDLE_PREFIX.length, rightIdx))
-  );
-}
 
 /**
  * Tests if the tags contain a bundle reference
