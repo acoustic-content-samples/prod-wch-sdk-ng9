@@ -10,6 +10,7 @@ import {
 import {
   boxLoggerService,
   idleFrameScheduler,
+  isAbsoluteURL,
   isNil,
   isNotNil,
   isString,
@@ -135,21 +136,21 @@ function internalFetchTextAjax(
     aPath: string,
     aPriority?: FETCH_PRIORITY
   ): Observable<string> {
+    // load using ajax
+    const fetchFct =
+      aPriority === FETCH_PRIORITY.LOW ? fetchTextLow : fetchTextNormal;
     // check for the delivery part
     const isDelivery = aPath.indexOf(SLASH) === 0;
     // check if we need to use delivery or API
     const baseURL = isDelivery ? deliveryURL : apiURL;
     const path = removeStartingSlash(aPath);
     // prepend with the api URL
-    const url = `${baseURL.href}${path}`;
+    const url = isAbsoluteURL(aPath) ? aPath : `${baseURL.href}${path}`;
     // check if we need to use credentials
     const withCredentials =
       isPreview || (!isDelivery && url.indexOf(deliveryPrefix) !== 0);
     // log this
     logger.info('fetch text', withCredentials, path);
-    // load using ajax
-    const fetchFct =
-      aPriority === FETCH_PRIORITY.LOW ? fetchTextLow : fetchTextNormal;
     // dispatch
     return fetchFct(url, withCredentials);
   }
