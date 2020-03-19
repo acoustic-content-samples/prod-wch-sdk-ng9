@@ -30,7 +30,7 @@ export function isBundleTag(aTag: string): boolean {
     // right index
     const rightIdx = selector.indexOf('#');
     // check the URL
-    return rightIdx >= 0 && isAbsoluteURL(aTag.substring(0, rightIdx));
+    return rightIdx >= 0 && isAbsoluteURL(selector.substring(0, rightIdx));
   }
   // this is not a url
   return false;

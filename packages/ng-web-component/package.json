@@ -6,8 +6,7 @@
     "acoustic",
     "acoustic-content",
     "angular",
-    "react",
-    "schematics",
+    "web-components",
     "sdk"
   ],
   "bugs": {

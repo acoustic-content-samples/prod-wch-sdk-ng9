@@ -12,27 +12,33 @@ import { AbstractRenderingComponent } from '@acoustic-content-sdk/ng-utils';
 import {
   boxLoggerService,
   firstElement,
+  isNotNil,
+  KEY_LAYOUT_MODE,
+  KEY_RENDERING_CONTEXT,
   mapArray,
+  opDistinctUntilChanged,
   opFilterNotNil,
+  opShareLast,
   pluckProperty,
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   Inject,
   Input,
-  Optional,
-  Output
+  OnDestroy,
+  Optional
 } from '@angular/core';
-import { combineLatest, MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-
+import { combineLatest, merge, MonoTypeOperatorFunction } from 'rxjs';
+import { map, scan, switchMap, takeUntil } from 'rxjs/operators';
 import { AcNgBundleService } from '../../services/bundle/bundle.service';
 import { selectBundleUrl } from '../../utils/utils';
 
-const LOGGER = 'AcWebComponent';
+const LOGGER = 'WebComponent';
 
 const KEY_TAGS = 'tags';
 
@@ -48,7 +54,7 @@ const selectTags = pluckProperty<Layout, typeof KEY_TAGS>(KEY_TAGS, []);
  * @returns the bundle selector
  */
 const getBundleSelector = (aLayout: Layout) =>
-  firstElement(mapArray(selectTags(aLayout), selectBundleUrl));
+  firstElement(mapArray(selectTags(aLayout), selectBundleUrl).filter(isNotNil));
 
 @Component({
   selector: 'ac-web-content',
@@ -61,7 +67,8 @@ const getBundleSelector = (aLayout: Layout) =>
    */
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WebComponent extends AbstractRenderingComponent {
+export class WebComponent extends AbstractRenderingComponent
+  implements AfterViewInit, OnDestroy {
   /**
    * rendering context input
    */
@@ -73,10 +80,8 @@ export class WebComponent extends AbstractRenderingComponent {
   @Input()
   layoutMode: string;
 
-  @Output()
-  selector$: Observable<any>;
-
   constructor(
+    aElementRef: ElementRef,
     aBundleService: AcNgBundleService,
     @Inject(ACOUSTIC_TOKEN_LAYOUT_RESOLVER)
     aLayoutResolver: LayoutResolver,
@@ -92,8 +97,17 @@ export class WebComponent extends AbstractRenderingComponent {
     const log: <T>(value: string) => MonoTypeOperatorFunction<T> = rxNext(
       logger
     );
+    // lifecycle triggers
+    const init$ = this.afterContentInit$;
+    const done$ = this.onDestroy$;
+    // native element
+    const element$ = rxPipe(
+      init$,
+      map(() => aElementRef.nativeElement),
+      log('element')
+    );
     // access the context
-    const selector$ = rxPipe(
+    const name$ = rxPipe(
       combineLatest([this.layoutMode$, this.renderingContext$]),
       switchMap(([layoutMode, rc]) =>
         aLayoutResolver.resolveLayout(layoutMode, rc)
@@ -102,10 +116,49 @@ export class WebComponent extends AbstractRenderingComponent {
       map(getBundleSelector),
       log('selector'),
       opFilterNotNil,
+      opDistinctUntilChanged,
       switchMap((selector) => aBundleService.get(selector)),
       log('component')
     );
-    // decode the bundle identifier
-    this.selector$ = selector$;
+    // compose the component
+    const component$ = rxPipe(
+      combineLatest([name$, element$]),
+      scan((aComponent: HTMLElement, [name, parent]: [string, HTMLElement]) => {
+        // cleanup
+        if (isNotNil(aComponent)) {
+          // log this
+          logger.info('Deleting old component', aComponent);
+          // delete old component
+          aComponent.parentNode.removeChild(aComponent);
+        }
+        // log this
+        logger.info('Adding new component', name);
+        // construct the new component
+        return parent.appendChild(parent.ownerDocument.createElement(name));
+      }, undefined),
+      opShareLast
+    );
+    // attach the component to the layout mode and the rendering context
+    const layoutMode$ = rxPipe(this.layoutMode$, opDistinctUntilChanged);
+    const rc$ = rxPipe(this.renderingContext$, opDistinctUntilChanged);
+    // attach
+    const updateMode$ = rxPipe(
+      combineLatest([component$, layoutMode$]),
+      map(([cmp, mode]) => (cmp[KEY_LAYOUT_MODE] = mode))
+    );
+    const updateContext$ = rxPipe(
+      combineLatest([component$, rc$]),
+      map(([cmp, rc]) => (cmp[KEY_RENDERING_CONTEXT] = rc))
+    );
+    // combine everything
+    rxPipe(merge(updateMode$, updateContext$), takeUntil(done$)).subscribe();
+  }
+
+  ngAfterViewInit() {
+    super.ngAfterViewInit();
+  }
+
+  ngOnDestroy() {
+    super.ngOnDestroy();
   }
 }

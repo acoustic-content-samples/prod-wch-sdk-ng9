@@ -1,5 +1,5 @@
-[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/ng-api.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/ng-api)
+[![npm](https://img.shields.io/npm/v/@acoustic-content-sdk/ng-web-component.svg?style=flat-square)](https://www.npmjs.com/package/@acoustic-content-sdk/ng-web-component)
 
-Angular specific APIs and injection tokens for the Acoustic Content Services.
+Implementation of an Angular component that can dynamically inject web components for layouts
 
-[API Documentation](./markdown/ng-api.md)
+[API Documentation](./markdown/ng-web-component.md)

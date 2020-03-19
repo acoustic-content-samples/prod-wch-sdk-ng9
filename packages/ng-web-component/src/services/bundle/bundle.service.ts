@@ -8,6 +8,10 @@ import {
   boxLoggerService,
   createLruCache,
   createSingleSubject,
+  hashRandomClassName,
+  isNil,
+  kebabCase,
+  Maybe,
   pluckProperty,
   rxNext,
   rxPipe
@@ -16,7 +20,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 import { MonoTypeOperatorFunction } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { map } from 'rxjs/operators';
+import { map, pluck } from 'rxjs/operators';
 
 import { RX_MODULE } from './rx.module';
 import { UTILS_MODULE } from './utils.module';
@@ -35,7 +39,7 @@ export class AcNgBundleService implements OnDestroy {
   /**
    * Returns the named bundle export
    */
-  get: (aBundle: string) => Promise<any>;
+  get: (aBundle: string) => Promise<string>;
 
   constructor(
     @Inject(ACOUSTIC_TOKEN_WINDOW)
@@ -56,7 +60,14 @@ export class AcNgBundleService implements OnDestroy {
     /**
      * Cache of loaded bundles
      */
-    const bundleCache = createLruCache<Promise<Record<string, any>>>(
+    const bundleCache = createLruCache<
+      Promise<Record<string, CustomElementConstructor>>
+    >(BUNDLE_TIMEOUT, undefined, logger);
+
+    /**
+     * Cache of elements
+     */
+    const elementsCache = createLruCache<Promise<string>>(
       BUNDLE_TIMEOUT,
       undefined,
       logger
@@ -108,6 +119,7 @@ export class AcNgBundleService implements OnDestroy {
     const loadBundle = (aUrl: string): Promise<Record<string, any>> =>
       rxPipe(
         ajax({ url: aUrl, responseType: 'text' }),
+        pluck('response'),
         log(aUrl),
         map(decodeModule)
       ).toPromise();
@@ -118,13 +130,15 @@ export class AcNgBundleService implements OnDestroy {
      * @param aUrl - the URL to the bundle
      * @returns the promise
      */
-    const getBundle = (aUrl: string): Promise<Record<string, any>> =>
+    const getBundle = (
+      aUrl: string
+    ): Promise<Record<string, CustomElementConstructor>> =>
       bundleCache(aUrl, loadBundle);
 
     /**
      * Returns the exported symbol from the bundle
      */
-    function getExport(aBundle: string): Promise<any> {
+    function getExport(aBundle: string): Promise<CustomElementConstructor> {
       // split
       const [url, name = DEFAULT_BUNDLE_EXPORT] = aBundle.split('#');
       // returns the export
@@ -132,9 +146,46 @@ export class AcNgBundleService implements OnDestroy {
     }
 
     /**
+     * Registers a component with a new, random name
+     *
+     * @param aComponent - the component to register, may be undefined
+     * @returns the new component name
+     */
+    function registerComponent(
+      aComponent?: CustomElementConstructor
+    ): Maybe<string> {
+      // sanity check
+      if (isNil(aComponent)) {
+        return undefined;
+      }
+      // create a name
+      const name = kebabCase(`ac-${hashRandomClassName()}`);
+      // log this
+      logger.info('Registering', name, aComponent);
+      // register the component
+      customElements.define(name, aComponent);
+      return name;
+    }
+
+    /**
+     * Contructs a new registration
+     *
+     * @param aBundle - the bundle identifier
+     * @returns the name of the registered component
+     */
+    const createComponent = (aBundle: string): Promise<string> =>
+      getExport(aBundle).then(registerComponent);
+
+    /**
+     * Returns a new registration
+     */
+    const getComponent = (aBundle: string): Promise<string> =>
+      elementsCache(aBundle, createComponent);
+
+    /**
      * Assign the getter
      */
-    this.get = getExport;
+    this.get = getComponent;
   }
 
   ngOnDestroy() {
