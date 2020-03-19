@@ -18,6 +18,9 @@ import { MonoTypeOperatorFunction } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 
+import { RX_MODULE } from './rx.module';
+import { UTILS_MODULE } from './utils.module';
+
 const LOGGER = 'AcNgBundleService';
 
 const BUNDLE_TIMEOUT = 60 * 60 * 1000;
@@ -59,10 +62,16 @@ export class AcNgBundleService implements OnDestroy {
       logger
     );
 
-    function requireModule(aName: string): any {
-      logger.info('requireModule', aName);
+    /**
+     * Supported modules for require
+     */
+    const modules = { ...RX_MODULE, ...UTILS_MODULE };
 
-      return undefined;
+    function requireModule(aName: string): any {
+      // log this
+      logger.info('require', aName);
+      // dispatch
+      return modules[aName];
     }
 
     /**
