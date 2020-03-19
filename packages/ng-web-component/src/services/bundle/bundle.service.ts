@@ -1,7 +1,9 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { ACOUSTIC_TOKEN_LOGGER_SERVICE } from '@acoustic-content-sdk/ng-api';
-import { ACOUSTIC_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api/src/services/window/window';
+import {
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_WINDOW
+} from '@acoustic-content-sdk/ng-api';
 import {
   boxLoggerService,
   createLruCache,
