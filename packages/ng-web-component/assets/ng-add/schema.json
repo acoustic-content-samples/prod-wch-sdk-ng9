@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "@acoustic-content-sdk/ng-web-component",
+  "title": "@acoustic-content-sdk/ng-web-component Schema",
+  "type": "object",
+  "properties": {
+    "module": {
+      "type": "string",
+      "description": "Name of the main module to import. Use a comma separated list for more than one module, defaults to 'AcNgWebComponentModule'.",
+      "default": "AcNgWebComponentModule"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

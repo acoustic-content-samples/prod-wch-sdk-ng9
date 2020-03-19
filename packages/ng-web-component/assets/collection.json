@@ -1,0 +1,12 @@
+{
+  "$schema": "./../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "factory": "@acoustic-content-sdk/schematics#addFeatureModuleToApplication",
+      "description": "Adds the AcNgWebComponentModule to an Acoustic Application.",
+      "schema": "./ng-add/schema.json",
+      "private": true,
+      "hidden": true
+    }
+  }
+}
