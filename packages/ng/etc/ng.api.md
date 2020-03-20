@@ -47,14 +47,17 @@ export class AcNgProtectedContentModule {
 
 // @public (undocumented)
 export class AcNgRouterModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public (undocumented)
 export class AcNgSearchModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public (undocumented)
 export class AcNgServicesModule {
+    VERSION: WchSdkVersion;
 }
 
 // @public

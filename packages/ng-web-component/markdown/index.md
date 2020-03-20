@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/ng-web-component](./ng-web-component.md) |  |
+|  [@acoustic-content-sdk/ng-web-component](./ng-web-component.md) | Implementation of an Angular component that can dynamically inject web components for layouts |
 

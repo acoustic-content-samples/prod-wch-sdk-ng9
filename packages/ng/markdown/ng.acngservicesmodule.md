@@ -9,3 +9,10 @@
 ```typescript
 export declare class AcNgServicesModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.acngservicesmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

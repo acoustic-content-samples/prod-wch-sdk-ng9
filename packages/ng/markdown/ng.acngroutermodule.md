@@ -9,3 +9,10 @@
 ```typescript
 export declare class AcNgRouterModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.acngroutermodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+

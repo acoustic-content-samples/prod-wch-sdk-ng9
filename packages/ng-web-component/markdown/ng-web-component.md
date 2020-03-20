@@ -4,6 +4,8 @@
 
 ## ng-web-component package
 
+Implementation of an Angular component that can dynamically inject web components for layouts
+
 ## Classes
 
 |  Class | Description |

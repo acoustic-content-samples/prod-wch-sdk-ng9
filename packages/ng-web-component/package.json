@@ -6,8 +6,9 @@
     "acoustic",
     "acoustic-content",
     "angular",
-    "web-components",
-    "sdk"
+    "schematics",
+    "sdk",
+    "web-components"
   ],
   "bugs": {
     "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"

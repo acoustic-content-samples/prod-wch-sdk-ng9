@@ -6,8 +6,9 @@
     "acoustic",
     "acoustic-content",
     "angular",
-    "web-components-services",
-    "sdk"
+    "schematics",
+    "sdk",
+    "web-components-services"
   ],
   "bugs": {
     "web": "https://developer.ibm.com/answers/smartspace/wch/index.html"
@@ -28,19 +29,8 @@
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
-  "dependencies": {
-    "@acoustic-content-sdk/api": "9.0.0",
-    "@acoustic-content-sdk/component-api": "9.0.0",
-    "@acoustic-content-sdk/component-hbs": "9.0.0",
-    "@acoustic-content-sdk/ng-api": "9.0.0",
-    "@acoustic-content-sdk/ng-utils": "9.0.0",
-    "@acoustic-content-sdk/utils": "9.0.0"
-  },
-  "peerDependencies": {
-    "@angular/common": "^9",
-    "@angular/core": "^9",
-    "rxjs": "^6"
-  },
+  "dependencies": {},
+  "peerDependencies": {},
   "es2015": "dist/fesm2015/acoustic-content-sdk-web-components-services.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-web-components-services.js",
   "esm5": "dist/esm5/acoustic-content-sdk-web-components-services.js",
@@ -49,20 +39,12 @@
   "metadata": "dist/acoustic-content-sdk-web-components-services.metadata.json",
   "ngPackage": {
     "lib": {
-      "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
-        "@acoustic-content-sdk/component-hbs": "acoustic-content-sdk.component-hbs",
-        "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
-        "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
-      }
+      "umdModuleIds": {}
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*"
     ]
   },
-  "schematics": "./assets/collection.json",
   "tsdoc": {
     "tsdocFlavor": "AEDoc"
   }

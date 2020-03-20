@@ -9,3 +9,10 @@
 ```typescript
 export declare class AcNgSearchModule 
 ```
+
+## Properties
+
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [VERSION](./ng.acngsearchmodule.version.md) |  | <code>WchSdkVersion</code> | Exposes the version information of this module |
+
