@@ -3,10 +3,14 @@ import {
   LoggerService,
   UrlConfig
 } from '@acoustic-content-sdk/api';
-import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
+import {
+  DeliverySearchResolver,
+  DeliverySiteResolver
+} from '@acoustic-content-sdk/component-api';
 import {
   ACOUSTIC_TOKEN_AUTH_STATUS,
   ACOUSTIC_TOKEN_DELIVERY_SEARCH_RESOLVER,
+  ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
@@ -22,6 +26,8 @@ export class AcNgContextService {
   context: Record<string, any>;
 
   constructor(
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER)
+    aSiteResolver: DeliverySiteResolver,
     @Inject(ACOUSTIC_TOKEN_AUTH_STATUS)
     aAuthStatus: AuthStatus,
     @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
@@ -39,7 +45,8 @@ export class AcNgContextService {
       ACOUSTIC_LOGGER_SERVICE: logSvc,
       ACOUSTIC_DELIVERY_SEARCH_RESOLVER: aDeliverySearchResolver,
       ACOUSTIC_URL_CONFIG: aConfig,
-      ACOUSTIC_AUTH_STATUS: aAuthStatus
+      ACOUSTIC_AUTH_STATUS: aAuthStatus,
+      ACOUSTIC_DELIVERY_SITE_RESOLVER: aSiteResolver
     };
   }
 }
