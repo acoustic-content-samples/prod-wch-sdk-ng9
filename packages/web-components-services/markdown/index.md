@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/web-components-services](./web-components-services.md) | Implementation of an Angular component that can dynamically inject web components for layouts |
+|  [@acoustic-content-sdk/web-components-services](./web-components-services.md) | Constants for services that can be required by dynamic web components |
 

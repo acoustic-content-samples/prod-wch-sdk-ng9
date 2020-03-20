@@ -4,11 +4,17 @@
 
 ## web-components-services package
 
-Implementation of an Angular component that can dynamically inject web components for layouts
+Constants for services that can be required by dynamic web components
 
 ## Variables
 
 |  Variable | Description |
 |  --- | --- |
+|  [ACOUSTIC\_AUTH\_STATUS](./web-components-services.acoustic_auth_status.md) | Constant for the page service |
+|  [ACOUSTIC\_DELIVERY\_SEARCH\_RESOLVER](./web-components-services.acoustic_delivery_search_resolver.md) | Constant for the navigation service |
+|  [ACOUSTIC\_DELIVERY\_SITE\_RESOLVER](./web-components-services.acoustic_delivery_site_resolver.md) | Constant for the site service |
+|  [ACOUSTIC\_LOGGER\_SERVICE](./web-components-services.acoustic_logger_service.md) |  |
+|  [ACOUSTIC\_URL\_CONFIG](./web-components-services.acoustic_url_config.md) | Constant for the url config |
+|  [MODULE](./web-components-services.module.md) | Module name |
 |  [VERSION](./web-components-services.version.md) | Version and build number of the package |
 

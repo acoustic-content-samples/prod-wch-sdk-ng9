@@ -4,6 +4,31 @@
 
 ```ts
 
+import { AuthStatus } from '@acoustic-content-sdk/api';
+import { DeliverySearchResolver } from '@acoustic-content-sdk/component-api';
+import { DeliverySiteResolver } from '@acoustic-content-sdk/component-api';
+import { LoggerService } from '@acoustic-content-sdk/api';
+import { Observable } from 'rxjs';
+import { UrlConfig } from '@acoustic-content-sdk/api';
+
+// @public
+export const ACOUSTIC_AUTH_STATUS: AuthStatus;
+
+// @public
+export const ACOUSTIC_DELIVERY_SEARCH_RESOLVER: DeliverySearchResolver;
+
+// @public
+export const ACOUSTIC_DELIVERY_SITE_RESOLVER: DeliverySiteResolver;
+
+// @public (undocumented)
+export const ACOUSTIC_LOGGER_SERVICE: LoggerService;
+
+// @public
+export const ACOUSTIC_URL_CONFIG: Observable<UrlConfig>;
+
+// @public
+export const MODULE = "@acoustic-content-sdk/web-components-services";
+
 // @public
 export const VERSION: {
     version: {

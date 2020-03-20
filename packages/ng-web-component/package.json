@@ -36,7 +36,8 @@
     "@acoustic-content-sdk/component-hbs": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-utils": "9.0.0",
-    "@acoustic-content-sdk/utils": "9.0.0"
+    "@acoustic-content-sdk/utils": "9.0.0",
+    "@acoustic-content-sdk/web-components-services": "9.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^9",
@@ -57,7 +58,8 @@
         "@acoustic-content-sdk/component-hbs": "acoustic-content-sdk.component-hbs",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",
+        "@acoustic-content-sdk/web-components-services": "acoustic-content-sdk.web-components-services"
       }
     },
     "whitelistedNonPeerDependencies": [
