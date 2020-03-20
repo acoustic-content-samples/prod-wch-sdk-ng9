@@ -15,6 +15,7 @@ import {
   ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import { boxLoggerService } from '@acoustic-content-sdk/utils';
+import { MODULE as KEY_WEB_COMPONENTS_SERVICE } from '@acoustic-content-sdk/web-components-services';
 import { Inject, Injectable, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -42,11 +43,13 @@ export class AcNgContextService {
     const logSvc = boxLoggerService(aLogSvc);
 
     this.context = {
-      ACOUSTIC_LOGGER_SERVICE: logSvc,
-      ACOUSTIC_DELIVERY_SEARCH_RESOLVER: aDeliverySearchResolver,
-      ACOUSTIC_URL_CONFIG: aConfig,
-      ACOUSTIC_AUTH_STATUS: aAuthStatus,
-      ACOUSTIC_DELIVERY_SITE_RESOLVER: aSiteResolver
+      [KEY_WEB_COMPONENTS_SERVICE]: {
+        ACOUSTIC_LOGGER_SERVICE: logSvc,
+        ACOUSTIC_DELIVERY_SEARCH_RESOLVER: aDeliverySearchResolver,
+        ACOUSTIC_URL_CONFIG: aConfig,
+        ACOUSTIC_AUTH_STATUS: aAuthStatus,
+        ACOUSTIC_DELIVERY_SITE_RESOLVER: aSiteResolver
+      }
     };
   }
 }
