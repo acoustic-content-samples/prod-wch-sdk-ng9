@@ -29,8 +29,14 @@
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
     "test": "jest"
   },
-  "dependencies": {},
-  "peerDependencies": {},
+  "dependencies": {
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/component-api": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
+  },
+  "peerDependencies": {
+    "rxjs": "^6"
+  },
   "es2015": "dist/fesm2015/acoustic-content-sdk-web-components-services.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-web-components-services.js",
   "esm5": "dist/esm5/acoustic-content-sdk-web-components-services.js",
@@ -39,7 +45,11 @@
   "metadata": "dist/acoustic-content-sdk-web-components-services.metadata.json",
   "ngPackage": {
     "lib": {
-      "umdModuleIds": {}
+      "umdModuleIds": {
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/component-api": "acoustic-content-sdk.component-api",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
+      }
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*"
