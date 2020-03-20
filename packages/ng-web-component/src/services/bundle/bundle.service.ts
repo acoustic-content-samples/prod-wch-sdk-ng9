@@ -1,9 +1,6 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import {
-  ACOUSTIC_TOKEN_LOGGER_SERVICE,
-  ACOUSTIC_TOKEN_WINDOW
-} from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_LOGGER_SERVICE, ACOUSTIC_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
 import {
   boxLoggerService,
   createLruCache,
@@ -14,7 +11,7 @@ import {
   Maybe,
   pluckProperty,
   rxNext,
-  rxPipe
+  rxPipe,
 } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
@@ -22,6 +19,7 @@ import { MonoTypeOperatorFunction } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map, pluck } from 'rxjs/operators';
 
+import { AcNgContextService } from '../context/context.service';
 import { RX_MODULE } from './rx.module';
 import { UTILS_MODULE } from './utils.module';
 
@@ -42,6 +40,7 @@ export class AcNgBundleService implements OnDestroy {
   get: (aBundle: string) => Promise<string>;
 
   constructor(
+    aContextService: AcNgContextService,
     @Inject(ACOUSTIC_TOKEN_WINDOW)
     aWnd: WindowType,
     @Inject(DOCUMENT)
@@ -76,7 +75,11 @@ export class AcNgBundleService implements OnDestroy {
     /**
      * Supported modules for require
      */
-    const modules = { ...RX_MODULE, ...UTILS_MODULE };
+    const modules = {
+      ...RX_MODULE,
+      ...UTILS_MODULE,
+      ...aContextService.context
+    };
 
     function requireModule(aName: string): any {
       // log this

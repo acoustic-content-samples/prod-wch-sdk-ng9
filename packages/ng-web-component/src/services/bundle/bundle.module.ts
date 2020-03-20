@@ -2,6 +2,7 @@ import { WchSdkVersion } from '@acoustic-content-sdk/api';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AcNgContextService } from '../context/context.service';
 import { VERSION } from './../../version';
 import { AcNgBundleService } from './bundle.service';
 
@@ -13,6 +14,9 @@ import { AcNgBundleService } from './bundle.service';
   providers: [
     {
       provide: AcNgBundleService
+    },
+    {
+      provide: AcNgContextService
     }
   ]
 })
