@@ -434,7 +434,7 @@ function createDistPackage(): Promise<string> {
   // script section
   const scripts = {
     'publish:global':
-      'wsrun --concurrency 8 --collect-logs -c publish --non-interactive'
+      'wsrun --concurrency 3 --collect-logs -c publish --non-interactive'
   };
   // produce
   return cpy$
