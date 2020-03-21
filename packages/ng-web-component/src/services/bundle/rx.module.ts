@@ -1,14 +1,15 @@
 import {
   BehaviorSubject,
+  combineLatest,
   EMPTY,
   from,
+  fromEvent,
+  merge,
   NEVER,
   Observable,
   of,
   ReplaySubject,
-  Subject,
-  combineLatest,
-  merge
+  Subject
 } from 'rxjs';
 
 /**
@@ -17,6 +18,7 @@ import {
  */
 export const RX_MODULE = {
   rxjs: {
+    fromEvent,
     of,
     from,
     EMPTY,
