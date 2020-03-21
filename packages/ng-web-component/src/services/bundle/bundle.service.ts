@@ -4,11 +4,14 @@ import {
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_WINDOW
 } from '@acoustic-content-sdk/ng-api';
+import { ACOUSTIC_TOKEN_FETCH_TEXT } from '@acoustic-content-sdk/ng-rest-api';
+import { FetchText } from '@acoustic-content-sdk/rest-api';
 import {
   boxLoggerService,
   createLruCache,
   createSingleSubject,
   hashRandomClassName,
+  isAbsoluteURL,
   isNil,
   kebabCase,
   Maybe,
@@ -18,14 +21,14 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
-import { MonoTypeOperatorFunction } from 'rxjs';
+import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map, pluck } from 'rxjs/operators';
 
 import { AcNgContextService } from '../context/context.service';
 import { RX_MODULE } from './rx.module';
-import { UTILS_MODULE } from './utils.module';
 import { RX_OP_MODULE } from './rx.operators.module';
+import { UTILS_MODULE } from './utils.module';
 
 const LOGGER = 'AcNgBundleService';
 
@@ -45,6 +48,8 @@ export class AcNgBundleService implements OnDestroy {
 
   constructor(
     aContextService: AcNgContextService,
+    @Inject(ACOUSTIC_TOKEN_FETCH_TEXT)
+    aFetchText: FetchText,
     @Inject(ACOUSTIC_TOKEN_WINDOW)
     aWnd: WindowType,
     @Inject(DOCUMENT)
@@ -119,18 +124,41 @@ export class AcNgBundleService implements OnDestroy {
     }
 
     /**
+     * Load the bundle from an absolute URL
+     *
+     * @param aUrl - the absolute URL
+     *
+     * @returns the observable
+     */
+    const loadBundleAbsolute = (aUrl: string): Observable<string> =>
+      rxPipe(ajax({ url: aUrl, responseType: 'text' }), pluck('response'));
+
+    /**
+     * Load the bundle from a relative URL
+     *
+     * @param aUrl - the relative URL
+     *
+     * @returns the observable
+     */
+    const loadBundleRelative = aFetchText;
+
+    /**
+     * Loads the bundle string for an absolute or relative URL
+     *
+     * @param aUrl - the URL
+     * @returns the observable
+     */
+    const loadBundleFromUrl = (aUrl: string): Observable<string> =>
+      isAbsoluteURL(aUrl) ? loadBundleAbsolute(aUrl) : loadBundleRelative(aUrl);
+
+    /**
      * Loads a bundle from an UMD bundle
      *
      * @param aUrl - URL to the main entry of the bundle
      * @returns the exported symbols
      */
     const loadBundle = (aUrl: string): Promise<Record<string, any>> =>
-      rxPipe(
-        ajax({ url: aUrl, responseType: 'text' }),
-        pluck('response'),
-        log(aUrl),
-        map(decodeModule)
-      ).toPromise();
+      rxPipe(loadBundleFromUrl(aUrl), log(aUrl), map(decodeModule)).toPromise();
 
     /**
      * Returns the bundle from a cache

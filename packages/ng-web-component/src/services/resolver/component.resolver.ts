@@ -32,9 +32,7 @@ function hasBundleTag(aTags?: string[]): boolean {
   );
 }
 
-function isWebComponentLayout(aLayout: Layout): boolean {
-  return hasBundleTag(aLayout.tags);
-}
+const isWebComponentLayout = (aLayout: Layout) => hasBundleTag(aLayout.tags);
 
 const WC_COMPONENT_RESOLVER_WEIGHT = HBS_COMPONENT_RESOLVER_WEIGHT - 1;
 

@@ -1,4 +1,4 @@
-import { isAbsoluteURL, isNotNil, Maybe } from '@acoustic-content-sdk/utils';
+import { isNotNil, Maybe } from '@acoustic-content-sdk/utils';
 
 const BUNDLE_PREFIX = 'bundle:';
 
@@ -28,9 +28,7 @@ export function isBundleTag(aTag: string): boolean {
   const selector = selectBundleUrl(aTag);
   if (isNotNil(selector)) {
     // right index
-    const rightIdx = selector.indexOf('#');
-    // check the URL
-    return rightIdx >= 0 && isAbsoluteURL(selector.substring(0, rightIdx));
+    return selector.indexOf('#') > 0;
   }
   // this is not a url
   return false;
