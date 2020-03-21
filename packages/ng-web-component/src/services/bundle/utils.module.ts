@@ -1,4 +1,5 @@
 import {
+  deepEquals,
   isArray,
   isNil,
   isNotNil,
@@ -26,6 +27,7 @@ export const UTILS_MODULE = {
     isArray,
     reduceForIn,
     reduceArray,
+    deepEquals,
     luceneEscapeKeyValue,
     luceneEscapeKeyValueAnd,
     luceneEscapeKeyValueOr,
