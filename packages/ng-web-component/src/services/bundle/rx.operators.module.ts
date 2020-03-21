@@ -18,7 +18,8 @@ import {
   shareReplay,
   startWith,
   switchMap,
-  takeUntil
+  takeUntil,
+  tap
 } from 'rxjs/operators';
 
 /**
@@ -46,6 +47,7 @@ export const RX_OP_MODULE = {
     concatMap,
     debounceTime,
     distinctUntilChanged,
-    catchError
+    catchError,
+    tap
   }
 };
