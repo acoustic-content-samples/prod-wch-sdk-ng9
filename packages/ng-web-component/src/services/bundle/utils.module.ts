@@ -3,6 +3,10 @@ import {
   isNil,
   isNotNil,
   isString,
+  luceneEscapeKeyValue,
+  luceneEscapeKeyValueAnd,
+  luceneEscapeKeyValueOr,
+  luceneEscapeTerm,
   MODULE,
   reduceArray,
   reduceForIn,
@@ -21,6 +25,10 @@ export const UTILS_MODULE = {
     isString,
     isArray,
     reduceForIn,
-    reduceArray
+    reduceArray,
+    luceneEscapeKeyValue,
+    luceneEscapeKeyValueAnd,
+    luceneEscapeKeyValueOr,
+    luceneEscapeTerm
   }
 };
