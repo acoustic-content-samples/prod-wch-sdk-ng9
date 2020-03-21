@@ -19,7 +19,7 @@ In order to include an application component using web components you need to pr
 
 ### Content Type, Layout and Layout Mapping
 
-Follow the instructions for adding handlebars based layouts to Acoustic content. The result is a content type, a layout and a layout mapping.
+Follow the instructions for [adding handlebars based layouts](https://github.com/acoustic-content-samples/sample-handlebars-server-render) to Acoustic content. The result is a content type, a layout and a layout mapping.
 
 ### Web Component
 
@@ -56,3 +56,6 @@ In the first step you have created a layout descriptor file. Add the `tags` memb
 This syntax allows you to package multiple layout components in one file.
 
 [Push](https://www.npmjs.com/package/wchtools-cli) your changed layout to your tenant.
+
+**Note:** The URL may be absolute or relative. If absolute it can point to any server location. If relative it is resolved relative to the resource base URL for the tenant. This allows you to simply upload your scripts as unmanaged assets to your tenant.
+
