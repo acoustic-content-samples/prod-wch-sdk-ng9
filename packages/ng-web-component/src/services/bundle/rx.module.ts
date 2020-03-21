@@ -1,5 +1,15 @@
-import { EMPTY, from, NEVER, of } from 'rxjs';
-import { filter, map, mergeMap, switchMap } from 'rxjs/operators';
+import {
+  BehaviorSubject,
+  EMPTY,
+  from,
+  NEVER,
+  Observable,
+  of,
+  ReplaySubject,
+  Subject,
+  combineLatest,
+  merge
+} from 'rxjs';
 
 /**
  * Expose some methods from the RXJS module that we include
@@ -10,12 +20,12 @@ export const RX_MODULE = {
     of,
     from,
     EMPTY,
-    NEVER
-  },
-  'rxjs/operators': {
-    map,
-    switchMap,
-    mergeMap,
-    filter
+    NEVER,
+    ReplaySubject,
+    BehaviorSubject,
+    Subject,
+    Observable,
+    combineLatest,
+    merge
   }
 };

@@ -1,6 +1,9 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { WindowType } from '@acoustic-content-sdk/component-api';
-import { ACOUSTIC_TOKEN_LOGGER_SERVICE, ACOUSTIC_TOKEN_WINDOW } from '@acoustic-content-sdk/ng-api';
+import {
+  ACOUSTIC_TOKEN_LOGGER_SERVICE,
+  ACOUSTIC_TOKEN_WINDOW
+} from '@acoustic-content-sdk/ng-api';
 import {
   boxLoggerService,
   createLruCache,
@@ -11,7 +14,7 @@ import {
   Maybe,
   pluckProperty,
   rxNext,
-  rxPipe,
+  rxPipe
 } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
@@ -22,6 +25,7 @@ import { map, pluck } from 'rxjs/operators';
 import { AcNgContextService } from '../context/context.service';
 import { RX_MODULE } from './rx.module';
 import { UTILS_MODULE } from './utils.module';
+import { RX_OP_MODULE } from './rx.operators.module';
 
 const LOGGER = 'AcNgBundleService';
 
@@ -77,6 +81,7 @@ export class AcNgBundleService implements OnDestroy {
      */
     const modules = {
       ...RX_MODULE,
+      ...RX_OP_MODULE,
       ...UTILS_MODULE,
       ...aContextService.context
     };

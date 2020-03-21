@@ -1,4 +1,13 @@
-import { isNotNil, MODULE } from '@acoustic-content-sdk/utils';
+import {
+  isArray,
+  isNil,
+  isNotNil,
+  isString,
+  MODULE,
+  reduceArray,
+  reduceForIn,
+  rxPipe
+} from '@acoustic-content-sdk/utils';
 
 /**
  * Expose some methods from the utils module that we include
@@ -6,6 +15,12 @@ import { isNotNil, MODULE } from '@acoustic-content-sdk/utils';
  */
 export const UTILS_MODULE = {
   [MODULE]: {
-    isNotNil
+    isNotNil,
+    isNil,
+    rxPipe,
+    isString,
+    isArray,
+    reduceForIn,
+    reduceArray
   }
 };
