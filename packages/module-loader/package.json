@@ -28,7 +28,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@acoustic-content-sdk/api": "9.0.0"
+    "@acoustic-content-sdk/api": "9.0.0",
+    "@acoustic-content-sdk/rest-api": "9.0.0",
+    "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
     "rxjs": "^6"
@@ -42,7 +44,9 @@
   "ngPackage": {
     "lib": {
       "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api"
+        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
+        "@acoustic-content-sdk/rest-api": "acoustic-content-sdk.rest-api",
+        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },
     "whitelistedNonPeerDependencies": [
