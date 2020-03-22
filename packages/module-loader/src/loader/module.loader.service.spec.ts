@@ -49,6 +49,32 @@ describe('module', () => {
   );
 
   it(
+    'should load moment',
+    () => {
+      // load
+      const chart$ = resolver('moment');
+      return rxPipe(
+        chart$,
+        tap((moment) => expect(moment).toBeDefined())
+      ).toPromise();
+    },
+    20 * 1000
+  );
+
+  it(
+    'should load chart.js',
+    () => {
+      // load
+      const chart$ = resolver('chart.js');
+      return rxPipe(
+        chart$,
+        tap((chart) => expect(chart).toBeDefined())
+      ).toPromise();
+    },
+    20 * 1000
+  );
+
+  it(
     'should load d3',
     () => {
       // load
