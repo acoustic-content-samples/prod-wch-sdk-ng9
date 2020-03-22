@@ -12,7 +12,8 @@ import {
   reduceForIn,
   reduceToObject,
   rxNext,
-  rxPipe
+  rxPipe,
+  spreadArgs
 } from '@acoustic-content-sdk/utils';
 import {
   combineLatest,
@@ -72,6 +73,18 @@ export function createModuleLoader(
   const loadBinary = (aId: string) => aFetchText(`${UNPKG}${aId}`);
 
   /**
+   * Loads the correct package json from unkpg
+   *
+   * @param aFetchText - fetch function
+   * @param aName - name of the module
+   * @param aVersion - optionally the version
+   *
+   * @returns the package json
+   */
+  const loadPackageJson = (aId: string) =>
+    rxPipe(aFetchText(`${UNPKG}${aId}/package.json`), map(jsonParse));
+
+  /**
    * Resolve an external module
    *
    * @param aId - the module identifier
@@ -124,6 +137,8 @@ export function createModuleLoader(
       rxPipe(
         // load the pkg
         loadPackageJson(aId),
+        // log this
+        log(aId),
         // resolve
         switchMap((pkg: any) => {
           // decode the version from the package
@@ -131,8 +146,10 @@ export function createModuleLoader(
           const id = createIdentifier(name, version);
           // check if we need a redirect
           if (!isEqual(id, aId)) {
+            // log this
+            logger.info('Redirecting ...', aId, id);
             // dispatch
-            return loadModule(name, version);
+            return resolveModule(name, version);
           }
           // we can now resolve the dependencies
           const deps$ = loadDependencies(pkg);
@@ -141,7 +158,7 @@ export function createModuleLoader(
           // when resolved load the function
           return rxPipe(
             combineLatest([bin$, deps$]),
-            map(([bin, deps]) => createExport(bin, deps))
+            map(spreadArgs(createExport))
           );
         })
       )
@@ -169,22 +186,6 @@ export function createModuleLoader(
    */
   const resolveModule = (aName: string, aVersion?: string) =>
     from(loadModule(aName, aVersion));
-
-  /**
-   * Loads the correct package json from unkpg
-   *
-   * @param aFetchText - fetch function
-   * @param aName - name of the module
-   * @param aVersion - optionally the version
-   *
-   * @returns the package json
-   */
-  const loadPackageJson = (aId: string) =>
-    rxPipe(
-      aFetchText(`${UNPKG}${aId}/package.json`),
-      map(jsonParse),
-      log('package.json')
-    );
 
   /**
    * Resolves all dependencies from the given module
