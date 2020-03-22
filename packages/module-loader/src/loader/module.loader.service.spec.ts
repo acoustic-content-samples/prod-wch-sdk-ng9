@@ -4,6 +4,7 @@
 import {
   constGenerator,
   createConsoleLogger,
+  NOOP_LOGGER_SERVICE,
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { EMPTY } from 'rxjs';
@@ -44,7 +45,20 @@ describe('module', () => {
     fetchText,
     document,
     window,
-    logSvc
+    NOOP_LOGGER_SERVICE
+  );
+
+  it(
+    'should load d3',
+    () => {
+      // load
+      const d3$ = resolver('d3');
+      return rxPipe(
+        d3$,
+        tap((d3) => expect(d3).toBeDefined())
+      ).toPromise();
+    },
+    20 * 1000
   );
 
   it('should load lodash', () => {
@@ -53,7 +67,12 @@ describe('module', () => {
 
     return rxPipe(
       lodash$,
-      tap((lod) => expect(lod._).toBeDefined())
+      tap((lod) => expect(lod._).toBeDefined()),
+      tap((lod) =>
+        expect(
+          lod.template('<div>Hello <%- name %>!</div>')({ name: 'Carsten' })
+        ).toBe('<div>Hello Carsten!</div>')
+      )
     ).toPromise();
   });
 });

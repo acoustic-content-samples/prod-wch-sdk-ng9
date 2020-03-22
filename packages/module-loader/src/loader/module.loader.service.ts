@@ -1,6 +1,7 @@
 import { LoggerService } from '@acoustic-content-sdk/api';
 import { FetchText } from '@acoustic-content-sdk/rest-api';
 import {
+  anyToString,
   arrayPush,
   assertFromFunction,
   boxLoggerService,
@@ -12,8 +13,7 @@ import {
   reduceForIn,
   reduceToObject,
   rxNext,
-  rxPipe,
-  spreadArgs
+  rxPipe
 } from '@acoustic-content-sdk/utils';
 import {
   combineLatest,
@@ -96,32 +96,44 @@ export function createModuleLoader(
    * Constructs the function object based on the module
    * name and its dependencies.
    *
+   * @param aId - the module id
    * @param aBinary - the module text
    * @param aDependencies - the dependencies
    *
    * @returns the exports
    */
   function createExport(
+    aId: string,
     aBinary: string,
     aDependencies: Record<string, any>
   ): any {
-    // require callback
-    const requireModule = (aName: string) => aDependencies[aName];
-    // create the context
-    const exports: any = {};
-    const module: any = {};
-    // execute the function
-    const fct = new Function(
-      'exports',
-      'module',
-      'require',
-      'document',
-      'window',
-      aBinary
-    );
-    fct(exports, module, requireModule, aDocument, aWindow);
-    // use the exports
-    return module.exports;
+    try {
+      // require callback
+      const requireModule = (aName: string) => aDependencies[aName];
+      // create the context
+      const exports: any = {};
+      const module: any = { exports };
+      // execute the function
+      const fct = new Function(
+        'exports',
+        'module',
+        'require',
+        'document',
+        'window',
+        aBinary
+      );
+      fct(exports, module, requireModule, aDocument, aWindow);
+      // use the exports
+      return module.exports;
+    } catch (error) {
+      // log this
+      logger.error(
+        `Failing to load [${aId}], root cause [${anyToString(error)}].`,
+        error
+      );
+      // fallback to an empty object
+      return {};
+    }
   }
 
   /**
@@ -158,7 +170,7 @@ export function createModuleLoader(
           // when resolved load the function
           return rxPipe(
             combineLatest([bin$, deps$]),
-            map(spreadArgs(createExport))
+            map(([bin, deps]) => createExport(id, bin, deps))
           );
         })
       )
@@ -220,9 +232,12 @@ export function createModuleLoader(
     // load all modules
     return rxPipe(
       forkJoin(all),
-      map(
-        (result) => reduceToObject(result, ([name]) => name),
-        ([, value]) => value
+      map((result) =>
+        reduceToObject(
+          result,
+          ([name]) => name,
+          ([, value]) => value
+        )
       )
     );
   }
