@@ -7,7 +7,7 @@ import { ACOUSTIC_TOKEN_FETCH_TEXT } from '@acoustic-content-sdk/ng-rest-api';
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional } from '@angular/core';
 
-import { createFetchText } from './/fetch.text';
+import { createFetchText } from './fetch.text';
 
 /**
  * {@link https://angular.io/guide/ngmodules|Angular Module} that provides an implementation of `ACOUSTIC_TOKEN_FETCH_TEXT`

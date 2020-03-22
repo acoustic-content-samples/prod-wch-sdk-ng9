@@ -1,45 +1,25 @@
-import {
-  LoggerService,
-  StaticHubInfoUrlProvider
-} from '@acoustic-content-sdk/api';
-import {
-  FETCH_PRIORITY,
-  FetchText,
-  WriteText
-} from '@acoustic-content-sdk/rest-api';
+import { LoggerService, StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
+import { FETCH_PRIORITY, FetchText, WriteText } from '@acoustic-content-sdk/rest-api';
 import {
   boxLoggerService,
+  createLruCache,
   idleFrameScheduler,
   isAbsoluteURL,
   isNil,
   isNotNil,
   isString,
   jsonStringify,
+  opCacheLast,
   pluckPath,
   rxPipe,
   typedPluck,
   urlFromProvider,
   wchGetResourceUrlFromApiURL,
-  wchIsPreviewMode
+  wchIsPreviewMode,
 } from '@acoustic-content-sdk/utils';
-import {
-  asyncScheduler,
-  from,
-  merge,
-  Observable,
-  Subject,
-  Subscriber,
-  throwError
-} from 'rxjs';
+import { asyncScheduler, from, merge, Observable, Subject, Subscriber, throwError } from 'rxjs';
 import { ajax, AjaxResponse } from 'rxjs/ajax';
-import {
-  catchError,
-  mapTo,
-  observeOn,
-  pluck,
-  subscribeOn,
-  switchMap
-} from 'rxjs/operators';
+import { catchError, mapTo, observeOn, pluck, subscribeOn, switchMap } from 'rxjs/operators';
 
 import { isBaseAuthoringItem } from './auth.content.utils';
 import { fromFetch } from './fetch';
@@ -47,6 +27,10 @@ import { fromFetch } from './fetch';
 const SLASH = '/';
 export const PUBLISH_PRIORITY_HEADER_VALUE = 'now';
 export const CONTENT_TYPE_HEADER_VALUE_JSON = 'application/json';
+
+const USE_CACHE = true;
+
+const FETCH_TEXT_LOGGER = 'FetchTextAjax';
 
 /*
  * Makes sure our path ends with a proper trailing slash
@@ -123,7 +107,7 @@ function internalFetchTextAjax(
   logSvc: LoggerService
 ): FetchText {
   // logger
-  const logger = logSvc.get('FetchTextAjax');
+  const logger = logSvc.get(FETCH_TEXT_LOGGER);
   // decode the API URL
   const apiURL = urlFromProvider(apiBase);
   // get the delivery URL
@@ -173,25 +157,47 @@ export function fetchTextAjax(
 ): FetchText {
   // resolve the logger
   const logSvc = boxLoggerService(aLoggerService);
+  const logger = logSvc.get(FETCH_TEXT_LOGGER);
+  // construct a cache
+  const cache = createLruCache<Observable<string>>();
   // attach to the provider
   const fetchText$ = Promise.resolve(apiBase).then((url) =>
     internalFetchTextAjax(url, logSvc)
   );
 
   // dispatch
-  function fetch(
+  const fetch = (
     aPath: string,
     aPriority?: FETCH_PRIORITY
-  ): Observable<string> {
-    // delay until we know the base URL
-    return rxPipe(
+  ): Observable<string> =>
+    rxPipe(
       from(fetchText$),
       switchMap((fetchText) => fetchText(aPath, aPriority))
     );
-  }
+
+  const cachedFetch = (
+    aPath: string,
+    aPriority?: FETCH_PRIORITY
+  ): Observable<string> => rxPipe(fetch(aPath, aPriority), opCacheLast);
+
+  /**
+   * Returns a response from the cache. This response will emit the last cached
+   * value immeditately but also request a new, fresh value if the observable
+   * is not running, already
+   *
+   * @param aPath - the path
+   * @param aPriority - optionally the priority
+   *
+   * @return the observable with the desired behaviour
+   */
+  const fromCache = (
+    aPath: string,
+    aPriority?: FETCH_PRIORITY
+  ): Observable<string> =>
+    cache(aPath, (path) => cachedFetch(path, aPriority), logger);
 
   // returns the fetch function
-  return fetch;
+  return USE_CACHE ? fromCache : fetch;
 }
 
 function hasRevision(aItem: any): boolean {
