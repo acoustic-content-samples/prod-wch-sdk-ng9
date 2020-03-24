@@ -4,6 +4,14 @@
 
 ```ts
 
+import { FetchText } from '@acoustic-content-sdk/rest-api';
+import { LoggerService } from '@acoustic-content-sdk/api';
+import { Observable } from 'rxjs';
+import { UnaryFunction } from 'rxjs';
+
+// @public
+export function createModuleLoader(aResolver: UnaryFunction<string, Observable<any>>, aFetchText: FetchText, aDocument: Document, aWindow: any, aLogSvc?: LoggerService): (aName: string, aVersion?: string) => Observable<any>;
+
 // @public
 export const VERSION: {
     version: {

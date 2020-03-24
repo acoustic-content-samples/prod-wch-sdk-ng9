@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@acoustic-content-sdk/module-loader](./module-loader.md) | Simple implementation of a module loader based on unpkg |
+|  [@acoustic-content-sdk/tooling-fonts](./tooling-fonts.md) | Implementation of the command to generate nls files. |
 

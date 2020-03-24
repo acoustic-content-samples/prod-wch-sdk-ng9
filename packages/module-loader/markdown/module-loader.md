@@ -4,7 +4,13 @@
 
 ## module-loader package
 
-Framework independent collection of APIs and constants
+Simple implementation of a module loader based on unpkg
+
+## Functions
+
+|  Function | Description |
+|  --- | --- |
+|  [createModuleLoader(aResolver, aFetchText, aDocument, aWindow, aLogSvc)](./module-loader.createmoduleloader.md) | Implementation of a service that can load a module and its dependencies from <code>unpkg</code> |
 
 ## Variables
 
