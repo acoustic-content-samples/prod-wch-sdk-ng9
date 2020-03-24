@@ -7,4 +7,4 @@ import { AuthoringContentState } from './auth.content.state';
 export const selectAuthoringContentItem: UnaryFunction<
   string,
   UnaryFunction<AuthoringContentState, AuthoringContentItem>
-> = id => selectByDeliveryId(id);
+> = (id) => selectByDeliveryId(id);

@@ -39,7 +39,8 @@ import {
   queueScheduler,
   SchedulerLike,
   throwError,
-  UnaryFunction
+  UnaryFunction,
+  forkJoin
 } from 'rxjs';
 import { AjaxError } from 'rxjs/ajax';
 import { catchError, first, map, mapTo, toArray } from 'rxjs/operators';
@@ -89,8 +90,9 @@ function deleteItem(
     errorHandler
   );
 
+  return rxPipe(forkJoin(deleteContent$, deleteAsset$), mapTo(aId));
   // temporarily disable delete operations (outstanding discussions how to delete drafts)
-  return of(aId, aScheduler);
+  // return of(aId, aScheduler);
 }
 
 function persistAuthoringContentItem(
