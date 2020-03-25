@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "prebuild": "ts-node scripts/prebuild.ts",
-    "build": "wsrun --stages build:packagr ",
+    "build": "wsrun --stages --report build:packagr ",
     "postbuild": "npm-run-all build:api build:doc build:post",
     "build:api": "wsrun --exclude-missing -c build:api",
     "build:doc": "wsrun --exclude-missing -c build:doc",

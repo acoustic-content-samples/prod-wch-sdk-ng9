@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AcNgComponentsModule } from '@acoustic-content-sdk/ng';
+import {
+  ComponentRegistry,
+  ACOUSTIC_TOKEN_COMPONENT_REGISTRY
+} from '@acoustic-content-sdk/ng-api';
 
 import { {{{layoutClassName}}} } from '{{{layoutFileName}}}';
 
@@ -17,8 +21,11 @@ import { {{{layoutClassName}}} } from '{{{layoutFileName}}}';
     entryComponents: [{{{layoutClassName}}}]
 })
 export class {{{moduleClassName}}} {
-  /**
-   * Reference the component to prevent ivy from tree shaking it
-   */
-  private readonly ref = {{{layoutClassName}}};
+
+  constructor(
+    @Inject(ACOUSTIC_TOKEN_COMPONENT_REGISTRY) aRegistry: ComponentRegistry
+  ) {
+    // register the component
+    aRegistry.registerType({{{layoutClassName}}});
+  }
 }

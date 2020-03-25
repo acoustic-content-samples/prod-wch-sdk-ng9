@@ -29,15 +29,8 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "dependencies": {
-    "@acoustic-content-sdk/api": "9.0.0",
-    "@acoustic-content-sdk/i18n": "9.0.0",
-    "@acoustic-content-sdk/tooling": "9.0.0",
-    "@acoustic-content-sdk/utils": "9.0.0"
-  },
-  "peerDependencies": {
-    "rxjs": "^6"
-  },
+  "dependencies": {},
+  "peerDependencies": {},
   "es2015": "dist/fesm2015/acoustic-content-sdk-tooling-fonts.js",
   "esm2015": "dist/esm2015/acoustic-content-sdk-tooling-fonts.js",
   "esm5": "dist/esm5/acoustic-content-sdk-tooling-fonts.js",
@@ -46,12 +39,7 @@
   "metadata": "dist/acoustic-content-sdk-tooling-fonts.metadata.json",
   "ngPackage": {
     "lib": {
-      "umdModuleIds": {
-        "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
-        "@acoustic-content-sdk/i18n": "acoustic-content-sdk.i18n",
-        "@acoustic-content-sdk/tooling": "acoustic-content-sdk.tooling",
-        "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
-      }
+      "umdModuleIds": {}
     },
     "whitelistedNonPeerDependencies": [
       "@acoustic-content-sdk/.*"
