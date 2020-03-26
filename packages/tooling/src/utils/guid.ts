@@ -3,9 +3,8 @@ import {
   jsonStringify,
   reduceArray
 } from '@acoustic-content-sdk/utils';
-import { createHmac } from 'crypto';
+import { BinaryLike, createHmac } from 'crypto';
 import { v4 } from 'uuid';
-
 import { MODULE } from './../version';
 
 const SECRET = MODULE;
@@ -25,7 +24,7 @@ export function createRevision(aObj: any, aSecret: string = SECRET): string {
  *
  * @returns the guid
  */
-export function createGuid(aId: string, aSecret: string = SECRET): string {
+export function createGuid(aId: BinaryLike, aSecret: string = SECRET): string {
   // produce the revision ID
   return createGuidFromBuffer(
     createHmac('sha256', aSecret)

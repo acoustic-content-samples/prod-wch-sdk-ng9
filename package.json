@@ -112,7 +112,7 @@
     "request-promise-native": "^1.0.8",
     "rfc6902": "^3.0.4",
     "rimraf": "^3.0.2",
-    "rxjs": "6.5.3",
+    "rxjs": "6.5.4",
     "rxjs-marbles": "^5.0.4",
     "rxjs-tslint-rules": "^4.29.1",
     "semver": "^7.1.3",

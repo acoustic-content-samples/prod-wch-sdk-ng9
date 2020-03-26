@@ -9,14 +9,14 @@ Constructs a GUID in a reproducible way from an ID
 <b>Signature:</b>
 
 ```typescript
-export declare function createGuid(aId: string, aSecret?: string): string;
+export declare function createGuid(aId: BinaryLike, aSecret?: string): string;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aId | <code>string</code> | the original ID |
+|  aId | <code>BinaryLike</code> | the original ID |
 |  aSecret | <code>string</code> | some optional secret |
 
 <b>Returns:</b>

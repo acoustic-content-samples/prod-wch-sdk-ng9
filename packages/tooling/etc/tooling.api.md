@@ -11,6 +11,7 @@ import { AuthoringLayoutMapping } from '@acoustic-content-sdk/api';
 import { AuthoringType } from '@acoustic-content-sdk/api';
 import { BaseAuthoringItem } from '@acoustic-content-sdk/api';
 import { BiFunction } from '@acoustic-content-sdk/utils';
+import { BinaryLike } from 'crypto';
 import { Credentials } from '@acoustic-content-sdk/cli-credentials';
 import { experimental } from '@angular-devkit/core';
 import { JSONObject } from '@acoustic-content-sdk/utils';
@@ -66,7 +67,7 @@ export const createChalkLoggerService: () => import("@acoustic-content-sdk/api")
 export function createFileDescriptor<T>(aName: string, aValue: T): FileDescriptor<T>;
 
 // @public
-export function createGuid(aId: string, aSecret?: string): string;
+export function createGuid(aId: BinaryLike, aSecret?: string): string;
 
 // @public
 export function createGuidFromBuffer(aBuffer: Buffer): string;
