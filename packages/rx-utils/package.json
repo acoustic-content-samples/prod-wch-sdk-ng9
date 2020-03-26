@@ -29,7 +29,7 @@
   "peerDependencies": {
     "byline": "^5",
     "cross-spawn": "^7",
-    "fs-extra": "^8",
+    "fs-extra": "^9",
     "mime": "^2",
     "random-useragent": "^0",
     "request": "^2",

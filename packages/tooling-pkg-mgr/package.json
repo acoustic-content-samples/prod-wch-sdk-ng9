@@ -34,7 +34,7 @@
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
-    "fs-extra": "^8",
+    "fs-extra": "^9",
     "rxjs": "^6",
     "semver": "^7"
   },
