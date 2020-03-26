@@ -33,7 +33,7 @@ const FORMATS = {
   svg: 'svg'
 };
 
-const FORMAT_KEYS = ['eot', 'woff2', 'woff', 'ttf', 'svg'];
+export const FORMAT_KEYS = ['eot', 'woff2', 'woff', 'ttf', 'svg'];
 
 /**
  * Constructs the correct URL import including a format specifier
@@ -51,11 +51,15 @@ function createUrlWithFormat(
   aFormat: string,
   aNameMapper: UnaryFunction<string, Observable<string>>
 ): Observable<string> {
+  // split a potential hash
+  const idx = aUrl.lastIndexOf('#');
+  const suffix = idx >= 0 ? aUrl.substr(idx) : '';
+  // create the URL
   return rxPipe(
     aNameMapper(aUrl),
     map(
       (name) =>
-        `url('${aPrefix}${name}.${aFormat}') format('${FORMATS[aFormat]}')`
+        `url('${aPrefix}${name}.${aFormat}${suffix}') format('${FORMATS[aFormat]}')`
     )
   );
 }
@@ -117,7 +121,9 @@ function createSrc(
   // extract the valid tuples
   const urls = FORMAT_KEYS.map((key) => [key, aVariant[key]])
     .filter(([, url]) => isNotEmpty(url))
-    .map(([format, url]) => createUrl(aPrefix, url, format, aNameMapper));
+    .map(([format, url]) =>
+      createUrlWithFormat(aPrefix, url, format, aNameMapper)
+    );
   // resolve
   const src$ = rxPipe(
     forkJoin(urls),
