@@ -1,5 +1,12 @@
-import { LoggerService, StaticHubInfoUrlProvider } from '@acoustic-content-sdk/api';
-import { FETCH_PRIORITY, FetchText, WriteText } from '@acoustic-content-sdk/rest-api';
+import {
+  LoggerService,
+  StaticHubInfoUrlProvider
+} from '@acoustic-content-sdk/api';
+import {
+  FETCH_PRIORITY,
+  FetchText,
+  WriteText
+} from '@acoustic-content-sdk/rest-api';
 import {
   boxLoggerService,
   createLruCache,
@@ -15,11 +22,26 @@ import {
   typedPluck,
   urlFromProvider,
   wchGetResourceUrlFromApiURL,
-  wchIsPreviewMode,
+  wchIsPreviewMode
 } from '@acoustic-content-sdk/utils';
-import { asyncScheduler, from, merge, Observable, Subject, Subscriber, throwError } from 'rxjs';
+import {
+  asyncScheduler,
+  from,
+  merge,
+  Observable,
+  Subject,
+  Subscriber,
+  throwError
+} from 'rxjs';
 import { ajax, AjaxResponse } from 'rxjs/ajax';
-import { catchError, mapTo, observeOn, pluck, subscribeOn, switchMap } from 'rxjs/operators';
+import {
+  catchError,
+  mapTo,
+  observeOn,
+  pluck,
+  subscribeOn,
+  switchMap
+} from 'rxjs/operators';
 
 import { isBaseAuthoringItem } from './auth.content.utils';
 import { fromFetch } from './fetch';
@@ -164,6 +186,10 @@ export function fetchTextAjax(
   const fetchText$ = Promise.resolve(apiBase).then((url) =>
     internalFetchTextAjax(url, logSvc)
   );
+  // check for preview mode
+  const isPreview$ = Promise.resolve(apiBase).then((provider) =>
+    wchIsPreviewMode(urlFromProvider(provider))
+  );
 
   // dispatch
   const fetch = (
@@ -196,8 +222,25 @@ export function fetchTextAjax(
   ): Observable<string> =>
     cache(aPath, (path) => cachedFetch(path, aPriority), logger);
 
+  /**
+   * Only serve from the cache if not in preview mode
+   *
+   * @param aPath - URL path
+   * @param aPriority - priority
+   *
+   * @returns the result
+   */
+  const safeFromCache = (
+    aPath: string,
+    aPriority?: FETCH_PRIORITY
+  ): Observable<string> =>
+    rxPipe(
+      from(isPreview$),
+      switchMap((bPreview) => (bPreview ? fetch : fromCache)(aPath, aPriority))
+    );
+
   // returns the fetch function
-  return USE_CACHE ? fromCache : fetch;
+  return USE_CACHE ? safeFromCache : fetch;
 }
 
 function hasRevision(aItem: any): boolean {
