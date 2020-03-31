@@ -69,12 +69,12 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   if (isNotNil(links)) {
     if (isNotNil(links['createDraft'])) {
       // is published item
-      delete links['createDraft'];
-      links['linkedDoc'] = {
-        href: `/authoring/v1/content/${getDeliveryId(itemId)}`
-      };
+      aItem.del('links.createDraft');
+      aItem.set(
+        'links.linkedDoc.href',
+        `/authoring/v1/content/${getDeliveryId(itemId)}`
+      );
     }
-    aItem.set('links', { ...links });
   }
   // set the creation information
   if (isNil(created)) {
