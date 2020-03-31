@@ -55,8 +55,8 @@ export class AbstractDeliveryLayoutResolverService implements DeliveryLayoutReso
 // @public
 export class AbstractDeliveryPageResolverService implements DeliveryPageResolver {
     protected constructor(aSearch: DeliverySearchResolver, aLogSvc?: LoggerService);
-    // (undocumented)
     getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
+    getErrorPage: () => Observable<DeliveryContentItem>;
 }
 
 // @public

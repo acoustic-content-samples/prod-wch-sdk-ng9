@@ -13,10 +13,11 @@ import {
 } from '@acoustic-content-sdk/ng-api';
 import { AbstractBaseComponent } from '@acoustic-content-sdk/ng-utils';
 import {
+  boxLoggerService,
   createSingleSubject,
   isNil,
+  isNotNil,
   isString,
-  boxLoggerService,
   opCacheLast,
   rxNext,
   rxPipe
@@ -37,6 +38,7 @@ import {
   combineLatest,
   MonoTypeOperatorFunction,
   Observable,
+  of,
   ReplaySubject,
   Subject
 } from 'rxjs';
@@ -264,6 +266,10 @@ export class PageComponent extends AbstractBaseComponent
       // context for the active page
       switchMap((segments) =>
         aPageService.getRenderingContextByUrlSegments(segments)
+      ),
+      // fallback to the error page
+      switchMap((rc) =>
+        isNotNil(rc) ? of(rc) : aPageService.getErrorRenderingContext()
       ),
       /**
        * Compute outside of Angular

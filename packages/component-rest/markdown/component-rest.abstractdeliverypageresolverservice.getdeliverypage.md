@@ -4,6 +4,8 @@
 
 ## AbstractDeliveryPageResolverService.getDeliveryPage property
 
+Locates a page given the path
+
 <b>Signature:</b>
 
 ```typescript

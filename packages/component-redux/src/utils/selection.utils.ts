@@ -42,3 +42,6 @@ const CANONICAL_PATH = [
   KEY_VALUE
 ];
 export const selectCanonicalPath = pluckPath<string>(CANONICAL_PATH);
+
+const TAGS_PATH = ['tags'];
+export const selectTags = pluckPath<string[]>(TAGS_PATH, []);

@@ -22,5 +22,6 @@ export declare class AbstractDeliveryPageResolverService implements DeliveryPage
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [getDeliveryPage](./component-rest.abstractdeliverypageresolverservice.getdeliverypage.md) |  | <code>(aPath: string) =&gt; Observable&lt;DeliveryContentItem&gt;</code> |  |
+|  [getDeliveryPage](./component-rest.abstractdeliverypageresolverservice.getdeliverypage.md) |  | <code>(aPath: string) =&gt; Observable&lt;DeliveryContentItem&gt;</code> | Locates a page given the path |
+|  [getErrorPage](./component-rest.abstractdeliverypageresolverservice.geterrorpage.md) |  | <code>() =&gt; Observable&lt;DeliveryContentItem&gt;</code> | Returns the error page |
 

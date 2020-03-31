@@ -76,6 +76,7 @@ export interface DeliveryLayoutResolver {
 // @public
 export interface DeliveryPageResolver {
     getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
+    getErrorPage(): Observable<DeliveryContentItem>;
 }
 
 // @public
@@ -170,6 +171,7 @@ export const VERSION: {
 
 // @public
 export interface WchPageService {
+    getErrorRenderingContext(): Observable<RenderingContextV2 | null | undefined>;
     getRenderingContextByPath(aPath: string): Observable<RenderingContextV2 | null | undefined>;
 }
 

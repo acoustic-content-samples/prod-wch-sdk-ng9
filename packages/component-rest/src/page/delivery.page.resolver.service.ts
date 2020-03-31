@@ -10,9 +10,9 @@ import {
   DeliverySearchResolver
 } from '@acoustic-content-sdk/component-api';
 import {
+  boxLoggerService,
   createDeliveryContentItem,
   luceneEscapeKeyValueOr,
-  boxLoggerService,
   rxCachedFunction,
   rxPipe
 } from '@acoustic-content-sdk/utils';
@@ -30,6 +30,8 @@ function removeTrailingSlash(aPath: string): string {
     : aPath;
 }
 
+const ERROR_TAG = 'errorPage';
+
 function ensureTrailingSlash(aPath: string): string {
   return aPath === '/' ? aPath : aPath.endsWith('/') ? aPath : `${aPath}/`;
 }
@@ -41,7 +43,20 @@ const LOGGER = 'AbstractDeliveryPageResolverService';
  */
 export class AbstractDeliveryPageResolverService
   implements DeliveryPageResolver {
+  /**
+   * Locates a page given the path
+   *
+   * @param aPath - the path to the page
+   *
+   * @returns an observable of the content item
+   */
   getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
+  /**
+   * Returns the error page
+   *
+   * @returns an observable of the content item
+   */
+  getErrorPage: () => Observable<DeliveryContentItem>;
 
   /**
    * Initialization
@@ -62,9 +77,7 @@ export class AbstractDeliveryPageResolverService
       rows: 1
     };
     // callback
-    const getContentItemWithLayout = createResolverFromSearch<
-      ContentItemWithLayout
-    >(
+    const findPageContentItem = createResolverFromSearch<ContentItemWithLayout>(
       aSearch,
       CLASSIFICATION_CONTENT,
       (path) => ({
@@ -77,13 +90,30 @@ export class AbstractDeliveryPageResolverService
       }),
       aLogSvc
     );
+    // callback
+    const findErrorContentItem = createResolverFromSearch<
+      ContentItemWithLayout
+    >(
+      aSearch,
+      CLASSIFICATION_CONTENT,
+      () => ({
+        ...query,
+        q: luceneEscapeKeyValueOr('tags', ERROR_TAG)
+      }),
+      aLogSvc
+    );
     // convert to the new format
     const getDeliveryPage = (id: string) =>
-      rxPipe(getContentItemWithLayout(id), map(createDeliveryContentItem));
+      rxPipe(findPageContentItem(id), map(createDeliveryContentItem));
+    const getErrorPage = () =>
+      rxPipe(findErrorContentItem(ERROR_TAG), map(createDeliveryContentItem));
 
+    // create a cache wrapper
     this.getDeliveryPage = rxCachedFunction(
       getDeliveryPage,
       createCache(logger)
     );
+    // no need to cache
+    this.getErrorPage = getErrorPage;
   }
 }

@@ -10,9 +10,9 @@ import {
   WchPageService
 } from '@acoustic-content-sdk/component-api';
 import {
+  boxLoggerService,
   cloneUrlConfig,
   KEY_RENDERING_CONTEXT,
-  boxLoggerService,
   opDistinctUntilChanged,
   opFilterNotNil,
   rxCachedFunction,
@@ -28,6 +28,15 @@ import { MODULE, VERSION } from './../../version';
 const LOGGER = 'AbstractWchPageService';
 
 export class AbstractWchPageService implements WchPageService {
+  /**
+   * Resolves the rendering context for the error page
+   *
+   * @returns the observable of the rendering context or undefined if it could not be found
+   */
+  getErrorRenderingContext: () => Observable<
+    RenderingContextV2 | null | undefined
+  >;
+
   /**
    * Resolves the rendering context given the path
    *
@@ -58,6 +67,14 @@ export class AbstractWchPageService implements WchPageService {
         opDistinctUntilChanged
       );
 
+    // simpler binding to the method
+    const errorPageResolver = () =>
+      rxPipe(
+        aDeliveryPageResolver.getErrorPage(),
+        opFilterNotNil,
+        opDistinctUntilChanged
+      );
+
     // base context
     const $context$: Observable<Partial<ExtendedContextV2>> = rxPipe(
       aUrlConfig$,
@@ -80,10 +97,26 @@ export class AbstractWchPageService implements WchPageService {
         log(KEY_RENDERING_CONTEXT, aPath)
       );
 
+    const getErrorRenderingContext = (): Observable<
+      RenderingContextV2 | null | undefined
+    > =>
+      rxPipe(
+        combineLatest([errorPageResolver(), $context$]),
+        // debounceTime(0),
+        map(([page, $context]) => ({
+          ...page,
+          $context
+        })),
+        log(KEY_RENDERING_CONTEXT)
+      );
+
     this.getRenderingContextByPath = rxCachedFunction(
       getRenderingContextByPath,
       createCache(logger)
     );
+
+    // no need to cache the error case
+    this.getErrorRenderingContext = getErrorRenderingContext;
 
     // log this service
     logger.info(MODULE, createVersionString(VERSION));

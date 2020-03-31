@@ -109,6 +109,7 @@ export class AbstractRenderingContextResolverService implements RenderingContext
 // @public (undocumented)
 export class AbstractWchPageService implements WchPageService {
     protected constructor(aDeliveryPageResolver: DeliveryPageResolver, aUrlConfig$: Observable<UrlConfig>, aLogSvc?: LoggerService);
+    getErrorRenderingContext: () => Observable<RenderingContextV2 | null | undefined>;
     getRenderingContextByPath: (aPath: string) => Observable<RenderingContextV2 | null | undefined>;
 }
 

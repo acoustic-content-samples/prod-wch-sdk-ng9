@@ -16,5 +16,6 @@ export interface WchPageService
 
 |  Method | Description |
 |  --- | --- |
+|  [getErrorRenderingContext()](./component-api.wchpageservice.geterrorrenderingcontext.md) | Resolves the rendering context for the error page |
 |  [getRenderingContextByPath(aPath)](./component-api.wchpageservice.getrenderingcontextbypath.md) | Resolves the rendering context given the path |
 

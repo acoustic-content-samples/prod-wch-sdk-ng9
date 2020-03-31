@@ -7,11 +7,16 @@ import { Observable } from 'rxjs';
  */
 export interface DeliveryPageResolver {
   /**
-   * Resolves a rendering context given the ID of the item
+   * Locates a page given the path
    *
    * @param aPath - the path to the page
    *
-   * @returns an observable of the context
+   * @returns an observable of the content item
    */
   getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
+
+  /**
+   * Returns the error page
+   */
+  getErrorPage(): Observable<DeliveryContentItem>;
 }

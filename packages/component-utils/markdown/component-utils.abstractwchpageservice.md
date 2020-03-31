@@ -20,5 +20,6 @@ export declare class AbstractWchPageService implements WchPageService
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
+|  [getErrorRenderingContext](./component-utils.abstractwchpageservice.geterrorrenderingcontext.md) |  | <code>() =&gt; Observable&lt;RenderingContextV2 &#124; null &#124; undefined&gt;</code> | Resolves the rendering context for the error page |
 |  [getRenderingContextByPath](./component-utils.abstractwchpageservice.getrenderingcontextbypath.md) |  | <code>(aPath: string) =&gt; Observable&lt;RenderingContextV2 &#124; null &#124; undefined&gt;</code> | Resolves the rendering context given the path |
 

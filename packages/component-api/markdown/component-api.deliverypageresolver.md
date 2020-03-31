@@ -16,5 +16,6 @@ export interface DeliveryPageResolver
 
 |  Method | Description |
 |  --- | --- |
-|  [getDeliveryPage(aPath)](./component-api.deliverypageresolver.getdeliverypage.md) | Resolves a rendering context given the ID of the item |
+|  [getDeliveryPage(aPath)](./component-api.deliverypageresolver.getdeliverypage.md) | Locates a page given the path |
+|  [getErrorPage()](./component-api.deliverypageresolver.geterrorpage.md) | Returns the error page |
 

@@ -23,11 +23,12 @@ import {
   rxStore
 } from '@acoustic-content-sdk/redux-store';
 import {
+  boxLoggerService,
   createDeliveryContentItem,
+  Generator,
   isEqual,
   luceneEscapeKeyValueOr,
   mapArray,
-  boxLoggerService,
   opCacheLast,
   opFilterNever,
   pluckProperty,
@@ -46,7 +47,7 @@ import {
 import { catchError, debounceTime, map } from 'rxjs/operators';
 
 import { createCache } from '../../utils/cache.utils';
-import { selectCanonicalPath } from '../../utils/selection.utils';
+import { selectCanonicalPath, selectTags } from '../../utils/selection.utils';
 import { logDispatch } from '../../utils/store.utils';
 import { MODULE, VERSION } from './../../version';
 
@@ -62,10 +63,12 @@ function ensureTrailingSlash(aPath: string): string {
   return aPath === '/' ? aPath : aPath.endsWith('/') ? aPath : `${aPath}/`;
 }
 
+const ERROR_TAG = 'errorPage';
+
 /**
  * Selects the delivery ID from the item
  */
-const selectId = pluckProperty<ContentItemWithLayout, 'id'>('id');
+const selectId = pluckProperty<ContentItemWithLayout, typeof KEY_ID>(KEY_ID);
 
 const LOGGER = 'AbstractDeliveryPageResolverService';
 
@@ -81,18 +84,19 @@ const extractIds = (aResult: SearchResults<DeliveryContentItem>): string[] =>
   mapArray(selectDocuments(aResult), selectId);
 
 /**
- * Iterate over all items and locate by path
+ * Iterate over all items and locate by a selector
  */
-function findByPath(
+function findBy<T>(
   aData: DeliveryContentState,
-  aPredicate: Predicate<string>
+  aPredicate: Predicate<T>,
+  aSelector: UnaryFunction<ContentItemWithLayout, T>
 ): ContentItemWithLayout {
   // tslint:disable-next-line:forin
   for (const id in aData) {
     // extract the item
     const item = aData[id];
     // the path
-    if (aPredicate(selectCanonicalPath(item))) {
+    if (aPredicate(aSelector(item))) {
       return item;
     }
   }
@@ -110,12 +114,36 @@ function selectByPath(
   const isPath = (aValue: string) =>
     isEqual(aValue, withSlash) || isEqual(aValue, noSlash);
   // returns the finder
-  return (aData: DeliveryContentState) => findByPath(aData, isPath);
+  return (aData: DeliveryContentState) =>
+    findBy(aData, isPath, selectCanonicalPath);
+}
+
+function selectByErrorTag(): UnaryFunction<
+  DeliveryContentState,
+  ContentItemWithLayout
+> {
+  // predicate
+  const isTag = (aValue: string[]) => aValue.indexOf(ERROR_TAG) >= 0;
+  // returns the finder
+  return (aData: DeliveryContentState) => findBy(aData, isTag, selectTags);
 }
 
 export class AbstractDeliveryPageResolverService
   implements DeliveryPageResolver {
+  /**
+   * Locates a page given the path
+   *
+   * @param aPath - the path to the page
+   *
+   * @returns an observable of the content item
+   */
   getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
+  /**
+   * Returns the error page
+   *
+   * @returns an observable of the content item
+   */
+  getErrorPage: () => Observable<DeliveryContentItem>;
 
   constructor(
     aStore: ReduxRootStore,
@@ -146,8 +174,20 @@ export class AbstractDeliveryPageResolverService
       fl: KEY_ID,
       rows: 1
     };
-    // send a request
-    const sendRequest = (
+
+    /**
+     * Operator that returns undefined in case of an error
+     */
+    const catchUndefined = () =>
+      catchError((error) => {
+        // log
+        logger.error(error);
+        // nothing
+        return UNDEFINED$;
+      });
+
+    // send a request to locate the page by path
+    const sendPageRequest = (
       path: string
     ): Observable<SearchResults<ContentItemWithLayout>> =>
       rxPipe(
@@ -162,12 +202,23 @@ export class AbstractDeliveryPageResolverService
           },
           CLASSIFICATION_CONTENT
         ),
-        catchError((error) => {
-          // log
-          logger.error(error);
-          // nothing
-          return UNDEFINED$;
-        })
+        catchUndefined()
+      );
+
+    // send a request to locate the error page
+    const sendErrorPageRequest = (): Observable<
+      SearchResults<ContentItemWithLayout>
+    > =>
+      rxPipe(
+        aDeliverySearchResolver.getDeliverySearchResults(
+          {
+            ...query,
+            // TODO refine search
+            q: luceneEscapeKeyValueOr('tags', ERROR_TAG)
+          },
+          CLASSIFICATION_CONTENT
+        ),
+        catchUndefined()
       );
 
     /**
@@ -175,7 +226,13 @@ export class AbstractDeliveryPageResolverService
      */
     const searchByCanonicalPath: UnaryFunction<string, Observable<string[]>> = (
       path
-    ) => rxPipe(sendRequest(path), map(extractIds), log('ids', path));
+    ) => rxPipe(sendPageRequest(path), map(extractIds), log('ids', path));
+
+    /**
+     * Search item based on path
+     */
+    const searchByError: Generator<Observable<string[]>> = () =>
+      rxPipe(sendErrorPageRequest(), map(extractIds), log('ids'));
 
     // log this service
     logger.info(MODULE, createVersionString(VERSION));
@@ -201,10 +258,33 @@ export class AbstractDeliveryPageResolverService
       return merge(local$, dispatch$);
     };
 
+    // locate the page
+    const getErrorPage = () => {
+      // result based on a local search
+      const local$ = rxPipe(
+        deliveryItems$,
+        rxSelect(selectByErrorTag()),
+        rxSelect(createDeliveryContentItem),
+        log('page'),
+        opCacheLast
+      );
+      // guarantee the existence of the item
+      const dispatch$ = rxPipe(
+        searchByError(),
+        map(guaranteeAuthoringContentBatchAction),
+        map(dispatch),
+        opFilterNever
+      );
+      // combine
+      return merge(local$, dispatch$);
+    };
+
     // expose this as a cached function
     this.getDeliveryPage = rxCachedFunction(
       getDeliveryPage,
       createCache(logger)
     );
+    // no need to cache, errors are rare
+    this.getErrorPage = getErrorPage;
   }
 }

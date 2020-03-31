@@ -4,7 +4,7 @@
 
 ## DeliveryPageResolver.getDeliveryPage() method
 
-Resolves a rendering context given the ID of the item
+Locates a page given the path
 
 <b>Signature:</b>
 
@@ -22,5 +22,5 @@ getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
 
 `Observable<DeliveryContentItem>`
 
-an observable of the context
+an observable of the content item
 
