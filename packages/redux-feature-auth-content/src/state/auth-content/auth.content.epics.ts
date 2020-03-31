@@ -52,7 +52,10 @@ import {
   guaranteeAuthoringContentAction,
   LoadAuthoringContentAction,
   loadAuthoringContentAction,
-  saveAuthoringContentAction
+  saveAuthoringContentAction,
+  SaveAuthoringContentAction,
+  ACTION_SAVE_AUTH_CONTENT,
+  saveAuthoringContentBatchAction
 } from './auth.content.actions';
 import { selectAuthContentFeature } from './auth.content.feature';
 import { selectAuthoringContentItem } from './auth.content.selectors';
@@ -122,6 +125,23 @@ const resolveContentEpic: Epic = (
     mergeMap((actions) => from(actions))
   );
 };
+
+/**
+ * Initialize the active page
+ */
+const saveContentEpic: Epic = (actions$) =>
+  rxPipe(
+    actions$,
+    ofType<SaveAuthoringContentAction>(ACTION_SAVE_AUTH_CONTENT),
+    // extract the actual item
+    map(selectPayload),
+    // sanity check
+    opFilterNotNil,
+    // convert to an array
+    map((item) => [item]),
+    // map to the batch action
+    map(saveAuthoringContentBatchAction)
+  );
 
 /**
  * Initialize the active page
@@ -290,6 +310,7 @@ export const authoringContentEpic: Epic = combineEpics(
   guaranteeContentEpic,
   nonExistentContentEpic,
   propUpdateEpic,
+  saveContentEpic,
   resolveContentEpic,
   setContentEpic,
   resolveLayoutEpic,

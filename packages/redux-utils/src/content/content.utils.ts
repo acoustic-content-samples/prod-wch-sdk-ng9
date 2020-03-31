@@ -7,8 +7,8 @@ import {
   ELEMENT_TYPE_IMAGE,
   Status,
   User
-} from "@acoustic-content-sdk/api";
-import { AccessorType } from "@acoustic-content-sdk/edit-api";
+} from '@acoustic-content-sdk/api';
+import { AccessorType } from '@acoustic-content-sdk/edit-api';
 import {
   getPath,
   getProperty,
@@ -18,19 +18,20 @@ import {
   isNotNil,
   isString,
   parsePath
-} from "@acoustic-content-sdk/utils";
-import { v4 } from "uuid";
+} from '@acoustic-content-sdk/utils';
+import { v4 } from 'uuid';
 
 import {
   ensureDraftId,
-  getDeliveryIdFromAuthoringItem
-} from "../draft/draft.utils";
-import { createUpdater, Updater } from "../update";
+  getDeliveryIdFromAuthoringItem,
+  getDeliveryId
+} from '../draft/draft.utils';
+import { createUpdater, Updater } from '../update';
 
 /**
  * Snapshot mode for image elements
  */
-const IMAGE_ELEMENT_MODE_SNAPSHOT = "snapshot";
+const IMAGE_ELEMENT_MODE_SNAPSHOT = 'snapshot';
 
 /**
  * Updates properties of the item that depend on the environment
@@ -39,7 +40,10 @@ const IMAGE_ELEMENT_MODE_SNAPSHOT = "snapshot";
  * @param aUser - optionally the current user
  * @returns the updater after the item has been modified
  */
-export function updateGenericProperties<T extends BaseAuthoringItem>(
+interface BaseAuthoringItemWithLinks extends BaseAuthoringItem {
+  links?: {};
+}
+export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   aItem: Updater<T>,
   aUser?: User
 ): Updater<T> {
@@ -47,34 +51,44 @@ export function updateGenericProperties<T extends BaseAuthoringItem>(
   const oldItem = aItem.get();
   // current time
   const date = new Date().toISOString();
-  aItem.set("systemModified", date);
-  aItem.set("lastModified", date);
+  aItem.set('systemModified', date);
+  aItem.set('lastModified', date);
   // rewrite the ID
-  const { id, created, classification } = oldItem;
+  const { id, created, classification, links } = oldItem;
   const itemId = isString(id) ? id : v4();
   const idToUpdate =
     classification === CLASSIFICATION_ASSET ? itemId : ensureDraftId(itemId);
-  aItem.set("id", idToUpdate);
+  aItem.set('id', idToUpdate);
   // replace the revision
-  aItem.set("rev", `0-${v4()}`);
+  aItem.set('rev', `0-${v4()}`);
   // update the modifying user
   if (isNotNil(aUser)) {
     // set user info
-    aItem.set("lastModifierId", aUser.id);
+    aItem.set('lastModifierId', aUser.id);
+  }
+  if (isNotNil(links)) {
+    if (isNotNil(links['createDraft'])) {
+      // is published item
+      aItem.del('links.createDraft');
+      aItem.set(
+        'links.linkedDoc.href',
+        `/authoring/v1/content/${getDeliveryId(itemId)}`
+      );
+    }
   }
   // set the creation information
   if (isNil(created)) {
-    aItem.set("created", date);
+    aItem.set('created', date);
     if (isNotNil(aUser)) {
-      aItem.set("creatorId", aUser.id);
+      aItem.set('creatorId', aUser.id);
     }
   }
   if (classification === CLASSIFICATION_ASSET) {
-    aItem.set("status", Status.READY);
+    aItem.set('status', Status.READY);
   } else {
     // make sure to update the status to draft
-    aItem.set("status", Status.DRAFT);
-    aItem.set("draftStatus", DraftStatus.IN_PROGRESS);
+    aItem.set('status', Status.DRAFT);
+    aItem.set('draftStatus', DraftStatus.IN_PROGRESS);
   }
 
   // ok
@@ -94,10 +108,10 @@ function getAssetDetails(aMode: string, aAsset: AuthoringAsset) {
       id: getDeliveryIdFromAuthoringItem(aAsset),
       fileName: aAsset.fileName,
       fileSize: aAsset.fileSize,
-      width: getPath(aAsset, ["metadata", "width"], -1),
+      width: getPath(aAsset, ['metadata', 'width'], -1),
       mediaType: aAsset.mediaType,
-      resourceUri: getPath(aAsset, ["renditions", "default", "source"]),
-      height: getPath(aAsset, ["metadata", "height"], -1)
+      resourceUri: getPath(aAsset, ['renditions', 'default', 'source']),
+      height: getPath(aAsset, ['metadata', 'height'], -1)
     };
   } else {
     return { id: getDeliveryIdFromAuthoringItem(aAsset) };
@@ -130,13 +144,13 @@ export function updateImageElement(
 
   // get the original item to make a copy
   const originalImage = getPath(oldItem, path);
-  const mode = getProperty<any, "mode">(
+  const mode = getProperty<any, 'mode'>(
     originalImage,
-    "mode",
+    'mode',
     IMAGE_ELEMENT_MODE_SNAPSHOT
   );
-  const altText = getProperty<any, "altText">(originalImage, "altText");
-  const link = getProperty<any, "link">(originalImage, "link");
+  const altText = getProperty<any, 'altText'>(originalImage, 'altText');
+  const link = getProperty<any, 'link'>(originalImage, 'link');
 
   // image properties to copy
   const baseImage = { altText, link, mode };

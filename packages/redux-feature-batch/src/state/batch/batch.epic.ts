@@ -52,7 +52,10 @@ import {
   LoadingState,
   selectLoadingFeature
 } from '@acoustic-content-sdk/redux-feature-load';
-import { saveAuthoringBatchAction } from '@acoustic-content-sdk/redux-feature-save';
+import {
+  saveAuthoringBatchAction,
+  ACTION_SAVE_END
+} from '@acoustic-content-sdk/redux-feature-save';
 import {
   uploadingEndAction,
   uploadingProgressAction,
