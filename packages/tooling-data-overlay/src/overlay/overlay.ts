@@ -110,7 +110,7 @@ export function generateDataOverlay(
   /**
    * helper to manage concurrent creation of directories
    */
-  const DIRS: Record<string, Promise<void>> = {};
+  const DIRS: Record<string, Promise<any>> = {};
 
   /**
    * Recursively create a directory
@@ -118,7 +118,7 @@ export function generateDataOverlay(
    * @param aName - name of the directory
    * @returns a promise resolving to the generated directory
    */
-  const mkdirp = (aName: string): Promise<void> =>
+  const mkdirp = (aName: string): Promise<any> =>
     DIRS[aName] || (DIRS[aName] = mkdir(aName, { recursive: true }));
 
   /**
@@ -146,8 +146,8 @@ export function generateDataOverlay(
               entry.isFile()
                 ? copySingle(join(aRel, entry.name), aSrc, aDst)
                 : entry.isDirectory()
-                ? copyRec(join(aRel, entry.name), aSrc, aDst)
-                : EMPTY_RESULT
+                  ? copyRec(join(aRel, entry.name), aSrc, aDst)
+                  : EMPTY_RESULT
             )
           ),
         () => []
