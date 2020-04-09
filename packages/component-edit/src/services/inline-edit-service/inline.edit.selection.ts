@@ -18,7 +18,7 @@ import {
   partialSecond,
   rxNext,
   rxPipe,
-  rxSelectProperty
+  pluckProperty
 } from '@acoustic-content-sdk/utils';
 import {
   fromEvent,
@@ -58,17 +58,13 @@ export function getInlineEditSelection(
     // merge the relevant events
     merge(click$, focus$),
     // get the event target
-    rxSelectProperty('target'),
+    map(pluckProperty('target')),
     // sanity check
     filterTypeOf(isElement),
     // get the selectable element
     map(partialSecond(getElementOrParentWithAttribute, ATTR_DATA_SELECTABLE)),
-    // do not count twice
-    opDistinctUntilChanged,
     // retrieve the attribute value
     map(partialSecond(getAttribute, ATTR_DATA_SELECTABLE)),
-    // do not count twice
-    opDistinctUntilChanged,
     // log this
     log('selected'),
     // share
