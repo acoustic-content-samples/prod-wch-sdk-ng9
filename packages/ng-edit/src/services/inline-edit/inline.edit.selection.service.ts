@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 
 // TODO make this configurable via DI
-const CLASS_SELECTION = 'wch-inline-edit-selection';
+const CLASS_SELECTION = 'ac--inline-edit-selection';
 
 @Injectable({ providedIn: 'root' })
 export class WchInlineEditSelectionService
