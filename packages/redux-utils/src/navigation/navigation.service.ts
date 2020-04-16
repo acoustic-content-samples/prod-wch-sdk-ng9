@@ -61,7 +61,7 @@ export function navigationFromJson(aJson: any, aLogger: Logger): Navigation {
   // the navigation record
   const nav: Navigation = { children: {}, parents: {} };
   let rootTemp = '';
-  if (aJson.length === 1) {
+  if (aJson.length > 1) {
     let rootJson = {
       id: '593730b0-c45e-4888-8d94-9a986be3d51f',
       children: []
