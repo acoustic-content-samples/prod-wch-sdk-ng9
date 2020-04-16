@@ -20,6 +20,7 @@ export const ROOT_ID = hashRandomIdentifier();
 export interface NavigationJson {
   id: string;
   children?: NavigationJson[];
+  length: number;
 }
 
 interface Navigation {
@@ -34,11 +35,7 @@ export function isNotRoot(aId: string): boolean {
 /**
  * Iterates over a
  */
-function reduceRecord(
-  aDst: Navigation,
-  aRecord: NavigationJson,
-  aParent: string
-): string {
+function reduceRecord(aDst: Navigation, aRecord: any, aParent: string): string {
   // access props
   const { id, children } = aRecord;
   // register child to parent mapping
@@ -58,15 +55,23 @@ function reduceRecord(
  *
  * @returns the navigation structure
  */
-export function navigationFromJson(
-  aJson: NavigationJson,
-  aLogger: Logger
-): Navigation {
+export function navigationFromJson(aJson: any, aLogger: Logger): Navigation {
   // show the navigation
   aLogger.info('navigation', aJson);
   // the navigation record
   const nav: Navigation = { children: {}, parents: {} };
-  const root = reduceRecord(nav, aJson, ROOT_ID);
+  let rootTemp = '';
+  if (aJson.length === 1) {
+    let rootJson = {
+      id: '593730b0-c45e-4888-8d94-9a986be3d51f',
+      children: []
+    };
+    rootJson.children = aJson;
+    rootTemp = reduceRecord(nav, rootJson, ROOT_ID);
+  } else {
+    rootTemp = reduceRecord(nav, aJson, ROOT_ID);
+  }
+  const root = rootTemp;
   // update the parent references
   nav.children[ROOT_ID] = isNotNil(root) ? [root] : [];
   nav.parents[ROOT_ID] = ROOT_ID;
