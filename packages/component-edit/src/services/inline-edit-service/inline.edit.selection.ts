@@ -22,7 +22,6 @@ import {
 } from '@acoustic-content-sdk/utils';
 import {
   fromEvent,
-  merge,
   MonoTypeOperatorFunction,
   Observable,
   Unsubscribable
@@ -50,13 +49,9 @@ export function getInlineEditSelection(
   const click$ = fromEvent(aDocument, 'click', {
     capture: true
   });
-  const focus$ = fromEvent(aDocument, 'focus', {
-    capture: true
-  });
   // the events
   return rxPipe(
-    // merge the relevant events
-    merge(click$, focus$),
+    click$,
     // get the event target
     map(pluckProperty('target')),
     // sanity check
