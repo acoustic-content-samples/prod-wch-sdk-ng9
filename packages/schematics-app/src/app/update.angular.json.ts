@@ -35,10 +35,12 @@ export const KEY_MAIN = 'main';
 export const KEY_POLYFILLS = 'polyfills';
 export const KEY_TS_CONFIG = 'tsConfig';
 const KEY_BROWSER_TARGET = 'browserTarget';
+const KEY_VENDOR_CHUNK = 'vendorChunk';
 
 const NAME_TSCONFIG = 'tsconfig.json';
 
 const selectConfigurations = pluckPath<Record<string, any>>(['configurations']);
+const selectProduction = pluckPath<Record<string, any>>(['production']);
 const selectOptions = pluckPath<Record<string, any>>(['options']);
 
 function createModeConfigServe(aMode: ArtifactMode, aProjectName: string): any {
@@ -116,6 +118,12 @@ function updateSourceMap(aConfigurations: Record<string, any>): any {
   }
 }
 
+function updateProductionOptions(aOptions: Record<string, any>): any {
+  // use a separate vendor chunk to reduce the size of the main chunk
+  // and ensure that chunks are consistent between build and serve
+  aOptions[KEY_VENDOR_CHUNK] = true;
+}
+
 function transformAngularJson(
   aWorkspace: WorkspaceSchema,
   aProjectName: string,
@@ -129,11 +137,13 @@ function transformAngularJson(
   // the configs
   const options = selectOptions(build);
   const buildConfig = selectConfigurations(build);
+  const productionOptions = selectProduction(buildConfig);
   const serveConfig = selectConfigurations(serve);
   // add build config for modes
   updateModeConfigBuild(ArtifactMode.LIVE, aVersion, options, buildConfig);
   updateModeConfigBuild(ArtifactMode.PREVIEW, aVersion, options, buildConfig);
   updateSourceMap(buildConfig);
+  updateProductionOptions(productionOptions);
   // add serve config for modes
   updateModeConfigServe(ArtifactMode.LIVE, aProjectName, serveConfig);
   updateModeConfigServe(ArtifactMode.PREVIEW, aProjectName, serveConfig);
