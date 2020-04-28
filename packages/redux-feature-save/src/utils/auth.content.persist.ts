@@ -64,7 +64,7 @@ function deleteItem(
   aScheduler: SchedulerLike
 ): Observable<string> {
   // sanity check
-  assertIsDraftId(aId, 'deleted item');
+  // assertIsDraftId(aId, 'deleted item');
   // not able to tell content and asset ids apart, therefore need to attempt a deletion of both
   const encodedId = encodeURIComponent(aId);
   const errorHandler = catchError((err) => {
