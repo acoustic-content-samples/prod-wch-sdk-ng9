@@ -1,8 +1,9 @@
-import { LoggerService, User } from '@acoustic-content-sdk/api';
+import { AuthoringContentItem, LoggerService, User } from '@acoustic-content-sdk/api';
 import { addAuthoringAssetAction } from '@acoustic-content-sdk/redux-feature-auth-asset';
 import {
   addAuthoringContentAction,
-  removeAuthoringContentAction
+  removeAuthoringContentAction,
+  selectAuthContentFeature,
 } from '@acoustic-content-sdk/redux-feature-auth-content';
 import {
   SetErrorAction,
@@ -133,12 +134,21 @@ export function augmentGenericProperties(
  */
 function getSaveActions(
   aItems: AuthoringSaveBatchItems,
-  aUser: User
+  aUser: User,
+  aAuthContent: Record<string, AuthoringContentItem>
 ): Action[] {
   // update the revision
-  const items = mapArray(aItems, (item) =>
-    augmentGenericProperties(item, aUser)
-  );
+  const items = mapArray(aItems, (item) => {
+    if (isString(item)) {
+      const authItem = aAuthContent[item];
+
+      if (authItem.status === 'ready') {
+        return item;
+      }
+    }
+
+    return augmentGenericProperties(item, aUser);
+  });
   // the actions
   return reduceArray(items, reduceSaveActions, [
     saveAuthoringBatchInternalAction(items)
@@ -151,6 +161,7 @@ function getSaveActions(
 const saveBatchEpic: Epic = (actions$, state$) => {
   // access the current user
   const currentUser$ = rxPipe(state$, rxSelect(selectCurrentUserFeature));
+  const authContent$: Observable<Record<string, AuthoringContentItem>> = rxPipe(state$, rxSelect(selectAuthContentFeature));
 
   return rxPipe(
     actions$,
@@ -160,9 +171,9 @@ const saveBatchEpic: Epic = (actions$, state$) => {
     // sanity check
     filter(isNotEmpty),
     // access the user
-    withLatestFrom(currentUser$),
+    withLatestFrom(currentUser$, authContent$),
     // map to the actual actions
-    map(([actions, user]) => getSaveActions(actions, user)),
+    map(([actions, user, authContent]) => getSaveActions(actions, user, authContent)),
     // convert
     mergeMap((actions) => from(actions))
   );
