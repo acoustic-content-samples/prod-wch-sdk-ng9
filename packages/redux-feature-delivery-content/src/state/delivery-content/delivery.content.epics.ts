@@ -163,11 +163,28 @@ function getRenditions(
   const result = {} as Record<string, Rendition>;
   const defaultImageSize = getDefaultImageSize(aImage, aAsset);
 
+  const defaultRenditionUrl = getAuthoringResourceUrl(aImage, aAsset, aApiURL);
+
+  // in the current implementation with the authoring API, if an image is resized
+  // that data is applied to the default rendition
+  let source = defaultRenditionUrl;
+  const defaultRenditionSource = aImage.renditions?.default?.source;
+  if (isNotNil(defaultRenditionSource)) {
+    const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
+    if (isNotNil(idx)) {
+      // add query params (expected to hold rendition parameters such as cropping)
+      const queryParams = defaultRenditionSource.substring(idx + 1);
+      const queryParamMap = parseQueryString(queryParams);
+      source = `${source}?${queryToString(queryParamMap)}`;
+    }
+  }
+
   // each image element has a default rendition
   result['default'] = {
-    url: getAuthoringResourceUrl(aImage, aAsset, aApiURL),
+    url: defaultRenditionUrl,
     width: defaultImageSize[0],
-    height: defaultImageSize[1]
+    height: defaultImageSize[1],
+    source: source
   } as Rendition;
 
   // check which image profiles are referenced by the current type
@@ -337,17 +354,17 @@ function transformElement(
     const { value } = aElement;
     return isNotNil(value)
       ? {
-          ...aElement,
-          value: transformMap(value, assets, aApiUrl)
-        }
+        ...aElement,
+        value: transformMap(value, assets, aApiUrl)
+      }
       : aElement;
   } else if (isMultiGroupElement(aElement)) {
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => transformMap(value, assets, aApiUrl))
-        }
+        ...aElement,
+        values: values.map((value) => transformMap(value, assets, aApiUrl))
+      }
       : aElement;
   } else if (isSingleImageElementInAuthoring(aElement)) {
     return {
@@ -358,12 +375,12 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => ({
-            ...value,
-            ...transformImageElement(value, assets, aApiUrl)
-          }))
-        }
+        ...aElement,
+        values: values.map((value) => ({
+          ...value,
+          ...transformImageElement(value, assets, aApiUrl)
+        }))
+      }
       : aElement;
   } else if (isSingleVideoElementInAuthoring(aElement)) {
     return {
@@ -374,12 +391,12 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => ({
-            ...value,
-            ...transformVideoElement(value, assets, aApiUrl)
-          }))
-        }
+        ...aElement,
+        values: values.map((value) => ({
+          ...value,
+          ...transformVideoElement(value, assets, aApiUrl)
+        }))
+      }
       : aElement;
   } else if (isSingleFormattedTextElement(aElement)) {
     return {
@@ -390,9 +407,9 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => transformFormattedText(value, aApiUrl))
-        }
+        ...aElement,
+        values: values.map((value) => transformFormattedText(value, aApiUrl))
+      }
       : aElement;
   } else {
     // in the general case, nothing to copy
