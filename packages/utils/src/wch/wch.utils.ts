@@ -112,7 +112,8 @@ const TENANT_BASED_URL_REGEXP = new RegExp(TENANT_BASED_URL);
 // check for preview hosts
 const PREVIEW_SUFFIX = '-preview';
 const PREVIEW_SUFFIX_STAGE = '-preview-stage';
-const PREVIEW_INDICATOR = `(?:${PREVIEW_SUFFIX}|${PREVIEW_SUFFIX_STAGE})`;
+const PREVIEW_SUFFIX_ANY = `-preview-[a-zA-Z0-9]+`;
+const PREVIEW_INDICATOR = `(?:${PREVIEW_SUFFIX}|${PREVIEW_SUFFIX_STAGE}|${PREVIEW_SUFFIX_ANY})`;
 const PREVIEW_HOST_REGEXP_STRING = `^(?:(${HOST_REGEXP_STRING}+)${PREVIEW_INDICATOR})((?:\\.${HOST_REGEXP_STRING}+)+)$`;
 const PREVIEW_HOST_REGEXP = new RegExp(PREVIEW_HOST_REGEXP_STRING);
 
@@ -281,8 +282,8 @@ function _boxFetchLevels(
       ? _ALL_FETCH_LEVELS
       : aLevels
     : aDefault
-    ? aDefault
-    : _DEFAULT_FETCH_LEVELS;
+      ? aDefault
+      : _DEFAULT_FETCH_LEVELS;
 }
 
 /**
@@ -342,8 +343,8 @@ function _getCycleHandling(aCycle?: CYCLE_HANDLING | string): CYCLE_HANDLING {
   return isString(aCycle)
     ? CYCLE_HANDLING[aCycle]
     : isNotNil(aCycle)
-    ? aCycle
-    : undefined;
+      ? aCycle
+      : undefined;
 }
 
 export const KEY_RENDERING_CONTEXT = 'renderingContext';
@@ -981,8 +982,8 @@ function _getBaseUrlSuffix(aBaseURL: URL): string {
       ? `${tenantId}/${DX_SITES}/${siteId}/`
       : `${tenantId}/`
     : siteId
-    ? `${DX_SITES}/${siteId}/`
-    : '';
+      ? `${DX_SITES}/${siteId}/`
+      : '';
 }
 
 /**
@@ -1224,11 +1225,11 @@ export function isUrlConfig(aValue: any): aValue is UrlConfig {
 export function cloneUrlConfig(aUrlConfig: UrlConfig): UrlConfig {
   return isNotNil(aUrlConfig)
     ? {
-        apiUrl: parseURL(aUrlConfig.apiUrl),
-        baseUrl: parseURL(aUrlConfig.baseUrl),
-        isPreviewMode: aUrlConfig.isPreviewMode,
-        resourceUrl: parseURL(aUrlConfig.resourceUrl)
-      }
+      apiUrl: parseURL(aUrlConfig.apiUrl),
+      baseUrl: parseURL(aUrlConfig.baseUrl),
+      isPreviewMode: aUrlConfig.isPreviewMode,
+      resourceUrl: parseURL(aUrlConfig.resourceUrl)
+    }
     : aUrlConfig;
 }
 
@@ -1296,8 +1297,8 @@ export function wchCreateUrlConfig(
         infoApiUrl
           ? infoApiUrl
           : infoResourceUrl
-          ? _getApiUrlFromResourceURL(infoResourceUrl)
-          : parseURL(cfgFallback.apiUrl)
+            ? _getApiUrlFromResourceURL(infoResourceUrl)
+            : parseURL(cfgFallback.apiUrl)
       )
     ),
     distinctUntilChanged(),
@@ -1311,8 +1312,8 @@ export function wchCreateUrlConfig(
         infoResourceUrl
           ? infoResourceUrl
           : infoApiUrl
-          ? _getResourceUrlFromApiURL(infoApiUrl)
-          : parseURL(cfgFallback.resourceUrl)
+            ? _getResourceUrlFromApiURL(infoApiUrl)
+            : parseURL(cfgFallback.resourceUrl)
       )
     ),
     distinctUntilChanged(),
