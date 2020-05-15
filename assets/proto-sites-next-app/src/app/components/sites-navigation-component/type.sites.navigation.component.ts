@@ -6,7 +6,7 @@ import {
   RenderingContextV2,
 } from '@acoustic-content-sdk/api';
 import { DeliveryContentResolver, DeliverySiteResolver } from '@acoustic-content-sdk/component-api';
-import { createBreadcrumb, getNavSelectors, NavigationJson } from '@acoustic-content-sdk/redux-utils';
+import { createBreadcrumb, getDeliveryId, getNavSelectors, NavigationJson } from '@acoustic-content-sdk/redux-utils';
 import { isSiteNavigationPage, SiteNavigationPage } from '@acoustic-content-sdk/sites-api';
 import {
   filterTypeOf,
@@ -88,7 +88,7 @@ export abstract class TypeSitesNavigationComponent
 
     // const getDeliveryContentItem = bindMember(deliveryContentResolver, 'getDeliveryContentItem');
     const getDeliveryContentItem = (id: string) =>
-      deliveryContentResolver.getDeliveryContentItem(id);
+      deliveryContentResolver.getDeliveryContentItem(getDeliveryId(id));
 
     const nav$: Observable<NavigationJson> = rxPipe(
       site$,
