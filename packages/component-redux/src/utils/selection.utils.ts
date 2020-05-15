@@ -2,9 +2,10 @@ import { isEqual, isNotNil, pluckPath } from '@acoustic-content-sdk/utils';
 import {
   KEY_ELEMENTS,
   KEY_DESCRIPTOR,
-  KEY_CANONICALPATH
+  KEY_CANONICALPATH,
+  KEY_SITE,
 } from '@acoustic-content-sdk/sites-api';
-import { KEY_VALUE } from '@acoustic-content-sdk/api';
+import { KEY_VALUE, KEY_ID } from '@acoustic-content-sdk/api';
 
 export interface ItemWithIdAndRevision {
   id?: string;
@@ -45,3 +46,16 @@ export const selectCanonicalPath = pluckPath<string>(CANONICAL_PATH);
 
 const TAGS_PATH = ['tags'];
 export const selectTags = pluckPath<string[]>(TAGS_PATH, []);
+
+/**
+ * Extracts the path from the respective field on the content item
+ */
+const SITE_DESCRIPTOR_ID = [
+  KEY_ELEMENTS,
+  KEY_DESCRIPTOR,
+  KEY_VALUE,
+  KEY_SITE,
+  KEY_VALUE,
+  KEY_ID
+];
+export const selectSiteDescriptorId = pluckPath<string>(SITE_DESCRIPTOR_ID);

@@ -11,12 +11,14 @@ export interface DeliveryPageResolver {
    *
    * @param aPath - the path to the page
    *
+   * @param aSiteId - the current siteId\
    * @returns an observable of the content item
    */
-  getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
+  getDeliveryPage(aPath: string, aSiteId?: string): Observable<DeliveryContentItem>;
 
   /**
    * Returns the error page
+   * @param aSiteId - the current siteId
    */
-  getErrorPage(): Observable<DeliveryContentItem>;
+  getErrorPage(aSiteId?: string): Observable<DeliveryContentItem>;
 }

@@ -4,10 +4,11 @@ import {
   RenderingContextV2,
   UrlConfig
 } from '@acoustic-content-sdk/api';
-import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
+import { DeliveryPageResolver, DeliverySiteResolver } from '@acoustic-content-sdk/component-api';
 import { AbstractWchPageService } from '@acoustic-content-sdk/component-utils';
 import {
   ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER,
+  ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER,
   ACOUSTIC_TOKEN_LOGGER_SERVICE,
   ACOUSTIC_TOKEN_URL_CONFIG,
   AcNgPageService
@@ -56,13 +57,16 @@ export class WchSitesPageService extends AbstractWchPageService
   constructor(
     @Inject(ACOUSTIC_TOKEN_DELIVERY_PAGE_RESOLVER)
     aDeliveryPageResolver: DeliveryPageResolver,
-    @Inject(ACOUSTIC_TOKEN_URL_CONFIG) aUrlConfig$: Observable<UrlConfig>,
+    @Inject(ACOUSTIC_TOKEN_DELIVERY_SITE_RESOLVER)
+    aSiteResolver: DeliverySiteResolver,
+    @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
+    aUrlConfig$: Observable<UrlConfig>,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
     aLogSvc: LoggerService
   ) {
     // default
-    super(aDeliveryPageResolver, aUrlConfig$, aLogSvc);
+    super(aDeliveryPageResolver, aSiteResolver, aUrlConfig$, aLogSvc);
     // logger
     const logSvc = boxLoggerService(aLogSvc);
     // logger

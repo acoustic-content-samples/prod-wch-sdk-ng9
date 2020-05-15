@@ -7,6 +7,7 @@ import {
 } from '@acoustic-content-sdk/api';
 import {
   DeliveryPageResolver,
+  DeliverySiteResolver,
   WchPageService
 } from '@acoustic-content-sdk/component-api';
 import {
@@ -20,7 +21,7 @@ import {
   rxPipe
 } from '@acoustic-content-sdk/utils';
 import { combineLatest, MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap, switchMap } from 'rxjs/operators';
 
 import { createCache } from '../../utils/cache.utils';
 import { MODULE, VERSION } from './../../version';
@@ -50,6 +51,7 @@ export class AbstractWchPageService implements WchPageService {
 
   protected constructor(
     aDeliveryPageResolver: DeliveryPageResolver,
+    aDeliverySiteResolver: DeliverySiteResolver,
     aUrlConfig$: Observable<UrlConfig>,
     aLogSvc?: LoggerService
   ) {
@@ -62,7 +64,10 @@ export class AbstractWchPageService implements WchPageService {
     // simpler binding to the method
     const deliveryPageResolver = (path: string) =>
       rxPipe(
-        aDeliveryPageResolver.getDeliveryPage(path),
+        aDeliverySiteResolver.getSiteDeliveryContentItem(),
+        tap(val => logger.info('DAH: got site in deliveryPageResolver', val)),
+        switchMap(site => aDeliveryPageResolver.getDeliveryPage(path, site?.$metadata?.id)),
+        tap(val => logger.info('DAH: got page in deliveryPageResolver', val)),
         opFilterNotNil,
         opDistinctUntilChanged
       );
@@ -70,7 +75,10 @@ export class AbstractWchPageService implements WchPageService {
     // simpler binding to the method
     const errorPageResolver = () =>
       rxPipe(
-        aDeliveryPageResolver.getErrorPage(),
+        aDeliverySiteResolver.getSiteDeliveryContentItem(),
+        tap(val => logger.info('DAH: got site in errorPageResolver', val)),
+        switchMap(site => aDeliveryPageResolver.getErrorPage(site?.$metadata?.id)),
+        tap(val => logger.info('DAH: got page in errorPageResolver', val)),
         opFilterNotNil,
         opDistinctUntilChanged
       );

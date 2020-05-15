@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 export class DeliveryPageResolverService
   extends AbstractDeliveryPageResolverService
   implements DeliveryPageResolver {
-  getDeliveryPage: (aPath: string) => Observable<DeliveryContentItem>;
+  getDeliveryPage: (aPath: string, siteId?: string) => Observable<DeliveryContentItem>;
 
   constructor(
     @Inject(ACOUSTIC_TOKEN_REDUX_STORE)
