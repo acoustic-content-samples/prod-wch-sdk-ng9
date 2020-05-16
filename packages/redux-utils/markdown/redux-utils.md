@@ -28,7 +28,7 @@ Implementation of utility functions that help working with redux state.
 |  [selectByDeliveryId(aId)](./redux-utils.selectbydeliveryid.md) | Constructs a selector that validates that the ID is a delivery ID (not a draft ID) and selects based on that ID from the state |
 |  [serializeDiff(aOld, aNew, aSameStyle, aNewStyle, aDeletedStyle)](./redux-utils.serializediff.md) | Serializes the differences between two JSON objects |
 |  [sortAuthoringItems(aResult)](./redux-utils.sortauthoringitems.md) | Performs a topological sort on a set of resolved items |
-|  [updateGenericProperties(aItem, aUser)](./redux-utils.updategenericproperties.md) | Updates properties of the item that depend on the environment |
+|  [updateGenericProperties(aItem, aUser)](./redux-utils.updategenericproperties.md) |  |
 |  [updateImageElement(aAccessor, aItem, aAsset)](./redux-utils.updateimageelement.md) |  |
 |  [updateRecord(aKey, aPredicate)](./redux-utils.updaterecord.md) | Creates a reducer that adds an item to a record |
 |  [updateSingleItem(aPredicate)](./redux-utils.updatesingleitem.md) |  |

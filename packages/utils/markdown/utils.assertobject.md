@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-assertObject: <T>(aKey: string | number | symbol, aObject: any) => T
+assertObject: <T>(aKey: RecordKey, aObject: any) => T
 ```

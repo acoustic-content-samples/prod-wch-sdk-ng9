@@ -88,7 +88,7 @@ export interface AuthContentFeatureState {
 export type AuthContentPropertyUpdateAction = PayloadAction<AuthContentPropertyUpdatePayload>;
 
 // @public (undocumented)
-export const authContentPropertyUpdateAction: (id: string, accessor: string, value: any) => AuthContentPropertyUpdateAction;
+export const authContentPropertyUpdateAction: (id: string, accessor: AccessorType, value: any) => AuthContentPropertyUpdateAction;
 
 // @public (undocumented)
 export interface AuthContentPropertyUpdatePayload {

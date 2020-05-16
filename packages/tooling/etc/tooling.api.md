@@ -282,7 +282,7 @@ export function rxReadJsonFile<T>(aFile: string, aHost: ReadTextFile): Observabl
 export function rxWchToolsManifest(aName: string): OperatorFunction<FileDescriptor<any>, FileDescriptor<any>>;
 
 // @public
-export const rxWriteFileDescriptor: <T>(aWriteBuffer: BiFunction<string, Buffer, Observable<string>>) => MonoTypeOperatorFunction<FileDescriptor<T>>;
+export const rxWriteFileDescriptor: <T>(aWriteBuffer: WriteBuffer) => MonoTypeOperatorFunction<FileDescriptor<T>>;
 
 // @public
 export function rxWriteJsonFile(aName: string, aValue: any, aHost: WriteTextFile): Observable<string>;
@@ -352,7 +352,7 @@ export function writeFiles<T>(aRoot: string, aOverride?: boolean): MonoTypeOpera
 export type WriteTextFile = BiFunction<string, string, Observable<string>>;
 
 // @public
-export const writeTextFile: (aWriteBuffer: BiFunction<string, Buffer, Observable<string>>, aEncoding?: BufferEncoding) => BiFunction<string, string, Observable<string>>;
+export const writeTextFile: (aWriteBuffer: WriteBuffer, aEncoding?: BufferEncoding) => WriteTextFile;
 
 
 ```

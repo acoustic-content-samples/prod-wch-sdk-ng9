@@ -9,5 +9,5 @@ Unsubscribes if the subscription exists.
 <b>Signature:</b>
 
 ```typescript
-safeUnsubscribeAll: (aSubscriptions: ArrayLike<Unsubscribable>) => void
+safeUnsubscribeAll: (aSubscriptions: ArrayLike<Unsubscribable | null | undefined> | null | undefined) => void
 ```

@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-rxReadTextFile: (path: string | number | Buffer | import("url").URL) => Observable<string>
+rxReadTextFile: (path: PathLike | number) => Observable<string>
 ```

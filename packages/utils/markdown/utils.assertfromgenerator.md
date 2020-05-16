@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-assertFromGenerator: <T>(aKey: string | number | symbol, aObject: any, aGenerator: Generator<T>) => T
+assertFromGenerator: <T>(aKey: RecordKey, aObject: any, aGenerator: Generator<T>) => T
 ```

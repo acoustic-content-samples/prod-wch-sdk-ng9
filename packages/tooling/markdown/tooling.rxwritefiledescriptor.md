@@ -9,5 +9,5 @@ Persists a file descriptor
 <b>Signature:</b>
 
 ```typescript
-rxWriteFileDescriptor: <T>(aWriteBuffer: BiFunction<string, Buffer, Observable<string>>) => MonoTypeOperatorFunction<FileDescriptor<T>>
+rxWriteFileDescriptor: <T>(aWriteBuffer: WriteBuffer) => MonoTypeOperatorFunction<FileDescriptor<T>>
 ```

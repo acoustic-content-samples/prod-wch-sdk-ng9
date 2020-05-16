@@ -4,24 +4,20 @@
 
 ## updateGenericProperties() function
 
-Updates properties of the item that depend on the environment
-
 <b>Signature:</b>
 
 ```typescript
-export declare function updateGenericProperties<T extends BaseAuthoringItem>(aItem: Updater<T>, aUser?: User): Updater<T>;
+export declare function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(aItem: Updater<T>, aUser?: User): Updater<T>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  aItem | <code>Updater&lt;T&gt;</code> | updater for the item |
-|  aUser | <code>User</code> | optionally the current user |
+|  aItem | <code>Updater&lt;T&gt;</code> |  |
+|  aUser | <code>User</code> |  |
 
 <b>Returns:</b>
 
 `Updater<T>`
-
-the updater after the item has been modified
 

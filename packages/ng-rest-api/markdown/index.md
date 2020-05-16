@@ -9,5 +9,4 @@
 |  Package | Description |
 |  --- | --- |
 |  [@acoustic-content-sdk/ng-rest-api](./ng-rest-api.md) | Definition of contexts and interfaces for the Angular SDK based on REST. |
-|  [@acoustic-content-sdk/react-api](./react-api.md) |  |
 

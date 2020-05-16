@@ -802,7 +802,7 @@ export function rxGetJson(aUri: string): Observable<any>;
 export function rxLocateDir(aSrcDir: string, aPredicate: UnaryFunction<string, Observable<boolean>>): Observable<string>;
 
 // @public (undocumented)
-export const rxReadTextFile: (path: string | number | Buffer | import("url").URL) => Observable<string>;
+export const rxReadTextFile: (path: PathLike | number) => Observable<string>;
 
 // Warning: (ae-forgotten-export) The symbol "_rxOpenZip" needs to be exported by the entry point public_api.d.ts
 //

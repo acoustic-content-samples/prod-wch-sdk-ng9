@@ -29,7 +29,7 @@ import { User } from '@acoustic-content-sdk/api';
 export type AddRecordReducer<T> = BiFunction<Record<string, T>, T, Record<string, T>>;
 
 // @public
-export const addToSetEpic: <T>(aAddAction: string, aSetAction: string) => Epic<any, any, any, any>;
+export const addToSetEpic: <T>(aAddAction: string, aSetAction: string) => Epic;
 
 // @public (undocumented)
 export type AuthoringItem = AuthoringContentItem | AuthoringAsset;
@@ -65,7 +65,7 @@ export const getDeliveryIdFromAuthoringItem: UnaryFunction<ItemWithLinkedDocId |
 export function getNavSelectors(aJson$: Observable<NavigationJson>, aLogSvc?: LoggerService): NavSelectors;
 
 // @public
-export const getValueByAccessor: <T>(aItem: BaseAuthoringItem, aAccessor: string) => T;
+export const getValueByAccessor: <T>(aItem: BaseAuthoringItem, aAccessor: AccessorType) => T;
 
 // @public
 export function invarianceChecker(aValue: any): Generator<boolean>;
@@ -180,8 +180,10 @@ export function serializeDiff(aOld: any, aNew: any, aSameStyle?: UnaryFunction<s
 // @public
 export function sortAuthoringItems(aResult: ResolutionResult): AuthoringItem[];
 
-// @public
-export function updateGenericProperties<T extends BaseAuthoringItem>(aItem: Updater<T>, aUser?: User): Updater<T>;
+// Warning: (ae-forgotten-export) The symbol "BaseAuthoringItemWithLinks" needs to be exported by the entry point public_api.d.ts
+//
+// @public (undocumented)
+export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(aItem: Updater<T>, aUser?: User): Updater<T>;
 
 // @public (undocumented)
 export function updateImageElement(aAccessor: AccessorType, aItem: Updater<AuthoringContentItem>, aAsset: AuthoringAsset): Updater<AuthoringContentItem>;

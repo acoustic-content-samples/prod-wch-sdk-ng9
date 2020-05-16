@@ -130,7 +130,7 @@ export function isValidHandlebarsTemplateState(aState: HandlebarsTemplateState):
 export const selectHandlebarsFeature: import("rxjs").UnaryFunction<Record<string, any>, Record<string, import("./handlebars.state").HandlebarsTemplateState>>;
 
 // @public
-export const selectTemplate: (aKey: string) => (aState: Record<string, HandlebarsTemplateState>) => HandlebarsProcessor;
+export const selectTemplate: (aKey: HandlebarsKey) => (aState: HandlebarsState) => HandlebarsProcessor;
 
 // @public
 export const VERSION: {

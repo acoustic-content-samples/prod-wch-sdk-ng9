@@ -9,5 +9,5 @@ Constructs an epic that convers an `ADD` action to a `SET` action
 <b>Signature:</b>
 
 ```typescript
-addToSetEpic: <T>(aAddAction: string, aSetAction: string) => Epic<any, any, any, any>
+addToSetEpic: <T>(aAddAction: string, aSetAction: string) => Epic
 ```

@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-authContentPropertyUpdateAction: (id: string, accessor: string, value: any) => AuthContentPropertyUpdateAction
+authContentPropertyUpdateAction: (id: string, accessor: AccessorType, value: any) => AuthContentPropertyUpdateAction
 ```

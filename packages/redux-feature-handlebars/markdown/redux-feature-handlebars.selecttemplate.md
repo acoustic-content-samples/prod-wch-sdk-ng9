@@ -9,5 +9,5 @@ Selects the pre-compiled handlebars template based on the key or returns undefin
 <b>Signature:</b>
 
 ```typescript
-selectTemplate: (aKey: string) => (aState: Record<string, HandlebarsTemplateState>) => HandlebarsProcessor
+selectTemplate: (aKey: HandlebarsKey) => (aState: HandlebarsState) => HandlebarsProcessor
 ```

@@ -192,7 +192,7 @@ export const createDynamicReactProvider: DynamicReactProviderFactory;
 export const createInjectableReactProvider: InjectableReactProviderFactory;
 
 // @public
-export const createModuleFromProvider: (aProviders: ReactProvider<any>[]) => import("../public_api").ReactComponent<ReactModuleProps, any>;
+export const createModuleFromProvider: (aProviders: ReactProvider<any>[]) => ReactModule;
 
 // @public
 export function createReactContext<T>(aName: string, aDefault?: T): Required<Context<T>>;

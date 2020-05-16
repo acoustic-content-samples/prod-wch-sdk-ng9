@@ -9,5 +9,5 @@ Retrieves a property value by accessor
 <b>Signature:</b>
 
 ```typescript
-getValueByAccessor: <T>(aItem: BaseAuthoringItem, aAccessor: string) => T
+getValueByAccessor: <T>(aItem: BaseAuthoringItem, aAccessor: AccessorType) => T
 ```

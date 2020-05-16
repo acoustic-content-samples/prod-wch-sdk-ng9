@@ -9,5 +9,5 @@ Creates a [WriteTextFile](./tooling.writetextfile.md) function on top of a [Writ
 <b>Signature:</b>
 
 ```typescript
-writeTextFile: (aWriteBuffer: BiFunction<string, Buffer, Observable<string>>, aEncoding?: BufferEncoding) => BiFunction<string, string, Observable<string>>
+writeTextFile: (aWriteBuffer: WriteBuffer, aEncoding?: BufferEncoding) => WriteTextFile
 ```

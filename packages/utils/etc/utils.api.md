@@ -131,17 +131,19 @@ export const arrayEquals: <T>(aLeft: T[], aRight: T[], aPredicate: EqualsPredica
 // @public
 export const arrayPush: <T>(aValue: T, aArray: T[]) => T[];
 
+// Warning: (ae-forgotten-export) The symbol "RecordKey" needs to be exported by the entry point public_api.d.ts
+//
 // @public (undocumented)
-export const assertArray: <T>(aKey: string | number | symbol, aObject: any) => T[];
+export const assertArray: <T>(aKey: RecordKey, aObject: any) => T[];
 
 // @public (undocumented)
 export const assertFromFunction: <T, K extends string | number | symbol = string | number | symbol>(aKey: K, aObject: any, aCallback: UnaryFunction<K, T>) => any;
 
 // @public (undocumented)
-export const assertFromGenerator: <T>(aKey: string | number | symbol, aObject: any, aGenerator: Generator<T>) => T;
+export const assertFromGenerator: <T>(aKey: RecordKey, aObject: any, aGenerator: Generator<T>) => T;
 
 // @public (undocumented)
-export const assertObject: <T>(aKey: string | number | symbol, aObject: any) => T;
+export const assertObject: <T>(aKey: RecordKey, aObject: any) => T;
 
 // @public (undocumented)
 export const assignObject: typeof Object.assign;
@@ -1381,10 +1383,10 @@ export const safeMergeMap: <T, R>(aDelegate: UnaryFunction<T, ObservableInput<R>
 export const safeSwitchMap: <T, R>(aDelegate: UnaryFunction<T, ObservableInput<R>>) => OperatorFunction<T, R>;
 
 // @public
-export const safeUnsubscribe: (aSubscription: Unsubscribable) => void;
+export const safeUnsubscribe: (aSubscription: Unsubscribable | null | undefined) => void;
 
 // @public
-export const safeUnsubscribeAll: (aSubscriptions: ArrayLike<Unsubscribable>) => void;
+export const safeUnsubscribeAll: (aSubscriptions: ArrayLike<Unsubscribable | null | undefined> | null | undefined) => void;
 
 // @public (undocumented)
 export const SEARCH_MAX_ROWS = 2147483647;
