@@ -21,8 +21,7 @@ import {
   augmentGenericProperties,
   AuthoringSaveItem,
   reduceSaveActions,
-  SaveAuthoringBatchAction,
-  saveAuthoringBatchAction
+  SaveAuthoringBatchAction
 } from '@acoustic-content-sdk/redux-feature-save';
 import { selectCurrentUserFeature } from '@acoustic-content-sdk/redux-feature-user';
 import { rxSelect, selectPayload } from '@acoustic-content-sdk/redux-store';
@@ -59,12 +58,6 @@ import { UndoItems, UndoState } from './undo.state';
 
 export interface UndoDependencies {
   logger: Logger;
-}
-
-interface UndoAction extends Action {
-  type: string;
-  payload: any;
-  fromUndo?: Boolean;
 }
 
 function currentItem(
@@ -125,7 +118,6 @@ const saveAuthBatchEpic: Epic = (actions$, store$) => {
   return rxPipe(
     actions$,
     ofType<SaveAuthoringBatchAction>(ACTION_SAVE_AUTH_BATCH),
-    filter((action) => !action.fromUndo),
     // select the internal actions to execute
     map(selectPayload),
     // ignore noops
@@ -152,20 +144,17 @@ const saveAuthBatchEpic: Epic = (actions$, store$) => {
  * @param aItems - the undo item to restore
  */
 function restoreUndoItemActions(
-  aActions: UndoAction[],
+  aActions: Action[],
   aItems: UndoItems,
   aUser: User
-): UndoAction[] {
+): Action[] {
   // augment the items
   const items = mapArray(aItems, (item) =>
     augmentGenericProperties(item, aUser)
   );
   // if the previous item was a deletion marker, delete the item
   // return reduceArray(items, reduceSaveActions, aActions) as UndoAction[];
-  return arrayPush(
-    { ...saveAuthoringBatchAction(items), fromUndo: true },
-    aActions
-  );
+  return reduceArray(items, reduceSaveActions, aActions);
 }
 
 /**
@@ -193,9 +182,9 @@ function createUndoActions(
   aItems: AuthoringContentState,
   aAssets: AuthoringAssetState,
   aUser: User
-): UndoAction[] {
+): Action[] {
   // actions
-  const actions: UndoAction[] = [];
+  const actions: Action[] = [];
   // current selection
   const scope = selectInlineEditSelectedItem(aSelection);
   if (isNotNil(scope)) {
@@ -230,9 +219,9 @@ function createRedoActions(
   aItems: AuthoringContentState,
   aAssets: AuthoringAssetState,
   aUser: User
-): UndoAction[] {
+): Action[] {
   // actions
-  const actions: UndoAction[] = [];
+  const actions: Action[] = [];
   // current selection
   const scope = selectInlineEditSelectedItem(aSelection);
   if (isNotNil(scope)) {

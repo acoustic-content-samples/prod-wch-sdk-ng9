@@ -145,7 +145,7 @@ function getSaveActions(
   const items = mapArray(aItems, (item) => {
     if (isString(item)) {
       const authItem = aAuthContent[item];
-      if (authItem?.status === 'ready') {
+      if (authItem.status === 'ready') {
         return item;
       }
     }
