@@ -2,7 +2,7 @@ Implementation of general purpose components for use in the content editor, site
 
 ## Philosophy
 
-This repo contains many modules that are inter-related. The idea is that each module represents a logical, self-contained component. Consumers can decide to only depend on a subset of the functionality by pulling in just the required set of modules, without having to worry to pull in too many, undesired dependencies.
+This git repo contains many modules that are inter-related. The idea is that each module represents a logical, self-contained component. Consumers can decide to only depend on a subset of the functionality by pulling in just the required set of modules, without having to worry to pull in too many, undesired dependencies.
 
 The major version number of the repo (and all of its components) follows the major version number of [Angular](https://angular.io/) and the related tooling. Minor version numbers follow the [semantic versioning](https://semver.org/) guidelines and the patch level is the build number assigned by the CI tooling.
 
