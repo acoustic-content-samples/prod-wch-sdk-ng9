@@ -65,9 +65,7 @@ export class AbstractWchPageService implements WchPageService {
     const deliveryPageResolver = (path: string) =>
       rxPipe(
         aDeliverySiteResolver.getSiteDeliveryContentItem(),
-        tap(val => logger.info('DAH: got site in deliveryPageResolver', val)),
-        switchMap(site => aDeliveryPageResolver.getDeliveryPage(path, site?.$metadata?.id)),
-        tap(val => logger.info('DAH: got page in deliveryPageResolver', val)),
+        switchMap(site => aDeliveryPageResolver.getDeliveryPage(`${path}${site?.$metadata?.id ? `#${site.$metadata.id}` : ''}`)),
         opFilterNotNil,
         opDistinctUntilChanged
       );
@@ -76,9 +74,7 @@ export class AbstractWchPageService implements WchPageService {
     const errorPageResolver = () =>
       rxPipe(
         aDeliverySiteResolver.getSiteDeliveryContentItem(),
-        tap(val => logger.info('DAH: got site in errorPageResolver', val)),
         switchMap(site => aDeliveryPageResolver.getErrorPage(site?.$metadata?.id)),
-        tap(val => logger.info('DAH: got page in errorPageResolver', val)),
         opFilterNotNil,
         opDistinctUntilChanged
       );

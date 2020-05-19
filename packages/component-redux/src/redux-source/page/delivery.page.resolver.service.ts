@@ -116,6 +116,7 @@ function selectByPath(
   let relativePath = aPath;
 
   // temporary fix, until we can fix the base URL
+  // TODO: remove this if statement, once base URL is ready
   if (aPath.startsWith('/dxsites')) {
     let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
     let match = aPath.match(regExp)
@@ -170,11 +171,11 @@ export class AbstractDeliveryPageResolverService
   /**
    * Locates a page given the path
    *
-   * @param aPath - the path to the page
+   * @param aCompoundPath - a potentially compound path
    *
    * @returns an observable of the content item
    */
-  getDeliveryPage: (aPath: string, aSiteId?: string) => Observable<any>;
+  getDeliveryPage: (aCompoundPath: string) => Observable<any>;
   /**
    * Returns the error page
    *
@@ -227,10 +228,12 @@ export class AbstractDeliveryPageResolverService
     // send a request to locate the page by path
     const sendPageRequest = (
       path: string,
-      siteId?: string
+      siteId: string
     ): Observable<SearchResults<ContentItemWithLayout>> => {
       let relativePath = path;
-      logger.info('DAH: path', path);
+
+      // temporary fix, until the base URL can be set properly
+      // TODO: remove this if statement, once base URL is ready
       if (path.startsWith('/dxsites')) {
         let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
         let match = path.match(regExp)
@@ -241,8 +244,6 @@ export class AbstractDeliveryPageResolverService
         match = path.split(regExp);
         relativePath = match.length > 1 ? match[1] : path;
       }
-
-      logger.info('DAH: relativePath', relativePath);
 
       const searchQuery: Query = {
         ...query,
@@ -256,14 +257,11 @@ export class AbstractDeliveryPageResolverService
         searchQuery.fq = luceneEscapeKeyValue('siteId', siteId)
       }
 
-      logger.info('DAH: searchQuery', JSON.parse(JSON.stringify(searchQuery)));
-
       return rxPipe(
         aDeliverySearchResolver.getDeliverySearchResults(
           searchQuery,
           CLASSIFICATION_CONTENT
         ),
-        tap(val => logger.info('DAH: getDeliverySearchResults', val)),
         catchUndefined()
       );
     }
@@ -302,35 +300,21 @@ export class AbstractDeliveryPageResolverService
     logger.info(MODULE, createVersionString(VERSION));
 
     // locate the page
-    const getDeliveryPage = (path: string, siteId?: string) => {
-      // this should have the siteId???
-      logger.info('DAH: siteId in component-redux getDeliveryPage', siteId);
+    const getDeliveryPage = (aCompoundPath: string) => {
+      // split the compound paths
+      const [path, siteId] = aCompoundPath.split('#');
 
-      // get defaultSite from state
-      const defaultSite$ = rxPipe(
-        store$,
-        rxSelect(selectSiteFeature),
-        rxSelect(selectDefaultSite),
-        log('defaultSite')
-      );
       // result based on a local search
       const local$ = rxPipe(
         deliveryItems$,
-        withLatestFrom(defaultSite$),
-        tap(([, defaultSite]) => logger.info('DAH: siteId in local', defaultSite)),
-        tap(([deliveryItems]) => logger.info('DAH: deliveryItems in local', deliveryItems)),
-        mergeMap(([deliveryItems, siteId]) => of(selectByPath(path, siteId)(deliveryItems))),
-        tap(val => logger.info('DAH: item by path', val)),
+        rxSelect(selectByPath(path, siteId)),
         rxSelect(createDeliveryContentItem),
         log('page', path),
         opCacheLast
       );
       // guarantee the existence of the item
       const dispatch$ = rxPipe(
-        defaultSite$,
-        tap((defaultSite) => logger.info('DAH: siteId in dispatch', defaultSite)),
-        mergeMap((siteId) => searchByCanonicalPath(path, siteId)),
-        tap(val => logger.info('DAH: dispatch value', val)),
+        searchByCanonicalPath(path, siteId),
         map(guaranteeAuthoringContentBatchAction),
         map(dispatch),
         opFilterNever

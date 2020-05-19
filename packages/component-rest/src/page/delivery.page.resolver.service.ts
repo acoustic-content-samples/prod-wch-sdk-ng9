@@ -47,13 +47,13 @@ export class AbstractDeliveryPageResolverService
   /**
    * Locates a page given the path
    *
-   * @param aPath - the path to the page
+   * @param aCompoundPath - a potentially compound path
    *
    * @param aSiteId - the current siteId
    *
    * @returns an observable of the content item
    */
-  getDeliveryPage: (aPath: string, aSiteId?: string) => Observable<DeliveryContentItem>;
+  getDeliveryPage: (aCompoundPath: string) => Observable<DeliveryContentItem>;
   /**
    * Returns the error page
    *
@@ -87,7 +87,9 @@ export class AbstractDeliveryPageResolverService
       CLASSIFICATION_CONTENT,
       (path, siteId) => {
         let relativePath = path;
-        logger.info('DAH: path findPageContentItem in component-rest', path);
+
+        // temporary fix, until we can set the base URL
+        // TODO: remove this if statement, once base URL is ready
         if (path.startsWith('/dxsites')) {
           let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
           let match = path.match(regExp)
@@ -111,7 +113,6 @@ export class AbstractDeliveryPageResolverService
           searchQuery.fq = luceneEscapeKeyValue('siteId', siteId)
         }
 
-        logger.info('DAH: searchQuery delivery page in component-rest', searchQuery);
         return searchQuery;
       },
       aLogSvc
@@ -131,14 +132,16 @@ export class AbstractDeliveryPageResolverService
           searchQuery.fq = luceneEscapeKeyValue('siteId', siteId);
         }
 
-        logger.info('DAH: searchQuery error page in component-rest', JSON.parse(JSON.stringify(searchQuery)));
         return searchQuery;
       },
       aLogSvc
     );
     // convert to the new format
-    const getDeliveryPage = (path: string, siteId?: string) =>
-      rxPipe(findPageContentItem(path, siteId), tap(val => logger.info('DAH: path to search', val)), map(createDeliveryContentItem));
+    const getDeliveryPage = (aCompoundPath: string) => {
+      const [path, siteId] = aCompoundPath.split('#');
+      return rxPipe(findPageContentItem(path, siteId), map(createDeliveryContentItem));
+    }
+
     const getErrorPage = (siteId?: string) =>
       rxPipe(findErrorContentItem(ERROR_TAG, siteId), map(createDeliveryContentItem));
 
