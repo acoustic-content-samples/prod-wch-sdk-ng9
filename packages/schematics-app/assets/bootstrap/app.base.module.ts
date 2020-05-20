@@ -1,25 +1,17 @@
 import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
+import { wchGetBaseURL } from '@acoustic-content-sdk/utils';
 
 import { {{ { ACOUSTIC_APP_MODULE } }} as WchAppModule } from '{{{ACOUSTIC_APP_MODULE_PATH}}}';
 import { {{ { ORIGINAL_APP_MODULE } }} as OriginalAppModule } from '{{{ORIGINAL_APP_MODULE_PATH}}}';
 
 /**
- * dynamically generates the base URL
+ * gets the base URL pathname for the site
  *
- * @returns the base URL
+ * @returns the base URL pathname
  */
 function getAppBase() {
-  const dxSites = 'dxsites';
-  const siteIdRegexStr = '[\\w\\d_\\-%]';
-  const tenantIdRegexStr = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}';
-  const baseUrlRegex = new RegExp(`^(?:\\/api)?(?:\\/(${tenantIdRegexStr}))?(?:(?:\\/${dxSites}\\/)(${siteIdRegexStr}+))?(?:\\/)?(?:.*)$`);
-  const [total, tenantId, siteId] = baseUrlRegex.exec(document.location.pathname);
-  const resourceUrl = tenantId ? `/${tenantId}/` : '/';
-
-  const baseUrl = siteId ? resourceUrl + 'dxsites/' + siteId + '/' : resourceUrl;
-
-  return baseUrl;
+  return wchGetBaseURL(document).pathname;
 }
 
 /**
