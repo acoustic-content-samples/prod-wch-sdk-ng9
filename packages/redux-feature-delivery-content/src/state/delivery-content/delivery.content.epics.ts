@@ -174,11 +174,15 @@ function getRenditions(
   if (isNotNil(defaultRenditionSource)) {
     const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
     if (isNotNil(idx)) {
-      const newCropValue = `${transformValues.crop.width}:${transformValues.crop.height};${transformValues.crop.x},${transformValues.crop.y}`;
+      const newCropValue = `${transformValues?.crop?.width}:${transformValues?.crop?.height};${transformValues?.crop?.x},${transformValues?.crop?.y}`;
       // add query params (expected to hold rendition parameters such as cropping)
       const queryParams = defaultRenditionSource.substring(idx + 1);
       let queryParamMap = parseQueryString(queryParams);
-      queryParamMap.crop = newCropValue;
+
+      if (transformValues) {
+        queryParamMap.crop = newCropValue;
+      }
+
       source = `${source}?${queryToString(queryParamMap)}`;
     }
   }
