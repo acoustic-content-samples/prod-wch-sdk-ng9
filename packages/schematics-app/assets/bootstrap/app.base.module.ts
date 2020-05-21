@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { wchGetBaseURL } from '@acoustic-content-sdk/utils';
 
-import { {{ { ACOUSTIC_APP_MODULE } }} as WchAppModule } from '{{{ACOUSTIC_APP_MODULE_PATH}}}';
-import { {{ { ORIGINAL_APP_MODULE } }} as OriginalAppModule } from '{{{ORIGINAL_APP_MODULE_PATH}}}';
-
+import { {{{ACOUSTIC_APP_MODULE}}} as WchAppModule } from '{{{ACOUSTIC_APP_MODULE_PATH}}}';
+import { {{{ORIGINAL_APP_MODULE}}} as OriginalAppModule } from '{{{ORIGINAL_APP_MODULE_PATH}}}';
 /**
  * gets the base URL pathname for the site
  *
