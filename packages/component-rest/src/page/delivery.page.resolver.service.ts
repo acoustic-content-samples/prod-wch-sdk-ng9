@@ -86,27 +86,13 @@ export class AbstractDeliveryPageResolverService
       aSearch,
       CLASSIFICATION_CONTENT,
       (path, siteId) => {
-        let relativePath = path;
-
-        // temporary fix, until we can set the base URL
-        // TODO: remove this if statement, once base URL is ready
-        if (path.startsWith('/dxsites')) {
-          let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
-          let match = path.match(regExp)
-          siteId = match ? match[0] : undefined;
-
-          //pull rest of the path
-          regExp = new RegExp("\/dxsites\/" + siteId + "(.+)");
-          match = path.split(regExp);
-          relativePath = match.length > 1 ? match[1] : path;
-        }
 
         const searchQuery: any = {
           ...query,
           q: luceneEscapeKeyValueOr(
             'path',
-            removeTrailingSlash(relativePath),
-            ensureTrailingSlash(relativePath)
+            removeTrailingSlash(path),
+            ensureTrailingSlash(path)
           )
         }
         if (siteId) {

@@ -112,24 +112,8 @@ function selectByPath(
   siteId?: string
 ): UnaryFunction<DeliveryContentState, ContentItemWithLayout> {
   // normalize the path
-
-  let relativePath = aPath;
-
-  // temporary fix, until we can fix the base URL
-  // TODO: remove this if statement, once base URL is ready
-  if (aPath.startsWith('/dxsites')) {
-    let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
-    let match = aPath.match(regExp)
-    siteId = match ? match[0] : undefined;
-
-    //pull rest of the path
-    regExp = new RegExp("\/dxsites\/" + siteId + "(.+)");
-    match = aPath.split(regExp);
-    relativePath = match.length > 1 ? match[1] : aPath;
-  }
-
-  const withSlash = ensureTrailingSlash(relativePath);
-  const noSlash = removeTrailingSlash(relativePath);
+  const withSlash = ensureTrailingSlash(aPath);
+  const noSlash = removeTrailingSlash(aPath);
   // predicate
   const isPath = (aValue: any) => {
     return siteId
@@ -230,27 +214,13 @@ export class AbstractDeliveryPageResolverService
       path: string,
       siteId: string
     ): Observable<SearchResults<ContentItemWithLayout>> => {
-      let relativePath = path;
-
-      // temporary fix, until the base URL can be set properly
-      // TODO: remove this if statement, once base URL is ready
-      if (path.startsWith('/dxsites')) {
-        let regExp = new RegExp("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
-        let match = path.match(regExp)
-        siteId = match ? match[0] : undefined;
-
-        //pull rest of the path
-        regExp = new RegExp("\/dxsites\/" + siteId + "(.+)");
-        match = path.split(regExp);
-        relativePath = match.length > 1 ? match[1] : path;
-      }
 
       const searchQuery: Query = {
         ...query,
         q: luceneEscapeKeyValueOr(
           'path',
-          removeTrailingSlash(relativePath),
-          ensureTrailingSlash(relativePath)
+          removeTrailingSlash(path),
+          ensureTrailingSlash(path)
         )
       }
       if (siteId) {
