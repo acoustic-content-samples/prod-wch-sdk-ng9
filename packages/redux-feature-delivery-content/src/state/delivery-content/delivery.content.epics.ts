@@ -171,22 +171,35 @@ function getRenditions(
   const defaultRenditionSource = aImage.renditions?.default?.source;
   const transformValues = aImage.renditions?.default?.transform;
 
-  if (isNotNil(defaultRenditionSource)) {
-    const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
-    if (isNotNil(idx)) {
-      // add query params (expected to hold rendition parameters such as cropping)
-      const queryParams = defaultRenditionSource.substring(idx + 1);
-      let queryParamMap = parseQueryString(queryParams);
+  if (isNotNil(defaultRenditionSource) || isNotNil(transformValues)) {
+    // initialize to something sensical but should get overwritten below
+    let queryParamMap = parseQueryString(`resize=${defaultImageSize[0]}px:${defaultImageSize[1]}px`);
 
-      if (transformValues && transformValues.crop) {
-        const {
-          crop: { width, height, x, y }
-        } = transformValues.crop;
+    if (isNotNil(defaultRenditionSource)) {
+      const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
+      if (isNotNil(idx)) {
+        // add query params (expected to hold rendition parameters such as resize and crop)
+        const queryParams = defaultRenditionSource.substring(idx + 1);
+        queryParamMap = parseQueryString(queryParams);
+      }
+    }
+
+    if (isNotNil(transformValues)) {
+      // set the same values that the Authoring API does in response to the transform
+      if (transformValues.crop) {
+        const { width, height, x, y } = transformValues.crop;
         queryParamMap.crop = `${width}:${height};${x},${y}`;
       }
-
-      source = `${source}?${queryToString(queryParamMap)}`;
+      else {
+        delete queryParamMap.crop;
+      }
+      if (transformValues.scale) {
+        const width = Math.round(aAsset.metadata.width * transformValues.scale);
+        const height = Math.round(aAsset.metadata.height * transformValues.scale);
+        queryParamMap.resize = `${width}px:${height}px`;
+      }
     }
+    source = `${source}?${queryToString(queryParamMap)}`;
   }
 
   // each image element has a default rendition
@@ -364,17 +377,17 @@ function transformElement(
     const { value } = aElement;
     return isNotNil(value)
       ? {
-          ...aElement,
-          value: transformMap(value, assets, aApiUrl)
-        }
+        ...aElement,
+        value: transformMap(value, assets, aApiUrl)
+      }
       : aElement;
   } else if (isMultiGroupElement(aElement)) {
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => transformMap(value, assets, aApiUrl))
-        }
+        ...aElement,
+        values: values.map((value) => transformMap(value, assets, aApiUrl))
+      }
       : aElement;
   } else if (isSingleImageElementInAuthoring(aElement)) {
     return {
@@ -385,12 +398,12 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => ({
-            ...value,
-            ...transformImageElement(value, assets, aApiUrl)
-          }))
-        }
+        ...aElement,
+        values: values.map((value) => ({
+          ...value,
+          ...transformImageElement(value, assets, aApiUrl)
+        }))
+      }
       : aElement;
   } else if (isSingleVideoElementInAuthoring(aElement)) {
     return {
@@ -401,12 +414,12 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => ({
-            ...value,
-            ...transformVideoElement(value, assets, aApiUrl)
-          }))
-        }
+        ...aElement,
+        values: values.map((value) => ({
+          ...value,
+          ...transformVideoElement(value, assets, aApiUrl)
+        }))
+      }
       : aElement;
   } else if (isSingleFormattedTextElement(aElement)) {
     return {
@@ -417,9 +430,9 @@ function transformElement(
     const { values } = aElement;
     return isNotEmpty(values)
       ? {
-          ...aElement,
-          values: values.map((value) => transformFormattedText(value, aApiUrl))
-        }
+        ...aElement,
+        values: values.map((value) => transformFormattedText(value, aApiUrl))
+      }
       : aElement;
   } else {
     // in the general case, nothing to copy
