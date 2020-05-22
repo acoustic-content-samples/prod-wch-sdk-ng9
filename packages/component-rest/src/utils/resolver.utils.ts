@@ -65,20 +65,21 @@ const LOGGER = 'createResolverFromSearch';
 export function createResolverFromSearch<T>(
   aSearch: DeliverySearchResolver,
   aClassification: string,
-  aCallback: UnaryFunction<string, QueryInput>,
+  aCallback: (id: string, aSiteId?: string) => QueryInput,
   aLogSvc: LoggerService
-): UnaryFunction<string, Observable<T>> {
+): (id: string, aSiteId?: string) => Observable<T> {
   // logger
   const logger = aLogSvc.get(LOGGER);
   // next logger
   const log: <V>(...v: any[]) => MonoTypeOperatorFunction<V> = rxNext(logger);
   // send a request
   const sendRequest = (
-    id: string
+    id: string,
+    siteId?: string,
   ): Observable<SearchResults<SearchResult<T>>> => {
     // dispatch
     return rxPipe(
-      aSearch.getDeliverySearchResults(aCallback(id), aClassification),
+      aSearch.getDeliverySearchResults(aCallback(id, siteId), aClassification),
       catchError((error) => {
         // log
         logger.error(error);
@@ -88,6 +89,6 @@ export function createResolverFromSearch<T>(
     );
   };
   // return based on mode
-  return (id) =>
-    rxPipe(sendRequest(id), log('documents', id), mergeMap(extractDocuments));
+  return (id, siteId) =>
+    rxPipe(sendRequest(id, siteId), log('documents', id), mergeMap(extractDocuments));
 }

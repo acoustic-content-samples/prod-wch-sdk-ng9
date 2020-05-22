@@ -4,7 +4,7 @@ import {
   RenderingContextV2,
   UrlConfig
 } from '@acoustic-content-sdk/api';
-import { DeliveryPageResolver } from '@acoustic-content-sdk/component-api';
+import { DeliveryPageResolver, DeliverySiteResolver } from '@acoustic-content-sdk/component-api';
 import { AbstractWchPageService } from '@acoustic-content-sdk/component-utils';
 import { ReactWchPageService } from '@acoustic-content-sdk/react-api';
 import { boxLoggerService } from '@acoustic-content-sdk/utils';
@@ -27,11 +27,12 @@ export class ReactPageService extends AbstractWchPageService
 
   constructor(
     aDeliveryPageResolver: DeliveryPageResolver,
+    aDeliverySiteResolver: DeliverySiteResolver,
     aUrlConfig$: Observable<UrlConfig>,
     aLogSvc?: LoggerService
   ) {
     // default
-    super(aDeliveryPageResolver, aUrlConfig$, aLogSvc);
+    super(aDeliveryPageResolver, aDeliverySiteResolver, aUrlConfig$, aLogSvc);
     // logger
     const logSvc = boxLoggerService(aLogSvc);
     // logger

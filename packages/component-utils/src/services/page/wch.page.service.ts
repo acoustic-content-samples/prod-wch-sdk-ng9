@@ -3,10 +3,12 @@ import {
   ExtendedContextV2,
   LoggerService,
   RenderingContextV2,
-  UrlConfig
+  UrlConfig,
+  SiteDeliveryContentItem,
 } from '@acoustic-content-sdk/api';
 import {
   DeliveryPageResolver,
+  DeliverySiteResolver,
   WchPageService
 } from '@acoustic-content-sdk/component-api';
 import {
@@ -19,8 +21,8 @@ import {
   rxNext,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { combineLatest, MonoTypeOperatorFunction, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest, MonoTypeOperatorFunction, Observable, of } from 'rxjs';
+import { catchError, map, tap, switchMap } from 'rxjs/operators';
 
 import { createCache } from '../../utils/cache.utils';
 import { MODULE, VERSION } from './../../version';
@@ -50,6 +52,7 @@ export class AbstractWchPageService implements WchPageService {
 
   protected constructor(
     aDeliveryPageResolver: DeliveryPageResolver,
+    aDeliverySiteResolver: DeliverySiteResolver,
     aUrlConfig$: Observable<UrlConfig>,
     aLogSvc?: LoggerService
   ) {
@@ -60,9 +63,20 @@ export class AbstractWchPageService implements WchPageService {
     // next logger
     const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
     // simpler binding to the method
+
+    // get the site content item or default to undefined
+    const site$: Observable<SiteDeliveryContentItem> = rxPipe(
+      aDeliverySiteResolver.getSiteDeliveryContentItem(),
+      catchError(err => {
+        logger.error('Failed to get site content item, falling back to page path only.', err);
+        return of(undefined);
+      })
+    );
+
     const deliveryPageResolver = (path: string) =>
       rxPipe(
-        aDeliveryPageResolver.getDeliveryPage(path),
+        site$,
+        switchMap(site => aDeliveryPageResolver.getDeliveryPage(`${path}${site?.$metadata?.id ? `#${site.$metadata.id}` : ''}`)),
         opFilterNotNil,
         opDistinctUntilChanged
       );
@@ -70,7 +84,8 @@ export class AbstractWchPageService implements WchPageService {
     // simpler binding to the method
     const errorPageResolver = () =>
       rxPipe(
-        aDeliveryPageResolver.getErrorPage(),
+        site$,
+        switchMap(site => aDeliveryPageResolver.getErrorPage(site?.$metadata?.id)),
         opFilterNotNil,
         opDistinctUntilChanged
       );

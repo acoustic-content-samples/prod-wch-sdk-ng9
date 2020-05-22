@@ -9,14 +9,15 @@ export interface DeliveryPageResolver {
   /**
    * Locates a page given the path
    *
-   * @param aPath - the path to the page
+   * @param aCompoundPath - a potentially compound path
    *
    * @returns an observable of the content item
    */
-  getDeliveryPage(aPath: string): Observable<DeliveryContentItem>;
+  getDeliveryPage(aCompoundPath: string): Observable<DeliveryContentItem>;
 
   /**
    * Returns the error page
+   * @param aSiteId - the current siteId
    */
-  getErrorPage(): Observable<DeliveryContentItem>;
+  getErrorPage(aSiteId?: string): Observable<DeliveryContentItem>;
 }
