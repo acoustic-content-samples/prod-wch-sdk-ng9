@@ -49,8 +49,6 @@ export class AbstractDeliveryPageResolverService
    *
    * @param aCompoundPath - a potentially compound path
    *
-   * @param aSiteId - the current siteId
-   *
    * @returns an observable of the content item
    */
   getDeliveryPage: (aCompoundPath: string) => Observable<DeliveryContentItem>;
