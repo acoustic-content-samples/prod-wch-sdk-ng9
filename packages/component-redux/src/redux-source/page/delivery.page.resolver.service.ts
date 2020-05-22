@@ -159,7 +159,7 @@ export class AbstractDeliveryPageResolverService
    *
    * @returns an observable of the content item
    */
-  getDeliveryPage: (aCompoundPath: string) => Observable<any>;
+  getDeliveryPage: (aCompoundPath: string) => Observable<DeliveryContentItem>;
   /**
    * Returns the error page
    *
@@ -258,7 +258,7 @@ export class AbstractDeliveryPageResolverService
     const searchByCanonicalPath = (
       path,
       siteId,
-    ): any => rxPipe(sendPageRequest(path, siteId), map(extractIds), log('ids', path));
+    ): Observable<string[]> => rxPipe(sendPageRequest(path, siteId), map(extractIds), log('ids', path));
 
     /**
      * Search item based on path
