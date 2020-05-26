@@ -2,7 +2,7 @@ import { BaseAuthoringItem } from '../base.item';
 
 export interface AuthoringAssetMetadata {
   readonly width?: number;
-  readonly heigth?: number;
+  readonly height?: number;
   readonly camera?: any;
   readonly coverage?: any;
   readonly creator?: string;
