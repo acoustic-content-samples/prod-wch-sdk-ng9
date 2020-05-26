@@ -169,14 +169,37 @@ function getRenditions(
   // that data is applied to the default rendition
   let source = defaultRenditionUrl;
   const defaultRenditionSource = aImage.renditions?.default?.source;
-  if (isNotNil(defaultRenditionSource)) {
-    const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
-    if (isNotNil(idx)) {
-      // add query params (expected to hold rendition parameters such as cropping)
-      const queryParams = defaultRenditionSource.substring(idx + 1);
-      const queryParamMap = parseQueryString(queryParams);
-      source = `${source}?${queryToString(queryParamMap)}`;
+  const transformValues = aImage.renditions?.default?.transform;
+
+  if (isNotNil(defaultRenditionSource) || isNotNil(transformValues)) {
+    // initialize to something logical but should get overwritten below
+    let queryParamMap = parseQueryString(`resize=${defaultImageSize[0]}px:${defaultImageSize[1]}px`);
+
+    if (isNotNil(defaultRenditionSource)) {
+      const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
+      if (isNotNil(idx)) {
+        // add query params (expected to hold rendition parameters such as resize and crop)
+        const queryParams = defaultRenditionSource.substring(idx + 1);
+        queryParamMap = parseQueryString(queryParams);
+      }
     }
+
+    if (isNotNil(transformValues)) {
+      // set the same values that the Authoring API does in response to the transform
+      if (transformValues.crop) {
+        const { width, height, x, y } = transformValues.crop;
+        queryParamMap.crop = `${width}:${height};${x},${y}`;
+      }
+      else {
+        delete queryParamMap.crop;
+      }
+      if (transformValues.scale) {
+        const width = Math.round(aAsset.metadata.width * transformValues.scale);
+        const height = Math.round(aAsset.metadata.height * transformValues.scale);
+        queryParamMap.resize = `${width}px:${height}px`;
+      }
+    }
+    source = `${source}?${queryToString(queryParamMap)}`;
   }
 
   // each image element has a default rendition
