@@ -77,7 +77,6 @@ export class AbstractWchPageService implements WchPageService {
       rxPipe(
         site$,
         switchMap(site => aDeliveryPageResolver.getDeliveryPage(`${path}${site?.$metadata?.id ? `#${site.$metadata.id}` : ''}`)),
-        opFilterNotNil,
         opDistinctUntilChanged
       );
 
@@ -105,10 +104,10 @@ export class AbstractWchPageService implements WchPageService {
       rxPipe(
         combineLatest([deliveryPageResolver(aPath), $context$]),
         // debounceTime(0),
-        map(([page, $context]) => ({
+        map(([page, $context]) => page ? ({
           ...page,
           $context
-        })),
+        }) : undefined),
         log(KEY_RENDERING_CONTEXT, aPath)
       );
 
