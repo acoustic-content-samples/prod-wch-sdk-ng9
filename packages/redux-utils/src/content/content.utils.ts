@@ -66,16 +66,14 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
     // set user info
     aItem.set('lastModifierId', aUser.id);
   }
+
   if (isNotNil(links)) {
     if (isNotNil(links['createDraft'])) {
       // is published item
       aItem.del('links.createDraft');
-      aItem.set(
-        'links.linkedDoc.href',
-        `/authoring/v1/content/${getDeliveryId(itemId)}`
-      );
     }
   }
+
   // set the creation information
   if (isNil(created)) {
     aItem.set('created', date);
@@ -89,6 +87,11 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
     // make sure to update the status to draft
     aItem.set('status', Status.DRAFT);
     aItem.set('draftStatus', DraftStatus.IN_PROGRESS);
+    // draft item must have linked doc to its published version
+    aItem.set(
+      'links.linkedDoc.href',
+      `/authoring/v1/content/${getDeliveryId(itemId)}`
+    );
   }
 
   // ok
