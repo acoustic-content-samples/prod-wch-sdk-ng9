@@ -200,7 +200,7 @@ export function updateVideoElement(
     fileName: aAsset.fileName,
     fileSize: aAsset.fileSize,
     mediaType: aAsset.mediaType,
-    resourceUri: getPath(aAsset, ['renditions', 'default', 'source'])
+    resourceUri: 'authoring/v1/resources/' + aAsset.resource
   };
 
   // element type and mode are already set on the parent element, only add asset reference
