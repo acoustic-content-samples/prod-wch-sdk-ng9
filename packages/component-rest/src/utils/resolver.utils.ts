@@ -22,7 +22,6 @@ import {
   MonoTypeOperatorFunction,
   Observable,
   of,
-  UnaryFunction
 } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
 
@@ -57,7 +56,9 @@ const selectDocument = pluckProperty<any, 'document'>('document');
 function extractDocuments<T>(
   aResult: SearchResults<SearchResult<T>>
 ): Observable<T> {
-  return from(mapArray(selectDocuments(aResult), selectDocument));
+  const ids = mapArray(selectDocuments(aResult), selectDocument);
+  // still emit undefined, even if there are no documents
+  return ids.length ? from(ids) : of(undefined);
 }
 
 const LOGGER = 'createResolverFromSearch';

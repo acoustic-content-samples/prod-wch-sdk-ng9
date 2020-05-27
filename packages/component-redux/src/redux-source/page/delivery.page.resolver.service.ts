@@ -237,20 +237,26 @@ export class AbstractDeliveryPageResolverService
     }
 
     // send a request to locate the error page
-    const sendErrorPageRequest = (): Observable<
+    const sendErrorPageRequest = (siteId?: string): Observable<
       SearchResults<ContentItemWithLayout>
-    > =>
-      rxPipe(
+    > => {
+      const searchQuery: Query = {
+        ...query,
+        // TODO refine search
+        q: luceneEscapeKeyValueOr('tags', ERROR_TAG)
+      };
+
+      if (siteId) {
+        searchQuery.fq = luceneEscapeKeyValue('siteId', siteId)
+      }
+      return rxPipe(
         aDeliverySearchResolver.getDeliverySearchResults(
-          {
-            ...query,
-            // TODO refine search
-            q: luceneEscapeKeyValueOr('tags', ERROR_TAG)
-          },
+          searchQuery,
           CLASSIFICATION_CONTENT
         ),
         catchUndefined()
       );
+    }
 
     /**
      * Search item based on path
@@ -263,8 +269,8 @@ export class AbstractDeliveryPageResolverService
     /**
      * Search item based on path
      */
-    const searchByError: Generator<Observable<string[]>> = () =>
-      rxPipe(sendErrorPageRequest(), map(extractIds), log('ids'));
+    const searchByError = (siteId?: string): Observable<string[]> =>
+      rxPipe(sendErrorPageRequest(siteId), map(extractIds), log('ids'));
 
     // log this service
     logger.info(MODULE, createVersionString(VERSION));
@@ -305,7 +311,7 @@ export class AbstractDeliveryPageResolverService
       );
       // guarantee the existence of the item
       const dispatch$ = rxPipe(
-        searchByError(),
+        searchByError(siteId),
         map(guaranteeAuthoringContentBatchAction),
         map(dispatch),
         opFilterNever
