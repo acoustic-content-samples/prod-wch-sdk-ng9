@@ -5,6 +5,7 @@ import {
   CLASSIFICATION_ASSET,
   DraftStatus,
   ELEMENT_TYPE_IMAGE,
+  ELEMENT_TYPE_VIDEO,
   Status,
   User
 } from '@acoustic-content-sdk/api';
@@ -168,6 +169,47 @@ export function updateImageElement(
   };
 
   aItem.set(aAccessor, img);
+
+  if (isArray(parent)) {
+    // replace all undefined values in the array
+    // if the accessor points to the n-th element of an array and the array is empty, all elements
+    // before the n-th element are set to undefined by updateValueByAccessor
+    replaceInArray(getPath(aItem.get(), parentPath), undefined, {});
+  }
+
+  // ok
+  return aItem;
+}
+
+export function updateVideoElement(
+  aAccessor: AccessorType,
+  aItem: Updater<AuthoringContentItem>,
+  aAsset: AuthoringAsset
+): Updater<AuthoringContentItem> {
+  // original item
+  const oldItem = aItem.get();
+  // parse the accessor
+  const path = parsePath(aAccessor);
+  const parentPath = path.slice(0, -1);
+
+  // access the parent element
+  const parent = getPath(oldItem, parentPath);
+
+  const asset = {
+    id: getDeliveryIdFromAuthoringItem(aAsset),
+    fileName: aAsset.fileName,
+    fileSize: aAsset.fileSize,
+    mediaType: aAsset.mediaType,
+    resourceUri: 'authoring/v1/resources/' + aAsset.resource
+  };
+
+  // element type and mode are already set on the parent element, only add asset reference
+  const video = {
+    elementType: ELEMENT_TYPE_VIDEO,
+    asset
+  };
+
+  aItem.set(aAccessor, video);
 
   if (isArray(parent)) {
     // replace all undefined values in the array
