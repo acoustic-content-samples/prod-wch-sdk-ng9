@@ -81,7 +81,6 @@ const setAssetEpic = addToSetEpic<AuthoringAsset>(
   ACTION_SET_AUTH_ASSET
 );
 
-
 /**
  * Handles asset guarantees
  */
