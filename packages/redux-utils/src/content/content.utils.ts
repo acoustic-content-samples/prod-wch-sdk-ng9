@@ -195,7 +195,13 @@ export function updateVideoElement(
   // access the parent element
   const parent = getPath(oldItem, parentPath);
 
-  const asset = getAssetDetails(undefined, aAsset);
+  const asset = {
+    id: getDeliveryIdFromAuthoringItem(aAsset),
+    fileName: aAsset.fileName,
+    fileSize: aAsset.fileSize,
+    mediaType: aAsset.mediaType,
+    resourceUri: getPath(aAsset, ['renditions', 'default', 'source'])
+  };
 
   // element type and mode are already set on the parent element, only add asset reference
   const video = {
