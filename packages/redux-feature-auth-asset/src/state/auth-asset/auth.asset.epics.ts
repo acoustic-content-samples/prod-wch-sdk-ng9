@@ -55,7 +55,7 @@ const loadAssetEpic: Epic = (
       fetchText(
         `authoring/v1/assets/${encodeURIComponent(
           id
-        )}?${PROJECT_ID_QUERY_PARAM}`
+        )}?${PROJECT_ID_QUERY_PARAM}&include=metadata`
       ),
       // convert text to json
       map<string, BaseAuthoringItem>(jsonParse),
@@ -80,6 +80,7 @@ const setAssetEpic = addToSetEpic<AuthoringAsset>(
   ACTION_ADD_AUTH_ASSET,
   ACTION_SET_AUTH_ASSET
 );
+
 
 /**
  * Handles asset guarantees
