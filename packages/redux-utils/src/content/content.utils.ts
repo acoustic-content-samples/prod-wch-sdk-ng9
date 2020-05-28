@@ -89,10 +89,6 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
     aItem.set('status', Status.DRAFT);
     aItem.set('draftStatus', DraftStatus.IN_PROGRESS);
     // draft item must have linked doc to its published version
-    aItem.set(
-      'links.linkedDoc.href',
-      `/authoring/v1/content/${getDeliveryId(itemId)}`
-    );
   }
 
   // ok
@@ -247,6 +243,11 @@ export function updateValueByAccessor<T extends BaseAuthoringItem>(
 ): Updater<T> {
   // construct the updater
   const upd = createUpdater(aItem);
+  // if property is updated that means item had published version so set link to its id
+  upd.set(
+    'links.linkedDoc.href',
+    `/authoring/v1/content/${getDeliveryId(aItem?.id)}`
+  );
   // update some generic properties
   updateGenericProperties(upd, aUser);
   // set the value
