@@ -32,6 +32,7 @@ import {
   mapArray,
   opCacheLast,
   opFilterNever,
+  opFilterNotNil,
   pluckProperty,
   Predicate,
   rxCachedFunction,
@@ -44,10 +45,9 @@ import {
   MonoTypeOperatorFunction,
   Observable,
   UnaryFunction,
-  of
+  Subject,
 } from 'rxjs';
-import { catchError, debounceTime, map, tap, withLatestFrom, mergeMap } from 'rxjs/operators';
-import { selectSiteFeature, selectDefaultSite } from '@acoustic-content-sdk/redux-feature-site';
+import { catchError, debounceTime, map, tap } from 'rxjs/operators';
 
 import { createCache } from '../../utils/cache.utils';
 import { selectCanonicalPath, selectTags, selectSiteDescriptorId } from '../../utils/selection.utils';
@@ -280,23 +280,38 @@ export class AbstractDeliveryPageResolverService
       // split the compound paths
       const [path, siteId] = aCompoundPath.split('#');
 
+      const isNotFound = new Subject();
+      const isNotFound$: Observable<undefined> = rxPipe(
+        isNotFound
+      );
+
+      // check for empty search results
+      const catchEmptySearchResults = (ids) => {
+        if (!ids || ids.length === 0) {
+          // emit undefined to trigger 404 case
+          isNotFound.next(undefined);
+        }
+        return ids;
+      }
       // result based on a local search
       const local$ = rxPipe(
         deliveryItems$,
         rxSelect(selectByPath(path, siteId)),
         rxSelect(createDeliveryContentItem),
         log('page', path),
+        opFilterNotNil,
         opCacheLast
       );
       // guarantee the existence of the item
       const dispatch$ = rxPipe(
         searchByCanonicalPath(path, siteId),
+        catchEmptySearchResults,
         map(guaranteeAuthoringContentBatchAction),
         map(dispatch),
         opFilterNever
       );
       // combine
-      return merge(local$, dispatch$);
+      return merge(local$, dispatch$, isNotFound$);
     };
 
     // locate the page
