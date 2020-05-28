@@ -428,7 +428,10 @@ export {
   queryToString,
   urlEquals,
   urlSlashes,
-  urlToString
+  urlToString,
+  slugify,
+  uniquifyPath,
+  isValidPath
 } from './url/url.utils';
 export { MODULE, VERSION } from './version';
 export { isEqualVersion } from './version/version';
