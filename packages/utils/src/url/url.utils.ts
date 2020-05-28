@@ -131,10 +131,7 @@ const _parseURL: UnaryFunction<
  */
 const _cloneURL: UnaryFunction<URL, URL> = ternary(
   isNotNil,
-  compose(
-    _urlToString,
-    _parseURL
-  ),
+  compose(_urlToString, _parseURL),
   identity
 );
 
@@ -403,6 +400,71 @@ export function urlEquals(aLeft: URL, aRight: URL): boolean {
   );
 }
 
+/**
+ * Sluqify given string
+ * @param str
+ *
+ * @returns slugified string with slash prefix
+ */
+export const _slugify = (str) => {
+  const slug = str
+    .trim()
+    .replace(/[^-a-zA-Z0-9\s+\/]+/gi, '')
+    .replace(/\s+/gi, '-')
+    .toLowerCase();
+
+  return slug.startsWith('/') ? slug : `/${slug}`;
+};
+
+/**
+ * Increments path suffix by 1
+ * @param path
+ *
+ * @returns path with incremented suffix e.g. path1 or path5
+ */
+const incrementPathSuffix = (path) => {
+  const currentSuffix = path.match(/\d+$/);
+  if (currentSuffix && currentSuffix[0]) {
+    return path.replace(/\d+$/, (n) => ++n);
+  } else {
+    return `${path}1`;
+  }
+};
+
+/**
+ * Uniqifies given path, depending on the usedPaths param
+ * @param path
+ * @param usedPaths
+ *
+ * @returns Unique path
+ */
+export const _uniquifyPath = (path, usedPaths) => {
+  const exists = usedPaths.find((usedPath) => usedPath === path);
+
+  if (exists) {
+    return _uniquifyPath(incrementPathSuffix(path), usedPaths);
+  } else {
+    return path;
+  }
+};
+
+/**
+ * Checks if given path is valid
+ * @param path
+ *
+ * @returns boolean indicating whetever path is valid or not
+ */
+export const _isValidPath = (path) => {
+  const allNonValidCharacters = /^(?!.*[/]{2})[a-zA-Z0-9-\/]+$/gi;
+
+  return (
+    path.startsWith('/') &&
+    allNonValidCharacters.test(path) &&
+    !path.endsWith('-') &&
+    !path.endsWith('/')
+  );
+};
+
 export {
   _absoluteURL as absoluteURL,
   _getLinksByRel as getLinksByRel,
@@ -415,5 +477,8 @@ export {
   _urlToString as urlToString,
   _ensureTrailingSlash as urlTrailingSlash,
   _cloneURL as cloneURL,
-  _parseURL as parseURL
+  _parseURL as parseURL,
+  _slugify as slugify,
+  _uniquifyPath as uniquifyPath,
+  _isValidPath as isValidPath
 };
