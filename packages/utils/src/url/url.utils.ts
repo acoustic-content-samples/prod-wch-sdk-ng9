@@ -408,7 +408,7 @@ export function urlEquals(aLeft: URL, aRight: URL): boolean {
  */
 export const _slugify = (str) => {
   const slug = str
-    .replace(/[^-a-zA-Z0-9\s+\/]+/gi, '')
+    .replace(/[^a-zA-Z0-9\s+\/ ]+/gi, '')
     .trim()
     .replace(/\s+/gi, '-')
     .toLowerCase();
