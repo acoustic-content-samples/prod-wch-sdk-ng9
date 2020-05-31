@@ -159,7 +159,7 @@ const loadContentEpic: Epic = (
       fetchText(
         `authoring/v1/content/${encodeURIComponent(
           id
-        )}?${PROJECT_ID_QUERY_PARAM}`
+        )}?${PROJECT_ID_QUERY_PARAM}&include=links&include=metadata`
       ),
       // convert text to json
       map<string, AuthoringContentItem>(jsonParse),

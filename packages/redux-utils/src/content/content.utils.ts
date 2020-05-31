@@ -46,7 +46,8 @@ interface BaseAuthoringItemWithLinks extends BaseAuthoringItem {
 }
 export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   aItem: Updater<T>,
-  aUser?: User
+  aUser?: User,
+  hasPublishedVersion?: boolean
 ): Updater<T> {
   // current item
   const oldItem = aItem.get();
@@ -55,7 +56,7 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   aItem.set('systemModified', date);
   aItem.set('lastModified', date);
   // rewrite the ID
-  const { id, created, classification, links } = oldItem;
+  const { id, created, classification, links, linkedDocId } = oldItem;
   const itemId = isString(id) ? id : v4();
   const idToUpdate =
     classification === CLASSIFICATION_ASSET ? itemId : ensureDraftId(itemId);
@@ -66,6 +67,20 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   if (isNotNil(aUser)) {
     // set user info
     aItem.set('lastModifierId', aUser.id);
+  }
+
+  if (linkedDocId) {
+    if (links && links['linkedDoc']) {
+      aItem.set(
+        'links.linkedDoc.href',
+        `/authoring/v1/content/${getDeliveryId(id)}`
+      );
+    }
+  } else if (linkedDocId === undefined) {
+    aItem.set(
+      'links.linkedDoc.href',
+      `/authoring/v1/content/${getDeliveryId(id)}`
+    );
   }
 
   if (isNotNil(links)) {
@@ -82,16 +97,15 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
       aItem.set('creatorId', aUser.id);
     }
   }
+
   if (classification === CLASSIFICATION_ASSET) {
     aItem.set('status', Status.READY);
   } else {
     // make sure to update the status to draft
     aItem.set('status', Status.DRAFT);
     aItem.set('draftStatus', DraftStatus.IN_PROGRESS);
-    // draft item must have linked doc to its published version
   }
 
-  // ok
   return aItem;
 }
 
@@ -243,13 +257,8 @@ export function updateValueByAccessor<T extends BaseAuthoringItem>(
 ): Updater<T> {
   // construct the updater
   const upd = createUpdater(aItem);
-  // if property is updated that means item had published version so set link to its id
-  upd.set(
-    'links.linkedDoc.href',
-    `/authoring/v1/content/${getDeliveryId(aItem?.id)}`
-  );
   // update some generic properties
-  updateGenericProperties(upd, aUser);
+  updateGenericProperties(upd, aUser, true);
   // set the value
   upd.set(aAccessor, aValue);
   // ok
