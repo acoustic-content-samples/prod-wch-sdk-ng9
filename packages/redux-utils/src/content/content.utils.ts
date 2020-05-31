@@ -46,8 +46,7 @@ interface BaseAuthoringItemWithLinks extends BaseAuthoringItem {
 }
 export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   aItem: Updater<T>,
-  aUser?: User,
-  hasPublishedVersion?: boolean
+  aUser?: User
 ): Updater<T> {
   // current item
   const oldItem = aItem.get();
@@ -258,7 +257,7 @@ export function updateValueByAccessor<T extends BaseAuthoringItem>(
   // construct the updater
   const upd = createUpdater(aItem);
   // update some generic properties
-  updateGenericProperties(upd, aUser, true);
+  updateGenericProperties(upd, aUser);
   // set the value
   upd.set(aAccessor, aValue);
   // ok

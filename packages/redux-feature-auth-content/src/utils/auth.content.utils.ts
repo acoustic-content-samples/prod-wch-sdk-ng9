@@ -208,7 +208,7 @@ export const updateValueByAccessor = (
 ): AuthoringContentItem => {
   if (isNotNil(aItem)) {
     const itemUpdater = createUpdater(aItem);
-    updateGenericProperties(itemUpdater, aUser, true);
+    updateGenericProperties(itemUpdater, aUser);
     return setValueByAccessor(aAccessor, aValue, itemUpdater.get());
   } else {
     return aItem;
