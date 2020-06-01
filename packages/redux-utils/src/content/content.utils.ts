@@ -17,6 +17,7 @@ import {
   isNil,
   isNotEmpty,
   isNotNil,
+  isUndefined,
   isString,
   parsePath
 } from '@acoustic-content-sdk/utils';
@@ -68,14 +69,10 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
     aItem.set('lastModifierId', aUser.id);
   }
 
-  if (linkedDocId) {
-    if (links && links['linkedDoc']) {
-      aItem.set(
-        'links.linkedDoc.href',
-        `/authoring/v1/content/${getDeliveryId(id)}`
-      );
-    }
-  } else if (linkedDocId === undefined) {
+  if (
+    isUndefined(linkedDocId) ||
+    (linkedDocId && links && links['linkedDoc'])
+  ) {
     aItem.set(
       'links.linkedDoc.href',
       `/authoring/v1/content/${getDeliveryId(id)}`
