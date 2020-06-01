@@ -17,6 +17,7 @@ import {
   isNil,
   isNotEmpty,
   isNotNil,
+  isUndefined,
   isString,
   parsePath
 } from '@acoustic-content-sdk/utils';
@@ -55,7 +56,7 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   aItem.set('systemModified', date);
   aItem.set('lastModified', date);
   // rewrite the ID
-  const { id, created, classification, links } = oldItem;
+  const { id, created, classification, links, linkedDocId } = oldItem;
   const itemId = isString(id) ? id : v4();
   const idToUpdate =
     classification === CLASSIFICATION_ASSET ? itemId : ensureDraftId(itemId);
@@ -66,6 +67,16 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
   if (isNotNil(aUser)) {
     // set user info
     aItem.set('lastModifierId', aUser.id);
+  }
+
+  if (
+    isUndefined(linkedDocId) ||
+    (linkedDocId && links && links['linkedDoc'])
+  ) {
+    aItem.set(
+      'links.linkedDoc.href',
+      `/authoring/v1/content/${getDeliveryId(id)}`
+    );
   }
 
   if (isNotNil(links)) {
@@ -82,20 +93,15 @@ export function updateGenericProperties<T extends BaseAuthoringItemWithLinks>(
       aItem.set('creatorId', aUser.id);
     }
   }
+
   if (classification === CLASSIFICATION_ASSET) {
     aItem.set('status', Status.READY);
   } else {
     // make sure to update the status to draft
     aItem.set('status', Status.DRAFT);
     aItem.set('draftStatus', DraftStatus.IN_PROGRESS);
-    // draft item must have linked doc to its published version
-    aItem.set(
-      'links.linkedDoc.href',
-      `/authoring/v1/content/${getDeliveryId(itemId)}`
-    );
   }
 
-  // ok
   return aItem;
 }
 
