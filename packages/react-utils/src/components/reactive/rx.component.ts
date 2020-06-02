@@ -108,7 +108,7 @@ export abstract class AbstractRxComponent<
     // state operator
     this[symOpState] = (state$: Observable<S>) => {
       // use state both for the initial value as well as for updates
-      const shared$: Observable<S> = rxPipe(state$, opShareLast);
+      const shared$: Observable<S> = rxPipe(state$, takeUntil(done$), opShareLast);
       // initial
       const initial$ = rxPipe(
         shared$,
