@@ -13,7 +13,10 @@ import {
   parseURL,
   queryToCanonicalString,
   queryToString,
-  urlSlashes
+  urlSlashes,
+  uniquifyPath,
+  slugify,
+  isValidPath,
 } from './url.utils';
 
 /* Copyright IBM Corp. 2017 */
@@ -51,7 +54,7 @@ describe('url.utils', () => {
 
     const rel = '/rel/url.html';
 
-    const abs = absoluteURL(rel, dom.window.document, dom.window);
+    const abs = absoluteURL(rel, dom.window.document, <any>dom.window);
 
     expect(abs).toBe('http://www.other.org/rel/url.html');
   });
@@ -71,7 +74,7 @@ describe('url.utils', () => {
 
     const rel = '/rel/url.html';
 
-    const abs = absoluteURL(rel, dom.window.document, dom.window);
+    const abs = absoluteURL(rel, dom.window.document, <any>dom.window);
 
     expect(abs).toBe('http://www.example.org/rel/url.html');
   });
@@ -232,4 +235,30 @@ describe('url.utils', () => {
     expect(p.get('a')).toEqual('b');
     expect(p.get('c')).toEqual('d e');
   });
+
+  it('should check for valid page path', () => {
+    expect(isValidPath(('/test-path!@#$%^&*()-/sf'))).toBe(false);
+    expect(isValidPath(('/test-path/'))).toBe(false);
+    expect(isValidPath(('/test-path-'))).toBe(false);
+    expect(isValidPath(('test-path'))).toBe(false);
+
+    expect(isValidPath('/test-path')).toBe(true);
+    expect(isValidPath('/testPath')).toBe(true);
+  });
+
+  it('should increment path if path exists in array', () => {
+    const testPath = '/test';
+    expect(uniquifyPath(testPath, [testPath])).toBe(testPath + 1);
+    expect(uniquifyPath(testPath, [testPath, testPath + 1])).toBe(testPath + 2);
+  });
+
+  it('should return path if path does not exists in array', () => {
+    const testPath = '/test';
+    expect(uniquifyPath(testPath, ['/some-other-path'])).toBe(testPath);
+  });
+
+  it('should create valid path from given string', () => {
+    expect(slugify('! Example Page-Name !')).toBe('/example-pagename');
+  });
+
 });
