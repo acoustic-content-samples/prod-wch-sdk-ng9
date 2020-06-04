@@ -26,7 +26,7 @@ import {
   pluckProperty,
   rxPipe
 } from '@acoustic-content-sdk/utils';
-import { combineLatest, from, merge, Observable } from 'rxjs';
+import { combineLatest, from, merge, Observable, UnaryFunction } from 'rxjs';
 import { first, map, mergeMap, share } from 'rxjs/operators';
 
 import {
@@ -159,7 +159,8 @@ function createArtifactsForProject(
   aModes: string[],
   aConfigurations: string,
   aTags: string[],
-  aReadTextFile: ReadTextFile
+  aReadTextFile: ReadTextFile,
+  outputPathTransform: UnaryFunction<string, string>
 ): Observable<Artifact> {
   // root path
   const root = ensureDirPath(selectRootPath(aProject));
@@ -167,7 +168,7 @@ function createArtifactsForProject(
   const modeConfigs = getModeConfigs(aProject, aConfigurations, aModes);
   // read the configs
   const artifacts = mapArray(modeConfigs, (config) =>
-    createArtifacts(config, root, aProjectName, aTags, aReadTextFile)
+    createArtifacts(config, root, aProjectName, aTags, aReadTextFile, outputPathTransform)
   );
   // merge all body artifacts
   const head$ = merge(...mapArray(artifacts, (a) => a.head$));
@@ -205,7 +206,8 @@ function createArtifactsForProject(
 function copyNgDriverFiles(
   aReadFile: ReadTextFile,
   aReadDir: ReadDirectory,
-  aSchema: CreateNgDriverArtifactsSchema = {}
+  aSchema: CreateNgDriverArtifactsSchema = {},
+  outputPathTransform: UnaryFunction<string, string>
 ): Observable<FileDescriptor<Buffer>> {
   // read the descriptor
   const ws$ = rxCacheSingle(rxGetWorkspace(aReadFile));
@@ -236,7 +238,7 @@ function copyNgDriverFiles(
       // merge everything
       return rxPipe(
         from(configs),
-        mergeMap((config) => readFilesForConfig(root, config, aReadDir))
+        mergeMap((config) => readFilesForConfig(root, config, aReadDir, outputPathTransform))
       );
     }),
     map(([path, data]) =>
@@ -291,6 +293,8 @@ export function createNgDriverArtifacts(
   const modes = getModes(aSchema);
   // the configurations
   const config = getConfig(aSchema);
+  // transform the output path to strip dist
+  const stripDist = path => path.replace('dist/', '');
   // sync
   return rxPipe(
     combineLatest([projectName$, prj$, version$]),
@@ -303,14 +307,15 @@ export function createNgDriverArtifacts(
           modes,
           config,
           getTags(aSchema, name, version),
-          aHost
+          aHost,
+          stripDist
         ),
         map(wchToolsFileDescriptor),
         share()
       );
       // the raw files
       const files$ = rxPipe(
-        copyNgDriverFiles(aHost, aReadDir, aSchema),
+        copyNgDriverFiles(aHost, aReadDir, aSchema, stripDist),
         share()
       );
       // dot name

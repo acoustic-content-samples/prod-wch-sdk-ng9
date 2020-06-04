@@ -31,7 +31,7 @@ import {
   toArray
 } from '@acoustic-content-sdk/utils';
 import { JSDOM } from 'jsdom';
-import { from, merge, Observable, OperatorFunction } from 'rxjs';
+import { from, merge, Observable, OperatorFunction, UnaryFunction } from 'rxjs';
 import {
   map,
   mergeMap,
@@ -566,7 +566,8 @@ export function createArtifacts(
   aRootDir: string,
   aProjectName: string,
   aTags: string[],
-  aReadTextFile: ReadTextFile
+  aReadTextFile: ReadTextFile,
+  outputPathTransform: UnaryFunction<string, string>
 ): Artifacts {
   // decode the config
   const { mode, outputPath } = aConfig;
@@ -575,7 +576,7 @@ export function createArtifacts(
   // index
   const indexPath = `${aRootDir}${outputPath}/index.html`;
   // rel root path
-  const relOutputPath = removeLeadingSlash(outputPath);
+  const relOutputPath = outputPathTransform(removeLeadingSlash(outputPath));
   // parse the index
   const dom$ = rxPipe(
     aReadTextFile(indexPath),
@@ -617,13 +618,14 @@ export const splitArray = (aValue: string): string[] =>
 export function readFilesForConfig(
   aRoot: string,
   aConfig: ModeConfig,
-  aReadDir: ReadDirectory
+  aReadDir: ReadDirectory,
+  outputPathTransform: UnaryFunction<string, string>
 ): Observable<FileDescriptor<Buffer>> {
   // target directory
   const outDir = `${aRoot}${aConfig.outputPath}`;
   // scan the files
   return rxPipe(
     aReadDir(outDir),
-    map(([name, buffer]) => createFileDescriptor(`${outDir}${name}`, buffer))
+    map(([name, buffer]) => createFileDescriptor(outputPathTransform(`${outDir}${name}`), buffer))
   );
 }
