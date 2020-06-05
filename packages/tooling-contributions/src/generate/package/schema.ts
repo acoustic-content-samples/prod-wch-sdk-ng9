@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 export interface CreatePackageFromArtifactsSchema {
   /**
-   * optinally the license, defaults to MIT
+   * optionally the license, defaults to MIT
    */
   license?: string;
   /**

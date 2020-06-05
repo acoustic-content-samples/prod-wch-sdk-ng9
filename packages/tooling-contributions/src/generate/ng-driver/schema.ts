@@ -15,4 +15,8 @@ export interface CreateNgDriverArtifactsSchema {
    * a comma separated list of tags
    */
   tag?: string;
+  /**
+   * path prefix to prepend to generated WCH artifacts
+   */
+  prefix?: string;
 }

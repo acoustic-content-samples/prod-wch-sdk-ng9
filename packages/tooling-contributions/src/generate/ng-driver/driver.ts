@@ -39,7 +39,8 @@ import {
   headContribution,
   ModeConfig,
   readFilesForConfig,
-  splitArray
+  splitArray,
+  removeLeadingSlash
 } from '../artifacts';
 import { getProject } from './../../ng-utils/utils';
 import { ArtifactMode } from './../schema';
@@ -294,7 +295,8 @@ export function createNgDriverArtifacts(
   // the configurations
   const config = getConfig(aSchema);
   // transform the output path to strip dist
-  const stripDist = path => path.replace('dist/', '');
+  const prefix = '/' + (aSchema.prefix ? removeLeadingSlash(aSchema.prefix) + '/' : '');
+  const replacePrefix = path => path.replace(/\/dist\//, prefix);
   // sync
   return rxPipe(
     combineLatest([projectName$, prj$, version$]),
@@ -308,14 +310,14 @@ export function createNgDriverArtifacts(
           config,
           getTags(aSchema, name, version),
           aHost,
-          stripDist
+          replacePrefix
         ),
         map(wchToolsFileDescriptor),
         share()
       );
       // the raw files
       const files$ = rxPipe(
-        copyNgDriverFiles(aHost, aReadDir, aSchema, stripDist),
+        copyNgDriverFiles(aHost, aReadDir, aSchema, replacePrefix),
         share()
       );
       // dot name
