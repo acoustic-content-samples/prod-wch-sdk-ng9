@@ -547,7 +547,7 @@ interface Artifacts {
  * @param aPath - the path that might contain a leading slash
  * @returns the path without leading slash
  */
-const removeLeadingSlash = (aPath: string) =>
+export const removeLeadingSlash = (aPath: string) =>
   aPath.startsWith('/') ? aPath.substr(1) : aPath;
 
 /**
@@ -576,7 +576,7 @@ export function createArtifacts(
   // index
   const indexPath = `${aRootDir}${outputPath}/index.html`;
   // rel root path
-  const relOutputPath = outputPathTransform(removeLeadingSlash(outputPath));
+  const relOutputPath = removeLeadingSlash(outputPathTransform(outputPath));
   // parse the index
   const dom$ = rxPipe(
     aReadTextFile(indexPath),

@@ -10,6 +10,11 @@
       "format": "path",
       "description": "The path to the directory of the WCH data artifacts."
     },
+    "prefix": {
+      "type": "string",
+      "format": "path",
+      "description": "The path prefix to prepend to the generated WCH data artifacts."
+    },
     "project": {
       "type": "string",
       "description": "Name of the project. If missing the command uses the default project."
