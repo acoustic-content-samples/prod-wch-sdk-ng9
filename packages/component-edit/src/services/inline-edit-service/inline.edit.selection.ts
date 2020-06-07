@@ -46,9 +46,7 @@ export function getInlineEditSelection(
   // logging
   const log: <T>(...v: any[]) => MonoTypeOperatorFunction<T> = rxNext(logger);
   // attach to the event
-  const click$ = fromEvent(aDocument, 'click', {
-    capture: true
-  });
+  const click$ = fromEvent(aDocument, 'click');
   // the events
   return rxPipe(
     click$,
