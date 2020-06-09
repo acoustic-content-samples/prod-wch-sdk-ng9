@@ -32,7 +32,7 @@ const LOGGER = 'GenerateContributions';
 
 function generateArtifacts(options: Schema): Rule {
   // decode flags
-  const bPackage = options.package || false;
+  const bPackage = options.package !== undefined;
 
   return (host: Tree, context: SchematicContext) => {
     // logger

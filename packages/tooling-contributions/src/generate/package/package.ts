@@ -160,7 +160,7 @@ function createPackage(
   // construct the package
   const pkg: Record<string, any> = {
     version,
-    name,
+    name: aSchema.package || name,
     license,
     dependencies,
     config,

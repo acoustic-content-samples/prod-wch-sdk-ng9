@@ -10,9 +10,9 @@ export interface Schema
   extends CreateNgDriverArtifactsSchema,
     CreatePackageFromArtifactsSchema {
   /**
-   * if set to true, generate an npm descriptor for the resources, defaults to false
+   * Generate an npm descriptor for the resources, using the supplied package name.
    */
-  package?: boolean;
+  package?: string;
 
   /**
    * The path to the data directory

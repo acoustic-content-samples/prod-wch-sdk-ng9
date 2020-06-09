@@ -34,9 +34,8 @@
       "description": "A comma separated list of tags."
     },
     "package": {
-      "type": "boolean",
-      "description": "If set to true, generate an npm descriptor for the resources, defaults to false.",
-      "default": false
+      "type": "string",
+      "description": "Generate an npm descriptor for the resources, using the supplied package name."
     },
     "license": {
       "type": "string",
