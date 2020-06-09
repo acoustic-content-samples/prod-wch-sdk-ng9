@@ -67,6 +67,23 @@ interface UndoAction extends Action {
   fromUndo?: Boolean;
 }
 
+function itemWithPublishedData(
+  aSrc: AuthoringSaveItem,
+  items: AuthoringContentState
+): Boolean {
+  if (isString(aSrc)) {
+    const currentItem = items[aSrc];
+    if (
+      isAuthoringContentItem(currentItem) &&
+      isNotNil(currentItem) &&
+      currentItem?.links?.linkedDoc
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function currentItem(
   aDst: UndoItems,
   aSrc: AuthoringSaveItem,
@@ -82,7 +99,11 @@ function currentItem(
     ? selectAuthoringAsset(id)(aAssets)
     : id;
   // the item to redo
-  const item: AuthoringSaveItem = isNotNil(current) ? current : id;
+  const item: AuthoringSaveItem = itemWithPublishedData(aSrc, aItems)
+    ? aItems[id]
+    : isNotNil(current)
+    ? current
+    : id;
   // add the internal undo action
   arrayPush(item, aDst);
   // ok
