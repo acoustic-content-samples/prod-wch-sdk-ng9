@@ -19,4 +19,8 @@ export interface CreatePackageFromArtifactsSchema {
    * package artifacts will be created in the parent folder of the data folder
    */
   data?: string;
+  /**
+   * Generate an npm descriptor for the resources, using the supplied package name.
+   */
+  package?: string;
 }
