@@ -109,6 +109,11 @@ const UUID_V4_REGEXP_STRING = `${HEX_REGEXP_STRING}{8}-${HEX_REGEXP_STRING}{4}-4
 const TENANT_BASED_URL = `^(?:\\/api)?(?:\\/(${UUID_V4_REGEXP_STRING}))?(?:(?:\\/${DX_SITES}\\/)(${SITE_ID_STRING}+))?(?:\\/)?(?:.*)$`;
 const TENANT_BASED_URL_REGEXP = new RegExp(TENANT_BASED_URL);
 
+// check for authoring preview site URL
+const AUTHORING_HOST_PREVIEW_PREFIX = `content\/sites\/preview\/${DX_SITES}\/`;
+const AUTHORING_HOST_SITE_PREVIEW_URL = `^(?:\\/(${AUTHORING_HOST_PREVIEW_PREFIX}))?(?:(${SITE_ID_STRING}+))?(?:\\/)?(?:.*)$`;
+const AUTHORING_HOST_SITE_PREVIEW_URL_REGEXP = new RegExp(AUTHORING_HOST_SITE_PREVIEW_URL);
+
 // check for preview hosts
 const PREVIEW_SUFFIX = '-preview';
 const PREVIEW_SUFFIX_STAGE = '-preview-stage';
@@ -973,17 +978,24 @@ function _getRenderingContextURL(aBaseUrl: string, aID: string): string {
  */
 function _getBaseUrlSuffix(aBaseURL: URL): string {
   // parse the URL
+  const [authTotal, authPrefix, authSiteId] = AUTHORING_HOST_SITE_PREVIEW_URL_REGEXP.exec(
+    aBaseURL.pathname
+  );
+
   const [total, tenantId, siteId] = TENANT_BASED_URL_REGEXP.exec(
     aBaseURL.pathname
   );
+
   // handle the tenant case
-  return tenantId
-    ? siteId
-      ? `${tenantId}/${DX_SITES}/${siteId}/`
-      : `${tenantId}/`
-    : siteId
-      ? `${DX_SITES}/${siteId}/`
-      : '';
+  return authPrefix
+    ? `${authPrefix}${authSiteId}/`
+    : tenantId
+      ? siteId
+        ? `${tenantId}/${DX_SITES}/${siteId}/`
+        : `${tenantId}/`
+      : siteId
+        ? `${DX_SITES}/${siteId}/`
+        : '';
 }
 
 /**
