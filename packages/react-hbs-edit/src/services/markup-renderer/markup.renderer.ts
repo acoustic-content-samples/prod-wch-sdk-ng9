@@ -241,8 +241,11 @@ function createRendererV2(
     // resolve
     return rxPipe(
       deliveryContent$,
-      rxSelect(selectDeliveryContentItem(aId)),
-      rxSelect(createDeliveryContentItem),
+      // rxSelect caching is causing an attempt to render a stale delivery content item
+      // rxSelect(selectDeliveryContentItem(aId)),
+      // rxSelect(createDeliveryContentItem),
+      map((v) => selectDeliveryContentItem(aId)(v)),
+      map((v) => createDeliveryContentItem(v)),
       log(CLASSIFICATION_CONTENT, aId)
     );
   };
