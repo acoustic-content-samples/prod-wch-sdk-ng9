@@ -26,6 +26,9 @@ function internalDeliveryContentByAccessor(
   if (aIdx >= aPath.length) {
     return aItem;
   }
+  if (!aItem) {
+    return aItem;
+  }
   // name of the element
   const name = aPath[aIdx];
   const child = aItem[name];
