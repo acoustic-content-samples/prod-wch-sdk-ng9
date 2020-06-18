@@ -43,10 +43,9 @@ export const clearErrorsAction: Generator<ClearErrorsAction> = createAction(
 export const opSetErrorAction: OperatorFunction<
   any,
   SetErrorAction<any>
-  // > = catchError(error => of(setErrorAction(error)));
 > = catchError((error) => {
   if (error?.name === 'EmptyError') {
-    console.warn(error);
+    console.error(error);
     return EMPTY;
   }
   return of(setErrorAction(error));
