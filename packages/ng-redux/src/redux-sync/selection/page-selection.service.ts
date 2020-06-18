@@ -19,6 +19,7 @@ import {
   selectInlineEditFeature,
   selectInlineEditSelectedItem
 } from '@acoustic-content-sdk/redux-feature-inline-edit';
+import { selectEditModeFeature } from '@acoustic-content-sdk/redux-feature-edit-mode';
 import {
   ReduxRootStore,
   rxSelect,
@@ -104,8 +105,12 @@ export class PageSelectionService implements OnDestroy {
       log('Selected page')
     );
 
+    const editMode$ = rxPipe(store$, rxSelect(selectEditModeFeature));
+
     const newPath$ = rxPipe(
-      selectedPage$,
+      combineLatest(editMode$, selectedPage$),
+      filter(([editMode]) => editMode), // only subscribe to selectedPage state, if edit mode is enabled
+      map(([editMode, selectedPage]) => selectedPage),
       rxSelect(selectCanonicalPath),
       log('Selected path'),
       filter((path) => !isEqual(path, router.url)),
