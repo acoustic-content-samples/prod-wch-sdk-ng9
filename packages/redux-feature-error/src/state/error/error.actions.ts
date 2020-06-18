@@ -3,7 +3,7 @@ import { Generator, rxPipe } from '@acoustic-content-sdk/utils';
 import { Action } from 'redux';
 import { createAction } from 'redux-actions';
 import { combineEpics, Epic, ofType } from 'redux-observable';
-import { of, OperatorFunction } from 'rxjs';
+import { of, OperatorFunction, EMPTY } from 'rxjs';
 import { catchError, delay, switchMapTo } from 'rxjs/operators';
 
 import { ErrorInstance } from './error.state';
@@ -23,7 +23,7 @@ const errorAction = createAction(ACTION_SET_ERROR);
  * @param error - the error instance
  * @returns the action, augmented with the timestamp the error occurred
  */
-export const setErrorAction: <T>(aError: T) => SetErrorAction<T> = error =>
+export const setErrorAction: <T>(aError: T) => SetErrorAction<T> = (error) =>
   errorAction({ date: Date.now(), error });
 
 export const clearErrorAction: Generator<ClearErrorAction> = createAction(
@@ -43,7 +43,13 @@ export const clearErrorsAction: Generator<ClearErrorsAction> = createAction(
 export const opSetErrorAction: OperatorFunction<
   any,
   SetErrorAction<any>
-> = catchError(error => of(setErrorAction(error)));
+> = catchError((error) => {
+  if (error?.name === 'EmptyError') {
+    console.error(error);
+    return EMPTY;
+  }
+  return of(setErrorAction(error));
+});
 
 /**
  * Side effect to periodically cleanup the last error
