@@ -174,13 +174,15 @@ function getRenditions(
   if (isNotNil(defaultRenditionSource) || isNotNil(transformValues)) {
     // initialize to something logical but should get overwritten below
     let queryParamMap = parseQueryString(`resize=${defaultImageSize[0]}px:${defaultImageSize[1]}px`);
+    let isQueryParamMapUpdated = false;
 
     if (isNotNil(defaultRenditionSource)) {
       const idx = defaultRenditionSource.lastIndexOf('?'); // check if ? exists
-      if (isNotNil(idx)) {
+      if (idx >= 0) {
         // add query params (expected to hold rendition parameters such as resize and crop)
         const queryParams = defaultRenditionSource.substring(idx + 1);
         queryParamMap = parseQueryString(queryParams);
+        isQueryParamMapUpdated = true;
       }
     }
 
@@ -198,8 +200,11 @@ function getRenditions(
         const height = Math.round(aAsset.metadata.height * transformValues.scale);
         queryParamMap.resize = `${width}px:${height}px`;
       }
+      isQueryParamMapUpdated = true;
     }
-    source = `${source}?${queryToString(queryParamMap)}`;
+    if (isQueryParamMapUpdated) {
+      source = `${source}?${queryToString(queryParamMap)}`;
+    }
   }
 
   // each image element has a default rendition
@@ -220,7 +225,7 @@ function getRenditions(
         const authoringRenditionUri = rendition.uri;
         const idx = authoringRenditionUri.lastIndexOf('?'); // check if ? exists
         let url = `${getAuthoringResourceUrl(aImage, aAsset, aApiURL)}`;
-        if (isNotNil(idx)) {
+        if (idx >= 0) {
           // add query params (expected to hold rendition parameters such as cropping)
           const queryParams = authoringRenditionUri.substring(idx + 1);
           const queryParamMap = parseQueryString(queryParams);
