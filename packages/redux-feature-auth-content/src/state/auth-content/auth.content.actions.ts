@@ -139,3 +139,12 @@ export type AuthoringContentActions =
   | RemoveAuthoringContentAction;
 
 export type AuthoringContentActionsPayload = AuthoringContentItem | string;
+
+export const ACTION_UPDATE_AUTH_CONTENT = 'ACTION_UPDATE_AUTH_CONTENT';
+
+export type UpdateAuthoringContentAction = PayloadAction<AuthoringContentItem>;
+
+export const updateAuthoringContentAction: UnaryFunction<
+  AuthoringContentItem,
+  UpdateAuthoringContentAction
+> = createAction(ACTION_UPDATE_AUTH_CONTENT);
