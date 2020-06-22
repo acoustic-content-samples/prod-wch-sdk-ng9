@@ -1,7 +1,8 @@
 import { selectPayload } from '@acoustic-content-sdk/redux-store';
 import {
   getDeliveryId,
-  updateItemsWithRevision
+  updateItemsWithRevision,
+  keyById
 } from '@acoustic-content-sdk/redux-utils';
 import { Reducer } from 'redux';
 import { handleActions } from 'redux-actions';
@@ -14,7 +15,9 @@ import {
   AuthoringContentActions,
   AuthoringContentActionsPayload,
   RemoveAuthoringContentAction,
-  SetAuthoringContentAction
+  SetAuthoringContentAction,
+  UpdateAuthoringContentAction,
+  ACTION_UPDATE_AUTH_CONTENT
 } from './auth.content.actions';
 import { AuthoringContentState } from './auth.content.state';
 
@@ -25,6 +28,18 @@ const setContentItem = (
   action: AddAuthoringContentAction | SetAuthoringContentAction
 ): AuthoringContentState =>
   updateItemsWithRevision(state, selectPayload(action));
+
+const updateContentItem = (
+  state: AuthoringContentState,
+  action: UpdateAuthoringContentAction
+): AuthoringContentState => {
+  const item = selectPayload(action);
+  const key = keyById(item);
+  return {
+    ...state,
+    [key]: item
+  };
+};
 
 function removeContentItem(
   state: AuthoringContentState,
@@ -46,6 +61,7 @@ export const authoringContentReducer: Reducer<
   AuthoringContentActions
 > = handleActions<AuthoringContentState, AuthoringContentActionsPayload>(
   {
+    [ACTION_UPDATE_AUTH_CONTENT]: updateContentItem,
     [ACTION_ADD_AUTH_CONTENT]: setContentItem,
     [ACTION_SET_AUTH_CONTENT]: setContentItem,
     [ACTION_REMOVE_AUTH_CONTENT]: removeContentItem
