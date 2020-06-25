@@ -455,9 +455,10 @@ export const _uniquifyPath = (path, usedPaths) => {
  * @returns boolean indicating whetever path is valid or not
  */
 export const _isValidPath = (path) => {
-  const allNonValidCharacters = /^(?!.*[/]{2})[a-zA-Z0-9-\/]+$/gi;
+  const allNonValidCharacters = /^(?!.*[/]{2})[a-z0-9-\/]+$/g;
 
   return (
+    !!path &&
     path.startsWith('/') &&
     allNonValidCharacters.test(path) &&
     !path.endsWith('-') &&
