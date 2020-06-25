@@ -244,6 +244,7 @@ describe('url.utils', () => {
 
     expect(isValidPath('/test-path')).toBe(true);
     expect(isValidPath('/testPath')).toBe(false);
+    expect(isValidPath(undefined)).toBe(false);
   });
 
   it('should increment path if path exists in array', () => {
