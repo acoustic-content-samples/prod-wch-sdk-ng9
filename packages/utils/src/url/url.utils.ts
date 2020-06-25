@@ -458,6 +458,7 @@ export const _isValidPath = (path) => {
   const allNonValidCharacters = /^(?!.*[/]{2})[a-z0-9-\/]+$/g;
 
   return (
+    !!path &&
     path.startsWith('/') &&
     allNonValidCharacters.test(path) &&
     !path.endsWith('-') &&
