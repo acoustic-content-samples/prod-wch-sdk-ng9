@@ -53,7 +53,7 @@ function safeParseMarkup(aMarkup: string, aLogger: Logger): Styles {
     return jsonParse<Styles>(aMarkup.trim());
   } catch (error) {
     // log the error
-    aLogger.error('Invalid pre-rendering format.', aMarkup, error);
+    //aLogger.error('Invalid pre-rendering format.', aMarkup, error);
     // fallback
     return DEFAULT_STYLES;
   }

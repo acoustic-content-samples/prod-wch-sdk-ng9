@@ -62,7 +62,7 @@ export function navigationFromJson(aJson: any, aLogger: Logger): Navigation {
   let rootTemp = '';
   if (Array.isArray(aJson)) {
     let rootJson = {
-      id: '886d8fe2-1765-2fd5-b186-77e61ba33321',
+      id: 'eb795caf-c9a2-49a8-9830-b99116d1741b',
       children: []
     };
     rootJson.children = aJson;
