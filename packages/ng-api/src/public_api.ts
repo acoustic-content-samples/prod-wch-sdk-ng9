@@ -20,6 +20,7 @@ export * from './protected-content/protected.content';
 export * from './rendering/rendering.context.interceptor';
 export * from './rendering/rendering.context.provider';
 export * from './rendering/rendering.context.resolver';
+export * from './sdk/sdk';
 export * from './search/delivery.search.resolver';
 export * from './seed/seed.resolver';
 export * from './services/page/wch.page.service';
