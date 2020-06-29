@@ -10,16 +10,18 @@ export class SdkService implements OnDestroy {
     private _sdk: any;
 
     constructor(router: Router) {
+        this._sdk = {
+            router: {
+                navigateByPath: (aPath: string) => router.navigateByUrl(aPath)
+            }
+        };
+
         // check if we have a window
         const bWindow = (typeof window !== UNDEFINED_TYPE);
         // make this available on the window
         if (bWindow) {
             // register the SDK on the global window scope
-            window['AcousticContentSDK'] = {
-                router: {
-                    navigateByPath: (aPath: string) => router.navigateByUrl(aPath)
-                }
-            };
+            window['AcousticContentSDK'] = this._sdk;
         } else {
             // log warning
             // logger.warn(, 'SDK is not available on the global scope, since there is no window object.');
