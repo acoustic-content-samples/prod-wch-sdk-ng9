@@ -15,7 +15,7 @@ export class SdkService implements OnDestroy {
         // make this available on the window
         if (bWindow) {
             // register the SDK on the global window scope
-            window['WchSdk'] = {
+            window['AcousticContentSDK'] = {
                 router: {
                     navigateByPath: (aPath: string) => router.navigateByUrl(aPath)
                 }
@@ -28,7 +28,7 @@ export class SdkService implements OnDestroy {
         this.ngOnDestroy = () => {
             // remove sdk
             if (bWindow) {
-                delete window['WchSdk'];
+                delete window['AcousticContentSDK'];
             }
             delete this._sdk;
         };
