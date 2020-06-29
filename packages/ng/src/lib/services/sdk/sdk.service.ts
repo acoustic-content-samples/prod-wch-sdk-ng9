@@ -22,6 +22,11 @@ export class SdkService implements OnDestroy {
         if (bWindow) {
             // register the SDK on the global window scope
             window['AcousticContentSDK'] = this._sdk;
+            // register navigate helper function
+            window['navigate'] = (path: string): boolean => {
+                this._sdk.router.navigateByPath(path);
+                return false;
+            }
         } else {
             // log warning
             // logger.warn(, 'SDK is not available on the global scope, since there is no window object.');
