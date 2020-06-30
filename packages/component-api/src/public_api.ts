@@ -18,6 +18,7 @@ export * from './pre-rendering/pre.rendering.resolver';
 export * from './protected-content/protected.content.service';
 export * from './rendering/rendering.context.interceptor';
 export * from './rendering/rendering.context.resolver';
+export * from './sdk/sdk';
 export * from './search/delivery.search.resolver';
 export * from './search/reconciled.delivery.search.resolver';
 export * from './seed/seed.resolver';
