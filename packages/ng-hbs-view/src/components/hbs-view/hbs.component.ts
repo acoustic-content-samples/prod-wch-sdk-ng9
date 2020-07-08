@@ -19,7 +19,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { handleInternalPathClick } from '@acoustic-content-sdk/utils';
-
 import { AcNgMarkupRegistryService } from '../../services/markup/markup.registry.service';
 
 const LOGGER = 'HandlebarsComponent';

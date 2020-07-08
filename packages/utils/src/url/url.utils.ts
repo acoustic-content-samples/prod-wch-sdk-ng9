@@ -31,7 +31,6 @@ import {
   isPlainObject,
   isString
 } from './../predicates/predicates';
-import { Router } from '@angular/router';
 
 /* Copyright IBM Corp. 2018 */
 
@@ -488,14 +487,26 @@ export const _handleInternalPathClick = (event) => {
     );
   }
 
-  function getHrefValue(target) {
+  function getHrefValue() {
     return (
       target.getAttribute('href') || target.parentNode.getAttribute('href')
     );
   }
 
-  if (target?.nodeName === 'A' || target.parentNode?.nodeName === 'A') {
-    const path = getHrefValue(target);
+  function getAnchorTag() {
+    if (target?.nodeName === 'A') {
+      return target;
+    } else if (target.parentNode?.nodeName === 'A') {
+      return target.parentNode;
+    } else {
+      return null;
+    }
+  }
+
+  const anchorTag = getAnchorTag();
+
+  if (anchorTag) {
+    const path = getHrefValue();
 
     if (isInternalPath(path)) {
       event.preventDefault();
