@@ -467,13 +467,12 @@ export const _isValidPath = (path) => {
 };
 
 /**
- * Checks if given string is internal path
- * @param str
- *
- * @returns boolean indicating wheter path is internal or not
+ * Handles click events from hbs components, uses angular router
+ * in case the href value is internal path.
+ * @param event
  */
 export const _handleInternalPathClick = (event) => {
-  const anchorTag = event.target.closest('a'); // href can be on the wrapper
+  const anchorTag = event.target.closest('a'); // href can be on the parent
 
   function isInternalPath(str) {
     return !(
