@@ -473,7 +473,7 @@ export const _isValidPath = (path) => {
  * @returns boolean indicating wheter path is internal or not
  */
 export const _handleInternalPathClick = (event) => {
-  const target = event?.target;
+  const anchorTag = event?.target?.closest('a'); // href can be on the wrapper
 
   function isInternalPath(str) {
     return !(
@@ -487,26 +487,8 @@ export const _handleInternalPathClick = (event) => {
     );
   }
 
-  function getHrefValue() {
-    return (
-      target.getAttribute('href') || target.parentNode.getAttribute('href')
-    );
-  }
-
-  function getAnchorTag() {
-    if (target?.nodeName === 'A') {
-      return target;
-    } else if (target.parentNode?.nodeName === 'A') {
-      return target.parentNode;
-    } else {
-      return null;
-    }
-  }
-
-  const anchorTag = getAnchorTag();
-
   if (anchorTag) {
-    const path = getHrefValue();
+    const path = anchorTag.getAttribute('href');
 
     if (isInternalPath(path)) {
       event.preventDefault();

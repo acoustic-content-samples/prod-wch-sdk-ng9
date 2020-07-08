@@ -65,8 +65,7 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
     aDomSanitizer: DomSanitizer,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
-    aLogSvc?: // public handleInternalPathClick,
-    LoggerService
+    aLogSvc?: LoggerService
   ) {
     super();
     // logger
