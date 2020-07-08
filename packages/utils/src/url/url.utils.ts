@@ -473,7 +473,7 @@ export const _isValidPath = (path) => {
  * @returns boolean indicating wheter path is internal or not
  */
 export const _handleInternalPathClick = (event) => {
-  const anchorTag = event?.target?.closest('a'); // href can be on the wrapper
+  const anchorTag = event.target.closest('a'); // href can be on the wrapper
 
   function isInternalPath(str) {
     return !(
