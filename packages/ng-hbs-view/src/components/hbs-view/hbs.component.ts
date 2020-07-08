@@ -18,6 +18,7 @@ import {
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MonoTypeOperatorFunction, Observable } from 'rxjs';
 import { map, switchMap, takeUntil } from 'rxjs/operators';
+import { handleInternalPathClick } from '@acoustic-content-sdk/utils';
 
 import { AcNgMarkupRegistryService } from '../../services/markup/markup.registry.service';
 
@@ -54,12 +55,19 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   @Output()
   markup$: Observable<SafeHtml>;
 
+  @Output()
+  handleInternalPathClick: Function;
+
+  @Output()
+  e: Event;
+
   constructor(
     aMarkupRegistry: AcNgMarkupRegistryService,
     aDomSanitizer: DomSanitizer,
     @Optional()
     @Inject(ACOUSTIC_TOKEN_LOGGER_SERVICE)
-    aLogSvc?: LoggerService
+    aLogSvc?: // public handleInternalPathClick,
+    LoggerService
   ) {
     super();
     // logger

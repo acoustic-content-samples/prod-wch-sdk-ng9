@@ -11,6 +11,7 @@ import {
 import { createElement, createRef, ReactNode, RefObject } from 'react';
 import { MonoTypeOperatorFunction, Observable, UnaryFunction } from 'rxjs';
 import { map, pluck, switchMap } from 'rxjs/operators';
+import { handleInternalPathClick } from '@acoustic-content-sdk/utils';
 
 import {
   createInlineEditHost,
@@ -115,7 +116,8 @@ export function createLayoutRendererComponent(
       return createElement(
         'div',
         {
-          ref: this.rootNodeRef
+          ref: this.rootNodeRef,
+          onClick: (e) => handleInternalPathClick(e)
         },
         this.state.node
       );

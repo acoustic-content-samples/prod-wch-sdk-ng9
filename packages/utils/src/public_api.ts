@@ -431,7 +431,8 @@ export {
   urlToString,
   slugify,
   uniquifyPath,
-  isValidPath
+  isValidPath,
+  handleInternalPathClick
 } from './url/url.utils';
 export { MODULE, VERSION } from './version';
 export { isEqualVersion } from './version/version';

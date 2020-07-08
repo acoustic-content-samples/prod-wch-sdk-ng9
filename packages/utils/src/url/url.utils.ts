@@ -31,6 +31,7 @@ import {
   isPlainObject,
   isString
 } from './../predicates/predicates';
+import { Router } from '@angular/router';
 
 /* Copyright IBM Corp. 2018 */
 
@@ -466,6 +467,44 @@ export const _isValidPath = (path) => {
   );
 };
 
+/**
+ * Checks if given string is internal path
+ * @param str
+ *
+ * @returns boolean indicating wheter path is internal or not
+ */
+export const _handleInternalPathClick = (event) => {
+  const target = event?.target;
+
+  function isInternalPath(str) {
+    return !(
+      str.startsWith('http') ||
+      str.startsWith('www.') ||
+      str.startsWith('HTTP') ||
+      str.startsWith('//') ||
+      str === '#' ||
+      str === '/' ||
+      str === ''
+    );
+  }
+
+  function getHrefValue(target) {
+    return (
+      target.getAttribute('href') || target.parentNode.getAttribute('href')
+    );
+  }
+
+  if (target?.nodeName === 'A' || target.parentNode?.nodeName === 'A') {
+    const path = getHrefValue(target);
+
+    if (isInternalPath(path)) {
+      event.preventDefault();
+      (<any>window).navigate(path);
+      return false;
+    }
+  }
+};
+
 export {
   _absoluteURL as absoluteURL,
   _getLinksByRel as getLinksByRel,
@@ -481,5 +520,6 @@ export {
   _parseURL as parseURL,
   _slugify as slugify,
   _uniquifyPath as uniquifyPath,
-  _isValidPath as isValidPath
+  _isValidPath as isValidPath,
+  _handleInternalPathClick as handleInternalPathClick
 };
