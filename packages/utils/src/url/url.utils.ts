@@ -466,6 +466,37 @@ export const _isValidPath = (path) => {
   );
 };
 
+/**
+ * Handles click events from hbs components, uses angular router
+ * in case the href value is internal path.
+ * @param event
+ */
+export const _handleInternalPathClick = (event) => {
+  const anchorTag = event.target.closest('a'); // href can be on the parent
+
+  function isInternalPath(str) {
+    return !(
+      str.startsWith('http') ||
+      str.startsWith('www.') ||
+      str.startsWith('HTTP') ||
+      str.startsWith('//') ||
+      str === '#' ||
+      str === '/' ||
+      str === ''
+    );
+  }
+
+  if (anchorTag) {
+    const path = anchorTag.getAttribute('href');
+
+    if (isInternalPath(path)) {
+      event.preventDefault();
+      (<any>window).navigate(path);
+      return false;
+    }
+  }
+};
+
 export {
   _absoluteURL as absoluteURL,
   _getLinksByRel as getLinksByRel,
@@ -481,5 +512,6 @@ export {
   _parseURL as parseURL,
   _slugify as slugify,
   _uniquifyPath as uniquifyPath,
-  _isValidPath as isValidPath
+  _isValidPath as isValidPath,
+  _handleInternalPathClick as handleInternalPathClick
 };
