@@ -87,5 +87,7 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
       map((markup) => aDomSanitizer.bypassSecurityTrustHtml(markup)),
       takeUntil(this.onDestroy$)
     );
+
+    this.handleInternalPathClick = handleInternalPathClick;
   }
 }

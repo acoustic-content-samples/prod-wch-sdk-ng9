@@ -1,1 +1,4 @@
-<div [innerHTML]="markup$ | async" (click)="handleInternalPathClick(e)"></div>
+<div
+  [innerHTML]="markup$ | async"
+  (click)="handleInternalPathClick($event)"
+></div>
