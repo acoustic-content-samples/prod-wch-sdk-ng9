@@ -57,9 +57,6 @@ export class HandlebarsComponent extends AbstractRenderingComponent {
   @Output()
   handleInternalPathClick: Function;
 
-  @Output()
-  e: Event;
-
   constructor(
     aMarkupRegistry: AcNgMarkupRegistryService,
     aDomSanitizer: DomSanitizer,
