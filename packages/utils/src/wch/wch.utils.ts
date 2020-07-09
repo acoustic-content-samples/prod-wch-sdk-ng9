@@ -110,7 +110,7 @@ const TENANT_BASED_URL = `^(?:\\/api)?(?:\\/(${UUID_V4_REGEXP_STRING}))?(?:(?:\\
 const TENANT_BASED_URL_REGEXP = new RegExp(TENANT_BASED_URL);
 
 // check for authoring preview site URL
-const AUTHORING_HOST_PREVIEW_PREFIX = `content\/sites\/preview\/${DX_SITES}\/`;
+const AUTHORING_HOST_PREVIEW_PREFIX = `content\/api\/preview\/sites\/${DX_SITES}\/`;
 const AUTHORING_HOST_SITE_PREVIEW_URL = `^(?:\\/(${AUTHORING_HOST_PREVIEW_PREFIX}))?(?:(${SITE_ID_STRING}+))?(?:\\/)?(?:.*)$`;
 const AUTHORING_HOST_SITE_PREVIEW_URL_REGEXP = new RegExp(AUTHORING_HOST_SITE_PREVIEW_URL);
 
