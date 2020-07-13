@@ -111,6 +111,7 @@ function createEmbedStyleItem(
     name,
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     typeId: EMBED_CONTRIBUTION_ID,
     elements: {
       embed: {
@@ -143,6 +144,7 @@ function createEmbedScriptItem(
     name,
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     typeId: EMBED_CONTRIBUTION_ID,
     elements: {
       embed: {
@@ -175,6 +177,7 @@ function createMarkupScriptItem(
     name,
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     typeId: MARKUP_CONTRIBUTION_ID,
     elements: {
       markup: {
@@ -214,6 +217,7 @@ function createStyleItem(
     name,
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     typeId: STYLE_CONTRIBUTION_ID,
     elements: {
       href: {
@@ -257,6 +261,7 @@ function createScriptItem(
     name,
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     typeId: SCRIPT_CONTRIBUTION_ID,
     elements: {
       src: {
@@ -485,6 +490,7 @@ export function createPageContributions(
   const item = {
     tags,
     classification: CLASSIFICATION_CONTENT,
+    isSystem: true,
     elements: {
       head,
       body,
