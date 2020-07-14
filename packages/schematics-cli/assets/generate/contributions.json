@@ -41,6 +41,11 @@
       "type": "string",
       "description": "License information used to produce the NPM package, defaults to MIT.",
       "default": "MIT"
+    },
+    "system": {
+      "type": "boolean",
+      "description": "Optionally tag generated artifacts as system artifacts.",
+      "default": false
     }
   },
   "required": [],

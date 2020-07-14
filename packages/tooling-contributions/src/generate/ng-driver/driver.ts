@@ -161,7 +161,8 @@ function createArtifactsForProject(
   aConfigurations: string,
   aTags: string[],
   aReadTextFile: ReadTextFile,
-  outputPathTransform: UnaryFunction<string, string>
+  outputPathTransform: UnaryFunction<string, string>,
+  isSystem: boolean
 ): Observable<Artifact> {
   // root path
   const root = ensureDirPath(selectRootPath(aProject));
@@ -169,7 +170,7 @@ function createArtifactsForProject(
   const modeConfigs = getModeConfigs(aProject, aConfigurations, aModes);
   // read the configs
   const artifacts = mapArray(modeConfigs, (config) =>
-    createArtifacts(config, root, aProjectName, aTags, aReadTextFile, outputPathTransform)
+    createArtifacts(config, root, aProjectName, aTags, aReadTextFile, outputPathTransform, isSystem)
   );
   // merge all body artifacts
   const head$ = merge(...mapArray(artifacts, (a) => a.head$));
@@ -186,7 +187,7 @@ function createArtifactsForProject(
   // combine to build the item
   const pageContribution$ = rxPipe(
     combineLatest([headContribution$, bodyContribution$]),
-    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc, aTags))
+    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc, aTags, isSystem))
   );
   // combine the contributions
   return rxPipe(
@@ -310,7 +311,8 @@ export function createNgDriverArtifacts(
           config,
           getTags(aSchema, name, version),
           aHost,
-          replacePrefix
+          replacePrefix,
+          aSchema.system
         ),
         map(wchToolsFileDescriptor),
         share()
