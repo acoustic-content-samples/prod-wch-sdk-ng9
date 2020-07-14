@@ -161,7 +161,8 @@ function createArtifactsForProject(
   aConfigurations: string,
   aTags: string[],
   aReadTextFile: ReadTextFile,
-  outputPathTransform: UnaryFunction<string, string>
+  outputPathTransform: UnaryFunction<string, string>,
+  isSystem: boolean
 ): Observable<Artifact> {
   // root path
   const root = ensureDirPath(selectRootPath(aProject));
@@ -169,7 +170,7 @@ function createArtifactsForProject(
   const modeConfigs = getModeConfigs(aProject, aConfigurations, aModes);
   // read the configs
   const artifacts = mapArray(modeConfigs, (config) =>
-    createArtifacts(config, root, aProjectName, aTags, aReadTextFile, outputPathTransform)
+    createArtifacts(config, root, aProjectName, aTags, aReadTextFile, outputPathTransform, isSystem)
   );
   // merge all body artifacts
   const head$ = merge(...mapArray(artifacts, (a) => a.head$));
@@ -186,7 +187,7 @@ function createArtifactsForProject(
   // combine to build the item
   const pageContribution$ = rxPipe(
     combineLatest([headContribution$, bodyContribution$]),
-    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc, aTags))
+    map(([hc, bc]) => createPageContributions(aProjectName, hc, bc, aTags, isSystem))
   );
   // combine the contributions
   return rxPipe(
@@ -310,7 +311,8 @@ export function createNgDriverArtifacts(
           config,
           getTags(aSchema, name, version),
           aHost,
-          replacePrefix
+          replacePrefix,
+          aSchema.system
         ),
         map(wchToolsFileDescriptor),
         share()
@@ -320,6 +322,7 @@ export function createNgDriverArtifacts(
         copyNgDriverFiles(aHost, aReadDir, aSchema, replacePrefix),
         share()
       );
+      const manifestPath = prefix + name + '/manifests/';
       // dot name
       const manifestBase = dotCase(name);
       // versioned manifest name
@@ -327,7 +330,7 @@ export function createNgDriverArtifacts(
       // manifest for the raw files
       const versionedManifest$ = rxPipe(
         files$,
-        rxWchToolsManifest(versionedManifest)
+        rxWchToolsManifest(manifestPath, versionedManifest)
       );
       // all
       const all$ = rxPipe(
@@ -336,7 +339,7 @@ export function createNgDriverArtifacts(
       );
       // all manifest name
       const allManifest = manifestBase;
-      const allManifest$ = rxPipe(all$, rxWchToolsManifest(allManifest));
+      const allManifest$ = rxPipe(all$, rxWchToolsManifest(manifestPath, allManifest));
       // all artifacts
       return merge(all$, allManifest$);
     })

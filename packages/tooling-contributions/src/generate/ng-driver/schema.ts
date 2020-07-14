@@ -19,4 +19,8 @@ export interface CreateNgDriverArtifactsSchema {
    * path prefix to prepend to generated WCH artifacts
    */
   prefix?: string;
+  /**
+   * optionally tag generated artifacts as system artifacts
+   */
+  system?: boolean;
 }

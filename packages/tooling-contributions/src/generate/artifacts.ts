@@ -31,7 +31,7 @@ import {
   toArray
 } from '@acoustic-content-sdk/utils';
 import { JSDOM } from 'jsdom';
-import { from, merge, Observable, OperatorFunction, UnaryFunction } from 'rxjs';
+import { from, merge, Observable, OperatorFunction, UnaryFunction, MonoTypeOperatorFunction } from 'rxjs';
 import {
   map,
   mergeMap,
@@ -475,7 +475,8 @@ export function createPageContributions(
   aProjectName: string,
   head: any,
   body: any,
-  tags: string[]
+  tags: string[],
+  isSystem: boolean
 ): AuthoringContentItem {
   // generate some ids
   const name = `${aProjectName} - Profile`;
@@ -501,6 +502,9 @@ export function createPageContributions(
     id,
     status: Status.READY
   };
+  if (isSystem) {
+    item['isSystem'] = true;
+  }
   // some magic casting
   return item as any;
 }
@@ -567,7 +571,8 @@ export function createArtifacts(
   aProjectName: string,
   aTags: string[],
   aReadTextFile: ReadTextFile,
-  outputPathTransform: UnaryFunction<string, string>
+  outputPathTransform: UnaryFunction<string, string>,
+  isSystem: boolean
 ): Artifacts {
   // decode the config
   const { mode, outputPath } = aConfig;
@@ -584,11 +589,18 @@ export function createArtifacts(
     map((jsdom) => jsdom.window.document),
     opShareLast
   );
+  const opSetIsSystem: MonoTypeOperatorFunction<AuthoringContentItem> = map((item) => {
+    if (isSystem) {
+      item['isSystem'] = true;
+    }
+    return item;
+  });
   // head and body contributions
   const head$ = rxPipe(
     dom$,
     pluck('head'),
     mergeMap((el) => createHeadArtifacts(el, baseName, relOutputPath, aTags)),
+    opSetIsSystem,
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );
@@ -596,6 +608,7 @@ export function createArtifacts(
     dom$,
     pluck('body'),
     mergeMap((el) => createBodyArtifacts(el, baseName, relOutputPath, aTags)),
+    opSetIsSystem,
     map((item) => createItemWithMode(mode, item)),
     shareReplay()
   );

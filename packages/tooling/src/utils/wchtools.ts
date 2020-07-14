@@ -149,10 +149,11 @@ function reduceManifest(aDst: Manifest, aSrc: FileDescriptor<any>): Manifest {
  * @returns the operator
  */
 export function rxWchToolsManifest(
+  aPath: string,
   aName: string
 ): OperatorFunction<FileDescriptor<any>, FileDescriptor<any>> {
   // name of the manifest
-  const name = `/${WCHTOOLS_FOLDER_ASSET}/dxconfig/manifests/${aName}.json`;
+  const name = `/${WCHTOOLS_FOLDER_ASSET}${aPath}${aName}.json`;
   // assemble the files
   return pipe(
     reduce(reduceManifest, {}),
