@@ -698,9 +698,9 @@ export function createMarkupRendererV2(
       reduceArray(
         aElements,
         (allElements, el) => {
-          // if the  element is empty/doesn't exist (i.e.- CONT-1817 corrupt cell data) ignore it,
+          // if the  element is doesn't exist/is empty (i.e.- CONT-1817 corrupt cell data) ignore it,
           // and add cell accessor to array of invalid cells
-          if (!el) {
+          if (!el || (typeof el === 'object' && !Object.keys(el).length)) {
             return allElements;
           }
 
