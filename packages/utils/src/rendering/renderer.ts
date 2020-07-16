@@ -48,9 +48,14 @@ import {
 } from 'rxjs/operators';
 
 import { rxCachedFunction } from '../cache/rx.cache';
-import { hashString, hashToIdentifier, longHash } from '../hash/hash.utils';
 import { escapeHtml } from '../html/html';
-import { forIn, mapArray, spreadArgs, UNDEFINED } from '../js/js.core';
+import {
+  forIn,
+  mapArray,
+  spreadArgs,
+  UNDEFINED,
+  reduceArray
+} from '../js/js.core';
 import {
   anyToString,
   arrayPush,
@@ -102,12 +107,6 @@ function createDiff<T extends object>(
   aLogger: Logger
 ): UnaryFunction<string, MonoTypeOperatorFunction<T>> {
   return USE_DIFF ? rxDiff<T>(aLogger) : () => tap<T>();
-}
-
-function hash(aValue: any): string {
-  return hashToIdentifier(
-    hashString(longHash(), aValue ? jsonStringify(aValue) : EMPTY_STRING)
-  );
 }
 
 function assertNotNil(aValue: any, aHint: string) {
@@ -696,8 +695,21 @@ export function createMarkupRendererV2(
     aCtx: Context
   ): Observable<RenderingElementType> =>
     combineArray(
-      mapArray(aElements, (el) =>
-        mapGroupElement(aType, el, aMetadata, aLayoutMode, aCtx)
+      reduceArray(
+        aElements,
+        (allElements, el) => {
+          // if the  element is empty/doesn't exist (i.e.- CONT-1817 corrupt cell data) ignore it,
+          // and add cell accessor to array of invalid cells
+          if (!el) {
+            return allElements;
+          }
+
+          return [
+            ...allElements,
+            mapGroupElement(aType, el, aMetadata, aLayoutMode, aCtx)
+          ];
+        },
+        []
       )
     );
 

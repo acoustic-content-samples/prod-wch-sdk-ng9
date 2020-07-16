@@ -100,7 +100,9 @@ describe('renderer.spec', () => {
       )
     );
   // loads the type
-  const autoringType: UnaryFunction<string, Observable<AuthoringType>> = (id) =>
+  const authoringType: UnaryFunction<string, Observable<AuthoringType>> = (
+    id
+  ) =>
     rxPipe(
       rxFindType(join(root, 'types'), id),
       tap(
@@ -156,11 +158,11 @@ describe('renderer.spec', () => {
     map((hub) => ({ hub, editMode: true }))
   );
 
-  fit('should render promotion', () => {
+  it('should render promotion', () => {
     // instantiate our renderer
     const renderer = createMarkupRendererV2(
       deliveryContent,
-      autoringType,
+      authoringType,
       layoutMapping,
       layout,
       template,
@@ -181,7 +183,7 @@ describe('renderer.spec', () => {
     // instantiate our renderer
     const renderer = createMarkupRendererV2(
       deliveryContent,
-      autoringType,
+      authoringType,
       layoutMapping,
       layout,
       template,
@@ -202,7 +204,7 @@ describe('renderer.spec', () => {
     // instantiate our renderer
     const renderer = createMarkupRendererV2(
       deliveryContent,
-      autoringType,
+      authoringType,
       layoutMapping,
       layout,
       template,
@@ -227,7 +229,7 @@ describe('renderer.spec', () => {
     // instantiate our renderer
     const renderer = createMarkupRendererV2(
       deliveryContent,
-      autoringType,
+      authoringType,
       layoutMapping,
       layout,
       template,

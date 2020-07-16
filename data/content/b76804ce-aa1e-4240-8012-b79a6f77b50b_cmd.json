@@ -24,12 +24,15 @@
     },
     "embedded": {
       "elementType": "group",
-      "value": {
-        "content": {
-          "elementType": "text",
-          "value": "Embedded Text"
+      "values": [
+        {},
+        {
+          "content": {
+            "elementType": "text",
+            "value": "Embedded Text"
+          }
         }
-      },
+      ],
       "typeRef": {
         "id": "cf8c68a2-3ff3-4397-9068-169ffda81dcd"
       }
