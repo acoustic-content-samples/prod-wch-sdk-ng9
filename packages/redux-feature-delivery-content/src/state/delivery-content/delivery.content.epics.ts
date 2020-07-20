@@ -288,7 +288,7 @@ function transformImageElement(
     return aImage;
   }
   // insert the resource url
-  const url = getAuthoringResourceUrl(aImage, assetItem, aApiUrl);
+  const url = `${aApiUrl.pathname}${getAuthoringResourceUrl(aImage, assetItem, aApiUrl)}`;
   // resolve renditions and compute resource url
   return {
     ...aImage,
@@ -323,7 +323,7 @@ function transformVideoElement(
     return aVideo;
   }
   // insert the resource url
-  const url = getAuthoringResourceUrl(aVideo, assetItem, aApiUrl);
+  const url = `${aApiUrl.pathname}${getAuthoringResourceUrl(aVideo, assetItem, aApiUrl)}`;
   // resolve renditions and compute resource url
   return {
     ...aVideo,
@@ -469,13 +469,11 @@ function getAuthoringResourceUrl(
   ]);
 
   if (resourceUriFromImageElement) {
-    return `${apiUrl.pathname}${removeStartingSlash(
-      resourceUriFromImageElement
-    )}`;
+    return resourceUriFromImageElement;
   } else {
     // load resource id from referenced asset, e.g. "867b0d64-4df0-4f79-8003-a9936242f367"
     const { resource } = aAsset;
-    return `${apiUrl.pathname}authoring/v1/resources/${resource}`;
+    return `/authoring/v1/resources/${resource}`;
   }
 }
 
