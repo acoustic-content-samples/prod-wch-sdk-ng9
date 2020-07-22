@@ -13,7 +13,8 @@ nodeModulePipeline {
   skipSonarQubeScan = true
   skipValidation = true
 
-  squad = this.env.JENKINS_URL.contains('acoustic') ? 'squad-poland' : 'squad-infra-boe'
+  squad = 'squad-poland'
+  channel = "#cms-bn-shell-build-status"
 
   triggerDownstream = "${squad}/sites-next-spa-dev, ${squad}/sites-next-spa"
 }
