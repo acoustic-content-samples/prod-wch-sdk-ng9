@@ -35,6 +35,7 @@ import {
   selectDeliveryContentItem
 } from '@acoustic-content-sdk/redux-feature-delivery-content';
 import { selectEditModeFeature } from '@acoustic-content-sdk/redux-feature-edit-mode';
+import { selectLocaleFeature } from '@acoustic-content-sdk/redux-feature-locale';
 import {
   handlebarsGuaranteeTemplateAction,
   selectHandlebarsFeature,
@@ -184,14 +185,15 @@ function createRendererV2(
   const handlebars$ = rxPipe(store$, rxSelect(selectHandlebarsFeature));
   const urlConfig$ = rxPipe(store$, rxSelect(selectUrlConfigFeature));
   const editMode$ = rxPipe(store$, rxSelect(selectEditModeFeature));
+  const locale$ = rxPipe(store$, rxSelect(selectLocaleFeature));
 
   /** Compute the extended context */
   function extendedContext(): Observable<ExtendedContextV2> {
     // derive from the hub context
     return rxPipe(
-      combineLatest([urlConfig$, editMode$]),
+      combineLatest([urlConfig$, editMode$, locale$]),
       opDeepDistinctUntilChanged,
-      map(([hub, editMode]) => ({ hub, editMode }))
+      map(([hub, editMode, locale]) => ({ hub, editMode, locale }))
     );
   }
 

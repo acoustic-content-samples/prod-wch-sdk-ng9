@@ -40,6 +40,7 @@
     "@acoustic-content-sdk/redux-feature-delivery-content": "9.0.0",
     "@acoustic-content-sdk/redux-feature-edit-mode": "9.0.0",
     "@acoustic-content-sdk/redux-feature-handlebars": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-locale": "9.0.0",
     "@acoustic-content-sdk/redux-feature-url-config": "9.0.0",
     "@acoustic-content-sdk/redux-store": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
@@ -69,6 +70,7 @@
         "@acoustic-content-sdk/redux-feature-delivery-content": "acoustic-content-sdk.redux-feature-delivery-content",
         "@acoustic-content-sdk/redux-feature-edit-mode": "acoustic-content-sdk.redux-feature-edit-mode",
         "@acoustic-content-sdk/redux-feature-handlebars": "acoustic-content-sdk.redux-feature-handlebars",
+        "@acoustic-content-sdk/redux-feature-locale": "acoustic-content-sdk.redux-feature-locale",
         "@acoustic-content-sdk/redux-feature-url-config": "acoustic-content-sdk.redux-feature-url-config",
         "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils",

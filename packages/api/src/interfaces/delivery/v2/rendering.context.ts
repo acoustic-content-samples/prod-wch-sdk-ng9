@@ -19,6 +19,11 @@ export interface ExtendedContextV2 {
    * Information about edit mode
    */
   editMode?: boolean;
+
+  /**
+   * Locale
+   */
+  locale?: string;
 }
 
 export interface ElementWithMarkup {
