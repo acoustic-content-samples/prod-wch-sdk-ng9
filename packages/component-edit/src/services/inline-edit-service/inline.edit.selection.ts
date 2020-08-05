@@ -26,11 +26,12 @@ import {
   Observable,
   Unsubscribable
 } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, filter } from 'rxjs/operators';
 
 import {
   getAttribute,
   getElementOrParentWithAttribute,
+  getElementOrParentWithClass,
   isElement
 } from '../../utils/dom';
 
@@ -54,6 +55,8 @@ export function getInlineEditSelection(
     map(pluckProperty('target')),
     // sanity check
     filterTypeOf(isElement),
+    // ignore clicks on the ckeditor toolbar
+    filter((element) => !getElementOrParentWithClass(element, 'ck-toolbar')),
     // get the selectable element
     map(partialSecond(getElementOrParentWithAttribute, ATTR_DATA_SELECTABLE)),
     // retrieve the attribute value
