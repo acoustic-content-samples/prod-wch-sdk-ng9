@@ -41,3 +41,24 @@ export const getAttribute = (
   aKey: string
 ): Maybe<string> =>
   isNotNil(aElement) ? aElement.getAttribute(aKey) : undefined;
+
+/**
+ * Returns the element or one of its parents that has a specified class, or null
+ *
+ * @param element - the element to begin searching
+ * @param className - the class to search for
+ * @returns the element that was found, or null
+ */
+export const getElementOrParentWithClass = (
+  element: Element,
+  className: string
+): Element => {
+  while (element) {
+    const styleClass = element.getAttribute('class');
+    if (styleClass && styleClass.includes(className)) {
+      return element;
+    }
+    element = element.parentElement;
+  }
+  return null;
+};
