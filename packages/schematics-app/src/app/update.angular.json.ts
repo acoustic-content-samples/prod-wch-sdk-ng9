@@ -36,6 +36,7 @@ export const KEY_POLYFILLS = 'polyfills';
 export const KEY_TS_CONFIG = 'tsConfig';
 const KEY_BROWSER_TARGET = 'browserTarget';
 const KEY_VENDOR_CHUNK = 'vendorChunk';
+const KEY_EXTRACT_CSS = 'extractCss';
 
 const NAME_TSCONFIG = 'tsconfig.json';
 
@@ -118,6 +119,11 @@ function updateSourceMap(aConfigurations: Record<string, any>): any {
   }
 }
 
+function updateBuildOptions(aOptions: Record<string, any>): any {
+  // specify extractCss: true so that css handling is consistent between build and serve
+  aOptions[KEY_EXTRACT_CSS] = true;
+}
+
 function updateProductionOptions(aOptions: Record<string, any>): any {
   // use a separate vendor chunk to reduce the size of the main chunk
   // and ensure that chunks are consistent between build and serve
@@ -143,6 +149,7 @@ function transformAngularJson(
   updateModeConfigBuild(ArtifactMode.LIVE, aVersion, options, buildConfig);
   updateModeConfigBuild(ArtifactMode.PREVIEW, aVersion, options, buildConfig);
   updateSourceMap(buildConfig);
+  updateBuildOptions(options);
   updateProductionOptions(productionOptions);
   // add serve config for modes
   updateModeConfigServe(ArtifactMode.LIVE, aProjectName, serveConfig);
