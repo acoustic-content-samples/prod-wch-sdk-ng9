@@ -37,6 +37,8 @@ import {
 
 const LOGGER = 'AbstractInlineEditSelection';
 
+const elementsToIgnore = ['ck-toolbar', 'ck-link-form'];
+
 export function getInlineEditSelection(
   aDocument: Document,
   aLogSvc?: LoggerService
@@ -56,7 +58,12 @@ export function getInlineEditSelection(
     // sanity check
     filterTypeOf(isElement),
     // ignore clicks on the ckeditor toolbar
-    filter((element) => !getElementOrParentWithClass(element, 'ck-toolbar')),
+    filter(
+      (element) =>
+        !elementsToIgnore.some((className) =>
+          getElementOrParentWithClass(element, className)
+        )
+    ),
     // get the selectable element
     map(partialSecond(getElementOrParentWithAttribute, ATTR_DATA_SELECTABLE)),
     // retrieve the attribute value
