@@ -20,7 +20,7 @@ import {
   rxSelectPath
 } from '@acoustic-content-sdk/utils';
 import { MonoTypeOperatorFunction, Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, filter } from 'rxjs/operators';
 
 import { colorToHSL } from './hsl';
 import { isSiteType, KEY_SITE_STYLES } from './site.type';
@@ -52,6 +52,7 @@ function safeParseMarkup(aMarkup: string, aLogger: Logger): Styles {
     // strip data
     return jsonParse<Styles>(aMarkup.trim());
   } catch (error) {
+    aLogger.info('ZZZ:: jsonParse error', error);
     // log the error
     //aLogger.error('Invalid pre-rendering format.', aMarkup, error);
     // fallback
@@ -100,6 +101,8 @@ export function createThemeStyles(
       log('pre-rendered'),
       // convert to styles
       map((markup) => safeParseMarkup(markup, logger)),
+      // avoid making any changes to the styles if the theme has 0 styles
+      filter((theme) => Object.keys(theme).length > 0),
       // convert the styles to valid css variables
       map((theme) =>
         isNotNil(theme) ? createStylesFromTheme(theme, toHsl) : DEFAULT_STYLES
@@ -108,6 +111,7 @@ export function createThemeStyles(
   // the styles
   return rxPipe(
     themeId$,
+    log('ZZZ:: new themeId'),
     switchMap((themeId) =>
       isNotNil(themeId) ? fromThemeId(themeId) : DEFAULT_STYLES$
     ),
