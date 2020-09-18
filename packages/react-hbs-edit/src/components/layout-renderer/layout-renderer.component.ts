@@ -10,7 +10,7 @@ import {
 } from '@acoustic-content-sdk/utils';
 import { createElement, createRef, ReactNode, RefObject } from 'react';
 import { MonoTypeOperatorFunction, Observable, UnaryFunction } from 'rxjs';
-import { map, pluck, switchMap } from 'rxjs/operators';
+import { map, pluck, switchMap, take } from 'rxjs/operators';
 import { handleInternalPathClick } from '@acoustic-content-sdk/utils';
 
 import {
@@ -55,7 +55,7 @@ export function createLayoutRendererComponent(
   class LayoutRendererComponent extends AbstractRxComponent<
     LayoutRendererComponentProps,
     LayoutRendererComponentState
-  > {
+    > {
     private rootNodeRef: RefObject<HTMLElement>;
 
     private inlineEditHost: InlineEditHost;
@@ -94,6 +94,9 @@ export function createLayoutRendererComponent(
         logSvc
       );
       this.inlineEditHost.refresh();
+      rxPipe(this.inlineEditHost.onDone$, take(1)).subscribe(() => {
+        this.inlineEditHost.dispose();
+      });
     }
 
     componentWillUnmount() {

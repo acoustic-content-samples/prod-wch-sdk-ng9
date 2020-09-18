@@ -9,7 +9,8 @@ import {
   AcNgEditDirectivesModule,
   AcNgInlineEditSelectionModule,
   AcNgInlineEditServiceModule,
-  AcNgParentInlineEditProviderModule
+  AcNgParentInlineEditProviderModule,
+  AcNgDestroySubjectModule
 } from '@acoustic-content-sdk/ng-edit';
 import { ACOUSTIC_TOKEN_EDIT_HOST_WINDOW } from '@acoustic-content-sdk/ng-edit-api';
 import { AcNgHbsEditModule } from '@acoustic-content-sdk/ng-hbs-edit';
@@ -43,7 +44,8 @@ import { MODULE, VERSION } from '../version';
     // TODO this is just a workaround
     AcNgHbsEditModule,
     AcNgInlineEditSelectionModule,
-    AcNgEditDirectivesModule
+    AcNgEditDirectivesModule,
+    AcNgDestroySubjectModule
   ]
 })
 export class AcNgAppPreviewModule {

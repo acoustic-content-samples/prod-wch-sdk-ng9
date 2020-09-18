@@ -35,8 +35,11 @@ const fromEvent: <T>() => Observable<T> = constGenerator(EMPTY);
  */
 const registerComponent = constGenerator(of(EMPTY_REGISTRATION));
 
+const onDone$ = EMPTY;
+
 // fallback implementation in case the edit services have not been deployed
 export const EMPTY_ACOUSTIC_INLINE_EDIT_SERVICE: WchInlineEditServiceV2 = {
   registerComponent,
-  fromEvent
+  fromEvent,
+  onDone$
 };

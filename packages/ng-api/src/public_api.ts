@@ -8,6 +8,7 @@ export * from './auth-status/auth.status';
 export * from './component/component.registry';
 export * from './component/component.resolver';
 export * from './content/delivery.content.resolver';
+export * from './destroy-subject/destroy.subject';
 export * from './handlebars/handlebars.resolver';
 export * from './info/wch.info';
 export * from './layout-mapping/delivery.layout.mapping.resolver';

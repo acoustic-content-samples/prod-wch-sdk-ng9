@@ -11,9 +11,10 @@ import {
 import { ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 import { WchInternalEditService } from '../services/wch.internal.edit.service';
+import { ACOUSTIC_TOKEN_DESTROY_SUBJECT } from '@acoustic-content-sdk/ng-api';
 
 /**
  * Implementation of the `WchInlineEditServiceV2` that loads the inline edit library and allows
@@ -28,6 +29,8 @@ export class WchInlineEditService extends AbstractWchInlineEditService
     aProvider$: Observable<WchInlineEditProviderV2>,
     @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig$: Observable<UrlConfig>,
+    @Inject(ACOUSTIC_TOKEN_DESTROY_SUBJECT)
+    aDestroySubject: Subject<any>,
     @Optional()
     @Inject(DOCUMENT)
     aDocument?: any,
@@ -40,6 +43,7 @@ export class WchInlineEditService extends AbstractWchInlineEditService
       aInternal.inlineEditConsumer,
       aProvider$,
       aUrlConfig$,
+      aDestroySubject,
       aDocument,
       aLogSvc
     );

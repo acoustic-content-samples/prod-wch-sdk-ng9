@@ -166,13 +166,15 @@ export class AbstractWchInlineEditService
   ) => Observable<EventTargetLike>;
 
   protected readonly done$: Subject<any>;
+  public readonly onDone$: Observable<any>;
 
   protected constructor(
     aEventConsumer: Consumer<WchInlineEditEvent>,
     aProvider$: Observable<WchInlineEditProviderV2>,
     aUrlConfig$: Observable<UrlConfig>,
+    aDestroySubject: Subject<any>,
     aDocument?: any,
-    aLogSvc?: LoggerService
+    aLogSvc?: LoggerService,
   ) {
     // pointers
     const that = this;
@@ -181,6 +183,8 @@ export class AbstractWchInlineEditService
     const logSvc = boxLoggerService(aLogSvc);
 
     const done$ = (this.done$ = new Subject());
+
+    const onDone$ = (this.onDone$ = merge(done$, aDestroySubject));
 
     /**
      *  if we have a document, register for changes
@@ -210,7 +214,7 @@ export class AbstractWchInlineEditService
     const module$: Observable<WchInlineEditProviderV2> = rxPipe(
       aProvider$,
       log('onModuleLoaded'),
-      takeUntil(done$),
+      takeUntil(onDone$),
       opShareLast
     );
 
@@ -272,7 +276,7 @@ export class AbstractWchInlineEditService
       return rxPipe(
         isPreviewMode$,
         switchMap((isPreviewMode) => (isPreviewMode ? register$ : EMPTY)),
-        takeUntil(done$)
+        takeUntil(onDone$)
       );
     }
 
@@ -287,15 +291,15 @@ export class AbstractWchInlineEditService
         aName === EVENT_INLINE_EDIT_SET_SELECTED_CELL
           ? inlineEditSelection$
           : rxPipe(
-              eventEmitter$,
-              switchMap((emitter) => fromEvent<any>(emitter, aName)),
-              catchError((err) => FALLBACK_FROM_EVENT(aName))
-            );
+            eventEmitter$,
+            switchMap((emitter) => fromEvent<any>(emitter, aName)),
+            catchError((err) => FALLBACK_FROM_EVENT(aName))
+          );
       // only in debug mode
       return rxPipe(
         isPreviewMode$,
         switchMap((isPreviewMode) => (isPreviewMode ? fromEvent$ : EMPTY)),
-        takeUntil(done$)
+        takeUntil(onDone$)
       );
     }
 
@@ -322,7 +326,7 @@ export class AbstractWchInlineEditService
     rxPipe(
       isPreviewMode$,
       switchMap((isPreviewMode) => (isPreviewMode ? events$ : EMPTY)),
-      takeUntil(done$)
+      takeUntil(onDone$)
     ).subscribe(aEventConsumer);
 
     // register the global handlers

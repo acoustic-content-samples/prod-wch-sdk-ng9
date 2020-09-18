@@ -34,7 +34,8 @@ import {
   MonoTypeOperatorFunction,
   Observable,
   Subject,
-  Subscription
+  Subscription,
+  NEVER
 } from 'rxjs';
 import { catchError, map, observeOn, switchMap, tap } from 'rxjs/operators';
 
@@ -195,6 +196,7 @@ function createWchInlineEditRegistrationService(
 export interface InlineEditHost extends Disposable {
   refresh: () => any;
   events$: Observable<WchEditableEvent>;
+  onDone$: Observable<any>
 }
 
 const LOGGER = 'createInlineEditHost';
@@ -209,6 +211,7 @@ export function createInlineEditHost(
   // resolve the logger
   const logSvc = boxLoggerService(aLogSvc);
   const logger = logSvc.get(LOGGER);
+  const onDone$ = aEditService.onDone$ || NEVER;
   // access the logger
   const log: <T>(...aArgs: any[]) => MonoTypeOperatorFunction<T> = rxNext(
     logger
@@ -238,7 +241,7 @@ export function createInlineEditHost(
   }
 
   function unregisterElement(aData: ElementData, aCurrentElement: HTMLElement) {
-    // decompose
+    // decompose;
     const [acc, sub] = aData;
     // log this
     logger.info('de-registerElement', acc, aCurrentElement);
@@ -309,6 +312,7 @@ export function createInlineEditHost(
   return {
     refresh,
     events$,
-    dispose
+    dispose,
+    onDone$,
   };
 }
