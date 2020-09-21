@@ -42,7 +42,6 @@ import {
   debounceTime,
   distinctUntilChanged,
   map,
-  startWith,
   switchMap,
   tap
 } from 'rxjs/operators';
@@ -267,10 +266,10 @@ const authLayoutMappingToLayoutMappingInfo = (
 ): LayoutMappingInfo =>
   isNotNil(aMapping)
     ? reduceToObject<AuthoringLayoutMappingMapping, string>(
-        aMapping.mappings,
-        layoutModeFromMappingExtractor,
-        layoutIdFromLayoutExtractor
-      )
+      aMapping.mappings,
+      layoutModeFromMappingExtractor,
+      layoutIdFromLayoutExtractor
+    )
     : EMPTY_LAYOUT_MAPPING_INFO;
 
 /**
@@ -467,12 +466,12 @@ export function createMarkupRendererV2(
     return isEqual(accessor, KEY_ELEMENTS)
       ? single(typeId)
       : rxWchFromAuthoringTypeByAccessor(
-          accessor,
-          typeId,
-          typeFromAuthoringElementExtractor,
-          authoringType,
-          aScheduler
-        );
+        accessor,
+        typeId,
+        typeFromAuthoringElementExtractor,
+        authoringType,
+        aScheduler
+      );
   };
 
   /**
@@ -501,9 +500,9 @@ export function createMarkupRendererV2(
     // else fallback to the type
     return isNotEmpty(aTypeId)
       ? rxPipe(
-          layoutMappingInfo(aTypeId),
-          map((info) => layoutIdFromLayoutMappingInfo(aLayoutMode, info))
-        )
+        layoutMappingInfo(aTypeId),
+        map((info) => layoutIdFromLayoutMappingInfo(aLayoutMode, info))
+      )
       : UNDEFINED$;
   }
 
@@ -590,9 +589,9 @@ export function createMarkupRendererV2(
     return isInvalidId(id)
       ? of(aElement)
       : rxPipe(
-          render(id, aLayoutMode, aCtx),
-          map(($markup) => ({ ...aElement, $markup }))
-        );
+        render(id, aLayoutMode, aCtx),
+        map(($markup) => ({ ...aElement, $markup }))
+      );
   };
 
   /**
@@ -664,7 +663,7 @@ export function createMarkupRendererV2(
     const markup$ = rxPipe(
       combinePair(markupTemplate$, renderingContext$),
       switchMap(spreadArgs(applyTemplate)),
-      startWith(EMPTY_STRING),
+      // startWith(EMPTY_STRING), removed, to prevent re-emitting empty value
       opDistinctUntilChanged,
       log('markup', accessor)
     );
@@ -739,32 +738,32 @@ export function createMarkupRendererV2(
         case ELEMENT_TYPE_GROUP:
           return isArray(aElement)
             ? mapGroupElements(
-                aType as AuthoringGroupElement,
-                aElement as DeliveryGroupElement[],
-                $metadata,
-                aLayoutMode,
-                aCtx
-              )
+              aType as AuthoringGroupElement,
+              aElement as DeliveryGroupElement[],
+              $metadata,
+              aLayoutMode,
+              aCtx
+            )
             : mapGroupElement(
-                aType as AuthoringGroupElement,
-                aElement as DeliveryGroupElement,
-                $metadata,
-                aLayoutMode,
-                aCtx
-              );
+              aType as AuthoringGroupElement,
+              aElement as DeliveryGroupElement,
+              $metadata,
+              aLayoutMode,
+              aCtx
+            );
         case ELEMENT_TYPE_REFERENCE:
           // TODO reference could be empty
           return isArray(aElement)
             ? mapReferenceElements(
-                aElement as DeliveryReferenceElement[],
-                aLayoutMode,
-                aCtx
-              )
+              aElement as DeliveryReferenceElement[],
+              aLayoutMode,
+              aCtx
+            )
             : mapReferenceElement(
-                aElement as DeliveryReferenceElement,
-                aLayoutMode,
-                aCtx
-              );
+              aElement as DeliveryReferenceElement,
+              aLayoutMode,
+              aCtx
+            );
       }
     }
     // default
@@ -881,12 +880,12 @@ export function createMarkupRendererV2(
         switchMap(([ti, content]) =>
           isNotNil(ti) && isNotNil(content)
             ? createRenderingContext(
-                content,
-                metadataExtractor(content),
-                ti,
-                aLayoutMode,
-                aCtx
-              )
+              content,
+              metadataExtractor(content),
+              ti,
+              aLayoutMode,
+              aCtx
+            )
             : UNDEFINED$
         ),
         diff('renderingContext'),
@@ -896,7 +895,7 @@ export function createMarkupRendererV2(
       markup$ = rxPipe(
         combinePair(template$, renderingContext$),
         switchMap(spreadArgs(applyTemplate)),
-        startWith(EMPTY_STRING),
+        // startWith(EMPTY_STRING), removed, to prevent re-emitting empty value
         opDistinctUntilChanged,
         log('markup', aID)
       );
