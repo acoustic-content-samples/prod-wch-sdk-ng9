@@ -45,7 +45,6 @@ function reduceStyles(
   aRenderer: Renderer2,
   aLogger: Logger
 ): Styles {
-  aLogger.info('ZZZ:: reduceStyles!!', Object.keys(aOldStyles).length, Object.keys(aNewStyles).length, aNewStyles);
   // just a quick sanity check
   if (isNotNil(aItem)) {
     const updatedStyles = [];

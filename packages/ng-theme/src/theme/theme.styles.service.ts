@@ -52,7 +52,6 @@ function safeParseMarkup(aMarkup: string, aLogger: Logger): Styles {
     // strip data
     return jsonParse<Styles>(aMarkup.trim());
   } catch (error) {
-    aLogger.info('ZZZ:: jsonParse error', error);
     // log the error
     //aLogger.error('Invalid pre-rendering format.', aMarkup, error);
     // fallback
@@ -111,7 +110,6 @@ export function createThemeStyles(
   // the styles
   return rxPipe(
     themeId$,
-    log('ZZZ:: new themeId'),
     switchMap((themeId) =>
       isNotNil(themeId) ? fromThemeId(themeId) : DEFAULT_STYLES$
     ),
