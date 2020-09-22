@@ -47,6 +47,7 @@ function reduceStyles(
 ): Styles {
   // just a quick sanity check
   if (isNotNil(aItem)) {
+    const updatedStyles = [];
     // work on the styles
     const remaining = reduceForIn(
       aNewStyles,
@@ -59,13 +60,20 @@ function reduceStyles(
           // log this
           aLogger.info('setting style', aKey, aValue);
           // set the style
-          aRenderer.setStyle(aItem, aKey, aValue, RendererStyleFlags2.DashCase);
+          //          aRenderer.setStyle(aItem, aKey, aValue, RendererStyleFlags2.DashCase);
+          updatedStyles.push(aKey + ':' + aValue + '; ');
         }
         // returns the updated copy
         return aOld;
       },
       { ...aOldStyles }
     );
+    aRenderer.setAttribute(aItem, 'style', updatedStyles.reduce((allStyles, aStyle) => {
+      allStyles += aStyle;
+      return allStyles;
+    }, aItem.getAttribute('style') || ''));
+    //TODO - the initial value for the reduce here is starting with all current styles on body
+    // (from getAttribute call), then adding new/updated styles, but not removing old styles
     // remove extra styles
     forIn(remaining, (aValue: any, aKey: string) => {
       // log this
