@@ -29,6 +29,8 @@ import { defer, Observable, of } from 'rxjs';
 
 const LOGGER = 'WchSeedResolver';
 
+const FAKE_SEED = 'as';
+
 /**
  * Decodes the seed
  *
@@ -66,7 +68,8 @@ function getSeed(
     }
   }
   // just a random value
-  const rndSeed = hashRandomIdentifier();
+  // const rndSeed = hashRandomIdentifier();
+  const rndSeed = FAKE_SEED;
   aLogger.info('Random seed', aClassification, rndSeed);
   // from metadata
   return rndSeed;
@@ -132,10 +135,12 @@ export class WchSeedResolver implements SeedResolver {
     addSeed(cache, aPageSeed, CLASSIFICATION_PAGE, logger, aDocument);
 
     // generates a random seed
-    const randomGenerator = () => of(hashRandomIdentifier());
+    // const randomGenerator = () => of(hashRandomIdentifier());
+    const randomGenerator = () => of(FAKE_SEED);
 
     // attach the callback
     this.getSeed = (aID: string, aClassification: string): Observable<string> =>
-      assertFromGenerator(aClassification, cache, randomGenerator);
+      // assertFromGenerator(aClassification, cache, randomGenerator);
+      randomGenerator();
   }
 }

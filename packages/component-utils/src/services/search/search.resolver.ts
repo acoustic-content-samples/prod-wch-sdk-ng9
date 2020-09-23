@@ -31,13 +31,16 @@ import { map, switchMap } from 'rxjs/operators';
 
 const LOGGER = 'AbstractDeliverySearchResolverService';
 
+const FAKE_SEED = 'as';
+
 function createDefaultSeedResolver(): SeedResolver {
   // seed cache
   const cache: Record<string, string> = {};
 
   const getSeed = (aID: string, aClassification: string) =>
     assertFromGenerator(aClassification, cache, () =>
-      of(hashRandomIdentifier())
+      // of(hashRandomIdentifier())
+      of(FAKE_SEED)
     );
 
   return { getSeed };
