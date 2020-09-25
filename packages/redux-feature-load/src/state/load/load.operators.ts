@@ -28,6 +28,7 @@ import {
   startWith,
   switchMap,
   switchMapTo,
+  take,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -59,10 +60,9 @@ export const isNotLoading = (aItem: string, aState: LoadingState): boolean =>
 /**
  * Operator that only fires if an item is not loading
  */
-const opFilterNotLoading: OperatorFunction<
-  [string, LoadingState],
-  string
-> = data$ =>
+const opFilterNotLoading: OperatorFunction<[string, LoadingState], string> = (
+  data$
+) =>
   rxPipe(
     data$,
     filter(([id, state]) => isNotLoading(id, state)),
@@ -100,12 +100,12 @@ export function createLoader(
   // loading hook
   const loading$ = rxPipe(aState$, rxSelect(selectLoadingFeature));
   // make sure to only load a single item
-  const loadSingle: UnaryFunction<string, Observable<Action>> = id =>
+  const loadSingle: UnaryFunction<string, Observable<Action>> = (id) =>
     rxPipe(
       // load the resource
       aLoader(id),
       // make sure we only have one submission
-      first(),
+      take(1),
       // dispatch potentially many actions
       mergeMap(fromActions),
       // start the complete sequence with a loading indicator
@@ -117,7 +117,7 @@ export function createLoader(
       // just in case
       opFilterNotNil,
       // logging
-      tap(action => aLogger.info('loading', id, 'action', action.type))
+      tap((action) => aLogger.info('loading', id, 'action', action.type))
     );
   // returns our fancy operator
   return (id$: Observable<string>): Observable<Action> =>
@@ -158,7 +158,7 @@ export function createAuthenticatedLoader(
   // next login state
   const nextLogin$ = nextLogin(aState$);
   // the actual loader function
-  const loader: LoaderType = id =>
+  const loader: LoaderType = (id) =>
     rxPipe(
       // wait until the next login
       nextLogin$,
@@ -204,10 +204,10 @@ export function createPreviewAwareLoader(
   const nextLogin$ = rxPipe(
     isPreviewMode$,
     // only wait for a login in preview mode, else start right away
-    switchMap(isPreviewMode => (isPreviewMode ? nextLogin(aState$) : TRUE$))
+    switchMap((isPreviewMode) => (isPreviewMode ? nextLogin(aState$) : TRUE$))
   );
   // the actual loader function
-  const loader: LoaderType = id =>
+  const loader: LoaderType = (id) =>
     rxPipe(
       // wait until the next login
       nextLogin$,
