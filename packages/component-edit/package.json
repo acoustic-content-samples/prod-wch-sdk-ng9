@@ -30,6 +30,8 @@
   "dependencies": {
     "@acoustic-content-sdk/api": "9.0.0",
     "@acoustic-content-sdk/edit-api": "9.0.0",
+    "@acoustic-content-sdk/redux-feature-edit-mode": "9.0.0",
+    "@acoustic-content-sdk/redux-store": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
@@ -46,6 +48,8 @@
       "umdModuleIds": {
         "@acoustic-content-sdk/api": "acoustic-content-sdk.api",
         "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
+        "@acoustic-content-sdk/redux-feature-edit-mode": "acoustic-content-sdk.redux-feature-edit-mode",
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },

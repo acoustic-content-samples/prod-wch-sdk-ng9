@@ -16,6 +16,8 @@ import {
   WchInlineEditRegistrationV2,
   WchInlineEditServiceV2
 } from '@acoustic-content-sdk/edit-api';
+import { selectEditModeFeature } from '@acoustic-content-sdk/redux-feature-edit-mode';
+import { ReduxRootStore, rxSelect, rxStore } from '@acoustic-content-sdk/redux-store';
 import {
   Consumer,
   hashRandomIdentifier,
@@ -28,6 +30,7 @@ import {
   rxSelectProperty
 } from '@acoustic-content-sdk/utils';
 import {
+  combineLatest,
   EMPTY,
   fromEvent,
   merge,
@@ -43,6 +46,7 @@ import {
   filter,
   map,
   switchMap,
+  switchMapTo,
   takeUntil,
   tap
 } from 'rxjs/operators';
@@ -171,6 +175,7 @@ export class AbstractWchInlineEditService
     aEventConsumer: Consumer<WchInlineEditEvent>,
     aProvider$: Observable<WchInlineEditProviderV2>,
     aUrlConfig$: Observable<UrlConfig>,
+    aStore: ReduxRootStore,
     aDocument?: any,
     aLogSvc?: LoggerService
   ) {
@@ -199,6 +204,11 @@ export class AbstractWchInlineEditService
       aUrlConfig$,
       rxSelectProperty('isPreviewMode')
     );
+
+    const isEditMode$ = rxPipe(
+      rxStore(aStore),
+      rxSelect(selectEditModeFeature)
+    )
 
     const logger = logSvc.get(LOGGER);
 
@@ -270,8 +280,9 @@ export class AbstractWchInlineEditService
       );
       // dispatch
       return rxPipe(
-        isPreviewMode$,
-        switchMap((isPreviewMode) => (isPreviewMode ? register$ : EMPTY)),
+        combineLatest([isPreviewMode$, isEditMode$]),
+        filter(([isPreviewMode, isEditMode]) => (isPreviewMode && isEditMode)),
+        switchMapTo(register$),
         takeUntil(done$)
       );
     }
@@ -287,14 +298,15 @@ export class AbstractWchInlineEditService
         aName === EVENT_INLINE_EDIT_SET_SELECTED_CELL
           ? inlineEditSelection$
           : rxPipe(
-              eventEmitter$,
-              switchMap((emitter) => fromEvent<any>(emitter, aName)),
-              catchError((err) => FALLBACK_FROM_EVENT(aName))
-            );
+            eventEmitter$,
+            switchMap((emitter) => fromEvent<any>(emitter, aName)),
+            catchError((err) => FALLBACK_FROM_EVENT(aName))
+          );
       // only in debug mode
       return rxPipe(
-        isPreviewMode$,
-        switchMap((isPreviewMode) => (isPreviewMode ? fromEvent$ : EMPTY)),
+        combineLatest([isPreviewMode$, isEditMode$]),
+        filter(([isPreviewMode, isEditMode]) => (isPreviewMode && isEditMode)),
+        switchMapTo(fromEvent$),
         takeUntil(done$)
       );
     }
@@ -320,8 +332,9 @@ export class AbstractWchInlineEditService
     );
     // register
     rxPipe(
-      isPreviewMode$,
-      switchMap((isPreviewMode) => (isPreviewMode ? events$ : EMPTY)),
+      combineLatest([isPreviewMode$, isEditMode$, events$]),
+      filter(([isPreviewMode, isEditMode]) => (isPreviewMode && isEditMode)),
+      switchMapTo(events$),
       takeUntil(done$)
     ).subscribe(aEventConsumer);
 
