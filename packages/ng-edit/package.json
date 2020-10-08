@@ -34,7 +34,9 @@
     "@acoustic-content-sdk/edit-api": "9.0.0",
     "@acoustic-content-sdk/ng-api": "9.0.0",
     "@acoustic-content-sdk/ng-edit-api": "9.0.0",
+    "@acoustic-content-sdk/ng-redux-api": "9.0.0",
     "@acoustic-content-sdk/ng-utils": "9.0.0",
+    "@acoustic-content-sdk/redux-store": "9.0.0",
     "@acoustic-content-sdk/utils": "9.0.0"
   },
   "peerDependencies": {
@@ -57,7 +59,9 @@
         "@acoustic-content-sdk/edit-api": "acoustic-content-sdk.edit-api",
         "@acoustic-content-sdk/ng-api": "acoustic-content-sdk.ng-api",
         "@acoustic-content-sdk/ng-edit-api": "acoustic-content-sdk.ng-edit-api",
+        "@acoustic-content-sdk/ng-redux-api": "acoustic-content-sdk.ng-redux-api",
         "@acoustic-content-sdk/ng-utils": "acoustic-content-sdk.ng-utils",
+        "@acoustic-content-sdk/redux-store": "acoustic-content-sdk.redux-store",
         "@acoustic-content-sdk/utils": "acoustic-content-sdk.utils"
       }
     },

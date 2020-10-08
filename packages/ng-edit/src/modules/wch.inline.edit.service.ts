@@ -9,6 +9,8 @@ import {
   ACOUSTIC_TOKEN_URL_CONFIG
 } from '@acoustic-content-sdk/ng-api';
 import { ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
+import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
+import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -28,6 +30,8 @@ export class WchInlineEditService extends AbstractWchInlineEditService
     aProvider$: Observable<WchInlineEditProviderV2>,
     @Inject(ACOUSTIC_TOKEN_URL_CONFIG)
     aUrlConfig$: Observable<UrlConfig>,
+    @Inject(ACOUSTIC_TOKEN_REDUX_STORE)
+    aStore: ReduxRootStore,
     @Optional()
     @Inject(DOCUMENT)
     aDocument?: any,
@@ -40,6 +44,7 @@ export class WchInlineEditService extends AbstractWchInlineEditService
       aInternal.inlineEditConsumer,
       aProvider$,
       aUrlConfig$,
+      aStore,
       aDocument,
       aLogSvc
     );
