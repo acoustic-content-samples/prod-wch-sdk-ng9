@@ -28,7 +28,8 @@
     "postpublish": "cd dist && npm publish && cd ..",
     "pull": "wchtools pull -A --dir temp --verbose",
     "push": "wchtools push -A --dir data --verbose",
-    "test": "wsrun test --passWithNoTests --json --outputFile test.result.json"
+    "test": "wsrun test --passWithNoTests --json --outputFile test.result.json",
+    "checklicense": "ts-node scripts/license.ts"
   },
   "devDependencies": {
     "@angular/animations": "^9",
@@ -138,7 +139,10 @@
     "wsrun": "^5.2.0",
     "xhr2": "^0.2.0",
     "yauzl": "^2.10.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "@types/license-checker": "^25.0.0",
+    "license-checker": "^25.0.1",
+    "yui-lint": "^0.2.0"
   },
   "resolutions": {
     "ng-packagr/@rollup/plugin-commonjs": "11.0.2"
