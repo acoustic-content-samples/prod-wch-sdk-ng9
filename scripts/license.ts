@@ -1,6 +1,6 @@
-import checker from 'license-checker';
+import * as checker from 'license-checker';
 
-const compatibileOSLicenses = [
+const compatibileOSLicenses: string[] = [
   'Adobe-2006',
   'ADSL',
   'AFL-1.2',
@@ -11,10 +11,11 @@ const compatibileOSLicenses = [
   'Barr',
   'Borceux',
   'Bouncy-Castle',
-  'BSD 0-Clause',
+  'BSD-0 Clause',
   'BSD 2-Clause',
   'BSD-2-Clause-FreeBSD',
   'BSD-2-Clause-Patent',
+  'BSD-3 Clause',
   'BSD-3-Clause-LBNL',
   'BSD-3-Clause-No-Nuclear-License-2014',
   'BSD-4-Clause',
@@ -25,7 +26,7 @@ const compatibileOSLicenses = [
   'CC-BY-1.0',
   'CC-BY-2.5',
   'CC-BY-4.0',
-  'CCO-1.0',
+  'CC0-1.0',
   'CDLA-Permissive-1.0',
   'CeCILL-B',
   'CNRI-Jython',
@@ -56,6 +57,7 @@ const compatibileOSLicenses = [
   'Leptonica',
   'Libpng',
   'MirOS',
+  'MIT', //must include copyright notice and the license
   'MIT-enna',
   'MITNFA',
   'MS-PL',
@@ -97,87 +99,91 @@ const compatibileOSLicenses = [
   'Zlib',
   'zlib-acknowledgement',
   'ZPL-2.0'
-  // ======== not supported
-  //   "ISC",
-  //   "MIT", //must include copyright notice and the license
-  //   "BSD-3-Clause OR MIT",
-  //   "BSD-2-Clause",
-  //   "CC-BY-3.0",
-  //   "CC0-1.0",
-  //   "(MIT AND CC-BY-3.0)",
 ];
 const compatibileOSLicensesToString = compatibileOSLicenses.join(', ');
-const licenseFile = __dirname;
+const packagesFile =
+  __dirname.includes('/scripts') && __dirname.replace('/scripts', '');
 
 const options = {
-  start: licenseFile,
-  exclude: compatibileOSLicenses //compatibileOSLicensesToString
+  start: packagesFile,
+  //@ts-ignore
+  exclude: compatibileOSLicensesToString
 };
 
-// const orCase = (or) => {
-//   const c = or.map((package) => ({
-//     ...package,
-//     licenses: package.licenses.split(' OR ')
-//   }));
-//   const d = c.map((package) => {
-//     const q = package.licenses.map((license) =>
-//       compatibileOSLicenses.includes(license)
-//     );
-//     const w = q.reduce((a, b) => a || b);
+const prepareDependencies = (dependencies, operator: string) =>
+  dependencies.map((dependency) => ({
+    ...dependency,
+    licenses: prepareLicensesNames(dependency.licenses, operator)
+  }));
+const removeChars = (license: string): string =>
+  license.replace('(', '').replace(')', '');
 
-//     return w ? [] : package;
-//   });
-//   return d;
-// };
+const prepareLicensesNames = (name: string, operator: string) => {
+  const nameWithoutSpecialChars = removeChars(name);
+  return nameWithoutSpecialChars.split(` ${operator} `);
+};
 
-// const andCase = (or) => {
-//   const c = or.map((package) => ({
-//     ...package,
-//     licenses: package.licenses.split(' OR ')
-//   }));
-//   const d = c.map((package) => {
-//     const q = package.licenses.map((license) =>
-//       compatibileOSLicenses.includes(license)
-//     );
-//     const w = q.reduce((a, b) => a && b);
-//     console.log(w);
-//     return w ? [] : package;
-//   });
-//   console.log(d);
-//   return d;
-// };
+const selectNotSupportedOrLicenses = (dependencies) => {
+  const preparedDependencies = prepareDependencies(dependencies, 'OR');
+
+  return preparedDependencies.map((dependency) => {
+    const licensesArray = dependency.licenses.map((license) =>
+      compatibileOSLicenses.includes(license)
+    );
+    return licensesArray.reduce((a, b) => a || b) ? [] : dependency;
+  });
+};
+
+const selectNotSupportedANDicenses = (dependencies) => {
+  const preparedDependencies = prepareDependencies(dependencies, 'AND');
+
+  return preparedDependencies.map((dependency) => {
+    const licensesArray = dependency.licenses.map((license) =>
+      compatibileOSLicenses.includes(license)
+    );
+
+    return licensesArray.reduce((a, b) => a && b) ? [] : dependency;
+  });
+};
 
 checker.init(options, (err, dependencies) => {
   const dependencyArray = Object.keys(dependencies).map((key) => ({
     ...dependencies[key],
     name: key
   }));
-  const notsupportedOSLicenses = dependencyArray;
-  //         .filter(
-  //     (dependency) => !compatibileOSLicensesToString.includes(dependency.licenses)
-  //   );
-  const or = notsupportedOSLicenses.filter(({ licenses }) =>
+  const notsupportedOSLicenses = dependencyArray.filter(
+    (dependency) => !compatibileOSLicensesToString.includes(dependency.licenses)
+  );
+
+  const orLicenses = notsupportedOSLicenses.filter(({ licenses }) =>
     licenses.includes('OR')
   );
-  // const orr = orCase(or);
+  const notSupportedOrLicenses = selectNotSupportedOrLicenses(orLicenses);
 
-  const and = notsupportedOSLicenses.filter(({ licenses }) =>
+  const andLicenses = notsupportedOSLicenses.filter(({ licenses }) =>
     licenses.includes('AND')
   );
-  // const andd = andCase(and);
-  // const x = notsupportedOSLicenses.concat(notsupportedOSLicenses, orr, andd);
-  console.log('x', notsupportedOSLicenses);
+  const notSupportedAndLicenses = selectNotSupportedANDicenses(andLicenses);
+  const allNotsupportedOSLicenses = notsupportedOSLicenses.concat(
+    notSupportedOrLicenses,
+    notSupportedAndLicenses
+  );
+
   if (err) {
+    throw new Error(err);
   } else {
-    if (notsupportedOSLicenses.length > 0) {
-      const notsupportedOSLicensesNames = notsupportedOSLicenses
+    if (allNotsupportedOSLicenses.length > 0) {
+      const notsupportedOSLicensesNames = allNotsupportedOSLicenses
         .map(({ name, licenses }) => `${name}:  ${licenses} `)
         .join(',\n');
 
       throw new Error(
-        `Not supported licenses in packages: \n${notsupportedOSLicensesNames}`
+        `Not supported licenses in packages:
+
+        \n${notsupportedOSLicensesNames}`
       );
     } else {
+      // @ts-ignore
       console.log('Success!');
     }
   }
