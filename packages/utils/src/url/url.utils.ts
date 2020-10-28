@@ -180,8 +180,8 @@ function _buildQueryString(aValue: any): string | null | undefined {
     ? aValue
     : // handle the key value pair case
     isPlainObject(aValue)
-    ? reduceForIn<any, string[]>(aValue, _reduceTokens, []).join('&')
-    : // fallback to implicit toString
+      ? reduceForIn<any, string[]>(aValue, _reduceTokens, []).join('&')
+      : // fallback to implicit toString
       anyToString(aValue);
 }
 
@@ -196,17 +196,17 @@ function _buildSortedQueryString(aValue: any): string | null | undefined {
   return isNil(aValue)
     ? aValue
     : isString(aValue)
-    ? _buildSortedQueryString(_parseQuery(aValue))
-    : // handle the key value pair case
-    isPlainObject(aValue)
-    ? reduceArray(
-        objectKeys(aValue).sort(),
-        (aDst: string[], aKey: string) =>
-          _reduceTokens(aDst, aValue[aKey], aKey),
-        []
-      ).join('&')
-    : // fallback to implicit toString
-      _buildSortedQueryString(_parseQuery(anyToString(aValue)));
+      ? _buildSortedQueryString(_parseQuery(aValue))
+      : // handle the key value pair case
+      isPlainObject(aValue)
+        ? reduceArray(
+          objectKeys(aValue).sort(),
+          (aDst: string[], aKey: string) =>
+            _reduceTokens(aDst, aValue[aKey], aKey),
+          []
+        ).join('&')
+        : // fallback to implicit toString
+        _buildSortedQueryString(_parseQuery(anyToString(aValue)));
 }
 
 export type ParsedQuery = Record<string, string | string[]>;
@@ -330,10 +330,10 @@ function _getLinksByRel(
   const doc = getDocument(aDocument, aWindow);
   return isNotNil(doc) && isFunction(doc.getElementsByTagName)
     ? reduceToObject(
-        toArray(doc.getElementsByTagName('link')),
-        _pluckRel,
-        _pluckHref
-      )
+      toArray(doc.getElementsByTagName('link')),
+      _pluckRel,
+      _pluckHref
+    )
     : {};
 }
 
@@ -367,11 +367,11 @@ export function getOrigin(aDoc?: Document, aWindow?: Window): string {
       // parse and return origin
       return _parseURL(url).origin;
     }
-  } catch (error) {}
+  } catch (error) { }
   try {
     // try the window next
     return getPath(getWindow(aWindow), ['location', 'origin']);
-  } catch (error) {}
+  } catch (error) { }
   // nothing
   return UNDEFINED;
 }
@@ -480,9 +480,7 @@ export const _handleInternalPathClick = (event) => {
       str.startsWith('www.') ||
       str.startsWith('HTTP') ||
       str.startsWith('//') ||
-      str === '#' ||
-      str === '/' ||
-      str === ''
+      str === '#'
     );
   }
 
