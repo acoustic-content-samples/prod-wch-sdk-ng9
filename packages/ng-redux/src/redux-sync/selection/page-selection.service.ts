@@ -43,7 +43,8 @@ import {
   pluck,
   takeUntil,
   tap,
-  withLatestFrom
+  withLatestFrom,
+  take,
 } from 'rxjs/operators';
 
 import { selectCanonicalPath } from '../../utils/selection.utils';
@@ -131,6 +132,7 @@ export class PageSelectionService implements OnDestroy {
 
     rxPipe(merge(dispatchAction$, newPath$), takeUntil(this.done$)).subscribe();
 
+    rxPipe(window.parent['@acoustic/destroy-obs'], take(1)).subscribe(() => this.done$.next());
     // log this service
     logger.info(MODULE, createVersionString(VERSION));
   }

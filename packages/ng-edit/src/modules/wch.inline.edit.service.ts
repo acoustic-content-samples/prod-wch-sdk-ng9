@@ -11,9 +11,11 @@ import {
 import { ACOUSTIC_TOKEN_INLINE_EDIT_PROVIDER } from '@acoustic-content-sdk/ng-edit-api';
 import { ACOUSTIC_TOKEN_REDUX_STORE } from '@acoustic-content-sdk/ng-redux-api';
 import { ReduxRootStore } from '@acoustic-content-sdk/redux-store';
+import { rxPipe } from '@acoustic-content-sdk/utils';
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy, Optional } from '@angular/core';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { WchInternalEditService } from '../services/wch.internal.edit.service';
 
@@ -48,6 +50,10 @@ export class WchInlineEditService extends AbstractWchInlineEditService
       aDocument,
       aLogSvc
     );
+
+    rxPipe(window.parent['@acoustic/destroy-obs'], take(1)).subscribe(() => {
+      this.unsubscribe();
+    })
   }
 
   // this seems to be required in order to have AOT recognize the method
