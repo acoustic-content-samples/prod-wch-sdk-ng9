@@ -9,14 +9,12 @@ import {
 } from '@acoustic-content-sdk/rest-api';
 import {
   boxLoggerService,
-  createLruCache,
   idleFrameScheduler,
   isAbsoluteURL,
   isNil,
   isNotNil,
   isString,
   jsonStringify,
-  opCacheLast,
   pluckPath,
   rxPipe,
   typedPluck,
@@ -49,8 +47,6 @@ import { fromFetch } from './fetch';
 const SLASH = '/';
 export const PUBLISH_PRIORITY_HEADER_VALUE = 'now';
 export const CONTENT_TYPE_HEADER_VALUE_JSON = 'application/json';
-
-const USE_CACHE = true;
 
 const FETCH_TEXT_LOGGER = 'FetchTextAjax';
 
@@ -177,70 +173,16 @@ export function fetchTextAjax(
   apiBase: StaticHubInfoUrlProvider | PromiseLike<StaticHubInfoUrlProvider>,
   aLoggerService?: LoggerService
 ): FetchText {
-  // resolve the logger
   const logSvc = boxLoggerService(aLoggerService);
-  const logger = logSvc.get(FETCH_TEXT_LOGGER);
-  // construct a cache
-  const cache = createLruCache<Observable<string>>();
-  // attach to the provider
   const fetchText$ = Promise.resolve(apiBase).then((url) =>
     internalFetchTextAjax(url, logSvc)
   );
-  // check for preview mode
-  const isPreview$ = Promise.resolve(apiBase).then((provider) =>
-    wchIsPreviewMode(urlFromProvider(provider))
-  );
 
-  // dispatch
-  const fetch = (
-    aPath: string,
-    aPriority?: FETCH_PRIORITY
-  ): Observable<string> =>
+  return (aPath: string, aPriority?: FETCH_PRIORITY): Observable<string> =>
     rxPipe(
       from(fetchText$),
       switchMap((fetchText) => fetchText(aPath, aPriority))
     );
-
-  const cachedFetch = (
-    aPath: string,
-    aPriority?: FETCH_PRIORITY
-  ): Observable<string> => rxPipe(fetch(aPath, aPriority), opCacheLast);
-
-  /**
-   * Returns a response from the cache. This response will emit the last cached
-   * value immeditately but also request a new, fresh value if the observable
-   * is not running, already
-   *
-   * @param aPath - the path
-   * @param aPriority - optionally the priority
-   *
-   * @return the observable with the desired behaviour
-   */
-  const fromCache = (
-    aPath: string,
-    aPriority?: FETCH_PRIORITY
-  ): Observable<string> =>
-    cache(aPath, (path) => cachedFetch(path, aPriority), logger);
-
-  /**
-   * Only serve from the cache if not in preview mode
-   *
-   * @param aPath - URL path
-   * @param aPriority - priority
-   *
-   * @returns the result
-   */
-  const safeFromCache = (
-    aPath: string,
-    aPriority?: FETCH_PRIORITY
-  ): Observable<string> =>
-    rxPipe(
-      from(isPreview$),
-      switchMap((bPreview) => (bPreview ? fetch : fromCache)(aPath, aPriority))
-    );
-
-  // returns the fetch function
-  return USE_CACHE ? safeFromCache : fetch;
 }
 
 function hasRevision(aItem: any): boolean {
