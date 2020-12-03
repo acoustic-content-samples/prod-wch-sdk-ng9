@@ -108,9 +108,8 @@ export class PageSelectionService implements OnDestroy {
     const editMode$ = rxPipe(store$, rxSelect(selectEditModeFeature));
 
     const newPath$ = rxPipe(
-      combineLatest(editMode$, selectedPage$),
-      filter(([editMode]) => editMode), // only subscribe to selectedPage state, if edit mode is enabled
-      map(([editMode, selectedPage]) => selectedPage),
+      // combineLatest(editMode$, selectedPage$),
+      selectedPage$,
       rxSelect(selectCanonicalPath),
       log('Selected path'),
       filter((path) => !isEqual(path, router.url)),

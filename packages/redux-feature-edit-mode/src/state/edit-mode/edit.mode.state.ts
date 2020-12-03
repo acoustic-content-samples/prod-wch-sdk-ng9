@@ -5,7 +5,7 @@ import { handleActions } from 'redux-actions';
 import { ACTION_EDIT_MODE, EditModeAction } from './edit.mode.actions';
 
 // default
-export const DEFAULT_EDIT_MODE = true;
+export const DEFAULT_EDIT_MODE = false;
 
 // defines if edit mode is on or off
 export type EditModeState = boolean;
