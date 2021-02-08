@@ -1,9 +1,9 @@
 # HubInfoService
 
-The hub info service provides information about the entry URLs to WCH. It exposes the following information:
+The hub info service provides information about the entry URLs to Content. It exposes the following information:
 
-* `apiUrl`: URL to access the API layer, e.g. 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
-* `resourceUrl`: URL to access the delivery layer, e.g. 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+* `apiUrl`: URL to access the API layer, e.g. 'https://content-us-1.content-cms.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+* `resourceUrl`: URL to access the delivery layer, e.g. 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
 * `cycleHandlingStrategy?`: Specifies how the SDK deals with cyclic data structures, one of `BREAK` or `RESOLVE`.
 * `fetchLevels?`: Number of levels to fetch per request to the rendering context. If missing all levels will be fetched.
 * `httpOptions?`: Configuration of the HTTP strategy for the live site. Of type `HttpResourceOptions`.

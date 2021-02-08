@@ -5,7 +5,7 @@ import { urlConfigReducer, UrlConfigState } from './url.config.state';
 
 /**
  * Represents the {@link UrlConfigState | configuration} of the URLs to be used
- * when working with {@link https://developer.ibm.com/api/view/dx-prod:ibm-watson-content-hub:title-IBM_Watson_Content_Hub | WCH REST} services.
+ * when working with {@link https://acoustic.com/products/content | WCH REST} services.
  */
 export interface UrlConfigFeatureState {
   [URL_CONFIG_FEATURE]: UrlConfigState;
