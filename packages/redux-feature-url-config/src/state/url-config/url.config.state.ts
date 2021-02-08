@@ -33,7 +33,7 @@ const DEFAULT_CONFIG: UrlConfig = {
 
 /**
  * State that covers the {@link @acoustic-content-sdk/api#UrlConfig | configuration} of the URLs to be used
- * when working with {@link https://developer.ibm.com/api/view/dx-prod:ibm-watson-content-hub:title-IBM_Watson_Content_Hub | WCH REST} services.
+ * when working with {@link https://acoustic.com/products/content | WCH REST} services.
  *
  * @remarks
  * Note that all URLs in this object are guaranteed to be absolute URLs and to end with a trailing slash.

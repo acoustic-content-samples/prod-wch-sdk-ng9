@@ -116,7 +116,7 @@ function fetchTextLow(
 /**
  * Creates a callback function that loads content via HTTP GET from the API routes.
  *
- * @param apiBase - the {@link https://developer.ibm.com/customer-engagement/tutorials/accessing-your-sites-through-watson-content-hub-apis/#tocstep1 | API URL}.
+ * @param apiBase - the {@link https://developer.goacoustic.com/acoustic-content/reference#introduction | API URL}.
  * @param logger - an optional logger
  * @returns the callback function
  */
@@ -165,7 +165,7 @@ function internalFetchTextAjax(
 /**
  * Creates a callback function that loads content via HTTP GET from the API routes.
  *
- * @param apiBase - the {@link https://developer.ibm.com/customer-engagement/tutorials/accessing-your-sites-through-watson-content-hub-apis/#tocstep1 | API URL}.
+ * @param apiBase - the {@link https://developer.goacoustic.com/acoustic-content/reference#introduction | API URL}.
  * @param logger - an optional logger
  * @returns the callback function
  */
@@ -290,7 +290,7 @@ function sendFile<T>(
 /**
  * Creates a callback function that writes content to API routes via PUST, POST or delete
  *
- * @param apiBase - the {@link https://developer.ibm.com/customer-engagement/tutorials/accessing-your-sites-through-watson-content-hub-apis/#tocstep1 | API URL}.
+ * @param apiBase - the {@link https://developer.goacoustic.com/acoustic-content/reference#introduction | API URL}.
  * @param logSvc - an optional logger service
  * @returns the callback function
  */
@@ -328,7 +328,7 @@ function internalWriteJsonAjax(
 /**
  * Creates a callback function that writes content to API routes via PUST, POST or delete
  *
- * @param apiBase - the {@link https://developer.ibm.com/customer-engagement/tutorials/accessing-your-sites-through-watson-content-hub-apis/#tocstep1 | API URL}.
+ * @param apiBase - the {@link https://developer.goacoustic.com/acoustic-content/reference#introduction | API URL}.
  * @param logger - an optional logger
  * @returns the callback function
  */

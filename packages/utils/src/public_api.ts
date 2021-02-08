@@ -1,7 +1,7 @@
-/* Copyright IBM Corp. 2018 */
+/* Copyright Acoustic 2021 */
 
 /**
- * This library contains a set of utility functions to help implementing applications of libraries against [Watson Content Hub](https://www.ibm.com/products/watson-content-hub).
+ * This library contains a set of utility functions to help implementing applications of libraries against [Acoustic Content](https://acoustic.com/products/content).
  *
  * Some functions are very general purpose helper functions. We use them instead of 'lodash' to reduce size and improve speed.
  *

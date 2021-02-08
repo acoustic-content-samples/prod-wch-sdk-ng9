@@ -30,7 +30,7 @@ export interface HttpResourceOptions {
   readonly usePolling?: boolean;
 }
 
-/* Copyright IBM Corp. 2017 */
+/* Copyright Acoustic 2021 */
 
 /**
  * Defines the provider of a URL, either as a URL, a string or a callback that generates either
@@ -72,8 +72,8 @@ export interface HubInfoConfig {
    *
    * Naming of this field according to the field in the rendering context
    *
-   * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
-   * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+   * @example 'https://content-us-1.content-cms.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+   * @example 'https://content-us-1.content-cms.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
    */
   readonly apiUrl?: HubInfoUrlProvider;
 
@@ -82,8 +82,8 @@ export interface HubInfoConfig {
    *
    * Naming of this field according to the field in the rendering context
    *
-   * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
-   * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+   * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+   * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
    */
   readonly resourceUrl?: HubInfoUrlProvider;
 
@@ -92,8 +92,8 @@ export interface HubInfoConfig {
    * preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded
    * from the window location.
    *
-   * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
-   * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+   * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+   * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
    * @example 'https://my.external.example.com/'
    */
   readonly baseUrl?: HubInfoUrlProvider;

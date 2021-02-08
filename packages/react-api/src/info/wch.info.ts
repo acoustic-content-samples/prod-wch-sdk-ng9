@@ -15,8 +15,8 @@ export const ACOUSTIC_CONTEXT_URL_CONFIG = createReactContext<Observable<UrlConf
  *
  * Naming of this field according to the field in the rendering context
  *
- * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
- * @example 'https://my.digitalexperience.ibm.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+ * @example 'https://content-us-1.content-cms.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+ * @example 'https://content-us-1.content-cms.com/api/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  */
 export const ACOUSTIC_CONTEXT_API_URL = createReactContext<HubInfoUrlProvider>(
   'ACOUSTIC_CONTEXT_API_URL'
@@ -27,8 +27,8 @@ export const ACOUSTIC_CONTEXT_API_URL = createReactContext<HubInfoUrlProvider>(
  *
  * Naming of this field according to the field in the rendering context
  *
- * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
- * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+ * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+ * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  */
 export const ACOUSTIC_CONTEXT_RESOURCE_URL = createReactContext<HubInfoUrlProvider>(
   'ACOUSTIC_CONTEXT_RESOURCE_URL'
@@ -39,8 +39,8 @@ export const ACOUSTIC_CONTEXT_RESOURCE_URL = createReactContext<HubInfoUrlProvid
  * preserved when generating and recognizing URLs. If this property is not configured, then it will be decoded
  * from the window location.
  *
- * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
- * @example 'https://my.digitalexperience.ibm.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
+ * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1'
+ * @example 'https://content-us-1.content-cms.com/345563cf-a83c-40e5-a065-1d6ff36b05c1/dxsites/mysite'
  * @example 'https://my.external.example.com/'
  */
 export const ACOUSTIC_CONTEXT_BASE_URL = createReactContext<HubInfoUrlProvider>(

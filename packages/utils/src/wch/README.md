@@ -14,7 +14,7 @@ import { wchGetHubInfoUrlProvider } from '@acoustic-content-sdk/utils';
 
 export function apiUrl(): HubInfoUrlProvider {
   return wchGetHubInfoUrlProvider(
-    'https://my10.digitalexperience.ibm.com/api/6f0ce0ff-8a25-4fac-b66a-5d42516247eb',
+    'https://content-us-1.content-cms.com/api/6f0ce0ff-8a25-4fac-b66a-5d42516247eb',
     baseURL => /preview/.test(baseURL.href)
   );
 }
