@@ -2,7 +2,7 @@ nodeModulePipeline {
   name = "prod-wch-sdk"
   version_minor = "0"
   version_major = "9"
-  nodeversion = "10"
+  nodeversion = "12"
 
   preBuildScript = "echo 'Nothing to install'"
   buildScript = "chmod a+x ./build.sh && sh ./build.sh"
