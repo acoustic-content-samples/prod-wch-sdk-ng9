@@ -25,7 +25,7 @@
     "build:api": "api-extractor run --local",
     "build:doc": "api-documenter markdown -i temp",
     "build:packagr": "ng-packagr -p package.json -c tsconfig.json",
-    "postbuild:packagr": "sync-files --no-delete ./assets ./dist",
+    "postbuild:packagr": "cpx --verbose --preserve \"./assets/**/*\" ./dist",
     "cli": "node bin/index.js",
     "start": "ts-node ./src/driver/index.ts --project ./tsconfig.json",
     "test": "jest"
