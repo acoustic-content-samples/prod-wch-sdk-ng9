@@ -48,13 +48,10 @@ The postbuild step makes sure that ...
 
 ## Publish
 
-All components are published to http://wats-repob.devlab.ibm.com/ after the build process by the CI pipeline.
-
-In addition we publish the complete content of the built monorepo as `prod-wch-sdk-ng9` to http://wats-repob.devlab.ibm.com/. This step simplifies auditing, change detection and publishing to the global [NPM registry](https://www.npmjs.com/).
 
 ### Release to Global NPM
 
-In order to make the packages available to customers they are published to the he global [NPM registry](https://www.npmjs.com/). Use the following command to achieve this (note that `npx` is NOT a typo):
+In order to make the packages available to customers they are published to the the global [NPM registry](https://www.npmjs.com/package/ibm-wch-sdk-ng). Use the following command to achieve this (note that `npx` is NOT a typo):
 
 ```bash
 npx prod-wch-sdk-ng9
